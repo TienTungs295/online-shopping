@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Discount;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ class DiscountController extends Controller
         $q = $request->input('q');
         if ($q != "") {
             $discounts = Discount::where(function ($query) use ($q) {
-                $query->where('name', 'like', '%' . $q . '%');
+                $query->where('code', 'like', '%' . $q . '%');
             })->orderBy('id', 'DESC')
                 ->paginate(25);
             $discounts->appends(['q' => $q]);
@@ -46,15 +47,48 @@ class DiscountController extends Controller
      */
     public function store(Request $request)
     {
-        $count_exist = Discount::where('name', $request->name)->count();
-        if ($count_exist >= 1) {
-            return redirect()->back()->with('error', 'Tên nhãn đã tồn tại');
-        }
-        $validatedData = $request->validate([
-            'name' => 'required|max:255',
-            'color' => 'required',
+        $request->validate([
+            'code' => 'required|max:50',
+            'value' => 'required:min:1',
         ]);
-        Discount::create($validatedData);
+
+        $count_exist = Discount::where('code', $request->code)->count();
+        if ($count_exist >= 1) {
+            return redirect()->back()->with('error', 'Mã giảm giá đã tồn tại');
+        }
+
+        $discount = new Discount();
+        $start_date;
+        $discount_on;
+
+        if (!$request->input('start_date'))
+            $start_date = Carbon::now()->format("Y-m-d");
+        else
+            $start_date = Carbon::createFromFormat('d-m-Y', $request->input('start_date'))->format("Y-m-d");
+
+        if ($request->has('un_limited'))
+            $discount->quantity = $request->input("quantity");
+
+        if (!$request->has('unlimited_time') && $request->input('end_date'))
+            $discount->end_date = Carbon::createFromFormat('d-m-Y', $request->input('end_date'))->format("Y-m-d");
+
+        $target = $request->input('target');
+        if ($target) {
+//            $discount->products = $request->input("products");
+            if ($target == 'all-orders')
+                $discount_on = 'per-order';
+            else
+                $discount_on = $request->input("discount_on");
+
+            $discount->discount_on = $discount_on;
+        }
+
+        $discount->code = $request->input("code");
+        $discount->start_date = $start_date;
+        $discount->type_option = $request->input("type_option");
+        $discount->value = $request->input("value");
+        $discount->target = $request->input("target");
+        $discount->save();
 
         return redirect()->route("discountView")->with('success', 'Thành công');
     }
@@ -78,12 +112,6 @@ class DiscountController extends Controller
      */
     public function edit($id)
     {
-        try {
-            $discount = Discount::findOrFail($id);
-        } catch (ModelNotFoundException $e) {
-            return redirect()->route("updateDiscountView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
-        }
-        return view('backend.discount.edit', compact('product_discount'));
     }
 
     /**
@@ -95,25 +123,6 @@ class DiscountController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        try {
-            Discount::findOrFail($id);
-        } catch (ModelNotFoundException $e) {
-            return redirect()->route("updateDiscountView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
-        }
-
-        $count_exist = Discount::where('name', $request->name)->where('id', '<>', $id)->count();
-        if ($count_exist >= 1) {
-            return redirect()->back()->with('error', 'Tên nhãn đã tồn tại');
-        }
-        $validated_data = $request->validate([
-            'name' => 'required|max:255',
-            'color' => 'required'
-        ]);
-        Discount::whereId($id)->update($validated_data);
-
-
-        return redirect()->route("discountView")->with('success', 'Thành công');
     }
 
     /**

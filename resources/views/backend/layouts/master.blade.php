@@ -34,7 +34,7 @@
 {{--    <link href="{{ asset('vendor/simple-datatables/style.css') }}" rel="stylesheet">--}}
 
     <!-- Template Main CSS File -->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/backend.css') }}" rel="stylesheet">
 </head>
 
 <body>

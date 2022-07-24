@@ -26,13 +26,12 @@
                                         <input type="text"
                                                id="code"
                                                value="{!! old('code', isset($disacount->code) ? $disacount->code : '')!!}"
-                                               class="form-control" name="code" maxlength="255" required>
+                                               class="form-control" name="code" maxlength="50" required>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-md-5">
-                                        <label class="form-label">Ngày bắt đầu<span
-                                                class="text-danger">*</span></label>
+                                        <label class="form-label">Ngày bắt đầu</label>
                                         <div class="input-group">
                                             <input type="text" readonly
                                                    value="{!! old('start_date', isset($flash_sale->start_date) ? $flash_sale->start_date->format('d-m-Y') : '')!!}"
@@ -75,26 +74,30 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6" id="quantity-block" style="display: none">
-                                        <label class="form-label">Số lượng</label>
-                                        <input type="number"
-                                               value="{!! old('quantity', isset($disacount->quantity) ? $disacount->quantity : '')!!}"
-                                               class="form-control" name="quantity">
+                                        <div id="quantity-form">
+                                            <label class="form-label">Số lượng<span
+                                                    class="text-danger">*</span></label>
+                                            <input type="number"
+                                                   value="{!! old('quantity', isset($disacount->quantity) ? $disacount->quantity : '')!!}"
+                                                   class="form-control" id="quantity" name="quantity" min="1" required>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-md-4">
                                         <label class="form-label">Loại mã giảm giá</label>
-                                        <select class="form-select" id="type_option" name="type_option" required>
+                                        <select class="form-select" id="type_option" name="type_option">
                                             <option value="amount">VNĐ</option>
                                             <option value="percentage">%</option>
                                         </select>
                                     </div>
                                     <div class="col-md-4">
-                                        <label class="form-label">Giảm giá</label>
+                                        <label class="form-label">Giảm giá<span
+                                                class="text-danger">*</span></label>
                                         <div class="input-group">
                                             <input type="number"
                                                    value="{!! old('value', isset($disacount->value) ? $disacount->value : '')!!}"
-                                                   class="form-control" name="value" required>
+                                                   class="form-control" name="value" min="1" required>
                                             <span class="input-group-text" id="percentage-icon" style="display: none">
                                                 <i class="bi bi-percent"></i></span>
                                             <span class="input-group-text" id="cash-icon">
@@ -103,17 +106,25 @@
                                     </div>
                                     <div class="col-md-4">
                                         <label class="form-label">Áp dụng cho</label>
-                                        <select class="form-select" id="target" name="target" required>
+                                        <select class="form-select" id="target" name="target">
                                             <option value="all-orders">Toàn bộ đơn hàng</option>
                                             <option value="specific-product">Sản phẩm</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="row mb-3" id="product-block" style="display: none">
-                                    <div class="col-md">
+                                    <div class="col-md-6">
                                         <label class="form-label">Sản phẩm</label>
                                         <input class="form-control" id="product-autocomplete">
                                         <input type="hidden" id="products" name="products" value="">
+                                    </div>
+
+                                    <div class="col-md-6" id="discount-on-block">
+                                        <label class="form-label">Kiểu áp dụng</label>
+                                        <select class="form-select" id="discount_on" name="discount_on">
+                                            <option value="per-order">Một lần cho mỗi đơn đặt hàng</option>
+                                            <option value="per-every-item">Một lần cho mỗi sản phẩm trong giỏ</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row mb-3" id="products-selected">
@@ -141,10 +152,10 @@
     </div>
 @endsection
 @section("morescripts")
-    <script src=""></script>
     <script>
-        showHideUnlimited();
+        showHideQuantity();
         showHideProduct();
+        showHideDiscountOn();
         changeIcon();
         $(".datepicker").datepicker({changeYear: true});
         var products = [{label: "Choice1", value: "value1"}, {label: "Choice2", value: "value2"}];
@@ -218,7 +229,7 @@
         });
 
         $("#un_limited").click(function (event) {
-            showHideUnlimited();
+            showHideQuantity();
         });
 
         $("#unlimited_time").click(function (event) {
@@ -227,6 +238,7 @@
 
         $("#target").on("change", function (event) {
             showHideProduct();
+            showHideDiscountOn();
         });
 
         $("#type_option").on("change", function (event) {
@@ -238,18 +250,35 @@
                 this.value = this.value.toLocaleUpperCase();
         });
 
-        function showHideUnlimited() {
-            if ($("#un_limited").prop("checked") == true)
+        function showHideQuantity() {
+            if ($("#un_limited").prop("checked") == true) {
                 $("#quantity-block").show();
-            else
+                $("#quantity").attr({
+                    min: 1,
+                    required: true
+                });
+            } else {
                 $("#quantity-block").hide();
+                $("#quantity").removeAttr("min");
+                $("#quantity").removeAttr("required");
+            }
         }
 
         function showHideProduct() {
-            if ($("#target").val() == "specific-product")
+            if ($("#target").val() == "specific-product") {
                 $("#product-block").show();
-            else
+                $("#products-selected").show();
+            } else {
                 $("#product-block").hide();
+                $("#products-selected").hide();
+            }
+        }
+
+        function showHideDiscountOn() {
+            if ($("#target").val() == "specific-product")
+                $("#discount-on-block").show();
+            else
+                $("#discount-on-block").hide();
         }
 
         function changeIcon() {

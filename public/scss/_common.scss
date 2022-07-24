@@ -1,0 +1,44 @@
+.d-flex {
+    display: flex;
+}
+
+.d-inline-flex {
+    display: inline-flex;
+}
+
+.a-center {
+    align-items: center;
+}
+
+.j-center {
+    justify-content: center;
+}
+
+.d-flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.d-inline-flex-center {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-left-i{
+    text-align: left !important;
+}
+
+.text-right-i{
+    text-align: right !important;
+}
+

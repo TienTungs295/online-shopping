@@ -60,7 +60,7 @@ class FlashSaleController extends Controller
 
         $flash_sale = new FlashSale;
         $flash_sale->name = $request->input('name');
-        $flash_sale->end_date = Carbon::createFromFormat('d/m/Y', $request->input('end_date'))->format("Y-m-d");
+        $flash_sale->end_date = Carbon::createFromFormat('d-m-Y', $request->input('end_date'))->format("Y-m-d");
         $flash_sale->save();
         $this->storeProducts($request, $flash_sale);
         return redirect()->route("flashSaleView")->with('success', 'Success');

@@ -60,7 +60,8 @@ class ProductCollectionController extends Controller
         $product_collection->name = $request->input('name');
         $product_collection->slug = Str::slug($request->input('name'));;
         $product_collection->description = $request->input('description');
-//        $product_collection->is_featured = $request->input('is_featured');
+        $featured = $request->has("is_featured") ? 1 : 0;
+        $product_collection->is_featured = $featured;
         $product_collection->save();
 
         return redirect()->route("collectionView")->with('success', 'Success');
@@ -119,7 +120,8 @@ class ProductCollectionController extends Controller
         $product_collection->name = $request->input('name');
         $product_collection->slug = Str::slug($request->input('name'));;
         $product_collection->description = $request->input('description');
-//        $product_collection->is_featured = $request->input('is_featured');
+        $featured = $request->has("is_featured") ? 1 : 0;
+        $product_collection->is_featured = $featured;
         $product_collection->update();
         return redirect()->route("collectionView")->with('success', 'Success');
     }

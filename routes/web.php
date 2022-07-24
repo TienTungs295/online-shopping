@@ -70,9 +70,7 @@ Route::group(['prefix' => 'quan-tri'], function () {
     Route::group(['prefix' => 'ma-giam-gia'], function () {
         Route::get('', ['as' => 'discountView', 'uses' => 'DiscountController@index']);
         Route::get('/them-moi', ['as' => 'createDiscountView', 'uses' => 'DiscountController@create']);
-        Route::get('/chinh-sua/{id}', ['as' => 'updateDiscountView', 'uses' => 'DiscountController@edit']);
         Route::post('/luu-tru', ['as' => 'createDiscount', 'uses' => 'DiscountController@store']);
-        Route::post('/cap-nhat/{id}', ['as' => 'updateDiscount', 'uses' => 'DiscountController@update']);
         Route::post('/xoa/{id}', ['as' => 'deleteDiscount', 'uses' => 'DiscountController@destroy']);
     });
 });

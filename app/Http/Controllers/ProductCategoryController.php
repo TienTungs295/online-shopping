@@ -50,11 +50,19 @@ class ProductCategoryController extends Controller
             return redirect()->back()->with('error', 'Tên danh mục đã tồn tại');
         }
 
+        $parent_id = $request->input('parent_id');
+        try {
+            if ($parent_id != 0) $product_category = ProductCategory::findOrFail($parent_id);
+        } catch (ModelNotFoundException $e) {
+            return redirect()->back()->with('error', 'Danh mục cha không tồn tại hoặc đã bị xóa');
+        }
+
         $product_category = new ProductCategory;
         $product_category->name = $request->input('name');
         $product_category->parent_id = $request->input('parent_id');
         $product_category->description = $request->input('description');
-//        $product_category->is_featured = $request->input('is_featured');
+        $featured = $request->has("is_featured") ? 1 : 0;
+        $product_category->is_featured = $featured;
         $product_category->save();
 
         return redirect()->route("categoryView")->with('success', 'Thành công');
@@ -118,7 +126,7 @@ class ProductCategoryController extends Controller
 
         $parent_id = $request->input('parent_id');
         try {
-            $product_category = ProductCategory::findOrFail($parent_id);
+            if ($parent_id != 0) $parent_category = ProductCategory::findOrFail($parent_id);
         } catch (ModelNotFoundException $e) {
             return redirect()->back()->with('error', 'Danh mục cha không tồn tại hoặc đã bị xóa');
         }
@@ -131,7 +139,8 @@ class ProductCategoryController extends Controller
         $product_category->name = $request->input('name');
         $product_category->parent_id = $parent_id;
         $product_category->description = $request->input('description');
-//        $product_category->is_featured = $request->input('is_featured');
+        $featured = $request->has("is_featured") ? 1 : 0;
+        $product_category->is_featured = $featured;
         $product_category->update();
 
         return redirect()->route("categoryView")->with('success', 'Thành công');

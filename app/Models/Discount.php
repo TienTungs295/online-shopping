@@ -20,18 +20,18 @@ class Discount extends Model
      * @var array
      */
     protected $fillable = [
-        'title',
+//        'title',
         'code',
         'start_date',
         'end_date',
         'quantity',
         'total_used',
         'value',
-        'type',
-        'can_use_with_promotion',
+//        'type',
+//        'can_use_with_promotion',
         'type_option',
         'target',
-        'min_order_price',
+//        'min_order_price',
         'discount_on',
         'product_quantity',
     ];

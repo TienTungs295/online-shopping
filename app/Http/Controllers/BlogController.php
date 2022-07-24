@@ -64,8 +64,8 @@ class BlogController extends Controller
         $blog->image = $image_url;
         $blog->author_id = 1;
         $blog->author_type = 1;
-
-//        $blog->is_featured = $request->input('is_featured');
+        $featured = $request->has("is_featured") ? 1 : 0;
+        $blog->is_featured = $featured;
         $blog->save();
 
         return redirect()->route("blogView")->with('success', 'Thành công');
@@ -131,7 +131,8 @@ class BlogController extends Controller
             }
         }
         $blog->image = $image_url;
-        //        $blog->is_featured = $request->input('is_featured');
+        $featured = $request->has("is_featured") ? 1 : 0;
+        $blog->is_featured = $featured;
         $blog->update();
         return redirect()->route("blogView")->with('success', 'Thành công');
     }

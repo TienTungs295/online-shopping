@@ -36,7 +36,7 @@
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Ảnh</th>
+{{--                                <th scope="col">Ảnh</th>--}}
                                 <th scope="col">Tên</th>
                                 <th scope="col">Slug</th>
                                 <th scope="col">Ngày cập nhật</th>
@@ -49,7 +49,7 @@
                             <tr>
                                 <th scope="row">{!!$data->id!!}</th>
                                 <td>{!!$data->image!!}</td>
-                                <td>{!!$data->name!!}</td>
+{{--                                <td>{!!$data->name!!}</td>--}}
                                 <td>{!!$data->slug!!}</td>
                                 <td>{!!$data->updated_at->format('H:i:s d-m-Y')!!}</td>
                                 <td>
