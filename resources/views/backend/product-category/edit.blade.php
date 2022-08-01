@@ -35,7 +35,7 @@
                                     <div class="col-sm-10">
                                         <select class="form-select" name="parent_id" required>
                                             <option value="0">Root</option>
-                                            @include('backend.product-category.tree_select',['product_categories' => $product_categories,'product_category' => $product_category,'parent_id' => 0,'prefix'=> ""])
+                                            @include('backend.product-category.tree_select',['product_categories' => $product_categories,'selected_id' => isset($product_category) ? $product_category["parent_id"] : '','parent_id' => 0,'prefix'=> ""])
                                         </select>
                                     </div>
                                 </div>

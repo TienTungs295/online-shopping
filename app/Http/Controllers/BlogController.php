@@ -120,20 +120,22 @@ class BlogController extends Controller
         $blog->name = $request->input('name');
         $blog->content = $request->input('content');
         $image_url = $request->input('image');
+        $delete_url = "";
         if ($image_url != null && $image_url != "") {
             $start_position = strripos($image_url, "/") + 1;
             $image_url = substr($image_url, $start_position, strlen($image_url) - $start_position);
-            if ($image_url != $blog->image) {
-                $delete_url = 'uploads\images\\' . $blog->image;
-                if (File::exists(public_path($delete_url))) {
-                    File::delete(public_path($delete_url));
-                }
-            }
         }
+
         $blog->image = $image_url;
         $featured = $request->has("is_featured") ? 1 : 0;
         $blog->is_featured = $featured;
         $blog->update();
+        if ($image_url != $blog->image && $blog->image != '') {
+            $delete_url = 'uploads\images\\' . $blog->image;
+            if (File::exists(public_path($delete_url))) {
+                File::delete(public_path($delete_url));
+            }
+        }
         return redirect()->route("blogView")->with('success', 'Thành công');
     }
 

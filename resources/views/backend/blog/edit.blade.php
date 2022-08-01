@@ -84,7 +84,7 @@
         var image_url = $("#image").val();
         var config = {
             ajaxConfig: {
-                url: APP_URL + "/quan-tri/tai-anh",
+                url: APP_URL + "/rest/tai-anh",
                 method: "post",
                 paramsBuilder: function (uploaderFile) {
                     let form = new FormData();
@@ -124,7 +124,7 @@
             }
         }
         if (image_url != null && image_url != "" & image_url != undefined) {
-            let start_position = image_url.lastIndexOf("/");
+            let start_position = image_url.lastIndexOf("/") + 1;
             let image_name = image_url.substring(start_position, image_url.length - 1);
             config.defaultValue = [{
                 name: image_name,

@@ -74,12 +74,10 @@ class DiscountController extends Controller
 
         $target = $request->input('target');
         if ($target) {
-//            $discount->products = $request->input("products");
             if ($target == 'all-orders')
                 $discount_on = 'per-order';
             else
                 $discount_on = $request->input("discount_on");
-
             $discount->discount_on = $discount_on;
         }
 
@@ -88,7 +86,10 @@ class DiscountController extends Controller
         $discount->type_option = $request->input("type_option");
         $discount->value = $request->input("value");
         $discount->target = $request->input("target");
+        $product_ids = $request->input("product_ids");
+        $product_ids = explode(",", $product_ids);
         $discount->save();
+        $discount->products()->attach($product_ids);
 
         return redirect()->route("discountView")->with('success', 'Thành công');
     }
@@ -140,7 +141,6 @@ class DiscountController extends Controller
         }
 
         $discount->delete();
-
         return redirect()->back()->with('success', 'Thành công');
     }
 }

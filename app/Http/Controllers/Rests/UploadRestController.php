@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Rests;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class UploadController extends Controller
+class UploadRestController extends Controller
 {
     public function storeImage(Request $request)
     {

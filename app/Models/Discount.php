@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Botble\Ecommerce\Models\Product;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -56,5 +56,13 @@ class Discount extends Model
         return $this->belongsToMany(Product::class, 'ec_discount_products', 'discount_id', 'product_id');
     }
 
+
+    public static function boot() {
+        parent::boot();
+
+        static::deleting(function($discount) { // before delete() method call this
+            $discount->products()->detach();
+        });
+    }
 
 }

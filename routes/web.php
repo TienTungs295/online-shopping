@@ -19,9 +19,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['prefix' => 'rest'], function () {
+    Route::get('/product/find-by-name', ['as' => 'findByName', 'uses' => 'Rests\ProductRestController@findByName']);
+    Route::post('/tai-anh', ['as' => 'uploadImage', 'uses' => 'Rests\UploadRestController@storeImage']);
+});
+
 
 Route::group(['prefix' => 'quan-tri'], function () {
-    Route::post('/tai-anh', ['as' => 'uploadImage', 'uses' => 'storeImage@store']);
     Route::group(['prefix' => 'nhan-san-pham'], function () {
         Route::get('', ['as' => 'labelView', 'uses' => 'ProductLabelController@index']);
         Route::get('/them-moi', ['as' => 'createLabelView', 'uses' => 'ProductLabelController@create']);
@@ -72,5 +76,14 @@ Route::group(['prefix' => 'quan-tri'], function () {
         Route::get('/them-moi', ['as' => 'createDiscountView', 'uses' => 'DiscountController@create']);
         Route::post('/luu-tru', ['as' => 'createDiscount', 'uses' => 'DiscountController@store']);
         Route::post('/xoa/{id}', ['as' => 'deleteDiscount', 'uses' => 'DiscountController@destroy']);
+    });
+
+    Route::group(['prefix' => 'san-pham'], function () {
+        Route::get('', ['as' => 'productView', 'uses' => 'ProductController@index']);
+        Route::get('/them-moi', ['as' => 'createProductView', 'uses' => 'ProductController@create']);
+        Route::get('/chinh-sua/{id}', ['as' => 'updateProductView', 'uses' => 'ProductController@edit']);
+        Route::post('/luu-tru', ['as' => 'createProduct', 'uses' => 'ProductController@store']);
+        Route::post('/cap-nhat/{id}', ['as' => 'updateProduct', 'uses' => 'ProductController@update']);
+        Route::post('/xoa/{id}', ['as' => 'deleteProduct', 'uses' => 'ProductController@destroy']);
     });
 });

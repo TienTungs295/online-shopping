@@ -3,7 +3,7 @@
     <div class="main-inner">
         <div class="pagetitle">
             <h4>
-                @if(isset($flash_sale))
+                @if(isset($flash_sale->id))
                     Cập nhật flash sale
                 @else
                     Thêm mới flash sale
@@ -17,7 +17,7 @@
                         @include('backend.errors.note')
                         <div class="card-body">
                             <form method="POST"
-                                  action="{!! isset($flash_sale)? route('updateFlashSale',['id' => $flash_sale->id]) : route('createFlashSale') !!}">
+                                  action="{!! isset($flash_sale->id) ? route('updateFlashSale',['id' => $flash_sale->id]) : route('createFlashSale') !!}">
                                 @csrf
                                 <div class="row mb-3">
                                     <div class="col-sm-8">
@@ -44,15 +44,51 @@
                                     <div class="col-sm-12">
                                         <label class="form-label">Sản phẩm</label>
                                         <input class="form-control" id="product-autocomplete">
-                                        <input type="hidden" id="products" name="products" value="">
+                                        <input type="hidden" id="product_ids" name="product_ids"
+                                               value="{!! old('product_ids', isset($flash_sale->product_ids) ? $flash_sale->product_ids : '') !!}">
                                     </div>
                                 </div>
                                 <div class="row mb-3" id="products-selected">
+                                    @if(isset($flash_sale) && !$flash_sale->products->isEmpty())
+                                        @foreach($flash_sale->products as $data)
+                                            <div class="product-item" id="{!! $data->id !!}">
+                                                <div class="alert alert-light border-dark alert-dismissible "
+                                                     role="alert">
+                                                    <div>
+                                                        <img style="margin-right: 20px"
+                                                             src="{!! url('uploads/images/'.$data->image)  !!}"
+                                                             alt="" width="60" height="60">
+                                                        <span>{!! $data->name !!}</span>
+                                                    </div>
+                                                    <button type="button" class="btn-close remove-product"
+                                                            btn-id="{!! $data->id !!}"></button>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label">Giá<span
+                                                                class="text-danger">*</span></label>
+                                                        <input type="number"
+                                                               name="products_extra[{!! $data->id !!}][price]"
+                                                               value="{!! isset($data->pivot->price) ? $data->pivot->price : ''!!}"
+                                                               class="form-control" required>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label">Số lượng<span
+                                                                class="text-danger">*</span></label>
+                                                        <input type="number"
+                                                               value="{!! isset($data->pivot->quantity) ? $data->pivot->quantity : ''!!}"
+                                                               name="products_extra[{!! $data->id !!}][quantity]"
+                                                               class="form-control" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endif
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">
                                         <i class="bi bi-save2 me-1"></i>
-                                        @if(isset($flash_sale))
+                                        @if(isset($flash_sale->id))
                                             Cập nhật
                                         @else
                                             Thêm mới
@@ -73,58 +109,84 @@
 @endsection
 @section("morescripts")
     <script>
+        var APP_URL = {!! json_encode(url('/')) !!};
         $(function () {
             $(".datepicker").datepicker({changeYear: true});
         });
-        var products = [{label: "Choice1", value: "value1"}, {label: "Choice2", value: "value2"}];
-        // $.ajax({
-        //     url: config.url,
-        //     contentType: "json",
-        //     method: "post",
-        //     data: {},
-        //     success: function (response) {
-        //         let products = response.data || [];
-        //         $("#products").autocomplete({
-        //             source: products
-        //         });
-        //     },
-        //     error: function (response) {
-        //         console.error("Error", response)
-        //     }
-        // })
-
         $("#product-autocomplete").autocomplete({
-            source: products,
+            source: function (request, response) {
+                $.ajax({
+                    url: APP_URL + "/rest/product/find-by-name?name=" + request.term,
+                    contentType: "json",
+                    method: "GET",
+                    success: function (res) {
+                        let data = res.data || {};
+                        let products = data.products || [];
+                        let product_data = [];
+                        if (products.length == 0 || products.length == undefined) {
+                            response([]);
+                            return;
+                        }
+                        products.forEach(function (item, index) {
+                            product_data.push({
+                                label: item.name,
+                                value: item.name,
+                                id: item.id,
+                                image: item.image,
+                            })
+                        });
+                        response(product_data);
+                    },
+                    error: function (response) {
+                        console.error("Error", response)
+                    }
+                })
+            },
             search: function (event, ui) {
-                console.log(event.currentTarget.value);
+
             },
             select: function (event, ui) {
-                let existElement = $(document).find("#" + ui.item.value);
+                let existElement = $(document).find("#" + ui.item.id);
                 if (existElement.length != 0) {
-                    return;
+                    $(this).val("");
+                    return false;
                 }
-                var dom = `<div class="product-item" id="` + ui.item.value + `">
+                var dom = `<div class="product-item" id="` + ui.item.id + `">
                                 <div class="alert alert-light border-dark alert-dismissible " role="alert">
                                         <div>
-                                            <img style="margin-right: 20px" src="https://picsum.photos/seed/picsum/200/300" alt="" width="60" height="60">
-                                            <span>Macbook</span>
+                                            <img style="margin-right: 20px" src="` + APP_URL + `/uploads/images/` + ui.item.image + `" alt="" width="60" height="60">
+                                            <span>` + ui.item.value + `</span>
                                         </div>
-                                        <button type="button" class="btn-close remove-product" btn-id="` + ui.item.value + `"></button>
+                                        <button type="button" class="btn-close remove-product" btn-id="` + ui.item.id + `"></button>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-6">
+                                        <label class="form-label">Giá<span
+                                                class="text-danger">*</span></label>
+                                        <input type="number" name="products_extra[` + ui.item.id + `][price]" class="form-control" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="form-label">Số lượng<span
+                                                class="text-danger">*</span></label>
+                                        <input type="number" name="products_extra[` + ui.item.id + `][quantity]" class="form-control" required>
+                                    </div>
                                 </div>
                            </div>`;
 
-                let product_ids = $("#products").val();
+                let product_ids = $("#product_ids").val();
                 let product_id_array = [];
                 if (product_ids != null && product_ids != undefined && product_ids != "") {
                     product_id_array = product_ids.split(",");
                 }
-                if (!product_id_array.includes("" + ui.item.value)) {
-                    product_id_array.push("" + ui.item.value);
+                if (!product_id_array.includes("" + ui.item.id)) {
+                    product_id_array.push("" + ui.item.id);
                 }
                 product_ids = product_id_array.toString();
-                $("#products").val(product_ids);
+                $("#product_ids").val(product_ids);
 
                 $("#products-selected").append(dom);
+                $(this).val("");
+                return false;
             }
         });
 
@@ -132,7 +194,7 @@
             let product_id = event.target.getAttribute("btn-id");
             $("#" + product_id).remove();
 
-            let product_ids = $("#products").val();
+            let product_ids = $("#product_ids").val();
             let product_id_array = [];
             if (product_ids != null && product_ids != undefined && product_ids != "") {
                 product_id_array = product_ids.split(",");
@@ -142,7 +204,7 @@
                 product_id_array.splice(index, 1);
             }
             product_ids = product_id_array.toString();
-            $("#products").val(product_ids);
+            $("#product_ids").val(product_ids);
 
         });
     </script>

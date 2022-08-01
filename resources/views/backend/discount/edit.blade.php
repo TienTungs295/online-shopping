@@ -116,7 +116,8 @@
                                     <div class="col-md-6">
                                         <label class="form-label">Sản phẩm</label>
                                         <input class="form-control" id="product-autocomplete">
-                                        <input type="hidden" id="products" name="products" value="">
+                                        <input type="hidden" id="product_ids" name="product_ids"
+                                               value="{!! old('product_ids', isset($product->product_ids) ? $product->product_ids : '') !!}">
                                     </div>
 
                                     <div class="col-md-6" id="discount-on-block">
@@ -128,6 +129,23 @@
                                     </div>
                                 </div>
                                 <div class="row mb-3" id="products-selected">
+                                    {{--                                    @if(isset($product) && !$product->related_products->isEmpty())--}}
+                                    {{--                                        @foreach($product->related_products as $data)--}}
+                                    {{--                                            <div class="product-item" id="{!! $data->id !!}">--}}
+                                    {{--                                                <div class="alert alert-light border-dark alert-dismissible "--}}
+                                    {{--                                                     role="alert">--}}
+                                    {{--                                                    <div>--}}
+                                    {{--                                                        <img style="margin-right: 20px"--}}
+                                    {{--                                                             src="{!! url('uploads/images/'.$data->image)  !!}"--}}
+                                    {{--                                                             alt="" width="60" height="60">--}}
+                                    {{--                                                        <span>{!! $data->name !!}</span>--}}
+                                    {{--                                                    </div>--}}
+                                    {{--                                                    <button type="button" class="btn-close remove-product"--}}
+                                    {{--                                                            btn-id="{!! $data->id !!}"></button>--}}
+                                    {{--                                                </div>--}}
+                                    {{--                                            </div>--}}
+                                    {{--                                        @endforeach--}}
+                                    {{--                                    @endif--}}
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">
@@ -153,60 +171,74 @@
 @endsection
 @section("morescripts")
     <script>
+        var APP_URL = {!! json_encode(url('/')) !!};
         showHideQuantity();
         showHideProduct();
         showHideDiscountOn();
         changeIcon();
         $(".datepicker").datepicker({changeYear: true});
-        var products = [{label: "Choice1", value: "value1"}, {label: "Choice2", value: "value2"}];
-        // $.ajax({
-        //     url: config.url,
-        //     contentType: "json",
-        //     method: "post",
-        //     data: {},
-        //     success: function (response) {
-        //         let products = response.data || [];
-        //         $("#products").autocomplete({
-        //             source: products
-        //         });
-        //     },
-        //     error: function (response) {
-        //         console.error("Error", response)
-        //     }
-        // })
-
         $("#product-autocomplete").autocomplete({
-            source: products,
+            source: function (request, response) {
+                $.ajax({
+                    url: APP_URL + "/rest/product/find-by-name?name=" + request.term,
+                    contentType: "json",
+                    method: "GET",
+                    success: function (res) {
+                        let data = res.data || {};
+                        let products = data.products || [];
+                        let product_data = [];
+                        if (products.length == 0 || products.length == undefined) {
+                            response([]);
+                            return;
+                        }
+                        products.forEach(function (item, index) {
+                            product_data.push({
+                                label: item.name,
+                                value: item.name,
+                                id: item.id,
+                                image: item.image,
+                            })
+                        });
+                        response(product_data);
+                    },
+                    error: function (response) {
+                        console.error("Error", response)
+                    }
+                })
+            },
             search: function (event, ui) {
-                console.log(event.currentTarget.value);
+
             },
             select: function (event, ui) {
-                let existElement = $(document).find("#" + ui.item.value);
+                let existElement = $(document).find("#" + ui.item.id);
                 if (existElement.length != 0) {
-                    return;
+                    $(this).val("");
+                    return false;
                 }
-                var dom = `<div class="product-item" id="` + ui.item.value + `">
+                var dom = `<div class="product-item" id="` + ui.item.id + `">
                                 <div class="alert alert-light border-dark alert-dismissible " role="alert">
                                         <div>
-                                            <img style="margin-right: 20px" src="https://picsum.photos/seed/picsum/200/300" alt="" width="60" height="60">
-                                            <span>Macbook</span>
+                                            <img style="margin-right: 20px" src="` + APP_URL + `/uploads/images/` + ui.item.image + `" alt="" width="60" height="60">
+                                            <span>` + ui.item.value + `</span>
                                         </div>
-                                        <button type="button" class="btn-close remove-product" btn-id="` + ui.item.value + `"></button>
+                                        <button type="button" class="btn-close remove-product" btn-id="` + ui.item.id + `"></button>
                                 </div>
                            </div>`;
 
-                let product_ids = $("#products").val();
+                let product_ids = $("#product_ids").val();
                 let product_id_array = [];
                 if (product_ids != null && product_ids != undefined && product_ids != "") {
                     product_id_array = product_ids.split(",");
                 }
-                if (!product_id_array.includes("" + ui.item.value)) {
-                    product_id_array.push("" + ui.item.value);
+                if (!product_id_array.includes("" + ui.item.id)) {
+                    product_id_array.push("" + ui.item.id);
                 }
                 product_ids = product_id_array.toString();
-                $("#products").val(product_ids);
+                $("#product_ids").val(product_ids);
 
                 $("#products-selected").append(dom);
+                $(this).val("");
+                return false;
             }
         });
 
@@ -214,7 +246,7 @@
             let product_id = event.target.getAttribute("btn-id");
             $("#" + product_id).remove();
 
-            let product_ids = $("#products").val();
+            let product_ids = $("#product_ids").val();
             let product_id_array = [];
             if (product_ids != null && product_ids != undefined && product_ids != "") {
                 product_id_array = product_ids.split(",");
@@ -224,7 +256,7 @@
                 product_id_array.splice(index, 1);
             }
             product_ids = product_id_array.toString();
-            $("#products").val(product_ids);
+            $("#product_ids").val(product_ids);
 
         });
 

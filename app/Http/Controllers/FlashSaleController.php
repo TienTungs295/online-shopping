@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FlashSale;
+use App\Models\Image;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -38,7 +39,9 @@ class FlashSaleController extends Controller
      */
     public function create()
     {
-        return view('backend.flash-sale.edit');
+        $flash_sale = new FlashSale();
+        $flash_sale->end_date = Carbon::now();
+        return view('backend.flash-sale.edit', compact('flash_sale'));
     }
 
     /**
@@ -49,10 +52,6 @@ class FlashSaleController extends Controller
      */
     public function store(Request $request)
     {
-        $count_exist = FlashSale::where('name', $request->name)->count();
-        if ($count_exist >= 1) {
-            return redirect()->back()->with('error', 'Tên đối tượng đã tồn tại');
-        }
         $request->validate([
             'name' => 'required|max:255',
             'end_date' => 'required',
@@ -90,6 +89,10 @@ class FlashSaleController extends Controller
         } catch (ModelNotFoundException $e) {
             return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }
+        $product_ids = $flash_sale->products()->get()->pluck("id")->toArray();
+        if (count($product_ids) != 0) {
+            $flash_sale->product_ids = implode(",", $product_ids);
+        }
         return view('backend.flash-sale.edit', compact('flash_sale'));
     }
 
@@ -112,13 +115,22 @@ class FlashSaleController extends Controller
             'name' => 'required|max:255',
         ]);
 
-        $count_exist = FlashSale::where('name', $request->name)->where('id', '<>', $id)->count();
-        if ($count_exist >= 1) {
-            return redirect()->back()->with('error', 'Tên đối tượng đã tồn tại');
-        }
         $flash_sale->name = $request->input('name');
-        $flash_sale->end_date = Carbon::createFromFormat('d/m/Y', $request->input('end_date'))->format("Y-m-d");
+        $flash_sale->end_date = Carbon::createFromFormat('d-m-Y', $request->input('end_date'))->format("Y-m-d");
         $flash_sale->update();
+        $this->storeProducts($request, $flash_sale);
+        $product_ids = explode(',', $request->input('product_ids'));
+        $db_pro_ids = $flash_sale->products()->get()->pluck("id");
+        $del_pro_ids = [];
+        foreach ($db_pro_ids as $id) {
+            if (!in_array((int)$id, $product_ids)) {
+                array_push($del_pro_ids, $id);
+            }
+        }
+        if (count($del_pro_ids) != 0) {
+            $flash_sale->products()->detach($del_pro_ids);
+        }
+
         return redirect()->route("flashSaleView")->with('success', 'Success');
     }
 
@@ -143,10 +155,10 @@ class FlashSaleController extends Controller
 
     private function storeProducts($request, $flash_sale)
     {
-        $products = array_filter(explode(',', $request->input('products')));
-
-        foreach ($products as $value) {
-            $extra = Arr::get($request->input('products_extra', []), $value);
+        $product_ids = explode(',', $request->input('product_ids'));
+        if (count($product_ids) == 0) return;
+        foreach ($product_ids as $id) {
+            $extra = Arr::get($request->input('products_extra', []), $id);
 
             if (!$extra || !isset($extra['price']) || !isset($extra['quantity'])) {
                 continue;
@@ -155,11 +167,11 @@ class FlashSaleController extends Controller
             $extra['price'] = (double)$extra['price'];
             $extra['quantity'] = (int)$extra['quantity'];
 
-//            if ($flash_sale->products()->where('id', $productId)->count()) {
-//                $flash_sale->products()->sync([(int)$productId => $extra]);
-//            } else {
-//                $flash_sale->products()->attach($productId, $extra);
-//            }
+            if ($flash_sale->products()->where('id', $id)->count()) {
+                $flash_sale->products()->sync([(int)$id => $extra]);
+            } else {
+                $flash_sale->products()->attach($id, $extra);
+            }
         }
     }
 }

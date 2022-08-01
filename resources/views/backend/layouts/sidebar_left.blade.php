@@ -38,6 +38,12 @@
                 <span>Bài viết</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{!! route("productView") !!}">
+                <i class="bi bi-tags"></i>
+                <span>Sản phẩm</span>
+            </a>
+        </li>
     </ul>
 
 </aside><!-- End Sidebar-->

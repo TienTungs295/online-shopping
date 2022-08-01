@@ -2,8 +2,7 @@
 
 namespace App\Models;
 
-use Botble\Base\Enums\BaseStatusEnum;
-use Botble\Ecommerce\Models\Product;
+use App\Models\Product;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class FlashSale extends Model
 {
     use HasFactory;
+
     /**
      * The database table used by the model.
      *
@@ -75,5 +75,14 @@ class FlashSale extends Model
     public function scopeExpired($query)
     {
         return $query->where('end_date', '<', now()->toDateString());
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function ($flash_sale) {
+            $flash_sale->products()->detach();
+        });
     }
 }
