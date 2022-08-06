@@ -3,7 +3,7 @@
     <div class="main-inner">
         <div class="pagetitle">
             <h4>
-                @if(isset($product))
+                @if(isset($product->id))
                     Cập nhật sản phẩm
                 @else
                     Thêm mới sản phẩm
@@ -17,10 +17,10 @@
                         @include('backend.errors.note')
                         <div class="card-body">
                             <form method="POST"
-                                  action="{!! isset($product)? route('updateProduct',['id' => $product->id]) : route('createProduct') !!}">
+                                  action="{!! isset($product->id)? route('updateProduct',['id' => $product->id]) : route('createProduct') !!}">
                                 @csrf
                                 <input type="hidden" id="product-id" name="product_id"
-                                       value="{!! isset($product) ? $product->id :"" !!}">
+                                       value="{!! isset($product->id) ? $product->id :"" !!}">
                                 <div class="row mb-3">
                                     <div class="col-md-5">
                                         <label class="form-label">Tên<span
@@ -33,7 +33,7 @@
                                         <label class="form-label">Danh mục</label>
                                         <select class="form-select" name="category_id">
                                             <option value="0">Không danh mục</option>
-                                            @include('backend.product-category.tree_select',['product_categories' => $product_categories,'selected_id' => isset($product) ? $product->category_id: '','parent_id' => 0,'prefix'=> ""])
+                                            @include('backend.product-category.tree_select',['product_categories' => $product_categories,'selected_id' => isset($product->id) ? $product->category_id: '','parent_id' => 0,'prefix'=> ""])
                                         </select>
                                     </div>
                                     <div class="col-md-2 d-flex-align-end">
@@ -162,11 +162,11 @@
                                         <label class="form-label">Trạng thái</label>
                                         <select class="form-control" name="stock_status" id="">
                                             <option
-                                                value="1" {!! isset($product) && $product->stock_status == 1 ? 'selected' : ''!!}>
+                                                value="1" {!! isset($product->id) && $product->stock_status == 1 ? 'selected' : ''!!}>
                                                 Còn hàng
                                             </option>
                                             <option
-                                                value="0" {!! isset($product) && $product->stock_status  == 0 ? 'selected' : ''!!}>
+                                                value="0" {!! isset($product->id) && $product->stock_status  == 0 ? 'selected' : ''!!}>
                                                 Hết hàng
                                             </option>
                                         </select>
@@ -181,7 +181,7 @@
                                     </div>
                                 </div>
                                 <div class="row mb-3" id="products-selected">
-                                    @if(isset($product) && !$product->related_products->isEmpty())
+                                    @if(isset($product->id) && !$product->related_products->isEmpty())
                                         @foreach($product->related_products as $data)
                                             <div class="product-item" id="{!! $data->id !!}">
                                                 <div class="alert alert-light border-dark alert-dismissible "
@@ -202,7 +202,7 @@
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">
                                         <i class="bi bi-save2 me-1"></i>
-                                        @if(isset($product))
+                                        @if(isset($product->id))
                                             Cập nhật
                                         @else
                                             Thêm mới

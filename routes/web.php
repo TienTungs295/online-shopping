@@ -15,9 +15,6 @@ Route::get('/product-category', [ProductCategoryController::class, 'index']);
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::group(['prefix' => 'rest'], function () {
     Route::get('/product/find-by-name', ['as' => 'findByName', 'uses' => 'Rests\ProductRestController@findByName']);
@@ -25,7 +22,8 @@ Route::group(['prefix' => 'rest'], function () {
 });
 
 
-Route::group(['prefix' => 'quan-tri'], function () {
+Route::group(['middleware' => 'isMember', 'prefix' => 'quan-tri'], function () {
+    Route::get('/', ['as' => 'homeView', 'uses' => 'HomeController@index']);
     Route::group(['prefix' => 'nhan-san-pham'], function () {
         Route::get('', ['as' => 'labelView', 'uses' => 'ProductLabelController@index']);
         Route::get('/them-moi', ['as' => 'createLabelView', 'uses' => 'ProductLabelController@create']);
@@ -86,4 +84,23 @@ Route::group(['prefix' => 'quan-tri'], function () {
         Route::post('/cap-nhat/{id}', ['as' => 'updateProduct', 'uses' => 'ProductController@update']);
         Route::post('/xoa/{id}', ['as' => 'deleteProduct', 'uses' => 'ProductController@destroy']);
     });
+
+    Route::group(['middleware' => 'isAdmin', 'prefix' => 'nhan-vien'], function () {
+        Route::get('', ['as' => 'userView', 'uses' => 'UserController@index']);
+        Route::get('/them-moi', ['as' => 'createUserView', 'uses' => 'UserController@create']);
+        Route::get('/chinh-sua/{id}', ['as' => 'updateUserView', 'uses' => 'UserController@edit']);
+        Route::post('/luu-tru', ['as' => 'createUser', 'uses' => 'UserController@store']);
+        Route::post('/cap-nhat/{id}', ['as' => 'updateUser', 'uses' => 'UserController@update']);
+        Route::post('/xoa/{id}', ['as' => 'deleteUser', 'uses' => 'UserController@destroy']);
+    });
+});
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });

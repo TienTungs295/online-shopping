@@ -3,7 +3,13 @@
 
     <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-item">
-                <a class="nav-link collapsed" href="{!! route("labelView") !!}">
+            <a class="nav-link collapsed" href="{!! route("homeView") !!}">
+                <i class="bi bi-tags"></i>
+                <span>Trang chủ</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{!! route("labelView") !!}">
                 <i class="bi bi-tags"></i>
                 <span>Nhãn</span>
             </a>
@@ -17,7 +23,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="{!! route("flashSaleView") !!}">
                 <i class="bi bi-tags"></i>
-                <span>Sale chớp nhoáng</span>
+                <span>Flash Sale</span>
             </a>
         </li>
         <li class="nav-item">
@@ -44,6 +50,14 @@
                 <span>Sản phẩm</span>
             </a>
         </li>
+        @if((auth()->user()->role & 2) > 0)
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{!! route("userView") !!}">
+                    <i class="bi bi-tags"></i>
+                    <span>Nhân viên</span>
+                </a>
+            </li>
+        @endif
     </ul>
 
 </aside><!-- End Sidebar-->
