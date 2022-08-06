@@ -172,6 +172,43 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="row mb-3" id="stock-status-block">
+                                    <div class="col">
+                                        <label class="form-label d-block">Bộ sưu tập</label>
+                                        @if(!empty($collections))
+                                            @foreach($collections as $data)
+                                                <div class="form-check d-inline-flex mr-10">
+                                                    <input class="form-check-input" type="checkbox"
+                                                           value="{!! $data->id !!}"
+                                                           name="collections[]"
+                                                        {!! isset($product->collection_ids) && in_array($data->id, $product->collection_ids) ? 'checked' : ''!!}>
+                                                    <label class="ml-10 form-check-label">
+                                                        {!! $data->name !!}
+                                                    </label>
+                                                </div>
+                                            @endforeach
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3" id="stock-status-block">
+                                    <div class="col">
+                                        <label class="form-label d-block">Nhãn</label>
+                                        @if(!empty($labels))
+                                            @foreach($labels as $data)
+                                                <div class="form-check d-inline-flex mr-10">
+                                                    <input class="form-check-input" type="checkbox"
+                                                           value="{!! $data->id !!}"
+                                                           name="labels[]" {!! isset($product->label_ids) && in_array($data->id, $product->label_ids) ? 'checked' : ''!!}>
+                                                    <label class="ml-10 form-check-label">
+                                                        {!! $data->name !!}
+                                                    </label>
+                                                </div>
+                                            @endforeach
+                                        @endif
+                                    </div>
+                                </div>
+
                                 <div class="row mb-3">
                                     <div class="col">
                                         <label class="form-label">Sản phẩm liên quan</label>

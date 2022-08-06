@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\ProductCollection;
+use App\Models\ProductLabel;
 use App\Models\RelatedProduct;
 use App\Models\Image;
 use Carbon\Carbon;
@@ -44,7 +46,9 @@ class ProductController extends Controller
     public function create()
     {
         $product_categories = ProductCategory::all()->toArray();
-        return view('backend.product.edit', compact('product_categories'));
+        $labels = ProductLabel::all();
+        $collections = ProductCollection::all();
+        return view('backend.product.edit', compact('product_categories', 'labels', 'collections'));
     }
 
     /**
@@ -123,11 +127,15 @@ class ProductController extends Controller
         if ($related_product_ids) {
             $related_product_ids = explode(",", $related_product_ids);
         }
+        $labels = $request->input("labels");
+        $collections = $request->input("collections");
 
         DB::beginTransaction();
         try {
             $product->save();
             $product->images()->saveMany($images);
+            $product->productLabels()->attach($labels);
+            $product->productCollections()->attach($collections);
             $related_products = [];
             if ($related_product_ids) {
                 foreach ($related_product_ids as $related_product_id) {
@@ -185,7 +193,11 @@ class ProductController extends Controller
             $product->related_product_ids = implode(",", $related_product_ids);
         }
         $product_categories = ProductCategory::all()->toArray();
-        return view('backend.product.edit', compact('product', 'product_categories'));
+        $labels = ProductLabel::all();
+        $collections = ProductCollection::all();
+        $product->label_ids = $product->productLabels()->get()->pluck("id")->toArray();
+        $product->collection_ids = $product->productCollections()->get()->pluck("id")->toArray();
+        return view('backend.product.edit', compact('product', 'product_categories', 'labels', 'collections'));
     }
 
     /**
@@ -319,12 +331,16 @@ class ProductController extends Controller
                 array_push($del_related_product_ids, $id);
             }
         }
+        $labels = $request->input("labels");
+        $collections = $request->input("collections");
 
         DB::beginTransaction();
         try {
             $product->update();
             $product->images()->saveMany($new_images);
             $product->images()->whereIn('id', $del_image_ids)->delete();
+            $product->productLabels()->sync($labels);
+            $product->productCollections()->sync($collections);
             RelatedProduct::whereIn('to_product_id', $del_related_product_ids)->delete();
             RelatedProduct::insert($new_related_products);
             DB::commit();

@@ -134,9 +134,11 @@ class Product extends Model
     {
         parent::boot();
 
-        static::deleting(function ($product) { // before delete() method call this
+        static::deleting(function ($product) {
             $product->discounts()->detach();
             $product->flashSales()->detach();
+            $product->productLabels()->detach();
+            $product->productCollections()->detach();
         });
     }
 }
