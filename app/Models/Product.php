@@ -62,6 +62,31 @@ class Product extends Model
         'stock_status',
     ];
 
+    protected $appends = ['real_price', 'on_sale'];
+
+
+    public function getRealPriceAttribute()
+    {
+        if (($this->sale_price != 0) &&
+            (($this->start_date == null && $this->end_date == null)
+                || ($this->start_date == null && $this->end_date >= now())
+                || ($this->start_date <= now() && $this->end_date == null)
+                || ($this->start_date <= now() && $this->end_date >= now()))) {
+            return $this->sale_price;
+        } else {
+            return $this->price;
+        }
+    }
+
+    public function getOnSaleAttribute()
+    {
+        return (($this->sale_price != 0) &&
+            (($this->start_date == null && $this->end_date == null)
+                || ($this->start_date == null && $this->end_date >= now())
+                || ($this->start_date <= now() && $this->end_date == null)
+                || ($this->start_date <= now() && $this->end_date >= now())));
+    }
+
     /**
      * @return BelongsToMany
      */

@@ -17,7 +17,23 @@ Route::get('/product-category', [ProductCategoryController::class, 'index']);
 
 
 Route::group(['prefix' => 'rest'], function () {
-    Route::get('/product/find-by-name', ['as' => 'findByName', 'uses' => 'Rests\ProductRestController@findByName']);
+    Route::group(['prefix' => 'product'], function () {
+        Route::get('/find-by-name', ['uses' => 'Rests\ProductRestController@findByName']);
+        Route::get('/find-by-collection', ['uses' => 'Rests\ProductRestController@findByCollection']);
+        Route::get('/find-all', ['uses' => 'Rests\ProductRestController@findAll']);
+        Route::get('/find-top', ['uses' => 'Rests\ProductRestController@findTop']);
+        Route::get('/find-on-sale', ['uses' => 'Rests\ProductRestController@findOnSale']);
+        Route::get('/detail', ['uses' => 'Rests\ProductRestController@detail']);
+    });
+    Route::group(['prefix' => 'category'], function () {
+        Route::get('/find-all', ['uses' => 'Rests\CategoryRestController@findAll']);
+        Route::get('/find-top', ['uses' => 'Rests\CategoryRestController@findTop']);
+    });
+    Route::group(['prefix' => 'blog'], function () {
+        Route::get('/find-all', ['uses' => 'Rests\BlogRestController@findAll']);
+        Route::get('/detail', ['uses' => 'Rests\BlogRestController@detail']);
+        Route::get('/related', ['uses' => 'Rests\BlogRestController@related']);
+    });
     Route::post('/tai-anh', ['as' => 'uploadImage', 'uses' => 'Rests\UploadRestController@storeImage']);
 });
 
