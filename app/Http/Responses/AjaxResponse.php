@@ -48,7 +48,7 @@ class AjaxResponse
     public function toApiResponse()
     {
         return response()->json(array(
-            'satus' => $this->status,
+            'status' => $this->status,
             'message' => $this->message,
             'data' => $this->data
         ), 200);

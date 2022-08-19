@@ -1,11 +1,10 @@
-import Example from './components/ExampleComponent'
+import Example from './components/HomeComponent'
 
 const routes = [
     {
-        path: '/test',
-        alias: "/test",
-        name: "test",
-        component: () => import("./components/ExampleComponent"),
+        path: '/',
+        name: "home",
+        component: () => import("./components/HomeComponent"),
     }
 ];
 

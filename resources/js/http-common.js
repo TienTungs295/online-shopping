@@ -14,17 +14,12 @@ http.interceptors.request.use(function (config) {
     return Promise.reject(error);
 });
 http.interceptors.response.use(function (response) {
-    console.log(this.$refs.test)
-    console.log(this.$test)
-    // this.$root.$vue_toastr.s(
-    //     "This Message From Toastr Plugin\n You can access this plugin : <font color='yellow'>this.$toastr</font>"
-    // );
     let data = response.data || {};
     if (data.status == SUCCESS) {
-        if (error.config.alert) {
-
-        }
-        return data;
+        // if (error.config.alert) {
+        //
+        // }
+        return data.data;
     } else {
         return Promise.reject(data);
     }

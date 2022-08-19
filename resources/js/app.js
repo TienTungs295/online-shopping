@@ -19,18 +19,14 @@ window.Vue = require('vue').default;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent'));
-Vue.component('app-component', require('./components/App'));
+Vue.component('header-component', require('./components/layouts/HeaderComponent').default);
+Vue.component('footer-component', require('./components/layouts/FooterComponent').default);
 
-// import vue router, component và routes
 import App from './components/App';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueToastr from "vue-toastr";
 import routes from './routes';
-Vue.prototype.vue_toastr= 'My App'
-Vue.prototype.$test = "Test"
-
 
 Vue.use(VueRouter);
 Vue.use(VueToastr, {
@@ -45,11 +41,13 @@ const router = new VueRouter({
     routes
 });
 
-
 const app = new Vue({
     el: '#app',
     render: h => h(App),
     router
 });
+
+Vue.prototype.vue_toastr = 'My App'
+Vue.prototype.$test = "Test"
 
 
