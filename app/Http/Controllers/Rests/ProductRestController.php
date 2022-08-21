@@ -31,14 +31,17 @@ class ProductRestController extends Controller
         $ajax_response = new AjaxResponse();
         $collection_id = $request->input('collection_id');
         try {
-            ProductCollection::findOrFail($collection_id);
+            if (!isset($collection_id)) $collection_id = ProductCollection::firstOrFail()->id;
+            else ProductCollection::findOrFail($collection_id);
         } catch (ModelNotFoundException $e) {
             return $ajax_response->setMessage("Đối tượng không tồn tại hoặc đã bị xóa")->toApiResponse();
         }
-
-        $products = Product::whereHas('productCollections', function ($query) use ($collection_id) {
-            $query->where('product_collection_id', $collection_id);
-        })->orderBy('id', 'DESC')->simplePaginate(2);
+        $products = [];
+        if (isset($collection_id)) {
+            $products = Product::whereHas('productCollections', function ($query) use ($collection_id) {
+                $query->where('product_collection_id', $collection_id);
+            })->orderBy('id', 'DESC')->simplePaginate(3);
+        }
         return $ajax_response->setData($products)->toApiResponse();
     }
 

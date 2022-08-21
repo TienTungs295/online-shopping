@@ -34,6 +34,10 @@ Route::group(['prefix' => 'rest'], function () {
         Route::get('/detail', ['uses' => 'Rests\BlogRestController@detail']);
         Route::get('/related', ['uses' => 'Rests\BlogRestController@related']);
     });
+
+    Route::group(['prefix' => 'collection'], function () {
+        Route::get('/find-all', ['uses' => 'Rests\CollectionRestController@findAll']);
+    });
     Route::post('/tai-anh', ['as' => 'uploadImage', 'uses' => 'Rests\UploadRestController@storeImage']);
 });
 

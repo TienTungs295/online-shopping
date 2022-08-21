@@ -5,9 +5,8 @@
         <footer-component></footer-component>
     </div>
 </template>
-<style lang="scss">
-@import '../../sass/front/style';
-</style>
+<!--<style lang="scss">-->
+<!--</style>-->
 <script>
 export default {
     name: "App",

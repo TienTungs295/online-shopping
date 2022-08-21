@@ -5275,7 +5275,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "App",
   mounted: function mounted() {}
@@ -5294,7 +5293,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _services_CategoryService__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/CategoryService */ "./resources/js/services/CategoryService.js");
+/* harmony import */ var _services_ProductService__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/ProductService */ "./resources/js/services/ProductService.js");
+/* harmony import */ var _services_CategoryService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/CategoryService */ "./resources/js/services/CategoryService.js");
+/* harmony import */ var _services_CollectionService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/CollectionService */ "./resources/js/services/CollectionService.js");
 //
 //
 //
@@ -5820,21 +5821,2018 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Home",
   data: function data() {
     return {
-      categories: []
+      categories: [],
+      collections: [],
+      products_by_collection: [],
+      currentIndex: 0
     };
   },
-  mounted: function mounted() {
-    var _this = this;
+  methods: {
+    changeCollection: function changeCollection(collection_id, index) {
+      var _this = this;
 
-    _services_CategoryService__WEBPACK_IMPORTED_MODULE_0__["default"].findAll().then(function (response) {
+      this.currentIndex = index;
+      _services_ProductService__WEBPACK_IMPORTED_MODULE_0__["default"].findByCollection(collection_id).then(function (response) {
+        var data = response.data || [];
+        _this.products_by_collection = data;
+      })["catch"](function (e) {});
+    }
+  },
+  mounted: function mounted() {
+    var _this2 = this;
+
+    _services_CategoryService__WEBPACK_IMPORTED_MODULE_1__["default"].findAll().then(function (response) {
       var data = response || [];
-      _this.categories = data;
+      _this2.categories = data;
     })["catch"](function (e) {});
+    _services_CollectionService__WEBPACK_IMPORTED_MODULE_2__["default"].findAll().then(function (response) {
+      var data = response || [];
+      _this2.collections = data;
+    })["catch"](function (e) {});
+    this.changeCollection();
   }
 });
 
@@ -5851,6 +7849,87 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5940,6 +8019,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _services_CategoryService__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../services/CategoryService */ "./resources/js/services/CategoryService.js");
 //
 //
 //
@@ -6087,13 +8167,398 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Header",
-  mounted: function mounted() {// ProductService.findByCollection(1, true)
-    //     .then(response => {
-    //     })
-    //     .catch(e => {
-    //     });
+  data: function data() {
+    return {
+      categories: []
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    _services_CategoryService__WEBPACK_IMPORTED_MODULE_0__["default"].findAll().then(function (response) {
+      var data = response || [];
+      _this.categories = data;
+    })["catch"](function (e) {});
   }
 });
 
@@ -6306,6 +8771,92 @@ var CategoryService = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new CategoryService());
+
+/***/ }),
+
+/***/ "./resources/js/services/CollectionService.js":
+/*!****************************************************!*\
+  !*** ./resources/js/services/CollectionService.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _http_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../http-common */ "./resources/js/http-common.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+
+var PREFIX_URL = "/rest/collection/";
+
+var CollectionService = /*#__PURE__*/function () {
+  function CollectionService() {
+    _classCallCheck(this, CollectionService);
+  }
+
+  _createClass(CollectionService, [{
+    key: "findAll",
+    value: function findAll(alert) {
+      return _http_common__WEBPACK_IMPORTED_MODULE_0__["default"].get(PREFIX_URL + "find-all", {
+        alert: alert
+      });
+    }
+  }]);
+
+  return CollectionService;
+}();
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new CollectionService());
+
+/***/ }),
+
+/***/ "./resources/js/services/ProductService.js":
+/*!*************************************************!*\
+  !*** ./resources/js/services/ProductService.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _http_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../http-common */ "./resources/js/http-common.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+
+var PREFIX_URL = "/rest/product/";
+
+var ProductService = /*#__PURE__*/function () {
+  function ProductService() {
+    _classCallCheck(this, ProductService);
+  }
+
+  _createClass(ProductService, [{
+    key: "findByCollection",
+    value: function findByCollection($collection_id, alert) {
+      var url = PREFIX_URL + "find-by-collection";
+      if ($collection_id != null) url = url += "?collection_id=" + $collection_id;
+      return _http_common__WEBPACK_IMPORTED_MODULE_0__["default"].get(url, {
+        alert: alert
+      });
+    }
+  }]);
+
+  return ProductService;
+}();
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new ProductService());
 
 /***/ }),
 
@@ -11538,415 +14089,6 @@ defineJQueryPlugin(Toast);
 
 //# sourceMappingURL=bootstrap.esm.js.map
 
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/App.vue?vue&type=style&index=0&lang=scss&":
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/App.vue?vue&type=style&index=0&lang=scss& ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "/******************************************************************\n  Template Name: Ogani\n  Description:  Ogani eCommerce  HTML Template\n  Author: Colorlib\n  Author URI: https://colorlib.com\n  Version: 1.0\n  Created: Colorlib\n******************************************************************/\n/*------------------------------------------------------------------\n[Table of contents]\n\n1.  Template default CSS\n\t1.1\tVariables\n\t1.2\tMixins\n\t1.3\tFlexbox\n\t1.4\tReset\n2.  Helper Css\n3.  Header Section\n4.  Hero Section\n5.  Service Section\n6.  Categories Section\n7.  Featured Section\n8.  Latest Product Section\n9.  Contact\n10.  Footer Style\n-------------------------------------------------------------------*/\n/*----------------------------------------*/\n/* Template default CSS\n/*----------------------------------------*/\nhtml,\nbody {\n  height: 100%;\n  font-family: \"Cairo\", sans-serif;\n  -webkit-font-smoothing: antialiased;\n  font-smoothing: antialiased;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin: 0;\n  color: #111111;\n  font-weight: 400;\n  font-family: \"Cairo\", sans-serif;\n}\nh1 {\n  font-size: 70px;\n}\nh2 {\n  font-size: 36px;\n}\nh3 {\n  font-size: 30px;\n}\nh4 {\n  font-size: 24px;\n}\nh5 {\n  font-size: 18px;\n}\nh6 {\n  font-size: 16px;\n}\np {\n  font-size: 16px;\n  font-family: \"Cairo\", sans-serif;\n  color: #6f6f6f;\n  font-weight: 400;\n  line-height: 26px;\n  margin: 0 0 15px 0;\n}\nimg {\n  max-width: 100%;\n}\ninput:focus,\nselect:focus,\nbutton:focus,\ntextarea:focus {\n  outline: none;\n}\na:hover,\na:focus {\n  text-decoration: none;\n  outline: none;\n  color: #ffffff;\n}\nul,\nol {\n  padding: 0;\n  margin: 0;\n}\n\n/*---------------------\n  Helper CSS\n-----------------------*/\n.section-title {\n  margin-bottom: 50px;\n  text-align: center;\n}\n.section-title h2 {\n  color: #1c1c1c;\n  font-weight: 700;\n  position: relative;\n}\n.section-title h2:after {\n  position: absolute;\n  left: 0;\n  bottom: -15px;\n  right: 0;\n  height: 4px;\n  width: 80px;\n  background: #7fad39;\n  content: \"\";\n  margin: 0 auto;\n}\n.set-bg {\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: top center;\n}\n.spad {\n  padding-top: 100px;\n  padding-bottom: 100px;\n}\n.text-white h1,\n.text-white h2,\n.text-white h3,\n.text-white h4,\n.text-white h5,\n.text-white h6,\n.text-white p,\n.text-white span,\n.text-white li,\n.text-white a {\n  color: #fff;\n}\n\n/* buttons */\n.primary-btn {\n  display: inline-block;\n  font-size: 14px;\n  padding: 10px 28px 10px;\n  color: #ffffff;\n  text-transform: uppercase;\n  font-weight: 700;\n  background: #7fad39;\n  letter-spacing: 2px;\n}\n.site-btn {\n  font-size: 14px;\n  color: #ffffff;\n  font-weight: 800;\n  text-transform: uppercase;\n  display: inline-block;\n  padding: 13px 30px 12px;\n  background: #7fad39;\n  border: none;\n}\n\n/* Preloder */\n#preloder {\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  z-index: 999999;\n  background: #000;\n}\n.loader {\n  width: 40px;\n  height: 40px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  margin-top: -13px;\n  margin-left: -13px;\n  border-radius: 60px;\n  animation: loader 0.8s linear infinite;\n  -webkit-animation: loader 0.8s linear infinite;\n}\n@keyframes loader {\n0% {\n    transform: rotate(0deg);\n    border: 4px solid #f44336;\n    border-left-color: transparent;\n}\n50% {\n    transform: rotate(180deg);\n    border: 4px solid #673ab7;\n    border-left-color: transparent;\n}\n100% {\n    transform: rotate(360deg);\n    border: 4px solid #f44336;\n    border-left-color: transparent;\n}\n}\n@-webkit-keyframes loader {\n0% {\n    -webkit-transform: rotate(0deg);\n    border: 4px solid #f44336;\n    border-left-color: transparent;\n}\n50% {\n    -webkit-transform: rotate(180deg);\n    border: 4px solid #673ab7;\n    border-left-color: transparent;\n}\n100% {\n    -webkit-transform: rotate(360deg);\n    border: 4px solid #f44336;\n    border-left-color: transparent;\n}\n}\n/*---------------------\n  Header\n-----------------------*/\n.header__top {\n  background: #f5f5f5;\n}\n.header__top__left {\n  padding: 10px 0 13px;\n}\n.header__top__left ul li {\n  font-size: 14px;\n  color: #1c1c1c;\n  display: inline-block;\n  margin-right: 45px;\n  position: relative;\n}\n.header__top__left ul li:after {\n  position: absolute;\n  right: -25px;\n  top: 1px;\n  height: 20px;\n  width: 1px;\n  background: #000000;\n  opacity: 0.1;\n  content: \"\";\n}\n.header__top__left ul li:last-child {\n  margin-right: 0;\n}\n.header__top__left ul li:last-child:after {\n  display: none;\n}\n.header__top__left ul li i {\n  color: #252525;\n  margin-right: 5px;\n}\n.header__top__right {\n  text-align: right;\n  padding: 10px 0 13px;\n}\n.header__top__right__social {\n  position: relative;\n  display: inline-block;\n  margin-right: 35px;\n}\n.header__top__right__social:after {\n  position: absolute;\n  right: -20px;\n  top: 1px;\n  height: 20px;\n  width: 1px;\n  background: #000000;\n  opacity: 0.1;\n  content: \"\";\n}\n.header__top__right__social a {\n  font-size: 14px;\n  display: inline-block;\n  color: #1c1c1c;\n  margin-right: 20px;\n}\n.header__top__right__social a:last-child {\n  margin-right: 0;\n}\n.header__top__right__language {\n  position: relative;\n  display: inline-block;\n  margin-right: 40px;\n  cursor: pointer;\n}\n.header__top__right__language:hover ul {\n  top: 23px;\n  opacity: 1;\n  visibility: visible;\n}\n.header__top__right__language:after {\n  position: absolute;\n  right: -21px;\n  top: 1px;\n  height: 20px;\n  width: 1px;\n  background: #000000;\n  opacity: 0.1;\n  content: \"\";\n}\n.header__top__right__language img {\n  margin-right: 6px;\n}\n.header__top__right__language div {\n  font-size: 14px;\n  color: #1c1c1c;\n  display: inline-block;\n  margin-right: 4px;\n}\n.header__top__right__language span {\n  font-size: 14px;\n  color: #1c1c1c;\n  position: relative;\n  top: 2px;\n}\n.header__top__right__language ul {\n  background: #222222;\n  width: 100px;\n  text-align: left;\n  padding: 5px 0;\n  position: absolute;\n  left: 0;\n  top: 43px;\n  z-index: 9;\n  opacity: 0;\n  visibility: hidden;\n  transition: all, 0.3s;\n}\n.header__top__right__language ul li {\n  list-style: none;\n}\n.header__top__right__language ul li a {\n  font-size: 14px;\n  color: #ffffff;\n  padding: 5px 10px;\n}\n.header__top__right__auth {\n  display: inline-block;\n}\n.header__top__right__auth a {\n  display: block;\n  font-size: 14px;\n  color: #1c1c1c;\n}\n.header__top__right__auth a i {\n  margin-right: 6px;\n}\n.header__logo {\n  padding: 15px 0;\n}\n.header__logo a {\n  display: inline-block;\n}\n.header__menu {\n  padding: 24px 0;\n}\n.header__menu ul li {\n  list-style: none;\n  display: inline-block;\n  margin-right: 50px;\n  position: relative;\n}\n.header__menu ul li .header__menu__dropdown {\n  position: absolute;\n  left: 0;\n  top: 50px;\n  background: #222222;\n  width: 180px;\n  z-index: 9;\n  padding: 5px 0;\n  transition: all, 0.3s;\n  opacity: 0;\n  visibility: hidden;\n}\n.header__menu ul li .header__menu__dropdown li {\n  margin-right: 0;\n  display: block;\n}\n.header__menu ul li .header__menu__dropdown li:hover > a {\n  color: #7fad39;\n}\n.header__menu ul li .header__menu__dropdown li a {\n  text-transform: capitalize;\n  color: #ffffff;\n  font-weight: 400;\n  padding: 5px 15px;\n}\n.header__menu ul li.active a {\n  color: #7fad39;\n}\n.header__menu ul li:hover .header__menu__dropdown {\n  top: 30px;\n  opacity: 1;\n  visibility: visible;\n}\n.header__menu ul li:hover > a {\n  color: #7fad39;\n}\n.header__menu ul li:last-child {\n  margin-right: 0;\n}\n.header__menu ul li a {\n  font-size: 14px;\n  color: #252525;\n  text-transform: uppercase;\n  font-weight: 700;\n  letter-spacing: 2px;\n  transition: all, 0.3s;\n  padding: 5px 0;\n  display: block;\n}\n.header__cart {\n  text-align: right;\n  padding: 24px 0;\n}\n.header__cart ul {\n  display: inline-block;\n  margin-right: 25px;\n}\n.header__cart ul li {\n  list-style: none;\n  display: inline-block;\n  margin-right: 15px;\n}\n.header__cart ul li:last-child {\n  margin-right: 0;\n}\n.header__cart ul li a {\n  position: relative;\n}\n.header__cart ul li a i {\n  font-size: 18px;\n  color: #1c1c1c;\n}\n.header__cart ul li a span {\n  height: 13px;\n  width: 13px;\n  background: #7fad39;\n  font-size: 10px;\n  color: #ffffff;\n  line-height: 13px;\n  text-align: center;\n  font-weight: 700;\n  display: inline-block;\n  border-radius: 50%;\n  position: absolute;\n  top: 0;\n  right: -12px;\n}\n.header__cart .header__cart__price {\n  font-size: 14px;\n  color: #6f6f6f;\n  display: inline-block;\n}\n.header__cart .header__cart__price span {\n  color: #252525;\n  font-weight: 700;\n}\n.humberger__menu__wrapper {\n  display: none;\n}\n.humberger__open {\n  display: none;\n}\n\n/*---------------------\n  Hero\n-----------------------*/\n.hero {\n  padding-bottom: 50px;\n}\n.hero.hero-normal {\n  padding-bottom: 30px;\n}\n.hero.hero-normal .hero__categories {\n  position: relative;\n}\n.hero.hero-normal .hero__categories ul {\n  display: none;\n  position: absolute;\n  left: 0;\n  top: 46px;\n  width: 100%;\n  z-index: 9;\n  background: #ffffff;\n}\n.hero.hero-normal .hero__search {\n  margin-bottom: 0;\n}\n.hero__categories__all {\n  background: #7fad39;\n  position: relative;\n  padding: 10px 25px 10px 40px;\n  cursor: pointer;\n}\n.hero__categories__all i {\n  font-size: 16px;\n  color: #ffffff;\n  margin-right: 10px;\n}\n.hero__categories__all span {\n  font-size: 18px;\n  font-weight: 700;\n  color: #ffffff;\n}\n.hero__categories__all:after {\n  position: absolute;\n  right: 18px;\n  top: 9px;\n  content: \"3\";\n  font-family: \"ElegantIcons\";\n  font-size: 18px;\n  color: #ffffff;\n}\n.hero__categories ul {\n  border: 1px solid #ebebeb;\n  padding-left: 40px;\n  padding-top: 10px;\n  padding-bottom: 12px;\n}\n.hero__categories ul li {\n  list-style: none;\n}\n.hero__categories ul li a {\n  font-size: 16px;\n  color: #1c1c1c;\n  line-height: 39px;\n  display: block;\n}\n.hero__search {\n  overflow: hidden;\n  margin-bottom: 30px;\n}\n.hero__search__form {\n  width: 610px;\n  height: 50px;\n  border: 1px solid #ebebeb;\n  position: relative;\n  float: left;\n}\n.hero__search__form form .hero__search__categories {\n  width: 30%;\n  float: left;\n  font-size: 16px;\n  color: #1c1c1c;\n  font-weight: 700;\n  padding-left: 18px;\n  padding-top: 11px;\n  position: relative;\n}\n.hero__search__form form .hero__search__categories:after {\n  position: absolute;\n  right: 0;\n  top: 14px;\n  height: 20px;\n  width: 1px;\n  background: #000000;\n  opacity: 0.1;\n  content: \"\";\n}\n.hero__search__form form .hero__search__categories span {\n  position: absolute;\n  right: 14px;\n  top: 14px;\n}\n.hero__search__form form input {\n  width: 70%;\n  border: none;\n  height: 48px;\n  font-size: 16px;\n  color: #b2b2b2;\n  padding-left: 20px;\n}\n.hero__search__form form input::-moz-placeholder {\n  color: #b2b2b2;\n}\n.hero__search__form form input::placeholder {\n  color: #b2b2b2;\n}\n.hero__search__form form button {\n  position: absolute;\n  right: 0;\n  top: -1px;\n  height: 50px;\n}\n.hero__search__phone {\n  float: right;\n}\n.hero__search__phone__icon {\n  font-size: 18px;\n  color: #7fad39;\n  height: 50px;\n  width: 50px;\n  background: #f5f5f5;\n  line-height: 50px;\n  text-align: center;\n  border-radius: 50%;\n  float: left;\n  margin-right: 20px;\n}\n.hero__search__phone__text {\n  overflow: hidden;\n}\n.hero__search__phone__text h5 {\n  color: #1c1c1c;\n  font-weight: 700;\n  margin-bottom: 5px;\n}\n.hero__search__phone__text span {\n  font-size: 14px;\n  color: #6f6f6f;\n}\n.hero__item {\n  height: 431px;\n  display: flex;\n  align-items: center;\n  padding-left: 75px;\n}\n.hero__text span {\n  font-size: 14px;\n  text-transform: uppercase;\n  font-weight: 700;\n  letter-spacing: 4px;\n  color: #7fad39;\n}\n.hero__text h2 {\n  font-size: 46px;\n  color: #252525;\n  line-height: 52px;\n  font-weight: 700;\n  margin: 10px 0;\n}\n.hero__text p {\n  margin-bottom: 35px;\n}\n\n/*---------------------\n  Categories\n-----------------------*/\n.categories__item {\n  height: 270px;\n  position: relative;\n}\n.categories__item h5 {\n  position: absolute;\n  left: 0;\n  width: 100%;\n  padding: 0 20px;\n  bottom: 20px;\n  text-align: center;\n}\n.categories__item h5 a {\n  font-size: 18px;\n  color: #1c1c1c;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 2px;\n  padding: 12px 0 10px;\n  background: #ffffff;\n  display: block;\n}\n.categories__slider .col-lg-3 {\n  max-width: 100%;\n}\n.categories__slider.owl-carousel .owl-nav button {\n  font-size: 18px;\n  color: #1c1c1c;\n  height: 70px;\n  width: 30px;\n  line-height: 70px;\n  text-align: center;\n  border: 1px solid #ebebeb;\n  position: absolute;\n  left: -35px;\n  top: 50%;\n  -webkit-transform: translateY(-35px);\n  background: #ffffff;\n}\n.categories__slider.owl-carousel .owl-nav button.owl-next {\n  left: auto;\n  right: -35px;\n}\n\n/*---------------------\n  Featured\n-----------------------*/\n.featured {\n  padding-top: 80px;\n  padding-bottom: 40px;\n}\n.featured__controls {\n  text-align: center;\n  margin-bottom: 50px;\n}\n.featured__controls ul li {\n  list-style: none;\n  font-size: 18px;\n  color: #1c1c1c;\n  display: inline-block;\n  margin-right: 25px;\n  position: relative;\n  cursor: pointer;\n}\n.featured__controls ul li.active:after {\n  opacity: 1;\n}\n.featured__controls ul li:after {\n  position: absolute;\n  left: 0;\n  bottom: -2px;\n  width: 100%;\n  height: 2px;\n  background: #7fad39;\n  content: \"\";\n  opacity: 0;\n}\n.featured__controls ul li:last-child {\n  margin-right: 0;\n}\n.featured__item {\n  margin-bottom: 50px;\n}\n.featured__item:hover .featured__item__pic .featured__item__pic__hover {\n  bottom: 20px;\n}\n.featured__item__pic {\n  height: 270px;\n  position: relative;\n  overflow: hidden;\n  background-position: center center;\n}\n.featured__item__pic__hover {\n  position: absolute;\n  left: 0;\n  bottom: -50px;\n  width: 100%;\n  text-align: center;\n  transition: all, 0.5s;\n}\n.featured__item__pic__hover li {\n  list-style: none;\n  display: inline-block;\n  margin-right: 6px;\n}\n.featured__item__pic__hover li:last-child {\n  margin-right: 0;\n}\n.featured__item__pic__hover li:hover a {\n  background: #7fad39;\n  border-color: #7fad39;\n}\n.featured__item__pic__hover li:hover a i {\n  color: #ffffff;\n  transform: rotate(360deg);\n}\n.featured__item__pic__hover li a {\n  font-size: 16px;\n  color: #1c1c1c;\n  height: 40px;\n  width: 40px;\n  line-height: 40px;\n  text-align: center;\n  border: 1px solid #ebebeb;\n  background: #ffffff;\n  display: block;\n  border-radius: 50%;\n  transition: all, 0.5s;\n}\n.featured__item__pic__hover li a i {\n  position: relative;\n  transform: rotate(0);\n  transition: all, 0.3s;\n}\n.featured__item__text {\n  text-align: center;\n  padding-top: 15px;\n}\n.featured__item__text h6 {\n  margin-bottom: 10px;\n}\n.featured__item__text h6 a {\n  color: #252525;\n}\n.featured__item__text h5 {\n  color: #252525;\n  font-weight: 700;\n}\n\n/*---------------------\n  Latest Product\n-----------------------*/\n.latest-product {\n  padding-top: 80px;\n  padding-bottom: 0;\n}\n.latest-product__text h4 {\n  font-weight: 700;\n  color: #1c1c1c;\n  margin-bottom: 45px;\n}\n.latest-product__slider.owl-carousel .owl-nav {\n  position: absolute;\n  right: 20px;\n  top: -75px;\n}\n.latest-product__slider.owl-carousel .owl-nav button {\n  height: 30px;\n  width: 30px;\n  background: #F3F6FA;\n  border: 1px solid #e6e6e6;\n  font-size: 14px;\n  color: #636363;\n  margin-right: 10px;\n  line-height: 30px;\n  text-align: center;\n}\n.latest-product__slider.owl-carousel .owl-nav button span {\n  font-weight: 700;\n}\n.latest-product__slider.owl-carousel .owl-nav button:last-child {\n  margin-right: 0;\n}\n.latest-product__item {\n  margin-bottom: 20px;\n  overflow: hidden;\n  display: block;\n}\n.latest-product__item__pic {\n  float: left;\n  margin-right: 26px;\n}\n.latest-product__item__pic img {\n  height: 110px;\n  width: 110px;\n}\n.latest-product__item__text {\n  overflow: hidden;\n  padding-top: 10px;\n}\n.latest-product__item__text h6 {\n  color: #252525;\n  margin-bottom: 8px;\n}\n.latest-product__item__text span {\n  font-size: 18px;\n  display: block;\n  color: #252525;\n  font-weight: 700;\n}\n\n/*---------------------\n  Form BLog\n-----------------------*/\n.from-blog {\n  padding-top: 50px;\n  padding-bottom: 50px;\n}\n.from-blog .blog__item {\n  margin-bottom: 30px;\n}\n.from-blog__title {\n  margin-bottom: 70px;\n}\n\n/*---------------------\n  Breadcrumb\n-----------------------*/\n.breadcrumb-section {\n  display: flex;\n  align-items: center;\n  padding: 45px 0 40px;\n}\n.breadcrumb__text h2 {\n  font-size: 46px;\n  color: #ffffff;\n  font-weight: 700;\n}\n.breadcrumb__option a {\n  display: inline-block;\n  font-size: 16px;\n  color: #ffffff;\n  font-weight: 700;\n  margin-right: 20px;\n  position: relative;\n}\n.breadcrumb__option a:after {\n  position: absolute;\n  right: -12px;\n  top: 13px;\n  height: 1px;\n  width: 10px;\n  background: #ffffff;\n  content: \"\";\n}\n.breadcrumb__option span {\n  display: inline-block;\n  font-size: 16px;\n  color: #ffffff;\n}\n\n/*---------------------\n  Sidebar\n-----------------------*/\n.sidebar__item {\n  margin-bottom: 35px;\n}\n.sidebar__item.sidebar__item__color--option {\n  overflow: hidden;\n}\n.sidebar__item h4 {\n  color: #1c1c1c;\n  font-weight: 700;\n  margin-bottom: 25px;\n}\n.sidebar__item ul li {\n  list-style: none;\n}\n.sidebar__item ul li a {\n  font-size: 16px;\n  color: #1c1c1c;\n  line-height: 39px;\n  display: block;\n}\n.sidebar__item .latest-product__text {\n  position: relative;\n}\n.sidebar__item .latest-product__text h4 {\n  margin-bottom: 45px;\n}\n.sidebar__item .latest-product__text .owl-carousel .owl-nav {\n  right: 0;\n}\n.price-range-wrap .range-slider {\n  margin-top: 20px;\n}\n.price-range-wrap .range-slider .price-input {\n  position: relative;\n}\n.price-range-wrap .range-slider .price-input:after {\n  position: absolute;\n  left: 38px;\n  top: 13px;\n  height: 1px;\n  width: 5px;\n  background: #dd2222;\n  content: \"\";\n}\n.price-range-wrap .range-slider .price-input input {\n  font-size: 16px;\n  color: #dd2222;\n  font-weight: 700;\n  max-width: 20%;\n  border: none;\n  display: inline-block;\n}\n.price-range-wrap .price-range {\n  border-radius: 0;\n}\n.price-range-wrap .price-range.ui-widget-content {\n  border: none;\n  background: #ebebeb;\n  height: 5px;\n}\n.price-range-wrap .price-range.ui-widget-content .ui-slider-handle {\n  height: 13px;\n  width: 13px;\n  border-radius: 50%;\n  background: #ffffff;\n  border: none;\n  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);\n  outline: none;\n  cursor: pointer;\n}\n.price-range-wrap .price-range .ui-slider-range {\n  background: #dd2222;\n  border-radius: 0;\n}\n.price-range-wrap .price-range .ui-slider-range.ui-corner-all.ui-widget-header:last-child {\n  background: #dd2222;\n}\n.sidebar__item__color {\n  float: left;\n  width: 40%;\n}\n.sidebar__item__color.sidebar__item__color--white label:after {\n  border: 2px solid #333333;\n  background: transparent;\n}\n.sidebar__item__color.sidebar__item__color--gray label:after {\n  background: #E9A625;\n}\n.sidebar__item__color.sidebar__item__color--red label:after {\n  background: #D62D2D;\n}\n.sidebar__item__color.sidebar__item__color--black label:after {\n  background: #252525;\n}\n.sidebar__item__color.sidebar__item__color--blue label:after {\n  background: #249BC8;\n}\n.sidebar__item__color.sidebar__item__color--green label:after {\n  background: #3CC032;\n}\n.sidebar__item__color label {\n  font-size: 16px;\n  color: #333333;\n  position: relative;\n  padding-left: 32px;\n  cursor: pointer;\n}\n.sidebar__item__color label input {\n  position: absolute;\n  visibility: hidden;\n}\n.sidebar__item__color label:after {\n  position: absolute;\n  left: 0;\n  top: 5px;\n  height: 14px;\n  width: 14px;\n  background: #222;\n  content: \"\";\n  border-radius: 50%;\n}\n.sidebar__item__size {\n  display: inline-block;\n  margin-right: 16px;\n  margin-bottom: 10px;\n}\n.sidebar__item__size label {\n  font-size: 12px;\n  color: #6f6f6f;\n  display: inline-block;\n  padding: 8px 25px 6px;\n  background: #f5f5f5;\n  cursor: pointer;\n  margin-bottom: 0;\n}\n.sidebar__item__size label input {\n  position: absolute;\n  visibility: hidden;\n}\n\n/*---------------------\n  Shop Grid\n-----------------------*/\n.product {\n  padding-top: 80px;\n  padding-bottom: 80px;\n}\n.product__discount {\n  padding-bottom: 50px;\n}\n.product__discount__title {\n  text-align: left;\n  margin-bottom: 65px;\n}\n.product__discount__title h2 {\n  display: inline-block;\n}\n.product__discount__title h2:after {\n  margin: 0;\n  width: 100%;\n}\n.product__discount__item:hover .product__discount__item__pic .product__item__pic__hover {\n  bottom: 20px;\n}\n.product__discount__item__pic {\n  height: 270px;\n  position: relative;\n  overflow: hidden;\n}\n.product__discount__item__pic .product__discount__percent {\n  height: 45px;\n  width: 45px;\n  background: #dd2222;\n  border-radius: 50%;\n  font-size: 14px;\n  color: #ffffff;\n  line-height: 45px;\n  text-align: center;\n  position: absolute;\n  left: 15px;\n  top: 15px;\n}\n.product__item__pic__hover {\n  position: absolute;\n  left: 0;\n  bottom: -50px;\n  width: 100%;\n  text-align: center;\n  transition: all, 0.5s;\n}\n.product__item__pic__hover li {\n  list-style: none;\n  display: inline-block;\n  margin-right: 6px;\n}\n.product__item__pic__hover li:last-child {\n  margin-right: 0;\n}\n.product__item__pic__hover li:hover a {\n  background: #7fad39;\n  border-color: #7fad39;\n}\n.product__item__pic__hover li:hover a i {\n  color: #ffffff;\n  transform: rotate(360deg);\n}\n.product__item__pic__hover li a {\n  font-size: 16px;\n  color: #1c1c1c;\n  height: 40px;\n  width: 40px;\n  line-height: 40px;\n  text-align: center;\n  border: 1px solid #ebebeb;\n  background: #ffffff;\n  display: block;\n  border-radius: 50%;\n  transition: all, 0.5s;\n}\n.product__item__pic__hover li a i {\n  position: relative;\n  transform: rotate(0);\n  transition: all, 0.3s;\n}\n.product__discount__item__text {\n  text-align: center;\n  padding-top: 20px;\n}\n.product__discount__item__text span {\n  font-size: 14px;\n  color: #b2b2b2;\n  display: block;\n  margin-bottom: 4px;\n}\n.product__discount__item__text h5 {\n  margin-bottom: 6px;\n}\n.product__discount__item__text h5 a {\n  color: #1c1c1c;\n}\n.product__discount__item__text .product__item__price {\n  font-size: 18px;\n  color: #1c1c1c;\n  font-weight: 700;\n}\n.product__discount__item__text .product__item__price span {\n  display: inline-block;\n  font-weight: 400;\n  text-decoration: line-through;\n  margin-left: 10px;\n}\n.product__discount__slider .col-lg-4 {\n  max-width: 100%;\n}\n.product__discount__slider.owl-carousel .owl-dots {\n  text-align: center;\n  margin-top: 30px;\n}\n.product__discount__slider.owl-carousel .owl-dots button {\n  height: 12px;\n  width: 12px;\n  border: 1px solid #b2b2b2;\n  border-radius: 50%;\n  margin-right: 12px;\n}\n.product__discount__slider.owl-carousel .owl-dots button.active {\n  background: #707070;\n  border-color: #6f6f6f;\n}\n.product__discount__slider.owl-carousel .owl-dots button:last-child {\n  margin-right: 0;\n}\n.filter__item {\n  padding-top: 45px;\n  border-top: 1px solid #ebebeb;\n  padding-bottom: 20px;\n}\n.filter__sort {\n  margin-bottom: 15px;\n}\n.filter__sort span {\n  font-size: 16px;\n  color: #6f6f6f;\n  display: inline-block;\n}\n.filter__sort .nice-select {\n  background-color: #fff;\n  border-radius: 0;\n  border: none;\n  display: inline-block;\n  float: none;\n  height: 0;\n  line-height: 0;\n  padding-left: 18px;\n  padding-right: 30px;\n  font-size: 16px;\n  color: #1c1c1c;\n  font-weight: 700;\n  cursor: pointer;\n}\n.filter__sort .nice-select span {\n  color: #1c1c1c;\n}\n.filter__sort .nice-select:after {\n  border-bottom: 1.5px solid #1c1c1c;\n  border-right: 1.5px solid #1c1c1c;\n  height: 8px;\n  margin-top: 0;\n  right: 16px;\n  width: 8px;\n  top: -5px;\n}\n.filter__sort .nice-select.open .list {\n  opacity: 1;\n  pointer-events: auto;\n  transform: scale(1) translateY(0);\n}\n.filter__sort .nice-select .list {\n  border-radius: 0;\n  margin-top: 0;\n  top: 15px;\n}\n.filter__sort .nice-select .option {\n  line-height: 30px;\n  min-height: 30px;\n}\n.filter__found {\n  text-align: center;\n  margin-bottom: 15px;\n}\n.filter__found h6 {\n  font-size: 16px;\n  color: #b2b2b2;\n}\n.filter__found h6 span {\n  color: #1c1c1c;\n  font-weight: 700;\n  margin-right: 5px;\n}\n.filter__option {\n  text-align: right;\n  margin-bottom: 15px;\n}\n.filter__option span {\n  font-size: 24px;\n  color: #b2b2b2;\n  margin-right: 10px;\n  cursor: pointer;\n  transition: all, 0.3s;\n}\n.filter__option span:last-child {\n  margin: 0;\n}\n.filter__option span:hover {\n  color: #7fad39;\n}\n.product__item {\n  margin-bottom: 50px;\n}\n.product__item:hover .product__item__pic .product__item__pic__hover {\n  bottom: 20px;\n}\n.product__item__pic {\n  height: 270px;\n  position: relative;\n  overflow: hidden;\n}\n.product__item__pic__hover {\n  position: absolute;\n  left: 0;\n  bottom: -50px;\n  width: 100%;\n  text-align: center;\n  transition: all, 0.5s;\n}\n.product__item__pic__hover li {\n  list-style: none;\n  display: inline-block;\n  margin-right: 6px;\n}\n.product__item__pic__hover li:last-child {\n  margin-right: 0;\n}\n.product__item__pic__hover li:hover a {\n  background: #7fad39;\n  border-color: #7fad39;\n}\n.product__item__pic__hover li:hover a i {\n  color: #ffffff;\n  transform: rotate(360deg);\n}\n.product__item__pic__hover li a {\n  font-size: 16px;\n  color: #1c1c1c;\n  height: 40px;\n  width: 40px;\n  line-height: 40px;\n  text-align: center;\n  border: 1px solid #ebebeb;\n  background: #ffffff;\n  display: block;\n  border-radius: 50%;\n  transition: all, 0.5s;\n}\n.product__item__pic__hover li a i {\n  position: relative;\n  transform: rotate(0);\n  transition: all, 0.3s;\n}\n.product__item__text {\n  text-align: center;\n  padding-top: 15px;\n}\n.product__item__text h6 {\n  margin-bottom: 10px;\n}\n.product__item__text h6 a {\n  color: #252525;\n}\n.product__item__text h5 {\n  color: #252525;\n  font-weight: 700;\n}\n.product__pagination, .blog__pagination {\n  padding-top: 10px;\n}\n.product__pagination a, .blog__pagination a {\n  display: inline-block;\n  width: 30px;\n  height: 30px;\n  border: 1px solid #b2b2b2;\n  font-size: 14px;\n  color: #b2b2b2;\n  font-weight: 700;\n  line-height: 28px;\n  text-align: center;\n  margin-right: 16px;\n  transition: all, 0.3s;\n}\n.product__pagination a:hover, .blog__pagination a:hover {\n  background: #7fad39;\n  border-color: #7fad39;\n  color: #ffffff;\n}\n.product__pagination a:last-child, .blog__pagination a:last-child {\n  margin-right: 0;\n}\n\n/*---------------------\n  Shop Details\n-----------------------*/\n.product-details {\n  padding-top: 80px;\n}\n.product__details__pic__item {\n  margin-bottom: 20px;\n}\n.product__details__pic__item img {\n  min-width: 100%;\n}\n.product__details__pic__slider img {\n  cursor: pointer;\n}\n.product__details__pic__slider.owl-carousel .owl-item img {\n  width: auto;\n}\n.product__details__text h3 {\n  color: #252525;\n  font-weight: 700;\n  margin-bottom: 16px;\n}\n.product__details__text .product__details__rating {\n  font-size: 14px;\n  margin-bottom: 12px;\n}\n.product__details__text .product__details__rating i {\n  margin-right: -2px;\n  color: #EDBB0E;\n}\n.product__details__text .product__details__rating span {\n  color: #dd2222;\n  margin-left: 4px;\n}\n.product__details__text .product__details__price {\n  font-size: 30px;\n  color: #dd2222;\n  font-weight: 600;\n  margin-bottom: 15px;\n}\n.product__details__text p {\n  margin-bottom: 45px;\n}\n.product__details__text .primary-btn {\n  padding: 16px 28px 14px;\n  margin-right: 6px;\n  margin-bottom: 5px;\n}\n.product__details__text .heart-icon {\n  display: inline-block;\n  font-size: 16px;\n  color: #6f6f6f;\n  padding: 13px 16px 13px;\n  background: #f5f5f5;\n}\n.product__details__text ul {\n  border-top: 1px solid #ebebeb;\n  padding-top: 40px;\n  margin-top: 50px;\n}\n.product__details__text ul li {\n  font-size: 16px;\n  color: #1c1c1c;\n  list-style: none;\n  line-height: 36px;\n}\n.product__details__text ul li b {\n  font-weight: 700;\n  width: 170px;\n  display: inline-block;\n}\n.product__details__text ul li span samp {\n  color: #dd2222;\n}\n.product__details__text ul li .share {\n  display: inline-block;\n}\n.product__details__text ul li .share a {\n  display: inline-block;\n  font-size: 15px;\n  color: #1c1c1c;\n  margin-right: 25px;\n}\n.product__details__text ul li .share a:last-child {\n  margin-right: 0;\n}\n.product__details__quantity {\n  display: inline-block;\n  margin-right: 6px;\n}\n.pro-qty {\n  width: 140px;\n  height: 50px;\n  display: inline-block;\n  position: relative;\n  text-align: center;\n  background: #f5f5f5;\n  margin-bottom: 5px;\n}\n.pro-qty input {\n  height: 100%;\n  width: 100%;\n  font-size: 16px;\n  color: #6f6f6f;\n  width: 50px;\n  border: none;\n  background: #f5f5f5;\n  text-align: center;\n}\n.pro-qty .qtybtn {\n  width: 35px;\n  font-size: 16px;\n  color: #6f6f6f;\n  cursor: pointer;\n  display: inline-block;\n}\n.product__details__tab {\n  padding-top: 85px;\n}\n.product__details__tab .nav-tabs {\n  border-bottom: none;\n  justify-content: center;\n  position: relative;\n}\n.product__details__tab .nav-tabs:before {\n  position: absolute;\n  left: 0;\n  top: 12px;\n  height: 1px;\n  width: 370px;\n  background: #ebebeb;\n  content: \"\";\n}\n.product__details__tab .nav-tabs:after {\n  position: absolute;\n  right: 0;\n  top: 12px;\n  height: 1px;\n  width: 370px;\n  background: #ebebeb;\n  content: \"\";\n}\n.product__details__tab .nav-tabs li {\n  margin-bottom: 0;\n  margin-right: 65px;\n}\n.product__details__tab .nav-tabs li:last-child {\n  margin-right: 0;\n}\n.product__details__tab .nav-tabs li a {\n  font-size: 16px;\n  color: #999999;\n  font-weight: 700;\n  border: none;\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  padding: 0;\n}\n.product__details__tab .product__details__tab__desc {\n  padding-top: 44px;\n}\n.product__details__tab .product__details__tab__desc h6 {\n  font-weight: 700;\n  color: #333333;\n  margin-bottom: 26px;\n}\n.product__details__tab .product__details__tab__desc p {\n  color: #666666;\n}\n\n/*---------------------\n  Shop Details\n-----------------------*/\n.related-product {\n  padding-bottom: 30px;\n}\n.related__product__title {\n  margin-bottom: 70px;\n}\n\n/*---------------------\n  Shop Cart\n-----------------------*/\n.shoping-cart {\n  padding-top: 80px;\n  padding-bottom: 80px;\n}\n.shoping__cart__table {\n  margin-bottom: 30px;\n}\n.shoping__cart__table table {\n  width: 100%;\n  text-align: center;\n}\n.shoping__cart__table table thead tr {\n  border-bottom: 1px solid #ebebeb;\n}\n.shoping__cart__table table thead th {\n  font-size: 20px;\n  font-weight: 700;\n  color: #1c1c1c;\n  padding-bottom: 20px;\n}\n.shoping__cart__table table thead th.shoping__product {\n  text-align: left;\n}\n.shoping__cart__table table tbody tr td {\n  padding-top: 30px;\n  padding-bottom: 30px;\n  border-bottom: 1px solid #ebebeb;\n}\n.shoping__cart__table table tbody tr td.shoping__cart__item {\n  width: 630px;\n  text-align: left;\n}\n.shoping__cart__table table tbody tr td.shoping__cart__item img {\n  display: inline-block;\n  margin-right: 25px;\n}\n.shoping__cart__table table tbody tr td.shoping__cart__item h5 {\n  color: #1c1c1c;\n  display: inline-block;\n}\n.shoping__cart__table table tbody tr td.shoping__cart__price {\n  font-size: 18px;\n  color: #1c1c1c;\n  font-weight: 700;\n  width: 100px;\n}\n.shoping__cart__table table tbody tr td.shoping__cart__total {\n  font-size: 18px;\n  color: #1c1c1c;\n  font-weight: 700;\n  width: 110px;\n}\n.shoping__cart__table table tbody tr td.shoping__cart__item__close {\n  text-align: right;\n}\n.shoping__cart__table table tbody tr td.shoping__cart__item__close span {\n  font-size: 24px;\n  color: #b2b2b2;\n  cursor: pointer;\n}\n.shoping__cart__table table tbody tr td.shoping__cart__quantity {\n  width: 225px;\n}\n.shoping__cart__table table tbody tr td.shoping__cart__quantity .pro-qty {\n  width: 120px;\n  height: 40px;\n}\n.shoping__cart__table table tbody tr td.shoping__cart__quantity .pro-qty input {\n  color: #1c1c1c;\n}\n.shoping__cart__table table tbody tr td.shoping__cart__quantity .pro-qty input::-moz-placeholder {\n  color: #1c1c1c;\n}\n.shoping__cart__table table tbody tr td.shoping__cart__quantity .pro-qty input::placeholder {\n  color: #1c1c1c;\n}\n.shoping__cart__table table tbody tr td.shoping__cart__quantity .pro-qty .qtybtn {\n  width: 15px;\n}\n.primary-btn.cart-btn {\n  color: #6f6f6f;\n  padding: 14px 30px 12px;\n  background: #f5f5f5;\n}\n.primary-btn.cart-btn span {\n  font-size: 14px;\n}\n.primary-btn.cart-btn.cart-btn-right {\n  float: right;\n}\n.shoping__discount {\n  margin-top: 45px;\n}\n.shoping__discount h5 {\n  font-size: 20px;\n  color: #1c1c1c;\n  font-weight: 700;\n  margin-bottom: 25px;\n}\n.shoping__discount form input {\n  width: 255px;\n  height: 46px;\n  border: 1px solid #cccccc;\n  font-size: 16px;\n  color: #b2b2b2;\n  text-align: center;\n  display: inline-block;\n  margin-right: 15px;\n}\n.shoping__discount form input::-moz-placeholder {\n  color: #b2b2b2;\n}\n.shoping__discount form input::placeholder {\n  color: #b2b2b2;\n}\n.shoping__discount form button {\n  padding: 15px 30px 11px;\n  font-size: 12px;\n  letter-spacing: 4px;\n  background: #6f6f6f;\n}\n.shoping__checkout {\n  background: #f5f5f5;\n  padding: 30px;\n  padding-top: 20px;\n  margin-top: 50px;\n}\n.shoping__checkout h5 {\n  color: #1c1c1c;\n  font-weight: 700;\n  font-size: 20px;\n  margin-bottom: 28px;\n}\n.shoping__checkout ul {\n  margin-bottom: 28px;\n}\n.shoping__checkout ul li {\n  font-size: 16px;\n  color: #1c1c1c;\n  font-weight: 700;\n  list-style: none;\n  overflow: hidden;\n  border-bottom: 1px solid #ebebeb;\n  padding-bottom: 13px;\n  margin-bottom: 18px;\n}\n.shoping__checkout ul li:last-child {\n  padding-bottom: 0;\n  border-bottom: none;\n  margin-bottom: 0;\n}\n.shoping__checkout ul li span {\n  font-size: 18px;\n  color: #dd2222;\n  float: right;\n}\n.shoping__checkout .primary-btn {\n  display: block;\n  text-align: center;\n}\n\n/*---------------------\n  Checkout\n-----------------------*/\n.checkout {\n  padding-top: 80px;\n  padding-bottom: 60px;\n}\n.checkout h6 {\n  color: #999999;\n  text-align: center;\n  background: #f5f5f5;\n  border-top: 1px solid #6AB963;\n  padding: 12px 0 12px;\n  margin-bottom: 75px;\n}\n.checkout h6 span {\n  font-size: 16px;\n  color: #6AB963;\n  margin-right: 5px;\n}\n.checkout h6 a {\n  text-decoration: underline;\n  color: #999999;\n}\n.checkout__form h4 {\n  color: #1c1c1c;\n  font-weight: 700;\n  border-bottom: 1px solid #e1e1e1;\n  padding-bottom: 20px;\n  margin-bottom: 25px;\n}\n.checkout__form p {\n  -moz-column-rule: #b2b2b2;\n       column-rule: #b2b2b2;\n}\n.checkout__input {\n  margin-bottom: 24px;\n}\n.checkout__input p {\n  color: #1c1c1c;\n  margin-bottom: 20px;\n}\n.checkout__input p span {\n  color: #dd2222;\n}\n.checkout__input input {\n  width: 100%;\n  height: 46px;\n  border: 1px solid #ebebeb;\n  padding-left: 20px;\n  font-size: 16px;\n  color: #b2b2b2;\n  border-radius: 4px;\n}\n.checkout__input input.checkout__input__add {\n  margin-bottom: 20px;\n}\n.checkout__input input::-moz-placeholder {\n  color: #b2b2b2;\n}\n.checkout__input input::placeholder {\n  color: #b2b2b2;\n}\n.checkout__input__checkbox {\n  margin-bottom: 10px;\n}\n.checkout__input__checkbox label {\n  position: relative;\n  font-size: 16px;\n  color: #1c1c1c;\n  padding-left: 40px;\n  cursor: pointer;\n}\n.checkout__input__checkbox label input {\n  position: absolute;\n  visibility: hidden;\n}\n.checkout__input__checkbox label input:checked ~ .checkmark {\n  background: #7fad39;\n  border-color: #7fad39;\n}\n.checkout__input__checkbox label input:checked ~ .checkmark:after {\n  opacity: 1;\n}\n.checkout__input__checkbox label .checkmark {\n  position: absolute;\n  left: 0;\n  top: 4px;\n  height: 16px;\n  width: 14px;\n  border: 1px solid #a6a6a6;\n  content: \"\";\n  border-radius: 4px;\n}\n.checkout__input__checkbox label .checkmark:after {\n  position: absolute;\n  left: 1px;\n  top: 1px;\n  width: 10px;\n  height: 8px;\n  border: solid white;\n  border-width: 3px 3px 0px 0px;\n  transform: rotate(127deg);\n  content: \"\";\n  opacity: 0;\n}\n.checkout__order {\n  background: #f5f5f5;\n  padding: 40px;\n  padding-top: 30px;\n}\n.checkout__order h4 {\n  color: #1c1c1c;\n  font-weight: 700;\n  border-bottom: 1px solid #e1e1e1;\n  padding-bottom: 20px;\n  margin-bottom: 20px;\n}\n.checkout__order .checkout__order__products {\n  font-size: 18px;\n  color: #1c1c1c;\n  font-weight: 700;\n  margin-bottom: 10px;\n}\n.checkout__order .checkout__order__products span {\n  float: right;\n}\n.checkout__order ul {\n  margin-bottom: 12px;\n}\n.checkout__order ul li {\n  font-size: 16px;\n  color: #6f6f6f;\n  line-height: 40px;\n  list-style: none;\n}\n.checkout__order ul li span {\n  font-weight: 700;\n  float: right;\n}\n.checkout__order .checkout__order__subtotal {\n  font-size: 18px;\n  color: #1c1c1c;\n  font-weight: 700;\n  border-bottom: 1px solid #e1e1e1;\n  border-top: 1px solid #e1e1e1;\n  padding-bottom: 15px;\n  margin-bottom: 15px;\n  padding-top: 15px;\n}\n.checkout__order .checkout__order__subtotal span {\n  float: right;\n}\n.checkout__order .checkout__input__checkbox label {\n  padding-left: 20px;\n}\n.checkout__order .checkout__order__total {\n  font-size: 18px;\n  color: #1c1c1c;\n  font-weight: 700;\n  border-bottom: 1px solid #e1e1e1;\n  padding-bottom: 15px;\n  margin-bottom: 25px;\n}\n.checkout__order .checkout__order__total span {\n  float: right;\n  color: #dd2222;\n}\n.checkout__order button {\n  font-size: 18px;\n  letter-spacing: 2px;\n  width: 100%;\n  margin-top: 10px;\n}\n\n/*---------------------\n  Blog\n-----------------------*/\n.blog__item {\n  margin-bottom: 60px;\n}\n.blog__item__pic img {\n  min-width: 100%;\n}\n.blog__item__text {\n  padding-top: 25px;\n}\n.blog__item__text ul {\n  margin-bottom: 15px;\n}\n.blog__item__text ul li {\n  font-size: 16px;\n  color: #b2b2b2;\n  list-style: none;\n  display: inline-block;\n  margin-right: 15px;\n}\n.blog__item__text ul li:last-child {\n  margin-right: 0;\n}\n.blog__item__text h5 {\n  margin-bottom: 12px;\n}\n.blog__item__text h5 a {\n  font-size: 20px;\n  color: #1c1c1c;\n  font-weight: 700;\n}\n.blog__item__text p {\n  margin-bottom: 25px;\n}\n.blog__item__text .blog__btn {\n  display: inline-block;\n  font-size: 14px;\n  color: #1c1c1c;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  border: 1px solid #b2b2b2;\n  padding: 14px 20px 12px;\n  border-radius: 25px;\n}\n.blog__item__text .blog__btn span {\n  position: relative;\n  top: 1px;\n  margin-left: 5px;\n}\n.blog__pagination {\n  padding-top: 5px;\n  position: relative;\n}\n.blog__pagination:before {\n  position: absolute;\n  left: 0;\n  top: -29px;\n  height: 1px;\n  width: 100%;\n  background: #000000;\n  opacity: 0.1;\n  content: \"\";\n}\n\n/*---------------------\n  Blog Sidebar\n-----------------------*/\n.blog__sidebar {\n  padding-top: 50px;\n}\n.blog__sidebar__item {\n  margin-bottom: 50px;\n}\n.blog__sidebar__item h4 {\n  color: #1c1c1c;\n  font-weight: 700;\n  margin-bottom: 25px;\n}\n.blog__sidebar__item ul li {\n  list-style: none;\n}\n.blog__sidebar__item ul li a {\n  font-size: 16px;\n  color: #666666;\n  line-height: 48px;\n  transition: all, 0.3s;\n}\n.blog__sidebar__item ul li a:hover {\n  color: #7fad39;\n}\n.blog__sidebar__search {\n  margin-bottom: 50px;\n}\n.blog__sidebar__search form {\n  position: relative;\n}\n.blog__sidebar__search form input {\n  width: 100%;\n  height: 46px;\n  font-size: 16px;\n  color: #6f6f6f;\n  padding-left: 15px;\n  border: 1px solid #e1e1e1;\n  border-radius: 20px;\n}\n.blog__sidebar__search form input::-moz-placeholder {\n  color: #6f6f6f;\n}\n.blog__sidebar__search form input::placeholder {\n  color: #6f6f6f;\n}\n.blog__sidebar__search form button {\n  font-size: 16px;\n  color: #6f6f6f;\n  background: transparent;\n  border: none;\n  position: absolute;\n  right: 0;\n  top: 0;\n  height: 100%;\n  padding: 0px 18px;\n}\n.blog__sidebar__recent .blog__sidebar__recent__item {\n  display: block;\n}\n.blog__sidebar__recent .blog__sidebar__recent__item:last-child {\n  margin-bottom: 0;\n}\n.blog__sidebar__recent__item {\n  overflow: hidden;\n  margin-bottom: 20px;\n}\n.blog__sidebar__recent__item__pic {\n  float: left;\n  margin-right: 20px;\n}\n.blog__sidebar__recent__item__text {\n  overflow: hidden;\n}\n.blog__sidebar__recent__item__text h6 {\n  font-weight: 700;\n  color: #333333;\n  line-height: 20px;\n  margin-bottom: 5px;\n}\n.blog__sidebar__recent__item__text span {\n  font-size: 12px;\n  color: #999999;\n  text-transform: uppercase;\n}\n.blog__sidebar__item__tags a {\n  font-size: 16px;\n  color: #6f6f6f;\n  background: #f5f5f5;\n  display: inline-block;\n  padding: 7px 26px 5px;\n  margin-right: 6px;\n  margin-bottom: 10px;\n}\n\n/*---------------------\n  Blog Details Hero\n-----------------------*/\n.blog-details-hero {\n  height: 350px;\n  display: flex;\n  align-items: center;\n}\n.blog__details__hero__text {\n  text-align: center;\n}\n.blog__details__hero__text h2 {\n  font-size: 46px;\n  color: #ffffff;\n  font-weight: 700;\n  margin-bottom: 10px;\n}\n.blog__details__hero__text ul li {\n  font-size: 16px;\n  color: #ffffff;\n  list-style: none;\n  display: inline-block;\n  margin-right: 45px;\n  position: relative;\n}\n.blog__details__hero__text ul li:after {\n  position: absolute;\n  right: -26px;\n  top: 0;\n  content: \"|\";\n}\n.blog__details__hero__text ul li:last-child {\n  margin-right: 0;\n}\n.blog__details__hero__text ul li:last-child:after {\n  display: none;\n}\n\n/*---------------------\n  Blog Details\n-----------------------*/\n.related-blog {\n  padding-top: 70px;\n  padding-bottom: 10px;\n}\n.related-blog-title {\n  margin-bottom: 70px;\n}\n.blog-details {\n  padding-bottom: 75px;\n  border-bottom: 1px solid #e1e1e1;\n}\n.blog__details__text {\n  margin-bottom: 45px;\n}\n.blog__details__text img {\n  margin-bottom: 30px;\n}\n.blog__details__text p {\n  font-size: 18px;\n  line-height: 30px;\n}\n.blog__details__text h3 {\n  color: #333333;\n  font-weight: 700;\n  line-height: 30px;\n  margin-bottom: 30px;\n}\n.blog__details__author__pic {\n  float: left;\n  margin-right: 15px;\n}\n.blog__details__author__pic img {\n  height: 92px;\n  width: 92px;\n  border-radius: 50%;\n}\n.blog__details__author__text {\n  overflow: hidden;\n  padding-top: 30px;\n}\n.blog__details__author__text h6 {\n  color: #1c1c1c;\n  font-weight: 700;\n}\n.blog__details__author__text span {\n  font-size: 16px;\n  color: #6f6f6f;\n}\n.blog__details__widget ul {\n  margin-bottom: 5px;\n}\n.blog__details__widget ul li {\n  font-size: 16px;\n  color: #6f6f6f;\n  list-style: none;\n  line-height: 30px;\n}\n.blog__details__widget ul li span {\n  color: #1c1c1c;\n  font-weight: 700;\n}\n.blog__details__widget .blog__details__social a {\n  display: inline-block;\n  font-size: 20px;\n  color: #6f6f6f;\n  margin-right: 24px;\n  transition: all, 0.3s;\n}\n.blog__details__widget .blog__details__social a:hover {\n  color: #7fad39;\n}\n.blog__details__widget .blog__details__social a:last-child {\n  margin-right: 0;\n}\n\n/*---------------------\n  Footer\n-----------------------*/\n.footer {\n  background: #F3F6FA;\n  padding-top: 70px;\n  padding-bottom: 0;\n}\n.footer__about {\n  margin-bottom: 30px;\n}\n.footer__about ul li {\n  font-size: 16px;\n  color: #1c1c1c;\n  line-height: 36px;\n  list-style: none;\n}\n.footer__about__logo {\n  margin-bottom: 15px;\n}\n.footer__about__logo a {\n  display: inline-block;\n}\n.footer__widget {\n  margin-bottom: 30px;\n  overflow: hidden;\n}\n.footer__widget h6 {\n  color: #1c1c1c;\n  font-weight: 700;\n  margin-bottom: 10px;\n}\n.footer__widget ul {\n  width: 50%;\n  float: left;\n}\n.footer__widget ul li {\n  list-style: none;\n}\n.footer__widget ul li a {\n  color: #1c1c1c;\n  font-size: 14px;\n  line-height: 32px;\n}\n.footer__widget p {\n  font-size: 14px;\n  color: #1c1c1c;\n  margin-bottom: 30px;\n}\n.footer__widget form {\n  position: relative;\n  margin-bottom: 30px;\n}\n.footer__widget form input {\n  width: 100%;\n  font-size: 16px;\n  padding-left: 20px;\n  color: #1c1c1c;\n  height: 46px;\n  border: 1px solid #ededed;\n}\n.footer__widget form input::-moz-placeholder {\n  color: #1c1c1c;\n}\n.footer__widget form input::placeholder {\n  color: #1c1c1c;\n}\n.footer__widget form button {\n  position: absolute;\n  right: 0;\n  top: 0;\n  padding: 0 26px;\n  height: 100%;\n}\n.footer__widget .footer__widget__social a {\n  display: inline-block;\n  height: 41px;\n  width: 41px;\n  font-size: 16px;\n  color: #404040;\n  border: 1px solid #ededed;\n  border-radius: 50%;\n  line-height: 38px;\n  text-align: center;\n  background: #ffffff;\n  transition: all, 0.3s;\n  margin-right: 10px;\n}\n.footer__widget .footer__widget__social a:last-child {\n  margin-right: 0;\n}\n.footer__widget .footer__widget__social a:hover {\n  background: #7fad39;\n  color: #ffffff;\n  border-color: #ffffff;\n}\n.footer__copyright {\n  border-top: 1px solid #ebebeb;\n  padding: 15px 0;\n  overflow: hidden;\n  margin-top: 20px;\n}\n.footer__copyright__text {\n  font-size: 14px;\n  color: #1c1c1c;\n  float: left;\n  line-height: 25px;\n}\n.footer__copyright__payment {\n  float: right;\n}\n\n/*---------------------\n  Contact\n-----------------------*/\n.contact {\n  padding-top: 80px;\n  padding-bottom: 50px;\n}\n.contact__widget {\n  margin-bottom: 30px;\n}\n.contact__widget span {\n  font-size: 36px;\n  color: #7fad39;\n}\n.contact__widget h4 {\n  color: #1c1c1c;\n  font-weight: 700;\n  margin-bottom: 6px;\n  margin-top: 18px;\n}\n.contact__widget p {\n  color: #666666;\n  margin-bottom: 0;\n}\n\n/*---------------------\n  Map\n-----------------------*/\n.map {\n  height: 500px;\n  position: relative;\n}\n.map iframe {\n  width: 100%;\n}\n.map .map-inside {\n  position: absolute;\n  left: 50%;\n  top: 160px;\n  transform: translateX(-175px);\n}\n.map .map-inside i {\n  font-size: 48px;\n  color: #7fad39;\n  position: absolute;\n  bottom: -75px;\n  left: 50%;\n  transform: translateX(-18px);\n}\n.map .map-inside .inside-widget {\n  width: 350px;\n  background: #ffffff;\n  text-align: center;\n  padding: 23px 0;\n  position: relative;\n  z-index: 1;\n  box-shadow: 0 0 20px 5px rgba(12, 7, 26, 0.15);\n}\n.map .map-inside .inside-widget:after {\n  position: absolute;\n  left: 50%;\n  bottom: -30px;\n  transform: translateX(-6px);\n  border: 12px solid transparent;\n  border-top: 30px solid #ffffff;\n  content: \"\";\n  z-index: -1;\n}\n.map .map-inside .inside-widget h4 {\n  font-size: 22px;\n  font-weight: 700;\n  color: #1c1c1c;\n  margin-bottom: 4px;\n}\n.map .map-inside .inside-widget ul li {\n  list-style: none;\n  font-size: 16px;\n  color: #666666;\n  line-height: 26px;\n}\n\n/*---------------------\n  Contact Form\n-----------------------*/\n.contact__form__title {\n  margin-bottom: 50px;\n  text-align: center;\n}\n.contact__form__title h2 {\n  color: #1c1c1c;\n  font-weight: 700;\n}\n.contact-form {\n  padding-top: 80px;\n  padding-bottom: 80px;\n}\n.contact-form form input {\n  width: 100%;\n  height: 50px;\n  font-size: 16px;\n  color: #6f6f6f;\n  padding-left: 20px;\n  margin-bottom: 30px;\n  border: 1px solid #ebebeb;\n  border-radius: 4px;\n}\n.contact-form form input::-moz-placeholder {\n  color: #6f6f6f;\n}\n.contact-form form input::placeholder {\n  color: #6f6f6f;\n}\n.contact-form form textarea {\n  width: 100%;\n  height: 150px;\n  font-size: 16px;\n  color: #6f6f6f;\n  padding-left: 20px;\n  margin-bottom: 24px;\n  border: 1px solid #ebebeb;\n  border-radius: 4px;\n  padding-top: 12px;\n  resize: none;\n}\n.contact-form form textarea::-moz-placeholder {\n  color: #6f6f6f;\n}\n.contact-form form textarea::placeholder {\n  color: #6f6f6f;\n}\n.contact-form form button {\n  font-size: 18px;\n  letter-spacing: 2px;\n}\n\n/*--------------------------------- Responsive Media Quaries -----------------------------*/\n@media only screen and (min-width: 1200px) {\n.container {\n    max-width: 1170px;\n}\n}\n/* Medium Device = 1200px */\n@media only screen and (min-width: 992px) and (max-width: 1199px) {\n.header__menu ul li {\n    margin-right: 45px;\n}\n.hero__search__form {\n    width: 490px;\n}\n.hero__categories__all {\n    padding: 10px 25px 10px 20px;\n}\n.hero__categories ul {\n    padding-left: 20px;\n}\n.latest-product__slider.owl-carousel .owl-nav {\n    right: 0;\n}\n.product__details__tab .nav-tabs:before {\n    width: 265px;\n}\n.product__details__tab .nav-tabs:after {\n    width: 265px;\n}\n.shoping__discount form input {\n    width: 240px;\n}\n}\n/* Tablet Device = 768px */\n@media only screen and (min-width: 768px) and (max-width: 991px) {\n.hero__categories {\n    margin-bottom: 30px;\n}\n.hero__search__form {\n    width: 485px;\n}\n.categories__slider.owl-carousel .owl-nav button {\n    left: -20px;\n}\n.categories__slider.owl-carousel .owl-nav button.owl-next {\n    right: -20px;\n}\n.filter__sort .nice-select {\n    padding-left: 5px;\n    padding-right: 28px;\n}\n.product__details__quantity {\n    margin-bottom: 10px;\n}\n.product__details__text .primary-btn {\n    margin-bottom: 10px;\n}\n.product__details__tab .nav-tabs:before {\n    width: 150px;\n}\n.product__details__tab .nav-tabs:after {\n    width: 150px;\n}\n.blog__details__author {\n    overflow: hidden;\n    margin-bottom: 25px;\n}\n.humberger__open {\n    display: block;\n    font-size: 22px;\n    color: #1c1c1c;\n    height: 35px;\n    width: 35px;\n    line-height: 33px;\n    text-align: center;\n    border: 1px solid #1c1c1c;\n    cursor: pointer;\n    position: absolute;\n    right: 15px;\n    top: 22px;\n}\n.header .container {\n    position: relative;\n}\n.humberger__menu__wrapper {\n    width: 300px;\n    background: #ffffff;\n    position: fixed;\n    left: -300px;\n    top: 0;\n    height: 100%;\n    overflow-y: auto;\n    z-index: 99;\n    padding: 30px;\n    padding-top: 50px;\n    opacity: 0;\n    display: block;\n    transition: all, 0.6s;\n}\n.humberger__menu__wrapper.show__humberger__menu__wrapper {\n    opacity: 1;\n    left: 0;\n}\n.humberger__menu__logo {\n    margin-bottom: 30px;\n}\n.humberger__menu__logo a {\n    display: inline-block;\n}\n.humberger__menu__contact {\n    padding: 10px 0 13px;\n}\n.humberger__menu__contact ul li {\n    font-size: 14px;\n    color: #1c1c1c;\n    position: relative;\n    line-height: 30px;\n    list-style: none;\n}\n.humberger__menu__contact ul li i {\n    color: #252525;\n    margin-right: 5px;\n}\n.humberger__menu__cart ul {\n    display: inline-block;\n    margin-right: 25px;\n}\n.humberger__menu__cart ul li {\n    list-style: none;\n    display: inline-block;\n    margin-right: 15px;\n}\n.humberger__menu__cart ul li:last-child {\n    margin-right: 0;\n}\n.humberger__menu__cart ul li a {\n    position: relative;\n}\n.humberger__menu__cart ul li a i {\n    font-size: 18px;\n    color: #1c1c1c;\n}\n.humberger__menu__cart ul li a span {\n    height: 13px;\n    width: 13px;\n    background: #7fad39;\n    font-size: 10px;\n    color: #ffffff;\n    line-height: 13px;\n    text-align: center;\n    font-weight: 700;\n    display: inline-block;\n    border-radius: 50%;\n    position: absolute;\n    top: 0;\n    right: -12px;\n}\n.humberger__menu__cart .header__cart__price {\n    font-size: 14px;\n    color: #6f6f6f;\n    display: inline-block;\n}\n.humberger__menu__cart .header__cart__price span {\n    color: #252525;\n    font-weight: 700;\n}\n.humberger__menu__cart {\n    margin-bottom: 25px;\n}\n.humberger__menu__widget {\n    margin-bottom: 20px;\n}\n.humberger__menu__widget .header__top__right__language {\n    margin-right: 20px;\n}\n.humberger__menu__nav {\n    display: none;\n}\n.humberger__menu__wrapper .header__top__right__social {\n    display: block;\n    margin-right: 0;\n    margin-bottom: 20px;\n}\n.humberger__menu__wrapper .slicknav_btn {\n    display: none;\n}\n.humberger__menu__wrapper .slicknav_nav .slicknav_item a {\n    border-bottom: none !important;\n}\n.humberger__menu__wrapper .slicknav_nav {\n    display: block !important;\n}\n.humberger__menu__wrapper .slicknav_menu {\n    background: transparent;\n    padding: 0;\n    margin-bottom: 30px;\n}\n.humberger__menu__wrapper .slicknav_nav ul {\n    margin: 0;\n}\n.humberger__menu__wrapper .slicknav_nav a {\n    color: #1c1c1c;\n    font-size: 16px;\n    font-weight: 600;\n    margin: 0;\n    border-bottom: 1px solid #e1e1e1;\n}\n.humberger__menu__wrapper .slicknav_nav a:hover {\n    border-radius: 0;\n    background: transparent;\n    color: #7fad39;\n}\n.humberger__menu__wrapper .slicknav_nav .slicknav_row,\n.humberger__menu__wrapper .slicknav_nav a {\n    padding: 8px 0;\n}\n.humberger__menu__overlay {\n    position: fixed;\n    left: 0;\n    top: 0;\n    height: 100%;\n    width: 100%;\n    background: rgba(0, 0, 0, 0.5);\n    content: \"\";\n    z-index: 98;\n    visibility: hidden;\n    transition: all, 0.6s;\n}\n.humberger__menu__overlay.active {\n    visibility: visible;\n}\n.header__top {\n    display: none;\n}\n.header__menu {\n    display: none;\n}\n.header__cart {\n    text-align: center;\n    padding: 10px 0 24px;\n}\n.over_hid {\n    overflow: hidden;\n}\n}\n/* Wide Mobile = 480px */\n@media only screen and (max-width: 767px) {\n.hero__categories {\n    margin-bottom: 30px;\n}\n.hero__search {\n    margin-bottom: 30px;\n}\n.hero__search__form {\n    width: 100%;\n}\n.hero__search__form form input {\n    width: 100%;\n}\n.hero__search__form form .hero__search__categories {\n    display: none;\n}\n.hero__search__phone {\n    float: left;\n    margin-top: 30px;\n}\n.categories__slider.owl-carousel .owl-nav {\n    text-align: center;\n    margin-top: 40px;\n}\n.categories__slider.owl-carousel .owl-nav button {\n    position: relative;\n    left: 0;\n    top: 0;\n    -webkit-transform: translateY(0);\n}\n.categories__slider.owl-carousel .owl-nav button.owl-next {\n    right: -10px;\n}\n.footer__copyright {\n    text-align: center;\n}\n.footer__copyright__text {\n    float: none;\n    margin-bottom: 25px;\n}\n.footer__copyright__payment {\n    float: none;\n}\n.filter__item {\n    text-align: center;\n}\n.filter__option {\n    text-align: center;\n}\n.product__details__pic {\n    margin-bottom: 40px;\n}\n.product__details__tab .nav-tabs:before {\n    display: none;\n}\n.product__details__tab .nav-tabs:after {\n    display: none;\n}\n.shoping__cart__table {\n    overflow-y: auto;\n}\n.shoping__discount form input {\n    margin-bottom: 15px;\n}\n.blog__details__author {\n    overflow: hidden;\n    margin-bottom: 25px;\n}\n.humberger__open {\n    display: block;\n    font-size: 22px;\n    color: #1c1c1c;\n    height: 35px;\n    width: 35px;\n    line-height: 33px;\n    text-align: center;\n    border: 1px solid #1c1c1c;\n    cursor: pointer;\n    position: absolute;\n    right: 15px;\n    top: 22px;\n}\n.header .container {\n    position: relative;\n}\n.humberger__menu__wrapper {\n    width: 300px;\n    background: #ffffff;\n    position: fixed;\n    left: -300px;\n    top: 0;\n    height: 100%;\n    overflow-y: auto;\n    z-index: 99;\n    padding: 30px;\n    padding-top: 50px;\n    opacity: 0;\n    display: block;\n    transition: all, 0.6s;\n}\n.humberger__menu__wrapper.show__humberger__menu__wrapper {\n    opacity: 1;\n    left: 0;\n}\n.humberger__menu__logo {\n    margin-bottom: 30px;\n}\n.humberger__menu__logo a {\n    display: inline-block;\n}\n.humberger__menu__contact {\n    padding: 10px 0 13px;\n}\n.humberger__menu__contact ul li {\n    font-size: 14px;\n    color: #1c1c1c;\n    position: relative;\n    line-height: 30px;\n    list-style: none;\n}\n.humberger__menu__contact ul li i {\n    color: #252525;\n    margin-right: 5px;\n}\n.humberger__menu__cart ul {\n    display: inline-block;\n    margin-right: 25px;\n}\n.humberger__menu__cart ul li {\n    list-style: none;\n    display: inline-block;\n    margin-right: 15px;\n}\n.humberger__menu__cart ul li:last-child {\n    margin-right: 0;\n}\n.humberger__menu__cart ul li a {\n    position: relative;\n}\n.humberger__menu__cart ul li a i {\n    font-size: 18px;\n    color: #1c1c1c;\n}\n.humberger__menu__cart ul li a span {\n    height: 13px;\n    width: 13px;\n    background: #7fad39;\n    font-size: 10px;\n    color: #ffffff;\n    line-height: 13px;\n    text-align: center;\n    font-weight: 700;\n    display: inline-block;\n    border-radius: 50%;\n    position: absolute;\n    top: 0;\n    right: -12px;\n}\n.humberger__menu__cart .header__cart__price {\n    font-size: 14px;\n    color: #6f6f6f;\n    display: inline-block;\n}\n.humberger__menu__cart .header__cart__price span {\n    color: #252525;\n    font-weight: 700;\n}\n.humberger__menu__cart {\n    margin-bottom: 25px;\n}\n.humberger__menu__widget {\n    margin-bottom: 20px;\n}\n.humberger__menu__widget .header__top__right__language {\n    margin-right: 20px;\n}\n.humberger__menu__nav {\n    display: none;\n}\n.humberger__menu__wrapper .header__top__right__social {\n    display: block;\n    margin-right: 0;\n    margin-bottom: 20px;\n}\n.humberger__menu__wrapper .slicknav_btn {\n    display: none;\n}\n.humberger__menu__wrapper .slicknav_nav .slicknav_item a {\n    border-bottom: none !important;\n}\n.humberger__menu__wrapper .slicknav_nav {\n    display: block !important;\n}\n.humberger__menu__wrapper .slicknav_menu {\n    background: transparent;\n    padding: 0;\n    margin-bottom: 30px;\n}\n.humberger__menu__wrapper .slicknav_nav ul {\n    margin: 0;\n}\n.humberger__menu__wrapper .slicknav_nav a {\n    color: #1c1c1c;\n    font-size: 16px;\n    font-weight: 600;\n    margin: 0;\n    border-bottom: 1px solid #e1e1e1;\n}\n.humberger__menu__wrapper .slicknav_nav a:hover {\n    border-radius: 0;\n    background: transparent;\n    color: #7fad39;\n}\n.humberger__menu__wrapper .slicknav_nav .slicknav_row,\n.humberger__menu__wrapper .slicknav_nav a {\n    padding: 8px 0;\n}\n.humberger__menu__overlay {\n    position: fixed;\n    left: 0;\n    top: 0;\n    height: 100%;\n    width: 100%;\n    background: rgba(0, 0, 0, 0.5);\n    content: \"\";\n    z-index: 98;\n    visibility: hidden;\n    transition: all, 0.6s;\n}\n.humberger__menu__overlay.active {\n    visibility: visible;\n}\n.header__top {\n    display: none;\n}\n.header__menu {\n    display: none;\n}\n.header__cart {\n    text-align: center;\n    padding: 10px 0 24px;\n}\n.over_hid {\n    overflow: hidden;\n}\n}\n/* Small Device = 320px */\n@media only screen and (max-width: 479px) {\n.hero__search__form form .hero__search__categories {\n    display: none;\n}\n.featured__controls ul li {\n    margin-bottom: 10px;\n}\n.product__details__text ul li b {\n    width: 100px;\n}\n.product__details__tab .nav-tabs li {\n    margin-right: 20px;\n}\n.shoping__cart__btns {\n    text-align: center;\n}\n.primary-btn.cart-btn.cart-btn-right {\n    float: none;\n    margin-top: 10px;\n}\n.shoping__checkout .primary-btn {\n    display: block;\n    text-align: center;\n    padding: 10px 15px 10px;\n}\n.map .map-inside {\n    transform: translateX(-125px);\n}\n.map .map-inside .inside-widget {\n    width: 250px;\n}\n.product__details__tab .nav-tabs li {\n    margin-right: 15px;\n}\n.shoping__discount form input {\n    width: 100%;\n}\n.checkout__order {\n    padding: 20px;\n}\n.blog__details__hero__text h2 {\n    font-size: 24px;\n}\n}", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/api.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
-  \*****************************************************/
-/***/ ((module) => {
-
-"use strict";
-
-
-/*
-  MIT License http://www.opensource.org/licenses/mit-license.php
-  Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-// eslint-disable-next-line func-names
-module.exports = function (cssWithMappingToString) {
-  var list = []; // return the list of modules as css string
-
-  list.toString = function toString() {
-    return this.map(function (item) {
-      var content = cssWithMappingToString(item);
-
-      if (item[2]) {
-        return "@media ".concat(item[2], " {").concat(content, "}");
-      }
-
-      return content;
-    }).join("");
-  }; // import a list of modules into the list
-  // eslint-disable-next-line func-names
-
-
-  list.i = function (modules, mediaQuery, dedupe) {
-    if (typeof modules === "string") {
-      // eslint-disable-next-line no-param-reassign
-      modules = [[null, modules, ""]];
-    }
-
-    var alreadyImportedModules = {};
-
-    if (dedupe) {
-      for (var i = 0; i < this.length; i++) {
-        // eslint-disable-next-line prefer-destructuring
-        var id = this[i][0];
-
-        if (id != null) {
-          alreadyImportedModules[id] = true;
-        }
-      }
-    }
-
-    for (var _i = 0; _i < modules.length; _i++) {
-      var item = [].concat(modules[_i]);
-
-      if (dedupe && alreadyImportedModules[item[0]]) {
-        // eslint-disable-next-line no-continue
-        continue;
-      }
-
-      if (mediaQuery) {
-        if (!item[2]) {
-          item[2] = mediaQuery;
-        } else {
-          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
-        }
-      }
-
-      list.push(item);
-    }
-  };
-
-  return list;
-};
-
-/***/ }),
-
-/***/ "./node_modules/laravel-mix/node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/App.vue?vue&type=style&index=0&lang=scss&":
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/laravel-mix/node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/App.vue?vue&type=style&index=0&lang=scss& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/laravel-mix/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/laravel-mix/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!../../../node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./App.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/App.vue?vue&type=style&index=0&lang=scss&");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_1__["default"], options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
-
-/***/ }),
-
-/***/ "./node_modules/laravel-mix/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
-/*!*****************************************************************************************************!*\
-  !*** ./node_modules/laravel-mix/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
-  \*****************************************************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-var isOldIE = function isOldIE() {
-  var memo;
-  return function memorize() {
-    if (typeof memo === 'undefined') {
-      // Test for IE <= 9 as proposed by Browserhacks
-      // @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
-      // Tests for existence of standard globals is to allow style-loader
-      // to operate correctly into non-standard environments
-      // @see https://github.com/webpack-contrib/style-loader/issues/177
-      memo = Boolean(window && document && document.all && !window.atob);
-    }
-
-    return memo;
-  };
-}();
-
-var getTarget = function getTarget() {
-  var memo = {};
-  return function memorize(target) {
-    if (typeof memo[target] === 'undefined') {
-      var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself
-
-      if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
-        try {
-          // This will throw an exception if access to iframe is blocked
-          // due to cross-origin restrictions
-          styleTarget = styleTarget.contentDocument.head;
-        } catch (e) {
-          // istanbul ignore next
-          styleTarget = null;
-        }
-      }
-
-      memo[target] = styleTarget;
-    }
-
-    return memo[target];
-  };
-}();
-
-var stylesInDom = [];
-
-function getIndexByIdentifier(identifier) {
-  var result = -1;
-
-  for (var i = 0; i < stylesInDom.length; i++) {
-    if (stylesInDom[i].identifier === identifier) {
-      result = i;
-      break;
-    }
-  }
-
-  return result;
-}
-
-function modulesToDom(list, options) {
-  var idCountMap = {};
-  var identifiers = [];
-
-  for (var i = 0; i < list.length; i++) {
-    var item = list[i];
-    var id = options.base ? item[0] + options.base : item[0];
-    var count = idCountMap[id] || 0;
-    var identifier = "".concat(id, " ").concat(count);
-    idCountMap[id] = count + 1;
-    var index = getIndexByIdentifier(identifier);
-    var obj = {
-      css: item[1],
-      media: item[2],
-      sourceMap: item[3]
-    };
-
-    if (index !== -1) {
-      stylesInDom[index].references++;
-      stylesInDom[index].updater(obj);
-    } else {
-      stylesInDom.push({
-        identifier: identifier,
-        updater: addStyle(obj, options),
-        references: 1
-      });
-    }
-
-    identifiers.push(identifier);
-  }
-
-  return identifiers;
-}
-
-function insertStyleElement(options) {
-  var style = document.createElement('style');
-  var attributes = options.attributes || {};
-
-  if (typeof attributes.nonce === 'undefined') {
-    var nonce =  true ? __webpack_require__.nc : 0;
-
-    if (nonce) {
-      attributes.nonce = nonce;
-    }
-  }
-
-  Object.keys(attributes).forEach(function (key) {
-    style.setAttribute(key, attributes[key]);
-  });
-
-  if (typeof options.insert === 'function') {
-    options.insert(style);
-  } else {
-    var target = getTarget(options.insert || 'head');
-
-    if (!target) {
-      throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
-    }
-
-    target.appendChild(style);
-  }
-
-  return style;
-}
-
-function removeStyleElement(style) {
-  // istanbul ignore if
-  if (style.parentNode === null) {
-    return false;
-  }
-
-  style.parentNode.removeChild(style);
-}
-/* istanbul ignore next  */
-
-
-var replaceText = function replaceText() {
-  var textStore = [];
-  return function replace(index, replacement) {
-    textStore[index] = replacement;
-    return textStore.filter(Boolean).join('\n');
-  };
-}();
-
-function applyToSingletonTag(style, index, remove, obj) {
-  var css = remove ? '' : obj.media ? "@media ".concat(obj.media, " {").concat(obj.css, "}") : obj.css; // For old IE
-
-  /* istanbul ignore if  */
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = replaceText(index, css);
-  } else {
-    var cssNode = document.createTextNode(css);
-    var childNodes = style.childNodes;
-
-    if (childNodes[index]) {
-      style.removeChild(childNodes[index]);
-    }
-
-    if (childNodes.length) {
-      style.insertBefore(cssNode, childNodes[index]);
-    } else {
-      style.appendChild(cssNode);
-    }
-  }
-}
-
-function applyToTag(style, options, obj) {
-  var css = obj.css;
-  var media = obj.media;
-  var sourceMap = obj.sourceMap;
-
-  if (media) {
-    style.setAttribute('media', media);
-  } else {
-    style.removeAttribute('media');
-  }
-
-  if (sourceMap && typeof btoa !== 'undefined') {
-    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
-  } // For old IE
-
-  /* istanbul ignore if  */
-
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = css;
-  } else {
-    while (style.firstChild) {
-      style.removeChild(style.firstChild);
-    }
-
-    style.appendChild(document.createTextNode(css));
-  }
-}
-
-var singleton = null;
-var singletonCounter = 0;
-
-function addStyle(obj, options) {
-  var style;
-  var update;
-  var remove;
-
-  if (options.singleton) {
-    var styleIndex = singletonCounter++;
-    style = singleton || (singleton = insertStyleElement(options));
-    update = applyToSingletonTag.bind(null, style, styleIndex, false);
-    remove = applyToSingletonTag.bind(null, style, styleIndex, true);
-  } else {
-    style = insertStyleElement(options);
-    update = applyToTag.bind(null, style, options);
-
-    remove = function remove() {
-      removeStyleElement(style);
-    };
-  }
-
-  update(obj);
-  return function updateStyle(newObj) {
-    if (newObj) {
-      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) {
-        return;
-      }
-
-      update(obj = newObj);
-    } else {
-      remove();
-    }
-  };
-}
-
-module.exports = function (list, options) {
-  options = options || {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-  // tags it will allow on a page
-
-  if (!options.singleton && typeof options.singleton !== 'boolean') {
-    options.singleton = isOldIE();
-  }
-
-  list = list || [];
-  var lastIdentifiers = modulesToDom(list, options);
-  return function update(newList) {
-    newList = newList || [];
-
-    if (Object.prototype.toString.call(newList) !== '[object Array]') {
-      return;
-    }
-
-    for (var i = 0; i < lastIdentifiers.length; i++) {
-      var identifier = lastIdentifiers[i];
-      var index = getIndexByIdentifier(identifier);
-      stylesInDom[index].references--;
-    }
-
-    var newLastIdentifiers = modulesToDom(newList, options);
-
-    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
-      var _identifier = lastIdentifiers[_i];
-
-      var _index = getIndexByIdentifier(_identifier);
-
-      if (stylesInDom[_index].references === 0) {
-        stylesInDom[_index].updater();
-
-        stylesInDom.splice(_index, 1);
-      }
-    }
-
-    lastIdentifiers = newLastIdentifiers;
-  };
-};
 
 /***/ }),
 
@@ -29382,17 +31524,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _App_vue_vue_type_template_id_332fccf4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.vue?vue&type=template&id=332fccf4& */ "./resources/js/components/App.vue?vue&type=template&id=332fccf4&");
 /* harmony import */ var _App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.vue?vue&type=script&lang=js& */ "./resources/js/components/App.vue?vue&type=script&lang=js&");
-/* harmony import */ var _App_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/components/App.vue?vue&type=style&index=0&lang=scss&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
-;
 
 
 /* normalize component */
-
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _App_vue_vue_type_template_id_332fccf4___WEBPACK_IMPORTED_MODULE_0__.render,
   _App_vue_vue_type_template_id_332fccf4___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
@@ -29591,19 +31731,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/App.vue?vue&type=style&index=0&lang=scss&":
-/*!***************************************************************************!*\
-  !*** ./resources/js/components/App.vue?vue&type=style&index=0&lang=scss& ***!
-  \***************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_laravel_mix_node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_0_rules_0_use_3_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/laravel-mix/node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!../../../node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./App.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/laravel-mix/node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/App.vue?vue&type=style&index=0&lang=scss&");
-
-
-/***/ }),
-
 /***/ "./resources/js/components/App.vue?vue&type=template&id=332fccf4&":
 /*!************************************************************************!*\
   !*** ./resources/js/components/App.vue?vue&type=template&id=332fccf4& ***!
@@ -29724,41 +31851,77 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("section", { staticClass: "hero" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-3" }, [
-            _c("div", { staticClass: "hero__categories" }, [
-              _vm._m(0),
-              _vm._v(" "),
-              _c(
-                "ul",
-                _vm._l(_vm.categories, function (item) {
-                  return _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(_vm._s(item.name)),
-                    ]),
-                  ])
-                }),
-                0
-              ),
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "main_content" }, [
+      _c("div", { staticClass: "section small_pb" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-12" }, [
+              _c("div", { staticClass: "heading_tab_header" }, [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("div", { staticClass: "tab-style2" }, [
+                  _vm._m(2),
+                  _vm._v(
+                    "\n                                currentIndex: " +
+                      _vm._s(_vm.currentIndex) +
+                      "\n                                "
+                  ),
+                  _c(
+                    "ul",
+                    {
+                      staticClass:
+                        "nav nav-tabs justify-content-center justify-content-md-end",
+                      attrs: { id: "tabmenubar" },
+                    },
+                    _vm._l(_vm.products_by_collection, function (item, index) {
+                      return _c(
+                        "li",
+                        {
+                          key: index,
+                          staticClass: "nav-item",
+                          on: {
+                            click: function ($event) {
+                              return _vm.changeCollecction(item, index)
+                            },
+                          },
+                        },
+                        [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "nav-link cursor-pointer",
+                              class: { active: index == _vm.currentIndex },
+                            },
+                            [_vm._v(_vm._s(item.name))]
+                          ),
+                        ]
+                      )
+                    }),
+                    0
+                  ),
+                ]),
+              ]),
             ]),
           ]),
           _vm._v(" "),
-          _vm._m(1),
+          _vm._m(3),
         ]),
       ]),
+      _vm._v(" "),
+      _vm._m(4),
+      _vm._v(" "),
+      _vm._m(5),
+      _vm._v(" "),
+      _vm._m(6),
+      _vm._v(" "),
+      _vm._m(7),
+      _vm._v(" "),
+      _vm._m(8),
+      _vm._v(" "),
+      _vm._m(9),
     ]),
-    _vm._v(" "),
-    _vm._m(2),
-    _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
-    _vm._m(4),
-    _vm._v(" "),
-    _vm._m(5),
-    _vm._v(" "),
-    _vm._m(6),
   ])
 }
 var staticRenderFns = [
@@ -29766,155 +31929,4965 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "hero__categories__all" }, [
-      _c("i", { staticClass: "fa fa-bars" }),
-      _vm._v(" "),
-      _c("span", [_vm._v("Danh mục")]),
+    return _c(
+      "div",
+      {
+        staticClass:
+          "banner_section slide_medium shop_banner_slider staggered-animation-wrap",
+      },
+      [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-9 offset-lg-3" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "carousel slide light_arrow",
+                  attrs: {
+                    id: "carouselExampleControls",
+                    "data-ride": "carousel",
+                  },
+                },
+                [
+                  _c("div", { staticClass: "carousel-inner" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "carousel-item active background_bg",
+                        attrs: { "data-img-src": "assets/images/banner4.jpg" },
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "banner_slide_content banner_content_inner",
+                          },
+                          [
+                            _c("div", { staticClass: "col-lg-8 col-10" }, [
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "banner_content overflow-hidden",
+                                },
+                                [
+                                  _c(
+                                    "h5",
+                                    {
+                                      staticClass:
+                                        "mb-3 staggered-animation font-weight-light",
+                                      attrs: {
+                                        "data-animation": "slideInLeft",
+                                        "data-animation-delay": "0.5s",
+                                      },
+                                    },
+                                    [
+                                      _vm._v(
+                                        "Get up to\n                                                50% off Today Only!"
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "h2",
+                                    {
+                                      staticClass: "staggered-animation",
+                                      attrs: {
+                                        "data-animation": "slideInLeft",
+                                        "data-animation-delay": "1s",
+                                      },
+                                    },
+                                    [_vm._v("Woman Fashion")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass:
+                                        "btn btn-fill-out rounded-0 staggered-animation text-uppercase",
+                                      attrs: {
+                                        href: "shop-left-sidebar.html",
+                                        "data-animation": "slideInLeft",
+                                        "data-animation-delay": "1.5s",
+                                      },
+                                    },
+                                    [_vm._v("Shop Now")]
+                                  ),
+                                ]
+                              ),
+                            ]),
+                          ]
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "carousel-item background_bg",
+                        attrs: { "data-img-src": "assets/images/banner5.jpg" },
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "banner_slide_content banner_content_inner",
+                          },
+                          [
+                            _c("div", { staticClass: "col-lg-8 col-10" }, [
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "banner_content overflow-hidden",
+                                },
+                                [
+                                  _c(
+                                    "h5",
+                                    {
+                                      staticClass:
+                                        "mb-3 staggered-animation font-weight-light",
+                                      attrs: {
+                                        "data-animation": "slideInLeft",
+                                        "data-animation-delay": "0.5s",
+                                      },
+                                    },
+                                    [
+                                      _vm._v(
+                                        "50% off in\n                                                all products"
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "h2",
+                                    {
+                                      staticClass: "staggered-animation",
+                                      attrs: {
+                                        "data-animation": "slideInLeft",
+                                        "data-animation-delay": "1s",
+                                      },
+                                    },
+                                    [_vm._v("Man Fashion")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass:
+                                        "btn btn-fill-out rounded-0 staggered-animation text-uppercase",
+                                      attrs: {
+                                        href: "shop-left-sidebar.html",
+                                        "data-animation": "slideInLeft",
+                                        "data-animation-delay": "1.5s",
+                                      },
+                                    },
+                                    [_vm._v("Shop Now")]
+                                  ),
+                                ]
+                              ),
+                            ]),
+                          ]
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "carousel-item background_bg",
+                        attrs: { "data-img-src": "assets/images/banner6.jpg" },
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "banner_slide_content banner_content_inner",
+                          },
+                          [
+                            _c("div", { staticClass: "col-lg-8 col-10" }, [
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "banner_content overflow-hidden",
+                                },
+                                [
+                                  _c(
+                                    "h5",
+                                    {
+                                      staticClass:
+                                        "mb-3 staggered-animation font-weight-light",
+                                      attrs: {
+                                        "data-animation": "slideInLeft",
+                                        "data-animation-delay": "0.5s",
+                                      },
+                                    },
+                                    [
+                                      _vm._v(
+                                        "Taking your\n                                                Viewing Experience to Next Level"
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "h2",
+                                    {
+                                      staticClass: "staggered-animation",
+                                      attrs: {
+                                        "data-animation": "slideInLeft",
+                                        "data-animation-delay": "1s",
+                                      },
+                                    },
+                                    [_vm._v("Summer Sale")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass:
+                                        "btn btn-fill-out rounded-0 staggered-animation text-uppercase",
+                                      attrs: {
+                                        href: "shop-left-sidebar.html",
+                                        "data-animation": "slideInLeft",
+                                        "data-animation-delay": "1.5s",
+                                      },
+                                    },
+                                    [_vm._v("Shop Now")]
+                                  ),
+                                ]
+                              ),
+                            ]),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "ol",
+                    { staticClass: "carousel-indicators indicators_style1" },
+                    [
+                      _c("li", {
+                        staticClass: "active",
+                        attrs: {
+                          "data-target": "#carouselExampleControls",
+                          "data-slide-to": "0",
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("li", {
+                        attrs: {
+                          "data-target": "#carouselExampleControls",
+                          "data-slide-to": "1",
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("li", {
+                        attrs: {
+                          "data-target": "#carouselExampleControls",
+                          "data-slide-to": "2",
+                        },
+                      }),
+                    ]
+                  ),
+                ]
+              ),
+            ]),
+          ]),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "heading_s2" }, [
+      _c("h2", [_vm._v("Sản phẩm độc quyền")]),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-9" }, [
-      _c("div", { staticClass: "hero__search" }, [
-        _c("div", { staticClass: "hero__search__form" }, [
-          _c("form", { attrs: { action: "#" } }, [
-            _c("div", { staticClass: "hero__search__categories" }, [
-              _vm._v(
-                "\n                                    All Categories\n                                    "
+    return _c(
+      "button",
+      {
+        staticClass: "navbar-toggler",
+        attrs: {
+          type: "button",
+          "data-toggle": "collapse",
+          "data-target": "#tabmenubar",
+          "aria-expanded": "false",
+        },
+      },
+      [_c("span", { staticClass: "ion-android-menu" })]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("div", { staticClass: "tab_slider" }, [
+          _c(
+            "div",
+            {
+              staticClass: "tab-pane fade show active",
+              attrs: {
+                id: "arrival",
+                role: "tabpanel",
+                "aria-labelledby": "arrival-tab",
+              },
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "product_slider carousel_slider owl-carousel owl-theme nav_style1",
+                  attrs: {
+                    "data-loop": "true",
+                    "data-dots": "false",
+                    "data-nav": "true",
+                    "data-margin": "20",
+                    "data-responsive":
+                      '{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "1199":{"items": "4"}}',
+                  },
+                },
+                [
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img1.jpg",
+                                alt: "product_img1",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "Blue\n                                                    Dress For Woman"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$45.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$55.25")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("35% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "80%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(21)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#87554B" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#333333" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#DA323F" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img2.jpg",
+                                alt: "product_img2",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "Lether\n                                                    Gray Tuxedo"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$55.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$95.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("25% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "68%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(15)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#847764" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#0393B5" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#DA323F" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("span", { staticClass: "pr_flash" }, [_vm._v("New")]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img3.jpg",
+                                alt: "product_img3",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "woman\n                                                    full sliv dress"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$68.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$99.00")]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "87%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(25)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#333333" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#7C502F" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#2F366C" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#874A3D" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img4.jpg",
+                                alt: "product_img4",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "light\n                                                    blue Shirt"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$69.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$89.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("20% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "70%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(22)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#333333" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#A92534" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#B9C2DF" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img5.jpg",
+                                alt: "product_img5",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "blue\n                                                    dress for woman"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$45.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$55.25")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("35% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "80%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(21)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#87554B" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#333333" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#5FB7D4" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("span", { staticClass: "pr_flash bg-danger" }, [
+                        _vm._v("Hot"),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img6.jpg",
+                                alt: "product_img6",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "Blue\n                                                    casual check shirt"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$55.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$95.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("25% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "68%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(15)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#87554B" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#333333" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("span", { staticClass: "pr_flash bg-success" }, [
+                        _vm._v("Sale"),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img7.jpg",
+                                alt: "product_img7",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "white\n                                                    black line dress"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$68.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$99.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("20% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "87%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(25)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#333333" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#7C502F" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#2F366C" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img8.jpg",
+                                alt: "product_img8",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "Men\n                                                    blue jins Shirt"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$69.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$89.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("20% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "70%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(22)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#333333" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#444653" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#B9C2DF" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]
               ),
-              _c("span", { staticClass: "arrow_carrot-down" }),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "tab-pane fade",
+              attrs: {
+                id: "sellers",
+                role: "tabpanel",
+                "aria-labelledby": "sellers-tab",
+              },
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "product_slider carousel_slider owl-carousel owl-theme nav_style1",
+                  attrs: {
+                    "data-loop": "true",
+                    "data-dots": "false",
+                    "data-nav": "true",
+                    "data-margin": "20",
+                    "data-responsive":
+                      '{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "1199":{"items": "4"}}',
+                  },
+                },
+                [
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img9.jpg",
+                                alt: "product_img9",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "T-Shirt\n                                                    Form Girls"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$45.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$55.25")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("35% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "80%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(21)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#B5B6BB" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#333333" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#DA323F" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("span", { staticClass: "pr_flash bg-danger" }, [
+                        _vm._v("Hot"),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img6.jpg",
+                                alt: "product_img6",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "Blue\n                                                    casual check shirt"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$55.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$95.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("25% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "68%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(15)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#87554B" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#333333" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img11.jpg",
+                                alt: "product_img11",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "Black\n                                                    dress for woman"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$68.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$99.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("20% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "87%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(25)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#090909" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#AC644D" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("span", { staticClass: "pr_flash bg-success" }, [
+                        _vm._v("Sale"),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img7.jpg",
+                                alt: "product_img7",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "white\n                                                    black line dress"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$68.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$99.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("20% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "87%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(25)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#333333" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#7C502F" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#2F366C" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img8.jpg",
+                                alt: "product_img8",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "Men\n                                                    blue jins Shirt"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$69.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$89.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("20% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "70%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(22)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#333333" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#444653" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#B9C2DF" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img5.jpg",
+                                alt: "product_img5",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "blue\n                                                    dress for woman"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$45.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$55.25")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("35% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "80%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(21)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#87554B" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#333333" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#5FB7D4" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img12.jpg",
+                                alt: "product_img12",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("span", { staticClass: "pr_flash" }, [
+                          _vm._v("New"),
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "Black\n                                                    T-shirt for woman"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$69.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$89.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("20% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "70%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(22)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#1B1B25" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#444653" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("span", { staticClass: "pr_flash bg-danger" }, [
+                        _vm._v("Hot"),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img10.jpg",
+                                alt: "product_img10",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "Red &\n                                                    Black check shirt"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$55.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$95.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("25% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "68%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(15)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#E8ADA9" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#C38F77" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#BE7154" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "tab-pane fade",
+              attrs: {
+                id: "featured",
+                role: "tabpanel",
+                "aria-labelledby": "featured-tab",
+              },
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "product_slider carousel_slider owl-carousel owl-theme nav_style1",
+                  attrs: {
+                    "data-loop": "true",
+                    "data-dots": "false",
+                    "data-nav": "true",
+                    "data-margin": "20",
+                    "data-responsive":
+                      '{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "1199":{"items": "4"}}',
+                  },
+                },
+                [
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img5.jpg",
+                                alt: "product_img5",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "blue\n                                                    dress for woman"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$45.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$55.25")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("35% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "80%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(21)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#87554B" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#333333" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#5FB7D4" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img12.jpg",
+                                alt: "product_img12",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("span", { staticClass: "pr_flash" }, [
+                          _vm._v("New"),
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "Black\n                                                    T-shirt for woman"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$69.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$89.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("20% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "70%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(22)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#1B1B25" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#444653" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img9.jpg",
+                                alt: "product_img9",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "T-Shirt\n                                                    Form Girls"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$45.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$55.25")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("35% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "80%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(21)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#B5B6BB" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#333333" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#DA323F" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("span", { staticClass: "pr_flash bg-success" }, [
+                        _vm._v("Sale"),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img10.jpg",
+                                alt: "product_img10",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "Red &\n                                                    Black check shirt"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$55.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$95.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("25% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "68%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(15)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#E8ADA9" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#C38F77" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#BE7154" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("span", { staticClass: "pr_flash bg-danger" }, [
+                        _vm._v("Hot"),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img7.jpg",
+                                alt: "product_img7",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "white\n                                                    black line dress"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$68.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$99.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("20% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "87%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(25)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#333333" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#7C502F" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#2F366C" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img11.jpg",
+                                alt: "product_img11",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "Black\n                                                    dress for woman"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$68.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$99.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("20% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "87%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(25)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#090909" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#AC644D" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img8.jpg",
+                                alt: "product_img8",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "Men\n                                                    blue jins Shirt"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$69.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$89.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("20% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "70%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(22)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#333333" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#444653" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#B9C2DF" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("span", { staticClass: "pr_flash" }, [_vm._v("Sale")]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img6.jpg",
+                                alt: "product_img6",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "Blue\n                                                    casual check shirt"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$55.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$95.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("25% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "68%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(15)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#87554B" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#333333" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "tab-pane fade",
+              attrs: {
+                id: "special",
+                role: "tabpanel",
+                "aria-labelledby": "special-tab",
+              },
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "product_slider carousel_slider owl-carousel owl-theme nav_style1",
+                  attrs: {
+                    "data-loop": "true",
+                    "data-dots": "false",
+                    "data-nav": "true",
+                    "data-margin": "20",
+                    "data-responsive":
+                      '{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "1199":{"items": "4"}}',
+                  },
+                },
+                [
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img4.jpg",
+                                alt: "product_img4",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "light\n                                                    blue Shirt"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$69.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$89.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("20% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "70%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(22)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#333333" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#A92534" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#B9C2DF" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img9.jpg",
+                                alt: "product_img9",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "T-Shirt\n                                                    Form Girls"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$45.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$55.25")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("35% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "80%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(21)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#B5B6BB" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#333333" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#DA323F" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img8.jpg",
+                                alt: "product_img8",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "Men\n                                                    Checks Casual Shirt"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$69.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$89.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("20% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "70%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(22)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#333333" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#444653" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#B9C2DF" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("span", { staticClass: "pr_flash" }, [_vm._v("New")]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img1.jpg",
+                                alt: "product_img1",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "Blue\n                                                    Dress For Woman"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$45.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$55.25")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("35% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "80%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(21)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#87554B" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#333333" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#DA323F" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img12.jpg",
+                                alt: "product_img12",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("span", { staticClass: "pr_flash bg-danger" }, [
+                          _vm._v("Hot"),
+                        ]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "Black\n                                                    T-shirt for woman"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$69.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$89.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("20% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "70%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(22)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#1B1B25" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#444653" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img6.jpg",
+                                alt: "product_img6",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "Blue\n                                                    casual check shirt"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$55.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$95.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("25% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "68%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(15)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#87554B" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#333333" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("span", { staticClass: "pr_flash bg-success" }, [
+                        _vm._v("Sale"),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img7.jpg",
+                                alt: "product_img7",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "white\n                                                    black line dress"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$68.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$99.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("20% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "87%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(25)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#333333" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#7C502F" } }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#2F366C" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item" }, [
+                    _c("div", { staticClass: "product" }, [
+                      _c("div", { staticClass: "product_img" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: "assets/images/product_img11.jpg",
+                                alt: "product_img11",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_action_box" }, [
+                          _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                            _c("li", { staticClass: "add-to-cart" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-basket-loaded" }),
+                                _vm._v(" Add To Cart"),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-compare.html" },
+                                },
+                                [_c("i", { staticClass: "icon-shuffle" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "popup-ajax",
+                                  attrs: { href: "shop-quick-view.html" },
+                                },
+                                [_c("i", { staticClass: "icon-magnifier-add" })]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("i", { staticClass: "icon-heart" }),
+                              ]),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_info" }, [
+                        _c("h6", { staticClass: "product_title" }, [
+                          _c(
+                            "a",
+                            { attrs: { href: "shop-product-detail.html" } },
+                            [
+                              _vm._v(
+                                "Black\n                                                    dress for woman"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "product_price" }, [
+                          _c("span", { staticClass: "price" }, [
+                            _vm._v("$68.00"),
+                          ]),
+                          _vm._v(" "),
+                          _c("del", [_vm._v("$99.00")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "on_sale" }, [
+                            _c("span", [_vm._v("20% Off")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "rating_wrap" }, [
+                          _c("div", { staticClass: "rating" }, [
+                            _c("div", {
+                              staticClass: "product_rate",
+                              staticStyle: { width: "87%" },
+                            }),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "rating_num" }, [
+                            _vm._v("(25)"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_desc" }, [
+                          _c("p", [
+                            _vm._v(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                                                        Phasellus blandit massa enim. Nullam id varius nunc id\n                                                        varius nunc."
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "pr_switch_wrap" }, [
+                          _c("div", { staticClass: "product_color_switch" }, [
+                            _c("span", {
+                              staticClass: "active",
+                              attrs: { "data-color": "#090909" },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { attrs: { "data-color": "#AC644D" } }),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]
+              ),
+            ]
+          ),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "section pb_20 small_pt" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "single_banner" }, [
+              _c("img", {
+                attrs: {
+                  src: "assets/images/shop_banner_img1.jpg",
+                  alt: "shop_banner_img1",
+                },
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "single_banner_info" }, [
+                _c("h5", { staticClass: "single_bn_title1" }, [
+                  _vm._v("Super Sale"),
+                ]),
+                _vm._v(" "),
+                _c("h3", { staticClass: "single_bn_title" }, [
+                  _vm._v("New Collection"),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "single_bn_link",
+                    attrs: { href: "shop-left-sidebar.html" },
+                  },
+                  [_vm._v("Shop Now")]
+                ),
+              ]),
             ]),
-            _vm._v(" "),
-            _c("input", {
-              attrs: { type: "text", placeholder: "What do yo u need?" },
-            }),
-            _vm._v(" "),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "single_banner" }, [
+              _c("img", {
+                attrs: {
+                  src: "assets/images/shop_banner_img2.jpg",
+                  alt: "shop_banner_img2",
+                },
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "single_banner_info" }, [
+                _c("h3", { staticClass: "single_bn_title" }, [
+                  _vm._v("New Season"),
+                ]),
+                _vm._v(" "),
+                _c("h4", { staticClass: "single_bn_title1" }, [
+                  _vm._v("Sale 40% Off"),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "single_bn_link",
+                    attrs: { href: "shop-left-sidebar.html" },
+                  },
+                  [_vm._v("Shop Now")]
+                ),
+              ]),
+            ]),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "section small_pt small_pb" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "heading_tab_header" }, [
+              _c("div", { staticClass: "heading_s2" }, [
+                _c("h2", [_vm._v("Deal Of The Days")]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "deal_timer" }, [
+                _c("div", {
+                  staticClass: "countdown_time countdown_style1",
+                  attrs: { "data-time": "2021/09/28 13:22:15" },
+                }),
+              ]),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
             _c(
-              "button",
-              { staticClass: "site-btn", attrs: { type: "submit" } },
-              [_vm._v("SEARCH")]
+              "div",
+              {
+                staticClass:
+                  "product_slider carousel_slider owl-carousel owl-theme nav_style1",
+                attrs: {
+                  "data-loop": "true",
+                  "data-dots": "false",
+                  "data-nav": "true",
+                  "data-margin": "20",
+                  "data-responsive":
+                    '{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "1199":{"items": "4"}}',
+                },
+              },
+              [
+                _c("div", { staticClass: "item" }, [
+                  _c("div", { staticClass: "product" }, [
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img1.jpg",
+                            alt: "product_img1",
+                          },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_action_box" }, [
+                        _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                          _c("li", { staticClass: "add-to-cart" }, [
+                            _c("a", { attrs: { href: "#" } }, [
+                              _c("i", { staticClass: "icon-basket-loaded" }),
+                              _vm._v(" Add To Cart"),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "popup-ajax",
+                                attrs: { href: "shop-compare.html" },
+                              },
+                              [_c("i", { staticClass: "icon-shuffle" })]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "popup-ajax",
+                                attrs: { href: "shop-quick-view.html" },
+                              },
+                              [_c("i", { staticClass: "icon-magnifier-add" })]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("a", { attrs: { href: "#" } }, [
+                              _c("i", { staticClass: "icon-heart" }),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _vm._v(
+                              "Blue Dress For\n                                            Woman"
+                            ),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$45.00"),
+                        ]),
+                        _vm._v(" "),
+                        _c("del", [_vm._v("$55.25")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "on_sale" }, [
+                          _c("span", [_vm._v("35% Off")]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "80%" },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(21)"),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "pr_desc" }, [
+                        _c("p", [
+                          _vm._v(
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus\n                                                blandit massa enim. Nullam id varius nunc id varius nunc."
+                          ),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "pr_switch_wrap" }, [
+                        _c("div", { staticClass: "product_color_switch" }, [
+                          _c("span", {
+                            staticClass: "active",
+                            attrs: { "data-color": "#87554B" },
+                          }),
+                          _vm._v(" "),
+                          _c("span", { attrs: { "data-color": "#333333" } }),
+                          _vm._v(" "),
+                          _c("span", { attrs: { "data-color": "#DA323F" } }),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item" }, [
+                  _c("div", { staticClass: "product" }, [
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img2.jpg",
+                            alt: "product_img2",
+                          },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_action_box" }, [
+                        _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                          _c("li", { staticClass: "add-to-cart" }, [
+                            _c("a", { attrs: { href: "#" } }, [
+                              _c("i", { staticClass: "icon-basket-loaded" }),
+                              _vm._v(" Add To Cart"),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "popup-ajax",
+                                attrs: { href: "shop-compare.html" },
+                              },
+                              [_c("i", { staticClass: "icon-shuffle" })]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "popup-ajax",
+                                attrs: { href: "shop-quick-view.html" },
+                              },
+                              [_c("i", { staticClass: "icon-magnifier-add" })]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("a", { attrs: { href: "#" } }, [
+                              _c("i", { staticClass: "icon-heart" }),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _vm._v(
+                              "Lether Gray\n                                            Tuxedo"
+                            ),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$55.00"),
+                        ]),
+                        _vm._v(" "),
+                        _c("del", [_vm._v("$95.00")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "on_sale" }, [
+                          _c("span", [_vm._v("25% Off")]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "68%" },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(15)"),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "pr_desc" }, [
+                        _c("p", [
+                          _vm._v(
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus\n                                                blandit massa enim. Nullam id varius nunc id varius nunc."
+                          ),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "pr_switch_wrap" }, [
+                        _c("div", { staticClass: "product_color_switch" }, [
+                          _c("span", {
+                            staticClass: "active",
+                            attrs: { "data-color": "#847764" },
+                          }),
+                          _vm._v(" "),
+                          _c("span", { attrs: { "data-color": "#0393B5" } }),
+                          _vm._v(" "),
+                          _c("span", { attrs: { "data-color": "#DA323F" } }),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item" }, [
+                  _c("div", { staticClass: "product" }, [
+                    _c("span", { staticClass: "pr_flash" }, [_vm._v("New")]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img3.jpg",
+                            alt: "product_img3",
+                          },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_action_box" }, [
+                        _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                          _c("li", { staticClass: "add-to-cart" }, [
+                            _c("a", { attrs: { href: "#" } }, [
+                              _c("i", { staticClass: "icon-basket-loaded" }),
+                              _vm._v(" Add To Cart"),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "popup-ajax",
+                                attrs: { href: "shop-compare.html" },
+                              },
+                              [_c("i", { staticClass: "icon-shuffle" })]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "popup-ajax",
+                                attrs: { href: "shop-quick-view.html" },
+                              },
+                              [_c("i", { staticClass: "icon-magnifier-add" })]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("a", { attrs: { href: "#" } }, [
+                              _c("i", { staticClass: "icon-heart" }),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _vm._v(
+                              "woman full sliv\n                                            dress"
+                            ),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$68.00"),
+                        ]),
+                        _vm._v(" "),
+                        _c("del", [_vm._v("$99.00")]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "87%" },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(25)"),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "pr_desc" }, [
+                        _c("p", [
+                          _vm._v(
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus\n                                                blandit massa enim. Nullam id varius nunc id varius nunc."
+                          ),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "pr_switch_wrap" }, [
+                        _c("div", { staticClass: "product_color_switch" }, [
+                          _c("span", {
+                            staticClass: "active",
+                            attrs: { "data-color": "#333333" },
+                          }),
+                          _vm._v(" "),
+                          _c("span", { attrs: { "data-color": "#7C502F" } }),
+                          _vm._v(" "),
+                          _c("span", { attrs: { "data-color": "#2F366C" } }),
+                          _vm._v(" "),
+                          _c("span", { attrs: { "data-color": "#874A3D" } }),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item" }, [
+                  _c("div", { staticClass: "product" }, [
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img4.jpg",
+                            alt: "product_img4",
+                          },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_action_box" }, [
+                        _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                          _c("li", { staticClass: "add-to-cart" }, [
+                            _c("a", { attrs: { href: "#" } }, [
+                              _c("i", { staticClass: "icon-basket-loaded" }),
+                              _vm._v(" Add To Cart"),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "popup-ajax",
+                                attrs: { href: "shop-compare.html" },
+                              },
+                              [_c("i", { staticClass: "icon-shuffle" })]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "popup-ajax",
+                                attrs: { href: "shop-quick-view.html" },
+                              },
+                              [_c("i", { staticClass: "icon-magnifier-add" })]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("a", { attrs: { href: "#" } }, [
+                              _c("i", { staticClass: "icon-heart" }),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _vm._v(
+                              "light blue\n                                            Shirt"
+                            ),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$69.00"),
+                        ]),
+                        _vm._v(" "),
+                        _c("del", [_vm._v("$89.00")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "on_sale" }, [
+                          _c("span", [_vm._v("20% Off")]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "70%" },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(22)"),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "pr_desc" }, [
+                        _c("p", [
+                          _vm._v(
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus\n                                                blandit massa enim. Nullam id varius nunc id varius nunc."
+                          ),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "pr_switch_wrap" }, [
+                        _c("div", { staticClass: "product_color_switch" }, [
+                          _c("span", {
+                            staticClass: "active",
+                            attrs: { "data-color": "#333333" },
+                          }),
+                          _vm._v(" "),
+                          _c("span", { attrs: { "data-color": "#A92534" } }),
+                          _vm._v(" "),
+                          _c("span", { attrs: { "data-color": "#B9C2DF" } }),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item" }, [
+                  _c("div", { staticClass: "product" }, [
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img5.jpg",
+                            alt: "product_img5",
+                          },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_action_box" }, [
+                        _c("ul", { staticClass: "list_none pr_action_btn" }, [
+                          _c("li", { staticClass: "add-to-cart" }, [
+                            _c("a", { attrs: { href: "#" } }, [
+                              _c("i", { staticClass: "icon-basket-loaded" }),
+                              _vm._v(" Add To Cart"),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "popup-ajax",
+                                attrs: { href: "shop-compare.html" },
+                              },
+                              [_c("i", { staticClass: "icon-shuffle" })]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "popup-ajax",
+                                attrs: { href: "shop-quick-view.html" },
+                              },
+                              [_c("i", { staticClass: "icon-magnifier-add" })]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("a", { attrs: { href: "#" } }, [
+                              _c("i", { staticClass: "icon-heart" }),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _vm._v(
+                              "blue dress for\n                                            woman"
+                            ),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$45.00"),
+                        ]),
+                        _vm._v(" "),
+                        _c("del", [_vm._v("$55.25")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "on_sale" }, [
+                          _c("span", [_vm._v("35% Off")]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "80%" },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(21)"),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "pr_desc" }, [
+                        _c("p", [
+                          _vm._v(
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus\n                                                blandit massa enim. Nullam id varius nunc id varius nunc."
+                          ),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "pr_switch_wrap" }, [
+                        _c("div", { staticClass: "product_color_switch" }, [
+                          _c("span", {
+                            staticClass: "active",
+                            attrs: { "data-color": "#87554B" },
+                          }),
+                          _vm._v(" "),
+                          _c("span", { attrs: { "data-color": "#333333" } }),
+                          _vm._v(" "),
+                          _c("span", { attrs: { "data-color": "#5FB7D4" } }),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+              ]
             ),
           ]),
         ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "hero__search__phone" }, [
-          _c("div", { staticClass: "hero__search__phone__icon" }, [
-            _c("i", { staticClass: "fa fa-phone" }),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "section pb_20 small_pt" }, [
+      _c("div", { staticClass: "container-fluid px-2" }, [
+        _c("div", { staticClass: "row no-gutters" }, [
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("div", { staticClass: "sale_banner" }, [
+              _c("a", { staticClass: "hover_effect1", attrs: { href: "#" } }, [
+                _c("img", {
+                  attrs: {
+                    src: "assets/images/shop_banner_img3.jpg",
+                    alt: "shop_banner_img3",
+                  },
+                }),
+              ]),
+            ]),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "hero__search__phone__text" }, [
-            _c("h5", [_vm._v("+65 11.188.888")]),
-            _vm._v(" "),
-            _c("span", [_vm._v("support 24/7 time")]),
-          ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "hero__item set-bg",
-          attrs: { "data-setbg": "img/hero/banner.jpg" },
-        },
-        [
-          _c("div", { staticClass: "hero__text" }, [
-            _c("span", [_vm._v("FRUIT FRESH")]),
-            _vm._v(" "),
-            _c("h2", [_vm._v("Vegetable "), _c("br"), _vm._v("100% Organic")]),
-            _vm._v(" "),
-            _c("p", [_vm._v("Free Pickup and Delivery Available")]),
-            _vm._v(" "),
-            _c("a", { staticClass: "primary-btn", attrs: { href: "#" } }, [
-              _vm._v("SHOP NOW"),
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("div", { staticClass: "sale_banner" }, [
+              _c("a", { staticClass: "hover_effect1", attrs: { href: "#" } }, [
+                _c("img", {
+                  attrs: {
+                    src: "assets/images/shop_banner_img4.jpg",
+                    alt: "shop_banner_img4",
+                  },
+                }),
+              ]),
             ]),
           ]),
-        ]
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "categories" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "categories__slider owl-carousel" }, [
-            _c("div", { staticClass: "col-lg-3" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "categories__item set-bg",
-                  attrs: { "data-setbg": "img/categories/cat-1.jpg" },
-                },
-                [
-                  _c("h5", [
-                    _c("a", { attrs: { href: "#" } }, [_vm._v("Fresh Fruit")]),
-                  ]),
-                ]
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-3" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "categories__item set-bg",
-                  attrs: { "data-setbg": "img/categories/cat-2.jpg" },
-                },
-                [
-                  _c("h5", [
-                    _c("a", { attrs: { href: "#" } }, [_vm._v("Dried Fruit")]),
-                  ]),
-                ]
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-3" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "categories__item set-bg",
-                  attrs: { "data-setbg": "img/categories/cat-3.jpg" },
-                },
-                [
-                  _c("h5", [
-                    _c("a", { attrs: { href: "#" } }, [_vm._v("Vegetables")]),
-                  ]),
-                ]
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-3" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "categories__item set-bg",
-                  attrs: { "data-setbg": "img/categories/cat-4.jpg" },
-                },
-                [
-                  _c("h5", [
-                    _c("a", { attrs: { href: "#" } }, [_vm._v("drink fruits")]),
-                  ]),
-                ]
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-3" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "categories__item set-bg",
-                  attrs: { "data-setbg": "img/categories/cat-5.jpg" },
-                },
-                [
-                  _c("h5", [
-                    _c("a", { attrs: { href: "#" } }, [_vm._v("drink fruits")]),
-                  ]),
-                ]
-              ),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("div", { staticClass: "sale_banner" }, [
+              _c("a", { staticClass: "hover_effect1", attrs: { href: "#" } }, [
+                _c("img", {
+                  attrs: {
+                    src: "assets/images/shop_banner_img5.jpg",
+                    alt: "shop_banner_img5",
+                  },
+                }),
+              ]),
             ]),
           ]),
         ]),
@@ -29925,1088 +36898,814 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "featured spad" }, [
+    return _c("div", { staticClass: "section small_pt pb_20" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-12" }, [
-            _c("div", { staticClass: "section-title" }, [
-              _c("h2", [_vm._v("Sản phẩm độc quyền")]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "featured__controls" }, [
-              _c("ul", [
-                _c(
-                  "li",
-                  { staticClass: "active", attrs: { "data-filter": "*" } },
-                  [_vm._v("All")]
-                ),
-                _vm._v(" "),
-                _c("li", { attrs: { "data-filter": ".oranges" } }, [
-                  _vm._v("Oranges"),
-                ]),
-                _vm._v(" "),
-                _c("li", { attrs: { "data-filter": ".fresh-meat" } }, [
-                  _vm._v("Fresh Meat"),
-                ]),
-                _vm._v(" "),
-                _c("li", { attrs: { "data-filter": ".vegetables" } }, [
-                  _vm._v("Vegetables"),
-                ]),
-                _vm._v(" "),
-                _c("li", { attrs: { "data-filter": ".fastfood" } }, [
-                  _vm._v("Fastfood"),
-                ]),
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "heading_tab_header" }, [
+              _c("div", { staticClass: "heading_s2" }, [
+                _c("h2", [_vm._v("Featured Products")]),
               ]),
             ]),
           ]),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "row featured__filter" }, [
-          _c(
-            "div",
-            {
-              staticClass: "col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat",
-            },
-            [
-              _c("div", { staticClass: "featured__item" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "featured__item__pic set-bg",
-                    attrs: { "data-setbg": "img/featured/feature-1.jpg" },
-                  },
-                  [
-                    _c("ul", { staticClass: "featured__item__pic__hover" }, [
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-heart" }),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-retweet" }),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-shopping-cart" }),
-                        ]),
-                      ]),
-                    ]),
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "featured__item__text" }, [
-                  _c("h6", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v("Crab Pool Security"),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("h5", [_vm._v("$30.00")]),
-                ]),
-              ]),
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood",
-            },
-            [
-              _c("div", { staticClass: "featured__item" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "featured__item__pic set-bg",
-                    attrs: { "data-setbg": "img/featured/feature-2.jpg" },
-                  },
-                  [
-                    _c("ul", { staticClass: "featured__item__pic__hover" }, [
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-heart" }),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-retweet" }),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-shopping-cart" }),
-                        ]),
-                      ]),
-                    ]),
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "featured__item__text" }, [
-                  _c("h6", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v("Crab Pool Security"),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("h5", [_vm._v("$30.00")]),
-                ]),
-              ]),
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass:
-                "col-lg-3 col-md-4 col-sm-6 mix vegetables fresh-meat",
-            },
-            [
-              _c("div", { staticClass: "featured__item" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "featured__item__pic set-bg",
-                    attrs: { "data-setbg": "img/featured/feature-3.jpg" },
-                  },
-                  [
-                    _c("ul", { staticClass: "featured__item__pic__hover" }, [
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-heart" }),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-retweet" }),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-shopping-cart" }),
-                        ]),
-                      ]),
-                    ]),
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "featured__item__text" }, [
-                  _c("h6", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v("Crab Pool Security"),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("h5", [_vm._v("$30.00")]),
-                ]),
-              ]),
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-lg-3 col-md-4 col-sm-6 mix fastfood oranges" },
-            [
-              _c("div", { staticClass: "featured__item" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "featured__item__pic set-bg",
-                    attrs: { "data-setbg": "img/featured/feature-4.jpg" },
-                  },
-                  [
-                    _c("ul", { staticClass: "featured__item__pic__hover" }, [
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-heart" }),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-retweet" }),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-shopping-cart" }),
-                        ]),
-                      ]),
-                    ]),
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "featured__item__text" }, [
-                  _c("h6", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v("Crab Pool Security"),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("h5", [_vm._v("$30.00")]),
-                ]),
-              ]),
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass:
-                "col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables",
-            },
-            [
-              _c("div", { staticClass: "featured__item" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "featured__item__pic set-bg",
-                    attrs: { "data-setbg": "img/featured/feature-5.jpg" },
-                  },
-                  [
-                    _c("ul", { staticClass: "featured__item__pic__hover" }, [
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-heart" }),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-retweet" }),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-shopping-cart" }),
-                        ]),
-                      ]),
-                    ]),
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "featured__item__text" }, [
-                  _c("h6", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v("Crab Pool Security"),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("h5", [_vm._v("$30.00")]),
-                ]),
-              ]),
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-lg-3 col-md-4 col-sm-6 mix oranges fastfood" },
-            [
-              _c("div", { staticClass: "featured__item" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "featured__item__pic set-bg",
-                    attrs: { "data-setbg": "img/featured/feature-6.jpg" },
-                  },
-                  [
-                    _c("ul", { staticClass: "featured__item__pic__hover" }, [
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-heart" }),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-retweet" }),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-shopping-cart" }),
-                        ]),
-                      ]),
-                    ]),
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "featured__item__text" }, [
-                  _c("h6", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v("Crab Pool Security"),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("h5", [_vm._v("$30.00")]),
-                ]),
-              ]),
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass:
-                "col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables",
-            },
-            [
-              _c("div", { staticClass: "featured__item" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "featured__item__pic set-bg",
-                    attrs: { "data-setbg": "img/featured/feature-7.jpg" },
-                  },
-                  [
-                    _c("ul", { staticClass: "featured__item__pic__hover" }, [
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-heart" }),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-retweet" }),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-shopping-cart" }),
-                        ]),
-                      ]),
-                    ]),
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "featured__item__text" }, [
-                  _c("h6", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v("Crab Pool Security"),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("h5", [_vm._v("$30.00")]),
-                ]),
-              ]),
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables",
-            },
-            [
-              _c("div", { staticClass: "featured__item" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "featured__item__pic set-bg",
-                    attrs: { "data-setbg": "img/featured/feature-8.jpg" },
-                  },
-                  [
-                    _c("ul", { staticClass: "featured__item__pic__hover" }, [
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-heart" }),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-retweet" }),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fa fa-shopping-cart" }),
-                        ]),
-                      ]),
-                    ]),
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "featured__item__text" }, [
-                  _c("h6", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v("Crab Pool Security"),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("h5", [_vm._v("$30.00")]),
-                ]),
-              ]),
-            ]
-          ),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "banner" }, [
-      _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-6 col-md-6 col-sm-6" }, [
-            _c("div", { staticClass: "banner__pic" }, [
-              _c("img", { attrs: { src: "img/banner/banner-1.jpg", alt: "" } }),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-6 col-md-6 col-sm-6" }, [
-            _c("div", { staticClass: "banner__pic" }, [
-              _c("img", { attrs: { src: "img/banner/banner-2.jpg", alt: "" } }),
-            ]),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "latest-product spad" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-4 col-md-6" }, [
-            _c("div", { staticClass: "latest-product__text" }, [
-              _c("h4", [_vm._v("Latest Products")]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "latest-product__slider owl-carousel" },
-                [
-                  _c("div", { staticClass: "latest-prdouct__slider__item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "latest-product__item",
-                        attrs: { href: "#" },
-                      },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__pic" },
-                          [
-                            _c("img", {
-                              attrs: {
-                                src: "img/latest-product/lp-1.jpg",
-                                alt: "",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__text" },
-                          [
-                            _c("h6", [_vm._v("Crab Pool Security")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("$30.00")]),
-                          ]
-                        ),
-                      ]
-                    ),
+          _c("div", { staticClass: "col-md-12" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "product_slider product_list carousel_slider owl-carousel owl-theme nav_style3",
+                attrs: {
+                  "data-loop": "true",
+                  "data-dots": "false",
+                  "data-nav": "true",
+                  "data-margin": "20",
+                  "data-responsive":
+                    '{"0":{"items": "1"}, "767":{"items": "2"}, "991":{"items": "3"}, "1199":{"items": "3"}}',
+                },
+              },
+              [
+                _c("div", { staticClass: "item" }, [
+                  _c("div", { staticClass: "product" }, [
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img1.jpg",
+                            alt: "product_img1",
+                          },
+                        }),
+                      ]),
+                    ]),
                     _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "latest-product__item",
-                        attrs: { href: "#" },
-                      },
-                      [
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
                         _c(
-                          "div",
-                          { staticClass: "latest-product__item__pic" },
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
                           [
-                            _c("img", {
-                              attrs: {
-                                src: "img/latest-product/lp-2.jpg",
-                                alt: "",
-                              },
-                            }),
+                            _vm._v(
+                              "Blue Dress For\n                                            Woman"
+                            ),
                           ]
                         ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$45.00"),
+                        ]),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__text" },
-                          [
-                            _c("h6", [_vm._v("Crab Pool Security")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("$30.00")]),
-                          ]
-                        ),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "latest-product__item",
-                        attrs: { href: "#" },
-                      },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__pic" },
-                          [
-                            _c("img", {
-                              attrs: {
-                                src: "img/latest-product/lp-3.jpg",
-                                alt: "",
-                              },
-                            }),
-                          ]
-                        ),
+                        _c("del", [_vm._v("$55.25")]),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__text" },
-                          [
-                            _c("h6", [_vm._v("Crab Pool Security")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("$30.00")]),
-                          ]
-                        ),
-                      ]
-                    ),
+                        _c("div", { staticClass: "on_sale" }, [
+                          _c("span", [_vm._v("35% Off")]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "80%" },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(21)"),
+                        ]),
+                      ]),
+                    ]),
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "latest-prdouct__slider__item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "latest-product__item",
-                        attrs: { href: "#" },
-                      },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__pic" },
-                          [
-                            _c("img", {
-                              attrs: {
-                                src: "img/latest-product/lp-1.jpg",
-                                alt: "",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__text" },
-                          [
-                            _c("h6", [_vm._v("Crab Pool Security")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("$30.00")]),
-                          ]
-                        ),
-                      ]
-                    ),
+                  _c("div", { staticClass: "product" }, [
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img6.jpg",
+                            alt: "product_img6",
+                          },
+                        }),
+                      ]),
+                    ]),
                     _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "latest-product__item",
-                        attrs: { href: "#" },
-                      },
-                      [
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
                         _c(
-                          "div",
-                          { staticClass: "latest-product__item__pic" },
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
                           [
-                            _c("img", {
-                              attrs: {
-                                src: "img/latest-product/lp-2.jpg",
-                                alt: "",
-                              },
-                            }),
+                            _vm._v(
+                              "Blue casual\n                                            check shirt"
+                            ),
                           ]
                         ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$55.00"),
+                        ]),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__text" },
-                          [
-                            _c("h6", [_vm._v("Crab Pool Security")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("$30.00")]),
-                          ]
-                        ),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "latest-product__item",
-                        attrs: { href: "#" },
-                      },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__pic" },
-                          [
-                            _c("img", {
-                              attrs: {
-                                src: "img/latest-product/lp-3.jpg",
-                                alt: "",
-                              },
-                            }),
-                          ]
-                        ),
+                        _c("del", [_vm._v("$95.00")]),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__text" },
-                          [
-                            _c("h6", [_vm._v("Crab Pool Security")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("$30.00")]),
-                          ]
-                        ),
-                      ]
-                    ),
-                  ]),
-                ]
-              ),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-4 col-md-6" }, [
-            _c("div", { staticClass: "latest-product__text" }, [
-              _c("h4", [_vm._v("Top Rated Products")]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "latest-product__slider owl-carousel" },
-                [
-                  _c("div", { staticClass: "latest-prdouct__slider__item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "latest-product__item",
-                        attrs: { href: "#" },
-                      },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__pic" },
-                          [
-                            _c("img", {
-                              attrs: {
-                                src: "img/latest-product/lp-1.jpg",
-                                alt: "",
-                              },
-                            }),
-                          ]
-                        ),
+                        _c("div", { staticClass: "on_sale" }, [
+                          _c("span", [_vm._v("25% Off")]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "68%" },
+                          }),
+                        ]),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__text" },
-                          [
-                            _c("h6", [_vm._v("Crab Pool Security")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("$30.00")]),
-                          ]
-                        ),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "latest-product__item",
-                        attrs: { href: "#" },
-                      },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__pic" },
-                          [
-                            _c("img", {
-                              attrs: {
-                                src: "img/latest-product/lp-2.jpg",
-                                alt: "",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__text" },
-                          [
-                            _c("h6", [_vm._v("Crab Pool Security")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("$30.00")]),
-                          ]
-                        ),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "latest-product__item",
-                        attrs: { href: "#" },
-                      },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__pic" },
-                          [
-                            _c("img", {
-                              attrs: {
-                                src: "img/latest-product/lp-3.jpg",
-                                alt: "",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__text" },
-                          [
-                            _c("h6", [_vm._v("Crab Pool Security")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("$30.00")]),
-                          ]
-                        ),
-                      ]
-                    ),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(15)"),
+                        ]),
+                      ]),
+                    ]),
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "latest-prdouct__slider__item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "latest-product__item",
-                        attrs: { href: "#" },
-                      },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__pic" },
-                          [
-                            _c("img", {
-                              attrs: {
-                                src: "img/latest-product/lp-1.jpg",
-                                alt: "",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__text" },
-                          [
-                            _c("h6", [_vm._v("Crab Pool Security")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("$30.00")]),
-                          ]
-                        ),
-                      ]
-                    ),
+                  _c("div", { staticClass: "product" }, [
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img12.jpg",
+                            alt: "product_img12",
+                          },
+                        }),
+                      ]),
+                    ]),
                     _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "latest-product__item",
-                        attrs: { href: "#" },
-                      },
-                      [
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
                         _c(
-                          "div",
-                          { staticClass: "latest-product__item__pic" },
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
                           [
-                            _c("img", {
-                              attrs: {
-                                src: "img/latest-product/lp-2.jpg",
-                                alt: "",
-                              },
-                            }),
+                            _vm._v(
+                              "Black T-shirt\n                                            for woman"
+                            ),
                           ]
                         ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$69.00"),
+                        ]),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__text" },
-                          [
-                            _c("h6", [_vm._v("Crab Pool Security")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("$30.00")]),
-                          ]
-                        ),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "latest-product__item",
-                        attrs: { href: "#" },
-                      },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__pic" },
-                          [
-                            _c("img", {
-                              attrs: {
-                                src: "img/latest-product/lp-3.jpg",
-                                alt: "",
-                              },
-                            }),
-                          ]
-                        ),
+                        _c("del", [_vm._v("$89.00")]),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__text" },
-                          [
-                            _c("h6", [_vm._v("Crab Pool Security")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("$30.00")]),
-                          ]
-                        ),
-                      ]
-                    ),
+                        _c("div", { staticClass: "on_sale" }, [
+                          _c("span", [_vm._v("20% Off")]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "70%" },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(22)"),
+                        ]),
+                      ]),
+                    ]),
                   ]),
-                ]
-              ),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-4 col-md-6" }, [
-            _c("div", { staticClass: "latest-product__text" }, [
-              _c("h4", [_vm._v("Review Products")]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "latest-product__slider owl-carousel" },
-                [
-                  _c("div", { staticClass: "latest-prdouct__slider__item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "latest-product__item",
-                        attrs: { href: "#" },
-                      },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__pic" },
-                          [
-                            _c("img", {
-                              attrs: {
-                                src: "img/latest-product/lp-1.jpg",
-                                alt: "",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__text" },
-                          [
-                            _c("h6", [_vm._v("Crab Pool Security")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("$30.00")]),
-                          ]
-                        ),
-                      ]
-                    ),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item" }, [
+                  _c("div", { staticClass: "product" }, [
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img2.jpg",
+                            alt: "product_img2",
+                          },
+                        }),
+                      ]),
+                    ]),
                     _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "latest-product__item",
-                        attrs: { href: "#" },
-                      },
-                      [
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
                         _c(
-                          "div",
-                          { staticClass: "latest-product__item__pic" },
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
                           [
-                            _c("img", {
-                              attrs: {
-                                src: "img/latest-product/lp-2.jpg",
-                                alt: "",
-                              },
-                            }),
+                            _vm._v(
+                              "Lether Gray\n                                            Tuxedo"
+                            ),
                           ]
                         ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$55.00"),
+                        ]),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__text" },
-                          [
-                            _c("h6", [_vm._v("Crab Pool Security")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("$30.00")]),
-                          ]
-                        ),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "latest-product__item",
-                        attrs: { href: "#" },
-                      },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__pic" },
-                          [
-                            _c("img", {
-                              attrs: {
-                                src: "img/latest-product/lp-3.jpg",
-                                alt: "",
-                              },
-                            }),
-                          ]
-                        ),
+                        _c("del", [_vm._v("$95.00")]),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__text" },
-                          [
-                            _c("h6", [_vm._v("Crab Pool Security")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("$30.00")]),
-                          ]
-                        ),
-                      ]
-                    ),
+                        _c("div", { staticClass: "on_sale" }, [
+                          _c("span", [_vm._v("25% Off")]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "68%" },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(15)"),
+                        ]),
+                      ]),
+                    ]),
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "latest-prdouct__slider__item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "latest-product__item",
-                        attrs: { href: "#" },
-                      },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__pic" },
-                          [
-                            _c("img", {
-                              attrs: {
-                                src: "img/latest-product/lp-1.jpg",
-                                alt: "",
-                              },
-                            }),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__text" },
-                          [
-                            _c("h6", [_vm._v("Crab Pool Security")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("$30.00")]),
-                          ]
-                        ),
-                      ]
-                    ),
+                  _c("div", { staticClass: "product" }, [
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img7.jpg",
+                            alt: "product_img7",
+                          },
+                        }),
+                      ]),
+                    ]),
                     _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "latest-product__item",
-                        attrs: { href: "#" },
-                      },
-                      [
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
                         _c(
-                          "div",
-                          { staticClass: "latest-product__item__pic" },
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
                           [
-                            _c("img", {
-                              attrs: {
-                                src: "img/latest-product/lp-2.jpg",
-                                alt: "",
-                              },
-                            }),
+                            _vm._v(
+                              "white black\n                                            line dress"
+                            ),
                           ]
                         ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$68.00"),
+                        ]),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__text" },
-                          [
-                            _c("h6", [_vm._v("Crab Pool Security")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("$30.00")]),
-                          ]
-                        ),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "latest-product__item",
-                        attrs: { href: "#" },
-                      },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__pic" },
-                          [
-                            _c("img", {
-                              attrs: {
-                                src: "img/latest-product/lp-3.jpg",
-                                alt: "",
-                              },
-                            }),
-                          ]
-                        ),
+                        _c("del", [_vm._v("$99.00")]),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "latest-product__item__text" },
-                          [
-                            _c("h6", [_vm._v("Crab Pool Security")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("$30.00")]),
-                          ]
-                        ),
-                      ]
-                    ),
+                        _c("div", { staticClass: "on_sale" }, [
+                          _c("span", [_vm._v("20% Off")]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "87%" },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(25)"),
+                        ]),
+                      ]),
+                    ]),
                   ]),
-                ]
-              ),
-            ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "product" }, [
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img10.jpg",
+                            alt: "product_img10",
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _vm._v(
+                              "Red & Black\n                                            check shirt"
+                            ),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$55.00"),
+                        ]),
+                        _vm._v(" "),
+                        _c("del", [_vm._v("$95.00")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "on_sale" }, [
+                          _c("span", [_vm._v("25% Off")]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "68%" },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(15)"),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item" }, [
+                  _c("div", { staticClass: "product" }, [
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img3.jpg",
+                            alt: "product_img3",
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _vm._v(
+                              "woman full sliv\n                                            dress"
+                            ),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$68.00"),
+                        ]),
+                        _vm._v(" "),
+                        _c("del", [_vm._v("$99.00")]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "87%" },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(25)"),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "product" }, [
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img8.jpg",
+                            alt: "product_img8",
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _vm._v(
+                              "Men blue jins\n                                            Shirt"
+                            ),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$69.00"),
+                        ]),
+                        _vm._v(" "),
+                        _c("del", [_vm._v("$89.00")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "on_sale" }, [
+                          _c("span", [_vm._v("20% Off")]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "70%" },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(22)"),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "product" }, [
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img13.jpg",
+                            alt: "product_img13",
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _vm._v(
+                              "Pink Dress for\n                                            woman"
+                            ),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$65.00"),
+                        ]),
+                        _vm._v(" "),
+                        _c("del", [_vm._v("$80.00")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "on_sale" }, [
+                          _c("span", [_vm._v("30% Off")]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "80%" },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(28)"),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item" }, [
+                  _c("div", { staticClass: "product" }, [
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img4.jpg",
+                            alt: "product_img4",
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _vm._v(
+                              "light blue\n                                            Shirt"
+                            ),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$69.00"),
+                        ]),
+                        _vm._v(" "),
+                        _c("del", [_vm._v("$89.00")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "on_sale" }, [
+                          _c("span", [_vm._v("20% Off")]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "70%" },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(22)"),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "product" }, [
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img9.jpg",
+                            alt: "product_img9",
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _vm._v(
+                              "T-Shirt Form\n                                            Girls"
+                            ),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$45.00"),
+                        ]),
+                        _vm._v(" "),
+                        _c("del", [_vm._v("$55.25")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "on_sale" }, [
+                          _c("span", [_vm._v("35% Off")]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "80%" },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(21)"),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "product" }, [
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img14.jpg",
+                            alt: "product_img14",
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _vm._v(
+                              "White shirt for\n                                            man"
+                            ),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$55.00"),
+                        ]),
+                        _vm._v(" "),
+                        _c("del", [_vm._v("$60.00")]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "68%" },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(15)"),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item" }, [
+                  _c("div", { staticClass: "product" }, [
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img5.jpg",
+                            alt: "product_img5",
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _vm._v(
+                              "blue dress for\n                                            woman"
+                            ),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$45.00"),
+                        ]),
+                        _vm._v(" "),
+                        _c("del", [_vm._v("$55.25")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "on_sale" }, [
+                          _c("span", [_vm._v("35% Off")]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "80%" },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(21)"),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "product" }, [
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img11.jpg",
+                            alt: "product_img11",
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _vm._v(
+                              "Black dress for\n                                            woman"
+                            ),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$68.00"),
+                        ]),
+                        _vm._v(" "),
+                        _c("del", [_vm._v("$99.00")]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "on_sale" }, [
+                          _c("span", [_vm._v("20% Off")]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "87%" },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(25)"),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "product" }, [
+                    _c("div", { staticClass: "product_img" }, [
+                      _c("a", { attrs: { href: "shop-product-detail.html" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/product_img15.jpg",
+                            alt: "product_img15",
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product_info" }, [
+                      _c("h6", { staticClass: "product_title" }, [
+                        _c(
+                          "a",
+                          { attrs: { href: "shop-product-detail.html" } },
+                          [
+                            _vm._v(
+                              "Pink Dress for\n                                            Baby Kids"
+                            ),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "product_price" }, [
+                        _c("span", { staticClass: "price" }, [
+                          _vm._v("$55.00"),
+                        ]),
+                        _vm._v(" "),
+                        _c("del", [_vm._v("$60.00")]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "rating_wrap" }, [
+                        _c("div", { staticClass: "rating" }, [
+                          _c("div", {
+                            staticClass: "product_rate",
+                            staticStyle: { width: "68%" },
+                          }),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "rating_num" }, [
+                          _vm._v("(15)"),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+              ]
+            ),
           ]),
         ]),
       ]),
@@ -31016,115 +37715,141 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "from-blog spad" }, [
+    return _c("div", { staticClass: "section small_pt" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-12" }, [
-            _c("div", { staticClass: "section-title from-blog__title" }, [
-              _c("h2", [_vm._v("From The Blog")]),
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "heading_tab_header" }, [
+              _c("div", { staticClass: "heading_s2" }, [
+                _c("h2", [_vm._v("Our Brands")]),
+              ]),
             ]),
           ]),
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-4 col-md-4 col-sm-6" }, [
-            _c("div", { staticClass: "blog__item" }, [
-              _c("div", { staticClass: "blog__item__pic" }, [
-                _c("img", { attrs: { src: "img/blog/blog-1.jpg", alt: "" } }),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "blog__item__text" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("i", { staticClass: "fa fa-calendar-o" }),
-                    _vm._v(" May 4,2019"),
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("i", { staticClass: "fa fa-comment-o" }),
-                    _vm._v(" 5"),
+          _c("div", { staticClass: "col-12" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "client_logo carousel_slider owl-carousel owl-theme nav_style3",
+                attrs: {
+                  "data-dots": "false",
+                  "data-nav": "true",
+                  "data-margin": "30",
+                  "data-loop": "true",
+                  "data-autoplay": "true",
+                  "data-responsive":
+                    '{"0":{"items": "2"}, "480":{"items": "3"}, "767":{"items": "4"}, "991":{"items": "5"}}',
+                },
+              },
+              [
+                _c("div", { staticClass: "item" }, [
+                  _c("div", { staticClass: "cl_logo" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "assets/images/cl_logo1.png",
+                        alt: "cl_logo",
+                      },
+                    }),
                   ]),
                 ]),
                 _vm._v(" "),
-                _c("h5", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Cooking tips make cooking simple"),
+                _c("div", { staticClass: "item" }, [
+                  _c("div", { staticClass: "cl_logo" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "assets/images/cl_logo2.png",
+                        alt: "cl_logo",
+                      },
+                    }),
                   ]),
                 ]),
                 _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam\n                                quaerat "
-                  ),
+                _c("div", { staticClass: "item" }, [
+                  _c("div", { staticClass: "cl_logo" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "assets/images/cl_logo3.png",
+                        alt: "cl_logo",
+                      },
+                    }),
+                  ]),
                 ]),
-              ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item" }, [
+                  _c("div", { staticClass: "cl_logo" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "assets/images/cl_logo4.png",
+                        alt: "cl_logo",
+                      },
+                    }),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item" }, [
+                  _c("div", { staticClass: "cl_logo" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "assets/images/cl_logo5.png",
+                        alt: "cl_logo",
+                      },
+                    }),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "item" }, [
+                  _c("div", { staticClass: "cl_logo" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "assets/images/cl_logo6.png",
+                        alt: "cl_logo",
+                      },
+                    }),
+                  ]),
+                ]),
+              ]
+            ),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "section bg_dark small_pt small_pb" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row align-items-center" }, [
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "heading_s1 mb-md-0 heading_light" }, [
+              _c("h3", [_vm._v("Subscribe Our Newsletter")]),
             ]),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-lg-4 col-md-4 col-sm-6" }, [
-            _c("div", { staticClass: "blog__item" }, [
-              _c("div", { staticClass: "blog__item__pic" }, [
-                _c("img", { attrs: { src: "img/blog/blog-2.jpg", alt: "" } }),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "blog__item__text" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("i", { staticClass: "fa fa-calendar-o" }),
-                    _vm._v(" May 4,2019"),
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("i", { staticClass: "fa fa-comment-o" }),
-                    _vm._v(" 5"),
-                  ]),
-                ]),
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "newsletter_form" }, [
+              _c("form", [
+                _c("input", {
+                  staticClass: "form-control rounded-0",
+                  attrs: {
+                    type: "text",
+                    required: "",
+                    placeholder: "Enter Email Address",
+                  },
+                }),
                 _vm._v(" "),
-                _c("h5", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("6 ways to prepare breakfast for 30"),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam\n                                quaerat "
-                  ),
-                ]),
-              ]),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-4 col-md-4 col-sm-6" }, [
-            _c("div", { staticClass: "blog__item" }, [
-              _c("div", { staticClass: "blog__item__pic" }, [
-                _c("img", { attrs: { src: "img/blog/blog-3.jpg", alt: "" } }),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "blog__item__text" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("i", { staticClass: "fa fa-calendar-o" }),
-                    _vm._v(" May 4,2019"),
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("i", { staticClass: "fa fa-comment-o" }),
-                    _vm._v(" 5"),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("h5", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Visit the clean farm in the US"),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam\n                                quaerat "
-                  ),
-                ]),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-fill-out rounded-0",
+                    attrs: { type: "submit", name: "submit", value: "Submit" },
+                  },
+                  [_vm._v("Subscribe\n                                ")]
+                ),
               ]),
             ]),
           ]),
@@ -31162,162 +37887,451 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("footer", { staticClass: "footer spad" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-3 col-md-6 col-sm-6" }, [
-            _c("div", { staticClass: "footer__about" }, [
-              _c("div", { staticClass: "footer__about__logo" }, [
-                _c("a", { attrs: { href: "./index.html" } }, [
-                  _c("img", { attrs: { src: "img/logo.png", alt: "" } }),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("ul", [
-                _c("li", [_vm._v("Address: 60-49 Road 11378 New York")]),
-                _vm._v(" "),
-                _c("li", [_vm._v("Phone: +65 11.188.888")]),
-                _vm._v(" "),
-                _c("li", [_vm._v("Email: hello@colorlib.com")]),
-              ]),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-4 col-md-6 col-sm-6 offset-lg-1" }, [
-            _c("div", { staticClass: "footer__widget" }, [
-              _c("h6", [_vm._v("Useful Links")]),
-              _vm._v(" "),
-              _c("ul", [
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("About Us")]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("About Our Shop")]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Secure Shopping"),
+    return _c("div", [
+      _c("footer", { staticClass: "bg_gray" }, [
+        _c("div", { staticClass: "footer_top small_pt pb_20" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-lg-4 col-md-12 col-sm-12" }, [
+                _c("div", { staticClass: "widget" }, [
+                  _c("div", { staticClass: "footer_logo" }, [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _c("img", {
+                        attrs: {
+                          src: "assets/images/logo_dark.png",
+                          alt: "logo",
+                        },
+                      }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "mb-3" }, [
+                    _vm._v(
+                      "If you are going to use of Lorem Ipsum need to be sure there isn't anything hidden of text"
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "contact_info" }, [
+                    _c("li", [
+                      _c("i", { staticClass: "ti-location-pin" }),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v("123 Street, Old Trafford, NewYork, USA"),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("i", { staticClass: "ti-email" }),
+                      _vm._v(" "),
+                      _c("a", { attrs: { href: "mailto:info@sitename.com" } }, [
+                        _vm._v("info@sitename.com"),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("i", { staticClass: "ti-mobile" }),
+                      _vm._v(" "),
+                      _c("p", [_vm._v("+ 457 789 789 65")]),
+                    ]),
                   ]),
                 ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Delivery infomation"),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-2 col-md-4 col-sm-6" }, [
+                _c("div", { staticClass: "widget" }, [
+                  _c("h6", { staticClass: "widget_title" }, [
+                    _vm._v("Useful Links"),
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "widget_links" }, [
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("About Us")]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("FAQ")]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Location")]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Affiliates")]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Contact")]),
+                    ]),
                   ]),
                 ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Privacy Policy")]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Our Sitemap")]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-2 col-md-4 col-sm-6" }, [
+                _c("div", { staticClass: "widget" }, [
+                  _c("h6", { staticClass: "widget_title" }, [
+                    _vm._v("My Account"),
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "widget_links" }, [
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("My Account")]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Discount")]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Returns")]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Orders History"),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Order Tracking"),
+                      ]),
+                    ]),
+                  ]),
                 ]),
               ]),
               _vm._v(" "),
-              _c("ul", [
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Who We Are")]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Our Services")]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Projects")]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Contact")]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Innovation")]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Testimonials")]),
-                ]),
-              ]),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-4 col-md-12" }, [
-            _c("div", { staticClass: "footer__widget" }, [
-              _c("h6", [_vm._v("Join Our Newsletter Now")]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "Get E-mail updates about our latest shop and special offers."
-                ),
-              ]),
-              _vm._v(" "),
-              _c("form", { attrs: { action: "#" } }, [
-                _c("input", {
-                  attrs: { type: "text", placeholder: "Enter your mail" },
-                }),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  { staticClass: "site-btn", attrs: { type: "submit" } },
-                  [_vm._v("Subscribe")]
-                ),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "footer__widget__social" }, [
-                _c("a", { attrs: { href: "#" } }, [
-                  _c("i", { staticClass: "fa fa-facebook" }),
-                ]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [
-                  _c("i", { staticClass: "fa fa-instagram" }),
-                ]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [
-                  _c("i", { staticClass: "fa fa-twitter" }),
-                ]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "#" } }, [
-                  _c("i", { staticClass: "fa fa-pinterest" }),
+              _c("div", { staticClass: "col-lg-4 col-md-4 col-sm-12" }, [
+                _c("div", { staticClass: "widget" }, [
+                  _c("h6", { staticClass: "widget_title" }, [
+                    _vm._v("Instagram"),
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "widget_instafeed instafeed_col4" }, [
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/insta_img1.jpg",
+                            alt: "insta_img",
+                          },
+                        }),
+                        _c("span", { staticClass: "insta_icon" }, [
+                          _c("i", { staticClass: "ti-instagram" }),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/insta_img2.jpg",
+                            alt: "insta_img",
+                          },
+                        }),
+                        _c("span", { staticClass: "insta_icon" }, [
+                          _c("i", { staticClass: "ti-instagram" }),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/insta_img3.jpg",
+                            alt: "insta_img",
+                          },
+                        }),
+                        _c("span", { staticClass: "insta_icon" }, [
+                          _c("i", { staticClass: "ti-instagram" }),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/insta_img4.jpg",
+                            alt: "insta_img",
+                          },
+                        }),
+                        _c("span", { staticClass: "insta_icon" }, [
+                          _c("i", { staticClass: "ti-instagram" }),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/insta_img5.jpg",
+                            alt: "insta_img",
+                          },
+                        }),
+                        _c("span", { staticClass: "insta_icon" }, [
+                          _c("i", { staticClass: "ti-instagram" }),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/insta_img6.jpg",
+                            alt: "insta_img",
+                          },
+                        }),
+                        _c("span", { staticClass: "insta_icon" }, [
+                          _c("i", { staticClass: "ti-instagram" }),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/insta_img7.jpg",
+                            alt: "insta_img",
+                          },
+                        }),
+                        _c("span", { staticClass: "insta_icon" }, [
+                          _c("i", { staticClass: "ti-instagram" }),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/insta_img8.jpg",
+                            alt: "insta_img",
+                          },
+                        }),
+                        _c("span", { staticClass: "insta_icon" }, [
+                          _c("i", { staticClass: "ti-instagram" }),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
                 ]),
               ]),
             ]),
           ]),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-12" }, [
-            _c("div", { staticClass: "footer__copyright" }, [
-              _c("div", { staticClass: "footer__copyright__text" }, [
-                _c("p", [
-                  _vm._v(
-                    "\n                            Copyright © All rights reserved | This template is made with "
-                  ),
-                  _c("i", {
-                    staticClass: "fa fa-heart",
-                    attrs: { "aria-hidden": "true" },
-                  }),
-                  _vm._v(" by "),
+        _c("div", { staticClass: "middle_footer" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-12" }, [
+                _c("div", { staticClass: "shopping_info" }, [
+                  _c("div", { staticClass: "row justify-content-center" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c("div", { staticClass: "icon_box icon_box_style2" }, [
+                        _c("div", { staticClass: "icon" }, [
+                          _c("i", { staticClass: "flaticon-shipped" }),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "icon_box_content" }, [
+                          _c("h5", [_vm._v("Free Delivery")]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "Phasellus blandit massa enim elit of passage varius nunc."
+                            ),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c("div", { staticClass: "icon_box icon_box_style2" }, [
+                        _c("div", { staticClass: "icon" }, [
+                          _c("i", { staticClass: "flaticon-money-back" }),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "icon_box_content" }, [
+                          _c("h5", [_vm._v("30 Day Returns Guarantee")]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "Phasellus blandit massa enim elit of passage varius nunc."
+                            ),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c("div", { staticClass: "icon_box icon_box_style2" }, [
+                        _c("div", { staticClass: "icon" }, [
+                          _c("i", { staticClass: "flaticon-support" }),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "icon_box_content" }, [
+                          _c("h5", [_vm._v("27/4 Online Support")]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "Phasellus blandit massa enim elit of passage varius nunc."
+                            ),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+              ]),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "bottom_footer border-top-tran" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row align-items-center" }, [
+              _c("div", { staticClass: "col-lg-4" }, [
+                _c("p", { staticClass: "mb-lg-0 text-center" }, [
+                  _vm._v("© 2020 All Rights Reserved by Bestwebcreator"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-4 order-lg-first" }, [
+                _c("div", { staticClass: "widget mb-lg-0" }, [
                   _c(
-                    "a",
-                    {
-                      attrs: { href: "https://colorlib.com", target: "_blank" },
-                    },
-                    [_vm._v("Colorlib")]
+                    "ul",
+                    { staticClass: "social_icons text-center text-lg-left" },
+                    [
+                      _c("li", [
+                        _c(
+                          "a",
+                          { staticClass: "sc_facebook", attrs: { href: "#" } },
+                          [_c("i", { staticClass: "ion-social-facebook" })]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c(
+                          "a",
+                          { staticClass: "sc_twitter", attrs: { href: "#" } },
+                          [_c("i", { staticClass: "ion-social-twitter" })]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c(
+                          "a",
+                          { staticClass: "sc_google", attrs: { href: "#" } },
+                          [_c("i", { staticClass: "ion-social-googleplus" })]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c(
+                          "a",
+                          { staticClass: "sc_youtube", attrs: { href: "#" } },
+                          [
+                            _c("i", {
+                              staticClass: "ion-social-youtube-outline",
+                            }),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c(
+                          "a",
+                          { staticClass: "sc_instagram", attrs: { href: "#" } },
+                          [
+                            _c("i", {
+                              staticClass: "ion-social-instagram-outline",
+                            }),
+                          ]
+                        ),
+                      ]),
+                    ]
                   ),
                 ]),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "footer__copyright__payment" }, [
-                _c("img", { attrs: { src: "img/payment-item.png", alt: "" } }),
+              _c("div", { staticClass: "col-lg-4" }, [
+                _c(
+                  "ul",
+                  { staticClass: "footer_payment text-center text-lg-right" },
+                  [
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("img", {
+                          attrs: { src: "assets/images/visa.png", alt: "visa" },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/discover.png",
+                            alt: "discover",
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/master_card.png",
+                            alt: "master_card",
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/paypal.png",
+                            alt: "paypal",
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/amarican_express.png",
+                            alt: "amarican_express",
+                          },
+                        }),
+                      ]),
+                    ]),
+                  ]
+                ),
               ]),
             ]),
           ]),
         ]),
       ]),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "scrollup",
+          staticStyle: { display: "none" },
+          attrs: { href: "#" },
+        },
+        [_c("i", { staticClass: "ion-ios-arrow-up" })]
+      ),
     ])
   },
 ]
@@ -31343,327 +38357,1719 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("header", { staticClass: "header_wrap" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "bottom_header light_skin main_menu_uppercase bg_dark mb-4",
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-lg-3 col-md-4 col-sm-6 col-3" }, [
+                _c("div", { staticClass: "categories_wrap" }, [
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "nav_cat navbar collapse",
+                      attrs: { id: "navCatContent" },
+                    },
+                    [
+                      _c("ul", [
+                        _c(
+                          "li",
+                          _vm._l(_vm.categories, function (item) {
+                            return _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item nav-link nav_item",
+                                attrs: { href: "#" },
+                              },
+                              [
+                                _c("i", { staticClass: "flaticon-jacket" }),
+                                _vm._v(" "),
+                                _c("span", [_vm._v(_vm._s(item.name))]),
+                              ]
+                            )
+                          }),
+                          0
+                        ),
+                      ]),
+                    ]
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _vm._m(3),
+            ]),
+          ]),
+        ]
+      ),
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "humberger__menu__overlay" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "humberger__menu__wrapper" }, [
-        _c("div", { staticClass: "humberger__menu__logo" }, [
-          _c("a", { attrs: { href: "#" } }, [
-            _c("img", { attrs: { src: "img/logo.png", alt: "" } }),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "humberger__menu__cart" }, [
-          _c("ul", [
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "fa fa-heart" }),
-                _vm._v(" "),
-                _c("span", [_vm._v("1")]),
+    return _c("div", { staticClass: "top-header d-none d-md-block" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row align-items-center" }, [
+          _c("div", { staticClass: "col-lg-6 col-md-8" }, [
+            _c("div", { staticClass: "header_topbar_info" }, [
+              _c("div", { staticClass: "header_offer" }, [
+                _c("span", [_vm._v("Free Ground Shipping Over $250")]),
               ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "fa fa-shopping-bag" }),
-                _vm._v(" "),
-                _c("span", [_vm._v("3")]),
-              ]),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "header__cart__price" }, [
-            _vm._v("item: "),
-            _c("span", [_vm._v("$150.00")]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "humberger__menu__widget" }, [
-          _c("div", { staticClass: "header__top__right__language" }, [
-            _c("img", { attrs: { src: "img/language.png", alt: "" } }),
-            _vm._v(" "),
-            _c("div", [_vm._v("English")]),
-            _vm._v(" "),
-            _c("span", { staticClass: "arrow_carrot-down" }),
-            _vm._v(" "),
-            _c("ul", [
-              _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Spanis")])]),
               _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("English")]),
+              _c("div", { staticClass: "download_wrap" }, [
+                _c("span", { staticClass: "mr-3" }, [_vm._v("Download App")]),
+                _vm._v(" "),
+                _c(
+                  "ul",
+                  { staticClass: "icon_list text-center text-lg-left" },
+                  [
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("i", { staticClass: "fab fa-apple" }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("i", { staticClass: "fab fa-android" }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("i", { staticClass: "fab fa-windows" }),
+                      ]),
+                    ]),
+                  ]
+                ),
               ]),
             ]),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "header__top__right__auth" }, [
-            _c("a", { attrs: { href: "#" } }, [
-              _c("i", { staticClass: "fa fa-user" }),
-              _vm._v(" Login"),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("nav", { staticClass: "humberger__menu__nav mobile-menu" }, [
-          _c("ul", [
-            _c("li", { staticClass: "active" }, [
-              _c("a", { attrs: { href: "./index.html" } }, [_vm._v("Home")]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "./shop-grid.html" } }, [
-                _vm._v("Shop"),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [_vm._v("Pages")]),
-              _vm._v(" "),
-              _c("ul", { staticClass: "header__menu__dropdown" }, [
-                _c("li", [
-                  _c("a", { attrs: { href: "./shop-details.html" } }, [
-                    _vm._v("Shop Details"),
-                  ]),
+          _c("div", { staticClass: "col-lg-6 col-md-4" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "d-flex align-items-center justify-content-center justify-content-md-end",
+              },
+              [
+                _c("div", { staticClass: "lng_dropdown" }, [
+                  _c(
+                    "select",
+                    {
+                      staticClass: "custome_select",
+                      attrs: { name: "countries" },
+                    },
+                    [
+                      _c(
+                        "option",
+                        {
+                          attrs: {
+                            value: "en",
+                            "data-image": "assets/images/eng.png",
+                            "data-title": "English",
+                          },
+                        },
+                        [
+                          _vm._v(
+                            "\n                                        English\n                                    "
+                          ),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "option",
+                        {
+                          attrs: {
+                            value: "fn",
+                            "data-image": "assets/images/fn.png",
+                            "data-title": "France",
+                          },
+                        },
+                        [
+                          _vm._v(
+                            "\n                                        France\n                                    "
+                          ),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "option",
+                        {
+                          attrs: {
+                            value: "us",
+                            "data-image": "assets/images/us.png",
+                            "data-title": "United States",
+                          },
+                        },
+                        [
+                          _vm._v(
+                            "\n                                        United States\n                                    "
+                          ),
+                        ]
+                      ),
+                    ]
+                  ),
                 ]),
                 _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "./shoping-cart.html" } }, [
-                    _vm._v("Shoping Cart"),
-                  ]),
+                _c("div", { staticClass: "ml-3" }, [
+                  _c(
+                    "select",
+                    {
+                      staticClass: "custome_select",
+                      attrs: { name: "countries" },
+                    },
+                    [
+                      _c(
+                        "option",
+                        { attrs: { value: "USD", "data-title": "USD" } },
+                        [_vm._v("USD")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "option",
+                        { attrs: { value: "EUR", "data-title": "EUR" } },
+                        [_vm._v("EUR")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "option",
+                        { attrs: { value: "GBR", "data-title": "GBR" } },
+                        [_vm._v("GBR")]
+                      ),
+                    ]
+                  ),
                 ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "./checkout.html" } }, [
-                    _vm._v("Check Out"),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "./blog-details.html" } }, [
-                    _vm._v("Blog Details"),
-                  ]),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "./blog.html" } }, [_vm._v("Blog")]),
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "./contact.html" } }, [
-                _vm._v("Contact"),
-              ]),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { attrs: { id: "mobile-menu-wrap" } }),
-        _vm._v(" "),
-        _c("div", { staticClass: "header__top__right__social" }, [
-          _c("a", { attrs: { href: "#" } }, [
-            _c("i", { staticClass: "fa fa-facebook" }),
-          ]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "#" } }, [
-            _c("i", { staticClass: "fa fa-twitter" }),
-          ]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "#" } }, [
-            _c("i", { staticClass: "fa fa-linkedin" }),
-          ]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "#" } }, [
-            _c("i", { staticClass: "fa fa-pinterest-p" }),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "humberger__menu__contact" }, [
-          _c("ul", [
-            _c("li", [
-              _c("i", { staticClass: "fa fa-envelope" }),
-              _vm._v(" hello@colorlib.com"),
-            ]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Free Shipping for all Order of $99")]),
+              ]
+            ),
           ]),
         ]),
       ]),
-      _vm._v(" "),
-      _c("header", { staticClass: "header" }, [
-        _c("div", { staticClass: "header__top" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-lg-6 col-md-6" }, [
-                _c("div", { staticClass: "header__top__left" }, [
-                  _c("ul", [
-                    _c("li", [
-                      _c("i", { staticClass: "fa fa-envelope" }),
-                      _vm._v(" hello@colorlib.com"),
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [_vm._v("Free Shipping for all Order of $99")]),
-                  ]),
-                ]),
-              ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "middle-header dark_skin" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "nav_block" }, [
+          _c(
+            "a",
+            { staticClass: "navbar-brand", attrs: { href: "index.html" } },
+            [
+              _c("img", {
+                staticClass: "logo_light",
+                attrs: { src: "assets/images/logo_light.png", alt: "logo" },
+              }),
               _vm._v(" "),
-              _c("div", { staticClass: "col-lg-6 col-md-6" }, [
-                _c("div", { staticClass: "header__top__right" }, [
-                  _c("div", { staticClass: "header__top__right__social" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-facebook" }),
-                    ]),
-                    _vm._v(" "),
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-twitter" }),
-                    ]),
-                    _vm._v(" "),
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-linkedin" }),
-                    ]),
-                    _vm._v(" "),
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-pinterest-p" }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "header__top__right__language" }, [
-                    _c("img", { attrs: { src: "img/language.png", alt: "" } }),
-                    _vm._v(" "),
-                    _c("div", [_vm._v("English")]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "arrow_carrot-down" }),
-                    _vm._v(" "),
-                    _c("ul", [
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [_vm._v("Spanis")]),
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "#" } }, [_vm._v("English")]),
-                      ]),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "header__top__right__auth" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-user" }),
-                      _vm._v(" Login"),
-                    ]),
-                  ]),
-                ]),
-              ]),
-            ]),
+              _c("img", {
+                staticClass: "logo_dark",
+                attrs: { src: "assets/images/logo_dark.png", alt: "logo" },
+              }),
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "contact_phone order-md-last" }, [
+            _c("i", { staticClass: "linearicons-phone-wave" }),
+            _vm._v(" "),
+            _c("span", [_vm._v("123-456-7689")]),
           ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-lg-3" }, [
-              _c("div", { staticClass: "header__logo" }, [
-                _c("a", { attrs: { href: "./index.html" } }, [
-                  _c("img", { attrs: { src: "img/logo.png", alt: "" } }),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-6" }, [
-              _c("nav", { staticClass: "header__menu" }, [
-                _c("ul", [
-                  _c("li", { staticClass: "active" }, [
-                    _c("a", { attrs: { href: "./index.html" } }, [
-                      _vm._v("Home"),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "./shop-grid.html" } }, [
-                      _vm._v("Shop"),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [_vm._v("Pages")]),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "header__menu__dropdown" }, [
-                      _c("li", [
-                        _c("a", { attrs: { href: "./shop-details.html" } }, [
-                          _vm._v("Shop Details"),
-                        ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "product_search_form" }, [
+            _c("form", [
+              _c("div", { staticClass: "input-group" }, [
+                _c("div", { staticClass: "input-group-prepend" }, [
+                  _c("div", { staticClass: "custom_select" }, [
+                    _c("select", { staticClass: "first_null" }, [
+                      _c("option", { attrs: { value: "" } }, [
+                        _vm._v("All Category"),
                       ]),
                       _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "./shoping-cart.html" } }, [
-                          _vm._v("Shoping Cart"),
-                        ]),
+                      _c("option", { attrs: { value: "Dresses" } }, [
+                        _vm._v("Dresses"),
                       ]),
                       _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "./checkout.html" } }, [
-                          _vm._v("Check Out"),
-                        ]),
+                      _c("option", { attrs: { value: "Shirt-Tops" } }, [
+                        _vm._v("Shirt & Tops"),
                       ]),
                       _vm._v(" "),
-                      _c("li", [
-                        _c("a", { attrs: { href: "./blog-details.html" } }, [
-                          _vm._v("Blog Details"),
-                        ]),
+                      _c("option", { attrs: { value: "T-Shirt" } }, [
+                        _vm._v("T-Shirt"),
                       ]),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "./blog.html" } }, [
-                      _vm._v("Blog"),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "./contact.html" } }, [
-                      _vm._v("Contact"),
-                    ]),
-                  ]),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-3" }, [
-              _c("div", { staticClass: "header__cart" }, [
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-heart" }),
                       _vm._v(" "),
-                      _c("span", [_vm._v("1")]),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fa fa-shopping-bag" }),
+                      _c("option", { attrs: { value: "Pents" } }, [
+                        _vm._v("Pents"),
+                      ]),
                       _vm._v(" "),
-                      _c("span", [_vm._v("3")]),
+                      _c("option", { attrs: { value: "Jeans" } }, [
+                        _vm._v("Jeans"),
+                      ]),
                     ]),
                   ]),
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "header__cart__price" }, [
-                  _vm._v("item: "),
-                  _c("span", [_vm._v("$150.00")]),
-                ]),
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: {
+                    placeholder: "Search Product...",
+                    required: "",
+                    type: "text",
+                  },
+                }),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { staticClass: "search_btn", attrs: { type: "submit" } },
+                  [_c("i", { staticClass: "linearicons-magnifier" })]
+                ),
               ]),
             ]),
           ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "humberger__open" }, [
-            _c("i", { staticClass: "fa fa-bars" }),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "categories_btn",
+        attrs: {
+          type: "button",
+          "data-toggle": "collapse",
+          "data-target": "#navCatContent",
+          "aria-expanded": "false",
+        },
+      },
+      [
+        _c("i", { staticClass: "linearicons-menu" }),
+        _c("span", [_vm._v("All Categories ")]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-9 col-md-8 col-sm-6 col-9" }, [
+      _c("nav", { staticClass: "navbar navbar-expand-lg" }, [
+        _c(
+          "button",
+          {
+            staticClass: "navbar-toggler side_navbar_toggler",
+            attrs: {
+              type: "button",
+              "data-toggle": "collapse",
+              "data-target": "#navbarSidetoggle",
+              "aria-expanded": "false",
+            },
+          },
+          [_c("span", { staticClass: "ion-android-menu" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "collapse navbar-collapse mobile_side_menu",
+            attrs: { id: "navbarSidetoggle" },
+          },
+          [
+            _c("ul", { staticClass: "navbar-nav" }, [
+              _c("li", { staticClass: "dropdown" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "nav-link dropdown-toggle active",
+                    attrs: { "data-toggle": "dropdown", href: "#" },
+                  },
+                  [_vm._v("Home")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "dropdown-menu" }, [
+                  _c("ul", [
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "dropdown-item nav-link nav_item",
+                          attrs: { href: "index.html" },
+                        },
+                        [
+                          _vm._v(
+                            "Fashion\n                                                    1"
+                          ),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "dropdown-item nav-link nav_item active",
+                          attrs: { href: "index-2.html" },
+                        },
+                        [_vm._v("Fashion 2")]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "dropdown-item nav-link nav_item",
+                          attrs: { href: "index-3.html" },
+                        },
+                        [
+                          _vm._v(
+                            "Furniture\n                                                    1"
+                          ),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "dropdown-item nav-link nav_item",
+                          attrs: { href: "index-4.html" },
+                        },
+                        [
+                          _vm._v(
+                            "Furniture\n                                                    2"
+                          ),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "dropdown-item nav-link nav_item",
+                          attrs: { href: "index-5.html" },
+                        },
+                        [
+                          _vm._v(
+                            "Electronics\n                                                    1"
+                          ),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "dropdown-item nav-link nav_item",
+                          attrs: { href: "index-6.html" },
+                        },
+                        [
+                          _vm._v(
+                            "Electronics\n                                                    2"
+                          ),
+                        ]
+                      ),
+                    ]),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "dropdown" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "dropdown-toggle nav-link",
+                    attrs: { href: "#", "data-toggle": "dropdown" },
+                  },
+                  [_vm._v("Pages")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "dropdown-menu" }, [
+                  _c("ul", [
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "dropdown-item nav-link nav_item",
+                          attrs: { href: "about.html" },
+                        },
+                        [
+                          _vm._v(
+                            "About\n                                                    Us"
+                          ),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "dropdown-item nav-link nav_item",
+                          attrs: { href: "contact.html" },
+                        },
+                        [
+                          _vm._v(
+                            "Contact\n                                                    Us"
+                          ),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "dropdown-item nav-link nav_item",
+                          attrs: { href: "faq.html" },
+                        },
+                        [_vm._v("Faq")]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "dropdown-item nav-link nav_item",
+                          attrs: { href: "404.html" },
+                        },
+                        [
+                          _vm._v(
+                            "404\n                                                    Error Page"
+                          ),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "dropdown-item nav-link nav_item",
+                          attrs: { href: "login.html" },
+                        },
+                        [_vm._v("Login")]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "dropdown-item nav-link nav_item",
+                          attrs: { href: "signup.html" },
+                        },
+                        [_vm._v("Register")]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "dropdown-item nav-link nav_item",
+                          attrs: { href: "term-condition.html" },
+                        },
+                        [_vm._v("Terms and Conditions")]
+                      ),
+                    ]),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "dropdown dropdown-mega-menu" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "dropdown-toggle nav-link",
+                    attrs: { href: "#", "data-toggle": "dropdown" },
+                  },
+                  [_vm._v("Products")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "dropdown-menu" }, [
+                  _c("ul", { staticClass: "mega-menu d-lg-flex" }, [
+                    _c("li", { staticClass: "mega-menu-col col-lg-3" }, [
+                      _c("ul", [
+                        _c("li", { staticClass: "dropdown-header" }, [
+                          _vm._v("Woman's"),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: { href: "shop-three-columns.html" },
+                            },
+                            [_vm._v("Vestibulum sed")]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: { href: "shop-four-columns.html" },
+                            },
+                            [_vm._v("Donec porttitor")]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: { href: "shop-grid-view.html" },
+                            },
+                            [_vm._v("Donec vitae facilisis")]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: { href: "shop-list-view.html" },
+                            },
+                            [_vm._v("Curabitur tempus")]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: { href: "shop-left-sidebar.html" },
+                            },
+                            [_vm._v("Vivamus in tortor")]
+                          ),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "mega-menu-col col-lg-3" }, [
+                      _c("ul", [
+                        _c("li", { staticClass: "dropdown-header" }, [
+                          _vm._v("Men's"),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: { href: "shop-cart.html" },
+                            },
+                            [_vm._v("Donec vitae ante ante")]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: { href: "checkout.html" },
+                            },
+                            [_vm._v("Etiam ac rutrum")]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: { href: "wishlist.html" },
+                            },
+                            [_vm._v("Quisque condimentum")]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: { href: "compare.html" },
+                            },
+                            [_vm._v("Curabitur laoreet")]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: { href: "order-completed.html" },
+                            },
+                            [_vm._v("Vivamus in tortor")]
+                          ),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "mega-menu-col col-lg-3" }, [
+                      _c("ul", [
+                        _c("li", { staticClass: "dropdown-header" }, [
+                          _vm._v("Kid's"),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: { href: "shop-product-detail.html" },
+                            },
+                            [
+                              _vm._v(
+                                "Donec vitae\n                                                            facilisis"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: {
+                                href: "shop-product-detail-left-sidebar.html",
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "Quisque\n                                                            condimentum"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: {
+                                href: "shop-product-detail-right-sidebar.html",
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "Etiam\n                                                            ac rutrum"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: {
+                                href: "shop-product-detail-thumbnails-left.html",
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "Donec\n                                                            vitae ante ante"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: {
+                                href: "shop-product-detail-accordion-style.html",
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "Donec\n                                                            porttitor"
+                              ),
+                            ]
+                          ),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "mega-menu-col col-lg-3" }, [
+                      _c("ul", [
+                        _c("li", { staticClass: "dropdown-header" }, [
+                          _vm._v("Accessories"),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: { href: "shop-product-detail.html" },
+                            },
+                            [_vm._v("Curabitur tempus")]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: {
+                                href: "shop-product-detail-left-sidebar.html",
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "Quisque\n                                                            condimentum"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: {
+                                href: "shop-product-detail-right-sidebar.html",
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "Vivamus\n                                                            in tortor"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: {
+                                href: "shop-product-detail-thumbnails-left.html",
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "Donec\n                                                            vitae facilisis"
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "dropdown-item nav-link nav_item",
+                              attrs: {
+                                href: "shop-product-detail-accordion-style.html",
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "Donec\n                                                            porttitor"
+                              ),
+                            ]
+                          ),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "d-lg-flex menu_banners" }, [
+                    _c("div", { staticClass: "col-lg-6" }, [
+                      _c("div", { staticClass: "header-banner" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/menu_banner1.jpg",
+                            alt: "menu_banner1",
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "banne_info" }, [
+                          _c("h6", [_vm._v("10% Off")]),
+                          _vm._v(" "),
+                          _c("h4", [_vm._v("New Arrival")]),
+                          _vm._v(" "),
+                          _c("a", { attrs: { href: "#" } }, [
+                            _vm._v("Shop now"),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-lg-6" }, [
+                      _c("div", { staticClass: "header-banner" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "assets/images/menu_banner2.jpg",
+                            alt: "menu_banner2",
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "banne_info" }, [
+                          _c("h6", [_vm._v("15% Off")]),
+                          _vm._v(" "),
+                          _c("h4", [_vm._v("Men's Fashion")]),
+                          _vm._v(" "),
+                          _c("a", { attrs: { href: "#" } }, [
+                            _vm._v("Shop now"),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "dropdown" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "dropdown-toggle nav-link",
+                    attrs: { href: "#", "data-toggle": "dropdown" },
+                  },
+                  [_vm._v("Blog")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "dropdown-menu dropdown-reverse" }, [
+                  _c("ul", [
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "dropdown-item menu-link dropdown-toggler",
+                          attrs: { href: "#" },
+                        },
+                        [_vm._v("Grids")]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "dropdown-menu" }, [
+                        _c("ul", [
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item nav-link nav_item",
+                                attrs: { href: "blog-three-columns.html" },
+                              },
+                              [_vm._v("3 columns")]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item nav-link nav_item",
+                                attrs: { href: "blog-four-columns.html" },
+                              },
+                              [_vm._v("4 columns")]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item nav-link nav_item",
+                                attrs: { href: "blog-left-sidebar.html" },
+                              },
+                              [_vm._v("Left Sidebar")]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item nav-link nav_item",
+                                attrs: { href: "blog-right-sidebar.html" },
+                              },
+                              [_vm._v("right Sidebar")]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item nav-link nav_item",
+                                attrs: {
+                                  href: "blog-standard-left-sidebar.html",
+                                },
+                              },
+                              [
+                                _vm._v(
+                                  "Standard\n                                                                Left Sidebar"
+                                ),
+                              ]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item nav-link nav_item",
+                                attrs: {
+                                  href: "blog-standard-right-sidebar.html",
+                                },
+                              },
+                              [
+                                _vm._v(
+                                  "Standard\n                                                                right Sidebar"
+                                ),
+                              ]
+                            ),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "dropdown-item menu-link dropdown-toggler",
+                          attrs: { href: "#" },
+                        },
+                        [_vm._v("Masonry")]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "dropdown-menu" }, [
+                        _c("ul", [
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item nav-link nav_item",
+                                attrs: {
+                                  href: "blog-masonry-three-columns.html",
+                                },
+                              },
+                              [
+                                _vm._v(
+                                  "3\n                                                                columns"
+                                ),
+                              ]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item nav-link nav_item",
+                                attrs: {
+                                  href: "blog-masonry-four-columns.html",
+                                },
+                              },
+                              [
+                                _vm._v(
+                                  "4\n                                                                columns"
+                                ),
+                              ]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item nav-link nav_item",
+                                attrs: {
+                                  href: "blog-masonry-left-sidebar.html",
+                                },
+                              },
+                              [
+                                _vm._v(
+                                  "Left\n                                                                Sidebar"
+                                ),
+                              ]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item nav-link nav_item",
+                                attrs: {
+                                  href: "blog-masonry-right-sidebar.html",
+                                },
+                              },
+                              [
+                                _vm._v(
+                                  "right\n                                                                Sidebar"
+                                ),
+                              ]
+                            ),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "dropdown-item menu-link dropdown-toggler",
+                          attrs: { href: "#" },
+                        },
+                        [
+                          _vm._v(
+                            "Single\n                                                        Post"
+                          ),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "dropdown-menu" }, [
+                        _c("ul", [
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item nav-link nav_item",
+                                attrs: { href: "blog-single.html" },
+                              },
+                              [_vm._v("Default")]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item nav-link nav_item",
+                                attrs: {
+                                  href: "blog-single-left-sidebar.html",
+                                },
+                              },
+                              [
+                                _vm._v(
+                                  "left\n                                                                sidebar"
+                                ),
+                              ]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item nav-link nav_item",
+                                attrs: { href: "blog-single-slider.html" },
+                              },
+                              [_vm._v("slider post")]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item nav-link nav_item",
+                                attrs: { href: "blog-single-video.html" },
+                              },
+                              [_vm._v("video post")]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item nav-link nav_item",
+                                attrs: { href: "blog-single-audio.html" },
+                              },
+                              [_vm._v("audio post")]
+                            ),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "dropdown-item menu-link dropdown-toggler",
+                          attrs: { href: "#" },
+                        },
+                        [_vm._v("List")]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "dropdown-menu" }, [
+                        _c("ul", [
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item nav-link nav_item",
+                                attrs: { href: "blog-list-left-sidebar.html" },
+                              },
+                              [
+                                _vm._v(
+                                  "left\n                                                                sidebar"
+                                ),
+                              ]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "dropdown-item nav-link nav_item",
+                                attrs: { href: "blog-list-right-sidebar.html" },
+                              },
+                              [
+                                _vm._v(
+                                  "right\n                                                                sidebar"
+                                ),
+                              ]
+                            ),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "dropdown dropdown-mega-menu" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "dropdown-toggle nav-link",
+                    attrs: { href: "#", "data-toggle": "dropdown" },
+                  },
+                  [_vm._v("Shop")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "dropdown-menu" }, [
+                  _c("ul", { staticClass: "mega-menu d-lg-flex" }, [
+                    _c("li", { staticClass: "mega-menu-col col-lg-9" }, [
+                      _c("ul", { staticClass: "d-lg-flex" }, [
+                        _c("li", { staticClass: "mega-menu-col col-lg-4" }, [
+                          _c("ul", [
+                            _c("li", { staticClass: "dropdown-header" }, [
+                              _vm._v("Shop Page Layout"),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass:
+                                    "dropdown-item nav-link nav_item",
+                                  attrs: { href: "shop-list.html" },
+                                },
+                                [_vm._v("shop List view")]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass:
+                                    "dropdown-item nav-link nav_item",
+                                  attrs: {
+                                    href: "shop-list-left-sidebar.html",
+                                  },
+                                },
+                                [
+                                  _vm._v(
+                                    "shop List\n                                                                    Left Sidebar"
+                                  ),
+                                ]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass:
+                                    "dropdown-item nav-link nav_item",
+                                  attrs: {
+                                    href: "shop-list-right-sidebar.html",
+                                  },
+                                },
+                                [
+                                  _vm._v(
+                                    "shop List\n                                                                    Right Sidebar"
+                                  ),
+                                ]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass:
+                                    "dropdown-item nav-link nav_item",
+                                  attrs: { href: "shop-left-sidebar.html" },
+                                },
+                                [
+                                  _vm._v(
+                                    "Left\n                                                                    Sidebar"
+                                  ),
+                                ]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass:
+                                    "dropdown-item nav-link nav_item",
+                                  attrs: { href: "shop-right-sidebar.html" },
+                                },
+                                [
+                                  _vm._v(
+                                    "Right\n                                                                    Sidebar"
+                                  ),
+                                ]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass:
+                                    "dropdown-item nav-link nav_item",
+                                  attrs: { href: "shop-load-more.html" },
+                                },
+                                [_vm._v("Shop Load More")]
+                              ),
+                            ]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "mega-menu-col col-lg-4" }, [
+                          _c("ul", [
+                            _c("li", { staticClass: "dropdown-header" }, [
+                              _vm._v("Other Pages"),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass:
+                                    "dropdown-item nav-link nav_item",
+                                  attrs: { href: "shop-cart.html" },
+                                },
+                                [_vm._v("Cart")]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass:
+                                    "dropdown-item nav-link nav_item",
+                                  attrs: { href: "checkout.html" },
+                                },
+                                [_vm._v("Checkout")]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass:
+                                    "dropdown-item nav-link nav_item",
+                                  attrs: { href: "my-account.html" },
+                                },
+                                [_vm._v("My Account")]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass:
+                                    "dropdown-item nav-link nav_item",
+                                  attrs: { href: "wishlist.html" },
+                                },
+                                [_vm._v("Wishlist")]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass:
+                                    "dropdown-item nav-link nav_item",
+                                  attrs: { href: "compare.html" },
+                                },
+                                [_vm._v("compare")]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass:
+                                    "dropdown-item nav-link nav_item",
+                                  attrs: { href: "order-completed.html" },
+                                },
+                                [
+                                  _vm._v(
+                                    "Order\n                                                                    Completed"
+                                  ),
+                                ]
+                              ),
+                            ]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "mega-menu-col col-lg-4" }, [
+                          _c("ul", [
+                            _c("li", { staticClass: "dropdown-header" }, [
+                              _vm._v("Product Pages"),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass:
+                                    "dropdown-item nav-link nav_item",
+                                  attrs: { href: "shop-product-detail.html" },
+                                },
+                                [_vm._v("Default")]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass:
+                                    "dropdown-item nav-link nav_item",
+                                  attrs: {
+                                    href: "shop-product-detail-left-sidebar.html",
+                                  },
+                                },
+                                [
+                                  _vm._v(
+                                    "Left\n                                                                    Sidebar"
+                                  ),
+                                ]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass:
+                                    "dropdown-item nav-link nav_item",
+                                  attrs: {
+                                    href: "shop-product-detail-right-sidebar.html",
+                                  },
+                                },
+                                [
+                                  _vm._v(
+                                    "Right\n                                                                    Sidebar"
+                                  ),
+                                ]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass:
+                                    "dropdown-item nav-link nav_item",
+                                  attrs: {
+                                    href: "shop-product-detail-thumbnails-left.html",
+                                  },
+                                },
+                                [
+                                  _vm._v(
+                                    "Thumbnails\n                                                                    Left"
+                                  ),
+                                ]
+                              ),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "mega-menu-col col-lg-3" }, [
+                      _c("div", { staticClass: "header_banner" }, [
+                        _c("div", { staticClass: "header_banner_content" }, [
+                          _c("div", { staticClass: "shop_banner" }, [
+                            _c(
+                              "div",
+                              { staticClass: "banner_img overlay_bg_40" },
+                              [
+                                _c("img", {
+                                  attrs: {
+                                    src: "assets/images/shop_banner2.jpg",
+                                    alt: "shop_banner2",
+                                  },
+                                }),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "shop_bn_content" }, [
+                              _c(
+                                "h6",
+                                { staticClass: "text-uppercase shop_subtitle" },
+                                [
+                                  _vm._v(
+                                    "New\n                                                                        Collection"
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "h5",
+                                { staticClass: "text-uppercase shop_title" },
+                                [
+                                  _vm._v(
+                                    "Sale 30%\n                                                                        Off"
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass:
+                                    "btn btn-white rounded-0 btn-xs text-uppercase",
+                                  attrs: { href: "#" },
+                                },
+                                [
+                                  _vm._v(
+                                    "Shop\n                                                                        Now"
+                                  ),
+                                ]
+                              ),
+                            ]),
+                          ]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c(
+                  "a",
+                  {
+                    staticClass: "nav-link nav_item",
+                    attrs: { href: "contact.html" },
+                  },
+                  [_vm._v("Contact Us")]
+                ),
+              ]),
+            ]),
+          ]
+        ),
+        _vm._v(" "),
+        _c("ul", { staticClass: "navbar-nav attr-nav align-items-center" }, [
+          _c("li", [
+            _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+              _c("i", { staticClass: "linearicons-user" }),
+            ]),
           ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+              _c("i", { staticClass: "linearicons-heart" }),
+              _c("span", { staticClass: "wishlist_count" }, [_vm._v("0")]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "dropdown cart_dropdown" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link cart_trigger",
+                attrs: { href: "#", "data-toggle": "dropdown" },
+              },
+              [
+                _c("i", { staticClass: "linearicons-cart" }),
+                _c("span", { staticClass: "cart_count" }, [_vm._v("2")]),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "cart_box dropdown-menu dropdown-menu-right" },
+              [
+                _c("ul", { staticClass: "cart_list" }, [
+                  _c("li", [
+                    _c(
+                      "a",
+                      { staticClass: "item_remove", attrs: { href: "#" } },
+                      [_c("i", { staticClass: "ion-close" })]
+                    ),
+                    _vm._v(" "),
+                    _c("a", { attrs: { href: "#" } }, [
+                      _c("img", {
+                        attrs: {
+                          src: "assets/images/cart_thamb1.jpg",
+                          alt: "cart_thumb1",
+                        },
+                      }),
+                      _vm._v("Variable product 001"),
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "cart_quantity" }, [
+                      _vm._v(" 1 x "),
+                      _c("span", { staticClass: "cart_amount" }, [
+                        _c("span", { staticClass: "price_symbole" }, [
+                          _vm._v("$"),
+                        ]),
+                      ]),
+                      _vm._v("78.00"),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c(
+                      "a",
+                      { staticClass: "item_remove", attrs: { href: "#" } },
+                      [_c("i", { staticClass: "ion-close" })]
+                    ),
+                    _vm._v(" "),
+                    _c("a", { attrs: { href: "#" } }, [
+                      _c("img", {
+                        attrs: {
+                          src: "assets/images/cart_thamb2.jpg",
+                          alt: "cart_thumb2",
+                        },
+                      }),
+                      _vm._v("Ornare sed consequat"),
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "cart_quantity" }, [
+                      _vm._v(" 1 x "),
+                      _c("span", { staticClass: "cart_amount" }, [
+                        _c("span", { staticClass: "price_symbole" }, [
+                          _vm._v("$"),
+                        ]),
+                      ]),
+                      _vm._v("81.00"),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "cart_footer" }, [
+                  _c("p", { staticClass: "cart_total" }, [
+                    _c("strong", [_vm._v("Subtotal:")]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "cart_price" }, [
+                      _c("span", { staticClass: "price_symbole" }, [
+                        _vm._v("$"),
+                      ]),
+                    ]),
+                    _vm._v(
+                      "159.00\n                                            "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "cart_buttons" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn btn-fill-line view-cart",
+                        attrs: { href: "#" },
+                      },
+                      [
+                        _vm._v(
+                          "View\n                                                Cart"
+                        ),
+                      ]
+                    ),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn btn-fill-out checkout",
+                        attrs: { href: "#" },
+                      },
+                      [_vm._v("Checkout")]
+                    ),
+                  ]),
+                ]),
+              ]
+            ),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "pr_search_icon" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link pr_search_trigger",
+              attrs: { href: "javascript:void(0);" },
+            },
+            [_c("i", { staticClass: "linearicons-magnifier" })]
+          ),
         ]),
       ]),
     ])
@@ -47824,11 +56230,6 @@ module.exports = JSON.parse('{"_args":[["axios@0.21.4","D:\\\\xampp\\\\htdocs\\\
 /******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/nonce */
-/******/ 	(() => {
-/******/ 		__webpack_require__.nc = undefined;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
