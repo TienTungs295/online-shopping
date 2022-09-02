@@ -15,8 +15,9 @@ class BlogRestController extends Controller
     public function findAll(Request $request)
     {
         $page_size = $request->input("page_size");
+        if (!isset($page_size)) $page_size = 3;
         $ajax_response = new AjaxResponse();
-        $blogs = Blog::paginate($page_size);
+        $blogs = Blog::orderBy("updated_at", "DESC")->paginate($page_size);
         return $ajax_response->setData($blogs)->toApiResponse();
     }
 

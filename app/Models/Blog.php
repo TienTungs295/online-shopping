@@ -15,4 +15,13 @@ class Blog extends Model
         'image',
         'is_featured'
     ];
+
+    protected $appends = ['excerpt_content'];
+
+    public function getExcerptContentAttribute()
+    {
+        if (empty($this->content)) return "";
+        return substr("$this->content", 0,100);
+    }
+
 }

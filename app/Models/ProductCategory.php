@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 
 class ProductCategory extends Model
@@ -26,5 +28,10 @@ class ProductCategory extends Model
     public function allChilds()
     {
         return $this->childs()->with('allChilds');
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'category_id');
     }
 }

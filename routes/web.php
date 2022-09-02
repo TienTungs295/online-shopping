@@ -21,13 +21,13 @@ Route::group(['prefix' => 'rest'], function () {
         Route::get('/find-by-name', ['uses' => 'Rests\ProductRestController@findByName']);
         Route::get('/find-by-collection', ['uses' => 'Rests\ProductRestController@findByCollection']);
         Route::get('/find-all', ['uses' => 'Rests\ProductRestController@findAll']);
-        Route::get('/find-top', ['uses' => 'Rests\ProductRestController@findTop']);
+        Route::get('/find-featured', ['uses' => 'Rests\ProductRestController@findFeatured']);
         Route::get('/find-on-sale', ['uses' => 'Rests\ProductRestController@findOnSale']);
         Route::get('/detail', ['uses' => 'Rests\ProductRestController@detail']);
     });
     Route::group(['prefix' => 'category'], function () {
         Route::get('/find-all', ['uses' => 'Rests\CategoryRestController@findAll']);
-        Route::get('/find-top', ['uses' => 'Rests\CategoryRestController@findTop']);
+        Route::get('/find-featured', ['uses' => 'Rests\CategoryRestController@findFeatured']);
     });
     Route::group(['prefix' => 'blog'], function () {
         Route::get('/find-all', ['uses' => 'Rests\BlogRestController@findAll']);

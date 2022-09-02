@@ -2,7 +2,7 @@
 @section('content')
     <div class="main-inner">
         <div class="pagetitle">
-            <h4>Bài viết</h4>
+            <h4>Sản phẩm</h4>
         </div><!-- End Page Title -->
         <section class="section">
             <div class="row">

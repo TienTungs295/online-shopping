@@ -40,7 +40,7 @@ class ProductRestController extends Controller
         if (isset($collection_id)) {
             $products = Product::whereHas('productCollections', function ($query) use ($collection_id) {
                 $query->where('product_collection_id', $collection_id);
-            })->orderBy('id', 'DESC')->simplePaginate(3);
+            })->orderBy('id', 'DESC')->paginate(12);
         }
         return $ajax_response->setData($products)->toApiResponse();
     }
@@ -113,10 +113,10 @@ class ProductRestController extends Controller
         return $ajax_response->setData($products)->toApiResponse();
     }
 
-    public function findTop(Request $request)
+    public function findFeatured(Request $request)
     {
         $ajax_response = new AjaxResponse();
-        $products = Product::where('is_featured', true)->paginate(3);
+        $products = Product::where('is_featured', true)->orderBy("updated_at", "DESC")->paginate(12)->toArray();
         return $ajax_response->setData($products)->toApiResponse();
     }
 
@@ -144,7 +144,7 @@ class ProductRestController extends Controller
                     $query->where('end_date', '>=', $current_time);
                 });
             });
-        })->paginate(3);
+        })->simplePaginate(12);
         return $ajax_response->setData($products)->toApiResponse();
     }
 
@@ -159,17 +159,9 @@ class ProductRestController extends Controller
         } catch (ModelNotFoundException $e) {
             return $ajax_response->setMessage("Đối tượng không tồn tại hoặc đã bị xóa")->toApiResponse();
         }
-
-        $image_string = "";
-        $size = $product->images()->count();
-        foreach ($product->images()->get() as $key => $item) {
-            $image_string .= url('uploads/images/' . $item->image);
-            if ($key < $size - 1) $image_string .= ",";
-        }
-        if ($product->image) {
-            $product->image = url('uploads/images/' . $product->image);
-        }
-        $product->images = $image_string;
+        $product->images = $product->images()->get();
+        $product->image = $product->images()->first()->image;
+        $product->category = $product->category()->first();
         $related_products = $product->productsRelated()->orderBy("id", 'DESC')->limit(5)->get();
         $total_related = $related_products->count();
         if ($total_related < $related_side) {

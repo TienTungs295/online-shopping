@@ -57,55 +57,55 @@
 }
 
 @for $i from 1 through 10 {
-    .ml-#{$i * 5} {
+    .mgl-#{$i * 5} {
         margin-left: #{$i * 5}px;
     }
-    .mr-#{$i * 5} {
+    .mgr-#{$i * 5} {
         margin-right: #{$i * 5}px;
     }
-    .mt-#{$i * 5} {
+    .mgt-#{$i * 5} {
         margin-top: #{$i * 5}px;
     }
-    .mb-#{$i * 5} {
+    .mgb-#{$i * 5} {
         margin-bottom: #{$i * 5}px;
     }
 
-    .pl-#{$i * 5} {
+    .pdl-#{$i * 5} {
         padding-left: #{$i * 5}px;
     }
-    .pr-#{$i * 5} {
+    .pdr-#{$i * 5} {
         padding-right: #{$i * 5}px;
     }
-    .pt-#{$i * 5} {
+    .pdt-#{$i * 5} {
         padding-top: #{$i * 5}px;
     }
-    .pb-#{$i * 5} {
+    .pdb-#{$i * 5} {
         padding-bottom: #{$i * 5}px;
     }
 
-    .ml-#{$i * 5}-i {
+    .mgl-#{$i * 5}-i {
         margin-left: #{$i * 5}px !important;
     }
-    .mr-#{$i * 5}-i {
+    .mgr-#{$i * 5}-i {
         margin-right: #{$i * 5}px !important;
     }
-    .mt-#{$i * 5}-i {
+    .mgt-#{$i * 5}-i {
         margin-top: #{$i * 5}px !important;
     }
-    .mb-#{$i * 5}-i {
+    .mgb-#{$i * 5}-i {
         margin-bottom: #{$i * 5}px !important;
     }
 
-    .pl-#{$i * 5}-i {
+    .pdl-#{$i * 5}-i {
         padding-left: #{$i * 5}px !important;
     }
-    .pr-#{$i * 5}-i {
+    .pdr-#{$i * 5}-i {
         padding-right: #{$i * 5}px !important;
     }
-    .pt-#{$i * 5}-i {
+    .pdt-#{$i * 5}-i {
         padding-top: #{$i * 5}px !important;
     }
-    .pb-#{$i * 5}-i {
+    .pdb-#{$i * 5}-i {
         padding-bottom: #{$i * 5}px !important;
     }
 }

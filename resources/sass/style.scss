@@ -70,7 +70,7 @@ a {
     transition: all .3s ease-in-out;
 
     &:hover {
-        color: #FF324D;
+        color: $primary-color;
         text-decoration: none;
     }
 
@@ -118,11 +118,11 @@ video {
 }
 
 .section {
-    padding: 100px 0;
+    padding: 80px 0;
     position: relative;
 
     &.small_pt {
-        padding-top: 50px;
+        padding-top: 20px;
     }
 }
 
@@ -224,7 +224,7 @@ button:focus {
 
 .btn-fill-out {
     background-color: transparent;
-    border: 1px solid #FF324D;
+    border: 1px solid $primary-color;
     color: #fff;
     position: relative;
     overflow: hidden;
@@ -236,7 +236,7 @@ button:focus {
         left: 0;
         top: 0;
         bottom: 0;
-        background-color: #FF324D;
+        background-color: $primary-color;
         z-index: -1;
         transition: all 0.3s ease-in-out;
         width: 51%;
@@ -248,7 +248,7 @@ button:focus {
         left: 0;
         top: 0;
         bottom: 0;
-        background-color: #FF324D;
+        background-color: $primary-color;
         z-index: -1;
         transition: all 0.3s ease-in-out;
         width: 51%;
@@ -261,7 +261,7 @@ button:focus {
             width: 0;
         }
 
-        color: #FF324D !important;
+        color: $primary-color !important;
     }
 }
 
@@ -301,8 +301,8 @@ button:focus {
 }
 
 .btn-border-fill {
-    border: 1px solid #FF324D;
-    color: #FF324D;
+    border: 1px solid $primary-color;
+    color: $primary-color;
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -313,7 +313,7 @@ button:focus {
         left: 0;
         top: 0;
         bottom: 0;
-        background-color: #FF324D;
+        background-color: $primary-color;
         z-index: -1;
         transition: all 0.3s ease-in-out;
         width: 0;
@@ -325,7 +325,7 @@ button:focus {
         left: 0;
         top: 0;
         bottom: 0;
-        background-color: #FF324D;
+        background-color: $primary-color;
         z-index: -1;
         transition: all 0.3s ease-in-out;
         width: 0;
@@ -597,7 +597,7 @@ button:focus {
         right: 0;
         bottom: 0px;
         height: 1px;
-        background-color: #FF324D;
+        background-color: $primary-color;
         z-index: -1;
     }
 }
@@ -611,11 +611,11 @@ button:focus {
 }
 
 .text_default {
-    color: #FF324D !important;
+    color: $primary-color !important;
 }
 
 .bg_default {
-    background-color: #FF324D !important;
+    background-color: $primary-color !important;
 }
 
 .bg_gray {
@@ -660,6 +660,14 @@ button:focus {
 
 .bg_apricot {
     background-color: #fde0ca !important;
+}
+
+.bg_primary {
+    background-color: $primary-color !important;
+}
+
+.color_primary{
+    color: $primary-color;
 }
 
 .radius_all_5 {
@@ -724,7 +732,7 @@ button:focus {
     z-index: 99;
 
     &:hover {
-        background-color: #FF324D;
+        background-color: $primary-color;
         color: #fff;
     }
 
@@ -734,7 +742,7 @@ button:focus {
 }
 
 .scrollup_style1 {
-    background-color: #FF324D;
+    background-color: $primary-color;
 }
 
 .scrollup.scrollup_style1:hover {
@@ -794,7 +802,7 @@ button:focus {
 }
 
 [class*=overlay_bg_default_]::before {
-    background-color: #FF324D;
+    background-color: $primary-color;
 }
 
 [class*=overlay_bg_blue_]::before {
@@ -842,7 +850,7 @@ button:focus {
 }
 
 .ripple {
-    background-color: #FF324D;
+    background-color: $primary-color;
     border-radius: 100%;
     color: #fff;
     position: relative;
@@ -868,7 +876,7 @@ button:focus {
         -o-animation: ripple 1.8s infinite;
         -ms-transition: ripple 1.8s infinite;
         animation: ripple 1.8s infinite;
-        background-color: #FF324D;
+        background-color: $primary-color;
         border-radius: 100%;
         margin: -20px;
         bottom: 0px;
@@ -939,7 +947,7 @@ button:focus {
     }
 
     background-color: #fff;
-    color: #FF324D;
+    color: $primary-color;
 }
 
 .bg_transparent_20 {
@@ -1039,7 +1047,7 @@ button:focus {
         left: 0;
         width: 50px;
         height: 1px;
-        background-color: #FF324D;
+        background-color: $primary-color;
         bottom: 0;
         right: 0;
     }
@@ -1135,7 +1143,7 @@ button:focus {
 }
 
 .sub_heading {
-    color: #FF324D;
+    color: $primary-color;
     margin-bottom: 10px;
     display: block;
 }
@@ -1182,7 +1190,7 @@ button:focus {
         width: 15px;
         height: 15px;
         border-radius: 50%;
-        background: #FF324D;
+        background: $primary-color;
         -webkit-animation: ball-pulse-sync .6s 0s infinite ease-in-out;
         animation: ball-pulse-sync .6s 0s infinite ease-in-out;
 
@@ -1364,13 +1372,13 @@ button:focus {
         .dropdown-menu {
             li a {
                 &.active, &:hover {
-                    color: #FF324D;
+                    color: $primary-color;
                 }
             }
 
             > ul > {
                 li:hover > a, .mega-menu-col ul > li:hover > a {
-                    color: #FF324D;
+                    color: $primary-color;
                 }
             }
         }
@@ -1414,30 +1422,30 @@ button:focus {
     > {
         .nav-link {
             font-weight: 500;
-            padding: 22px 10px;
+            padding: 18px 10px;
             text-transform: capitalize;
             font-size: 14px;
         }
 
         a.active {
-            color: #FF324D;
+            color: $primary-color;
         }
     }
 
     &:hover > a {
-        color: #FF324D;
+        color: $primary-color;
     }
 }
 
 .light_skin.transparent_header.nav-fixed .navbar .navbar-nav > li {
     > a.active, &:hover > a {
-        color: #FF324D;
+        color: $primary-color;
     }
 }
 
 .transparent_header.nav-fixed .light_skin .navbar .navbar-nav > li {
     > a.active, &:hover > a {
-        color: #FF324D;
+        color: $primary-color;
     }
 }
 
@@ -1482,7 +1490,7 @@ button:focus {
     flex-direction: row;
 
     li .nav-link {
-        padding: 20px 10px;
+        padding: 16px 10px;
         position: relative;
         white-space: nowrap;
     }
@@ -1523,13 +1531,13 @@ button:focus {
     .dropdown-menu {
         li a {
             &.active, &:hover {
-                color: #FF324D;
+                color: $primary-color;
             }
         }
 
         > ul > {
             li:hover > a, .mega-menu-col ul > li:hover > a {
-                color: #FF324D;
+                color: $primary-color;
             }
         }
     }
@@ -1537,7 +1545,7 @@ button:focus {
 
 .sticky_dark_skin.nav-fixed {
     .navbar .navbar-nav .dropdown-item:hover {
-        color: #FF324D;
+        color: $primary-color;
     }
 
     .logo_light {
@@ -1563,7 +1571,7 @@ button:focus {
     }
 
     .navbar .navbar-nav .dropdown-item.active {
-        color: #FF324D;
+        color: $primary-color;
     }
 
     .item_remove {
@@ -1905,7 +1913,7 @@ button:focus {
     top: -3px;
     left: 0;
     font-size: 11px;
-    background-color: #FF324D;
+    background-color: $primary-color;
     border-radius: 50px;
     height: 16px;
     line-height: 16px;
@@ -2083,13 +2091,13 @@ button:focus {
         overflow: hidden;
 
         &:hover {
-            color: #FF324D;
+            color: $primary-color;
         }
     }
 }
 
 .header_wrap .social_icons li a:hover {
-    color: #FF324D;
+    color: $primary-color;
 }
 
 .social_icons.social_small li a {
@@ -2115,14 +2123,14 @@ button:focus {
 
 .social_white {
     .social_icons li a:hover, &.social_icons li a:hover {
-        color: #FF324D;
+        color: $primary-color;
     }
 }
 
 .border_social {
     .social_icons li a:hover, &.social_icons li a:hover {
-        background-color: #FF324D;
-        border-color: #FF324D;
+        background-color: $primary-color;
+        border-color: $primary-color;
         color: #fff;
     }
 
@@ -2154,10 +2162,10 @@ button:focus {
 
 .social_icons.social_style1 li a {
     background-color: #fff;
-    color: #FF324D;
+    color: $primary-color;
 
     &:hover {
-        background-color: #FF324D;
+        background-color: $primary-color;
         color: #fff !important;
     }
 }
@@ -2178,12 +2186,12 @@ button:focus {
 
 .social_style4 li a {
     background-color: #fff;
-    color: #FF324D;
+    color: $primary-color;
 
     &:hover {
-        background-color: #FF324D;
+        background-color: $primary-color;
         color: #fff;
-        background-color: #FF324D;
+        background-color: $primary-color;
         color: #fff !important;
     }
 }
@@ -2412,7 +2420,7 @@ header {
 
     &.light_skin {
         .header_list li a:hover, .contact_detail li a:hover, .header_list li a:hover span {
-            color: #FF324D;
+            color: $primary-color;
         }
     }
 }
@@ -2502,7 +2510,7 @@ header {
         color: #292b2c !important;
 
         &:hover {
-            color: #FF324D !important;
+            color: $primary-color !important;
         }
 
         &::before {
@@ -2898,7 +2906,7 @@ body.active {
         width: 0;
         z-index: 0;
         content: '';
-        background-color: #FF324D;
+        background-color: $primary-color;
         transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
     }
 
@@ -3033,8 +3041,8 @@ input.text {
 
 .categories_btn {
     &.categories_menu {
-        padding: 12px 15px;
-        border-radius: 4px;
+        padding: 15px 15px;
+        //border-radius: 4px;
     }
 
     span {
@@ -3043,8 +3051,8 @@ input.text {
         font-weight: 500;
     }
 
-    background-color: #FF324D;
-    border: 1px solid #FF324D;
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
     padding: 20px 15px;
     color: #fff;
     text-align: left;
@@ -3097,7 +3105,7 @@ input.text {
         }
 
         &:hover {
-            color: #FF324D;
+            color: $primary-color;
         }
 
         &.dropdown-toggler::after {
@@ -3149,7 +3157,7 @@ input.text {
     padding: 12px 15px;
     display: block;
     font-size: 16px;
-    color: #FF324D;
+    color: $primary-color;
     border-top: 1px solid #ddd;
     margin-top: 5px;
     position: relative;
@@ -3202,7 +3210,7 @@ input.text {
 .search_btn2 {
     position: absolute;
     right: 5px;
-    background-color: #FF324D;
+    background-color: $primary-color;
     border: 0;
     border-radius: 100%;
     font-size: 14px;
@@ -3215,7 +3223,7 @@ input.text {
 }
 
 .search_btn3 {
-    background-color: #FF324D;
+    background-color: $primary-color;
     color: #fff;
     border: 0;
     padding: 10px 30px;
@@ -3232,7 +3240,7 @@ input.text {
 
 .search_btn {
     &:hover {
-        color: #FF324D;
+        color: $primary-color;
     }
 
     i {
@@ -3287,7 +3295,7 @@ input.text {
         vertical-align: middle;
         font-size: 30px;
         margin-right: 10px;
-        color: #FF324D;
+        color: $primary-color;
     }
 
     span {
@@ -3389,6 +3397,22 @@ input.text {
         }
     }
 
+    &.slide_custom {
+        height: 550px;
+
+        .carousel-item {
+            height: 550px;
+        }
+
+        .banner_content_wrap {
+            height: 550px;
+
+            .carousel-item {
+                height: 550px;
+            }
+        }
+    }
+
     &.slide_wrap {
         height: 650px;
 
@@ -3486,13 +3510,13 @@ input.text {
 }
 
 .carousel-control-next:hover, .carousel-control-prev:hover {
-    background-color: #FF324D;
+    background-color: $primary-color;
     color: #fff;
 }
 
 .light_arrow {
     .carousel-control-next:hover, .carousel-control-prev:hover {
-        background-color: #FF324D;
+        background-color: $primary-color;
         color: #fff;
     }
 }
@@ -3556,19 +3580,19 @@ input.text {
 }
 
 .indicators_style1 li.active {
-    background-color: #FF324D;
+    background-color: $primary-color;
 }
 
 .indicators_style2 li.active {
-    background-color: #FF324D;
+    background-color: $primary-color;
 
     &:before {
-        border-color: #FF324D;
+        border-color: $primary-color;
     }
 }
 
 .indicators_style1 li.active:before {
-    border-color: #FF324D;
+    border-color: $primary-color;
 }
 
 .indicators_style4 li {
@@ -3707,7 +3731,7 @@ input.text {
 }
 
 .banner_content_border {
-    border: 10px solid #FF324D;
+    border: 10px solid $primary-color;
     padding: 50px;
     position: relative;
 }
@@ -3744,7 +3768,7 @@ input.text {
 }
 
 .bg_strip {
-    background-color: #FF324D;
+    background-color: $primary-color;
     color: #fff;
     display: inline-block;
     padding: 8px 0px;
@@ -3762,8 +3786,8 @@ input.text {
         display: block;
         width: 0;
         height: 0px;
-        border: 20px solid #FF324D;
-        border-bottom-color: #FF324D;
+        border: 20px solid $primary-color;
+        border-bottom-color: $primary-color;
         border-left-color: transparent;
     }
 
@@ -3776,8 +3800,8 @@ input.text {
         display: block;
         width: 0;
         height: 0px;
-        border: 20px solid #FF324D;
-        border-bottom-color: #FF324D;
+        border: 20px solid $primary-color;
+        border-bottom-color: $primary-color;
         border-right-color: transparent;
     }
 }
@@ -4060,9 +4084,21 @@ input.text {
 
     .icon i {
         font-size: 40px;
-        color: #FF324D;
+        color: $primary-color;
         line-height: 78px;
     }
+    &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 15%;
+        bottom: 15%;
+        width: 1px;
+        background-color: #ddd;
+    }
+}
+[class*="icon-box-inner"]:last-child .icon_box_style2::before {
+    content: normal;
 }
 
 .shopping_info {
@@ -4100,7 +4136,7 @@ input.text {
 
     .icon i {
         font-size: 36px;
-        color: #FF324D;
+        color: $primary-color;
         line-height: normal;
     }
 
@@ -4116,7 +4152,7 @@ input.text {
     text-align: center;
 
     .icon i {
-        background-color: #FF324D;
+        background-color: $primary-color;
         color: #fff;
         width: 60px;
         height: 60px;
@@ -4152,7 +4188,7 @@ input.text {
             text-transform: capitalize;
 
             &.current {
-                color: #FF324D;
+                color: $primary-color;
             }
         }
     }
@@ -4162,7 +4198,7 @@ input.text {
 
         &.current {
             color: #fff;
-            background-color: #FF324D;
+            background-color: $primary-color;
         }
     }
 
@@ -4170,7 +4206,7 @@ input.text {
         border-bottom: 1px solid transparent;
 
         &.current {
-            border-bottom-color: #FF324D;
+            border-bottom-color: $primary-color;
         }
     }
 }
@@ -4244,7 +4280,7 @@ input.text {
     }
 
     span {
-        color: #FF324D;
+        color: $primary-color;
     }
 }
 
@@ -4346,7 +4382,7 @@ input.text {
             i {
                 margin-right: 5px;
                 vertical-align: middle;
-                color: #FF324D;
+                color: $primary-color;
             }
         }
     }
@@ -4427,6 +4463,14 @@ h6.blog_title {
 .blog_style2 .blog_content {
     padding: 15px;
 }
+.blog_post.blog_style2 {
+    .blog_img{
+        height: 230px;
+        img{
+            height: 100%;
+        }
+    }
+}
 
 .blog_post.blog_style3 {
     position: relative;
@@ -4473,7 +4517,7 @@ h6.blog_title {
     top: 15px;
     width: 30px;
     text-align: center;
-    background-color: #FF324D;
+    background-color: $primary-color;
     min-width: 60px;
     padding: 8px 10px;
     color: #ffffff;
@@ -4481,7 +4525,7 @@ h6.blog_title {
 }
 
 .blog_post.blog_style3 .blog_content a:hover {
-    color: #FF324D;
+    color: $primary-color;
 }
 
 .post_date strong {
@@ -4768,7 +4812,7 @@ h6.blog_title {
 
 .newsletter_form {
     .btn-send {
-        background-color: #FF324D;
+        background-color: $primary-color;
         color: #fff;
         font-size: 20px;
         right: 5px;
@@ -4782,7 +4826,7 @@ h6.blog_title {
 
     .btn-send2 {
         background-color: transparent;
-        color: #FF324D;
+        color: $primary-color;
         font-size: 20px;
         right: 5px;
         width: 50px;
@@ -4957,7 +5001,7 @@ footer {
         margin-right: 8px;
         margin-top: 2px;
         font-size: 22px;
-        color: #FF324D;
+        color: $primary-color;
     }
 }
 
@@ -4983,12 +5027,12 @@ footer {
     }
 
     a:hover, .widget_links li a:hover {
-        color: #FF324D;
+        color: $primary-color;
     }
 }
 
 .widget_links li a:hover, .footer_dark .footer_link li a:hover, .footer_link li a:hover {
-    color: #FF324D;
+    color: $primary-color;
 }
 
 .widget_contact_form {
@@ -5333,7 +5377,7 @@ footer {
 
     i {
         font-size: 34px;
-        color: #FF324D;
+        color: $primary-color;
     }
 }
 
@@ -5354,7 +5398,7 @@ footer {
         line-height: 28px;
 
         &:hover {
-            color: #FF324D;
+            color: $primary-color;
         }
     }
 }
@@ -5408,7 +5452,7 @@ footer {
     border-radius: 10px;
 
     .contact_icon {
-        border: 1px solid #FF324D;
+        border: 1px solid $primary-color;
         margin: 0 0 5px;
         height: 80px;
         width: 80px;
@@ -5431,7 +5475,7 @@ footer {
             right: 0;
             top: 0;
             bottom: 0;
-            background-color: #FF324D;
+            background-color: $primary-color;
             transition: all 0.5s ease-in-out;
             -moz-transform: scale(0);
             -webkit-transform: scale(0);
@@ -5553,7 +5597,7 @@ footer {
         }
 
         i {
-            background-color: #FF324D;
+            background-color: $primary-color;
             border-radius: 100%;
             width: 40px;
             height: 40px;
@@ -6084,7 +6128,7 @@ footer {
         top: 3px;
         font-family: 'themify';
         font-size: 20px;
-        color: #FF324D;
+        color: $primary-color;
     }
 
     .countdown_style1 .countdown_box::before {
@@ -6104,7 +6148,7 @@ footer {
 }
 
 .deal_wrap {
-    border: 2px solid #FF324D;
+    border: 2px solid $primary-color;
     border-radius: 20px;
     overflow: hidden;
     display: -ms-flexbox;
@@ -6160,7 +6204,7 @@ footer {
     }
 
     .progress-bar {
-        background-color: #FF324D;
+        background-color: $primary-color;
         text-indent: -99999px;
     }
 }
@@ -6190,7 +6234,7 @@ footer {
     }
 
     &.active {
-        background-color: #FF324D;
+        background-color: $primary-color;
         color: #fff;
         border-color: #ff324d;
     }
@@ -6337,7 +6381,7 @@ footer {
 }
 
 .price {
-    color: #FF324D;
+    color: $primary-color;
     font-weight: 600;
 }
 
@@ -6459,6 +6503,18 @@ footer {
         transition: all 0.5s ease-in-out;
         z-index: 1;
     }
+    &.style-2{
+        height: 100px;
+        img{
+            height: 100%;
+        }
+    }
+    &.style-1{
+        height: 280px;
+        img{
+            height: 100%;
+        }
+    }
 }
 
 .product:hover .product_img:before, .product_box:hover .product_img:before {
@@ -6538,7 +6594,7 @@ footer {
     }
 
     &:hover {
-        background-color: #FF324D;
+        background-color: $primary-color;
         color: #fff;
     }
 }
@@ -6713,12 +6769,7 @@ footer {
     }
 
     .rating_wrap {
-        float: right;
         margin-top: 7px;
-    }
-
-    .product_price {
-        float: left;
     }
 
     .price {
@@ -6810,7 +6861,7 @@ footer {
     margin-bottom: 3px;
 
     &.active {
-        border-color: #FF324D;
+        border-color: $primary-color;
         background-color: #ff324d;
         color: #fff;
     }
@@ -6870,7 +6921,7 @@ footer {
 }
 
 .product_gallery_item a.active {
-    border-color: #FF324D;
+    border-color: $primary-color;
 }
 
 .vertical_gallery {
@@ -6994,7 +7045,7 @@ footer {
         position: relative;
 
         i {
-            color: #FF324D;
+            color: $primary-color;
             position: absolute;
             font-size: 16px;
             left: 0;
@@ -7018,7 +7069,7 @@ footer {
 
 .filter_price .ui-slider {
     .ui-slider-range {
-        background-color: #FF324D;
+        background-color: $primary-color;
         border-radius: 0;
     }
 
@@ -7180,7 +7231,7 @@ footer {
 
                     &:hover {
                         background-color: transparent;
-                        color: #FF324D;
+                        color: $primary-color;
                     }
                 }
             }
@@ -7191,8 +7242,8 @@ footer {
             width: auto;
             height: auto;
             padding: 12px 30px;
-            background-color: #FF324D;
-            border: 1px solid #FF324D;
+            background-color: $primary-color;
+            border: 1px solid $primary-color;
             color: #fff;
             border-radius: 4px;
         }
@@ -7200,7 +7251,7 @@ footer {
         .pr_action_btn li.add-to-cart a {
             &:hover {
                 background-color: transparent;
-                color: #FF324D;
+                color: $primary-color;
             }
 
             i {
@@ -7432,7 +7483,7 @@ footer {
 
     i {
         margin-right: 10px;
-        color: #FF324D;
+        color: $primary-color;
         position: absolute;
         left: 0;
         top: 5px;
@@ -7564,7 +7615,7 @@ label.label_info {
 }
 
 .order_complete i {
-    color: #FF324D;
+    color: $primary-color;
     font-size: 80px;
     margin-bottom: 20px;
 }
@@ -7784,8 +7835,8 @@ select {
 
 .pagination_style1 .page-item {
     &.active .page-link, .page-link:hover {
-        background-color: #FF324D;
-        border-color: #FF324D;
+        background-color: $primary-color;
+        border-color: $primary-color;
         color: #fff;
     }
 }
@@ -7936,7 +7987,7 @@ footer .widget_recent_post .post_img img {
     color: #333;
 
     &:hover {
-        background-color: #FF324D;
+        background-color: $primary-color;
         color: #fff;
     }
 }
@@ -7964,7 +8015,7 @@ footer .widget_recent_post .post_img img {
     }
 
     a {
-        color: #FF324D;
+        color: $primary-color;
     }
 
     li:last-child {
@@ -8176,20 +8227,20 @@ footer .widget_recent_post .post_img img {
 }
 
 .tab-style1 .nav-tabs li.nav-item a.active {
-    color: #FF324D;
+    color: $primary-color;
 
     &:hover {
-        color: #FF324D;
+        color: $primary-color;
     }
 }
 
 .tab-style2 .nav-tabs li.nav-item {
     a {
         &.active {
-            color: #FF324D;
+            color: $primary-color;
 
             &:hover {
-                color: #FF324D;
+                color: $primary-color;
             }
         }
 
@@ -8215,8 +8266,8 @@ footer .widget_recent_post .post_img img {
     }
 
     .nav-item a.active {
-        border-bottom-color: #FF324D;
-        color: #FF324D;
+        border-bottom-color: $primary-color;
+        color: $primary-color;
     }
 }
 
@@ -8330,8 +8381,8 @@ footer .widget_recent_post .post_img img {
             }
 
             + .form-check-label::before {
-                background-color: #FF324D;
-                border-color: #FF324D;
+                background-color: $primary-color;
+                border-color: $primary-color;
             }
         }
 
@@ -8370,7 +8421,7 @@ footer .widget_recent_post .post_img img {
 
     input[type="radio"] + .form-check-label::after {
         content: "";
-        background-color: #FF324D;
+        background-color: $primary-color;
         height: 10px;
         width: 10px;
         border-radius: 100%;
@@ -8393,7 +8444,7 @@ footer .widget_recent_post .post_img img {
 
 .custome-radio input[type="radio"]:checked + .form-check-label {
     &::before {
-        border-color: #FF324D;
+        border-color: $primary-color;
     }
 
     &::after {
@@ -8438,7 +8489,7 @@ body .owl-theme .owl-nav [class*="owl-"] {
         .owl-dot {
             span {
                 background-color: transparent;
-                border: 1px solid #FF324D;
+                border: 1px solid $primary-color;
                 cursor: pointer;
                 margin: 3px;
                 opacity: 1;
@@ -8446,7 +8497,7 @@ body .owl-theme .owl-nav [class*="owl-"] {
             }
 
             &.active span, &:hover span {
-                background-color: #FF324D;
+                background-color: $primary-color;
             }
         }
     }
@@ -8546,7 +8597,7 @@ body .owl-theme .owl-nav [class*="owl-"] {
         }
 
         .owl-prev:hover, .owl-next:hover {
-            background-color: #FF324D;
+            background-color: $primary-color;
             color: #fff;
         }
     }
@@ -8630,7 +8681,7 @@ body .owl-theme .owl-nav [class*="owl-"] {
 }
 
 .slick-prev:hover, .slick-next:hover {
-    background-color: #FF324D;
+    background-color: $primary-color;
 }
 
 .slick-prev:hover:before, .slick-next:hover:before {
@@ -8823,7 +8874,7 @@ blockquote {
 }
 
 .blockquote_style2 {
-    background-color: #FF324D;
+    background-color: $primary-color;
     padding: 20px;
     position: relative;
 
@@ -8850,7 +8901,7 @@ blockquote {
 .blockquote_style3 {
     background-color: #FAFAFA;
     padding: 20px;
-    border-left: 2px solid #FF324D;
+    border-left: 2px solid $primary-color;
     margin-bottom: 25px;
     font-size: 16px;
     line-height: 28px;
@@ -9039,7 +9090,7 @@ blockquote {
         color: #2b2f4c;
 
         &.active {
-            background-color: #FF324D;
+            background-color: $primary-color;
             color: #fff;
         }
 
@@ -9104,4 +9155,8 @@ blockquote {
 
 /*===================================*
   24.END ELEMENT DESIGN
+*===================================*/
+
+/*===================================*
+  24.CUSTOM STYLE
 *===================================*/

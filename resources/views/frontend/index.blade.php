@@ -33,9 +33,9 @@
     <!-- Slick CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
     <!-- Style CSS -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 </head>
 <body>
 <div id="app">

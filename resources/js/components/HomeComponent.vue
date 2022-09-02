@@ -1,70 +1,74 @@
 <template>
     <div>
         <!-- START SECTION BANNER -->
-        <div class="banner_section slide_medium shop_banner_slider staggered-animation-wrap">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9 offset-lg-3">
-                        <div id="carouselExampleControls" class="carousel slide light_arrow" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active background_bg"
-                                     data-img-src="assets/images/banner4.jpg">
-                                    <div class="banner_slide_content banner_content_inner">
-                                        <div class="col-lg-8 col-10">
-                                            <div class="banner_content overflow-hidden">
-                                                <h5 class="mb-3 staggered-animation font-weight-light"
-                                                    data-animation="slideInLeft" data-animation-delay="0.5s">Get up to
-                                                    50% off Today Only!</h5>
-                                                <h2 class="staggered-animation" data-animation="slideInLeft"
-                                                    data-animation-delay="1s">Woman Fashion</h2>
-                                                <a class="btn btn-fill-out rounded-0 staggered-animation text-uppercase"
-                                                   href="shop-left-sidebar.html" data-animation="slideInLeft"
-                                                   data-animation-delay="1.5s">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item background_bg" data-img-src="assets/images/banner5.jpg">
-                                    <div class="banner_slide_content banner_content_inner">
-                                        <div class="col-lg-8 col-10">
-                                            <div class="banner_content overflow-hidden">
-                                                <h5 class="mb-3 staggered-animation font-weight-light"
-                                                    data-animation="slideInLeft" data-animation-delay="0.5s">50% off in
-                                                    all products</h5>
-                                                <h2 class="staggered-animation" data-animation="slideInLeft"
-                                                    data-animation-delay="1s">Man Fashion</h2>
-                                                <a class="btn btn-fill-out rounded-0 staggered-animation text-uppercase"
-                                                   href="shop-left-sidebar.html" data-animation="slideInLeft"
-                                                   data-animation-delay="1.5s">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item background_bg" data-img-src="assets/images/banner6.jpg">
-                                    <div class="banner_slide_content banner_content_inner">
-                                        <div class="col-lg-8 col-10">
-                                            <div class="banner_content overflow-hidden">
-                                                <h5 class="mb-3 staggered-animation font-weight-light"
-                                                    data-animation="slideInLeft" data-animation-delay="0.5s">Taking your
-                                                    Viewing Experience to Next Level</h5>
-                                                <h2 class="staggered-animation" data-animation="slideInLeft"
-                                                    data-animation-delay="1s">Summer Sale</h2>
-                                                <a class="btn btn-fill-out rounded-0 staggered-animation text-uppercase"
-                                                   href="shop-left-sidebar.html" data-animation="slideInLeft"
-                                                   data-animation-delay="1.5s">Shop Now</a>
-                                            </div>
+        <div class="banner_section slide_custom shop_banner_slider staggered-animation-wrap">
+            <div id="carouselExampleControls" class="carousel slide carousel-fade light_arrow" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item background_bg active" data-img-src="assets/images/banner16.jpg">
+                        <div class="banner_slide_content banner_content_inner">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-7 col-10">
+                                        <div class="banner_content overflow-hidden">
+                                            <h2 class="staggered-animation" data-animation="slideInLeft"
+                                                data-animation-delay="0.5s">LED 75 INCH F58</h2>
+                                            <h5 class="mb-3 mb-sm-4 staggered-animation font-weight-light"
+                                                data-animation="slideInLeft" data-animation-delay="1s">Get up to <span
+                                                class="text_default">50%</span> off Today Only!</h5>
+                                            <a class="btn btn-fill-out rounded-0 staggered-animation text-uppercase"
+                                               href="shop-left-sidebar.html" data-animation="slideInLeft"
+                                               data-animation-delay="1.5s">Shop Now</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <ol class="carousel-indicators indicators_style1">
-                                <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleControls" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleControls" data-slide-to="2"></li>
-                            </ol>
+                        </div>
+                    </div>
+                    <div class="carousel-item background_bg" data-img-src="assets/images/banner17.jpg">
+                        <div class="banner_slide_content banner_content_inner">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-8 col-10">
+                                        <div class="banner_content overflow-hidden">
+                                            <h2 class="staggered-animation" data-animation="slideInLeft"
+                                                data-animation-delay="0.5s">Smart Phones</h2>
+                                            <h5 class="mb-3 mb-sm-4 staggered-animation font-weight-light"
+                                                data-animation="slideInLeft" data-animation-delay="1s"><span
+                                                class="text_default">50%</span> off in all products</h5>
+                                            <a class="btn btn-fill-out rounded-0 staggered-animation text-uppercase"
+                                               href="shop-left-sidebar.html" data-animation="slideInLeft"
+                                               data-animation-delay="1.5s">Shop Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item background_bg" data-img-src="assets/images/banner18.jpg">
+                        <div class="banner_slide_content banner_content_inner">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-8 col-10">
+                                        <div class="banner_content overflow-hidden">
+                                            <h2 class="staggered-animation" data-animation="slideInLeft"
+                                                data-animation-delay="0.5s">Beat Headphone</h2>
+                                            <h5 class="mb-3 mb-sm-4 staggered-animation font-weight-light"
+                                                data-animation="slideInLeft" data-animation-delay="1s">Taking your
+                                                Viewing Experience to Next Level</h5>
+                                            <a class="btn btn-fill-out rounded-0 staggered-animation text-uppercase"
+                                               href="shop-left-sidebar.html" data-animation="slideInLeft"
+                                               data-animation-delay="1.5s">Shop Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"><i
+                    class="ion-chevron-left"></i></a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"><i
+                    class="ion-chevron-right"></i></a>
             </div>
         </div>
         <!-- END SECTION BANNER -->
@@ -72,28 +76,105 @@
         <!-- END MAIN CONTENT -->
         <div class="main_content">
 
+            <!-- START SECTION CATEGORIES -->
+            <div class="section pdt-0 small_pb ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="cat_overlap radius_all_5">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-3 col-md-4">
+                                        <div class="text-center text-md-left">
+                                            <h4>Top Categories</h4>
+                                            <p class="mb-2">There are many variations of passages of Lorem</p>
+                                            <a href="#" class="btn btn-line-fill btn-sm">View All</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-8">
+                                        <div
+                                            class="cat_slider mt-4 mt-md-0 carousel_slider owl-carousel owl-theme nav_style5"
+                                            data-loop="true" data-dots="false" data-nav="true" data-margin="30"
+                                            data-responsive='{"0":{"items": "1"}, "380":{"items": "2"}, "991":{"items": "3"}, "1199":{"items": "4"}}'>
+                                            <div class="item">
+                                                <div class="categories_box">
+                                                    <a href="#">
+                                                        <i class="flaticon-bed"></i>
+                                                        <span>Bedroom</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="categories_box">
+                                                    <a href="#">
+                                                        <i class="flaticon-table"></i>
+                                                        <span>Dining Table</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="categories_box">
+                                                    <a href="#">
+                                                        <i class="flaticon-sofa"></i>
+                                                        <span>Sofa</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="categories_box">
+                                                    <a href="#">
+                                                        <i class="flaticon-armchair"></i>
+                                                        <span>Armchair</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="categories_box">
+                                                    <a href="#">
+                                                        <i class="flaticon-chair"></i>
+                                                        <span>chair</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="categories_box">
+                                                    <a href="#">
+                                                        <i class="flaticon-desk-lamp"></i>
+                                                        <span>desk lamp</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END SECTION CATEGORIES -->
+
             <!-- START SECTION SHOP -->
-            <div class="section small_pb">
+            <div class="section pdt-30-i small_pb">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <div class="heading_tab_header">
                                 <div class="heading_s2">
-                                    <h2>Sản phẩm độc quyền</h2>
+                                    <h2>Bộ sưu tập</h2>
                                 </div>
                                 <div class="tab-style2">
                                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                                             data-target="#tabmenubar" aria-expanded="false">
                                         <span class="ion-android-menu"></span>
                                     </button>
-                                    currentIndex: {{currentIndex}}
                                     <ul class="nav nav-tabs justify-content-center justify-content-md-end"
                                         id="tabmenubar">
                                         <li class="nav-item"
-                                            v-for="(item, index) in products_by_collection"
+                                            v-for="(item, index) in collections"
                                             :key="index"
-                                            @click="changeCollecction(item, index)">
-                                            <a class="nav-link cursor-pointer" :class="{ active: index == currentIndex }">{{ item.name }}</a>
+                                            @click="changeCollection(item.id, index)">
+                                            <a class="nav-link cursor-pointer"
+                                               :class="{ active: index == currentIndex }">{{ item.name }}</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -102,1597 +183,56 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <div class="tab_slider">
-                                <div class="tab-pane fade show active" id="arrival" role="tabpanel"
-                                     aria-labelledby="arrival-tab">
-                                    <div class="product_slider carousel_slider owl-carousel owl-theme nav_style1"
-                                         data-loop="true" data-dots="false" data-nav="true" data-margin="20"
-                                         data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "1199":{"items": "4"}}'>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img1.jpg" alt="product_img1">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">Blue
-                                                        Dress For Woman</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$45.00</span>
-                                                        <del>$55.25</del>
-                                                        <div class="on_sale">
-                                                            <span>35% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:80%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(21)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#87554B"></span>
-                                                            <span data-color="#333333"></span>
-                                                            <span data-color="#DA323F"></span>
-                                                        </div>
-                                                    </div>
+                            <div class="tab-pane fade show active" v-if="!isLoading">
+                                <div class="product_slider carousel_slider owl-carousel owl-theme dot_style1" v-carousel
+                                     data-loop="false" data-margin="20"
+                                     data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "991":{"items": "4"}}'>
+                                    <div class="item" v-for="item in productCollections">
+                                        <div class="product">
+                                            <div class="product_img style-1">
+                                                <a href="#">
+                                                    <img :src="'/uploads/images/'+item.image" :alt="item.image">
+                                                </a>
+                                                <div class="product_action_box">
+                                                    <ul class="list_none pr_action_btn">
+                                                        <li class="add-to-cart"><a href="#"><i
+                                                            class="icon-basket-loaded"></i>Thêm vào giỏ </a>
+                                                        </li>
+                                                        <li><a href="shop-compare.html"
+                                                               class="popup-ajax"><i
+                                                            class="icon-shuffle"></i></a></li>
+                                                        <li><a href="shop-quick-view.html"
+                                                               class="popup-ajax"><i
+                                                            class="icon-magnifier-add"></i></a></li>
+                                                        <li><a href="#"><i class="icon-heart"></i></a></li>
+                                                    </ul>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img2.jpg" alt="product_img2">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
+                                            <div class="product_info">
+                                                <h6 class="product_title">
+                                                    <router-link
+                                                        :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
+                                                        {{ item.name }}
+                                                    </router-link>
+                                                </h6>
+                                                <div class="product_price">
+                                                    <div v-if="item.on_sale">
+                                                        <span class="price">{{ item.sale_price }}</span>
+                                                        <del>{{ item.price }}</del>
+                                                        <div class="on_sale" v-if="item.sale_off != null">
+                                                            <span>{{ item.sale_off }}% Off</span>
+                                                        </div>
                                                     </div>
+                                                    <div v-else>
+                                                        <span class="price">{{ item.price }}</span>
+                                                    </div>
+
                                                 </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">Lether
-                                                        Gray Tuxedo</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$55.00</span>
-                                                        <del>$95.00</del>
-                                                        <div class="on_sale">
-                                                            <span>25% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:68%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(15)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#847764"></span>
-                                                            <span data-color="#0393B5"></span>
-                                                            <span data-color="#DA323F"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <span class="pr_flash">New</span>
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img3.jpg" alt="product_img3">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">woman
-                                                        full sliv dress</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$68.00</span>
-                                                        <del>$99.00</del>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:87%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(25)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#333333"></span>
-                                                            <span data-color="#7C502F"></span>
-                                                            <span data-color="#2F366C"></span>
-                                                            <span data-color="#874A3D"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img4.jpg" alt="product_img4">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">light
-                                                        blue Shirt</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$69.00</span>
-                                                        <del>$89.00</del>
-                                                        <div class="on_sale">
-                                                            <span>20% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:70%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(22)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#333333"></span>
-                                                            <span data-color="#A92534"></span>
-                                                            <span data-color="#B9C2DF"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img5.jpg" alt="product_img5">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">blue
-                                                        dress for woman</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$45.00</span>
-                                                        <del>$55.25</del>
-                                                        <div class="on_sale">
-                                                            <span>35% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:80%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(21)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#87554B"></span>
-                                                            <span data-color="#333333"></span>
-                                                            <span data-color="#5FB7D4"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <span class="pr_flash bg-danger">Hot</span>
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img6.jpg" alt="product_img6">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">Blue
-                                                        casual check shirt</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$55.00</span>
-                                                        <del>$95.00</del>
-                                                        <div class="on_sale">
-                                                            <span>25% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:68%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(15)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#87554B"></span>
-                                                            <span data-color="#333333"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <span class="pr_flash bg-success">Sale</span>
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img7.jpg" alt="product_img7">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">white
-                                                        black line dress</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$68.00</span>
-                                                        <del>$99.00</del>
-                                                        <div class="on_sale">
-                                                            <span>20% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:87%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(25)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#333333"></span>
-                                                            <span data-color="#7C502F"></span>
-                                                            <span data-color="#2F366C"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img8.jpg" alt="product_img8">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">Men
-                                                        blue jins Shirt</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$69.00</span>
-                                                        <del>$89.00</del>
-                                                        <div class="on_sale">
-                                                            <span>20% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:70%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(22)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#333333"></span>
-                                                            <span data-color="#444653"></span>
-                                                            <span data-color="#B9C2DF"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="sellers" role="tabpanel" aria-labelledby="sellers-tab">
-                                    <div class="product_slider carousel_slider owl-carousel owl-theme nav_style1"
-                                         data-loop="true" data-dots="false" data-nav="true" data-margin="20"
-                                         data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "1199":{"items": "4"}}'>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img9.jpg" alt="product_img9">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">T-Shirt
-                                                        Form Girls</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$45.00</span>
-                                                        <del>$55.25</del>
-                                                        <div class="on_sale">
-                                                            <span>35% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:80%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(21)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#B5B6BB"></span>
-                                                            <span data-color="#333333"></span>
-                                                            <span data-color="#DA323F"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <span class="pr_flash bg-danger">Hot</span>
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img6.jpg" alt="product_img6">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">Blue
-                                                        casual check shirt</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$55.00</span>
-                                                        <del>$95.00</del>
-                                                        <div class="on_sale">
-                                                            <span>25% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:68%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(15)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#87554B"></span>
-                                                            <span data-color="#333333"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img11.jpg" alt="product_img11">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">Black
-                                                        dress for woman</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$68.00</span>
-                                                        <del>$99.00</del>
-                                                        <div class="on_sale">
-                                                            <span>20% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:87%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(25)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#090909"></span>
-                                                            <span data-color="#AC644D"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <span class="pr_flash bg-success">Sale</span>
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img7.jpg" alt="product_img7">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">white
-                                                        black line dress</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$68.00</span>
-                                                        <del>$99.00</del>
-                                                        <div class="on_sale">
-                                                            <span>20% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:87%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(25)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#333333"></span>
-                                                            <span data-color="#7C502F"></span>
-                                                            <span data-color="#2F366C"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img8.jpg" alt="product_img8">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">Men
-                                                        blue jins Shirt</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$69.00</span>
-                                                        <del>$89.00</del>
-                                                        <div class="on_sale">
-                                                            <span>20% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:70%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(22)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#333333"></span>
-                                                            <span data-color="#444653"></span>
-                                                            <span data-color="#B9C2DF"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img5.jpg" alt="product_img5">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">blue
-                                                        dress for woman</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$45.00</span>
-                                                        <del>$55.25</del>
-                                                        <div class="on_sale">
-                                                            <span>35% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:80%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(21)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#87554B"></span>
-                                                            <span data-color="#333333"></span>
-                                                            <span data-color="#5FB7D4"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img12.jpg" alt="product_img12">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <span class="pr_flash">New</span>
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">Black
-                                                        T-shirt for woman</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$69.00</span>
-                                                        <del>$89.00</del>
-                                                        <div class="on_sale">
-                                                            <span>20% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:70%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(22)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#1B1B25"></span>
-                                                            <span data-color="#444653"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <span class="pr_flash bg-danger">Hot</span>
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img10.jpg" alt="product_img10">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">Red &
-                                                        Black check shirt</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$55.00</span>
-                                                        <del>$95.00</del>
-                                                        <div class="on_sale">
-                                                            <span>25% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:68%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(15)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#E8ADA9"></span>
-                                                            <span data-color="#C38F77"></span>
-                                                            <span data-color="#BE7154"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="featured" role="tabpanel" aria-labelledby="featured-tab">
-                                    <div class="product_slider carousel_slider owl-carousel owl-theme nav_style1"
-                                         data-loop="true" data-dots="false" data-nav="true" data-margin="20"
-                                         data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "1199":{"items": "4"}}'>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img5.jpg" alt="product_img5">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">blue
-                                                        dress for woman</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$45.00</span>
-                                                        <del>$55.25</del>
-                                                        <div class="on_sale">
-                                                            <span>35% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:80%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(21)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#87554B"></span>
-                                                            <span data-color="#333333"></span>
-                                                            <span data-color="#5FB7D4"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img12.jpg" alt="product_img12">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <span class="pr_flash">New</span>
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">Black
-                                                        T-shirt for woman</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$69.00</span>
-                                                        <del>$89.00</del>
-                                                        <div class="on_sale">
-                                                            <span>20% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:70%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(22)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#1B1B25"></span>
-                                                            <span data-color="#444653"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img9.jpg" alt="product_img9">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">T-Shirt
-                                                        Form Girls</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$45.00</span>
-                                                        <del>$55.25</del>
-                                                        <div class="on_sale">
-                                                            <span>35% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:80%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(21)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#B5B6BB"></span>
-                                                            <span data-color="#333333"></span>
-                                                            <span data-color="#DA323F"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <span class="pr_flash bg-success">Sale</span>
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img10.jpg" alt="product_img10">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">Red &
-                                                        Black check shirt</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$55.00</span>
-                                                        <del>$95.00</del>
-                                                        <div class="on_sale">
-                                                            <span>25% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:68%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(15)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#E8ADA9"></span>
-                                                            <span data-color="#C38F77"></span>
-                                                            <span data-color="#BE7154"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <span class="pr_flash bg-danger">Hot</span>
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img7.jpg" alt="product_img7">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">white
-                                                        black line dress</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$68.00</span>
-                                                        <del>$99.00</del>
-                                                        <div class="on_sale">
-                                                            <span>20% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:87%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(25)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#333333"></span>
-                                                            <span data-color="#7C502F"></span>
-                                                            <span data-color="#2F366C"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img11.jpg" alt="product_img11">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">Black
-                                                        dress for woman</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$68.00</span>
-                                                        <del>$99.00</del>
-                                                        <div class="on_sale">
-                                                            <span>20% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:87%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(25)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#090909"></span>
-                                                            <span data-color="#AC644D"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img8.jpg" alt="product_img8">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">Men
-                                                        blue jins Shirt</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$69.00</span>
-                                                        <del>$89.00</del>
-                                                        <div class="on_sale">
-                                                            <span>20% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:70%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(22)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#333333"></span>
-                                                            <span data-color="#444653"></span>
-                                                            <span data-color="#B9C2DF"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <span class="pr_flash">Sale</span>
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img6.jpg" alt="product_img6">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">Blue
-                                                        casual check shirt</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$55.00</span>
-                                                        <del>$95.00</del>
-                                                        <div class="on_sale">
-                                                            <span>25% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:68%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(15)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#87554B"></span>
-                                                            <span data-color="#333333"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="special" role="tabpanel" aria-labelledby="special-tab">
-                                    <div class="product_slider carousel_slider owl-carousel owl-theme nav_style1"
-                                         data-loop="true" data-dots="false" data-nav="true" data-margin="20"
-                                         data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "1199":{"items": "4"}}'>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img4.jpg" alt="product_img4">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">light
-                                                        blue Shirt</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$69.00</span>
-                                                        <del>$89.00</del>
-                                                        <div class="on_sale">
-                                                            <span>20% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:70%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(22)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#333333"></span>
-                                                            <span data-color="#A92534"></span>
-                                                            <span data-color="#B9C2DF"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img9.jpg" alt="product_img9">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">T-Shirt
-                                                        Form Girls</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$45.00</span>
-                                                        <del>$55.25</del>
-                                                        <div class="on_sale">
-                                                            <span>35% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:80%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(21)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#B5B6BB"></span>
-                                                            <span data-color="#333333"></span>
-                                                            <span data-color="#DA323F"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img8.jpg" alt="product_img8">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">Men
-                                                        Checks Casual Shirt</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$69.00</span>
-                                                        <del>$89.00</del>
-                                                        <div class="on_sale">
-                                                            <span>20% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:70%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(22)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#333333"></span>
-                                                            <span data-color="#444653"></span>
-                                                            <span data-color="#B9C2DF"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <span class="pr_flash">New</span>
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img1.jpg" alt="product_img1">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">Blue
-                                                        Dress For Woman</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$45.00</span>
-                                                        <del>$55.25</del>
-                                                        <div class="on_sale">
-                                                            <span>35% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:80%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(21)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#87554B"></span>
-                                                            <span data-color="#333333"></span>
-                                                            <span data-color="#DA323F"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img12.jpg" alt="product_img12">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <span class="pr_flash bg-danger">Hot</span>
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">Black
-                                                        T-shirt for woman</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$69.00</span>
-                                                        <del>$89.00</del>
-                                                        <div class="on_sale">
-                                                            <span>20% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:70%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(22)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#1B1B25"></span>
-                                                            <span data-color="#444653"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img6.jpg" alt="product_img6">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">Blue
-                                                        casual check shirt</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$55.00</span>
-                                                        <del>$95.00</del>
-                                                        <div class="on_sale">
-                                                            <span>25% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:68%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(15)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#87554B"></span>
-                                                            <span data-color="#333333"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <span class="pr_flash bg-success">Sale</span>
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img7.jpg" alt="product_img7">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">white
-                                                        black line dress</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$68.00</span>
-                                                        <del>$99.00</del>
-                                                        <div class="on_sale">
-                                                            <span>20% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:87%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(25)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#333333"></span>
-                                                            <span data-color="#7C502F"></span>
-                                                            <span data-color="#2F366C"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product">
-                                                <div class="product_img">
-                                                    <a href="shop-product-detail.html">
-                                                        <img src="assets/images/product_img11.jpg" alt="product_img11">
-                                                    </a>
-                                                    <div class="product_action_box">
-                                                        <ul class="list_none pr_action_btn">
-                                                            <li class="add-to-cart"><a href="#"><i
-                                                                class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                            <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                                class="icon-shuffle"></i></a></li>
-                                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                                class="icon-magnifier-add"></i></a></li>
-                                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="product_info">
-                                                    <h6 class="product_title"><a href="shop-product-detail.html">Black
-                                                        dress for woman</a></h6>
-                                                    <div class="product_price">
-                                                        <span class="price">$68.00</span>
-                                                        <del>$99.00</del>
-                                                        <div class="on_sale">
-                                                            <span>20% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:87%"></div>
-                                                        </div>
-                                                        <span class="rating_num">(25)</span>
-                                                    </div>
-                                                    <div class="pr_desc">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Phasellus blandit massa enim. Nullam id varius nunc id
-                                                            varius nunc.</p>
-                                                    </div>
-                                                    <div class="pr_switch_wrap">
-                                                        <div class="product_color_switch">
-                                                            <span class="active" data-color="#090909"></span>
-                                                            <span data-color="#AC644D"></span>
-                                                        </div>
-                                                    </div>
+                                                <div class="rating_wrap">
+                                                    <div class="rating">
+                                                        <div class="product_rate" style="width:80%"></div>
+                                                    </div>
+                                                    <span class="rating_num">(21)</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1734,260 +274,65 @@
             </div>
             <!-- END SECTION BANNER -->
 
-            <!-- START SECTION SHOP -->
-            <div class="section small_pt small_pb">
+            <!-- START TRENDING -->
+            <div class="section small_pb small_pt">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-12">
                             <div class="heading_tab_header">
                                 <div class="heading_s2">
-                                    <h2>Deal Of The Days</h2>
-                                </div>
-                                <div class="deal_timer">
-                                    <div class="countdown_time countdown_style1" data-time="2021/09/28 13:22:15"></div>
+                                    <h2>Sản phẩm thịnh hành</h2>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="product_slider carousel_slider owl-carousel owl-theme nav_style1"
-                                 data-loop="true" data-dots="false" data-nav="true" data-margin="20"
-                                 data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "1199":{"items": "4"}}'>
-                                <div class="item">
-                                    <div class="product">
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img1.jpg" alt="product_img1">
-                                            </a>
-                                            <div class="product_action_box">
-                                                <ul class="list_none pr_action_btn">
-                                                    <li class="add-to-cart"><a href="#"><i
-                                                        class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                    <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                        class="icon-shuffle"></i></a></li>
-                                                    <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                        class="icon-magnifier-add"></i></a></li>
-                                                    <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">Blue Dress For
-                                                Woman</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$45.00</span>
-                                                <del>$55.25</del>
-                                                <div class="on_sale">
-                                                    <span>35% Off</span>
+                        <div class="col-12">
+                            <div class="tab-pane fade show active" v-if="!isLoadingTrending">
+                                <div class="product_slider carousel_slider owl-carousel owl-theme dot_style1" v-carousel
+                                     data-loop="false" data-margin="20"
+                                     data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "991":{"items": "4"}}'>
+                                    <div class="item" v-for="item in trendingProducts">
+                                        <div class="product">
+                                            <div class="product_img style-1">
+                                                <a href="#">
+                                                    <img :src="'/uploads/images/'+item.image" :alt="item.image">
+                                                </a>
+                                                <div class="product_action_box">
+                                                    <ul class="list_none pr_action_btn">
+                                                        <li class="add-to-cart"><a href="#"><i
+                                                            class="icon-basket-loaded"></i>Thêm vào giỏ </a>
+                                                        </li>
+                                                        <li><a href="shop-compare.html"
+                                                               class="popup-ajax"><i
+                                                            class="icon-shuffle"></i></a></li>
+                                                        <li><a href="shop-quick-view.html"
+                                                               class="popup-ajax"><i
+                                                            class="icon-magnifier-add"></i></a></li>
+                                                        <li><a href="#"><i class="icon-heart"></i></a></li>
+                                                    </ul>
                                                 </div>
                                             </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:80%"></div>
+                                            <div class="product_info">
+                                                <h6 class="product_title"><a
+                                                    href="shop-product-detail.html">{{ item.name }}</a></h6>
+                                                <div class="product_price">
+                                                    <div v-if="item.on_sale">
+                                                        <span class="price">{{ item.sale_price }}</span>
+                                                        <del>{{ item.price }}</del>
+                                                        <div class="on_sale" v-if="item.sale_off != null">
+                                                            <span>{{ item.sale_off }}% Off</span>
+                                                        </div>
+                                                    </div>
+                                                    <div v-else>
+                                                        <span class="price">{{ item.price }}</span>
+                                                    </div>
                                                 </div>
-                                                <span class="rating_num">(21)</span>
-                                            </div>
-                                            <div class="pr_desc">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-                                                    blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                            </div>
-                                            <div class="pr_switch_wrap">
-                                                <div class="product_color_switch">
-                                                    <span class="active" data-color="#87554B"></span>
-                                                    <span data-color="#333333"></span>
-                                                    <span data-color="#DA323F"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="product">
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img2.jpg" alt="product_img2">
-                                            </a>
-                                            <div class="product_action_box">
-                                                <ul class="list_none pr_action_btn">
-                                                    <li class="add-to-cart"><a href="#"><i
-                                                        class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                    <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                        class="icon-shuffle"></i></a></li>
-                                                    <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                        class="icon-magnifier-add"></i></a></li>
-                                                    <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">Lether Gray
-                                                Tuxedo</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$55.00</span>
-                                                <del>$95.00</del>
-                                                <div class="on_sale">
-                                                    <span>25% Off</span>
-                                                </div>
-                                            </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:68%"></div>
-                                                </div>
-                                                <span class="rating_num">(15)</span>
-                                            </div>
-                                            <div class="pr_desc">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-                                                    blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                            </div>
-                                            <div class="pr_switch_wrap">
-                                                <div class="product_color_switch">
-                                                    <span class="active" data-color="#847764"></span>
-                                                    <span data-color="#0393B5"></span>
-                                                    <span data-color="#DA323F"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="product">
-                                        <span class="pr_flash">New</span>
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img3.jpg" alt="product_img3">
-                                            </a>
-                                            <div class="product_action_box">
-                                                <ul class="list_none pr_action_btn">
-                                                    <li class="add-to-cart"><a href="#"><i
-                                                        class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                    <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                        class="icon-shuffle"></i></a></li>
-                                                    <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                        class="icon-magnifier-add"></i></a></li>
-                                                    <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">woman full sliv
-                                                dress</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$68.00</span>
-                                                <del>$99.00</del>
-                                            </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:87%"></div>
-                                                </div>
-                                                <span class="rating_num">(25)</span>
-                                            </div>
-                                            <div class="pr_desc">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-                                                    blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                            </div>
-                                            <div class="pr_switch_wrap">
-                                                <div class="product_color_switch">
-                                                    <span class="active" data-color="#333333"></span>
-                                                    <span data-color="#7C502F"></span>
-                                                    <span data-color="#2F366C"></span>
-                                                    <span data-color="#874A3D"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="product">
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img4.jpg" alt="product_img4">
-                                            </a>
-                                            <div class="product_action_box">
-                                                <ul class="list_none pr_action_btn">
-                                                    <li class="add-to-cart"><a href="#"><i
-                                                        class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                    <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                        class="icon-shuffle"></i></a></li>
-                                                    <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                        class="icon-magnifier-add"></i></a></li>
-                                                    <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">light blue
-                                                Shirt</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$69.00</span>
-                                                <del>$89.00</del>
-                                                <div class="on_sale">
-                                                    <span>20% Off</span>
-                                                </div>
-                                            </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:70%"></div>
-                                                </div>
-                                                <span class="rating_num">(22)</span>
-                                            </div>
-                                            <div class="pr_desc">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-                                                    blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                            </div>
-                                            <div class="pr_switch_wrap">
-                                                <div class="product_color_switch">
-                                                    <span class="active" data-color="#333333"></span>
-                                                    <span data-color="#A92534"></span>
-                                                    <span data-color="#B9C2DF"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="product">
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img5.jpg" alt="product_img5">
-                                            </a>
-                                            <div class="product_action_box">
-                                                <ul class="list_none pr_action_btn">
-                                                    <li class="add-to-cart"><a href="#"><i
-                                                        class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                                    <li><a href="shop-compare.html" class="popup-ajax"><i
-                                                        class="icon-shuffle"></i></a></li>
-                                                    <li><a href="shop-quick-view.html" class="popup-ajax"><i
-                                                        class="icon-magnifier-add"></i></a></li>
-                                                    <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">blue dress for
-                                                woman</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$45.00</span>
-                                                <del>$55.25</del>
-                                                <div class="on_sale">
-                                                    <span>35% Off</span>
-                                                </div>
-                                            </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:80%"></div>
-                                                </div>
-                                                <span class="rating_num">(21)</span>
-                                            </div>
-                                            <div class="pr_desc">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-                                                    blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                            </div>
-                                            <div class="pr_switch_wrap">
-                                                <div class="product_color_switch">
-                                                    <span class="active" data-color="#87554B"></span>
-                                                    <span data-color="#333333"></span>
-                                                    <span data-color="#5FB7D4"></span>
+                                                <div class="rating_wrap">
+                                                    <div class="rating">
+                                                        <div class="product_rate" style="width:80%"></div>
+                                                    </div>
+                                                    <span class="rating_num">(21)</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1998,7 +343,7 @@
                     </div>
                 </div>
             </div>
-            <!-- END SECTION SHOP -->
+            <!-- END TRENDING -->
 
             <!-- START SECTION BANNER -->
             <div class="section pb_20 small_pt">
@@ -2030,380 +375,170 @@
             </div>
             <!-- END SECTION BANNER -->
 
+
             <!-- START SECTION SHOP -->
-            <div class="section small_pt pb_20">
+            <div class="section small_pt pdb-50-i">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="heading_tab_header">
-                                <div class="heading_s2">
-                                    <h2>Featured Products</h2>
+                        <div class="col-lg-4">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="heading_tab_header">
+                                        <div class="heading_s2">
+                                            <h2>Sản phẩm đặc trưng</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div v-if="!isLoadingFeatured" v-carousel
+                                         class="product_slider carousel_slider product_list owl-carousel owl-theme nav_style5"
+                                         data-nav="true"
+                                         data-dots="false" data-loop="false" data-margin="20"
+                                         data-responsive='{"0":{"items": "1"}, "380":{"items": "1"}, "640":{"items": "2"}, "991":{"items": "1"}}'>
+                                        <div class="item" v-for="entry in featuredProductMap">
+                                            <div v-for="item in entry">
+                                                <div class="product_wrap">
+                                                    <div class="product_img style-2">
+                                                        <a href="shop-product-detail.html">
+                                                            <img :src="'/uploads/images/'+item.image" :alt="item.image">
+                                                        </a>
+                                                    </div>
+                                                    <div class="product_info">
+                                                        <h6 class="product_title"><a
+                                                            href="shop-product-detail.html">{{ item.name }}</a></h6>
+                                                        <div class="product_price">
+                                                            <div v-if="item.on_sale">
+                                                                <span class="price">{{ item.sale_price }}</span>
+                                                                <del>{{ item.price }}</del>
+                                                                <div class="on_sale d-block"
+                                                                     v-if="item.sale_off != null">
+                                                                    <span>{{ item.sale_off }}% Off</span>
+                                                                </div>
+                                                            </div>
+                                                            <div v-else>
+                                                                <span class="price">{{ item.price }}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="rating_wrap">
+                                                            <div class="rating">
+                                                                <div class="product_rate" style="width:80%"></div>
+                                                            </div>
+                                                            <span class="rating_num">(21)</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="product_slider product_list carousel_slider owl-carousel owl-theme nav_style3"
-                                 data-loop="true" data-dots="false" data-nav="true" data-margin="20"
-                                 data-responsive='{"0":{"items": "1"}, "767":{"items": "2"}, "991":{"items": "3"}, "1199":{"items": "3"}}'>
-                                <div class="item">
-                                    <div class="product">
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img1.jpg" alt="product_img1">
-                                            </a>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">Blue Dress For
-                                                Woman</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$45.00</span>
-                                                <del>$55.25</del>
-                                                <div class="on_sale">
-                                                    <span>35% Off</span>
-                                                </div>
-                                            </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:80%"></div>
-                                                </div>
-                                                <span class="rating_num">(21)</span>
-                                            </div>
+                        <div class="col-lg-4">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="heading_tab_header">
+                                        <div class="heading_s2">
+                                            <h2>Sản phẩm xếp hạng cao nhất</h2>
                                         </div>
                                     </div>
-                                    <div class="product">
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img6.jpg" alt="product_img6">
-                                            </a>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">Blue casual
-                                                check shirt</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$55.00</span>
-                                                <del>$95.00</del>
-                                                <div class="on_sale">
-                                                    <span>25% Off</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div v-if="!isLoadingFeatured" v-carousel
+                                         class="product_slider carousel_slider product_list owl-carousel owl-theme nav_style5"
+                                         data-nav="true"
+                                         data-dots="false" data-loop="false" data-margin="20"
+                                         data-responsive='{"0":{"items": "1"}, "380":{"items": "1"}, "640":{"items": "2"}, "991":{"items": "1"}}'>
+                                        <div class="item" v-for="entry in featuredProductMap">
+                                            <div v-for="item in entry">
+                                                <div class="product_wrap">
+                                                    <div class="product_img style-2">
+                                                        <a href="shop-product-detail.html">
+                                                            <img :src="'/uploads/images/'+item.image" :alt="item.image">
+                                                        </a>
+                                                    </div>
+                                                    <div class="product_info">
+                                                        <h6 class="product_title"><a
+                                                            href="shop-product-detail.html">{{ item.name }}</a></h6>
+                                                        <div class="product_price">
+                                                            <div v-if="item.on_sale">
+                                                                <span class="price">{{ item.sale_price }}</span>
+                                                                <del>{{ item.price }}</del>
+                                                                <div class="on_sale d-block"
+                                                                     v-if="item.sale_off != null">
+                                                                    <span>{{ item.sale_off }}% Off</span>
+                                                                </div>
+                                                            </div>
+                                                            <div v-else>
+                                                                <span class="price">{{ item.price }}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="rating_wrap">
+                                                            <div class="rating">
+                                                                <div class="product_rate" style="width:80%"></div>
+                                                            </div>
+                                                            <span class="rating_num">(21)</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:68%"></div>
-                                                </div>
-                                                <span class="rating_num">(15)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product">
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img12.jpg" alt="product_img12">
-                                            </a>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">Black T-shirt
-                                                for woman</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$69.00</span>
-                                                <del>$89.00</del>
-                                                <div class="on_sale">
-                                                    <span>20% Off</span>
-                                                </div>
-                                            </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:70%"></div>
-                                                </div>
-                                                <span class="rating_num">(22)</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="product">
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img2.jpg" alt="product_img2">
-                                            </a>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">Lether Gray
-                                                Tuxedo</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$55.00</span>
-                                                <del>$95.00</del>
-                                                <div class="on_sale">
-                                                    <span>25% Off</span>
-                                                </div>
-                                            </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:68%"></div>
-                                                </div>
-                                                <span class="rating_num">(15)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product">
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img7.jpg" alt="product_img7">
-                                            </a>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">white black
-                                                line dress</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$68.00</span>
-                                                <del>$99.00</del>
-                                                <div class="on_sale">
-                                                    <span>20% Off</span>
-                                                </div>
-                                            </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:87%"></div>
-                                                </div>
-                                                <span class="rating_num">(25)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product">
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img10.jpg" alt="product_img10">
-                                            </a>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">Red &amp; Black
-                                                check shirt</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$55.00</span>
-                                                <del>$95.00</del>
-                                                <div class="on_sale">
-                                                    <span>25% Off</span>
-                                                </div>
-                                            </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:68%"></div>
-                                                </div>
-                                                <span class="rating_num">(15)</span>
-                                            </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="heading_tab_header">
+                                        <div class="heading_s2">
+                                            <h2>Sản phẩm đang giảm giá</h2>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="product">
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img3.jpg" alt="product_img3">
-                                            </a>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">woman full sliv
-                                                dress</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$68.00</span>
-                                                <del>$99.00</del>
-                                            </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:87%"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div v-if="!isLoadingFeatured" v-carousel
+                                         class="product_slider carousel_slider product_list owl-carousel owl-theme nav_style5"
+                                         data-nav="true"
+                                         data-dots="false" data-loop="false" data-margin="20"
+                                         data-responsive='{"0":{"items": "1"}, "380":{"items": "1"}, "640":{"items": "2"}, "991":{"items": "1"}}'>
+                                        <div class="item" v-for="entry in featuredProductMap">
+                                            <div v-for="item in entry">
+                                                <div class="product_wrap">
+                                                    <div class="product_img style-2">
+                                                        <a href="shop-product-detail.html">
+                                                            <img :src="'/uploads/images/'+item.image" :alt="item.image">
+                                                        </a>
+                                                    </div>
+                                                    <div class="product_info">
+                                                        <h6 class="product_title"><a
+                                                            href="shop-product-detail.html">{{ item.name }}</a></h6>
+                                                        <div class="product_price">
+                                                            <div v-if="item.on_sale">
+                                                                <span class="price">{{ item.sale_price }}</span>
+                                                                <del>{{ item.price }}</del>
+                                                                <div class="on_sale d-block"
+                                                                     v-if="item.sale_off != null">
+                                                                    <span>{{ item.sale_off }}% Off</span>
+                                                                </div>
+                                                            </div>
+                                                            <div v-else>
+                                                                <span class="price">{{ item.price }}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="rating_wrap">
+                                                            <div class="rating">
+                                                                <div class="product_rate" style="width:80%"></div>
+                                                            </div>
+                                                            <span class="rating_num">(21)</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <span class="rating_num">(25)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product">
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img8.jpg" alt="product_img8">
-                                            </a>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">Men blue jins
-                                                Shirt</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$69.00</span>
-                                                <del>$89.00</del>
-                                                <div class="on_sale">
-                                                    <span>20% Off</span>
-                                                </div>
-                                            </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:70%"></div>
-                                                </div>
-                                                <span class="rating_num">(22)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product">
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img13.jpg" alt="product_img13">
-                                            </a>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">Pink Dress for
-                                                woman</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$65.00</span>
-                                                <del>$80.00</del>
-                                                <div class="on_sale">
-                                                    <span>30% Off</span>
-                                                </div>
-                                            </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:80%"></div>
-                                                </div>
-                                                <span class="rating_num">(28)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="product">
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img4.jpg" alt="product_img4">
-                                            </a>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">light blue
-                                                Shirt</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$69.00</span>
-                                                <del>$89.00</del>
-                                                <div class="on_sale">
-                                                    <span>20% Off</span>
-                                                </div>
-                                            </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:70%"></div>
-                                                </div>
-                                                <span class="rating_num">(22)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product">
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img9.jpg" alt="product_img9">
-                                            </a>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">T-Shirt Form
-                                                Girls</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$45.00</span>
-                                                <del>$55.25</del>
-                                                <div class="on_sale">
-                                                    <span>35% Off</span>
-                                                </div>
-                                            </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:80%"></div>
-                                                </div>
-                                                <span class="rating_num">(21)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product">
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img14.jpg" alt="product_img14">
-                                            </a>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">White shirt for
-                                                man</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$55.00</span>
-                                                <del>$60.00</del>
-                                            </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:68%"></div>
-                                                </div>
-                                                <span class="rating_num">(15)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="product">
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img5.jpg" alt="product_img5">
-                                            </a>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">blue dress for
-                                                woman</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$45.00</span>
-                                                <del>$55.25</del>
-                                                <div class="on_sale">
-                                                    <span>35% Off</span>
-                                                </div>
-                                            </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:80%"></div>
-                                                </div>
-                                                <span class="rating_num">(21)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product">
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img11.jpg" alt="product_img11">
-                                            </a>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">Black dress for
-                                                woman</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$68.00</span>
-                                                <del>$99.00</del>
-                                                <div class="on_sale">
-                                                    <span>20% Off</span>
-                                                </div>
-                                            </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:87%"></div>
-                                                </div>
-                                                <span class="rating_num">(25)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product">
-                                        <div class="product_img">
-                                            <a href="shop-product-detail.html">
-                                                <img src="assets/images/product_img15.jpg" alt="product_img15">
-                                            </a>
-                                        </div>
-                                        <div class="product_info">
-                                            <h6 class="product_title"><a href="shop-product-detail.html">Pink Dress for
-                                                Baby Kids</a></h6>
-                                            <div class="product_price">
-                                                <span class="price">$55.00</span>
-                                                <del>$60.00</del>
-                                            </div>
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:68%"></div>
-                                                </div>
-                                                <span class="rating_num">(15)</span>
                                             </div>
                                         </div>
                                     </div>
@@ -2411,55 +546,51 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
             <!-- END SECTION SHOP -->
 
-            <!-- START SECTION CLIENT LOGO -->
-            <div class="section small_pt">
+            <div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="heading_tab_header">
-                                <div class="heading_s2">
-                                    <h2>Our Brands</h2>
-                                </div>
-                            </div>
+                        <div class="col-12">
+                            <div style="border-bottom: 1px solid #ddd;"></div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="client_logo carousel_slider owl-carousel owl-theme nav_style3" data-dots="false"
-                                 data-nav="true" data-margin="30" data-loop="true" data-autoplay="true"
-                                 data-responsive='{"0":{"items": "2"}, "480":{"items": "3"}, "767":{"items": "4"}, "991":{"items": "5"}}'>
-                                <div class="item">
-                                    <div class="cl_logo">
-                                        <img src="assets/images/cl_logo1.png" alt="cl_logo"/>
-                                    </div>
+                </div>
+            </div>
+
+            <!-- START SECTION BLOG -->
+            <div class="section pdb-50-i pdt-50-i">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 col-md-8">
+                            <div class="heading_s1 text-center">
+                                <h2>Tin tức & Sự kiện</h2>
+                            </div>
+                            <p class="leads text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore.</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6" v-for="item in blogs">
+                            <div class="blog_post blog_style2 box_shadow1">
+                                <div class="blog_img">
+                                    <a href="blog-single.html">
+                                        <img :src="'/uploads/images/'+item.image" :alt="item.image">
+                                    </a>
                                 </div>
-                                <div class="item">
-                                    <div class="cl_logo">
-                                        <img src="assets/images/cl_logo2.png" alt="cl_logo"/>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="cl_logo">
-                                        <img src="assets/images/cl_logo3.png" alt="cl_logo"/>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="cl_logo">
-                                        <img src="assets/images/cl_logo4.png" alt="cl_logo"/>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="cl_logo">
-                                        <img src="assets/images/cl_logo5.png" alt="cl_logo"/>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="cl_logo">
-                                        <img src="assets/images/cl_logo6.png" alt="cl_logo"/>
+                                <div class="blog_content bg-white">
+                                    <div class="blog_text">
+                                        <h5 class="blog_title"><a href="blog-single.html">{{ item.name }}</a></h5>
+                                        <ul class="list_none blog_meta">
+                                            <li><i
+                                                class="ti-calendar mgr-5-i color_primary"></i>{{ item.updated_at |dateFormat }}
+                                            </li>
+                                            <li><a href="#"><i class="ti-comments"></i> 2 Comment</a></li>
+                                        </ul>
+                                        <p v-html="item.excerpt_content"></p>
                                     </div>
                                 </div>
                             </div>
@@ -2467,23 +598,164 @@
                     </div>
                 </div>
             </div>
-            <!-- END SECTION CLIENT LOGO -->
+            <!-- END SECTION BLOG -->
+
+
+            <!-- START SECTION TESTIMONIAL -->
+            <div class="section bg_redon pdt-50-i pdb-50-i">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="heading_s1 text-center">
+                                <h2>Ý kiến khách hàng!</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-9">
+                            <div
+                                class="testimonial_wrap testimonial_style1 carousel_slider owl-carousel owl-theme nav_style2"
+                                data-nav="true" data-dots="false" data-center="true" data-loop="true"
+                                data-autoplay="true" data-items='1'>
+                                <div class="testimonial_box">
+                                    <div class="testimonial_desc">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam amet
+                                            animi blanditiis consequatur debitis dicta distinctio, enim error eum iste
+                                            libero modi nam natus perferendis possimus quasi sint sit tempora
+                                            voluptatem.</p>
+                                    </div>
+                                    <div class="author_wrap">
+                                        <div class="author_img">
+                                            <img src="assets/images/user_img1.jpg" alt="user_img1"/>
+                                        </div>
+                                        <div class="author_name">
+                                            <h6>Lissa Castro</h6>
+                                            <span>Designer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="testimonial_box">
+                                    <div class="testimonial_desc">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam amet
+                                            animi blanditiis consequatur debitis dicta distinctio, enim error eum iste
+                                            libero modi nam natus perferendis possimus quasi sint sit tempora
+                                            voluptatem.</p>
+                                    </div>
+                                    <div class="author_wrap">
+                                        <div class="author_img">
+                                            <img src="assets/images/user_img2.jpg" alt="user_img2"/>
+                                        </div>
+                                        <div class="author_name">
+                                            <h6>Alden Smith</h6>
+                                            <span>Designer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="testimonial_box">
+                                    <div class="testimonial_desc">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam amet
+                                            animi blanditiis consequatur debitis dicta distinctio, enim error eum iste
+                                            libero modi nam natus perferendis possimus quasi sint sit tempora
+                                            voluptatem.</p>
+                                    </div>
+                                    <div class="author_wrap">
+                                        <div class="author_img">
+                                            <img src="assets/images/user_img3.jpg" alt="user_img3"/>
+                                        </div>
+                                        <div class="author_name">
+                                            <h6>Daisy Lana</h6>
+                                            <span>Designer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="testimonial_box">
+                                    <div class="testimonial_desc">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam amet
+                                            animi blanditiis consequatur debitis dicta distinctio, enim error eum iste
+                                            libero modi nam natus perferendis possimus quasi sint sit tempora
+                                            voluptatem.</p>
+                                    </div>
+                                    <div class="author_wrap">
+                                        <div class="author_img">
+                                            <img src="assets/images/user_img4.jpg" alt="user_img4"/>
+                                        </div>
+                                        <div class="author_name">
+                                            <h6>John Becker</h6>
+                                            <span>Designer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END SECTION TESTIMONIAL -->
+
+            <!-- START SECTION SHOP INFO -->
+            <div class="pdt-50 pdb-50">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="shopping_info border-0">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-4 icon-box-inner">
+                                        <div class="icon_box icon_box_style2">
+                                            <div class="icon bg_gray">
+                                                <i class="flaticon-shipped"></i>
+                                            </div>
+                                            <div class="icon_box_content">
+                                                <h5>Free Delivery</h5>
+                                                <p>Phasellus blandit massa enim elit of passage varius nunc.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 icon-box-inner">
+                                        <div class="icon_box icon_box_style2 pdl-5-i">
+                                            <div class="icon bg_gray">
+                                                <i class="flaticon-money-back"></i>
+                                            </div>
+                                            <div class="icon_box_content">
+                                                <h5>30 Day Returns Guarantee</h5>
+                                                <p>Phasellus blandit massa enim elit of passage varius nunc.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 icon-box-inner">
+                                        <div class="icon_box icon_box_style2 pdl-5-i">
+                                            <div class="icon bg_gray">
+                                                <i class="flaticon-support"></i>
+                                            </div>
+                                            <div class="icon_box_content">
+                                                <h5>27/4 Online Support</h5>
+                                                <p>Phasellus blandit massa enim elit of passage varius nunc.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END SECTION SHOP INFO -->
 
             <!-- START SECTION SUBSCRIBE NEWSLETTER -->
-            <div class="section bg_dark small_pt small_pb">
+            <div class="section bg_default pdt-50-i pdb-50-i">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-md-6">
-                            <div class="heading_s1 mb-md-0 heading_light">
-                                <h3>Subscribe Our Newsletter</h3>
+                            <div class="newsletter_text text_white">
+                                <h3>Join Our Newsletter Now</h3>
+                                <p> Register now to get updates on promotions. </p>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="newsletter_form">
+                            <div class="newsletter_form2">
                                 <form>
                                     <input type="text" required="" class="form-control rounded-0"
                                            placeholder="Enter Email Address">
-                                    <button type="submit" class="btn btn-fill-out rounded-0" name="submit"
+                                    <button type="submit" class="btn btn-dark rounded-0 bg-dark" name="submit"
                                             value="Submit">Subscribe
                                     </button>
                                 </form>
@@ -2503,6 +775,7 @@
 import ProductService from "../services/ProductService";
 import CategoryService from "../services/CategoryService";
 import CollectionService from "../services/CollectionService";
+import BlogService from "../services/BlogService";
 
 export default {
     name: "Home",
@@ -2510,19 +783,30 @@ export default {
         return {
             categories: [],
             collections: [],
-            products_by_collection: [],
+            productCollections: [],
+            trendingProducts: [],
+            featuredProducts: [],
+            featuredProductMap: {},
+            blogs: [],
             currentIndex: 0,
+            isLoading: true,
+            isLoadingTrending: true,
+            isLoadingFeatured: true,
+            isLoadingBlog: true,
         };
     },
     methods: {
         changeCollection(collection_id, index) {
             this.currentIndex = index;
+            this.isLoading = true;
             ProductService.findByCollection(collection_id).then(response => {
                 let data = response.data || [];
-                this.products_by_collection = data;
+                this.productCollections = data;
+                this.isLoading = false;
             }).catch(e => {
+                this.isLoading = false;
             });
-        }
+        },
     },
     mounted() {
         CategoryService.findAll().then(response => {
@@ -2536,7 +820,45 @@ export default {
             this.collections = data;
         }).catch(e => {
         });
-        this.changeCollection();
+        this.changeCollection(null, 0);
+
+        ProductService.findTrending().then(response => {
+            let data = response.data || [];
+            this.trendingProducts = data;
+            this.isLoadingTrending = false;
+        }).catch(e => {
+            this.isLoadingTrending = false;
+        });
+
+        ProductService.findFeatured().then(response => {
+            let data = response.data || [];
+            this.featuredProducts = data;
+            let groupProducts = [];
+            let key = 0;
+            for (let i = 0; i < this.featuredProducts.length; i++) {
+                let number = i + 1;
+                let item = this.featuredProducts[i];
+                groupProducts.push(item);
+                if ((number != 1 && number % 3 == 0) || (number == this.featuredProducts.length)) {
+                    this.featuredProductMap[key] = groupProducts;
+                    key++;
+                    groupProducts = [];
+                }
+            }
+            this.isLoadingFeatured = false;
+        }).catch(e => {
+            this.isLoadingFeatured = false;
+        });
+
+
+        BlogService.findAll().then(response => {
+            let data = response.data || [];
+            this.blogs = data;
+            this.isLoadingBlog = false;
+        }).catch(e => {
+            this.isLoadingBlog = false;
+        });
+
     }
 }
 </script>

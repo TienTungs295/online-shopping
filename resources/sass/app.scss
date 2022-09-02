@@ -1,7 +1,7 @@
 // Fonts
-//@tailwind base;
-//@tailwind components;
-//@tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
@@ -12,3 +12,12 @@
 
 // Bootstrap
 //@import '~bootstrap/scss/bootstrap';
+
+/* the slides */
+//.slick-slide {
+//    margin: 0 10px;
+//}
+///* the parent */
+//.slick-list {
+//    margin: 0 -10px;
+//}

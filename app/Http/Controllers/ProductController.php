@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use function Sodium\add;
 use File;
 
@@ -72,6 +73,7 @@ class ProductController extends Controller
 
         $product = new Product;
         $product->name = $request->input('name');
+        $product->slug = Str::slug($product->name);;
         $product->content = $request->input('content');
         $product->description = $request->input('description');
         $product->category_id = $request->input('category_id');
@@ -227,6 +229,7 @@ class ProductController extends Controller
         }
 
         $product->name = $request->input('name');
+        $product->slug = Str::slug($product->name);;
         $product->content = $request->input('content');
         $product->description = $request->input('description');
         $product->category_id = $request->input('category_id');

@@ -62,7 +62,7 @@ class Product extends Model
         'stock_status',
     ];
 
-    protected $appends = ['real_price', 'on_sale'];
+    protected $appends = ['real_price', 'on_sale','sale_off'];
 
 
     public function getRealPriceAttribute()
@@ -87,6 +87,14 @@ class Product extends Model
                 || ($this->start_date <= now() && $this->end_date >= now())));
     }
 
+    public function getSaleOffAttribute()
+    {
+        if ($this->getOnSaleAttribute()) {
+            return ceil(100 - (($this->sale_price / $this->price) * 100));
+        }
+        return null;
+    }
+
     /**
      * @return BelongsToMany
      */
@@ -107,14 +115,9 @@ class Product extends Model
     /**
      * @return BelongsToMany
      */
-    public function categories()
+    public function category()
     {
-        return $this->belongsToMany(
-            ProductCategory::class,
-            'ec_product_category_product',
-            'product_id',
-            'category_id'
-        );
+        return $this->belongsTo(ProductCategory::class, 'category_id');
     }
 
     /**

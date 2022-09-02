@@ -11,6 +11,7 @@
 export default {
     name: "App",
     mounted() {
+        // console.log($) ; console.log(JQuery)
     }
 }
 </script>

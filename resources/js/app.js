@@ -4,8 +4,6 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-
 window.Vue = require('vue').default;
 
 /**
@@ -19,14 +17,20 @@ window.Vue = require('vue').default;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('header-component', require('./components/layouts/HeaderComponent').default);
-Vue.component('footer-component', require('./components/layouts/FooterComponent').default);
+
 
 import App from './components/App';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueToastr from "vue-toastr";
 import routes from './routes';
+import moment from 'moment'
+import { BTabs, BTab } from 'bootstrap-vue'
+
+Vue.component('header-component', require('./components/layouts/HeaderComponent').default);
+Vue.component('footer-component', require('./components/layouts/FooterComponent').default);
+Vue.component('b-tabs', BTabs);
+Vue.component('b-tab', BTab);
 
 Vue.use(VueRouter);
 Vue.use(VueToastr, {
@@ -37,6 +41,47 @@ Vue.use(VueToastr, {
     defaultStyle: {"top": "50px"},
     defaultClassNames: ["animated", "zoomInUp"]
 });
+Vue.prototype.moment = moment
+
+
+Vue.directive('carousel', {
+    inserted: function (el) {
+        $(el).owlCarousel({
+            rtl: $('body').prop('dir') === 'rtl',
+            dots : $(el).data('dots'),
+            loop : $(el).data('loop'),
+            items: $(el).data('items'),
+            margin: $(el).data('margin'),
+            mouseDrag: $(el).data('mouse-drag'),
+            touchDrag: $(el).data('touch-drag'),
+            autoHeight: $(el).data('autoheight'),
+            center: $(el).data('center'),
+            nav: $(el).data('nav'),
+            rewind: $(el).data('rewind'),
+            navText: ['<i class="ion-ios-arrow-left"></i>', '<i class="ion-ios-arrow-right"></i>'],
+            autoplay : $(el).data('autoplay'),
+            animateIn : $(el).data('animate-in'),
+            animateOut: $(el).data('animate-out'),
+            autoplayTimeout : $(el).data('autoplay-timeout'),
+            smartSpeed: $(el).data('smart-speed'),
+            responsive: $(el).data('responsive')
+        })
+    },
+});
+
+
+Vue.filter('dateFormat', function(value) {
+    if (value) {
+        return moment(String(value)).format('DD/MM/YYYY')
+    }
+});
+
+Vue.filter('dateTimeFormat', function(value) {
+    if (value) {
+        return moment(String(value)).format('DD/MM/YYYY hh:mm')
+    }
+});
+
 const router = new VueRouter({
     routes
 });
