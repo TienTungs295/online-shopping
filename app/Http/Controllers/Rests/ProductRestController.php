@@ -8,9 +8,11 @@ use App\Models\ProductCategory;
 use App\Models\ProductCollection;
 use App\Models\Product;
 use Carbon\Carbon;
+use \stdClass;
 use Botble\Base\Http\Responses\BaseHttpResponse;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use function PHPUnit\Framework\isEmpty;
 
 class ProductRestController extends Controller
 {
@@ -48,53 +50,97 @@ class ProductRestController extends Controller
     public function findAll(Request $request)
     {
         $ajax_response = new AjaxResponse();
-        $page_size = $request->input("page_size") || 9;
-        $sort = $request->input("sort");
+        $param = json_decode($request->input("param"));
+        $page_size = 9;
+        $sort = "";
+        $collection_ids = null;
+        if (isset($param->page_size) && !empty($param->page_size)) $page_size = $param->page_size;
+        if (isset($param->sort) && !empty($param->sort)) $sort = $param->sort;
         $current_time = Carbon::now();
-        $query = Product::where(function ($query) use ($request, $current_time) {
-            $category_id = $request->input("category_id");
-            $name = $request->input("name");
-            $min_price = $request->input("min_price");
-            $max_price = $request->input("max_price");
+        $query = Product::where(function ($query) use ($param, $current_time) {
+            $category_id = isset($param->category_id) ? $param->category_id : null;
+            $name = isset($param->name) ? $param->name : null;
+            $min_price = null;
+            $max_price = null;
+            if (isset($param->price)) {
+                if ($param->price == "option1") {
+                    $max_price = 50000;
+                } elseif ($param->price == "option2") {
+                    $min_price = 50000;
+                    $max_price = 100000;
+                } elseif ($param->price == "option3") {
+                    $min_price = 100000;
+                    $max_price = 200000;
+                } elseif ($param->price == "option4") {
+                    $min_price = 200000;
+                    $max_price = 500000;
+                } elseif ($param->price == "option5") {
+                    $min_price = 500000;
+                    $max_price = 1000000;
+                } elseif ($param->price == "option6") {
+                    $min_price = 1000000;
+                }
+            }
+            $collection_ids = null;
+            if (isset($param->collection_ids) && count($param->collection_ids) > 0) $collection_ids = array_map('intval', $param->collection_ids);
             if (!is_null($category_id)) $query->where('category_id', $category_id);
+            if ($collection_ids != null) {
+                $query->whereHas('productCollections', function ($query) use ($collection_ids) {
+                    $query->whereIn('product_collection_id', $collection_ids);
+                });
+            }
             if (!empty($name)) $query->where('name', 'like', '%' . $name . '%');
-            if (!is_null($min_price) && !is_null($max_price)) {
+            if (!is_null($min_price) || !is_null($max_price)) {
                 //find by product on sale
-                $query->orWhere(function ($query) use ($current_time, $min_price, $max_price) {
-                    $query->where('sale_price', ">=", $min_price);
-                    $query->where('sale_price', "<=", $max_price);
-                    $query->where(function ($query) use ($current_time) {
-                        $query->orWhere(function ($query) {
-                            $query->where('start_date', null);
-                            $query->where('end_date', null);
-                        });
-                        $query->orWhere(function ($query) use ($current_time) {
-                            $query->where('start_date', null);
-                            $query->where('end_date', '>=', $current_time);
-                        });
-                        $query->orWhere(function ($query) use ($current_time) {
-                            $query->where('start_date', '<=', $current_time);
-                            $query->where('end_date', null);
-                        });
-                        $query->orWhere(function ($query) use ($current_time) {
-                            $query->where('start_date', '<=', $current_time);
-                            $query->where('end_date', '>=', $current_time);
+                $query->where(function ($query) use ($current_time, $min_price, $max_price) {
+                    $query->orWhere(function ($query) use ($current_time, $min_price, $max_price) {
+                        if (!is_null($min_price) && is_null($max_price)) {
+                            $query->where('sale_price', ">", $min_price);
+                        } else if (is_null($min_price) && !is_null($max_price)) {
+                            $query->where('sale_price', "<", $max_price);
+                        } else {
+                            $query->where('sale_price', ">=", $min_price);
+                            $query->where('sale_price', "<=", $max_price);
+                        }
+                        $query->where(function ($query) use ($current_time) {
+                            $query->orWhere(function ($query) {
+                                $query->where('start_date', null);
+                                $query->where('end_date', null);
+                            });
+                            $query->orWhere(function ($query) use ($current_time) {
+                                $query->where('start_date', null);
+                                $query->where('end_date', '>=', $current_time);
+                            });
+                            $query->orWhere(function ($query) use ($current_time) {
+                                $query->where('start_date', '<=', $current_time);
+                                $query->where('end_date', null);
+                            });
+                            $query->orWhere(function ($query) use ($current_time) {
+                                $query->where('start_date', '<=', $current_time);
+                                $query->where('end_date', '>=', $current_time);
+                            });
                         });
                     });
-                });
-                $query->orWhere(function ($query) use ($current_time, $min_price, $max_price) {
-                    $query->where('price', ">=", $min_price);
-                    $query->where('price', "<=", $max_price);
-                    $query->where(function ($query) use ($current_time) {
-                        //find by normal price of product
-                        $query->orWhere('sale_price', null);
+                    $query->orWhere(function ($query) use ($current_time, $min_price, $max_price) {
+                        if (!is_null($min_price) && is_null($max_price)) {
+                            $query->where('price', ">", $min_price);
+                        } else if (is_null($min_price) && !is_null($max_price)) {
+                            $query->where('price', "<", $max_price);
+                        } else {
+                            $query->where('price', ">=", $min_price);
+                            $query->where('price', "<=", $max_price);
+                        }
+                        $query->where(function ($query) use ($current_time) {
+                            //find by normal price of product
+                            $query->orWhere('sale_price', null);
 
-                        //find by normal price when expire sale
-                        $query->orWhere(function ($query) use ($current_time) {
-                            $query->where('sale_price', '!=', null);
-                            $query->where(function ($query) use ($current_time) {
-                                $query->orWhere('start_date', '>', $current_time);
-                                $query->orWhere('end_date', '<', $current_time);
+                            //find by normal price when expire sale
+                            $query->orWhere(function ($query) use ($current_time) {
+                                $query->where('sale_price', '!=', null);
+                                $query->where(function ($query) use ($current_time) {
+                                    $query->orWhere('start_date', '>', $current_time);
+                                    $query->orWhere('end_date', '<', $current_time);
+                                });
                             });
                         });
                     });
@@ -105,7 +151,7 @@ class ProductRestController extends Controller
         if ($sort == "date_desc") $query->orderBy("updated_at", "DESC");
         if ($sort == "price_asc" || $sort == "price_desc") {
             $sortType = $sort == "price_asc" ? "ASC" : "DESC";
-            $query->orderByRaw("CASE WHEN (sale_price is not null && ((start_date is null and end_date is null) or (start_date is null and end_date >= '" . $current_time . "') or (start_date <= '" . $current_time . "' and end_date is null) or (start_date <= '" . $current_time . "' and end_date >= '" . $current_time . "'))) THEN sale_price ELSE price END ASC");
+            $query->orderByRaw("CASE WHEN (sale_price is not null && ((start_date is null and end_date is null) or (start_date is null and end_date >= '" . $current_time . "') or (start_date <= '" . $current_time . "' and end_date is null) or (start_date <= '" . $current_time . "' and end_date >= '" . $current_time . "'))) THEN sale_price ELSE price END " . $sortType);
         }
         if ($sort == "name_asc") $query->orderBy("name", "ASC");
         if ($sort == "name_desc") $query->orderBy("name", "DESC");

@@ -77,7 +77,7 @@
         <div class="main_content">
 
             <!-- START SECTION CATEGORIES -->
-            <div class="section pdt-0 small_pb ">
+            <div class="section pt-0 small_pb ">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -226,7 +226,6 @@
                                                     <div v-else>
                                                         <span class="price">{{ item.price }}</span>
                                                     </div>
-
                                                 </div>
                                                 <div class="rating_wrap">
                                                     <div class="rating">
@@ -577,20 +576,28 @@
                         <div class="col-lg-4 col-md-6" v-for="item in blogs">
                             <div class="blog_post blog_style2 box_shadow1">
                                 <div class="blog_img">
-                                    <a href="blog-single.html">
+                                    <router-link class="link_wrapper"
+                                        :to="{ name: 'blogDetail', params: { slug: item.slug,id:item.id }}">
                                         <img :src="'/uploads/images/'+item.image" :alt="item.image">
-                                    </a>
+                                    </router-link>
                                 </div>
                                 <div class="blog_content bg-white">
                                     <div class="blog_text">
-                                        <h5 class="blog_title"><a href="blog-single.html">{{ item.name }}</a></h5>
+                                        <h5 class="blog_title">
+                                            <router-link
+                                                :to="{ name: 'blogDetail', params: { slug: item.slug,id:item.id }}">
+                                                {{ item.name }}
+                                            </router-link>
+                                        </h5>
                                         <ul class="list_none blog_meta">
                                             <li><i
-                                                class="ti-calendar mgr-5-i color_primary"></i>{{ item.updated_at |dateFormat }}
+                                                class="ti-calendar mgr-5-i color_primary"></i>
+                                                {{
+                                                    item.updated_at |dateFormat
+                                                }}
                                             </li>
-                                            <li><a href="#"><i class="ti-comments"></i> 2 Comment</a></li>
                                         </ul>
-                                        <p v-html="item.excerpt_content"></p>
+                                        <p class="break-word" v-html="item.excerpt_content"></p>
                                     </div>
                                 </div>
                             </div>

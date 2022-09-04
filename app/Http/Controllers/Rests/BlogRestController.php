@@ -31,7 +31,13 @@ class BlogRestController extends Controller
         } catch (ModelNotFoundException $e) {
             return $ajax_response->setMessage("Đối tượng không tồn tại hoặc đã bị xóa")->toApiResponse();
         }
-        return $ajax_response->setData($blog)->toApiResponse();
+        $next_blog = Blog::where('id', '>', $id)->first();
+        $prev_blog = Blog::where('id', '<', $id)->first();
+        return $ajax_response->setData(array(
+            'prev_blog' => $prev_blog,
+            'blog' => $blog,
+            'next_blog' => $next_blog
+        ))->toApiResponse();
     }
 
     public function related(Request $request)
@@ -39,7 +45,18 @@ class BlogRestController extends Controller
         $ajax_response = new AjaxResponse();
         $id = $request->input("id");
         $ajax_response = new AjaxResponse();
-        $blogs = Blog::where('id', '!=', $id)->random(3);
+        $blogs = Blog::where('id', '!=', $id)->take(2)->get();
+        return $ajax_response->setData($blogs)->toApiResponse();
+    }
+
+    public function recent(Request $request)
+    {
+        $ajax_response = new AjaxResponse();
+        $id = $request->input("id");
+        $ajax_response = new AjaxResponse();
+        $query = Blog::where('id', '>', 1);
+        if (isset($id)) $query->where('id', '!=', $id);
+        $blogs = $query->orderBy('updated_at', 'DESC')->take(3)->get();
         return $ajax_response->setData($blogs)->toApiResponse();
     }
 }

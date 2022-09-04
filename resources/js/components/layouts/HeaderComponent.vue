@@ -54,7 +54,7 @@
                                     <div class="input-group-prepend">
                                         <div class="custom_select">
                                             <select class="first_null not_chosen">
-                                                <option value="">All Category</option>
+                                                <option value="">Danh mục</option>
                                                 <option value="Dresses">Dresses</option>
                                                 <option value="Shirt-Tops">Shirt &amp; Tops</option>
                                                 <option value="T-Shirt">T-Shirt</option>
@@ -81,7 +81,7 @@
                         <div class="col-lg-3 col-md-4 col-sm-6 col-3">
                             <div class="categories_wrap">
                                 <button type="button" data-toggle="collapse" data-target="#navCatContent" aria-expanded="false" class="categories_btn categories_menu">
-                                    <span>All Categories </span><i class="linearicons-menu"></i>
+                                    <span>Danh mục sản phẩm</span><i class="linearicons-menu"></i>
                                 </button>
                                 <div id="navCatContent" class="navbar collapse">
                                     <ul>
@@ -270,7 +270,7 @@
                                             </ul>
                                         </li>
                                     </ul>
-                                    <div class="more_categories">More Categories</div>
+                                    <div class="more_categories">Xêm Thêm</div>
                                 </div>
                             </div>
                         </div>

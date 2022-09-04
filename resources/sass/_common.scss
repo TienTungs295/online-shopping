@@ -55,6 +55,15 @@
 .text-right-i {
     text-align: right !important;
 }
+.break-word{
+    word-break: break-word;
+}
+.break-word-i{
+    word-break: break-word !important;
+}
+.cursor-default{
+
+}
 
 @for $i from 1 through 10 {
     .mgl-#{$i * 5} {

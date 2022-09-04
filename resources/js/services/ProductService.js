@@ -1,8 +1,21 @@
 import http from "../http-common";
+import base from "../base";
 
 const PREFIX_URL = "/rest/product/"
 
 class ProductService {
+
+    findAll(param, page, alert) {
+        let url = PREFIX_URL + "find-all";
+        if (page != undefined) url += "?page=" + page
+        return http.get(url, {
+            params: {
+                param: JSON.stringify(param)
+            },
+            alert: alert
+        });
+    }
+
     findByCollection(collection_id, alert) {
         let url = PREFIX_URL + "find-by-collection";
         if (collection_id != null && collection_id != undefined) url = url += "?collection_id=" + collection_id;

@@ -16,12 +16,18 @@ class Blog extends Model
         'is_featured'
     ];
 
-    protected $appends = ['excerpt_content'];
+    protected $appends = ['excerpt_content','excerpt_content2'];
 
     public function getExcerptContentAttribute()
     {
         if (empty($this->content)) return "";
         return substr("$this->content", 0,100);
+    }
+
+    public function getExcerptContent2Attribute()
+    {
+        if (empty($this->content)) return "";
+        return substr("$this->content", 0,150);
     }
 
 }

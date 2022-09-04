@@ -2244,7 +2244,9 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("header-component"), _vm._v(" "), _c("router-view"), _vm._v(" "), _c("footer-component")], 1);
+  return _c("div", [_c("header-component"), _vm._v(" "), _c("router-view", {
+    key: _vm.$route.fullPath
+  }), _vm._v(" "), _c("footer-component")], 1);
 };
 
 var staticRenderFns = [];
@@ -2594,35 +2596,49 @@ var render = function render() {
       staticClass: "blog_post blog_style2 box_shadow1"
     }, [_c("div", {
       staticClass: "blog_img"
-    }, [_c("a", {
+    }, [_c("router-link", {
+      staticClass: "link_wrapper",
       attrs: {
-        href: "blog-single.html"
+        to: {
+          name: "blogDetail",
+          params: {
+            slug: item.slug,
+            id: item.id
+          }
+        }
       }
     }, [_c("img", {
       attrs: {
         src: "/uploads/images/" + item.image,
         alt: item.image
       }
-    })])]), _vm._v(" "), _c("div", {
+    })])], 1), _vm._v(" "), _c("div", {
       staticClass: "blog_content bg-white"
     }, [_c("div", {
       staticClass: "blog_text"
     }, [_c("h5", {
       staticClass: "blog_title"
-    }, [_c("a", {
+    }, [_c("router-link", {
       attrs: {
-        href: "blog-single.html"
+        to: {
+          name: "blogDetail",
+          params: {
+            slug: item.slug,
+            id: item.id
+          }
+        }
       }
-    }, [_vm._v(_vm._s(item.name))])]), _vm._v(" "), _c("ul", {
+    }, [_vm._v("\n                                            " + _vm._s(item.name) + "\n                                        ")])], 1), _vm._v(" "), _c("ul", {
       staticClass: "list_none blog_meta"
     }, [_c("li", [_c("i", {
       staticClass: "ti-calendar mgr-5-i color_primary"
-    }), _vm._v(_vm._s(_vm._f("dateFormat")(item.updated_at)) + "\n                                        ")]), _vm._v(" "), _vm._m(19, true)]), _vm._v(" "), _c("p", {
+    }), _vm._v("\n                                            " + _vm._s(_vm._f("dateFormat")(item.updated_at)) + "\n                                        ")])]), _vm._v(" "), _c("p", {
+      staticClass: "break-word",
       domProps: {
         innerHTML: _vm._s(item.excerpt_content)
       }
     })])])])]);
-  }), 0)])]), _vm._v(" "), _vm._m(20), _vm._v(" "), _vm._m(21), _vm._v(" "), _vm._m(22)])]);
+  }), 0)])]), _vm._v(" "), _vm._m(19), _vm._v(" "), _vm._m(20), _vm._v(" "), _vm._m(21)])]);
 };
 
 var staticRenderFns = [function () {
@@ -2769,7 +2785,7 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "section pdt-0 small_pb"
+    staticClass: "section pt-0 small_pb"
   }, [_c("div", {
     staticClass: "container"
   }, [_c("div", {
@@ -3223,17 +3239,6 @@ var staticRenderFns = [function () {
   }, [_c("h2", [_vm._v("Tin tức & Sự kiện")])]), _vm._v(" "), _c("p", {
     staticClass: "leads text-center"
   }, [_vm._v("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\n                            eiusmod tempor incididunt ut labore.")])])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("li", [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "ti-comments"
-  }), _vm._v(" 2 Comment")])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
@@ -3791,7 +3796,7 @@ var staticRenderFns = [function () {
     attrs: {
       value: ""
     }
-  }, [_vm._v("All Category")]), _vm._v(" "), _c("option", {
+  }, [_vm._v("Danh mục")]), _vm._v(" "), _c("option", {
     attrs: {
       value: "Dresses"
     }
@@ -3845,7 +3850,7 @@ var staticRenderFns = [function () {
       "data-target": "#navCatContent",
       "aria-expanded": "false"
     }
-  }, [_c("span", [_vm._v("All Categories ")]), _c("i", {
+  }, [_c("span", [_vm._v("Danh mục sản phẩm")]), _c("i", {
     staticClass: "linearicons-menu"
   })]), _vm._v(" "), _c("div", {
     staticClass: "navbar collapse",
@@ -4365,7 +4370,7 @@ var staticRenderFns = [function () {
     staticClass: "flaticon-mouse"
   }), _vm._v(" "), _c("span", [_vm._v("Mouse")])])])])])]), _vm._v(" "), _c("div", {
     staticClass: "more_categories"
-  }, [_vm._v("More Categories")])])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Xêm Thêm")])])])]), _vm._v(" "), _c("div", {
     staticClass: "col-lg-9 col-md-8 col-sm-6 col-9"
   }, [_c("nav", {
     staticClass: "navbar navbar-expand-lg"
@@ -5114,6 +5119,36 @@ vue__WEBPACK_IMPORTED_MODULE_4__["default"].prototype.$test = "Test";
 
 /***/ }),
 
+/***/ "./resources/js/base.js":
+/*!******************************!*\
+  !*** ./resources/js/base.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var base = {};
+
+base.object2Param = function (str, obj) {
+  var str = str || "";
+
+  for (var key in obj) {
+    var value = obj[key];
+    if (value == "" || value == undefined) continue;
+    if (str.indexOf("?") != -1) str += "&";else str += "?";
+    str += key + "=" + value;
+  }
+
+  return str;
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (base);
+
+/***/ }),
+
 /***/ "./resources/js/http-common.js":
 /*!*************************************!*\
   !*** ./resources/js/http-common.js ***!
@@ -5178,10 +5213,28 @@ var routes = [{
     return Promise.resolve(/*! import() */).then(__webpack_require__.bind(__webpack_require__, /*! ./components/HomeComponent */ "./resources/js/components/HomeComponent.vue"));
   }
 }, {
-  path: '/san-pham/:slug/:id',
+  path: '/chi-tiet-san-pham/:slug/:id',
   name: "productDetail",
   component: function component() {
-    return __webpack_require__.e(/*! import() */ "resources_js_components_product_ProductDetailComponent_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/product/ProductDetailComponent */ "./resources/js/components/product/ProductDetailComponent.vue"));
+    return __webpack_require__.e(/*! import() */ "resources_js_components_products_ProductDetailComponent_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/products/ProductDetailComponent */ "./resources/js/components/products/ProductDetailComponent.vue"));
+  }
+}, {
+  path: '/san-pham',
+  name: "productList",
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_products_ProductListComponent_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/products/ProductListComponent */ "./resources/js/components/products/ProductListComponent.vue"));
+  }
+}, {
+  path: '/tin-tuc-su-kien',
+  name: "blogList",
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_blogs_BlogListComponent_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/blogs/BlogListComponent */ "./resources/js/components/blogs/BlogListComponent.vue"));
+  }
+}, {
+  path: '/chi-tiet-tin-tuc-su-kien/:slug/:id',
+  name: "blogDetail",
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_blogs_BlogDetailComponent_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/blogs/BlogDetailComponent */ "./resources/js/components/blogs/BlogDetailComponent.vue"));
   }
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (routes);
@@ -5200,6 +5253,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _http_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../http-common */ "./resources/js/http-common.js");
+/* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../base */ "./resources/js/base.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -5207,27 +5261,54 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 
+
 var PREFIX_URL = "/rest/blog/";
 
-var ProductService = /*#__PURE__*/function () {
-  function ProductService() {
-    _classCallCheck(this, ProductService);
+var BlogService = /*#__PURE__*/function () {
+  function BlogService() {
+    _classCallCheck(this, BlogService);
   }
 
-  _createClass(ProductService, [{
+  _createClass(BlogService, [{
     key: "findAll",
-    value: function findAll(collection_id, alert) {
+    value: function findAll(param, alert) {
       var url = PREFIX_URL + "find-all";
+      if (param != undefined) url = _base__WEBPACK_IMPORTED_MODULE_1__["default"].object2Param(url, param);
+      return _http_common__WEBPACK_IMPORTED_MODULE_0__["default"].get(url, {
+        alert: alert
+      });
+    }
+  }, {
+    key: "detail",
+    value: function detail(id, alert) {
+      var url = PREFIX_URL + "detail?id=" + id;
+      return _http_common__WEBPACK_IMPORTED_MODULE_0__["default"].get(url, {
+        alert: alert
+      });
+    }
+  }, {
+    key: "related",
+    value: function related(id, alert) {
+      var url = PREFIX_URL + "related?id=" + id;
+      return _http_common__WEBPACK_IMPORTED_MODULE_0__["default"].get(url, {
+        alert: alert
+      });
+    }
+  }, {
+    key: "recent",
+    value: function recent(id, alert) {
+      var url = PREFIX_URL + "recent";
+      if (id != undefined) url += "?id=" + id;
       return _http_common__WEBPACK_IMPORTED_MODULE_0__["default"].get(url, {
         alert: alert
       });
     }
   }]);
 
-  return ProductService;
+  return BlogService;
 }();
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new ProductService());
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new BlogService());
 
 /***/ }),
 
@@ -5327,11 +5408,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _http_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../http-common */ "./resources/js/http-common.js");
+/* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../base */ "./resources/js/base.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
 
 
 var PREFIX_URL = "/rest/product/";
@@ -5342,6 +5425,18 @@ var ProductService = /*#__PURE__*/function () {
   }
 
   _createClass(ProductService, [{
+    key: "findAll",
+    value: function findAll(param, page, alert) {
+      var url = PREFIX_URL + "find-all";
+      if (page != undefined) url += "?page=" + page;
+      return _http_common__WEBPACK_IMPORTED_MODULE_0__["default"].get(url, {
+        params: {
+          param: JSON.stringify(param)
+        },
+        alert: alert
+      });
+    }
+  }, {
     key: "findByCollection",
     value: function findByCollection(collection_id, alert) {
       var url = PREFIX_URL + "find-by-collection";
@@ -48205,7 +48300,7 @@ module.exports = JSON.parse('{"_args":[["axios@0.21.4","D:\\\\xampp\\\\htdocs\\\
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if (chunkId === "resources_js_components_product_ProductDetailComponent_vue") return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_products_ProductDetailComponent_vue":1,"resources_js_components_products_ProductListComponent_vue":1,"resources_js_components_blogs_BlogListComponent_vue":1,"resources_js_components_blogs_BlogDetailComponent_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

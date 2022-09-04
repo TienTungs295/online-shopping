@@ -54,6 +54,7 @@ class BlogController extends Controller
 
         $blog = new Blog;
         $blog->name = $request->input('name');
+        $blog->slug = Str::slug($blog->name);
         $blog->content = $request->input('content');
 
         $image_url = $request->input('image');
@@ -118,6 +119,7 @@ class BlogController extends Controller
         ]);
 
         $blog->name = $request->input('name');
+        $blog->slug = Str::slug($blog->name);
         $blog->content = $request->input('content');
         $image_url = $request->input('image');
         $delete_url = "";

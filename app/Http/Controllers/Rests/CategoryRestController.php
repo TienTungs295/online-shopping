@@ -12,14 +12,7 @@ class CategoryRestController extends Controller
     public function findAll(Request $request)
     {
         $ajax_response = new AjaxResponse();
-        $categories = ProductCategory::all();
-        return $ajax_response->setData($categories)->toApiResponse();
-    }
-
-    public function findAllWithCount(Request $request)
-    {
-        $ajax_response = new AjaxResponse();
-        $categories = ProductCategory::all();
+        $categories = ProductCategory::withCount('products')->get();
         return $ajax_response->setData($categories)->toApiResponse();
     }
 

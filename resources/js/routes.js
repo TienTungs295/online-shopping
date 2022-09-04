@@ -7,9 +7,24 @@ const routes = [
         component: () => import("./components/HomeComponent"),
     },
     {
-        path: '/san-pham/:slug/:id',
+        path: '/chi-tiet-san-pham/:slug/:id',
         name: "productDetail",
-        component: () => import("./components/product/ProductDetailComponent"),
+        component: () => import("./components/products/ProductDetailComponent"),
+    },
+    {
+        path: '/san-pham',
+        name: "productList",
+        component: () => import("./components/products/ProductListComponent"),
+    },
+    {
+        path: '/tin-tuc-su-kien',
+        name: "blogList",
+        component: () => import("./components/blogs/BlogListComponent"),
+    },
+    {
+        path: '/chi-tiet-tin-tuc-su-kien/:slug/:id',
+        name: "blogDetail",
+        component: () => import("./components/blogs/BlogDetailComponent"),
     }
 ];
 

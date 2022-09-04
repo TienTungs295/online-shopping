@@ -33,6 +33,7 @@ Route::group(['prefix' => 'rest'], function () {
         Route::get('/find-all', ['uses' => 'Rests\BlogRestController@findAll']);
         Route::get('/detail', ['uses' => 'Rests\BlogRestController@detail']);
         Route::get('/related', ['uses' => 'Rests\BlogRestController@related']);
+        Route::get('/recent', ['uses' => 'Rests\BlogRestController@recent']);
     });
 
     Route::group(['prefix' => 'collection'], function () {
