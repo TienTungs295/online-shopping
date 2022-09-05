@@ -6820,7 +6820,7 @@ footer {
     }
 
     .minus {
-        padding-left: 4px;
+        padding-left: 2px;
     }
 
     .qty {
@@ -7015,6 +7015,12 @@ footer {
     margin-bottom: 10px;
     overflow: hidden;
     position: relative;
+    &.style-1{
+        height: 550px;
+        img{
+            height: 100%;
+        }
+    }
 }
 
 .product_img_zoom {
@@ -7135,8 +7141,12 @@ footer {
         top: 100px;
     }
 
-    &:not(.list-view) .list_product_action_box {
+    .list_product_action_box {
         display: none;
+    }
+
+    &.list-view .list_product_action_box {
+        display: block;
     }
 
     &.list-view {

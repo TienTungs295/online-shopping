@@ -188,53 +188,7 @@
                                      data-loop="false" data-margin="20"
                                      data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "991":{"items": "4"}}'>
                                     <div class="item" v-for="item in productCollections">
-                                        <div class="product">
-                                            <div class="product_img style-1">
-                                                <a href="#">
-                                                    <img :src="'/uploads/images/'+item.image" :alt="item.image">
-                                                </a>
-                                                <div class="product_action_box">
-                                                    <ul class="list_none pr_action_btn">
-                                                        <li class="add-to-cart"><a href="#"><i
-                                                            class="icon-basket-loaded"></i>Thêm vào giỏ </a>
-                                                        </li>
-                                                        <li><a href="shop-compare.html"
-                                                               class="popup-ajax"><i
-                                                            class="icon-shuffle"></i></a></li>
-                                                        <li><a href="shop-quick-view.html"
-                                                               class="popup-ajax"><i
-                                                            class="icon-magnifier-add"></i></a></li>
-                                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="product_info">
-                                                <h6 class="product_title">
-                                                    <router-link
-                                                        :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
-                                                        {{ item.name }}
-                                                    </router-link>
-                                                </h6>
-                                                <div class="product_price">
-                                                    <div v-if="item.on_sale">
-                                                        <span class="price">{{ item.sale_price }}</span>
-                                                        <del>{{ item.price }}</del>
-                                                        <div class="on_sale" v-if="item.sale_off != null">
-                                                            <span>{{ item.sale_off }}% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div v-else>
-                                                        <span class="price">{{ item.price }}</span>
-                                                    </div>
-                                                </div>
-                                                <div class="rating_wrap">
-                                                    <div class="rating">
-                                                        <div class="product_rate" style="width:80%"></div>
-                                                    </div>
-                                                    <span class="rating_num">(21)</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <product-item-component v-bind:item="item"></product-item-component>
                                     </div>
                                 </div>
                             </div>
@@ -292,49 +246,7 @@
                                      data-loop="false" data-margin="20"
                                      data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "991":{"items": "4"}}'>
                                     <div class="item" v-for="item in trendingProducts">
-                                        <div class="product">
-                                            <div class="product_img style-1">
-                                                <a href="#">
-                                                    <img :src="'/uploads/images/'+item.image" :alt="item.image">
-                                                </a>
-                                                <div class="product_action_box">
-                                                    <ul class="list_none pr_action_btn">
-                                                        <li class="add-to-cart"><a href="#"><i
-                                                            class="icon-basket-loaded"></i>Thêm vào giỏ </a>
-                                                        </li>
-                                                        <li><a href="shop-compare.html"
-                                                               class="popup-ajax"><i
-                                                            class="icon-shuffle"></i></a></li>
-                                                        <li><a href="shop-quick-view.html"
-                                                               class="popup-ajax"><i
-                                                            class="icon-magnifier-add"></i></a></li>
-                                                        <li><a href="#"><i class="icon-heart"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="product_info">
-                                                <h6 class="product_title"><a
-                                                    href="shop-product-detail.html">{{ item.name }}</a></h6>
-                                                <div class="product_price">
-                                                    <div v-if="item.on_sale">
-                                                        <span class="price">{{ item.sale_price }}</span>
-                                                        <del>{{ item.price }}</del>
-                                                        <div class="on_sale" v-if="item.sale_off != null">
-                                                            <span>{{ item.sale_off }}% Off</span>
-                                                        </div>
-                                                    </div>
-                                                    <div v-else>
-                                                        <span class="price">{{ item.price }}</span>
-                                                    </div>
-                                                </div>
-                                                <div class="rating_wrap">
-                                                    <div class="rating">
-                                                        <div class="product_rate" style="width:80%"></div>
-                                                    </div>
-                                                    <span class="rating_num">(21)</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <product-item-component v-bind:item="item"></product-item-component>
                                     </div>
                                 </div>
                             </div>
@@ -574,33 +486,7 @@
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-lg-4 col-md-6" v-for="item in blogs">
-                            <div class="blog_post blog_style2 box_shadow1">
-                                <div class="blog_img">
-                                    <router-link class="link_wrapper"
-                                        :to="{ name: 'blogDetail', params: { slug: item.slug,id:item.id }}">
-                                        <img :src="'/uploads/images/'+item.image" :alt="item.image">
-                                    </router-link>
-                                </div>
-                                <div class="blog_content bg-white">
-                                    <div class="blog_text">
-                                        <h5 class="blog_title">
-                                            <router-link
-                                                :to="{ name: 'blogDetail', params: { slug: item.slug,id:item.id }}">
-                                                {{ item.name }}
-                                            </router-link>
-                                        </h5>
-                                        <ul class="list_none blog_meta">
-                                            <li><i
-                                                class="ti-calendar mgr-5-i color_primary"></i>
-                                                {{
-                                                    item.updated_at |dateFormat
-                                                }}
-                                            </li>
-                                        </ul>
-                                        <p class="break-word" v-html="item.excerpt_content"></p>
-                                    </div>
-                                </div>
-                            </div>
+                            <blog-item-component v-bind:item="item"></blog-item-component>
                         </div>
                     </div>
                 </div>
@@ -783,6 +669,8 @@ import ProductService from "../services/ProductService";
 import CategoryService from "../services/CategoryService";
 import CollectionService from "../services/CollectionService";
 import BlogService from "../services/BlogService";
+import VueEasyLightbox from 'vue-easy-lightbox'
+
 
 export default {
     name: "Home",
@@ -799,7 +687,7 @@ export default {
             isLoading: true,
             isLoadingTrending: true,
             isLoadingFeatured: true,
-            isLoadingBlog: true,
+            isLoadingBlog: true
         };
     },
     methods: {
@@ -813,7 +701,7 @@ export default {
             }).catch(e => {
                 this.isLoading = false;
             });
-        },
+        }
     },
     mounted() {
         CategoryService.findAll().then(response => {

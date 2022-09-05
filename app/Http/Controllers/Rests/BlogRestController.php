@@ -32,7 +32,7 @@ class BlogRestController extends Controller
             return $ajax_response->setMessage("Đối tượng không tồn tại hoặc đã bị xóa")->toApiResponse();
         }
         $next_blog = Blog::where('id', '>', $id)->first();
-        $prev_blog = Blog::where('id', '<', $id)->first();
+        $prev_blog = Blog::where('id', '<', $id)->orderBy('id','DESC')->first();
         return $ajax_response->setData(array(
             'prev_blog' => $prev_blog,
             'blog' => $blog,

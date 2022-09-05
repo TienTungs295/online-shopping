@@ -196,7 +196,7 @@ class ProductRestController extends Controller
 
     public function detail(Request $request)
     {
-        $related_side = 5;
+        $related_size = 5;
         $ajax_response = new AjaxResponse();
         $id = $request->input("id");
         $product = null;
@@ -206,18 +206,17 @@ class ProductRestController extends Controller
             return $ajax_response->setMessage("Đối tượng không tồn tại hoặc đã bị xóa")->toApiResponse();
         }
         $product->images = $product->images()->get();
-        $product->image = $product->images()->first()->image;
         $product->category = $product->category()->first();
         $related_products = $product->productsRelated()->orderBy("id", 'DESC')->limit(5)->get();
         $total_related = $related_products->count();
-        if ($total_related < $related_side) {
+        if ($total_related < $related_size) {
             $related_product_ids = [];
             $related_products = [];
             if ($total_related > 0) {
                 $related_product_ids = $related_products->pluck("id")->toArray();
                 $related_products = $related_products->toArray();
             }
-            $miss = $related_side - $total_related;
+            $miss = $related_size - $total_related;
             $query = Product::where('id', '!=', $id)
                 ->where("category_id", $product->category_id);
             if (count($related_product_ids) > 0) $query->whereNotIn("id", $related_product_ids);
