@@ -20870,8 +20870,14 @@ footer .widget_title {
   pointer-events: none;
 }
 
-.product-thumbnail img {
-  max-width: 100px;
+.product-thumbnail a {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+}
+.product-thumbnail a img {
+  width: 100%;
+  height: 100%;
 }
 
 .shop_cart_table th, .shop_cart_table td {

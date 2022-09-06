@@ -13,7 +13,7 @@
                     <li><a @click="showModal"
                            class="popup-ajax"><i
                         class="icon-magnifier-add"></i></a></li>
-                    <li><a href="#"><i class="icon-heart"></i></a></li>
+                    <li><a @click="addToWithList(item.id)"><i class="icon-heart"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -48,7 +48,7 @@
                         class="icon-basket-loaded"></i>Thêm vào giỏ</a></li>
                     <li><a href="shop-quick-view.html" class="popup-ajax"><i
                         class="icon-magnifier-add"></i></a></li>
-                    <li><a href="#"><i class="icon-heart"></i></a></li>
+                    <li><a @click="addToWithList(item.id)"><i class="icon-heart"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -64,6 +64,9 @@
 <script>
 
 
+import WithListService from "../../services/WithListService";
+import {serviceBus} from "../../serviceBus";
+
 export default {
     name: "ProductItem",
     props: ['item'],
@@ -71,6 +74,12 @@ export default {
         showModal() {
             let ref = 'quick-view-modal' + this.item.id;
             this.$refs[ref].show()
+        },
+        addToWithList: function (product_id) {
+            WithListService.save({product_id: product_id}, true).then(response => {
+                serviceBus.$emit('refreshWithListNum');
+            }).catch(e => {
+            });
         },
     },
     mounted() {

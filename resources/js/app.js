@@ -49,7 +49,6 @@ Vue.use(VueToastr, {
 });
 Vue.prototype.moment = moment
 
-
 Vue.directive('carousel', {
     inserted: function (el) {
         setTimeout(function () {
@@ -92,6 +91,7 @@ Vue.filter('dateTimeFormat', function (value) {
 const router = new VueRouter({
     routes
 });
+
 
 const app = new Vue({
     el: '#app',

@@ -36,6 +36,13 @@ Route::group(['prefix' => 'rest'], function () {
         Route::get('/recent', ['uses' => 'Rests\BlogRestController@recent']);
     });
 
+    Route::group(['prefix' => 'with-list'], function () {
+        Route::get('/find-all', ['uses' => 'Rests\WithListRestController@findAll']);
+        Route::get('/count', ['uses' => 'Rests\WithListRestController@count']);
+        Route::post('/save', ['uses' => 'Rests\WithListRestController@store']);
+        Route::post('/delete', ['uses' => 'Rests\WithListRestController@destroy']);
+    });
+
     Route::group(['prefix' => 'collection'], function () {
         Route::get('/find-all', ['uses' => 'Rests\CollectionRestController@findAll']);
     });

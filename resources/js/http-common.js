@@ -24,7 +24,6 @@ http.interceptors.response.use(function (response) {
         return Promise.reject(data);
     }
 }, function (error) {
-
     return Promise.reject(error);
 });
 export default http;

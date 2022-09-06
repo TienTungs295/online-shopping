@@ -3,7 +3,8 @@
         <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
             <div class="product-image">
                 <div class="product_img_box style-1">
-                    <img v-if="product.image" id="product_img" :src="'/uploads/images/'+product.image" :alt="product.image"
+                    <img v-if="product.image" id="product_img" :src="'/uploads/images/'+product.image"
+                         :alt="product.image"
                          :data-zoom-image="'/uploads/images/'+product.image"/>
                 </div>
                 <div id="pr_item_gallery">
@@ -60,14 +61,14 @@
                             <button class="btn btn-fill-line view-cart rounded-0" type="button"><i
                                 class="icon-basket-loaded"></i> Mua ngay
                             </button>
-                            <a class="add_wishlist" href="#"><i class="icon-heart"></i></a>
+                            <a class="add_wishlist" @click="addToWithList(product.id)"><i class="icon-heart"></i></a>
                         </div>
                     </div>
                 </div>
                 <hr/>
                 <ul class="product-meta">
                     <li>Mã sản phẩm: <span>{{ product.sku }}</span></li>
-                    <li v-if="product.category">Danh mục: <a href="#">{{product.category.name}}</a></li>
+                    <li v-if="product.category">Danh mục: <a href="#">{{ product.category.name }}</a></li>
                 </ul>
 
                 <div class="product_share">
@@ -79,56 +80,28 @@
                 </div>
             </div>
         </div>
-
-        <div class="slider-for d1">
-            <div><a href="https://kenwheeler.github.io/slick/">1</a></div>
-            <div><a href="https://kenwheeler.github.io/slick/">2</a></div>
-        </div>
-
-        <div class="slider-nav d2">
-            <div><a href="https://kenwheeler.github.io/slick/">1</a></div>
-            <div><a href="https://kenwheeler.github.io/slick/">2</a></div>
-            <div><a href="https://kenwheeler.github.io/slick/">3</a></div>
-            <div><a href="https://kenwheeler.github.io/slick/">4</a></div>
-            <div><a href="https://kenwheeler.github.io/slick/">5</a></div>
-        </div>
-        </div>
+    </div>
 
 </template>
 
 <script>
 
+import WithListService from "../../services/WithListService";
+import {serviceBus} from "../../serviceBus";
+
 export default {
     name: "ProductQuickViewItem",
     props: ['product'],
     methods: {
-        initSlick:function (){
-            $('.slider-for').slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: false,
-                fade: true,
-                asNavFor: '.slider-nav'
+        addToWithList: function (product_id) {
+            WithListService.save({product_id: product_id}, true).then(response => {
+                serviceBus.$emit('refreshWithListNum');
+            }).catch(e => {
             });
-            $('.slider-nav').slick({
-                autoplay: true,
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                asNavFor: '.slider-for',
-                dots: true,
-                centerMode: true,
-                focusOnSelect: true
-            });
-        }
+        },
     },
     mounted() {
-        let $this=this;
-        Vue.nextTick(function () {
-            this.initSlick();
-        }.bind($this));
-    },
-    updated() {
-        console.log(`At this point, Virtual DOM has re-rendered and patched.`)
+
     }
 }
 </script>

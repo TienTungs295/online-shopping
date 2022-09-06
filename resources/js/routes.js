@@ -25,6 +25,11 @@ const routes = [
         path: '/chi-tiet-tin-tuc-su-kien/:slug/:id',
         name: "blogDetail",
         component: () => import("./components/blogs/BlogDetailComponent"),
+    },
+    {
+        path: '/san-pham-yeu-thich',
+        name: "withList",
+        component: () => import("./components/products/WishListComponent"),
     }
 ];
 

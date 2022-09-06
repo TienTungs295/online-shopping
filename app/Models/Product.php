@@ -3,10 +3,11 @@
 namespace App\Models;
 
 use App\Models\Discount;
+use App\Models\Image;
 use App\Models\ProductCategory;
 use App\Models\ProductCollection;
 use App\Models\ProductLabel;
-use App\Models\Image;
+use App\Models\WithList;
 use App\Models\FlashSale;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -158,6 +159,11 @@ class Product extends Model
         return $this->hasMany(Image::class, 'pro_id');
     }
 
+    public function withList()
+    {
+        return $this->hasMany(WithList::class, 'product_id');
+    }
+
     public static function boot()
     {
         parent::boot();
@@ -167,6 +173,7 @@ class Product extends Model
             $product->flashSales()->detach();
             $product->productLabels()->detach();
             $product->productCollections()->detach();
+            $product->withList()->detach();
         });
     }
 }
