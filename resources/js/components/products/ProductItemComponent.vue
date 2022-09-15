@@ -7,7 +7,7 @@
             </router-link>
             <div class="product_action_box">
                 <ul class="list_none pr_action_btn">
-                    <li class="add-to-cart"><a href="#"><i
+                    <li class="add-to-cart"><a @click="addToCart(item.id)"><i
                         class="icon-basket-loaded"></i>Thêm vào giỏ </a>
                     </li>
                     <li><a @click="showModal"
@@ -63,6 +63,7 @@
 
 
 import WithListService from "../../services/WithListService";
+import CartService from "../../services/CartService";
 import {serviceBus} from "../../serviceBus";
 
 export default {
@@ -75,12 +76,49 @@ export default {
         },
         addToWithList: function (product_id) {
             WithListService.save({product_id: product_id}, true).then(response => {
-                serviceBus.$emit('refreshWithListNum');
+                this.countWithList();
             }).catch(e => {
+            });
+        },
+        addToCart: function (product_id) {
+            CartService.add({product_id: product_id, qty: 1}, true).then(response => {
+                this.countCart();
+                this.findAllCart();
+            }).catch(e => {
+            });
+        },
+        countWithList() {
+            WithListService.count().then(response => {
+                let data = response || 0;
+                this.$store.commit("setWithListCount", data)
+            }).catch(e => {
+            });
+        },
+        countCart() {
+            CartService.count().then(response => {
+                let data = response || 0;
+                this.$store.commit("setCartCount", data)
+            }).catch(e => {
+            });
+        },
+        findAllCart() {
+            CartService.findAll().then(response => {
+                let data = response || {};
+                let cart = data.cart;
+                let subTotal = data.subTotal;
+                let subTotalWithShippingFee = data.subTotalWithShippingFee;
+                this.shippingFee = data.shippingFee;
+                this.$store.commit("setCart", cart);
+                this.$store.commit("setSubTotal", subTotal);
+                this.$store.commit("setSubTotalWithShippingFee", subTotalWithShippingFee);
+                this.isLoading = false;
+            }).catch(e => {
+                this.isLoading = false;
             });
         },
     },
     mounted() {
+
     }
 }
 </script>

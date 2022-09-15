@@ -43,6 +43,14 @@ Route::group(['prefix' => 'rest'], function () {
         Route::post('/delete', ['uses' => 'Rests\WithListRestController@destroy']);
     });
 
+    Route::group(['prefix' => 'cart'], function () {
+        Route::get('/find-all', ['uses' => 'Rests\CartRestController@findAll']);
+        Route::get('/count', ['uses' => 'Rests\CartRestController@count']);
+        Route::post('/add', ['uses' => 'Rests\CartRestController@store']);
+        Route::post('/update', ['uses' => 'Rests\CartRestController@update']);
+        Route::post('/remove', ['uses' => 'Rests\CartRestController@remove']);
+    });
+
     Route::group(['prefix' => 'collection'], function () {
         Route::get('/find-all', ['uses' => 'Rests\CollectionRestController@findAll']);
     });
