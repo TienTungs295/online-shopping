@@ -12,7 +12,7 @@ class AjaxResponse
     /**
      * @var array
      */
-    protected $data;
+    protected $data= array();
 
     /**
      * @var string

@@ -30,6 +30,11 @@ const routes = [
         path: '/san-pham-yeu-thich',
         name: "withList",
         component: () => import("./components/products/WishListComponent"),
+    },
+    {
+        path: '/gio-hang',
+        name: "cart",
+        component: () => import("./components/carts/CartComponent"),
     }
 ];
 

@@ -52,8 +52,6 @@
                 </ul>
             </div>
         </div>
-        <!--        <button id="show-btn" type="button" @click="showModal">Open Modal</button>-->
-
         <b-modal :ref="'quick-view-modal'+item.id" content-class="rounded-0" size="xl" hide-footer hide-header>
             <div class="d-block">
                 <product-quick-view-modal-component v-bind:id="item.id"></product-quick-view-modal-component>

@@ -25,7 +25,7 @@ import VueToastr from "vue-toastr";
 import routes from './routes';
 import moment from 'moment'
 import {BTabs, BTab, BModal} from 'bootstrap-vue'
-import VueEasyLightbox from 'vue-easy-lightbox'
+import store from './store';
 
 Vue.component('header-component', require('./components/layouts/HeaderComponent').default);
 Vue.component('footer-component', require('./components/layouts/FooterComponent').default);
@@ -36,7 +36,6 @@ Vue.component('blog-item-component', require('./components/blogs/BlogItemCompone
 Vue.component('b-tabs', BTabs);
 Vue.component('b-tab', BTab);
 Vue.component('b-modal', BModal)
-Vue.component(VueEasyLightbox.name, VueEasyLightbox)
 
 Vue.use(VueRouter);
 Vue.use(VueToastr, {
@@ -47,6 +46,7 @@ Vue.use(VueToastr, {
     defaultStyle: {"top": "50px"},
     defaultClassNames: ["animated", "zoomInUp"]
 });
+
 Vue.prototype.moment = moment
 
 Vue.directive('carousel', {
@@ -92,8 +92,8 @@ const router = new VueRouter({
     routes
 });
 
-
 const app = new Vue({
+    store,
     el: '#app',
     render: h => h(App),
     router

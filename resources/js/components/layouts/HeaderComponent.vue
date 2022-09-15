@@ -44,10 +44,11 @@
             <div class="middle-header dark_skin">
                 <div class="container">
                     <div class="nav_block">
-                        <a class="navbar-brand" href="index.html">
+                        <router-link class="navbar-brand"
+                                     :to="{ name: 'home'}">
                             <img class="logo_light" src="assets/images/logo_light.png" alt="logo">
                             <img class="logo_dark" src="assets/images/logo_dark.png" alt="logo">
-                        </a>
+                        </router-link>
                         <div class="product_search_form search_form_btn">
                             <form>
                                 <div class="input-group">
@@ -700,39 +701,55 @@
                                             <router-link class="nav-link"
                                                          :to="{ name: 'withList'}">
                                                 <i class="linearicons-heart"></i><span
-                                                class="wishlist_count">{{ withlistCount }}</span>
+                                                class="wishlist_count">{{ withListCount }}</span>
                                             </router-link>
                                         </li>
-                                        <li class="dropdown cart_dropdown"><a class="nav-link cart_trigger" href="#"
-                                                                              data-toggle="dropdown"><i
-                                            class="linearicons-bag2"></i><span class="cart_count">2</span></a>
+                                        <li class="dropdown cart_dropdown">
+                                            <router-link class="nav-link cart_trigger" data-toggle="dropdown"
+                                                         :to="{ name: 'cart'}">
+                                                <i class="linearicons-bag2"></i>
+                                                <span class="cart_count">
+                                                    {{ cartCount }}
+                                                </span>
+                                            </router-link>
                                             <div class="cart_box cart_right dropdown-menu dropdown-menu-right">
-                                                <ul class="cart_list">
-                                                    <li>
-                                                        <a href="#" class="item_remove"><i class="ion-close"></i></a>
-                                                        <a href="#"><img src="assets/images/cart_thamb1.jpg"
-                                                                         alt="cart_thumb1">Variable product 001</a>
-                                                        <span class="cart_quantity"> 1 x <span
-                                                            class="cart_amount"> <span
-                                                            class="price_symbole">$</span></span>78.00</span>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="item_remove"><i class="ion-close"></i></a>
-                                                        <a href="#"><img src="assets/images/cart_thamb2.jpg"
-                                                                         alt="cart_thumb2">Ornare sed consequat</a>
-                                                        <span class="cart_quantity"> 1 x <span
-                                                            class="cart_amount"> <span
-                                                            class="price_symbole">$</span></span>81.00</span>
-                                                    </li>
-                                                </ul>
-                                                <div class="cart_footer">
-                                                    <p class="cart_total"><strong>Subtotal:</strong> <span
-                                                        class="cart_price"> <span class="price_symbole">$</span></span>159.00
-                                                    </p>
-                                                    <p class="cart_buttons"><a href="#"
-                                                                               class="btn btn-fill-line rounded-0 view-cart">View
-                                                        Cart</a><a href="#" class="btn btn-fill-out rounded-0 checkout">Checkout</a>
-                                                    </p>
+                                                <div v-if="cartCount > 0">
+                                                    <ul class="cart_list">
+                                                        <li v-for="(item, key) in cart">
+                                                            <a class="item_remove" @click="removeFromCart(key)"><i
+                                                                class="ion-close"></i></a>
+                                                            <router-link
+                                                                :to="{ name: 'productDetail', params: { slug: item.options.slug,id:item.id }}">
+                                                                <img class="style-1"
+                                                                     :src="'/uploads/images/'+item.options.image"
+                                                                     :alt="item.options.image">
+                                                                {{ item.name }}
+                                                            </router-link>
+                                                            <span class="cart_quantity"> {{ item.qty }} x {{
+                                                                    item.price
+                                                                }}
+                                                            <span class="cart_amount">
+                                                                <span class="price_symbole">VNĐ
+                                                                </span>
+                                                            </span>
+                                                        </span>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="cart_footer">
+                                                        <p class="cart_total"><strong>Thành tiền:</strong>{{ subTotal }}
+                                                            <span
+                                                                class="cart_price"> <span
+                                                                class="price_symbole">VNĐ</span></span>
+                                                        </p>
+                                                        <p class="cart_buttons"><a href="#"
+                                                                                   class="btn btn-fill-line rounded-0 view-cart">View
+                                                            Cart</a><a href="#"
+                                                                       class="btn btn-fill-out rounded-0 checkout">Checkout</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="text-center pd-15" v-else>
+                                                    Không có sản phẩm nào trong giỏ hàng
                                                 </div>
                                             </div>
                                         </li>
@@ -752,28 +769,62 @@
 <script>
 import CategoryService from "../../services/CategoryService";
 import WithListService from "../../services/WithListService";
-import {serviceBus} from './../../serviceBus'
-
+import CartService from "../../services/CartService";
+import {mapGetters} from 'vuex'
 
 export default {
     name: "Header",
     data() {
         return {
             categories: [],
-            withlistCount: 0
         };
     },
+    computed: {
+        ...mapGetters([
+            'withListCount',
+            'cartCount',
+            'cart',
+            'subTotal',
+        ])
+    },
     methods: {
-        count() {
+        countWithList() {
             WithListService.count().then(response => {
                 let data = response || 0;
-                this.withlistCount = data;
+                this.$store.commit("setWithListCount", data)
+            }).catch(e => {
+            });
+        },
+        countCart() {
+            CartService.count().then(response => {
+                let data = response || 0;
+                this.$store.commit("setCartCount", data)
+            }).catch(e => {
+            });
+        },
+        findAllCart() {
+            CartService.findAll().then(response => {
+                let data = response || {};
+                let cart = data.cart;
+                let subTotal = data.subTotal;
+                let subTotalWithShippingFee = data.subTotalWithShippingFee;
+                this.$store.commit("setCart", cart);
+                this.$store.commit("setSubTotal", subTotal);
+                this.$store.commit("setSubTotalWithShippingFee", subTotalWithShippingFee);
+                this.isLoading = false;
+            }).catch(e => {
+                this.isLoading = false;
+            });
+        },
+
+        removeFromCart: function (id) {
+            CartService.remove({row_id: id}, true).then(response => {
+                let item = response || [];
+                this.findAllCart();
+                this.countCart();
             }).catch(e => {
             });
         }
-    },
-    created() {
-
     },
     mounted() {
         CategoryService.findAll().then(response => {
@@ -781,10 +832,9 @@ export default {
             this.categories = data;
         }).catch(e => {
         });
-        this.count();
-        serviceBus.$on('refreshWithListNum', () => {
-            this.count();
-        })
+        this.countCart();
+        this.countWithList();
+        this.findAllCart();
     }
 }
 </script>

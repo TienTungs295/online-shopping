@@ -1,19 +1,18 @@
 <template>
     <div class="row">
         <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
-            <div class="product-image">
-                <div class="product_img_box style-1">
-                    <img v-if="product.image" id="product_img" :src="'/uploads/images/'+product.image"
-                         :alt="product.image"
-                         :data-zoom-image="'/uploads/images/'+product.image"/>
-                </div>
-                <div id="pr_item_gallery">
-                    <div class="item" v-for="item in product.images">
-                        <a href="#" class="product_gallery_item">
-                            <img :src="'/uploads/images/'+item.image" :alt="item.image"/>
-                        </a>
-                    </div>
-                </div>
+            <div class="detail-slider">
+
+                <swiper class="swiper gallery-top" :options="swiperOptionTop" ref="swiperTop">
+                    <swiper-slide v-for="item in product.images" v-bind:key="item.id">
+                        <img :src="'/uploads/images/'+item.image" :alt="item.image"/>
+                    </swiper-slide>
+                </swiper>
+                <swiper class="swiper gallery-thumbs" :options="swiperOptionThumbs" ref="swiperThumbs">
+                    <swiper-slide v-for="item in product.images" v-bind:key="item.id">
+                        <img :src="'/uploads/images/'+item.image" :alt="item.image"/>
+                    </swiper-slide>
+                </swiper>
             </div>
         </div>
         <div class="col-lg-6 col-md-6">
@@ -87,21 +86,63 @@
 <script>
 
 import WithListService from "../../services/WithListService";
-import {serviceBus} from "../../serviceBus";
+import {Swiper, SwiperSlide} from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
 
 export default {
     name: "ProductQuickViewItem",
     props: ['product'],
+    components: {
+        Swiper,
+        SwiperSlide
+    },
+    data() {
+        return {
+            swiperOptionTop: {
+                loop: true,
+                loopedSlides: this.product.images.length, // looped slides should be the same
+                spaceBetween: 8,
+                effect: 'fade',
+            },
+            swiperOptionThumbs: {
+                loop: true,
+                loopedSlides: this.product.images.length, // looped slides should be the same
+                spaceBetween: 8,
+                slidesPerView: this.product.images.length,
+                touchRatio: 0.2,
+                slideToClickedSlide: true
+            }
+        }
+    },
+    computed: {
+        swiperTop() {
+            return this.$refs.swiperTop.$swiper
+        },
+        swiperThumbs() {
+            return this.$refs.swiperThumbs.$swiper
+        }
+    },
     methods: {
         addToWithList: function (product_id) {
             WithListService.save({product_id: product_id}, true).then(response => {
-                serviceBus.$emit('refreshWithListNum');
+                this.countWithList();
+            }).catch(e => {
+            });
+        },
+        countWithList() {
+            WithListService.count().then(response => {
+                let data = response || 0;
+                this.$store.commit("setWithListCount", data)
             }).catch(e => {
             });
         },
     },
     mounted() {
-
+        if (this.product.images.length <= 1) {
+            swiperOptionThumbs.centeredSlides = true;
+        }
+        this.swiperTop.controller.control = this.swiperThumbs
+        this.swiperThumbs.controller.control = this.swiperTop
     }
 }
 </script>

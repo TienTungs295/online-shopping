@@ -1973,6 +1973,11 @@ button:focus {
         float: left;
         margin-right: 10px;
         max-width: 80px;
+
+        &.style-1 {
+            width: 80px;
+            height: 80px;
+        }
     }
 
     a {
@@ -7015,9 +7020,11 @@ footer {
     margin-bottom: 10px;
     overflow: hidden;
     position: relative;
-    &.style-1{
+
+    &.style-1 {
         height: 550px;
-        img{
+
+        img {
             height: 100%;
         }
     }
@@ -7424,11 +7431,12 @@ footer {
     pointer-events: none;
 }
 
-.product-thumbnail  a{
+.product-thumbnail a {
     display: inline-block;
     width: 60px;
     height: 60px;
-    img{
+
+    img {
         width: 100%;
         height: 100%;
     }
@@ -9218,5 +9226,44 @@ blockquote {
 *===================================*/
 a {
     cursor: pointer;
+}
+
+.detail-slider {
+    .swiper {
+        &.gallery-top {
+            width: 100%;
+
+            .swiper-slide {
+                padding: 8px;
+                border: 1px solid #ddd;
+                margin-bottom: 10px;
+                height: 550px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        &.gallery-thumbs {
+            .swiper-slide {
+                cursor: pointer;
+                //width: 20%;
+                height: 135px;
+                border: 1px solid #ddd;
+                padding: 5px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .swiper-slide-active {
+                border-color: $primary-color;
+            }
+        }
+    }
 }
 

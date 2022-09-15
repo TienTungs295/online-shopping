@@ -173,7 +173,7 @@ class Product extends Model
             $product->flashSales()->detach();
             $product->productLabels()->detach();
             $product->productCollections()->detach();
-            $product->withList()->detach();
+//            $product->withList()->detach();
         });
     }
 }

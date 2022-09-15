@@ -92,7 +92,7 @@
 
 <script>
 import WithListService from "../../services/WithListService";
-import { serviceBus } from './../../serviceBus'
+import {serviceBus} from './../../serviceBus'
 
 export default {
     name: "Wishlist",
@@ -107,7 +107,7 @@ export default {
             WithListService.delete({id: id}, true).then(response => {
                 let item = response || [];
                 this.findAll();
-                serviceBus.$emit('refreshWithListNum');
+                this.countWithList();
             }).catch(e => {
             });
         },
@@ -119,7 +119,14 @@ export default {
             }).catch(e => {
                 this.isLoading = false;
             });
-        }
+        },
+        countWithList() {
+            WithListService.count().then(response => {
+                let data = response || 0;
+                this.$store.commit("setWithListCount", data)
+            }).catch(e => {
+            });
+        },
     },
     mounted() {
         this.findAll();

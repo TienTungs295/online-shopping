@@ -669,7 +669,7 @@ import ProductService from "../services/ProductService";
 import CategoryService from "../services/CategoryService";
 import CollectionService from "../services/CollectionService";
 import BlogService from "../services/BlogService";
-import VueEasyLightbox from 'vue-easy-lightbox'
+import CartService from "../services/CartService";
 
 
 export default {
@@ -753,7 +753,10 @@ export default {
         }).catch(e => {
             this.isLoadingBlog = false;
         });
-
+        CartService.findAll(true).then(response => {
+            // serviceBus.$emit('refreshWithListNum');
+        }).catch(e => {
+        });
     }
 }
 </script>
