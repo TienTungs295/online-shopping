@@ -21,14 +21,14 @@
                     <h4 class="product_title"><a href="#">{{ product.name }}</a></h4>
                     <div class="product_price">
                         <div v-if="product.on_sale">
-                            <span class="price">{{ product.sale_price }}</span>
-                            <del>{{ product.price }}</del>
+                            <span class="price">{{ product.sale_price | commaFormat}}</span>
+                            <del>{{ product.price | commaFormat}}</del>
                             <div class="on_sale" v-if="product.sale_off != null">
                                 <span>{{ product.sale_off }}% Off</span>
                             </div>
                         </div>
                         <div v-else>
-                            <span class="price">{{ product.price }}</span>
+                            <span class="price">{{ product.price | commaFormat}}</span>
                         </div>
                     </div>
                     <div class="rating_wrap">
@@ -139,10 +139,10 @@ export default {
     },
     mounted() {
         if (this.product.images.length <= 1) {
-            swiperOptionThumbs.centeredSlides = true;
+            this.swiperOptionThumbs.centeredSlides = true;
         }
-        this.swiperTop.controller.control = this.swiperThumbs
-        this.swiperThumbs.controller.control = this.swiperTop
+        this.swiperTop.controller.control = this.swiperThumbs;
+        this.swiperThumbs.controller.control = this.swiperTop;
     }
 }
 </script>

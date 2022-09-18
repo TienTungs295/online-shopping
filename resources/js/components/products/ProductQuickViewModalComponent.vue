@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <product-quick-view-item-component v-bind:product="product"></product-quick-view-item-component>
+    <div class="container" v-if="!isLoading">
+        <product-quick-view-item-component  v-bind:product="product"></product-quick-view-item-component>
     </div>
 </template>
 
@@ -12,7 +12,9 @@ export default {
     props: ['id'],
     data() {
         return {
-            product: {},
+            product: {
+                images:[]
+            },
             isLoading: true,
         };
     },

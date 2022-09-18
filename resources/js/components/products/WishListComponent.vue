@@ -46,35 +46,30 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr v-for="item in withList">
+                                    <tr v-for="(item,key) in withList">
                                         <td class="product-thumbnail">
                                             <router-link
-                                                :to="{ name: 'productDetail', params: { slug: item.product.slug,id:item.product.id }}">
-                                                <img :src="'/uploads/images/'+item.product.image"
-                                                     :alt="item.product.image">
+                                                :to="{ name: 'productDetail', params: { slug: item.options.slug,id:item.id }}">
+                                                <img :src="'/uploads/images/'+item.options.image"
+                                                     :alt="item.options.image">
                                             </router-link>
                                         </td>
                                         <td class="product-name" data-title="Sản phẩm">
                                             <router-link
-                                                :to="{ name: 'productDetail', params: { slug: item.product.slug,id:item.product.id }}">
-                                                {{ item.product.name }}
+                                                :to="{ name: 'productDetail', params: { slug: item.options.slug,id:item.id }}">
+                                                {{ item.name }}
                                             </router-link>
                                         </td>
                                         <td class="product-price" data-title="Giá">
-                                            <div v-if="item.product.on_sale">
-                                                <span class="price">{{ item.product.sale_price }}</span>
-                                                <del>{{ item.product.price }}</del>
-                                            </div>
-                                            <div v-else>
-                                                <span class="price">{{ item.product.price }}</span>
-                                            </div>
+                                            <span class="price">{{ item.price | commaFormat}}</span>
+                                            <del v-if="item.options.on_sale">{{ item.options.price | commaFormat}}</del>
                                         </td>
-                                        <td class="product-subtotal" data-title="Thêm vào giỏ"><a
+                                        <td class="product-subtotal" data-title="Thêm vào giỏ"><a @click="addToCart(item.id)"
                                             class="btn btn-fill-out btn-sm add-to-cart-button rounded-0">Thêm vào
                                             giỏ</a></td>
                                         <td class="product-remove" data-title="Xóa"><a
                                             class="btn btn-fill-line view-cart rounded-0 btn-sm rounded-0"
-                                            @click="remove(item.id)">Xóa</a></td>
+                                            @click="remove(key)">Xóa</a></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -93,18 +88,19 @@
 <script>
 import WithListService from "../../services/WithListService";
 import {serviceBus} from './../../serviceBus'
+import CartService from "../../services/CartService";
 
 export default {
     name: "Wishlist",
     data() {
         return {
-            withList: [],
+            withList: {},
             isLoading: true,
         };
     },
     methods: {
         remove: function (id) {
-            WithListService.delete({id: id}, true).then(response => {
+            WithListService.delete({row_id: id}, true).then(response => {
                 let item = response || [];
                 this.findAll();
                 this.countWithList();
@@ -113,7 +109,7 @@ export default {
         },
         findAll() {
             WithListService.findAll().then(response => {
-                let data = response || [];
+                let data = response || {};
                 this.withList = data;
                 this.isLoading = false;
             }).catch(e => {
@@ -125,6 +121,37 @@ export default {
                 let data = response || 0;
                 this.$store.commit("setWithListCount", data)
             }).catch(e => {
+            });
+        },
+
+        addToCart: function (product_id) {
+            CartService.add({product_id: product_id, qty: 1}, true).then(response => {
+                this.countCart();
+                this.findAllCart();
+            }).catch(e => {
+            });
+        },
+
+        countCart() {
+            CartService.count().then(response => {
+                let data = response || 0;
+                this.$store.commit("setCartCount", data)
+            }).catch(e => {
+            });
+        },
+        findAllCart() {
+            CartService.findAll().then(response => {
+                let data = response || {};
+                let cart = data.cart;
+                let subTotal = data.subTotal;
+                let subTotalWithShippingFee = data.subTotalWithShippingFee;
+                this.shippingFee = data.shippingFee;
+                this.$store.commit("setCart", cart);
+                this.$store.commit("setSubTotal", subTotal);
+                this.$store.commit("setSubTotalWithShippingFee", subTotalWithShippingFee);
+                this.isLoading = false;
+            }).catch(e => {
+                this.isLoading = false;
             });
         },
     },

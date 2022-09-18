@@ -41,6 +41,7 @@ class CreateEcommerceTables extends Migration
         Schema::create('ec_products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug');
             $table->text('description')->nullable();
             $table->longText('content')->nullable();
 //            $table->string('status', 60)->default('published');
@@ -58,8 +59,8 @@ class CreateEcommerceTables extends Migration
             $table->tinyInteger('is_searchable')->default(0);
             $table->tinyInteger('is_show_on_list')->default(0);
 //            $table->tinyInteger('sale_type')->default(0);
-            $table->double('price')->unsigned()->nullable();
-            $table->double('sale_price')->unsigned()->nullable();
+            $table->bigInteger('price')->unsigned()->nullable();
+            $table->bigInteger('sale_price')->unsigned()->nullable();
             $table->dateTime('start_date')->nullable();
             $table->dateTime('end_date')->nullable();
 //            $table->float('length')->nullable();
@@ -174,21 +175,22 @@ class CreateEcommerceTables extends Migration
 
         Schema::create('ec_orders', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->string('shipping_option', 60)->nullable();
             $table->string('shipping_method', 60)->default('default');
-            $table->string('status', 120)->default('pending');
-            $table->decimal('amount', 15);
+            $table->tinyInteger('status')->default(1);
+            $table->bigInteger('amount');
             $table->integer('currency_id')->unsigned()->nullable();
             $table->decimal('tax_amount', 15)->nullable();
             $table->decimal('shipping_amount', 15)->nullable();
             $table->text('description')->nullable();
             $table->string('coupon_code', 120)->nullable();
             $table->decimal('discount_amount', 15)->nullable();
-            $table->decimal('sub_total', 15);
+            $table->bigInteger('sub_total');
             $table->boolean('is_confirmed')->default(false);
             $table->string('discount_description', 255)->nullable();
             $table->boolean('is_finished')->default(1)->nullable();
+            $table->tinyInteger('payment_method')->default(1);
             $table->string('token', 120)->nullable();
             $table->integer('payment_id')->unsigned()->nullable();
             $table->timestamps();
@@ -199,7 +201,6 @@ class CreateEcommerceTables extends Migration
             $table->integer('order_id')->unsigned();
             $table->integer('qty');
             $table->decimal('price', 15);
-            $table->decimal('tax_amount', 15);
             $table->text('options')->nullable();
             $table->integer('product_id')->unsigned()->nullable();
             $table->string('product_name');
@@ -213,12 +214,11 @@ class CreateEcommerceTables extends Migration
             $table->string('name');
             $table->string('phone', 20)->nullable();
             $table->string('email')->nullable();
-            $table->string('country', 120)->nullable();
-            $table->string('state', 120)->nullable();
-            $table->string('city', 120)->nullable();
+            $table->string('province')->nullable();
+            $table->string('district')->nullable();
+            $table->string('ward')->nullable();
             $table->string('address', 255)->nullable();
             $table->integer('order_id')->unsigned();
-            $table->string('zip_code', 20)->nullable();
         });
 
         Schema::create('ec_discounts', function (Blueprint $table) {

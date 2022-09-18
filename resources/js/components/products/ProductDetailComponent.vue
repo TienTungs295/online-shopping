@@ -17,7 +17,8 @@
                                     Trang chủ
                                 </router-link>
                             </li>
-                            <li v-if="product.category" class="breadcrumb-item"><a href="#">{{product.category.name}}</a></li>
+                            <li v-if="product.category" class="breadcrumb-item"><a
+                                href="#">{{ product.category.name }}</a></li>
                             <li class="breadcrumb-item active">{{ product.name }}</li>
                         </ol>
                     </div>
@@ -41,59 +42,59 @@
                         <div class="col-12">
                             <div class="tab-style3">
                                 <b-tabs content-class="mt-3">
-                                    <b-tab title="Description" active> <p v-html="product.description"></p></b-tab>
+                                    <b-tab title="Description" active><p v-html="product.description"></p></b-tab>
                                     <b-tab title="Reviews (2)">
                                         <div class="comments">
-                                        <h5 class="product_tab_title">2 Review For <span>Blue Dress For Woman</span>
-                                        </h5>
-                                        <ul class="list_none comment_list mt-4">
-                                            <li>
-                                                <div class="comment_img">
-                                                    <img src="assets/images/user1.jpg" alt="user1"/>
-                                                </div>
-                                                <div class="comment_block">
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:80%"></div>
+                                            <h5 class="product_tab_title">2 Review For <span>Blue Dress For Woman</span>
+                                            </h5>
+                                            <ul class="list_none comment_list mt-4">
+                                                <li>
+                                                    <div class="comment_img">
+                                                        <img src="assets/images/user1.jpg" alt="user1"/>
+                                                    </div>
+                                                    <div class="comment_block">
+                                                        <div class="rating_wrap">
+                                                            <div class="rating">
+                                                                <div class="product_rate" style="width:80%"></div>
+                                                            </div>
+                                                        </div>
+                                                        <p class="customer_meta">
+                                                            <span class="review_author">Alea Brooks</span>
+                                                            <span class="comment-date">March 5, 2018</span>
+                                                        </p>
+                                                        <div class="description">
+                                                            <p>Lorem Ipsumin gravida nibh vel velit auctor aliquet.
+                                                                Aenean sollicitudin, lorem quis bibendum auctor, nisi
+                                                                elit consequat ipsum, nec sagittis sem nibh id elit.
+                                                                Duis sed odio sit amet nibh vulputate</p>
                                                         </div>
                                                     </div>
-                                                    <p class="customer_meta">
-                                                        <span class="review_author">Alea Brooks</span>
-                                                        <span class="comment-date">March 5, 2018</span>
-                                                    </p>
-                                                    <div class="description">
-                                                        <p>Lorem Ipsumin gravida nibh vel velit auctor aliquet.
-                                                            Aenean sollicitudin, lorem quis bibendum auctor, nisi
-                                                            elit consequat ipsum, nec sagittis sem nibh id elit.
-                                                            Duis sed odio sit amet nibh vulputate</p>
+                                                </li>
+                                                <li>
+                                                    <div class="comment_img">
+                                                        <img src="assets/images/user2.jpg" alt="user2"/>
                                                     </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="comment_img">
-                                                    <img src="assets/images/user2.jpg" alt="user2"/>
-                                                </div>
-                                                <div class="comment_block">
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:60%"></div>
+                                                    <div class="comment_block">
+                                                        <div class="rating_wrap">
+                                                            <div class="rating">
+                                                                <div class="product_rate" style="width:60%"></div>
+                                                            </div>
+                                                        </div>
+                                                        <p class="customer_meta">
+                                                            <span class="review_author">Grace Wong</span>
+                                                            <span class="comment-date">June 17, 2018</span>
+                                                        </p>
+                                                        <div class="description">
+                                                            <p>It is a long established fact that a reader will be
+                                                                distracted by the readable content of a page when
+                                                                looking at its layout. The point of using Lorem Ipsum is
+                                                                that it has a more-or-less normal distribution of
+                                                                letters</p>
                                                         </div>
                                                     </div>
-                                                    <p class="customer_meta">
-                                                        <span class="review_author">Grace Wong</span>
-                                                        <span class="comment-date">June 17, 2018</span>
-                                                    </p>
-                                                    <div class="description">
-                                                        <p>It is a long established fact that a reader will be
-                                                            distracted by the readable content of a page when
-                                                            looking at its layout. The point of using Lorem Ipsum is
-                                                            that it has a more-or-less normal distribution of
-                                                            letters</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
                                         <div class="review_form field_form">
                                             <h5>Add a review</h5>
                                             <form class="row mt-3">
@@ -125,7 +126,8 @@
                                                     </button>
                                                 </div>
                                             </form>
-                                        </div></b-tab>
+                                        </div>
+                                    </b-tab>
                                 </b-tabs>
                             </div>
                         </div>
@@ -146,7 +148,8 @@
                                  class="releted_product_slider carousel_slider owl-carousel owl-theme" data-margin="20"
                                  v-carousel
                                  data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "1199":{"items": "4"}}'>
-                                <div class="item" v-for="item in product.related_products" v-if="product.related_products != undefined && product.related_products.length">
+                                <div class="item" v-for="item in product.related_products"
+                                     v-if="product.related_products != undefined && product.related_products.length">
                                     <product-item-component v-bind:item="item"></product-item-component>
                                 </div>
                             </div>
@@ -167,13 +170,13 @@ export default {
     name: "ProductDetail",
     data() {
         return {
-            product: {},
+            product: {
+                images: []
+            },
             isLoading: true,
         };
     },
-    methods: {
-
-    },
+    methods: {},
     mounted() {
         ProductService.detail(this.$route.params.id).then(response => {
             let data = response || {};

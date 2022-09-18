@@ -42,6 +42,7 @@ class CreateBlogTables extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
+            $table->string('slug');
             $table->string('description', 400)->nullable();
             $table->longText('content')->nullable();
             $table->string('status', 60)->default('published');

@@ -2487,7 +2487,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     if (this.product.images.length <= 1) {
-      swiperOptionThumbs.centeredSlides = true;
+      this.swiperOptionThumbs.centeredSlides = true;
     }
 
     this.swiperTop.controller.control = this.swiperThumbs;
@@ -2515,7 +2515,9 @@ __webpack_require__.r(__webpack_exports__);
   props: ['id'],
   data: function data() {
     return {
-      product: {},
+      product: {
+        images: []
+      },
       isLoading: true
     };
   },
@@ -5317,11 +5319,11 @@ var render = function render() {
     staticClass: "product_price"
   }, [_vm.item.on_sale ? _c("div", [_c("span", {
     staticClass: "price"
-  }, [_vm._v(_vm._s(_vm.item.sale_price))]), _vm._v(" "), _c("del", [_vm._v(_vm._s(_vm.item.price))]), _vm._v(" "), _vm.item.sale_off != null ? _c("div", {
+  }, [_vm._v(_vm._s(_vm._f("commaFormat")(_vm.item.sale_price)))]), _vm._v(" "), _c("del", [_vm._v(_vm._s(_vm._f("commaFormat")(_vm.item.price)))]), _vm._v(" "), _vm.item.sale_off != null ? _c("div", {
     staticClass: "on_sale"
   }, [_c("span", [_vm._v(_vm._s(_vm.item.sale_off) + "% Off")])]) : _vm._e()]) : _c("div", [_c("span", {
     staticClass: "price"
-  }, [_vm._v(_vm._s(_vm.item.price))])])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
+  }, [_vm._v(_vm._s(_vm._f("commaFormat")(_vm.item.price)))])])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "list_product_action_box dis-none"
   }, [_c("ul", {
     staticClass: "list_none pr_action_btn"
@@ -5465,11 +5467,11 @@ var render = function render() {
     staticClass: "product_price"
   }, [_vm.product.on_sale ? _c("div", [_c("span", {
     staticClass: "price"
-  }, [_vm._v(_vm._s(_vm.product.sale_price))]), _vm._v(" "), _c("del", [_vm._v(_vm._s(_vm.product.price))]), _vm._v(" "), _vm.product.sale_off != null ? _c("div", {
+  }, [_vm._v(_vm._s(_vm._f("commaFormat")(_vm.product.sale_price)))]), _vm._v(" "), _c("del", [_vm._v(_vm._s(_vm._f("commaFormat")(_vm.product.price)))]), _vm._v(" "), _vm.product.sale_off != null ? _c("div", {
     staticClass: "on_sale"
   }, [_c("span", [_vm._v(_vm._s(_vm.product.sale_off) + "% Off")])]) : _vm._e()]) : _c("div", [_c("span", {
     staticClass: "price"
-  }, [_vm._v(_vm._s(_vm.product.price))])])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
+  }, [_vm._v(_vm._s(_vm._f("commaFormat")(_vm.product.price)))])])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "pr_desc"
   }, [_c("p", [_vm._v(_vm._s(_vm.product.description))])])]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
     staticClass: "cart_extra"
@@ -5606,13 +5608,13 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", {
+  return !_vm.isLoading ? _c("div", {
     staticClass: "container"
   }, [_c("product-quick-view-item-component", {
     attrs: {
       product: _vm.product
     }
-  })], 1);
+  })], 1) : _vm._e();
 };
 
 var staticRenderFns = [];
@@ -5675,14 +5677,14 @@ vue__WEBPACK_IMPORTED_MODULE_5__["default"].component('b-tab', bootstrap_vue__WE
 vue__WEBPACK_IMPORTED_MODULE_5__["default"].component('b-modal', bootstrap_vue__WEBPACK_IMPORTED_MODULE_8__.BModal);
 vue__WEBPACK_IMPORTED_MODULE_5__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_9__["default"]);
 vue__WEBPACK_IMPORTED_MODULE_5__["default"].use(vue_toastr__WEBPACK_IMPORTED_MODULE_1__["default"], {
-  defaultTimeout: 1500,
+  defaultTimeout: 2000,
   defaultProgressBar: false,
   defaultPosition: "toast-top-right",
   defaultCloseOnHover: true,
+  clickClose: true,
   defaultStyle: {
     "top": "50px"
-  },
-  defaultClassNames: ["animated", "zoomInUp"]
+  }
 });
 vue__WEBPACK_IMPORTED_MODULE_5__["default"].prototype.moment = (moment__WEBPACK_IMPORTED_MODULE_3___default());
 vue__WEBPACK_IMPORTED_MODULE_5__["default"].directive('carousel', {
@@ -5721,6 +5723,13 @@ vue__WEBPACK_IMPORTED_MODULE_5__["default"].filter('dateTimeFormat', function (v
     return moment__WEBPACK_IMPORTED_MODULE_3___default()(String(value)).format('DD/MM/YYYY hh:mm');
   }
 });
+vue__WEBPACK_IMPORTED_MODULE_5__["default"].filter('commaFormat', function (value) {
+  if (value) {
+    value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    value += ' đ';
+    return value;
+  }
+});
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_9__["default"]({
   routes: _routes__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
@@ -5732,8 +5741,6 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_5__["default"]({
   },
   router: router
 });
-vue__WEBPACK_IMPORTED_MODULE_5__["default"].prototype.vue_toastr = 'My App';
-vue__WEBPACK_IMPORTED_MODULE_5__["default"].prototype.$test = "Test";
 
 /***/ }),
 
@@ -5780,6 +5787,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+
 
 var SUCCESS = 2;
 var ERROR = 4;
@@ -5797,11 +5806,10 @@ http.interceptors.response.use(function (response) {
   var data = response.data || {};
 
   if (data.status == SUCCESS) {
-    // if (error.config.alert) {
-    //
-    // }
+    if (response.config.alert && data.message != null && data.message != undefined) vue__WEBPACK_IMPORTED_MODULE_1__["default"].prototype.$toastr.s(data.message);
     return data.data;
   } else {
+    if (data.message != null && data.message != undefined) vue__WEBPACK_IMPORTED_MODULE_1__["default"].prototype.$toastr.e(data.message);
     return Promise.reject(data);
   }
 }, function (error) {
@@ -5865,6 +5873,12 @@ var routes = [{
   name: "cart",
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_components_carts_CartComponent_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/carts/CartComponent */ "./resources/js/components/carts/CartComponent.vue"));
+  }
+}, {
+  path: '/thanh-toan',
+  name: "order",
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_carts_OrderComponent_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/carts/OrderComponent */ "./resources/js/components/carts/OrderComponent.vue"));
   }
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (routes);
@@ -63049,7 +63063,7 @@ module.exports = JSON.parse('{"_args":[["axios@0.21.4","D:\\\\xampp\\\\htdocs\\\
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_products_ProductDetailComponent_vue":1,"resources_js_components_products_ProductListComponent_vue":1,"resources_js_components_blogs_BlogListComponent_vue":1,"resources_js_components_blogs_BlogDetailComponent_vue":1,"resources_js_components_products_WishListComponent_vue":1,"resources_js_components_carts_CartComponent_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_products_ProductDetailComponent_vue":1,"resources_js_components_products_ProductListComponent_vue":1,"resources_js_components_blogs_BlogListComponent_vue":1,"resources_js_components_blogs_BlogDetailComponent_vue":1,"resources_js_components_products_WishListComponent_vue":1,"resources_js_components_carts_CartComponent_vue":1,"resources_js_components_carts_OrderComponent_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

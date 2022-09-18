@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Rests;
 
 use App\Http\Controllers\Controller;
 use App\Http\Responses\AjaxResponse;
+use App\Models\Image;
 use App\Models\ProductCategory;
 use App\Models\ProductCollection;
 use App\Models\Product;
@@ -205,7 +206,14 @@ class ProductRestController extends Controller
         } catch (ModelNotFoundException $e) {
             return $ajax_response->setMessage("Đối tượng không tồn tại hoặc đã bị xóa")->toApiResponse();
         }
-        $product->images = $product->images()->get();
+        $images = [];
+        $image = new Image();
+        $image->id = 0;
+        $image->image = $product->image;
+        array_push($images, $image);
+        $plus_image = $product->images()->get()->toArray();
+        $images = array_merge($images, $plus_image);
+        $product->images = $images;
         $product->category = $product->category()->first();
         $related_products = $product->productsRelated()->orderBy("id", 'DESC')->limit(5)->get();
         $total_related = $related_products->count();

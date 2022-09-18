@@ -26,14 +26,14 @@
             </h6>
             <div class="product_price">
                 <div v-if="item.on_sale">
-                    <span class="price">{{ item.sale_price }}</span>
-                    <del>{{ item.price }}</del>
+                    <span class="price">{{ item.sale_price | commaFormat}}</span>
+                    <del>{{ item.price | commaFormat}}</del>
                     <div class="on_sale" v-if="item.sale_off != null">
                         <span>{{ item.sale_off }}% Off</span>
                     </div>
                 </div>
                 <div v-else>
-                    <span class="price">{{ item.price }}</span>
+                    <span class="price">{{ item.price | commaFormat}}</span>
                 </div>
             </div>
             <div class="rating_wrap">

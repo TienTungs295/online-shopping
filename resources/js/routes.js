@@ -35,6 +35,11 @@ const routes = [
         path: '/gio-hang',
         name: "cart",
         component: () => import("./components/carts/CartComponent"),
+    },
+    {
+        path: '/thanh-toan',
+        name: "order",
+        component: () => import("./components/carts/OrderComponent"),
     }
 ];
 

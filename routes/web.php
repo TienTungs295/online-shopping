@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductCategoryController;
@@ -54,6 +54,11 @@ Route::group(['prefix' => 'rest'], function () {
     Route::group(['prefix' => 'collection'], function () {
         Route::get('/find-all', ['uses' => 'Rests\CollectionRestController@findAll']);
     });
+
+    Route::group(['prefix' => 'order'], function () {
+        Route::post('/check-out', ['uses' => 'Rests\OrderRestController@checkOut']);
+    });
+
     Route::post('/tai-anh', ['as' => 'uploadImage', 'uses' => 'Rests\UploadRestController@storeImage']);
 });
 

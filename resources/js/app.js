@@ -39,12 +39,12 @@ Vue.component('b-modal', BModal)
 
 Vue.use(VueRouter);
 Vue.use(VueToastr, {
-    defaultTimeout: 1500,
+    defaultTimeout: 2000,
     defaultProgressBar: false,
     defaultPosition: "toast-top-right",
     defaultCloseOnHover: true,
+    clickClose: true,
     defaultStyle: {"top": "50px"},
-    defaultClassNames: ["animated", "zoomInUp"]
 });
 
 Vue.prototype.moment = moment
@@ -88,6 +88,14 @@ Vue.filter('dateTimeFormat', function (value) {
     }
 });
 
+Vue.filter('commaFormat', function (value) {
+    if (value) {
+        value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        value += ' đ';
+        return value;
+    }
+});
+
 const router = new VueRouter({
     routes
 });
@@ -98,8 +106,4 @@ const app = new Vue({
     render: h => h(App),
     router
 });
-
-Vue.prototype.vue_toastr = 'My App'
-Vue.prototype.$test = "Test"
-
 

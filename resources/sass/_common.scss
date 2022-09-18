@@ -61,9 +61,15 @@
 .break-word-i{
     word-break: break-word !important;
 }
-.cursor-default{
 
+.gray-color{
+    color: $gray-color;
 }
+
+.gray-color-i{
+    color: $gray-color !important;
+}
+
 
 @for $i from 1 through 10 {
     .mg-#{$i * 5} {

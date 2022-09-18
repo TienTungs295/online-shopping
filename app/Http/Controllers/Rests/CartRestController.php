@@ -16,10 +16,10 @@ class CartRestController extends Controller
     {
         $ajax_response = new AjaxResponse();
         $shipping_fee = 30000;
-        $sub_total = Cart::subTotal();
+        $sub_total = Cart::instance('cart')->subTotal(0, '', '');
         $sub_total_with_shipping_fee = (int)$sub_total + $shipping_fee;
         $data = array(
-            'cart' => Cart::content(),
+            'cart' => Cart::instance('cart')->content(),
             'subTotal' => $sub_total,
             'subTotalWithShippingFee' => $sub_total_with_shipping_fee,
             'shippingFee' => $shipping_fee,
@@ -30,7 +30,7 @@ class CartRestController extends Controller
     public function count(Request $request)
     {
         $ajax_response = new AjaxResponse();
-        return $ajax_response->setData(Cart::count())->toApiResponse();
+        return $ajax_response->setData(Cart::instance('cart')->count())->toApiResponse();
     }
 
     public function store(Request $request)
@@ -41,7 +41,7 @@ class CartRestController extends Controller
         } catch (ModelNotFoundException $e) {
             return $ajax_response->setMessage("Sản phẩm hiện không được bày bán!")->toApiResponse();
         }
-        $cart = Cart::add(['id' => $product->id, 'name' => $product->name, 'qty' => 1, 'price' => $product->real_price, 'options' => [
+        $cart = Cart::instance('cart')->add(['id' => $product->id, 'name' => $product->name, 'qty' => 1, 'price' => $product->real_price, 'options' => [
             'image' => $product->image,
             'slug' => $product->slug,
             'price' => $product->price,
@@ -56,9 +56,9 @@ class CartRestController extends Controller
         $ajax_response = new AjaxResponse();
         $cart = $request->post('cart');
         foreach ($cart as $key => $item) {
-            Cart::update($item['rowId'], $item['qty']);
+            Cart::instance('cart')->update($item['rowId'], $item['qty']);
         }
-        return $ajax_response->setData(Cart::content())->toApiResponse();
+        return $ajax_response->setData(Cart::instance('cart')->content())->toApiResponse();
     }
 
 
@@ -66,7 +66,7 @@ class CartRestController extends Controller
     {
         $ajax_response = new AjaxResponse();
         $rowId = $request->post('row_id');
-        Cart::remove($rowId);
+        Cart::instance('cart')->remove($rowId);
         return $ajax_response->setData($rowId)->toApiResponse();
     }
 }
