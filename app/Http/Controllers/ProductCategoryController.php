@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
 use Illuminate\Support\Str;
+use File;
 
 class ProductCategoryController extends Controller
 {
@@ -58,6 +59,14 @@ class ProductCategoryController extends Controller
         }
 
         $product_category = new ProductCategory;
+        //image
+        $image_url = $request->input('image');
+        if ($image_url != null && $image_url != "") {
+            $start_position = strripos($image_url, "/") + 1;
+            $image_name = substr($image_url, $start_position, strlen($image_url) - $start_position);
+            $product_category->image = $image_name;
+        }
+
         $product_category->name = $request->input('name');
         $product_category->parent_id = $request->input('parent_id');
         $product_category->description = $request->input('description');
@@ -137,11 +146,31 @@ class ProductCategoryController extends Controller
             return redirect()->back()->with('error', 'Danh mục cha không hợp lệ');
         }
         $product_category->name = $request->input('name');
+        //image
+        $image_url = $request->input('image');
+        $image_name = "";
+        $delete_url = null;
+        $del_image_name = null;
+        if ($image_url != null && $image_url != "") {
+            $start_position = strripos($image_url, "/") + 1;
+            $image_name = substr($image_url, $start_position, strlen($image_url) - $start_position);
+        }
+
+        if ($image_name != $product_category->image && $product_category->image != '')
+            $del_image_name = $product_category->image;
+
+        $product_category->image = $image_name;
         $product_category->parent_id = $parent_id;
         $product_category->description = $request->input('description');
         $featured = $request->has("is_featured") ? 1 : 0;
         $product_category->is_featured = $featured;
         $product_category->update();
+
+        if (!empty($del_image_name)) {
+            $delete_url = 'uploads\images\categories\\' . $del_image_name;
+            if (File::exists(public_path($delete_url)))
+                File::delete(public_path($delete_url));
+        }
 
         return redirect()->route("categoryView")->with('success', 'Thành công');
     }

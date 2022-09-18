@@ -375,6 +375,11 @@ class ProductController extends Controller
         } catch (ModelNotFoundException $e) {
             return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }
+        $del_images = [];
+        $images = $product->images()->get()->pluck("image")->toArray();
+        $image = $product->image;
+        $del_images = array_merge($del_images, $images);
+        array($del_images, $image);
 
         DB::beginTransaction();
         try {
@@ -384,6 +389,12 @@ class ProductController extends Controller
         } catch (\Exception $e) {
             DB::rollback();
             throw $e;
+        }
+
+        foreach ($del_images as $image) {
+            $delete_url = 'uploads\images\\' . $image;
+            if (File::exists(public_path($delete_url)))
+                File::delete(public_path($delete_url));
         }
 
         return redirect()->back()->with('success', 'Thành công');

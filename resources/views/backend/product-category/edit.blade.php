@@ -50,6 +50,14 @@
                                     </div>
                                 </div>
                                 <div class="row mb-3">
+                                    <div class="col-md-12">
+                                        <label class="form-label">Ảnh</label>
+                                        <input type="text" id="image"
+                                               value="{!! old('image', isset($product_category->image) ? url('uploads/images/categories/'.$product_category->image) : '')!!}"
+                                               name="image">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
                                     <label class="col-sm-2 col-form-label">Đặc trưng</label>
                                     <div class="col-sm-10">
                                         <div class="form-check form-switch">
@@ -81,4 +89,69 @@
             </div>
         </section>
     </div>
+@endsection
+@section('morescripts')
+    <script>
+        var APP_URL = {!! json_encode(url('/')) !!};
+
+        // IMAGE
+        var image_url = $("#image").val();
+        var config = {
+            ajaxConfig: {
+                url: APP_URL + "/rest/tai-anh",
+                method: "post",
+                paramsBuilder: function (uploaderFile) {
+                    let form = new FormData();
+                    form.append("file", uploaderFile.file);
+                    form.append("sub-folder", "categories");
+                    return form
+                },
+                ajaxRequester: function (config, uploaderFile, progressCallback, successCallback, errorCallback) {
+                    $.ajax({
+                        url: config.url,
+                        contentType: false,
+                        processData: false,
+                        method: config.method,
+                        data: config.paramsBuilder(uploaderFile),
+                        success: function (response) {
+                            successCallback(response)
+                        },
+                        error: function (response) {
+                            console.error("Error", response)
+                            errorCallback("Error")
+                        },
+                        xhr: function () {
+                            let xhr = new XMLHttpRequest();
+                            xhr.upload.addEventListener('progress', function (e) {
+                                let progressRate = (e.loaded / e.total) * 100;
+                                progressCallback(progressRate)
+                            })
+                            return xhr;
+                        }
+                    })
+                },
+                responseConverter: function (uploaderFile, response) {
+                    return {
+                        url: APP_URL + "/" + response.data.file_path,
+                        name: response.data.file_name,
+                    }
+                }
+            }
+        }
+        if (image_url != null && image_url != "" & image_url != undefined) {
+            let start_position = image_url.lastIndexOf("/") + 1;
+            let image_name = image_url.substring(start_position, image_url.length - 1);
+            config.defaultValue = [{
+                name: image_name,
+                url: image_url
+            }]
+        }
+        $("#image").uploader(config)
+            .on("upload-success", function (file, data) {
+
+            }).on("file-remove", function () {
+
+        });
+        // END IMAGE
+    </script>
 @endsection

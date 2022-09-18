@@ -13,6 +13,8 @@ class UploadRestController extends Controller
             'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $file_path = "uploads/images/";
+        $sub_folder = $request->input("sub-folder");
+        if (!empty($sub_folder)) $file_path .= $sub_folder . "/";
         $file = $request->file('file');
         $file_name = $file->getClientOriginalName();
         $file_name = time() . '_' . $file_name;

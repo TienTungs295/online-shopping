@@ -18,6 +18,7 @@ class ProductCategory extends Model
         'name',
         'parent_id',
         'description',
+        'image',
         'is_featured'];
 
     public function childs()
