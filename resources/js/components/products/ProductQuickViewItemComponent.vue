@@ -104,15 +104,15 @@ export default {
         return {
             swiperOptionTop: {
                 loop: true,
-                loopedSlides: this.product.images.length, // looped slides should be the same
+                loopedSlides: (this.product.images.length > 4 ? 4 : this.product.images.length), // looped slides should be the same
                 spaceBetween: 8,
                 effect: 'fade',
             },
             swiperOptionThumbs: {
                 loop: true,
-                loopedSlides: this.product.images.length, // looped slides should be the same
+                loopedSlides: (this.product.images.length > 4 ? 4 : this.product.images.length), // looped slides should be the same
                 spaceBetween: 8,
-                slidesPerView: this.product.images.length,
+                slidesPerView: (this.product.images.length > 4 ? 4 : this.product.images.length),
                 touchRatio: 0.2,
                 slideToClickedSlide: true
             },

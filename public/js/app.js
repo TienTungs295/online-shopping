@@ -2386,9 +2386,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       if (this.query.category_id != "") param.category_id = this.query.category_id;
       if (this.query.name.trim() != "") param.name = this.query.name;
       var emptyObject = jQuery.isEmptyObject(param);
-      if (emptyObject) this.$router.push({
-        name: 'productList'
-      });else this.$router.push({
+      if (!emptyObject) this.$router.push({
         name: 'productList',
         query: param
       });
@@ -2535,17 +2533,17 @@ __webpack_require__.r(__webpack_exports__);
     return {
       swiperOptionTop: {
         loop: true,
-        loopedSlides: this.product.images.length,
+        loopedSlides: this.product.images.length > 4 ? 4 : this.product.images.length,
         // looped slides should be the same
         spaceBetween: 8,
         effect: 'fade'
       },
       swiperOptionThumbs: {
         loop: true,
-        loopedSlides: this.product.images.length,
+        loopedSlides: this.product.images.length > 4 ? 4 : this.product.images.length,
         // looped slides should be the same
         spaceBetween: 8,
-        slidesPerView: this.product.images.length,
+        slidesPerView: this.product.images.length > 4 ? 4 : this.product.images.length,
         touchRatio: 0.2,
         slideToClickedSlide: true
       },
@@ -3960,7 +3958,7 @@ var render = function render() {
       domProps: {
         value: item.id
       }
-    }, [_vm._v("\n                                                    " + _vm._s(item.name) + "\n                                                ")]);
+    }, [_vm._v("\n                                                " + _vm._s(item.name) + "\n                                            ")]);
   })], 2)])]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
@@ -4059,7 +4057,7 @@ var render = function render() {
         name: "home"
       }
     }
-  }, [_vm._v("Trang chủ\n                                            ")])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("Trang chủ\n                                        ")])], 1), _vm._v(" "), _c("li", {
     staticClass: "dropdown"
   }, [_c("router-link", {
     staticClass: "nav-link nav-link",
@@ -4068,7 +4066,7 @@ var render = function render() {
         name: "productList"
       }
     }
-  }, [_vm._v("Sản\n                                                phẩm\n                                            ")])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("Sản\n                                            phẩm\n                                        ")])], 1), _vm._v(" "), _c("li", {
     staticClass: "dropdown"
   }, [_c("router-link", {
     staticClass: "nav-link nav-link",
@@ -4077,14 +4075,14 @@ var render = function render() {
         name: "blogList"
       }
     }
-  }, [_vm._v("Tin tức &\n                                                sự kiện\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("Tin tức &\n                                            sự kiện\n                                        ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "nav-link nav_item",
     attrs: {
       to: {
         name: "contact-us"
       }
     }
-  }, [_vm._v("Liên hệ\n                                            ")])], 1)])]), _vm._v(" "), _c("div", [_c("ul", {
+  }, [_vm._v("Liên hệ\n                                        ")])], 1)])]), _vm._v(" "), _c("div", [_c("ul", {
     staticClass: "navbar-nav attr-nav align-items-center"
   }, [_c("li", [_c("router-link", {
     staticClass: "nav-link",
@@ -4111,7 +4109,7 @@ var render = function render() {
     staticClass: "linearicons-bag2"
   }), _vm._v(" "), _c("span", {
     staticClass: "cart_count"
-  }, [_vm._v("\n                                                    " + _vm._s(_vm.cartCount) + "\n                                                ")])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                                                " + _vm._s(_vm.cartCount) + "\n                                            ")])]), _vm._v(" "), _c("div", {
     staticClass: "cart_box cart_right dropdown-menu dropdown-menu-right"
   }, [_vm.cartCount > 0 ? _c("div", [_c("ul", {
     staticClass: "cart_list"
@@ -4141,14 +4139,14 @@ var render = function render() {
         src: "/uploads/images/" + item.options.image,
         alt: item.options.image
       }
-    }), _vm._v("\n                                                                " + _vm._s(item.name) + "\n                                                            ")]), _vm._v(" "), _c("span", {
+    }), _vm._v("\n                                                            " + _vm._s(item.name) + "\n                                                        ")]), _vm._v(" "), _c("span", {
       staticClass: "cart_quantity"
-    }, [_vm._v(" " + _vm._s(item.qty) + " x " + _vm._s(_vm._f("commaFormat")(item.price)) + "\n                                                                ")])], 1);
+    }, [_vm._v(" " + _vm._s(item.qty) + " x " + _vm._s(_vm._f("commaFormat")(item.price)) + "\n                                                            ")])], 1);
   }), 0), _vm._v(" "), _c("div", {
     staticClass: "cart_footer"
   }, [_c("p", {
     staticClass: "cart_total"
-  }, [_c("strong", [_vm._v("Thành\n                                                            tiền:")]), _vm._v(_vm._s(_vm._f("commaFormat")(_vm.subTotal)) + "\n                                                            ")]), _vm._v(" "), _c("p", {
+  }, [_c("strong", [_vm._v("Thành\n                                                        tiền:")]), _vm._v(_vm._s(_vm._f("commaFormat")(_vm.subTotal)) + "\n                                                        ")]), _vm._v(" "), _c("p", {
     staticClass: "cart_buttons"
   }, [_c("router-link", {
     staticClass: "btn btn-fill-line rounded-0 view-cart",
@@ -4157,16 +4155,16 @@ var render = function render() {
         name: "cart"
       }
     }
-  }, [_vm._v("\n                                                                Giỏ hàng\n                                                            ")]), _vm._v(" "), _c("router-link", {
+  }, [_vm._v("\n                                                            Giỏ hàng\n                                                        ")]), _vm._v(" "), _c("router-link", {
     staticClass: "btn btn-fill-out rounded-0 checkout",
     attrs: {
       to: {
         name: "order"
       }
     }
-  }, [_vm._v("\n                                                                Thanh toán\n                                                            ")])], 1)])]) : _c("div", {
+  }, [_vm._v("\n                                                            Thanh toán\n                                                        ")])], 1)])]) : _c("div", {
     staticClass: "text-center pd-15"
-  }, [_vm._v("\n                                                    Không có sản phẩm nào trong giỏ hàng\n                                                ")])])], 1)])])])])])])])])]);
+  }, [_vm._v("\n                                                Không có sản phẩm nào trong giỏ hàng\n                                            ")])])], 1)])])])])])])])])]);
 };
 
 var staticRenderFns = [function () {

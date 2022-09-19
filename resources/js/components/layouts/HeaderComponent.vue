@@ -24,7 +24,7 @@
                                     </ul>
                                 </div>
                                 <div class="light-color mgl-5">
-                                    <router-link  :to="{ name: 'contact-us'}" class="light-color-i">
+                                    <router-link :to="{ name: 'contact-us'}" class="light-color-i">
                                         <i class="ion-map mgr-5"></i>
                                         <span>Liên hệ</span>
                                     </router-link>
@@ -137,7 +137,7 @@
                                 </div>
                                 <div>
                                     <ul class="navbar-nav attr-nav align-items-center">
-<!--                                        <li><a href="#" class="nav-link"><i class="linearicons-user"></i></a></li>-->
+                                        <!--                                        <li><a href="#" class="nav-link"><i class="linearicons-user"></i></a></li>-->
                                         <li>
                                             <router-link class="nav-link"
                                                          :to="{ name: 'withList'}">
@@ -281,9 +281,7 @@ export default {
             if (this.query.category_id != "") param.category_id = this.query.category_id;
             if (this.query.name.trim() != "") param.name = this.query.name;
             let emptyObject = jQuery.isEmptyObject(param);
-            if (emptyObject)
-                this.$router.push({name: 'productList'});
-            else
+            if (!emptyObject)
                 this.$router.push({name: 'productList', query: param});
             this.query = {
                 category_id: "",
