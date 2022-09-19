@@ -236,7 +236,7 @@ class ProductController extends Controller
         $product->sku = $request->input('sku');
         $product->is_featured = $request->has('is_featured') ? 1 : 0;
         $product->price = empty($request->input('price')) ? 0 : $request->input('price');
-        $product->sale_price = empty($request->input('sale_price')) ? 0 : $request->input('sale_price');
+        $product->sale_price = empty($request->input('sale_price')) ? null : $request->input('sale_price');
 
         if ($request->has('apply_time')) {
             $start_date = $request->input('start_date');

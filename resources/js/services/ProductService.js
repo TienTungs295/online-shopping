@@ -32,6 +32,11 @@ class ProductService {
         return http.get(url, {alert: alert});
     }
 
+    findOnSale(alert) {
+        let url = PREFIX_URL + "find-on-sale";
+        return http.get(url, {alert: alert});
+    }
+
     detail(id, alert) {
         let url = PREFIX_URL + "detail?id=" + id;
         return http.get(url, {alert: alert});

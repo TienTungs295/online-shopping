@@ -41,7 +41,9 @@ class CartRestController extends Controller
         } catch (ModelNotFoundException $e) {
             return $ajax_response->setMessage("Sản phẩm hiện không được bày bán!")->toApiResponse();
         }
-        $cart = Cart::instance('cart')->add(['id' => $product->id, 'name' => $product->name, 'qty' => 1, 'price' => $product->real_price, 'options' => [
+        $qty = 1;
+        if (!is_null($request->input('qty'))) $qty = $request->input('qty');
+        $cart = Cart::instance('cart')->add(['id' => $product->id, 'name' => $product->name, 'qty' => $qty, 'price' => $product->real_price, 'options' => [
             'image' => $product->image,
             'slug' => $product->slug,
             'price' => $product->price,

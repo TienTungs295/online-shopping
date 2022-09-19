@@ -24,7 +24,7 @@ import VueRouter from 'vue-router';
 import VueToastr from "vue-toastr";
 import routes from './routes';
 import moment from 'moment'
-import {BTabs, BTab, BModal} from 'bootstrap-vue'
+import {BTabs, BTab, BModal, BCarousel,BCarouselSlide} from 'bootstrap-vue'
 import store from './store';
 
 Vue.component('header-component', require('./components/layouts/HeaderComponent').default);
@@ -37,6 +37,8 @@ Vue.component('loading-component', require('./components/common/LoadingComponent
 Vue.component('b-tabs', BTabs);
 Vue.component('b-tab', BTab);
 Vue.component('b-modal', BModal)
+Vue.component('b-carousel', BCarousel)
+Vue.component('b-carousel-slide', BCarouselSlide)
 
 Vue.use(VueRouter);
 Vue.use(VueToastr, {

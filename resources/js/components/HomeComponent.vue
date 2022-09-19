@@ -2,55 +2,18 @@
     <div>
         <!-- START SECTION BANNER -->
         <div class="banner_section slide_wrap shop_banner_slider staggered-animation-wrap">
-            <div id="carouselExampleControls" class="carousel slide carousel-fade light_arrow" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item background_bg active"
-                         data-img-src="assets/images/banner/construction.jpg">
-                        <!--                        <div class="banner_slide_content banner_content_inner">-->
-                        <!--                            <div class="container">-->
-                        <!--                                <div class="row">-->
-                        <!--                                    <div class="col-lg-7 col-10">-->
-                        <!--                                        <div class="banner_content overflow-hidden">-->
-                        <!--                                            <h2 class="staggered-animation" data-animation="slideInLeft"-->
-                        <!--                                                data-animation-delay="0.5s">LED 75 INCH F58</h2>-->
-                        <!--                                            <h5 class="mb-3 mb-sm-4 staggered-animation font-weight-light"-->
-                        <!--                                                data-animation="slideInLeft" data-animation-delay="1s">Get up to <span-->
-                        <!--                                                class="text_default">50%</span> off Today Only!</h5>-->
-                        <!--                                            <a class="btn btn-fill-out rounded-0 staggered-animation text-uppercase"-->
-                        <!--                                               href="shop-left-sidebar.html" data-animation="slideInLeft"-->
-                        <!--                                               data-animation-delay="1.5s">Shop Now</a>-->
-                        <!--                                        </div>-->
-                        <!--                                    </div>-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                    </div>
-                    <div class="carousel-item background_bg" data-img-src="assets/images/banner/solar_power.jpg">
-                        <div class="banner_slide_content banner_content_inner">
-                            <!--                            <div class="container">-->
-                            <!--                                <div class="row">-->
-                            <!--                                    <div class="col-lg-8 col-10">-->
-                            <!--                                        <div class="banner_content overflow-hidden">-->
-                            <!--                                            <h2 class="staggered-animation" data-animation="slideInLeft"-->
-                            <!--                                                data-animation-delay="0.5s">Smart Phones</h2>-->
-                            <!--                                            <h5 class="mb-3 mb-sm-4 staggered-animation font-weight-light"-->
-                            <!--                                                data-animation="slideInLeft" data-animation-delay="1s"><span-->
-                            <!--                                                class="text_default">50%</span> off in all products</h5>-->
-                            <!--                                            <a class="btn btn-fill-out rounded-0 staggered-animation text-uppercase"-->
-                            <!--                                               href="shop-left-sidebar.html" data-animation="slideInLeft"-->
-                            <!--                                               data-animation-delay="1.5s">Shop Now</a>-->
-                            <!--                                        </div>-->
-                            <!--                                    </div>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"><i
-                    class="ion-chevron-left"></i></a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"><i
-                    class="ion-chevron-right"></i></a>
-            </div>
+            <b-carousel
+                id="carousel-fade"
+                :interval="2000"
+                controls
+                fade>
+                <b-carousel-slide
+                    img-src="assets/images/banner/construction.jpg">
+                </b-carousel-slide>
+                <b-carousel-slide
+                    img-src="assets/images/banner/solar_power.jpg">
+                </b-carousel-slide>
+            </b-carousel>
         </div>
         <!-- END SECTION BANNER -->
 
@@ -58,7 +21,7 @@
         <div class="main_content">
 
             <!-- START SECTION CATEGORIES -->
-            <div class="section pt-0 small_pb ">
+            <div class="section pt-0 small_pb">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -388,12 +351,12 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <div v-if="!isLoadingFeatured" v-carousel
+                                    <div v-if="!isLoadingOnSale" v-carousel
                                          class="product_slider carousel_slider product_list owl-carousel owl-theme nav_style5"
                                          data-nav="true"
                                          data-dots="false" data-loop="false" data-margin="20"
                                          data-responsive='{"0":{"items": "1"}, "380":{"items": "1"}, "640":{"items": "2"}, "991":{"items": "1"}}'>
-                                        <div class="item" v-for="entry in featuredProductMap">
+                                        <div class="item" v-for="entry in onSaleProductMap">
                                             <div v-for="item in entry">
                                                 <div class="product_wrap">
                                                     <div class="product_img style-2">
@@ -434,7 +397,7 @@
                                         </div>
                                     </div>
                                     <div v-else>
-                                        <loading-component v-bind:loading="isLoadingFeatured"></loading-component>
+                                        <loading-component v-bind:loading="isLoadingOnSale"></loading-component>
                                     </div>
                                 </div>
                             </div>
@@ -494,6 +457,7 @@
                         <div class="col-lg-9">
                             <div
                                 class="testimonial_wrap testimonial_style1 carousel_slider owl-carousel owl-theme nav_style2"
+                                v-carousel
                                 data-nav="true" data-dots="false" data-center="true" data-loop="true"
                                 data-autoplay="true" data-items='1'>
                                 <div class="testimonial_box">
@@ -637,6 +601,8 @@ export default {
             collections: [],
             productCollections: [],
             trendingProducts: [],
+            onSaleProducts: [],
+            onSaleProductMap: {},
             featuredProducts: [],
             featuredProductMap: {},
             blogs: [],
@@ -644,6 +610,7 @@ export default {
             isLoading: true,
             isLoadingTrending: true,
             isLoadingFeatured: true,
+            isLoadingOnSale: true,
             isLoadingBlog: true,
             isLoadingTopCategories: true
         };
@@ -691,6 +658,26 @@ export default {
             this.isLoadingTrending = false;
         });
 
+        ProductService.findOnSale().then(response => {
+            let data = response.data || [];
+            this.onSaleProducts = data;
+            let groupProducts = [];
+            let key = 0;
+            for (let i = 0; i < this.onSaleProducts.length; i++) {
+                let number = i + 1;
+                let item = this.onSaleProducts[i];
+                groupProducts.push(item);
+                if ((number != 1 && number % 3 == 0) || (number == this.onSaleProducts.length)) {
+                    this.onSaleProductMap[key] = groupProducts;
+                    key++;
+                    groupProducts = [];
+                }
+            }
+            this.isLoadingOnSale = false;
+        }).catch(e => {
+            this.isLoadingOnSale = false;
+        });
+
         ProductService.findFeatured().then(response => {
             let data = response.data || [];
             this.featuredProducts = data;
@@ -718,10 +705,6 @@ export default {
             this.isLoadingBlog = false;
         }).catch(e => {
             this.isLoadingBlog = false;
-        });
-        CartService.findAll(true).then(response => {
-            // serviceBus.$emit('refreshWithListNum');
-        }).catch(e => {
         });
     }
 }

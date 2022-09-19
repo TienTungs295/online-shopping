@@ -34,7 +34,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <div class="table-responsive wishlist_table">
+                            <div class="table-responsive wishlist_table" v-if="withListCount > 0">
                                 <table class="table">
                                     <thead>
                                     <tr>
@@ -74,6 +74,7 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <div class="text-center" v-else>Không có sản phẩm nào trong danh sách</div>
                         </div>
                     </div>
                 </div>
@@ -87,8 +88,8 @@
 
 <script>
 import WithListService from "../../services/WithListService";
-import {serviceBus} from './../../serviceBus'
 import CartService from "../../services/CartService";
+import {mapGetters} from "vuex";
 
 export default {
     name: "Wishlist",
@@ -97,6 +98,11 @@ export default {
             withList: {},
             isLoading: true,
         };
+    },
+    computed: {
+        ...mapGetters([
+            'withListCount'
+        ])
     },
     methods: {
         remove: function (id) {

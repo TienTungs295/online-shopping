@@ -17763,6 +17763,9 @@ input.text {
 .banner_section.slide_wrap .banner_content_wrap .carousel-item {
   height: 650px;
 }
+.banner_section.slide_wrap img {
+  height: 100%;
+}
 .banner_section .banner_slide_content {
   left: 0;
   position: absolute;

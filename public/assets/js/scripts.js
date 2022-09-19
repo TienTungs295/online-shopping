@@ -412,7 +412,7 @@ PAGE JS
 	10. SLIDER JS
 	*===================================*/
 	function carousel_slider() {
-		$('.carousel_slider').each( function() {
+		$('.carousel_slider-js').each( function() {
 			var $carousel = $(this);
 			$carousel.owlCarousel({
 				dots : $carousel.data("dots"),

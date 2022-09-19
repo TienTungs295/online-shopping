@@ -21,14 +21,14 @@
                     <h4 class="product_title"><a href="#">{{ product.name }}</a></h4>
                     <div class="product_price">
                         <div v-if="product.on_sale">
-                            <span class="price">{{ product.sale_price | commaFormat}}</span>
-                            <del>{{ product.price | commaFormat}}</del>
+                            <span class="price">{{ product.sale_price | commaFormat }}</span>
+                            <del>{{ product.price | commaFormat }}</del>
                             <div class="on_sale" v-if="product.sale_off != null">
                                 <span>{{ product.sale_off }}% Off</span>
                             </div>
                         </div>
                         <div v-else>
-                            <span class="price">{{ product.price | commaFormat}}</span>
+                            <span class="price">{{ product.price | commaFormat }}</span>
                         </div>
                     </div>
                     <div class="rating_wrap">
@@ -46,21 +46,24 @@
                     <div>
                         <div class="cart-product-quantity">
                             <div class="quantity">
-                                <input type="button" value="-" class="minus">
-                                <input type="text" name="quantity" value="1" title="Qty" class="qty"
+                                <input type="button" value="-" class="minus" @click="minus(cart)">
+                                <input type="text" name="quantity" v-model="cart.qty" title="Qty" class="qty"
                                        size="4">
-                                <input type="button" value="+" class="plus">
+                                <input type="button" value="+" class="plus" @click="plus(cart)">
                             </div>
                         </div>
                         <br>
                         <div class="cart_btn mgb-10">
-                            <button class="btn btn-fill-out btn-addtocart rounded-0" type="button"><i
-                                class="icon-basket-loaded"></i> Thêm vào giỏ
+                            <button class="btn btn-fill-out btn-addtocart rounded-0" type="button"
+                                    @click="addToCart(product.id,cart.qty)">
+                                <i class="icon-basket-loaded"></i> Thêm vào giỏ
                             </button>
-                            <button class="btn btn-fill-line view-cart rounded-0" type="button"><i
+                            <button class="btn btn-fill-line view-cart rounded-0" type="button"
+                                    @click="buyNow(product.id,cart.qty)"><i
                                 class="icon-basket-loaded"></i> Mua ngay
                             </button>
-                            <a class="add_wishlist" @click="addToWithList(product.id)"><i class="icon-heart"></i></a>
+                            <a class="add_wishlist" @click="addToWithList(product.id)"><i
+                                class="icon-heart"></i></a>
                         </div>
                     </div>
                 </div>
@@ -88,6 +91,7 @@
 import WithListService from "../../services/WithListService";
 import {Swiper, SwiperSlide} from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
+import CartService from "../../services/CartService";
 
 export default {
     name: "ProductQuickViewItem",
@@ -111,6 +115,9 @@ export default {
                 slidesPerView: this.product.images.length,
                 touchRatio: 0.2,
                 slideToClickedSlide: true
+            },
+            cart: {
+                qty: 1
             }
         }
     },
@@ -135,6 +142,52 @@ export default {
                 this.$store.commit("setWithListCount", data)
             }).catch(e => {
             });
+        },
+        countCart() {
+            CartService.count().then(response => {
+                let data = response || 0;
+                this.$store.commit("setCartCount", data)
+            }).catch(e => {
+            });
+        },
+        findAllCart() {
+            CartService.findAll().then(response => {
+                let data = response || {};
+                let cart = data.cart;
+                let subTotal = data.subTotal;
+                let subTotalWithShippingFee = data.subTotalWithShippingFee;
+                this.shippingFee = data.shippingFee;
+                this.$store.commit("setCart", cart);
+                this.$store.commit("setSubTotal", subTotal);
+                this.$store.commit("setSubTotalWithShippingFee", subTotalWithShippingFee);
+                this.isLoading = false;
+            }).catch(e => {
+                this.isLoading = false;
+            });
+        },
+        addToCart(product_id, qty) {
+            CartService.add({product_id: product_id, qty: qty}, true).then(response => {
+                this.countCart();
+                this.findAllCart();
+            }).catch(e => {
+            });
+        },
+
+        buyNow(product_id, qty) {
+            CartService.add({product_id: product_id, qty: qty}).then(response => {
+                this.countCart();
+                this.findAllCart();
+                this.$router.push({name: 'order'});
+            }).catch(e => {
+            });
+        },
+        plus(item) {
+            item.qty++;
+        },
+
+        minus(item) {
+            if (item.qty == 0) return;
+            item.qty--
         },
     },
     mounted() {

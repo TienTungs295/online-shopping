@@ -60,8 +60,9 @@
                                             </router-link>
                                         </td>
                                         <td class="product-price" data-title="Giá">
-                                            <span class="price">{{ item.price | commaFormat}}</span>
-                                            <del v-if="item.options.on_sale">{{ item.options.price | commaFormat}}</del>
+                                            <span class="price">{{ item.price | commaFormat }}</span>
+                                            <del v-if="item.options.on_sale">{{ item.options.price | commaFormat }}
+                                            </del>
                                         </td>
                                         <td class="product-quantity" data-title="Số lượng">
                                             <div class="quantity">
@@ -72,7 +73,9 @@
                                                 <input type="button" value="+" class="plus" @click="plus(item)">
                                             </div>
                                         </td>
-                                        <td class="product-subtotal" data-title="Thành tiền">{{ parseInt(item.subtotal) | commaFormat}}</td>
+                                        <td class="product-subtotal" data-title="Thành tiền">
+                                            {{ parseInt(item.subtotal) | commaFormat }}
+                                        </td>
                                         <td class="product-remove" data-title="Thao tác"><a @click="remove(key)"><i
                                             class="ti-close"></i></a>
                                         </td>
@@ -84,15 +87,15 @@
                                             <div class="row no-gutters align-items-center">
 
                                                 <div class="col-lg-4 col-md-6 mb-3 mb-md-0">
-<!--                                                    <div class="coupon field_form input-group">-->
-<!--                                                        <input type="text" value="" class="form-control form-control-sm"-->
-<!--                                                               placeholder="Enter Coupon Code..">-->
-<!--                                                        <div class="input-group-append">-->
-<!--                                                            <button class="btn btn-fill-out btn-sm" type="submit">Apply-->
-<!--                                                                Coupon-->
-<!--                                                            </button>-->
-<!--                                                        </div>-->
-<!--                                                    </div>-->
+                                                    <!--                                                    <div class="coupon field_form input-group">-->
+                                                    <!--                                                        <input type="text" value="" class="form-control form-control-sm"-->
+                                                    <!--                                                               placeholder="Enter Coupon Code..">-->
+                                                    <!--                                                        <div class="input-group-append">-->
+                                                    <!--                                                            <button class="btn btn-fill-out btn-sm" type="submit">Apply-->
+                                                    <!--                                                                Coupon-->
+                                                    <!--                                                            </button>-->
+                                                    <!--                                                        </div>-->
+                                                    <!--                                                    </div>-->
                                                 </div>
                                                 <div class="col-lg-8 col-md-6 text-left text-md-right">
                                                     <button class="btn btn-line-fill btn-sm" type="button"
@@ -108,7 +111,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" v-if="withListCount > 0">
                         <div class="col-12">
                             <div class="medium_divider"></div>
                             <div class="divider center_icon"><i class="ti-shopping-cart-full"></i></div>
@@ -126,24 +129,27 @@
                                         <tbody>
                                         <tr>
                                             <td class="cart_total_label">Tạm tính</td>
-                                            <td class="cart_total_amount">{{subTotal | commaFormat}}</td>
+                                            <td class="cart_total_amount">{{ subTotal | commaFormat }}</td>
                                         </tr>
                                         <tr>
                                             <td class="cart_total_label">Vận chuyển</td>
-                                            <td class="cart_total_amount">{{ shippingFee | commaFormat}}</td>
+                                            <td class="cart_total_amount">{{ shippingFee | commaFormat }}</td>
                                         </tr>
                                         <tr>
                                             <td class="cart_total_label">Thành tiền</td>
                                             <td class="cart_total_amount">
                                                 <strong>
-                                                    {{ subTotalWithShippingFee | commaFormat}}
+                                                    {{ subTotalWithShippingFee | commaFormat }}
                                                 </strong>
                                             </td>
                                         </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                                <a href="#" class="btn btn-fill-out rounded-0">Tiến hành thanh toán</a>
+                                <router-link :to="{name:'order'}"
+                                             class="btn btn-fill-out rounded-0">
+                                    Tiến hành thanh toán
+                                </router-link>
                             </div>
                         </div>
                     </div>
