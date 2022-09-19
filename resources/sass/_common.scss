@@ -55,23 +55,38 @@
 .text-right-i {
     text-align: right !important;
 }
-.break-word{
+
+.break-word {
     word-break: break-word;
 }
-.break-word-i{
+
+.break-word-i {
     word-break: break-word !important;
 }
 
-.gray-color{
+.gray-color {
     color: $gray-color;
 }
 
-.gray-color-i{
+.gray-color-i {
     color: $gray-color !important;
 }
 
+.light-color {
+    color: #fff;
+}
 
-@for $i from 1 through 10 {
+.light-color-i {
+    color: #fff !important;
+}
+
+.center-bg-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@for $i from 0 through 10 {
     .mg-#{$i * 5} {
         margin: #{$i * 5}px;
     }

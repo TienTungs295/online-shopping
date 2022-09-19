@@ -22,4 +22,13 @@ class CategoryRestController extends Controller
         $categories = ProductCategory::where('is_featured', true)->limit(5)->get();
         return $ajax_response->setData($categories)->toApiResponse();
     }
+
+    public function findTop(Request $request)
+    {
+        $ajax_response = new AjaxResponse();
+        $categories = ProductCategory::where('is_featured', true)
+            ->orderBy('updated_at', 'DESC')
+            ->limit(10)->get();
+        return $ajax_response->setData($categories)->toApiResponse();
+    }
 }

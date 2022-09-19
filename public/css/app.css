@@ -13894,6 +13894,100 @@ input[type=color].form-control:disabled {
   color: #444 !important;
 }
 
+.light-color {
+  color: #fff;
+}
+
+.light-color-i {
+  color: #fff !important;
+}
+
+.center-bg-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mg-0 {
+  margin: 0px;
+}
+
+.mgl-0 {
+  margin-left: 0px;
+}
+
+.mgr-0 {
+  margin-right: 0px;
+}
+
+.mgt-0 {
+  margin-top: 0px;
+}
+
+.mgb-0 {
+  margin-bottom: 0px;
+}
+
+.pd-0 {
+  padding: 0px;
+}
+
+.pdl-0 {
+  padding-left: 0px;
+}
+
+.pdr-0 {
+  padding-right: 0px;
+}
+
+.pdt-0 {
+  padding-top: 0px;
+}
+
+.pdb-0 {
+  padding-bottom: 0px;
+}
+
+.mg-0-i {
+  margin: 0px !important;
+}
+
+.mgl-0-i {
+  margin-left: 0px !important;
+}
+
+.mgr-0-i {
+  margin-right: 0px !important;
+}
+
+.mgt-0-i {
+  margin-top: 0px !important;
+}
+
+.mgb-0-i {
+  margin-bottom: 0px !important;
+}
+
+.pd-0-i {
+  padding: 0px !important;
+}
+
+.pdl-0-i {
+  padding-left: 0px !important;
+}
+
+.pdr-0-i {
+  padding-right: 0px !important;
+}
+
+.pdt-0-i {
+  padding-top: 0px !important;
+}
+
+.pdb-0-i {
+  padding-bottom: 0px !important;
+}
+
 .mg-5 {
   margin: 5px;
 }
@@ -14753,7 +14847,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   color: #687188;
-  line-height: 16px;
+  line-height: 22px;
   margin-bottom: 16px;
 }
 
@@ -15979,7 +16073,7 @@ button:focus {
   text-transform: capitalize;
   font-size: 14px;
 }
-.navbar .navbar-nav > li > a.active {
+.navbar .navbar-nav > li > a.active, .navbar .navbar-nav > li > a.router-link-exact-active.router-link-active {
   color: #83b735;
 }
 .navbar .navbar-nav > li:hover > a {
@@ -17582,6 +17676,7 @@ input.text {
 .download_wrap {
   display: flex;
   align-items: center;
+  border-right: 1px solid #fff;
 }
 
 /*===================================*
@@ -18128,8 +18223,6 @@ input.text {
 }
 .categories_box a {
   display: block;
-  padding: 35px 20px;
-  background-color: #f7f7f7;
 }
 .categories_box i {
   font-size: 40px;
@@ -18139,6 +18232,14 @@ input.text {
   text-transform: capitalize;
   margin-top: 5px;
   display: block;
+}
+.categories_box .category-image {
+  height: 160px;
+  padding: 4px;
+  border: 1px solid #ddd;
+}
+.categories_box .category-image img {
+  height: 100%;
 }
 
 .cat_overlap {
@@ -18831,7 +18932,7 @@ h6.blog_title {
 .newsletter_form2 button {
   position: absolute;
   right: 5px;
-  top: 4px;
+  top: 7px;
 }
 
 .newsletter_box {
@@ -20314,6 +20415,7 @@ footer .widget_title {
 }
 .product_img.style-1 img {
   height: 100%;
+  width: 100%;
 }
 
 .product:hover .product_img:before, .product_box:hover .product_img:before {
@@ -20793,6 +20895,8 @@ footer .widget_title {
 
 .shop_container {
   position: relative;
+  width: 100%;
+  min-height: 417px;
 }
 
 .loading_pr {
@@ -22653,6 +22757,10 @@ a {
 
 .order-customer-info .order-customer-info-meta {
   color: #444;
+}
+
+.what-client-say {
+  background-image: url(/images/hand-shake.jpg?d48c3111393c89142fec686206aaf34b);
 }
 
 /* the slides */

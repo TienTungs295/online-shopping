@@ -1,67 +1,48 @@
 <template>
     <div>
         <!-- START SECTION BANNER -->
-        <div class="banner_section slide_custom shop_banner_slider staggered-animation-wrap">
+        <div class="banner_section slide_wrap shop_banner_slider staggered-animation-wrap">
             <div id="carouselExampleControls" class="carousel slide carousel-fade light_arrow" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item background_bg active" data-img-src="assets/images/banner16.jpg">
-                        <div class="banner_slide_content banner_content_inner">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-7 col-10">
-                                        <div class="banner_content overflow-hidden">
-                                            <h2 class="staggered-animation" data-animation="slideInLeft"
-                                                data-animation-delay="0.5s">LED 75 INCH F58</h2>
-                                            <h5 class="mb-3 mb-sm-4 staggered-animation font-weight-light"
-                                                data-animation="slideInLeft" data-animation-delay="1s">Get up to <span
-                                                class="text_default">50%</span> off Today Only!</h5>
-                                            <a class="btn btn-fill-out rounded-0 staggered-animation text-uppercase"
-                                               href="shop-left-sidebar.html" data-animation="slideInLeft"
-                                               data-animation-delay="1.5s">Shop Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="carousel-item background_bg active"
+                         data-img-src="assets/images/banner/construction.jpg">
+                        <!--                        <div class="banner_slide_content banner_content_inner">-->
+                        <!--                            <div class="container">-->
+                        <!--                                <div class="row">-->
+                        <!--                                    <div class="col-lg-7 col-10">-->
+                        <!--                                        <div class="banner_content overflow-hidden">-->
+                        <!--                                            <h2 class="staggered-animation" data-animation="slideInLeft"-->
+                        <!--                                                data-animation-delay="0.5s">LED 75 INCH F58</h2>-->
+                        <!--                                            <h5 class="mb-3 mb-sm-4 staggered-animation font-weight-light"-->
+                        <!--                                                data-animation="slideInLeft" data-animation-delay="1s">Get up to <span-->
+                        <!--                                                class="text_default">50%</span> off Today Only!</h5>-->
+                        <!--                                            <a class="btn btn-fill-out rounded-0 staggered-animation text-uppercase"-->
+                        <!--                                               href="shop-left-sidebar.html" data-animation="slideInLeft"-->
+                        <!--                                               data-animation-delay="1.5s">Shop Now</a>-->
+                        <!--                                        </div>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
                     </div>
-                    <div class="carousel-item background_bg" data-img-src="assets/images/banner17.jpg">
+                    <div class="carousel-item background_bg" data-img-src="assets/images/banner/solar_power.jpg">
                         <div class="banner_slide_content banner_content_inner">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-8 col-10">
-                                        <div class="banner_content overflow-hidden">
-                                            <h2 class="staggered-animation" data-animation="slideInLeft"
-                                                data-animation-delay="0.5s">Smart Phones</h2>
-                                            <h5 class="mb-3 mb-sm-4 staggered-animation font-weight-light"
-                                                data-animation="slideInLeft" data-animation-delay="1s"><span
-                                                class="text_default">50%</span> off in all products</h5>
-                                            <a class="btn btn-fill-out rounded-0 staggered-animation text-uppercase"
-                                               href="shop-left-sidebar.html" data-animation="slideInLeft"
-                                               data-animation-delay="1.5s">Shop Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item background_bg" data-img-src="assets/images/banner18.jpg">
-                        <div class="banner_slide_content banner_content_inner">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-8 col-10">
-                                        <div class="banner_content overflow-hidden">
-                                            <h2 class="staggered-animation" data-animation="slideInLeft"
-                                                data-animation-delay="0.5s">Beat Headphone</h2>
-                                            <h5 class="mb-3 mb-sm-4 staggered-animation font-weight-light"
-                                                data-animation="slideInLeft" data-animation-delay="1s">Taking your
-                                                Viewing Experience to Next Level</h5>
-                                            <a class="btn btn-fill-out rounded-0 staggered-animation text-uppercase"
-                                               href="shop-left-sidebar.html" data-animation="slideInLeft"
-                                               data-animation-delay="1.5s">Shop Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <!--                            <div class="container">-->
+                            <!--                                <div class="row">-->
+                            <!--                                    <div class="col-lg-8 col-10">-->
+                            <!--                                        <div class="banner_content overflow-hidden">-->
+                            <!--                                            <h2 class="staggered-animation" data-animation="slideInLeft"-->
+                            <!--                                                data-animation-delay="0.5s">Smart Phones</h2>-->
+                            <!--                                            <h5 class="mb-3 mb-sm-4 staggered-animation font-weight-light"-->
+                            <!--                                                data-animation="slideInLeft" data-animation-delay="1s"><span-->
+                            <!--                                                class="text_default">50%</span> off in all products</h5>-->
+                            <!--                                            <a class="btn btn-fill-out rounded-0 staggered-animation text-uppercase"-->
+                            <!--                                               href="shop-left-sidebar.html" data-animation="slideInLeft"-->
+                            <!--                                               data-animation-delay="1.5s">Shop Now</a>-->
+                            <!--                                        </div>-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -85,64 +66,36 @@
                                 <div class="row align-items-center">
                                     <div class="col-lg-3 col-md-4">
                                         <div class="text-center text-md-left">
-                                            <h4>Top Categories</h4>
-                                            <p class="mb-2">There are many variations of passages of Lorem</p>
-                                            <a href="#" class="btn btn-line-fill btn-sm">View All</a>
+                                            <h5>Top Danh mục</h5>
+                                            <p class="mb-2">Các danh mục với xu hướng lựa chọn hàng đầu.</p>
+                                            <router-link class="btn btn-line-fill btn-sm"
+                                                         :to="{ name: 'productList'}">
+                                                Xem tất cả
+                                            </router-link>
                                         </div>
                                     </div>
                                     <div class="col-lg-9 col-md-8">
-                                        <div
-                                            class="cat_slider mt-4 mt-md-0 carousel_slider owl-carousel owl-theme nav_style5"
-                                            data-loop="true" data-dots="false" data-nav="true" data-margin="30"
-                                            data-responsive='{"0":{"items": "1"}, "380":{"items": "2"}, "991":{"items": "3"}, "1199":{"items": "4"}}'>
-                                            <div class="item">
+                                        <div v-if="!isLoadingTopCategories"
+                                             class="cat_slider mt-4 mt-md-0 carousel_slider owl-carousel owl-theme nav_style5"
+                                             v-carousel
+                                             data-loop="true" data-dots="false" data-nav="true" data-margin="30"
+                                             data-responsive='{"0":{"items": "1"}, "380":{"items": "2"}, "991":{"items": "3"}, "1199":{"items": "4"}}'>
+                                            <div class="item" v-for="item in topCategories">
                                                 <div class="categories_box">
-                                                    <a href="#">
-                                                        <i class="flaticon-bed"></i>
-                                                        <span>Bedroom</span>
-                                                    </a>
+                                                    <router-link
+                                                        :to="{ name: 'productList', query: { category_id: item.id}}">
+                                                        <div class="category-image">
+                                                            <img :src="'/uploads/images/categories/'+item.image"
+                                                                 :alt="item.image">
+                                                        </div>
+                                                        <span>{{ item.name }}</span>
+                                                    </router-link>
                                                 </div>
                                             </div>
-                                            <div class="item">
-                                                <div class="categories_box">
-                                                    <a href="#">
-                                                        <i class="flaticon-table"></i>
-                                                        <span>Dining Table</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="categories_box">
-                                                    <a href="#">
-                                                        <i class="flaticon-sofa"></i>
-                                                        <span>Sofa</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="categories_box">
-                                                    <a href="#">
-                                                        <i class="flaticon-armchair"></i>
-                                                        <span>Armchair</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="categories_box">
-                                                    <a href="#">
-                                                        <i class="flaticon-chair"></i>
-                                                        <span>chair</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="categories_box">
-                                                    <a href="#">
-                                                        <i class="flaticon-desk-lamp"></i>
-                                                        <span>desk lamp</span>
-                                                    </a>
-                                                </div>
-                                            </div>
+                                        </div>
+                                        <div v-else>
+                                            <loading-component
+                                                v-bind:loading="isLoadingTopCategories"></loading-component>
                                         </div>
                                     </div>
                                 </div>
@@ -160,7 +113,7 @@
                         <div class="col-12">
                             <div class="heading_tab_header">
                                 <div class="heading_s2">
-                                    <h2>Bộ sưu tập</h2>
+                                    <h5>Bộ sưu tập</h5>
                                 </div>
                                 <div class="tab-style2">
                                     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -191,6 +144,9 @@
                                         <product-item-component v-bind:item="item"></product-item-component>
                                     </div>
                                 </div>
+                            </div>
+                            <div v-else>
+                                <loading-component v-bind:loading="isLoading"></loading-component>
                             </div>
                         </div>
                     </div>
@@ -234,7 +190,7 @@
                         <div class="col-12">
                             <div class="heading_tab_header">
                                 <div class="heading_s2">
-                                    <h2>Sản phẩm thịnh hành</h2>
+                                    <h5>Đang thịnh hành</h5>
                                 </div>
                             </div>
                         </div>
@@ -249,6 +205,9 @@
                                         <product-item-component v-bind:item="item"></product-item-component>
                                     </div>
                                 </div>
+                            </div>
+                            <div v-else>
+                                <loading-component v-bind:loading="isLoadingTrending"></loading-component>
                             </div>
                         </div>
                     </div>
@@ -296,7 +255,7 @@
                                 <div class="col-12">
                                     <div class="heading_tab_header">
                                         <div class="heading_s2">
-                                            <h2>Sản phẩm đặc trưng</h2>
+                                            <h5>Sản phẩm đặc trưng</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -312,13 +271,18 @@
                                             <div v-for="item in entry">
                                                 <div class="product_wrap">
                                                     <div class="product_img style-2">
-                                                        <a href="shop-product-detail.html">
+                                                        <router-link
+                                                            :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
                                                             <img :src="'/uploads/images/'+item.image" :alt="item.image">
-                                                        </a>
+                                                        </router-link>
                                                     </div>
                                                     <div class="product_info">
-                                                        <h6 class="product_title"><a
-                                                            href="shop-product-detail.html">{{ item.name }}</a></h6>
+                                                        <h6 class="product_title">
+                                                            <router-link
+                                                                :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
+                                                                {{ item.name }}
+                                                            </router-link>
+                                                        </h6>
                                                         <div class="product_price">
                                                             <div v-if="item.on_sale">
                                                                 <span class="price">{{ item.sale_price }}</span>
@@ -342,6 +306,9 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div v-else>
+                                        <loading-component v-bind:loading="isLoadingFeatured"></loading-component>
                                     </div>
                                 </div>
                             </div>
@@ -351,7 +318,7 @@
                                 <div class="col-12">
                                     <div class="heading_tab_header">
                                         <div class="heading_s2">
-                                            <h2>Sản phẩm xếp hạng cao nhất</h2>
+                                            <h5>Xếp hạng cao nhất</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -367,13 +334,18 @@
                                             <div v-for="item in entry">
                                                 <div class="product_wrap">
                                                     <div class="product_img style-2">
-                                                        <a href="shop-product-detail.html">
+                                                        <router-link
+                                                            :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
                                                             <img :src="'/uploads/images/'+item.image" :alt="item.image">
-                                                        </a>
+                                                        </router-link>
                                                     </div>
                                                     <div class="product_info">
-                                                        <h6 class="product_title"><a
-                                                            href="shop-product-detail.html">{{ item.name }}</a></h6>
+                                                        <h6 class="product_title">
+                                                            <router-link
+                                                                :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
+                                                                {{ item.name }}
+                                                            </router-link>
+                                                        </h6>
                                                         <div class="product_price">
                                                             <div v-if="item.on_sale">
                                                                 <span class="price">{{ item.sale_price }}</span>
@@ -397,6 +369,9 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div v-else>
+                                        <loading-component v-bind:loading="isLoadingFeatured"></loading-component>
                                     </div>
                                 </div>
                             </div>
@@ -406,7 +381,7 @@
                                 <div class="col-12">
                                     <div class="heading_tab_header">
                                         <div class="heading_s2">
-                                            <h2>Sản phẩm đang giảm giá</h2>
+                                            <h5>Đang giảm giá</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -422,13 +397,18 @@
                                             <div v-for="item in entry">
                                                 <div class="product_wrap">
                                                     <div class="product_img style-2">
-                                                        <a href="shop-product-detail.html">
+                                                        <router-link
+                                                            :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
                                                             <img :src="'/uploads/images/'+item.image" :alt="item.image">
-                                                        </a>
+                                                        </router-link>
                                                     </div>
                                                     <div class="product_info">
-                                                        <h6 class="product_title"><a
-                                                            href="shop-product-detail.html">{{ item.name }}</a></h6>
+                                                        <h6 class="product_title">
+                                                            <router-link
+                                                                :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
+                                                                {{ item.name }}
+                                                            </router-link>
+                                                        </h6>
                                                         <div class="product_price">
                                                             <div v-if="item.on_sale">
                                                                 <span class="price">{{ item.sale_price }}</span>
@@ -452,6 +432,9 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div v-else>
+                                        <loading-component v-bind:loading="isLoadingFeatured"></loading-component>
                                     </div>
                                 </div>
                             </div>
@@ -478,16 +461,19 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-6 col-md-8">
                             <div class="heading_s1 text-center">
-                                <h2>Tin tức & Sự kiện</h2>
+                                <h5>Tin tức & Sự kiện</h5>
                             </div>
-                            <p class="leads text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore.</p>
+                            <!--                            <p class="leads text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do-->
+                            <!--                                eiusmod tempor incididunt ut labore.</p>-->
                         </div>
                     </div>
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center" v-if="!isLoadingBlog">
                         <div class="col-lg-4 col-md-6" v-for="item in blogs">
                             <blog-item-component v-bind:item="item"></blog-item-component>
                         </div>
+                    </div>
+                    <div class="row justify-content-center" v-else>
+                        <loading-component v-bind:loading="isLoadingBlog"></loading-component>
                     </div>
                 </div>
             </div>
@@ -500,7 +486,7 @@
                     <div class="row justify-content-center">
                         <div class="col-md-6">
                             <div class="heading_s1 text-center">
-                                <h2>Ý kiến khách hàng!</h2>
+                                <h5>Ý kiến khách hàng!</h5>
                             </div>
                         </div>
                     </div>
@@ -512,69 +498,38 @@
                                 data-autoplay="true" data-items='1'>
                                 <div class="testimonial_box">
                                     <div class="testimonial_desc">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam amet
-                                            animi blanditiis consequatur debitis dicta distinctio, enim error eum iste
-                                            libero modi nam natus perferendis possimus quasi sint sit tempora
-                                            voluptatem.</p>
+                                        <p>"Giá cả rất hợp lý đầy đủ. Tôi nhập hàng thường xuyên qua đây và rất tin
+                                            tưởng
+                                            chất lượng sản phẩm."</p>
                                     </div>
                                     <div class="author_wrap">
-                                        <div class="author_img">
-                                            <img src="assets/images/user_img1.jpg" alt="user_img1"/>
-                                        </div>
                                         <div class="author_name">
-                                            <h6>Lissa Castro</h6>
-                                            <span>Designer</span>
+                                            <h6>Mr. Thắng</h6>
+                                            <span>Kinh doanh</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="testimonial_box">
                                     <div class="testimonial_desc">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam amet
-                                            animi blanditiis consequatur debitis dicta distinctio, enim error eum iste
-                                            libero modi nam natus perferendis possimus quasi sint sit tempora
-                                            voluptatem.</p>
+                                        <p>"Các sản phẩm của công ty có chất lượng rất tốt, giá cả cạnh tranh. Tối sẽ
+                                            tiếp tục ủng hộ các bạn."</p>
                                     </div>
                                     <div class="author_wrap">
-                                        <div class="author_img">
-                                            <img src="assets/images/user_img2.jpg" alt="user_img2"/>
-                                        </div>
-                                        <div class="author_name">
-                                            <h6>Alden Smith</h6>
-                                            <span>Designer</span>
+                                        <div class="author_name text-center">
+                                            <h6>Mr. Hà</h6>
+                                            <span>Nhân viên kinh doanh</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="testimonial_box">
                                     <div class="testimonial_desc">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam amet
-                                            animi blanditiis consequatur debitis dicta distinctio, enim error eum iste
-                                            libero modi nam natus perferendis possimus quasi sint sit tempora
-                                            voluptatem.</p>
+                                        <p>"Tôi rất hài lòng với phong cách làm việc chuyên nghiệp, thời gian giao hàng
+                                            nhanh, nhân viên hỗ trợ nhiệt tình."</p>
                                     </div>
                                     <div class="author_wrap">
-                                        <div class="author_img">
-                                            <img src="assets/images/user_img3.jpg" alt="user_img3"/>
-                                        </div>
-                                        <div class="author_name">
-                                            <h6>Daisy Lana</h6>
-                                            <span>Designer</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="testimonial_box">
-                                    <div class="testimonial_desc">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam amet
-                                            animi blanditiis consequatur debitis dicta distinctio, enim error eum iste
-                                            libero modi nam natus perferendis possimus quasi sint sit tempora
-                                            voluptatem.</p>
-                                    </div>
-                                    <div class="author_wrap">
-                                        <div class="author_img">
-                                            <img src="assets/images/user_img4.jpg" alt="user_img4"/>
-                                        </div>
-                                        <div class="author_name">
-                                            <h6>John Becker</h6>
-                                            <span>Designer</span>
+                                        <div class="author_name text-center">
+                                            <h6>Mr. Minh</h6>
+                                            <span>Khách hàng</span>
                                         </div>
                                     </div>
                                 </div>
@@ -598,8 +553,8 @@
                                                 <i class="flaticon-shipped"></i>
                                             </div>
                                             <div class="icon_box_content">
-                                                <h5>Free Delivery</h5>
-                                                <p>Phasellus blandit massa enim elit of passage varius nunc.</p>
+                                                <h5>Giao hàng miễn phí</h5>
+                                                <p>Giao hàng miễn phí với những đơn hàng đủ điều kiện.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -609,8 +564,9 @@
                                                 <i class="flaticon-money-back"></i>
                                             </div>
                                             <div class="icon_box_content">
-                                                <h5>30 Day Returns Guarantee</h5>
-                                                <p>Phasellus blandit massa enim elit of passage varius nunc.</p>
+                                                <h5>Đổi trả trong vòng 7 ngày</h5>
+                                                <p>Quý khách cần giữ sản phẩm và tất cả phụ kiện kèm theo còn nguyên
+                                                    vẹn.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -620,8 +576,8 @@
                                                 <i class="flaticon-support"></i>
                                             </div>
                                             <div class="icon_box_content">
-                                                <h5>27/4 Online Support</h5>
-                                                <p>Phasellus blandit massa enim elit of passage varius nunc.</p>
+                                                <h5>Hỗ trợ 24/7</h5>
+                                                <p>Đội ngũ nhân viên nhiệt tình, sẵn hàng tư vấn và hỗ trợ.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -639,17 +595,17 @@
                     <div class="row align-items-center">
                         <div class="col-md-6">
                             <div class="newsletter_text text_white">
-                                <h3>Join Our Newsletter Now</h3>
-                                <p> Register now to get updates on promotions. </p>
+                                <h3>Tham gia bản tin</h3>
+                                <p> Đăng ký ngay để nhận được các thông tin khuyến mãi. </p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="newsletter_form2">
                                 <form>
                                     <input type="text" required="" class="form-control rounded-0"
-                                           placeholder="Enter Email Address">
+                                           placeholder="Nhập email đăng ký">
                                     <button type="submit" class="btn btn-dark rounded-0 bg-dark" name="submit"
-                                            value="Submit">Subscribe
+                                            value="Submit">Gửi
                                     </button>
                                 </form>
                             </div>
@@ -677,6 +633,7 @@ export default {
     data() {
         return {
             categories: [],
+            topCategories: [],
             collections: [],
             productCollections: [],
             trendingProducts: [],
@@ -687,7 +644,8 @@ export default {
             isLoading: true,
             isLoadingTrending: true,
             isLoadingFeatured: true,
-            isLoadingBlog: true
+            isLoadingBlog: true,
+            isLoadingTopCategories: true
         };
     },
     methods: {
@@ -708,6 +666,14 @@ export default {
             let data = response || [];
             this.categories = data;
         }).catch(e => {
+        });
+
+        CategoryService.findTop().then(response => {
+            let data = response || [];
+            this.topCategories = data;
+            this.isLoadingTopCategories = false;
+        }).catch(e => {
+            this.isLoadingTopCategories = false;
         });
 
         CollectionService.findAll().then(response => {

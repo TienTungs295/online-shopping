@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductCategoryController;
 
-Route::get('/product-category', [ProductCategoryController::class, 'index']);
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +27,7 @@ Route::group(['prefix' => 'rest'], function () {
     Route::group(['prefix' => 'category'], function () {
         Route::get('/find-all', ['uses' => 'Rests\CategoryRestController@findAll']);
         Route::get('/find-featured', ['uses' => 'Rests\CategoryRestController@findFeatured']);
+        Route::get('/find-top', ['uses' => 'Rests\CategoryRestController@findTop']);
     });
     Route::group(['prefix' => 'blog'], function () {
         Route::get('/find-all', ['uses' => 'Rests\BlogRestController@findAll']);

@@ -125,6 +125,10 @@
                     </div>
                 </div>
             </div>
+            <div class="section" v-else>
+                <loading-component v-bind:loading="isLoading"
+                                  ></loading-component>
+            </div>
             <!-- END SECTION BLOG -->
         </div>
         <!-- END MAIN CONTENT -->

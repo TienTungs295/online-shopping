@@ -33,6 +33,7 @@ Vue.component('product-item-component', require('./components/products/ProductIt
 Vue.component('product-quick-view-item-component', require('./components/products/ProductQuickViewItemComponent').default);
 Vue.component('product-quick-view-modal-component', require('./components/products/ProductQuickViewModalComponent').default);
 Vue.component('blog-item-component', require('./components/blogs/BlogItemComponent').default);
+Vue.component('loading-component', require('./components/common/LoadingComponent').default);
 Vue.component('b-tabs', BTabs);
 Vue.component('b-tab', BTab);
 Vue.component('b-modal', BModal)

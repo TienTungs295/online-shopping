@@ -6,7 +6,8 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="page-title">
-                            <h1>Danh sách sản phẩm</h1>
+                            <h4 v-if="param.name" class="mgb-0-i">Kết quả tìm kiếm cho từ khóa "{{ param.name }}"</h4>
+                            <h1 v-else>Danh sách sản phẩm</h1>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -17,7 +18,12 @@
                                     Trang chủ
                                 </router-link>
                             </li>
-                            <li class="breadcrumb-item active">Sản phẩm</li>
+                            <li class="breadcrumb-item active">
+                                <router-link
+                                    :to="{ name: 'productList'}">
+                                    Sản phẩm
+                                </router-link>
+                            </li>
                         </ol>
                     </div>
                 </div>
@@ -27,7 +33,6 @@
 
         <!-- START MAIN CONTENT -->
         <div class="main_content">
-
             <!-- START SECTION SHOP -->
             <div class="section">
                 <div class="container">
@@ -69,14 +74,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row shop_container" :class="isGridView ? 'grid-view' :'list-view'">
-                                <div class="col-md-4 col-6" v-for="item in paginate.data">
+
+                            <div class="row shop_container"
+                                 :class="isGridView ? 'grid-view' :'list-view'">
+                                <div class="col-md-4 col-6" v-if="!isLoadingProduct" v-for="item in paginate.data">
                                     <product-item-component v-bind:item="item"></product-item-component>
                                 </div>
+                                <loading-component v-bind:loading="isLoadingProduct"
+                                                   v-bind:center="true"></loading-component>
                             </div>
                             <div class="row">
                                 <div class="col-12"
-                                     v-if="paginate.last_page > 1 &&paginate.data && paginate.data.length">
+                                     v-if="paginate.last_page > 1 && paginate.data && paginate.data.length">
                                     <ul class="pagination mt-3 justify-content-center pagination_style1">
                                         <li class="page-item" :class="paginate.prev_page_url == null ? 'disabled' : ''">
                                             <a v-if="paginate.prev_page_url != null" class="page-link"
@@ -317,6 +326,7 @@ export default {
             this.collection_ids = JSON.parse(this.$route.query.collection_ids);
             this.param.collection_ids = this.collection_ids;
         }
+        this.param.name = this.$route.query.name || "";
         this.param.category_id = this.$route.query.category_id || null;
         this.param.price = this.$route.query.price || "";
         this.param.sort = this.$route.query.sort || "";

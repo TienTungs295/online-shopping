@@ -6,6 +6,10 @@ class CategoryService {
     findAll(alert) {
         return http.get(PREFIX_URL + "find-all", {alert: alert});
     }
+
+    findTop(alert) {
+        return http.get(PREFIX_URL + "find-top", {alert: alert});
+    }
 }
 
 export default new CategoryService();

@@ -59,7 +59,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     color: #687188;
-    line-height: 16px;
+    line-height: 22px;
     margin-bottom: 16px;
 }
 
@@ -1427,8 +1427,10 @@ button:focus {
             font-size: 14px;
         }
 
-        a.active {
-            color: $primary-color;
+        a {
+            &.active, &.router-link-exact-active.router-link-active {
+                color: $primary-color;
+            }
         }
     }
 
@@ -3326,6 +3328,7 @@ input.text {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
+    border-right: 1px solid #fff;
 }
 
 /*===================================*
@@ -3962,8 +3965,8 @@ input.text {
 
     a {
         display: block;
-        padding: 35px 20px;
-        background-color: #f7f7f7;
+        //padding: 35px 20px;
+        //background-color: #f7f7f7;
     }
 
     i {
@@ -3975,6 +3978,16 @@ input.text {
         text-transform: capitalize;
         margin-top: 5px;
         display: block;
+    }
+
+    .category-image {
+        height: 160px;
+        padding: 4px;
+        border: 1px solid #ddd;
+
+        img {
+            height: 100%;
+        }
     }
 }
 
@@ -4778,7 +4791,7 @@ h6.blog_title {
     button {
         position: absolute;
         right: 5px;
-        top: 4px;
+        top: 7px;
     }
 }
 
@@ -6535,6 +6548,7 @@ footer {
 
         img {
             height: 100%;
+            width: 100%;
         }
     }
 }
@@ -7127,6 +7141,8 @@ footer {
 
 .shop_container {
     position: relative;
+    width: 100%;
+    min-height: 417px;
 }
 
 .loading_pr {
@@ -7701,8 +7717,10 @@ label.label_info {
         box-shadow: none;
         height: 50px;
     }
-    &.stype-1{
+
+    &.stype-1 {
         height: 45px;
+
         &:focus {
             height: 45px;
         }
@@ -7765,7 +7783,8 @@ select {
         width: 100%;
         height: 50px;
     }
-    &.style-1 select{
+
+    &.style-1 select {
         height: 45px;
     }
 
@@ -9276,16 +9295,18 @@ a {
     }
 }
 
-.checkout-product-img-wrapper{
+.checkout-product-img-wrapper {
     position: relative;
     margin-bottom: 15px;
     width: 80px;
     height: 80px;
-    img{
+
+    img {
         width: 100%;
         height: 100%;
     }
-    .checkout-quantity{
+
+    .checkout-quantity {
         background: #a2a2a2;
         border: 1px solid #a2a2a2;
         border-radius: 50%;
@@ -9300,12 +9321,18 @@ a {
         width: 20px;
     }
 }
-.thank-you i{
+
+.thank-you i {
     color: $primary-color;
     font-size: 55px;
     padding-right: 10px;
 }
+
 .order-customer-info .order-customer-info-meta {
     color: $gray-color;
+}
+
+.what-client-say{
+    background-image: url('../images/hand-shake.jpg')
 }
 
