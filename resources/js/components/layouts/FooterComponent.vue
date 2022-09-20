@@ -8,7 +8,7 @@
                         <div class="col-lg-3 col-md-6 col-sm-12">
                             <div class="widget">
                                 <div class="footer_logo">
-                                    <a href="#"><img src="assets/images/logo_light.png" alt="logo"/></a>
+                                    <a href="#"><img src="assets/images/logo/logo.png" alt="logo"/></a>
                                 </div>
                                 <p>Công ty TNHH thương mại và sản xuất NK</p>
                             </div>

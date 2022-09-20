@@ -40,8 +40,8 @@
                     <div class="nav_block">
                         <router-link class="navbar-brand"
                                      :to="{ name: 'home'}">
-                            <img class="logo_light" src="assets/images/logo_light.png" alt="logo">
-                            <img class="logo_dark" src="assets/images/logo_dark.png" alt="logo">
+                            <img class="logo_light" src="assets/images/logo/logo.png" alt="logo">
+                            <img class="logo_dark" src="assets/images/logo/logo.png" alt="logo">
                         </router-link>
                         <div class="product_search_form search_form_btn">
                             <form>
