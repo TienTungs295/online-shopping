@@ -14,6 +14,7 @@ use \stdClass;
 use Botble\Base\Http\Responses\BaseHttpResponse;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use function PHPUnit\Framework\isEmpty;
 
 class ProductRestController extends Controller
@@ -22,7 +23,7 @@ class ProductRestController extends Controller
     {
         $name = $request->input('name');
         $exclude_id = $request->input('exclude_id');
-        $product_query = Product::with['productLabels']->where('id', '>', 0);
+        $product_query = Product::with(['productLabels'])->where('id', '>', 0);
         if (isset($exclude_id)) {
             $product_query->where('id', '!=', $exclude_id);
         };
@@ -42,7 +43,7 @@ class ProductRestController extends Controller
         }
         $products = [];
         if (isset($collection_id)) {
-            $products = Product::with['productLabels']->whereHas('productCollections', function ($query) use ($collection_id) {
+            $products = Product::with(['productLabels'])->whereHas('productCollections', function ($query) use ($collection_id) {
                 $query->where('product_collection_id', $collection_id);
             })->orderBy('id', 'DESC')->paginate(12);
         }
@@ -59,7 +60,7 @@ class ProductRestController extends Controller
         if (isset($param->page_size) && !empty($param->page_size)) $page_size = $param->page_size;
         if (isset($param->sort) && !empty($param->sort)) $sort = $param->sort;
         $current_time = Carbon::now();
-        $query = Product::with['productLabels']->where(function ($query) use ($param, $current_time) {
+        $query = Product::with(['productLabels'])->where(function ($query) use ($param, $current_time) {
             $category_id = isset($param->category_id) ? $param->category_id : null;
             $name = isset($param->name) ? $param->name : null;
             $min_price = null;
@@ -164,14 +165,14 @@ class ProductRestController extends Controller
     public function findFeatured(Request $request)
     {
         $ajax_response = new AjaxResponse();
-        $products = Product::with['productLabels']->where('is_featured', true)->orderBy("updated_at", "DESC")->paginate(12)->toArray();
+        $products = Product::with(['productLabels'])->where('is_featured', true)->orderBy("updated_at", "DESC")->paginate(12)->toArray();
         return $ajax_response->setData($products)->toApiResponse();
     }
 
     public function findOnSale(Request $request)
     {
         $ajax_response = new AjaxResponse();
-        $products = Product::with['productLabels']->where(function ($query) {
+        $products = Product::with(['productLabels'])->where(function ($query) {
             $query->where('sale_price', "!=", null);
             $query->where(function ($query) {
                 $current_time = Carbon::now();
@@ -197,38 +198,38 @@ class ProductRestController extends Controller
     }
 
     public function findTrending(Request $request)
-     {
+    {
         $ajax_response = new AjaxResponse();
-         $products = DB::table('ec_products')
-                                 ->select('ec_products.*')
-                                 ->join('ec_order_product', 'ec_products.id', '=', 'ec_order_product.product_id')
-                                  ->groupBy('ec_products.id',DB::raw('SUM(ec_order_product.qty)')
-                                  ->orderBy('total_qty','DESC')
-                                  ->paginate(12);
+        $products = DB::table('ec_products')
+            ->selectRaw('ec_products.*')
+            ->join('ec_order_product', 'ec_products.id', '=', 'ec_order_product.product_id')
+            ->groupByRaw('ec_products.id')
+            ->orderByRaw("SUM(ec_order_product.qty) DESC")
+            ->paginate(12);
 
-        $product_id=$products->pluck('id')->toArray();
-        $productLabels= DB::table('ec_product_label')
-                                 ->select('ec_product_label.*','ec_product_label_products.product_id')
-                                 ->join('ec_product_label_products', 'ec_product_label.id', '=', 'ec_product_label_products.label_id')
-                                 ->whereIn('ec_product_label_products.product_id',$product_id)
-                                 ->get();
-      $productLabelMap = array();
-        foreach ($productLabels as $item) {
-                $groupByProduct=$productLabelMap[$item['product_id']];
-                if(is_null($groupByProduct)){
-                    array_push($productLabelMap,array($item['product_id']=>[]));
-                }
-                array_push($groupByProduct,$item);
-        }
-
-        foreach ($product as $item) {
-                         $groupByProduct=$productLabelMap[$item['id'];
-                      if(!is_null($groupByProduct)){
-                      $item['productLabels']= $groupByProduct;
-                      }
-        }
-         return $ajax_response->setData($products)->toApiResponse();
-     }
+        $product_id = $products->pluck('id')->toArray();
+        $productLabels = DB::table('ec_product_labels')
+            ->selectRaw('ec_product_labels.*,ec_product_label_products.product_id')
+            ->join('ec_product_label_products', 'ec_product_labels.id', '=', 'ec_product_label_products.product_label_id')
+            ->whereIn('ec_product_label_products.product_id', $product_id)
+            ->get();
+//        $productLabelMap = array();
+//        foreach ($productLabels as $item) {
+//            $groupByProduct = $productLabelMap[$item['product_id']];
+//            if (is_null($groupByProduct)) {
+//                array_push($productLabelMap, array($item['product_id'] => []));
+//            }
+//            array_push($groupByProduct, $item);
+//        }
+//
+//        foreach ($products as $item) {
+//            $groupByProduct = $productLabelMap[$item['id']];
+//            if (!is_null($groupByProduct)) {
+//                $item['productLabels'] = $groupByProduct;
+//            }
+//        }
+        return $ajax_response->setData($products)->toApiResponse();
+    }
 
     public function detail(Request $request)
     {
