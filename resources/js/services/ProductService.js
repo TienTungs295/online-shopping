@@ -23,7 +23,7 @@ class ProductService {
     }
 
     findTrending(alert) {
-        let url = PREFIX_URL + "find-by-collection";
+        let url = PREFIX_URL + "find-trending";
         return http.get(url, {alert: alert});
     }
 

@@ -233,6 +233,47 @@
                                         <div class="item" v-for="entry in featuredProductMap">
                                             <div v-for="item in entry">
                                                 <div class="product_wrap">
+                                                    <div class="product_wrap">
+                                                        <span class="pr_flash"
+                                                              :style="{'background-color': item.color}"
+                                                              v-if="item.productLabels.length"
+                                                              v-for="label in item.productLabels">
+                                                            {{ label.name }}
+                                                        </span>
+                                                        <div class="product_img style-2">
+                                                            <router-link
+                                                                :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
+                                                                <img :src="'/uploads/images/'+item.image" :alt="item.image">
+                                                            </router-link>
+                                                        </div>
+                                                        <div class="product_info">
+                                                            <h6 class="product_title">
+                                                                <router-link
+                                                                    :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
+                                                                    {{ item.name }}
+                                                                </router-link>
+                                                            </h6>
+                                                            <div class="product_price">
+                                                                <div v-if="item.on_sale">
+                                                                    <span class="price">{{ item.sale_price }}</span>
+                                                                    <del>{{ item.price }}</del>
+                                                                    <div class="on_sale d-block"
+                                                                         v-if="item.sale_off != null">
+                                                                        <span>{{ item.sale_off }}% Off</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div v-else>
+                                                                    <span class="price">{{ item.price }}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="rating_wrap">
+                                                                <div class="rating">
+                                                                    <div class="product_rate" style="width:80%"></div>
+                                                                </div>
+                                                                <span class="rating_num">(21)</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     <div class="product_img style-2">
                                                         <router-link
                                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
@@ -288,14 +329,55 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <div v-if="!isLoadingFeatured" v-carousel
+                                    <div v-if="!isLoadingTrending" v-carousel
                                          class="product_slider carousel_slider product_list owl-carousel owl-theme nav_style5"
                                          data-nav="true"
                                          data-dots="false" data-loop="false" data-margin="20"
                                          data-responsive='{"0":{"items": "1"}, "380":{"items": "1"}, "640":{"items": "2"}, "991":{"items": "1"}}'>
-                                        <div class="item" v-for="entry in featuredProductMap">
+                                        <div class="item" v-for="entry in trendingProductMap">
                                             <div v-for="item in entry">
                                                 <div class="product_wrap">
+                                                    <div class="product_wrap">
+                                                        <span class="pr_flash"
+                                                              :style="{'background-color': item.color}"
+                                                              v-if="item.productLabels.length"
+                                                              v-for="label in item.productLabels">
+                                                            {{ label.name }}
+                                                        </span>
+                                                        <div class="product_img style-2">
+                                                            <router-link
+                                                                :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
+                                                                <img :src="'/uploads/images/'+item.image" :alt="item.image">
+                                                            </router-link>
+                                                        </div>
+                                                        <div class="product_info">
+                                                            <h6 class="product_title">
+                                                                <router-link
+                                                                    :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
+                                                                    {{ item.name }}
+                                                                </router-link>
+                                                            </h6>
+                                                            <div class="product_price">
+                                                                <div v-if="item.on_sale">
+                                                                    <span class="price">{{ item.sale_price }}</span>
+                                                                    <del>{{ item.price }}</del>
+                                                                    <div class="on_sale d-block"
+                                                                         v-if="item.sale_off != null">
+                                                                        <span>{{ item.sale_off }}% Off</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div v-else>
+                                                                    <span class="price">{{ item.price }}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="rating_wrap">
+                                                                <div class="rating">
+                                                                    <div class="product_rate" style="width:80%"></div>
+                                                                </div>
+                                                                <span class="rating_num">(21)</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     <div class="product_img style-2">
                                                         <router-link
                                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
@@ -334,7 +416,7 @@
                                         </div>
                                     </div>
                                     <div v-else>
-                                        <loading-component v-bind:loading="isLoadingFeatured"></loading-component>
+                                        <loading-component v-bind:loading="isLoadingTrending"></loading-component>
                                     </div>
                                 </div>
                             </div>
@@ -359,6 +441,12 @@
                                         <div class="item" v-for="entry in onSaleProductMap">
                                             <div v-for="item in entry">
                                                 <div class="product_wrap">
+                                                        <span class="pr_flash"
+                                                              :style="{'background-color': item.color}"
+                                                              v-if="item.productLabels.length"
+                                                              v-for="label in item.productLabels">
+                                                            {{ label.name }}
+                                                        </span>
                                                     <div class="product_img style-2">
                                                         <router-link
                                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
@@ -601,6 +689,7 @@ export default {
             collections: [],
             productCollections: [],
             trendingProducts: [],
+            trendingProductMap: {},
             onSaleProducts: [],
             onSaleProductMap: {},
             featuredProducts: [],
@@ -653,6 +742,18 @@ export default {
         ProductService.findTrending().then(response => {
             let data = response.data || [];
             this.trendingProducts = data;
+            let groupProducts = [];
+            let key = 0;
+            for (let i = 0; i < this.trendingProducts.length; i++) {
+                let number = i + 1;
+                let item = this.trendingProducts[i];
+                groupProducts.push(item);
+                if ((number != 1 && number % 3 == 0) || (number == this.trendingProducts.length)) {
+                    this.trendingProductMap[key] = groupProducts;
+                    key++;
+                    groupProducts = [];
+                }
+            }
             this.isLoadingTrending = false;
         }).catch(e => {
             this.isLoadingTrending = false;

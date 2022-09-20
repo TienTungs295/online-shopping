@@ -22,6 +22,7 @@ Route::group(['prefix' => 'rest'], function () {
         Route::get('/find-all', ['uses' => 'Rests\ProductRestController@findAll']);
         Route::get('/find-featured', ['uses' => 'Rests\ProductRestController@findFeatured']);
         Route::get('/find-on-sale', ['uses' => 'Rests\ProductRestController@findOnSale']);
+        Route::get('/find-trending', ['uses' => 'Rests\ProductRestController@findTrending']);
         Route::get('/detail', ['uses' => 'Rests\ProductRestController@detail']);
     });
     Route::group(['prefix' => 'category'], function () {

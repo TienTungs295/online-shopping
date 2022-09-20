@@ -18,6 +18,9 @@
             </div>
         </div>
         <div class="product_info">
+            <span class="pr_flash" :style="{'background-color': item.color}" v-if="item.productLabels.length" v-for="label in item.productLabels">
+                {{label.name}}
+            </span>
             <h6 class="product_title">
                 <router-link
                     :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
