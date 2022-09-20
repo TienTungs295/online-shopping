@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="product_info">
-            <span class="pr_flash" :style="{'background-color': item.color}" v-if="item.productLabels.length" v-for="label in item.productLabels">
+            <span class="pr_flash" :style="{'background-color': label.color}" v-if="item.product_labels.length" v-for="label in item.product_labels">
                 {{label.name}}
             </span>
             <h6 class="product_title">

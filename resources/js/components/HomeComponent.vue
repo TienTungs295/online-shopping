@@ -234,9 +234,9 @@
                                             <div v-for="item in entry">
                                                 <div class="product_wrap">
                                                         <span class="pr_flash"
-                                                              :style="{'background-color': item.color}"
-                                                              v-if="item.productLabels.length"
-                                                              v-for="label in item.productLabels">
+                                                              :style="{'background-color': label.color}"
+                                                              v-if="item.product_labels.length"
+                                                              v-for="label in item.product_labels">
                                                             {{ label.name }}
                                                         </span>
                                                     <div class="product_img style-2">
@@ -303,9 +303,9 @@
                                             <div v-for="item in entry">
                                                 <div class="product_wrap">
                                                      <span class="pr_flash"
-                                                           :style="{'background-color': item.color}"
-                                                           v-if="item.productLabels.length"
-                                                           v-for="label in item.productLabels">
+                                                           :style="{'background-color': label.color}"
+                                                           v-if="item.product_labels.length"
+                                                           v-for="label in item.product_labels">
                                                             {{ label.name }}
                                                         </span>
                                                     <div class="product_img style-2">
@@ -372,9 +372,9 @@
                                             <div v-for="item in entry">
                                                 <div class="product_wrap">
                                                         <span class="pr_flash"
-                                                              :style="{'background-color': item.color}"
-                                                              v-if="item.productLabels.length"
-                                                              v-for="label in item.productLabels">
+                                                              :style="{'background-color': label.color}"
+                                                              v-if="item.product_labels.length"
+                                                              v-for="label in item.product_labels">
                                                             {{ label.name }}
                                                         </span>
                                                     <div class="product_img style-2">
