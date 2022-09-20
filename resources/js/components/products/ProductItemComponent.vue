@@ -10,7 +10,7 @@
                     <li class="add-to-cart"><a @click="addToCart(item.id)"><i
                         class="icon-basket-loaded"></i>Thêm vào giỏ </a>
                     </li>
-                    <li><a @click="showModal"
+                    <li><a @click="showModal()"
                            class="popup-ajax"><i
                         class="icon-magnifier-add"></i></a></li>
                     <li><a @click="addToWithList(item.id)"><i class="icon-heart"></i></a></li>
@@ -47,9 +47,9 @@
             </div>
             <div class="list_product_action_box dis-none">
                 <ul class="list_none pr_action_btn">
-                    <li class="add-to-cart"><a href="#"><i
+                    <li class="add-to-cart"><a @click="addToCart(item.id)"><i
                         class="icon-basket-loaded"></i>Thêm vào giỏ</a></li>
-                    <li><a href="shop-quick-view.html" class="popup-ajax"><i
+                    <li><a @click="showModal()" class="popup-ajax"><i
                         class="icon-magnifier-add"></i></a></li>
                     <li><a @click="addToWithList(item.id)"><i class="icon-heart"></i></a></li>
                 </ul>
