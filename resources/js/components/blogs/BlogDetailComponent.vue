@@ -30,13 +30,14 @@
                     <div class="row">
                         <div class="col-xl-9">
                             <div class="single_post">
+                                <h2 class="blog_title">{{blog.name}}</h2>
                                 <ul class="list_none blog_meta">
                                     <li><i
                                         class="ti-calendar mgr-5-i color_primary"></i>
                                         {{ blog.updated_at |dateFormat }}
                                     </li>
                                 </ul>
-                                <div class="blog_img">
+                                <div class="blog_img mgb-20">
                                     <img :src="'/uploads/images/'+blog.image" :alt="blog.image">
                                 </div>
                                 <div class="blog_content">
