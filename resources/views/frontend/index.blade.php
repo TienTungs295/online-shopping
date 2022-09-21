@@ -8,7 +8,7 @@
     <!-- SITE TITLE -->
     <title>3M Nhập khẩu</title>
     <!-- Favicon Icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/favicon.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/favicon/3m_favicon.png')}}">
     <!-- Animation CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
     <!-- Latest Bootstrap min CSS -->
