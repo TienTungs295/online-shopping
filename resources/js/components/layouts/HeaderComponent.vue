@@ -146,13 +146,12 @@
                                             </router-link>
                                         </li>
                                         <li class="dropdown cart_dropdown">
-                                            <router-link class="nav-link cart_trigger" data-toggle="dropdown"
-                                                         :to="{ name: 'cart'}">
+                                            <a class="nav-link cart_trigger" data-toggle="dropdown">
                                                 <i class="linearicons-bag2"></i>
                                                 <span class="cart_count">
                                                     {{ cartCount }}
                                                 </span>
-                                            </router-link>
+                                            </a>
                                             <div class="cart_box cart_right dropdown-menu dropdown-menu-right">
                                                 <div v-if="cartCount > 0">
                                                     <ul class="cart_list">

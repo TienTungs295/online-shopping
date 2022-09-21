@@ -47,7 +47,7 @@
             </div>
             <div class="list_product_action_box dis-none">
                 <ul class="list_none pr_action_btn">
-                    <li class="add-to-cart"><a @click="addToCart(item.id)"><i
+                    <li class="add-to-cart"><a class="rounded-0" @click="addToCart(item.id)"><i
                         class="icon-basket-loaded"></i>Thêm vào giỏ</a></li>
                     <li><a @click="showModal()" class="popup-ajax"><i
                         class="icon-magnifier-add"></i></a></li>
@@ -55,7 +55,7 @@
                 </ul>
             </div>
         </div>
-        <b-modal :ref="'quick-view-modal'+item.id" content-class="rounded-0" size="xl" hide-footer hide-header>
+        <b-modal :ref="'quick-view-modal'+item.id" content-class="rounded-0" size="xl" hide-footer>
             <div class="d-block">
                 <product-quick-view-modal-component v-bind:id="item.id"></product-quick-view-modal-component>
             </div>

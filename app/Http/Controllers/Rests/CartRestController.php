@@ -50,7 +50,7 @@ class CartRestController extends Controller
             'on_sale' => $product->on_sale,
             'sale_off' => $product->sale_off
         ]]);
-        return $ajax_response->setData($cart)->setMessage("Thêm " . $product->name . " vào giỏ hàng thành công!")->toApiResponse();
+        return $ajax_response->setData($cart)->setMessage("Thêm " . ($qty > 1 ? $qty." " : "") . $product->name . " vào giỏ hàng thành công!")->toApiResponse();
     }
 
     public function update(Request $request)

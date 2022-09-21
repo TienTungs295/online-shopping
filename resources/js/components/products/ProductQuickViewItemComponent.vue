@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+        <div class="col-lg-6 mb-4 mb-lg-0">
             <div class="detail-slider">
 
                 <swiper class="swiper gallery-top" :options="swiperOptionTop" ref="swiperTop">
@@ -15,7 +15,7 @@
                 </swiper>
             </div>
         </div>
-        <div class="col-lg-6 col-md-6">
+        <div class="col-lg-6">
             <div class="pr_detail">
                 <div class="product_description">
                     <h4 class="product_title"><a href="#">{{ product.name }}</a></h4>
@@ -54,15 +54,15 @@
                         </div>
                         <br>
                         <div class="cart_btn mgb-10">
-                            <button class="btn btn-fill-out btn-addtocart rounded-0" type="button"
+                            <button class="btn btn-fill-out btn-addtocart rounded-0 mgr-10 mgb-10" type="button"
                                     @click="addToCart(product.id,cart.qty)">
                                 <i class="icon-basket-loaded"></i> Thêm vào giỏ
                             </button>
-                            <button class="btn btn-fill-line view-cart rounded-0" type="button"
+                            <button class="btn btn-fill-line view-cart rounded-0 mgl-0-i mgb-10" type="button"
                                     @click="buyNow(product.id,cart.qty)"><i
                                 class="icon-basket-loaded"></i> Mua ngay
                             </button>
-                            <a class="add_wishlist" @click="addToWithList(product.id)"><i
+                            <a class="add_wishlist mgb-10" @click="addToWithList(product.id)"><i
                                 class="icon-heart"></i></a>
                         </div>
                     </div>
@@ -104,15 +104,15 @@ export default {
         return {
             swiperOptionTop: {
                 loop: true,
-                loopedSlides: (this.product.images.length > 4 ? 4 : this.product.images.length), // looped slides should be the same
+                loopedSlides: (this.product.images.length > 3 ? 3 : this.product.images.length), // looped slides should be the same
                 spaceBetween: 8,
                 effect: 'fade',
             },
             swiperOptionThumbs: {
                 loop: true,
-                loopedSlides: (this.product.images.length > 4 ? 4 : this.product.images.length), // looped slides should be the same
+                loopedSlides: (this.product.images.length > 3 ? 3 : this.product.images.length), // looped slides should be the same
                 spaceBetween: 8,
-                slidesPerView: (this.product.images.length > 4 ? 4 : this.product.images.length),
+                slidesPerView: (this.product.images.length > 3 ? 3 : this.product.images.length),
                 touchRatio: 0.2,
                 slideToClickedSlide: true
             },
