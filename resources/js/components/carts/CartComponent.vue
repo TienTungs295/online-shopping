@@ -132,7 +132,7 @@
                                             <td class="cart_total_amount">{{ subTotal | commaFormat }}</td>
                                         </tr>
                                         <tr>
-                                            <td class="cart_total_label">Vận chuyển</td>
+                                            <td class="cart_total_label">Phí vận chuyển</td>
                                             <td class="cart_total_amount">{{ shippingFee | commaFormat }}</td>
                                         </tr>
                                         <tr>

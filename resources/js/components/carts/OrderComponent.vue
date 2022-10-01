@@ -118,9 +118,9 @@
                                         <span
                                             class="order-customer-info-meta">{{
                                                 order_infomation.address
-                                            }}, {{ wards[order_infomation.ward].name }}, {{
-                                                districts[order_infomation.district].name
-                                            }}, {{ provinces[order_infomation.province].name }}</span>
+                                            }}, {{ order_infomation.wardName }}, {{
+                                                order_infomation.districtName
+                                            }}, {{ order_infomation.provinceName }}</span>
                                     </p>
 
                                     <p>
@@ -191,7 +191,8 @@
                                         <label class="form-label gray-color">Phường xã <span
                                             class="text-danger">*</span></label>
                                         <div class="custom_select style-1">
-                                            <select class="form-control" v-model="order.ward" name="ward">
+                                            <select class="form-control" v-model="order.ward" name="ward"
+                                                    @change="changeWard($event)">
                                                 <option value="">Chọn phường xã</option>
                                                 <option v-for="code in wardCodes" v-bind:value="code">
                                                     {{ wards[code].name }}
@@ -249,11 +250,11 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-6">
-                                                <p class="gray-color">Phí ship:</p>
+                                                <p class="gray-color">Phí vận chuyển:</p>
                                             </div>
                                             <div class="col-6">
                                                 <p class="price-text shipping-price-text text-right gray-color">
-                                                    {{ shippingFee | commaFormat }}</p>
+                                                    {{ order.shipping_fee | commaFormat }}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -319,12 +320,12 @@ export default {
     name: "Order",
     data() {
         return {
-            shippingFee: 0,
             order: {
                 province: "",
                 district: "",
                 ward: "",
-                payment_method: 1
+                payment_method: 1,
+                shipping_fee: 0
             },
             order_infomation: {},
             isOrderSuccessful: false,
@@ -376,7 +377,7 @@ export default {
                 let cart = data.cart;
                 let subTotal = data.subTotal;
                 let subTotalWithShippingFee = data.subTotalWithShippingFee;
-                this.shippingFee = data.shippingFee;
+                this.order.shipping_fee = data.shippingFee;
                 this.$store.commit("setCart", cart);
                 this.$store.commit("setSubTotal", subTotal);
                 this.$store.commit("setSubTotalWithShippingFee", subTotalWithShippingFee);
@@ -404,20 +405,29 @@ export default {
             });
         },
         changeProvince(event) {
-            let parent_code = event.target.value;
+            let code = event.target.value;
+            this.order.provinceName = this.provinces[code].name;
             this.districts = {};
             this.order.district = "";
+            this.order.districtName = "";
             this.wards = {};
             this.order.ward = "";
-            if (parent_code == "") return;
-            this.findDistricts(parent_code)
+            this.order.wardName = "";
+            if (code == "") return;
+            this.findDistricts(code)
         },
         changeDistrict(event) {
-            let parent_code = event.target.value;
+            let code = event.target.value;
+            this.order.districtName = this.districts[code].name;
             this.wards = {};
             this.order.ward = "";
-            if (parent_code == "") return;
-            this.findWards(parent_code)
+            this.order.wardName = "";
+            if (code == "") return;
+            this.findWards(code)
+        },
+        changeWard(event) {
+            let code = event.target.value
+            this.order.wardName = this.wards[code].name;
         },
     },
     mounted() {

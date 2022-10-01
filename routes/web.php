@@ -127,6 +127,16 @@ Route::group(['middleware' => 'isMember', 'prefix' => 'quan-tri'], function () {
         Route::post('/xoa/{id}', ['as' => 'deleteProduct', 'uses' => 'ProductController@destroy']);
     });
 
+    Route::group(['prefix' => 'don-hang'], function () {
+        Route::get('', ['as' => 'orderView', 'uses' => 'OrderController@index']);
+        Route::get('/them-moi', ['as' => 'createOrderView', 'uses' => 'OrderController@create']);
+        Route::get('/chinh-sua/{id}', ['as' => 'updateOrderView', 'uses' => 'OrderController@edit']);
+        Route::post('/luu-tru', ['as' => 'createOrder', 'uses' => 'OrderController@store']);
+        Route::post('/cap-nhat/{id}', ['as' => 'updateOrder', 'uses' => 'OrderController@update']);
+        Route::post('/xoa/{id}', ['as' => 'deleteOrder', 'uses' => 'OrderController@destroy']);
+        Route::post('/cap-nhat-trang-thai/{id}', ['as' => 'changeOrderStatus', 'uses' => 'OrderController@changeStatus']);
+    });
+
     Route::group(['middleware' => 'isAdmin', 'prefix' => 'nhan-vien'], function () {
         Route::get('', ['as' => 'userView', 'uses' => 'UserController@index']);
         Route::get('/them-moi', ['as' => 'createUserView', 'uses' => 'UserController@create']);

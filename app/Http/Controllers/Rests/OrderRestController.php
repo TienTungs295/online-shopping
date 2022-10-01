@@ -25,13 +25,17 @@ class OrderRestController extends Controller
 
         $name = trim($request->post('name'));
         $phone = trim($request->post('phone'));
-        $province = trim($request->post('province'));
-        $district = trim($request->post('district'));
-        $ward = trim($request->post('ward'));
+        $province = $request->post('province');
+        $district = $request->post('district');
+        $ward = $request->post('ward');
+        $provinceName = $request->post('provinceName');
+        $districtName = $request->post('districtName');
+        $wardName = $request->post('wardName');
         $address = trim($request->post('address'));
         $payment_method = $request->post('payment_method');
+        $shipping_fee = $request->post('shipping_fee');
         if (empty($name))
-            return $ajax_response->setMessage("Vui lòng nhập Họ & tên!")->toApiResponse();
+            return $ajax_response->setMessage("Vui lòng nhập Họ và tên!")->toApiResponse();
 
         if (empty($phone))
             return $ajax_response->setMessage("Vui lòng nhập Số điện thoại!")->toApiResponse();
@@ -57,8 +61,11 @@ class OrderRestController extends Controller
         $order_address->phone = $phone;
         $order_address->email = $request->post('email');
         $order_address->province = $province;
+        $order_address->provinceName = $provinceName;
         $order_address->district = $district;
+        $order_address->districtName = $districtName;
         $order_address->ward = $ward;
+        $order_address->wardName = $wardName;
         $order_address->address = $address;
 
         $cart = Cart::instance('cart')->content();
@@ -79,6 +86,7 @@ class OrderRestController extends Controller
         $order->sub_total = $request->post('subTotal');
         $order->amount = $request->post('subTotal');
         $order->payment_method = $payment_method;
+        if (isset($shipping_fee)) $order->shipping_fee = $shipping_fee;
 
         DB::beginTransaction();
         try {
@@ -97,8 +105,11 @@ class OrderRestController extends Controller
         $order_infomation->phone = $order_address->phone;
         $order_infomation->email = $order_address->email;
         $order_infomation->province = $order_address->province;
+        $order_infomation->provinceName = $order_address->provinceName;
         $order_infomation->district = $order_address->district;
+        $order_infomation->districtName = $order_address->districtName;
         $order_infomation->ward = $order_address->ward;
+        $order_infomation->wardName = $order_address->wardName;
         $order_infomation->address = $order_address->address;
         $order_infomation->payment_method = $order->payment_method;
 

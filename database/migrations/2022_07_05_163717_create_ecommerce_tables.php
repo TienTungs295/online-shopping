@@ -176,23 +176,24 @@ class CreateEcommerceTables extends Migration
         Schema::create('ec_orders', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id')->unsigned()->nullable();
-            $table->string('shipping_option', 60)->nullable();
-            $table->string('shipping_method', 60)->default('default');
+//            $table->string('shipping_option', 60)->nullable();
+//            $table->string('shipping_method', 60)->default('default');
             $table->tinyInteger('status')->default(1);
             $table->bigInteger('amount');
-            $table->integer('currency_id')->unsigned()->nullable();
-            $table->decimal('tax_amount', 15)->nullable();
-            $table->decimal('shipping_amount', 15)->nullable();
+//            $table->integer('currency_id')->unsigned()->nullable();
+//            $table->decimal('tax_amount', 15)->nullable();
+            $table->bigInteger('shipping_fee')->default(0);
             $table->text('description')->nullable();
             $table->string('coupon_code', 120)->nullable();
             $table->decimal('discount_amount', 15)->nullable();
             $table->bigInteger('sub_total');
-            $table->boolean('is_confirmed')->default(false);
-            $table->string('discount_description', 255)->nullable();
-            $table->boolean('is_finished')->default(1)->nullable();
+            $table->bigInteger('received_price');
+//            $table->boolean('is_confirmed')->default(false);
+//            $table->string('discount_description', 255)->nullable();
+//            $table->boolean('is_finished')->default(1)->nullable();
             $table->tinyInteger('payment_method')->default(1);
-            $table->string('token', 120)->nullable();
-            $table->integer('payment_id')->unsigned()->nullable();
+//            $table->string('token', 120)->nullable();
+//            $table->integer('payment_id')->unsigned()->nullable();
             $table->timestamps();
         });
 
@@ -215,8 +216,11 @@ class CreateEcommerceTables extends Migration
             $table->string('phone', 20)->nullable();
             $table->string('email')->nullable();
             $table->string('province')->nullable();
+            $table->string('provinceName')->nullable();
             $table->string('district')->nullable();
+            $table->string('districtName')->nullable();
             $table->string('ward')->nullable();
+            $table->string('wardName')->nullable();
             $table->string('address', 255)->nullable();
             $table->integer('order_id')->unsigned();
         });

@@ -32,6 +32,24 @@ class OrderProduct extends Model
         'restock_quantity',
     ];
 
+    protected $appends = ['sub_total_format', 'sub_total', 'format_price'];
+
+    public function getSubTotalAttribute()
+    {
+        return $this->qty * $this->price;
+    }
+
+    public function getSubTotalFormatAttribute()
+    {
+        return number_format($this->qty * $this->price, 0, '', ',') . " đ";
+    }
+
+    public function getFormatPriceAttribute()
+    {
+        return number_format($this->price, 0, '', ',') . " đ";
+    }
+
+
     /**
      * @return BelongsTo
      */

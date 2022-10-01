@@ -56,6 +56,14 @@
     text-align: right !important;
 }
 
+.v-top {
+    vertical-align: top;
+}
+
+.v-middle {
+    vertical-align: middle;
+}
+
 @for $i from 1 through 10 {
     .ml-#{$i * 5} {
         margin-left: #{$i * 5}px;
