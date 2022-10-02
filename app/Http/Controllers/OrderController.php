@@ -68,7 +68,7 @@ class OrderController extends Controller
         }
         $order->status = $expect_status;
         $order->update();
-        return redirect()->back()->with('success', 'Thành công test xzyc abcdefv 123123');
+        return redirect()->back()->with('success', 'Thành công4');
     }
 
     /**
