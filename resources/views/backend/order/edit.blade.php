@@ -10,7 +10,9 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="card">
-                        <div class="card-body pt-25-i pb-25-i">
+                        <div class="card-body pt-15-i pb-25-i">
+                            <h5>Mã đơn hàng : #{!! $order->id !!}</h5>
+                            <hr>
                             <div class="table-wrap">
                                 <table class="w-100 order-table">
                                     <tbody>
@@ -36,7 +38,7 @@
                                                             <strong>{!! $order_product->product->sku !!}</strong>)
                                                         @endif
                                                     @else
-                                                        Sản phẩm hiện đã bị xóa
+                                                        (Sản phẩm hiện đã bị xóa)
                                                     @endif
                                                 </td>
                                                 <td class="pl-5 pr-5 text-right">
@@ -66,7 +68,7 @@
                                     </tr>
                                     <tr>
                                         <td colspan="5">
-                                            <span class="fw-bold">
+                                            <span class="fw-bold" style="font-size: 16px">
                                                 Thành tiền:
                                             </span>
                                         </td>
