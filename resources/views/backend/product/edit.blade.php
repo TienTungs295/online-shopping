@@ -315,20 +315,20 @@
             },
             multiple: true,
         }
-        if (image_strings != null && image_strings != "" & image_strings != undefined) {
-            let defaul_values = [];
-            let image_urls = image_strings.split(",")
-            for (let i = 0; i < image_urls.length; i++) {
-                let image_url = image_urls[i];
-                let start_position = image_url.lastIndexOf("/") + 1;
-                let image_name = image_url.substring(start_position, image_url.length - 1);
-                defaul_values.push({
-                    name: image_name,
-                    url: image_url
-                })
-            }
-            configForImages.defaultValue = defaul_values;
-        }
+        // if (image_strings != null && image_strings != "" & image_strings != undefined) {
+        //     let defaul_values = [];
+        //     let image_urls = image_strings.split(",")
+        //     for (let i = 0; i < image_urls.length; i++) {
+        //         let image_url = image_urls[i];
+        //         let start_position = image_url.lastIndexOf("/") + 1;
+        //         let image_name = image_url.substring(start_position, image_url.length);
+        //         defaul_values.push({
+        //             name: image_name,
+        //             url: image_url
+        //         })
+        //     }
+        //     configForImages.defaultValue = defaul_values;
+        // }
         $("#images").uploader(configForImages)
             .on("upload-success", function (file, data) {
 
@@ -380,14 +380,14 @@
                 }
             }
         }
-        if (image_url != null && image_url != "" & image_url != undefined) {
-            let start_position = image_url.lastIndexOf("/") + 1;
-            let image_name = image_url.substring(start_position, image_url.length - 1);
-            config.defaultValue = [{
-                name: image_name,
-                url: image_url
-            }]
-        }
+        // if (image_url != null && image_url != "" & image_url != undefined) {
+        //     let start_position = image_url.lastIndexOf("/") + 1;
+        //     let image_name = image_url.substring(start_position, image_url.length);
+        //     config.defaultValue = [{
+        //         name: image_name,
+        //         url: image_url
+        //     }]
+        // }
         $("#image").uploader(config)
             .on("upload-success", function (file, data) {
 

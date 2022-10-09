@@ -88,7 +88,8 @@
                 method: "post",
                 paramsBuilder: function (uploaderFile) {
                     let form = new FormData();
-                    form.append("file", uploaderFile.file)
+                    form.append("file", uploaderFile.file);
+                    form.append("sub-folder", "blogs");
                     return form
                 },
                 ajaxRequester: function (config, uploaderFile, progressCallback, successCallback, errorCallback) {
@@ -123,14 +124,14 @@
                 }
             }
         }
-        if (image_url != null && image_url != "" & image_url != undefined) {
-            let start_position = image_url.lastIndexOf("/") + 1;
-            let image_name = image_url.substring(start_position, image_url.length - 1);
-            config.defaultValue = [{
-                name: image_name,
-                url: image_url
-            }]
-        }
+        // if (image_url != null && image_url != "" & image_url != undefined) {
+        //     let start_position = image_url.lastIndexOf("/") + 1;
+        //     let image_name = image_url.substring(start_position, image_url.length);
+        //     config.defaultValue = [{
+        //         name: image_name,
+        //         url: image_url
+        //     }]
+        // }
         $("#image").uploader(config)
             .on("upload-success", function (file, data) {
 

@@ -105,9 +105,10 @@ class ProductController extends Controller
         }
 
         //image
+        $upload_path = "/uploads/images/";
         $image_url = $request->input('image');
         if ($image_url != null && $image_url != "") {
-            $start_position = strripos($image_url, "/") + 1;
+            $start_position = strpos($image_url, "/uploads/images/") + strlen($upload_path);
             $image_name = substr($image_url, $start_position, strlen($image_url) - $start_position);
             $product->image = $image_name;
         }
@@ -118,7 +119,7 @@ class ProductController extends Controller
         if ($image_string != null && $image_string != "") {
             $image_urls = explode(",", $image_string);
             foreach ($image_urls as $item) {
-                $start_position = strripos($item, "/") + 1;
+                $start_position = strpos($image_url, "/uploads/images/") + strlen($upload_path);
                 $image = new Image;
                 $image->image = substr($item, $start_position, strlen($item) - $start_position);
                 array_push($images, $image);
@@ -229,7 +230,7 @@ class ProductController extends Controller
         }
 
         $product->name = $request->input('name');
-        $product->slug = Str::slug($product->name);;
+        $product->slug = Str::slug($product->name);
         $product->content = $request->input('content');
         $product->description = $request->input('description');
         $product->category_id = $request->input('category_id');
@@ -269,14 +270,14 @@ class ProductController extends Controller
         $image_url = $request->input('image');
         $image_name = "";
         $delete_url = null;
+        $upload_path = "/uploads/images/";
         if ($image_url != null && $image_url != "") {
-            $start_position = strripos($image_url, "/") + 1;
+            $start_position = strpos($image_url, "/uploads/images/") + strlen($upload_path);
             $image_name = substr($image_url, $start_position, strlen($image_url) - $start_position);
         }
 
-        if ($image_name != $product->image && $product->image != '') {
-            $del_image_name = $product->image;
-            array_push($del_image_names, $del_image_name);
+        if ($image_name != $product->image && $product->image != null) {
+            array_push($del_image_names, $product->image);
         }
         $product->image = $image_name;
 
@@ -292,7 +293,7 @@ class ProductController extends Controller
         if ($image_string != null && $image_string != "") {
             $image_urls = explode(",", $image_string);
             foreach ($image_urls as $item) {
-                $start_position = strripos($item, "/") + 1;
+                $start_position = strpos($image_url, "/uploads/images/") + strlen($upload_path);
                 $image_name = substr($item, $start_position, strlen($item) - $start_position);
                 array_push($param_images, $image_name);
             }

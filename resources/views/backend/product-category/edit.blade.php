@@ -53,7 +53,7 @@
                                     <div class="col-md-12">
                                         <label class="form-label">Ảnh</label>
                                         <input type="text" id="image"
-                                               value="{!! old('image', isset($product_category->image) ? url('uploads/images/categories/'.$product_category->image) : '')!!}"
+                                               value="{!! old('image', isset($product_category->image) ? url('uploads/images/'.$product_category->image) : '')!!}"
                                                name="image">
                                     </div>
                                 </div>
@@ -138,14 +138,14 @@
                 }
             }
         }
-        if (image_url != null && image_url != "" & image_url != undefined) {
-            let start_position = image_url.lastIndexOf("/") + 1;
-            let image_name = image_url.substring(start_position, image_url.length - 1);
-            config.defaultValue = [{
-                name: image_name,
-                url: image_url
-            }]
-        }
+        // if (image_url != null && image_url != "" & image_url != undefined) {
+        //     let start_position = image_url.lastIndexOf("/") + 1;
+        //     let image_name = image_url.substring(start_position, image_url.length);
+        //     config.defaultValue = [{
+        //         name: image_name,
+        //         url: image_url
+        //     }]
+        // }
         $("#image").uploader(config)
             .on("upload-success", function (file, data) {
 

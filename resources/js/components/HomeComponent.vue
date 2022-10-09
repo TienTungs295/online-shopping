@@ -48,7 +48,7 @@
                                                     <router-link
                                                         :to="{ name: 'productList', query: { category_id: item.id}}">
                                                         <div class="category-image">
-                                                            <img :src="'/uploads/images/categories/'+item.image"
+                                                            <img :src="'/uploads/images/'+item.image"
                                                                  :alt="item.image">
                                                         </div>
                                                         <span>{{ item.name }}</span>

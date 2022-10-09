@@ -60,9 +60,10 @@ class ProductCategoryController extends Controller
 
         $product_category = new ProductCategory;
         //image
+        $upload_path = "/uploads/images/";
         $image_url = $request->input('image');
         if ($image_url != null && $image_url != "") {
-            $start_position = strripos($image_url, "/") + 1;
+            $start_position = strpos($image_url, "/uploads/images/") + strlen($upload_path);
             $image_name = substr($image_url, $start_position, strlen($image_url) - $start_position);
             $product_category->image = $image_name;
         }
@@ -151,12 +152,13 @@ class ProductCategoryController extends Controller
         $image_name = "";
         $delete_url = null;
         $del_image_name = null;
+        $upload_path = "/uploads/images/";
         if ($image_url != null && $image_url != "") {
-            $start_position = strripos($image_url, "/") + 1;
+            $start_position = strpos($image_url, "/uploads/images/") + strlen($upload_path);
             $image_name = substr($image_url, $start_position, strlen($image_url) - $start_position);
         }
 
-        if ($image_name != $product_category->image && $product_category->image != '')
+        if ($image_name != $product_category->image && $product_category->image != null)
             $del_image_name = $product_category->image;
 
         $product_category->image = $image_name;
@@ -167,7 +169,7 @@ class ProductCategoryController extends Controller
         $product_category->update();
 
         if (!empty($del_image_name)) {
-            $delete_url = 'uploads\images\categories\\' . $del_image_name;
+            $delete_url = 'uploads\images\\' . $del_image_name;
             if (File::exists(public_path($delete_url)))
                 File::delete(public_path($delete_url));
         }

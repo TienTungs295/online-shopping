@@ -58,8 +58,9 @@ class BlogController extends Controller
         $blog->content = $request->input('content');
 
         $image_url = $request->input('image');
+        $upload_path = "/uploads/images/";
         if ($image_url != null && $image_url != "") {
-            $start_position = strripos($image_url, "/") + 1;
+            $start_position = strpos($image_url, "/uploads/images/") + strlen($upload_path);
             $image_url = substr($image_url, $start_position, strlen($image_url) - $start_position);
         }
         $blog->image = $image_url;
@@ -122,18 +123,21 @@ class BlogController extends Controller
         $blog->slug = Str::slug($blog->name);
         $blog->content = $request->input('content');
         $image_url = $request->input('image');
-        $delete_url = "";
+        $upload_path = "/uploads/images/";
         if ($image_url != null && $image_url != "") {
-            $start_position = strripos($image_url, "/") + 1;
+            $start_position = strpos($image_url, "/uploads/images/") + strlen($upload_path);
             $image_url = substr($image_url, $start_position, strlen($image_url) - $start_position);
         }
+
+        if ($image_url != $blog->image && $blog->image != null)
+            $del_image_name = $blog->image;
 
         $blog->image = $image_url;
         $featured = $request->has("is_featured") ? 1 : 0;
         $blog->is_featured = $featured;
         $blog->update();
-        if ($image_url != $blog->image && $blog->image != '') {
-            $delete_url = 'uploads\images\\' . $blog->image;
+        if (!empty($del_image_name)) {
+            $delete_url = 'uploads\images\\' . $del_image_name;
             if (File::exists(public_path($delete_url))) {
                 File::delete(public_path($delete_url));
             }
