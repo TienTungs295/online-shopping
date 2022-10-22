@@ -12,7 +12,7 @@ class AjaxResponse
     /**
      * @var array
      */
-    protected $data= array();
+    protected $data;
 
     /**
      * @var string
@@ -23,6 +23,9 @@ class AjaxResponse
      * @var int
      */
     protected $status = 4;
+
+    protected $errors;
+
 
     /**
      * @param mixed $data
@@ -36,6 +39,17 @@ class AjaxResponse
     }
 
     /**
+     * @param string $status
+     * @return BaseHttpResponse
+     */
+    public function setStatus($status): self
+    {
+        $this->status = $status;
+        return $this;
+    }
+
+
+    /**
      * @param string $message
      * @return BaseHttpResponse
      */
@@ -45,12 +59,19 @@ class AjaxResponse
         return $this;
     }
 
-    public function toApiResponse()
+    public function setErrors($errors): self
+    {
+        $this->errors = $errors;
+        return $this;
+    }
+
+    public function toApiResponse($global_status = 200)
     {
         return response()->json(array(
             'status' => $this->status,
             'message' => $this->message,
-            'data' => $this->data
-        ), 200);
+            'data' => $this->data,
+            'errors' => $this->errors
+        ), $global_status);
     }
 }

@@ -20,11 +20,10 @@ window.Vue = require('vue').default;
 
 import App from './components/App';
 import Vue from 'vue';
-import VueRouter from 'vue-router';
+import router from './router';
 import VueToastr from "vue-toastr";
-import routes from './routes';
 import moment from 'moment'
-import {BTabs, BTab, BModal, BCarousel,BCarouselSlide} from 'bootstrap-vue'
+import {BTabs, BTab, BModal, BCarousel, BCarouselSlide} from 'bootstrap-vue'
 import store from './store';
 
 Vue.component('header-component', require('./components/layouts/HeaderComponent').default);
@@ -40,7 +39,6 @@ Vue.component('b-modal', BModal)
 Vue.component('b-carousel', BCarousel)
 Vue.component('b-carousel-slide', BCarouselSlide)
 
-Vue.use(VueRouter);
 Vue.use(VueToastr, {
     defaultTimeout: 2000,
     defaultProgressBar: false,
@@ -50,7 +48,7 @@ Vue.use(VueToastr, {
     defaultStyle: {"top": "50px"},
 });
 
-Vue.prototype.moment = moment
+Vue.prototype.moment = moment;
 
 Vue.directive('carousel', {
     inserted: function (el) {
@@ -99,9 +97,6 @@ Vue.filter('commaFormat', function (value) {
     }
 });
 
-const router = new VueRouter({
-    routes
-});
 
 const app = new Vue({
     store,

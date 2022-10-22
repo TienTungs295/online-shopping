@@ -9,60 +9,10 @@ use App\Http\Controllers\ProductCategoryController;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by tRouteServiceProviderhe RouteServiceProvider within a group which
+| routes are loaded by RouteServiceProvider RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
-Route::group(['prefix' => 'rest'], function () {
-    Route::group(['prefix' => 'product'], function () {
-        Route::get('/find-by-name', ['uses' => 'Rests\ProductRestController@findByName']);
-        Route::get('/find-by-collection', ['uses' => 'Rests\ProductRestController@findByCollection']);
-        Route::get('/find-all', ['uses' => 'Rests\ProductRestController@findAll']);
-        Route::get('/find-featured', ['uses' => 'Rests\ProductRestController@findFeatured']);
-        Route::get('/find-on-sale', ['uses' => 'Rests\ProductRestController@findOnSale']);
-        Route::get('/find-trending', ['uses' => 'Rests\ProductRestController@findTrending']);
-        Route::get('/detail', ['uses' => 'Rests\ProductRestController@detail']);
-    });
-    Route::group(['prefix' => 'category'], function () {
-        Route::get('/find-all', ['uses' => 'Rests\CategoryRestController@findAll']);
-        Route::get('/find-featured', ['uses' => 'Rests\CategoryRestController@findFeatured']);
-        Route::get('/find-top', ['uses' => 'Rests\CategoryRestController@findTop']);
-    });
-    Route::group(['prefix' => 'blog'], function () {
-        Route::get('/find-all', ['uses' => 'Rests\BlogRestController@findAll']);
-        Route::get('/detail', ['uses' => 'Rests\BlogRestController@detail']);
-        Route::get('/related', ['uses' => 'Rests\BlogRestController@related']);
-        Route::get('/recent', ['uses' => 'Rests\BlogRestController@recent']);
-    });
-
-    Route::group(['prefix' => 'with-list'], function () {
-        Route::get('/find-all', ['uses' => 'Rests\WithListRestController@findAll']);
-        Route::get('/count', ['uses' => 'Rests\WithListRestController@count']);
-        Route::post('/save', ['uses' => 'Rests\WithListRestController@store']);
-        Route::post('/delete', ['uses' => 'Rests\WithListRestController@destroy']);
-    });
-
-    Route::group(['prefix' => 'cart'], function () {
-        Route::get('/find-all', ['uses' => 'Rests\CartRestController@findAll']);
-        Route::get('/count', ['uses' => 'Rests\CartRestController@count']);
-        Route::post('/add', ['uses' => 'Rests\CartRestController@store']);
-        Route::post('/update', ['uses' => 'Rests\CartRestController@update']);
-        Route::post('/remove', ['uses' => 'Rests\CartRestController@remove']);
-    });
-
-    Route::group(['prefix' => 'collection'], function () {
-        Route::get('/find-all', ['uses' => 'Rests\CollectionRestController@findAll']);
-    });
-
-    Route::group(['prefix' => 'order'], function () {
-        Route::post('/check-out', ['uses' => 'Rests\OrderRestController@checkOut']);
-    });
-
-    Route::post('/tai-anh', ['as' => 'uploadImage', 'uses' => 'Rests\UploadRestController@storeImage']);
-});
-
 
 Route::group(['middleware' => 'isMember', 'prefix' => 'quan-tri'], function () {
     Route::get('/', ['as' => 'homeView', 'uses' => 'HomeController@index']);
@@ -147,9 +97,10 @@ Route::group(['middleware' => 'isMember', 'prefix' => 'quan-tri'], function () {
     });
 });
 
-Route::group(['prefix' => '/'], function () {
-    Route::get('', ['as' => 'indexView', 'uses' => 'IndexController@index']);
-});
+
+Route::any('{all}', function () {
+    return view('frontend.index');
+})->where(['all' => '^((?!rest|quan-tri).)*$']);;
 
 //Route::middleware([
 //    'auth:sanctum',

@@ -179,6 +179,9 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
 
+        //JWT
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class
+
     ],
 
     /*
@@ -235,6 +238,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         //Shopping Cart
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
     ],
 
 ];

@@ -14,14 +14,14 @@ class WithListService {
         return http.get(url, {alert: alert});
     };
 
-    save(object, alert) {
-        let url = PREFIX_URL + "save" ;
-        return http.post(url, object,{alert: alert});
+    save(object, redirectIfUnAuthenticate, alert) {
+        let url = PREFIX_URL + "save";
+        return http.post(url, object, {alert: alert, redirectIfUnAuthenticate: redirectIfUnAuthenticate});
     };
 
     delete(object, alert) {
         let url = PREFIX_URL + "delete";
-        return http.post(url, object, {alert: alert});
+        return http.post(url, object, {alert: alert, redirectIfUnAuthenticate: redirectIfUnAuthenticate});
     }
 
 }

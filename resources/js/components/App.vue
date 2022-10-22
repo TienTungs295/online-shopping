@@ -6,9 +6,31 @@
     </div>
 </template>
 <script>
+import AuthService from "../services/AuthService";
+
 export default {
     name: "App",
+    methods:{
+        checkTokenExpire: function () {
+            setInterval(function () {
+                AuthService.userProfile().then(response => {
+                }).catch(response => {
+
+                });
+            }, 60000);
+        }
+    },
     mounted() {
+        if (localStorage.getItem('access_token')){
+            AuthService.userProfile().then(response => {
+                let data = response || {};
+                this.$store.commit("setLoggedIn", true);
+                this.$store.commit("setUserProfile", data);
+            }).catch(response => {
+
+            });
+        }
+        this.checkTokenExpire()
     }
 }
 </script>

@@ -14,8 +14,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+        'guard' => 'api',
+        'passwords' => 'customer_accounts',
     ],
 
     /*
@@ -39,6 +39,11 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+        'api' => [
+            'driver' => 'jwt',
+            'provider' => 'customer_accounts',
+            'hash' => false
         ],
     ],
 
@@ -65,6 +70,11 @@ return [
             'model' => App\Models\User::class,
         ],
 
+        'customer_accounts' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\CustomerAccount::class,
+        ],
+
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -89,6 +99,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'customer_accounts' => [
+            'provider' => 'customer_accounts',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

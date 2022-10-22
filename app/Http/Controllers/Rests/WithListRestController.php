@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 class WithListRestController extends Controller
 {
+
     public function findAll(Request $request)
     {
         $ajax_response = new AjaxResponse();

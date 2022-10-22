@@ -61,10 +61,12 @@
                                             </router-link>
                                         </td>
                                         <td class="product-price" data-title="Giá">
-                                            <span class="price">{{ item.price | commaFormat}}</span>
-                                            <del v-if="item.options.on_sale">{{ item.options.price | commaFormat}}</del>
+                                            <span class="price">{{ item.price | commaFormat }}</span>
+                                            <del v-if="item.options.on_sale">{{ item.options.price | commaFormat }}
+                                            </del>
                                         </td>
-                                        <td class="product-subtotal" data-title="Thêm vào giỏ"><a @click="addToCart(item.id)"
+                                        <td class="product-subtotal" data-title="Thêm vào giỏ"><a
+                                            @click="addToCart(item.id)"
                                             class="btn btn-fill-out btn-sm add-to-cart-button rounded-0">Thêm vào
                                             giỏ</a></td>
                                         <td class="product-remove" data-title="Xóa"><a
@@ -90,6 +92,8 @@
 import WithListService from "../../services/WithListService";
 import CartService from "../../services/CartService";
 import {mapGetters} from "vuex";
+import AuthService from "../../services/AuthService";
+import store from "../../store";
 
 export default {
     name: "Wishlist",
@@ -160,6 +164,11 @@ export default {
                 this.isLoading = false;
             });
         },
+    },
+    created() {
+        AuthService.isAuthenticated(true).then(response => {
+        }).catch(response => {
+        });
     },
     mounted() {
         this.findAll();

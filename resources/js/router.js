@@ -1,5 +1,8 @@
-import Example from './components/HomeComponent'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import store from "./store";
 
+Vue.use(VueRouter);
 const routes = [
     {
         path: '/',
@@ -30,6 +33,7 @@ const routes = [
         path: '/san-pham-yeu-thich',
         name: "withList",
         component: () => import("./components/products/WishListComponent"),
+        meta: {requiresAuth: true}
     },
     {
         path: '/gio-hang',
@@ -45,7 +49,38 @@ const routes = [
         path: '/lien-he',
         name: "contact-us",
         component: () => import("./components/ContactUsComponent"),
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: () => import("./components/auth/LoginComponent"),
+    },
+    {
+        path: '/logout',
+        name: 'logout',
+        component: () => import("./components/auth/LogoutComponent"),
+    },
+    {
+        path: '/register',
+        name: 'register',
+        component: () => import("./components/auth/RegisterComponent"),
     }
 ];
+const router = new VueRouter({
+    mode: 'history',
+    routes
+});
 
-export default routes;
+router.beforeEach((to, from, next) => {
+    if (to.matched.some(route => route.meta.requiresAuth) && !store.state.object.isLoggedIn) {
+        next({name: 'login'})
+        return;
+    }
+    if (to.name == 'login' && store.state.object.isLoggedIn) {
+        next({name: 'home'})
+        return;
+    }
+    next();
+});
+
+export default router;
