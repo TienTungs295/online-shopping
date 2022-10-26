@@ -24,22 +24,20 @@ http.interceptors.request.use(function (config) {
 http.interceptors.response.use(function (response) {
     let data = response.data || {};
     if (data.status == SUCCESS) {
+        if (response.config.redirectToHomeIfAuthen && router.history.current.name == "login") router.push({name: "home"});
         if (response.config.alert && data.message != null && data.message != undefined)
             Vue.prototype.$toastr.s(data.message);
-
         return data.data;
     } else {
-        if (data.message != null && data.message != undefined)
-            Vue.prototype.$toastr.e(data.message);
+        if (data.message != null && data.message != undefined) Vue.prototype.$toastr.e(data.message);
         return Promise.reject(data);
     }
 }, function (error) {
     if (error.response.status == UN_AUTHENTICATED) {
-        localStorage.setItem('access_token', null);
-        store.commit("setLoggedIn", false);
+        localStorage.removeItem('access_token');
         store.commit("setUserProfile", null);
-        if (error.response.config.redirectIfUnAuthenticate)
-            if (router.name !== "login") router.push({name: 'login'})
+        if (error.response.config.redirectToLoginIfUnAuthen && router.history.current.name !== "login")
+            router.push({name: 'login'});
     }
     return Promise.reject(error);
 });

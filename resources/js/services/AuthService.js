@@ -28,10 +28,25 @@ class AuthService {
         return http.get(url, {alert: alert});
     };
 
-    isAuthenticated(redirectIfUnAuthenticate) {
+    isAuthenticated(redirectToLoginIfUnAuthen, redirectToHomeIfAuthen) {
         let url = PREFIX_URL + "is-authenticated";
-        return http.get(url, {redirectIfUnAuthenticate: redirectIfUnAuthenticate});
+        return http.get(url,
+            {
+                redirectToLoginIfUnAuthen: redirectToLoginIfUnAuthen,
+                redirectToHomeIfAuthen: redirectToHomeIfAuthen
+            }
+        );
     }
+
+    update(object, alert) {
+        let url = PREFIX_URL + "update";
+        return http.post(url, object, {alert: alert, redirectToLoginIfUnAuthen: true});
+    };
+
+    changePass(object, alert) {
+        let url = PREFIX_URL + "change-pass";
+        return http.post(url, object, {alert: alert, redirectToLoginIfUnAuthen: true});
+    };
 }
 
 export default new AuthService();

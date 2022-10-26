@@ -2079,16 +2079,11 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    if (localStorage.getItem('access_token')) {
-      _services_AuthService__WEBPACK_IMPORTED_MODULE_0__["default"].userProfile().then(function (response) {
-        var data = response || {};
+    _services_AuthService__WEBPACK_IMPORTED_MODULE_0__["default"].userProfile().then(function (response) {
+      var data = response || {};
 
-        _this.$store.commit("setLoggedIn", true);
-
-        _this.$store.commit("setUserProfile", data);
-      })["catch"](function (response) {});
-    }
-
+      _this.$store.commit("setUserProfile", data);
+    })["catch"](function (response) {});
     this.checkTokenExpire();
   }
 });
@@ -2210,7 +2205,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     };
   },
-  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_3__.mapGetters)(['withListCount', 'cartCount', 'cart', 'subTotal'])),
+  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_3__.mapGetters)(['withListCount', 'cartCount', 'cart', 'subTotal', 'isLoggedIn', 'userProfile'])),
   methods: {
     countWithList: function countWithList() {
       var _this = this;
@@ -2925,16 +2920,35 @@ var render = function render() {
     staticClass: "d-flex align-items-center justify-content-center justify-content-md-end"
   }, [_vm._m(1), _vm._v(" "), _c("div", {
     staticClass: "light-color mgl-5"
-  }, [_c("router-link", {
+  }, [_vm.userProfile != null ? _c("router-link", {
     staticClass: "light-color-i",
     attrs: {
       to: {
-        name: "contact-us"
+        name: "userProfile"
       }
     }
   }, [_c("i", {
-    staticClass: "ion-map mgr-5"
-  }), _vm._v(" "), _c("span", [_vm._v("Liên hệ")])])], 1)])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "ti-user mgr-5"
+  }), _vm._v(" "), _c("span", {
+    staticClass: "position-relative",
+    staticStyle: {
+      bottom: "2px"
+    }
+  }, [_vm._v(_vm._s(_vm.userProfile.name))])]) : _c("router-link", {
+    staticClass: "light-color-i",
+    attrs: {
+      to: {
+        name: "login"
+      }
+    }
+  }, [_c("i", {
+    staticClass: "ti-user mgr-5"
+  }), _vm._v(" "), _c("span", {
+    staticClass: "position-relative",
+    staticStyle: {
+      bottom: "2px"
+    }
+  }, [_vm._v("Đăng nhập")])])], 1)])])])])]), _vm._v(" "), _c("div", {
     staticClass: "middle-header dark_skin"
   }, [_c("div", {
     staticClass: "container"
@@ -3232,25 +3246,7 @@ var staticRenderFns = [function () {
       href: "#"
     }
   }, [_c("i", {
-    staticClass: "ion-social-twitter"
-  })])]), _vm._v(" "), _c("li", [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
     staticClass: "ion-social-googleplus"
-  })])]), _vm._v(" "), _c("li", [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "ion-social-youtube-outline"
-  })])]), _vm._v(" "), _c("li", [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "ion-social-instagram-outline"
   })])])])]);
 }, function () {
   var _vm = this,
@@ -3908,6 +3904,9 @@ http.interceptors.response.use(function (response) {
   var data = response.data || {};
 
   if (data.status == SUCCESS) {
+    if (response.config.redirectToHomeIfAuthen && _router__WEBPACK_IMPORTED_MODULE_2__["default"].history.current.name == "login") _router__WEBPACK_IMPORTED_MODULE_2__["default"].push({
+      name: "home"
+    });
     if (response.config.alert && data.message != null && data.message != undefined) vue__WEBPACK_IMPORTED_MODULE_3__["default"].prototype.$toastr.s(data.message);
     return data.data;
   } else {
@@ -3916,10 +3915,9 @@ http.interceptors.response.use(function (response) {
   }
 }, function (error) {
   if (error.response.status == UN_AUTHENTICATED) {
-    localStorage.setItem('access_token', null);
-    _store__WEBPACK_IMPORTED_MODULE_1__["default"].commit("setLoggedIn", false);
+    localStorage.removeItem('access_token');
     _store__WEBPACK_IMPORTED_MODULE_1__["default"].commit("setUserProfile", null);
-    if (error.response.config.redirectIfUnAuthenticate) if (_router__WEBPACK_IMPORTED_MODULE_2__["default"].name !== "login") _router__WEBPACK_IMPORTED_MODULE_2__["default"].push({
+    if (error.response.config.redirectToLoginIfUnAuthen && _router__WEBPACK_IMPORTED_MODULE_2__["default"].history.current.name !== "login") _router__WEBPACK_IMPORTED_MODULE_2__["default"].push({
       name: 'login'
     });
   }
@@ -4006,22 +4004,28 @@ var routes = [{
     return __webpack_require__.e(/*! import() */ "resources_js_components_ContactUsComponent_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/ContactUsComponent */ "./resources/js/components/ContactUsComponent.vue"));
   }
 }, {
-  path: '/login',
+  path: '/dang-nhap',
   name: 'login',
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_components_auth_LoginComponent_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/auth/LoginComponent */ "./resources/js/components/auth/LoginComponent.vue"));
   }
 }, {
-  path: '/logout',
-  name: 'logout',
+  path: '/tai-khoan',
+  name: 'userProfile',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ "resources_js_components_auth_LogoutComponent_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/auth/LogoutComponent */ "./resources/js/components/auth/LogoutComponent.vue"));
+    return __webpack_require__.e(/*! import() */ "resources_js_components_auth_UserProfile_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/auth/UserProfile */ "./resources/js/components/auth/UserProfile.vue"));
   }
 }, {
-  path: '/register',
+  path: '/dang-ky',
   name: 'register',
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_components_auth_RegisterComponent_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/auth/RegisterComponent */ "./resources/js/components/auth/RegisterComponent.vue"));
+  }
+}, {
+  path: '/thay-doi-mat-khau',
+  name: 'changePass',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_components_auth_ChangePassComponent_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/auth/ChangePassComponent */ "./resources/js/components/auth/ChangePassComponent.vue"));
   }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
@@ -4031,14 +4035,14 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
 router.beforeEach(function (to, from, next) {
   if (to.matched.some(function (route) {
     return route.meta.requiresAuth;
-  }) && !_store__WEBPACK_IMPORTED_MODULE_0__["default"].state.object.isLoggedIn) {
+  }) && !localStorage.getItem('access_token')) {
     next({
       name: 'login'
     });
     return;
   }
 
-  if (to.name == 'login' && _store__WEBPACK_IMPORTED_MODULE_0__["default"].state.object.isLoggedIn) {
+  if (to.name == 'login' && localStorage.getItem('access_token') != null) {
     next({
       name: 'home'
     });
@@ -4136,10 +4140,29 @@ var AuthService = /*#__PURE__*/function () {
     }
   }, {
     key: "isAuthenticated",
-    value: function isAuthenticated(redirectIfUnAuthenticate) {
+    value: function isAuthenticated(redirectToLoginIfUnAuthen, redirectToHomeIfAuthen) {
       var url = PREFIX_URL + "is-authenticated";
       return _http_common__WEBPACK_IMPORTED_MODULE_0__["default"].get(url, {
-        redirectIfUnAuthenticate: redirectIfUnAuthenticate
+        redirectToLoginIfUnAuthen: redirectToLoginIfUnAuthen,
+        redirectToHomeIfAuthen: redirectToHomeIfAuthen
+      });
+    }
+  }, {
+    key: "update",
+    value: function update(object, alert) {
+      var url = PREFIX_URL + "update";
+      return _http_common__WEBPACK_IMPORTED_MODULE_0__["default"].post(url, object, {
+        alert: alert,
+        redirectToLoginIfUnAuthen: true
+      });
+    }
+  }, {
+    key: "changePass",
+    value: function changePass(object, alert) {
+      var url = PREFIX_URL + "change-pass";
+      return _http_common__WEBPACK_IMPORTED_MODULE_0__["default"].post(url, object, {
+        alert: alert,
+        redirectToLoginIfUnAuthen: true
       });
     }
   }]);
@@ -4379,13 +4402,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _http_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../http-common */ "./resources/js/http-common.js");
-/* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../base */ "./resources/js/base.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-
 
 
 var PREFIX_URL = "/rest/with-list/";
@@ -4413,11 +4434,11 @@ var WithListService = /*#__PURE__*/function () {
     }
   }, {
     key: "save",
-    value: function save(object, redirectIfUnAuthenticate, alert) {
+    value: function save(object, alert) {
       var url = PREFIX_URL + "save";
       return _http_common__WEBPACK_IMPORTED_MODULE_0__["default"].post(url, object, {
         alert: alert,
-        redirectIfUnAuthenticate: redirectIfUnAuthenticate
+        redirectToLoginIfUnAuthen: true
       });
     }
   }, {
@@ -4426,7 +4447,7 @@ var WithListService = /*#__PURE__*/function () {
       var url = PREFIX_URL + "delete";
       return _http_common__WEBPACK_IMPORTED_MODULE_0__["default"].post(url, object, {
         alert: alert,
-        redirectIfUnAuthenticate: redirectIfUnAuthenticate
+        redirectToLoginIfUnAuthen: true
       });
     }
   }]);
@@ -4462,8 +4483,7 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1_
       cart: [],
       subTotal: 0,
       subTotalWithShippingFee: 0,
-      isLoggedIn: false,
-      user_profile: {}
+      userProfile: null
     }
   },
   getters: {
@@ -4482,11 +4502,8 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1_
     subTotalWithShippingFee: function subTotalWithShippingFee(state) {
       return state.object.subTotalWithShippingFee;
     },
-    isLoggedIn: function isLoggedIn(state) {
-      return state.object.isLoggedIn;
-    },
-    user_profile: function user_profile(state) {
-      return state.object.user_profile;
+    userProfile: function userProfile(state) {
+      return state.object.userProfile;
     }
   },
   mutations: {
@@ -4505,11 +4522,8 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1_
     setSubTotalWithShippingFee: function setSubTotalWithShippingFee(state, newNumber) {
       state.object.subTotalWithShippingFee = newNumber;
     },
-    setLoggedIn: function setLoggedIn(state, isLogin) {
-      state.object.isLoggedIn = isLogin;
-    },
-    setUserProfile: function setUserProfile(state, user_profile) {
-      state.object.user_profile = user_profile;
+    setUserProfile: function setUserProfile(state, userProfile) {
+      state.object.userProfile = userProfile;
     }
   }
 }));
@@ -12245,7 +12259,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n@-webkit-keyframes ldio-xwg8kc27gf-65109bea {\n0% {\n        top: 47px;\n        left: 47px;\n        width: 0;\n        height: 0;\n        opacity: 1;\n}\n100% {\n        top: 8.5px;\n        left: 8.5px;\n        width: 77px;\n        height: 77px;\n        opacity: 0;\n}\n}\n@keyframes ldio-xwg8kc27gf-65109bea {\n0% {\n        top: 47px;\n        left: 47px;\n        width: 0;\n        height: 0;\n        opacity: 1;\n}\n100% {\n        top: 8.5px;\n        left: 8.5px;\n        width: 77px;\n        height: 77px;\n        opacity: 0;\n}\n}\n.ldio-xwg8kc27gf div[data-v-65109bea] {\n    position: absolute;\n    border-width: 3px;\n    border-style: solid;\n    opacity: 1;\n    border-radius: 50%;\n    -webkit-animation: ldio-xwg8kc27gf-65109bea 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;\n            animation: ldio-xwg8kc27gf-65109bea 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;\n}\n.ldio-xwg8kc27gf div[data-v-65109bea]:nth-child(1) {\n    border-color: #e90c59;\n    -webkit-animation-delay: 0s;\n            animation-delay: 0s;\n}\n.ldio-xwg8kc27gf div[data-v-65109bea]:nth-child(2) {\n    border-color: #339059;\n    -webkit-animation-delay: -0.5s;\n            animation-delay: -0.5s;\n}\n.loadingio-spinner-ripple-ikacqqmjs2n[data-v-65109bea] {\n    width: 100px;\n    height: 100px;\n    display: inline-block;\n    overflow: hidden;\n    background: transparent;\n}\n.ldio-xwg8kc27gf[data-v-65109bea] {\n    width: 100%;\n    height: 100%;\n    position: relative;\n    transform: translateZ(0) scale(1);\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    transform-origin: 0 0;\n}\n.ldio-xwg8kc27gf div[data-v-65109bea] {\n    box-sizing: content-box;\n}\n.center-loading[data-v-65109bea] {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n@-webkit-keyframes ldio-xwg8kc27gf-65109bea {\n0% {\n        top: 47px;\n        left: 47px;\n        width: 0;\n        height: 0;\n        opacity: 1;\n}\n100% {\n        top: 8.5px;\n        left: 8.5px;\n        width: 77px;\n        height: 77px;\n        opacity: 0;\n}\n}\n@keyframes ldio-xwg8kc27gf-65109bea {\n0% {\n        top: 47px;\n        left: 47px;\n        width: 0;\n        height: 0;\n        opacity: 1;\n}\n100% {\n        top: 8.5px;\n        left: 8.5px;\n        width: 77px;\n        height: 77px;\n        opacity: 0;\n}\n}\n.ldio-xwg8kc27gf div[data-v-65109bea] {\n    position: absolute;\n    border-width: 3px;\n    border-style: solid;\n    opacity: 1;\n    border-radius: 50%;\n    -webkit-animation: ldio-xwg8kc27gf-65109bea 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;\n            animation: ldio-xwg8kc27gf-65109bea 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;\n}\n.ldio-xwg8kc27gf div[data-v-65109bea]:nth-child(1) {\n    border-color: #e90c59;\n    -webkit-animation-delay: 0s;\n            animation-delay: 0s;\n}\n.ldio-xwg8kc27gf div[data-v-65109bea]:nth-child(2) {\n    border-color: #339059;\n    -webkit-animation-delay: -0.5s;\n            animation-delay: -0.5s;\n}\n.loadingio-spinner-ripple-ikacqqmjs2n[data-v-65109bea] {\n    width: 100px;\n    height: 100px;\n    display: inline-block;\n    overflow: hidden;\n    background: transparent;\n}\n.ldio-xwg8kc27gf[data-v-65109bea] {\n    width: 100%;\n    height: 100%;\n    position: relative;\n    transform: translateZ(0) scale(1);\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    transform-origin: 0 0;\n}\n.ldio-xwg8kc27gf div[data-v-65109bea] {\n    box-sizing: content-box;\n}\n.center-loading[data-v-65109bea] {\n    z-index: 200;\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background:rgba(255,255,255, 0.8);\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -62315,7 +62329,7 @@ module.exports = JSON.parse('{"_args":[["axios@0.21.4","D:\\\\xampp\\\\htdocs\\\
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_HomeComponent_vue":1,"resources_js_components_products_ProductDetailComponent_vue":1,"resources_js_components_products_ProductListComponent_vue":1,"resources_js_components_blogs_BlogListComponent_vue":1,"resources_js_components_blogs_BlogDetailComponent_vue":1,"resources_js_components_products_WishListComponent_vue":1,"resources_js_components_carts_CartComponent_vue":1,"resources_js_components_carts_OrderComponent_vue":1,"resources_js_components_ContactUsComponent_vue":1,"resources_js_components_auth_LoginComponent_vue":1,"resources_js_components_auth_LogoutComponent_vue":1,"resources_js_components_auth_RegisterComponent_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_HomeComponent_vue":1,"resources_js_components_products_ProductDetailComponent_vue":1,"resources_js_components_products_ProductListComponent_vue":1,"resources_js_components_blogs_BlogListComponent_vue":1,"resources_js_components_blogs_BlogDetailComponent_vue":1,"resources_js_components_products_WishListComponent_vue":1,"resources_js_components_carts_CartComponent_vue":1,"resources_js_components_carts_OrderComponent_vue":1,"resources_js_components_ContactUsComponent_vue":1,"resources_js_components_auth_LoginComponent_vue":1,"resources_js_components_auth_UserProfile_vue":1,"resources_js_components_auth_RegisterComponent_vue":1,"resources_js_components_auth_ChangePassComponent_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

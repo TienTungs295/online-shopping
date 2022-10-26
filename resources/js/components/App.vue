@@ -10,7 +10,7 @@ import AuthService from "../services/AuthService";
 
 export default {
     name: "App",
-    methods:{
+    methods: {
         checkTokenExpire: function () {
             setInterval(function () {
                 AuthService.userProfile().then(response => {
@@ -21,16 +21,12 @@ export default {
         }
     },
     mounted() {
-        if (localStorage.getItem('access_token')){
-            AuthService.userProfile().then(response => {
-                let data = response || {};
-                this.$store.commit("setLoggedIn", true);
-                this.$store.commit("setUserProfile", data);
-            }).catch(response => {
-
-            });
-        }
-        this.checkTokenExpire()
+        AuthService.userProfile().then(response => {
+            let data = response || {};
+            this.$store.commit("setUserProfile", data);
+        }).catch(response => {
+        });
+        this.checkTokenExpire();
     }
 }
 </script>

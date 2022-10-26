@@ -68,9 +68,11 @@
 }
 
 .center-loading {
+    z-index: 200;
     position: absolute;
     width: 100%;
-    height: 100%;;
+    height: 100%;
+    background:rgba(255,255,255, 0.8);
 }
 </style>
 

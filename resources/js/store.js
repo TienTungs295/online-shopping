@@ -10,8 +10,7 @@ export default new Vuex.Store({
             cart: [],
             subTotal: 0,
             subTotalWithShippingFee: 0,
-            isLoggedIn: false,
-            user_profile: {},
+            userProfile: null,
         }
     },
     getters: {
@@ -20,8 +19,7 @@ export default new Vuex.Store({
         cart: state => state.object.cart,
         subTotal: state => state.object.subTotal,
         subTotalWithShippingFee: state => state.object.subTotalWithShippingFee,
-        isLoggedIn: state => state.object.isLoggedIn,
-        user_profile: state => state.object.user_profile,
+        userProfile: state => state.object.userProfile
     },
     mutations: {
         setWithListCount(state, newNumber) {
@@ -39,11 +37,8 @@ export default new Vuex.Store({
         setSubTotalWithShippingFee(state, newNumber) {
             state.object.subTotalWithShippingFee = newNumber;
         },
-        setLoggedIn(state, isLogin) {
-            state.object.isLoggedIn = isLogin;
-        },
-        setUserProfile(state, user_profile) {
-            state.object.user_profile = user_profile;
+        setUserProfile(state, userProfile) {
+            state.object.userProfile = userProfile;
         }
     }
 })

@@ -51,19 +51,24 @@ const routes = [
         component: () => import("./components/ContactUsComponent"),
     },
     {
-        path: '/login',
+        path: '/dang-nhap',
         name: 'login',
         component: () => import("./components/auth/LoginComponent"),
     },
     {
-        path: '/logout',
-        name: 'logout',
-        component: () => import("./components/auth/LogoutComponent"),
+        path: '/tai-khoan',
+        name: 'userProfile',
+        component: () => import("./components/auth/UserProfile"),
     },
     {
-        path: '/register',
+        path: '/dang-ky',
         name: 'register',
         component: () => import("./components/auth/RegisterComponent"),
+    },
+    {
+        path: '/thay-doi-mat-khau',
+        name: 'changePass',
+        component: () => import("./components/auth/ChangePassComponent"),
     }
 ];
 const router = new VueRouter({
@@ -72,11 +77,11 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    if (to.matched.some(route => route.meta.requiresAuth) && !store.state.object.isLoggedIn) {
+    if (to.matched.some(route => route.meta.requiresAuth) && !localStorage.getItem('access_token')) {
         next({name: 'login'})
         return;
     }
-    if (to.name == 'login' && store.state.object.isLoggedIn) {
+    if (to.name == 'login' && localStorage.getItem('access_token') != null) {
         next({name: 'home'})
         return;
     }

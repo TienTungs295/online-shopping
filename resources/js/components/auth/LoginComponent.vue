@@ -27,7 +27,6 @@
 
         <!-- START MAIN CONTENT -->
         <div class="main_content">
-
             <!-- START LOGIN SECTION -->
             <div class="login_register_wrap section">
                 <div class="container">
@@ -96,20 +95,27 @@ export default {
     computed: {
         ...mapGetters([
             'isLoggedIn'
-        ])
+        ]),
+        currentRouteName() {
+            return this.$route.name;
+        }
     },
     methods: {
         login: function (email, password) {
             AuthService.login({email: email, password: password}).then(response => {
                 let data = response || {};
-                this.$store.commit("setLoggedIn", true);
-                this.$store.commit("setUserProfile", data.user);
                 localStorage.setItem('access_token', data.access_token);
+                this.$store.commit("setUserProfile", data.user);
                 this.$router.push({name: 'home'});
             }).catch(response => {
                 this.errors = response.errors || {};
             });
         }
+    },
+    created() {
+        AuthService.isAuthenticated(false, true).then(response => {
+        }).catch(response => {
+        });
     },
     mounted() {
     }

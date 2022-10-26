@@ -17,16 +17,23 @@
                                 <div class="download_wrap">
                                     <ul class="icon_list text-center text-lg-left">
                                         <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
                                         <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                                        <li><a href="#"><i class="ion-social-youtube-outline"></i></a></li>
-                                        <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
                                     </ul>
                                 </div>
                                 <div class="light-color mgl-5">
-                                    <router-link :to="{ name: 'contact-us'}" class="light-color-i">
-                                        <i class="ion-map mgr-5"></i>
-                                        <span>Liên hệ</span>
+                                    <!--                                    <router-link :to="{ name: 'contact-us'}" class="light-color-i">-->
+                                    <!--                                        <i class="ion-map mgr-5"></i>-->
+                                    <!--                                        <span>Liên hệ</span>-->
+                                    <!--                                    </router-link>-->
+                                    <router-link v-if="userProfile != null" :to="{ name: 'userProfile'}"
+                                                 class="light-color-i">
+                                        <i class="ti-user mgr-5"></i>
+                                        <span class="position-relative"
+                                              style="bottom: 2px">{{ userProfile.name }}</span>
+                                    </router-link>
+                                    <router-link v-else :to="{ name: 'login'}" class="light-color-i">
+                                        <i class="ti-user mgr-5"></i>
+                                        <span class="position-relative" style="bottom: 2px">Đăng nhập</span>
                                     </router-link>
 
                                 </div>
@@ -235,6 +242,8 @@ export default {
             'cartCount',
             'cart',
             'subTotal',
+            'isLoggedIn',
+            'userProfile'
         ])
     },
     methods: {

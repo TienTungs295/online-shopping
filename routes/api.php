@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth:api']], function () {
         Route::post('/refresh', [AuthRestController::class, 'refresh']);
         Route::get('/user-profile', [AuthRestController::class, 'userProfile']);
         Route::post('/change-pass', [AuthRestController::class, 'changePassWord']);
+        Route::post('/update', [AuthRestController::class, 'update']);
         Route::get('/is-authenticated', [AuthRestController::class, 'isAuthenticated']);
     });
 });
