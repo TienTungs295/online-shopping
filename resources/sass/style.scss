@@ -9287,6 +9287,7 @@ a {
                 @media (max-width: 1199px) {
                     height: 450px;
                 }
+
                 img {
                     width: 100%;
                     height: 100%;
@@ -9301,6 +9302,7 @@ a {
                 height: 135px;
                 border: 1px solid #ddd;
                 padding: 5px;
+
                 img {
                     width: 100%;
                     height: 100%;
@@ -9360,12 +9362,39 @@ a {
     padding-top: 3px;
     padding-bottom: 0;
     border-bottom: none;
-    .close{
+
+    .close {
         padding-right: 10px;
     }
 }
 
 .modal-body {
     padding-top: 0;
+}
+
+//Dropdown
+.custom-dropdown {
+    vertical-align: top;
+
+    button {
+        padding: 0;
+    }
+
+    .dropdown-item {
+        &:hover, &:focus {
+            background: #e9ecef;
+        }
+    }
+
+    .dropdown-menu {
+        top: 10px;
+        border-radius: 0;
+    }
+
+    a {
+        &:hover, &:focus {
+            color: inherit;
+        }
+    }
 }
 

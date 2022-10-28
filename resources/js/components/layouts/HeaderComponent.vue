@@ -25,17 +25,35 @@
                                     <!--                                        <i class="ion-map mgr-5"></i>-->
                                     <!--                                        <span>Liên hệ</span>-->
                                     <!--                                    </router-link>-->
-                                    <router-link v-if="userProfile != null" :to="{ name: 'userProfile'}"
-                                                 class="light-color-i">
-                                        <i class="ti-user mgr-5"></i>
-                                        <span class="position-relative"
-                                              style="bottom: 2px">{{ userProfile.name }}</span>
-                                    </router-link>
-                                    <router-link v-else :to="{ name: 'login'}" class="light-color-i">
-                                        <i class="ti-user mgr-5"></i>
-                                        <span class="position-relative" style="bottom: 2px">Đăng nhập</span>
-                                    </router-link>
 
+
+                                    <b-dropdown v-if="userProfile != null" variant="link" no-caret
+                                                class="custom-dropdown" toggle-class="text-decoration-none">
+                                        <template #button-content>
+                                            <div
+                                                class="light-color-i">
+                                                <i class="ti-user mgr-5" style="font-size: 14px"></i>
+                                                <span class="mgr-5">{{ userProfile.name }}</span>  <i class="ti-angle-down" style="font-size: 14px"></i>
+                                            </div>
+                                        </template>
+                                        <b-dropdown-item>
+                                            <router-link :to="{ name: 'userProfile'}">
+                                                Thông tin tài khoản
+                                            </router-link>
+                                        </b-dropdown-item>
+                                        <b-dropdown-item>
+                                            <router-link :to="{ name: 'changePass'}">
+                                                Thay đổi mật khẩu
+                                            </router-link>
+                                        </b-dropdown-item>
+                                        <b-dropdown-item @click="logout()">Đăng xuất</b-dropdown-item>
+                                    </b-dropdown>
+                                    <div v-else style="position: relative; display: inline-flex;vertical-align: middle;">
+                                        <router-link  :to="{ name: 'login'}" class="light-color-i">
+                                            <i class="ti-user mgr-5" style="font-size: 14px"></i>
+                                            <span class="position-relative" style="bottom: 2px">Đăng nhập</span>
+                                        </router-link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -224,6 +242,7 @@ import CategoryService from "../../services/CategoryService";
 import WithListService from "../../services/WithListService";
 import CartService from "../../services/CartService";
 import {mapGetters} from 'vuex'
+import AuthService from "../../services/AuthService";
 
 export default {
     name: "Header",
@@ -295,6 +314,17 @@ export default {
                 category_id: "",
                 name: ""
             };
+        },
+        logout() {
+            AuthService.logout().then(response => {
+                localStorage.removeItem('access_token');
+                this.$store.commit("setUserProfile", null);
+                let routerName = this.$router.history.current.name;
+                if (routerName == "userProfile" || routerName == "changePass" || routerName == "withList") {
+                    this.$router.push({name: "login"});
+                }
+            }).catch(response => {
+            });
         }
     },
     mounted() {

@@ -13,9 +13,9 @@ class AuthService {
         return http.post(url, object, {alert: alert});
     };
 
-    logout(object, alert) {
+    logout(alert) {
         let url = PREFIX_URL + "logout";
-        return http.post(url, object, {alert: alert});
+        return http.post(url, {alert: alert});
     };
 
     refresh(object, alert) {

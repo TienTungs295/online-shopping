@@ -87,6 +87,12 @@ Route::group(['middleware' => ['isMember','auth:web'], 'prefix' => 'quan-tri'], 
         Route::post('/cap-nhat-trang-thai/{id}', ['as' => 'changeOrderStatus', 'uses' => 'OrderController@changeStatus']);
     });
 
+    Route::group(['prefix' => 'danh-gia'], function () {
+        Route::get('', ['as' => 'reviewView', 'uses' => 'ReviewController@index']);
+        Route::post('/xoa/{id}', ['as' => 'deleteReview', 'uses' => 'ReviewController@destroy']);
+        Route::post('/cap-nhat-trang-thai/{id}', ['as' => 'changeReviewStatus', 'uses' => 'ReviewController@changeStatus']);
+    });
+
     Route::group(['middleware' => 'isAdmin', 'prefix' => 'nhan-vien'], function () {
         Route::get('', ['as' => 'userView', 'uses' => 'UserController@index']);
         Route::get('/them-moi', ['as' => 'createUserView', 'uses' => 'UserController@create']);

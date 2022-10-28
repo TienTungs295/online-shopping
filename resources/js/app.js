@@ -22,8 +22,8 @@ import App from './components/App';
 import Vue from 'vue';
 import router from './router';
 import VueToastr from "vue-toastr";
-import moment from 'moment'
-import {BTabs, BTab, BModal, BCarousel, BCarouselSlide} from 'bootstrap-vue'
+import moment from 'moment';
+import {BTabs, BTab, BModal, BCarousel, BCarouselSlide, BDropdown, BDropdownItem} from 'bootstrap-vue';
 import store from './store';
 
 Vue.component('header-component', require('./components/layouts/HeaderComponent').default);
@@ -35,9 +35,12 @@ Vue.component('blog-item-component', require('./components/blogs/BlogItemCompone
 Vue.component('loading-component', require('./components/common/LoadingComponent').default);
 Vue.component('b-tabs', BTabs);
 Vue.component('b-tab', BTab);
-Vue.component('b-modal', BModal)
-Vue.component('b-carousel', BCarousel)
-Vue.component('b-carousel-slide', BCarouselSlide)
+Vue.component('b-modal', BModal);
+Vue.component('b-carousel', BCarousel);
+Vue.component('b-carousel-slide', BCarouselSlide);
+Vue.component('b-dropdown', BDropdown);
+Vue.component('b-dropdown-item', BDropdownItem);
+
 
 Vue.use(VueToastr, {
     defaultTimeout: 2000,

@@ -162,7 +162,7 @@ class CreateEcommerceTables extends Migration
             $table->integer('product_id')->unsigned();
             $table->float('star');
             $table->text('comment');
-            $table->string('status', 60)->default('published');
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
 

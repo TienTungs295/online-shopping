@@ -42,7 +42,6 @@ class BlogRestController extends Controller
 
     public function related(Request $request)
     {
-        $ajax_response = new AjaxResponse();
         $id = $request->input("id");
         $ajax_response = new AjaxResponse();
         $blogs = Blog::where('id', '!=', $id)->take(2)->get();
@@ -51,7 +50,6 @@ class BlogRestController extends Controller
 
     public function recent(Request $request)
     {
-        $ajax_response = new AjaxResponse();
         $id = $request->input("id");
         $ajax_response = new AjaxResponse();
         $query = Blog::where('id', '>', 1);

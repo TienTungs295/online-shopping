@@ -42,13 +42,14 @@
                         <div class="col-12">
                             <div class="tab-style3">
                                 <b-tabs content-class="mt-3">
-                                    <b-tab title="Description" active><p v-html="product.description"></p></b-tab>
-                                    <b-tab title="Reviews (2)">
+                                    <b-tab title="Mô tả" active><p v-html="product.description"></p></b-tab>
+                                    <b-tab v-bind:title="'Đánh giá('+totalReviews+')'">
                                         <div class="comments">
-                                            <h5 class="product_tab_title">2 Review For <span>Blue Dress For Woman</span>
+                                            <h5 class="product_tab_title">{{ totalReviews }} Đánh giá cho -
+                                                <span>{{ product.name }}</span>
                                             </h5>
                                             <ul class="list_none comment_list mt-4">
-                                                <li>
+                                                <li v-for="review in reviews">
                                                     <div class="comment_img">
                                                         <img src="assets/images/user1.jpg" alt="user1"/>
                                                     </div>
@@ -59,44 +60,28 @@
                                                             </div>
                                                         </div>
                                                         <p class="customer_meta">
-                                                            <span class="review_author">Alea Brooks</span>
-                                                            <span class="comment-date">March 5, 2018</span>
+                                                            <span
+                                                                class="review_author">{{ review.customer_name }}</span>
+                                                            <span
+                                                                class="comment-date">{{
+                                                                    review.created_at | dateTimeFormat
+                                                                }}</span>
                                                         </p>
                                                         <div class="description">
-                                                            <p>Lorem Ipsumin gravida nibh vel velit auctor aliquet.
-                                                                Aenean sollicitudin, lorem quis bibendum auctor, nisi
-                                                                elit consequat ipsum, nec sagittis sem nibh id elit.
-                                                                Duis sed odio sit amet nibh vulputate</p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="comment_img">
-                                                        <img src="assets/images/user2.jpg" alt="user2"/>
-                                                    </div>
-                                                    <div class="comment_block">
-                                                        <div class="rating_wrap">
-                                                            <div class="rating">
-                                                                <div class="product_rate" style="width:60%"></div>
-                                                            </div>
-                                                        </div>
-                                                        <p class="customer_meta">
-                                                            <span class="review_author">Grace Wong</span>
-                                                            <span class="comment-date">June 17, 2018</span>
-                                                        </p>
-                                                        <div class="description">
-                                                            <p>It is a long established fact that a reader will be
-                                                                distracted by the readable content of a page when
-                                                                looking at its layout. The point of using Lorem Ipsum is
-                                                                that it has a more-or-less normal distribution of
-                                                                letters</p>
+                                                            <p>{{ review.comment }}</p>
                                                         </div>
                                                     </div>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="review_form field_form">
-                                            <h5>Add a review</h5>
+                                            <h5>Thêm mới đánh giá</h5>
+                                            <p v-if="userProfile == null" class="text-danger">Vui lòng
+                                                <router-link :to="{ name: 'login'}">
+                                                    Đăng nhập
+                                                </router-link>
+                                                để đánh giá!
+                                            </p>
                                             <form class="row mt-3">
                                                 <div class="form-group col-12">
                                                     <div class="star_rating">
@@ -108,21 +93,15 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group col-12">
-                                                    <textarea required="required" placeholder="Your review *"
-                                                              class="form-control" name="message" rows="4"></textarea>
+                                                    <textarea placeholder="Đánh giá của bạn"
+                                                              :disabled="userProfile == null"
+                                                              v-model="comment"
+                                                              class="form-control" rows="4"></textarea>
                                                 </div>
-                                                <div class="form-group col-md-6">
-                                                    <input required="required" placeholder="Enter Name *"
-                                                           class="form-control" name="name" type="text">
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <input required="required" placeholder="Enter Email *"
-                                                           class="form-control" name="email" type="email">
-                                                </div>
-
                                                 <div class="form-group col-12">
-                                                    <button type="submit" class="btn btn-fill-out" name="submit"
-                                                            value="Submit">Submit Review
+                                                    <button type="button" class="btn btn-fill-out rounded-0"
+                                                            @click="review()">
+                                                        Đánh giá
                                                     </button>
                                                 </div>
                                             </form>
@@ -165,6 +144,8 @@
 
 <script>
 import ProductService from "../../services/ProductService";
+import ReviewService from "../../services/ReviewService";
+import {mapGetters} from 'vuex';
 
 export default {
     name: "ProductDetail",
@@ -174,17 +155,52 @@ export default {
                 images: []
             },
             isLoading: true,
+            isLoadingReview: true,
+            comment: "",
+            star: 5,
+            reviews: [],
+            totalReviews: 0,
         };
     },
-    methods: {},
+    computed: {
+        ...mapGetters([
+            'userProfile'
+        ])
+    },
+    methods: {
+        review() {
+            if ((this.comment != null && this.comment.trim() === "") || this.comment == null) return;
+            ReviewService.save({
+                comment: this.comment,
+                star: this.star,
+                product_id: this.product.id
+            }).then(response => {
+                let review = response.data || {};
+            }).catch(e => {
+            });
+        }
+    },
     mounted() {
         ProductService.detail(this.$route.params.id).then(response => {
-            let data = response || {};
-            this.product = data;
+            this.product = response || {};
             this.isLoading = false;
+
+            ReviewService.findByProduct(this.product.id).then(response => {
+                this.reviews = response.data || {};
+                this.isLoadingReview = false;
+            }).catch(e => {
+                this.isLoadingReview = false;
+            });
+
+            ReviewService.countByProduct(this.product.id).then(response => {
+                this.totalReviews = response;
+            }).catch(e => {
+            });
+
         }).catch(e => {
             this.isLoading = false;
         });
+
     }
 }
 </script>
