@@ -9398,3 +9398,9 @@ a {
     }
 }
 
+a.link-hover {
+    &:hover {
+        color: $primary-color;
+    }
+}
+

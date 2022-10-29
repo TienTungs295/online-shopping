@@ -33,7 +33,8 @@
                                             <div
                                                 class="light-color-i">
                                                 <i class="ti-user mgr-5" style="font-size: 14px"></i>
-                                                <span class="mgr-5">{{ userProfile.name }}</span>  <i class="ti-angle-down" style="font-size: 14px"></i>
+                                                <span class="mgr-5">{{ userProfile.name }}</span> <i
+                                                class="ti-angle-down" style="font-size: 14px"></i>
                                             </div>
                                         </template>
                                         <b-dropdown-item>
@@ -48,8 +49,9 @@
                                         </b-dropdown-item>
                                         <b-dropdown-item @click="logout()">Đăng xuất</b-dropdown-item>
                                     </b-dropdown>
-                                    <div v-else style="position: relative; display: inline-flex;vertical-align: middle;">
-                                        <router-link  :to="{ name: 'login'}" class="light-color-i">
+                                    <div v-else
+                                         style="position: relative; display: inline-flex;vertical-align: middle;">
+                                        <router-link :to="{ name: 'login'}" class="light-color-i">
                                             <i class="ti-user mgr-5" style="font-size: 14px"></i>
                                             <span class="position-relative" style="bottom: 2px">Đăng nhập</span>
                                         </router-link>
@@ -243,6 +245,8 @@ import WithListService from "../../services/WithListService";
 import CartService from "../../services/CartService";
 import {mapGetters} from 'vuex'
 import AuthService from "../../services/AuthService";
+import {serviceBus} from './../../serviceBus'
+
 
 export default {
     name: "Header",
@@ -322,6 +326,8 @@ export default {
                 let routerName = this.$router.history.current.name;
                 if (routerName == "userProfile" || routerName == "changePass" || routerName == "withList") {
                     this.$router.push({name: "login"});
+                } else if (routerName == "productDetail") {
+                    serviceBus.$emit('refreshReviews');
                 }
             }).catch(response => {
             });

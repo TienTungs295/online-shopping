@@ -18,8 +18,10 @@ class ReviewRestController extends Controller
         $comment = $request->post("comment");
         if (!isset($comment))
             return $ajax_response->setMessage("Đánh giá không được phép bỏ trống")->toApiResponse();
+        $star = $request->post("star");
+        if (is_null($star)) $star = 0;
         $review->comment = $comment;
-        $review->star = 5;
+        $review->star = $star;
         $review->status = 1;
         $review->product_id = $request->post("product_id");
         $review->customer_id = auth()->user()->id;
@@ -36,7 +38,7 @@ class ReviewRestController extends Controller
             return $ajax_response->setMessage("Đánh giá không tồn tại hoặc đã bị xóa")->toApiResponse();
         }
         if ($review->customer_id != auth()->user()->id) {
-            return $ajax_response->setMessage("Bạn không có quyền xóa đánh giá này")->toApiResponse();
+            return $ajax_response->setMessage("Bạn không đủ quyền thực hiện tác vụ này")->toApiResponse();
         }
         $review->delete();
         return $ajax_response->setData($review)->toApiResponse();
@@ -44,32 +46,47 @@ class ReviewRestController extends Controller
 
     public function findByProduct(Request $request)
     {
+        $page_size = 10;
+        $hasMorePage = false;
+        $last_id = $request->input("last_id");
         $ajax_response = new AjaxResponse();
         $product_id = $request->input("product_id");
+        $user = auth()->user();
         try {
             Product::findOrFail($product_id);
         } catch (ModelNotFoundException $e) {
             return $ajax_response->setMessage("Sản phẩm không tồn tại hoặc đã bị xóa")->toApiResponse();
         }
-        $reviews = Review::with(['customer'])
-            ->where('product_id', $product_id)
-            ->where('status', 2)
-            ->orderBy('created_at', 'DESC')
-            ->paginate(15)
-            ->toArray();
-        return $ajax_response->setData($reviews)->toApiResponse();
-    }
+        $query = Review::with(['customer'])->where(function ($query) use ($product_id, $last_id, $user) {
+            $query->where('product_id', $product_id);
+            if (!is_null($last_id)) $query->where('id', '<', $last_id);
+            $query->where(function ($query) use ($last_id, $user) {
+                $query->where('status', 2);
+                if ($user != null) {
+                    $query->orWhere(function ($query) use ($user) {
+                        $query->where('status', 1);
+                        $query->where('customer_id', $user->id);
+                    });
+                }
+            });
+        });
+        $reviews = $query->take($page_size + 1)->get()->toArray();
+        if (sizeof($reviews) > $page_size) {
+            $hasMorePage = true;
+            array_pop($reviews);
+        }
 
-    public function countByProduct(Request $request)
-    {
-        $ajax_response = new AjaxResponse();
-        $product_id = $request->input("product_id");
-        try {
-            Product::findOrFail($product_id);
-        } catch (ModelNotFoundException $e) {
-            return $ajax_response->setMessage("Sản phẩm không tồn tại hoặc đã bị xóa")->toApiResponse();
-        }
-        $count = Review::where('status', 2)->where('product_id', $product_id)->count();
-        return $ajax_response->setData($count)->toApiResponse();
+        //count total reviews
+        $totalReviews = Review::where('product_id', $product_id)
+            ->where(function ($query) use ($user) {
+                $query->where('status', 2);
+                if (!is_null($user)) {
+                    $query->orWhere(function ($query) use ($user) {
+                        $query->where('status', 1);
+                        $query->where('customer_id', $user->id);
+                    });
+                }
+            })->count();
+        return $ajax_response->setData(array('data' => $reviews, 'hasMorePage' => $hasMorePage, 'totalReviews' => $totalReviews))->toApiResponse();
     }
 }

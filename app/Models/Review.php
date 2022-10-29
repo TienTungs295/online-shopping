@@ -22,12 +22,16 @@ class Review extends Model
      * @var array
      */
     protected $fillable = [
+        'id',
         'product_id',
         'customer_id',
         'star',
         'comment',
         'status',
     ];
+
+    protected $appends = ['product_name','customer_name', 'owner'];
+
 
     /**
      * @return BelongsTo
@@ -59,5 +63,11 @@ class Review extends Model
     public function getCustomerNameAttribute()
     {
         return $this->customer->name;
+    }
+
+    public function getOwnerAttribute()
+    {
+        $user = auth()->user();
+        return $user == null ? false : $user->id == $this->customer_id;
     }
 }

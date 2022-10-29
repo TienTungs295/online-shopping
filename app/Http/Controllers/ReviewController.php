@@ -15,17 +15,8 @@ class ReviewController extends Controller
      */
     public function index(Request $request)
     {
-        $q = $request->input('q');
-        if ($q != "") {
-            $reviews = Review::where(function ($query) use ($q) {
-                $query->where('name', 'like', '%' . $q . '%');
-            })->orderBy('id', 'DESC')
-                ->paginate(25);
-            $reviews->appends(['q' => $q]);
-        } else {
-            $reviews = Review::paginate(25);
-        }
-        return View('backend.review.index', compact("reviews", "q"));
+        $reviews = Review::orderBy('id', 'DESC')->paginate(25);
+        return View('backend.review.index', compact("reviews"));
     }
 
     /**

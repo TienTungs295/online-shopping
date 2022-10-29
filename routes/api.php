@@ -45,9 +45,11 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::group(['prefix' => 'review'], function () {
         Route::post('/save', [ReviewRestController::class, 'save']);
         Route::post('/delete', [ReviewRestController::class, 'delete']);
-        Route::get('/find-by-product', [ReviewRestController::class, 'findByProduct']);
-        Route::get('/count-by-product', [ReviewRestController::class, 'countByProduct']);
     });
+});
+
+Route::group(['prefix' => 'review'], function () {
+    Route::get('/find-by-product', [ReviewRestController::class, 'findByProduct']);
 });
 
 

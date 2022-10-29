@@ -34,6 +34,7 @@ http.interceptors.response.use(function (response) {
     }
 }, function (error) {
     if (error.response.status == UN_AUTHENTICATED) {
+        if (error.response.config.alert401) Vue.prototype.$toastr.e("Bạn cần đăng nhập để thử hiện tác vụ này")
         localStorage.removeItem('access_token');
         store.commit("setUserProfile", null);
         if (error.response.config.redirectToLoginIfUnAuthen && router.history.current.name !== "login")

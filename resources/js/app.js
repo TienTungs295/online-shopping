@@ -25,6 +25,7 @@ import VueToastr from "vue-toastr";
 import moment from 'moment';
 import {BTabs, BTab, BModal, BCarousel, BCarouselSlide, BDropdown, BDropdownItem} from 'bootstrap-vue';
 import store from './store';
+import VueStarRating  from 'vue-star-rating';
 
 Vue.component('header-component', require('./components/layouts/HeaderComponent').default);
 Vue.component('footer-component', require('./components/layouts/FooterComponent').default);
@@ -40,7 +41,7 @@ Vue.component('b-carousel', BCarousel);
 Vue.component('b-carousel-slide', BCarouselSlide);
 Vue.component('b-dropdown', BDropdown);
 Vue.component('b-dropdown-item', BDropdownItem);
-
+Vue.component('star-rating', VueStarRating)
 
 Vue.use(VueToastr, {
     defaultTimeout: 2000,
@@ -88,7 +89,7 @@ Vue.filter('dateFormat', function (value) {
 
 Vue.filter('dateTimeFormat', function (value) {
     if (value) {
-        return moment(String(value)).format('DD/MM/YYYY hh:mm')
+        return moment(String(value)).format('H:MM DD/MM/YYYY')
     }
 });
 

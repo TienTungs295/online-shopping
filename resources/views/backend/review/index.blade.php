@@ -64,7 +64,9 @@
                                                 <form action="{!! route('changeReviewStatus',['id' => $data->id]) !!}"
                                                       class="d-inline-block" method="POST">
                                                     @csrf
-                                                    <button type="submit" class="btn btn-info btn-sm text-white" title="Xác nhận"
+                                                    <button type="submit"
+                                                            {!! $data->status ==2 ? 'disabled' : '' !!} class="btn btn-info btn-sm text-white"
+                                                            title="Xác nhận"
                                                             onclick="return confirm('Bạn có chắc chắn cho hành động này không?')">
                                                         <i class="bi bi-check2-circle me-1"></i>
                                                     </button>

@@ -37,6 +37,7 @@
         "vue-awesome-swiper": "^4.1.1",
         "vue-moment": "^4.1.0",
         "vue-router": "^3.5.4",
+        "vue-star-rating": "^1.7.0",
         "vue-toastr": "^2.1.2",
         "vuex": "^3.6.2"
     }

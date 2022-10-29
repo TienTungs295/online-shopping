@@ -43,38 +43,8 @@
                             <div class="tab-style3">
                                 <b-tabs content-class="mt-3">
                                     <b-tab title="Mô tả" active><p v-html="product.description"></p></b-tab>
-                                    <b-tab v-bind:title="'Đánh giá('+totalReviews+')'">
-                                        <div class="comments">
-                                            <h5 class="product_tab_title">{{ totalReviews }} Đánh giá cho -
-                                                <span>{{ product.name }}</span>
-                                            </h5>
-                                            <ul class="list_none comment_list mt-4">
-                                                <li v-for="review in reviews">
-                                                    <div class="comment_img">
-                                                        <img src="assets/images/user1.jpg" alt="user1"/>
-                                                    </div>
-                                                    <div class="comment_block">
-                                                        <div class="rating_wrap">
-                                                            <div class="rating">
-                                                                <div class="product_rate" style="width:80%"></div>
-                                                            </div>
-                                                        </div>
-                                                        <p class="customer_meta">
-                                                            <span
-                                                                class="review_author">{{ review.customer_name }}</span>
-                                                            <span
-                                                                class="comment-date">{{
-                                                                    review.created_at | dateTimeFormat
-                                                                }}</span>
-                                                        </p>
-                                                        <div class="description">
-                                                            <p>{{ review.comment }}</p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="review_form field_form">
+                                    <b-tab v-bind:title="'Đánh giá ('+totalReviews+')'">
+                                        <div class="review_form field_form mgb-20">
                                             <h5>Thêm mới đánh giá</h5>
                                             <p v-if="userProfile == null" class="text-danger">Vui lòng
                                                 <router-link :to="{ name: 'login'}">
@@ -84,13 +54,15 @@
                                             </p>
                                             <form class="row mt-3">
                                                 <div class="form-group col-12">
-                                                    <div class="star_rating">
-                                                        <span data-value="1"><i class="far fa-star"></i></span>
-                                                        <span data-value="2"><i class="far fa-star"></i></span>
-                                                        <span data-value="3"><i class="far fa-star"></i></span>
-                                                        <span data-value="4"><i class="far fa-star"></i></span>
-                                                        <span data-value="5"><i class="far fa-star"></i></span>
-                                                    </div>
+                                                    <star-rating v-model="star"
+                                                                 v-bind:show-rating="false"
+                                                                 v-bind:star-size="18"
+                                                                 v-bind:border-color="'#F6BC3E'"
+                                                                 v-bind:inactive-color="'#FFFFFF'"
+                                                                 v-bind:active-color="'#F6BC3E'"
+                                                                 v-bind:border-width="3"
+                                                                 v-bind:padding="1">
+                                                    </star-rating>
                                                 </div>
                                                 <div class="form-group col-12">
                                                     <textarea placeholder="Đánh giá của bạn"
@@ -106,6 +78,60 @@
                                                 </div>
                                             </form>
                                         </div>
+                                        <div class="comments">
+                                            <h5 class="product_tab_title">{{ totalReviews }} Đánh giá cho -
+                                                <span>{{ product.name }}</span>
+                                            </h5>
+                                            <ul class="list_none comment_list mt-4">
+                                                <li v-for="review in reviews"
+                                                    :class="review.status ==1 ? 'o-05':''">
+                                                    <div class="comment_img">
+                                                        <img src="assets/images/user1.jpg" alt="user1"/>
+                                                    </div>
+                                                    <div class="comment_block">
+                                                        <div class="rating_wrap">
+                                                            <star-rating v-model="review.star"
+                                                                         v-bind:show-rating="false"
+                                                                         v-bind:star-size="10"
+                                                                         v-bind:border-color="'#F6BC3E'"
+                                                                         v-bind:inactive-color="'#FFFFFF'"
+                                                                         v-bind:active-color="'#F6BC3E'"
+                                                                         v-bind:border-width="1"
+                                                                         v-bind:padding="1"
+                                                                         v-bind:read-only="true">
+                                                            </star-rating>
+                                                            <div class="text-right" v-if="review.owner">
+                                                                <a class="link-hover gray-8-color" title="Xóa"
+                                                                   @click="remove(review.id)"><i
+                                                                    class="fa fa-times" aria-hidden="true"></i></a>
+                                                            </div>
+                                                        </div>
+                                                        <p class="customer_meta">
+                                                            <span
+                                                                class="review_author">{{ review.customer_name }}</span>
+                                                            <span
+                                                                class="comment-date">{{
+                                                                    review.created_at | dateTimeFormat
+                                                                }}</span>
+                                                        </p>
+                                                        <div class="description">
+                                                            <p>{{ review.comment }}</p>
+                                                        </div>
+                                                        <div v-if="review.status == 1" class="text-danger">Đang chờ phê
+                                                            duyệt
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="form-group col-12 text-center">
+                                            <button type="button" v-if="hasMorePage && !isLoadingReview"
+                                                    style="padding: 10px 28px"
+                                                    class="btn btn-line-fill btn-sm rounded-0"
+                                                    @click="paginate()"> Xem thêm
+                                            </button>
+                                        </div>
+                                        <loading-component v-bind:loading="isLoadingReview"></loading-component>
                                     </b-tab>
                                 </b-tabs>
                             </div>
@@ -146,6 +172,7 @@
 import ProductService from "../../services/ProductService";
 import ReviewService from "../../services/ReviewService";
 import {mapGetters} from 'vuex';
+import {serviceBus} from './../../serviceBus'
 
 export default {
     name: "ProductDetail",
@@ -157,9 +184,11 @@ export default {
             isLoading: true,
             isLoadingReview: true,
             comment: "",
-            star: 5,
-            reviews: [],
+            star: 0,
             totalReviews: 0,
+            reviewData: {},
+            reviews: [],
+            hasMorePage: false
         };
     },
     computed: {
@@ -175,8 +204,61 @@ export default {
                 star: this.star,
                 product_id: this.product.id
             }).then(response => {
-                let review = response.data || {};
+                let review = response || {};
+                this.reviews.unshift(review);
+                this.totalReviews++;
+                this.star = 0;
+                this.comment = "";
             }).catch(e => {
+                this.star = 0;
+                this.comment = "";
+            });
+        },
+        paginate() {
+            this.isLoadingReview = true;
+            let last_id = null;
+            if (this.reviews.length > 0) last_id = this.reviews[this.reviews.length - 1].id;
+            ReviewService.findByProduct(this.product.id, last_id).then(response => {
+                let data = response || {};
+                let reviews = data.data || [];
+                this.hasMorePage = data.hasMorePage;
+                this.reviews = this.reviews.concat(reviews);
+                this.isLoadingReview = false;
+            }).catch(e => {
+                this.isLoadingReview = false;
+            });
+        },
+        remove(id) {
+            ReviewService.delete({
+                id: id
+            }).then(response => {
+                let review = response || {};
+                let removeIndex = null;
+                for (let i = 0; i < this.reviews.length; i++) {
+                    let item = this.reviews[i];
+                    if (item.id === review.id) {
+                        removeIndex = i;
+                        break;
+                    }
+                }
+                if (removeIndex != null) {
+                    this.reviews.splice(removeIndex, 1);
+                    this.totalReviews--;
+                }
+            }).catch(e => {
+
+            });
+        },
+        findByProduct() {
+            this.isLoadingReview = true;
+            ReviewService.findByProduct(this.product.id).then(response => {
+                let data = response || {};
+                this.reviews = data.data || [];
+                this.hasMorePage = data.hasMorePage;
+                this.totalReviews = data.totalReviews;
+                this.isLoadingReview = false;
+            }).catch(e => {
+                this.isLoadingReview = false;
             });
         }
     },
@@ -184,23 +266,14 @@ export default {
         ProductService.detail(this.$route.params.id).then(response => {
             this.product = response || {};
             this.isLoading = false;
-
-            ReviewService.findByProduct(this.product.id).then(response => {
-                this.reviews = response.data || {};
-                this.isLoadingReview = false;
-            }).catch(e => {
-                this.isLoadingReview = false;
-            });
-
-            ReviewService.countByProduct(this.product.id).then(response => {
-                this.totalReviews = response;
-            }).catch(e => {
-            });
-
+            this.findByProduct();
         }).catch(e => {
             this.isLoading = false;
         });
 
+        serviceBus.$on('refreshReviews', () => {
+            this.findByProduct();
+        })
     }
 }
 </script>
