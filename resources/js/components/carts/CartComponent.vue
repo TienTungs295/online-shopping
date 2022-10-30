@@ -111,7 +111,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row" v-if="withListCount > 0">
+                    <div class="row" v-if="cartCount > 0">
                         <div class="col-12">
                             <div class="medium_divider"></div>
                             <div class="divider center_icon"><i class="ti-shopping-cart-full"></i></div>

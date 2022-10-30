@@ -1,7 +1,8 @@
     <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\Rests\WithListRestController;
+use App\Http\Controllers\Rests\CartRestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -103,6 +104,24 @@ Route::group(['middleware' => ['isMember','auth:web'], 'prefix' => 'quan-tri'], 
     });
 });
 
+Route::group(['prefix' => 'rest'], function () {
+    Route::group(['prefix' => 'cart'], function () {
+        Route::get('/find-all', [CartRestController::class, 'findAll']);
+        Route::get('/count', [CartRestController::class, 'count']);
+        Route::post('/add', [CartRestController::class, 'store']);
+        Route::post('/update', [CartRestController::class, 'update']);
+        Route::post('/remove', [CartRestController::class, 'remove']);
+    });
+
+    Route::group(['middleware' => ['auth:api']], function () {
+        Route::group(['prefix' => 'with-list'], function () {
+            Route::get('/find-all', [WithListRestController::class, 'findAll']);
+            Route::get('/count', [WithListRestController::class, 'count']);
+            Route::post('/save', [WithListRestController::class, 'store']);
+            Route::post('/delete', [WithListRestController::class, 'destroy']);
+        });
+    });
+});
 
 Route::any('{all}', function () {
     return view('frontend.index');

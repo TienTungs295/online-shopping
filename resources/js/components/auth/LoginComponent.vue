@@ -82,6 +82,7 @@
 <script>
 import {mapGetters} from "vuex";
 import AuthService from "../../services/AuthService";
+import {serviceBus} from "../../serviceBus";
 
 export default {
     name: "Login",
@@ -106,6 +107,7 @@ export default {
                 let data = response || {};
                 localStorage.setItem('access_token', data.access_token);
                 this.$store.commit("setUserProfile", data.user);
+                serviceBus.$emit('refreshWithListCount');
                 this.$router.push({name: 'home'});
             }).catch(response => {
                 this.errors = response.errors || {};

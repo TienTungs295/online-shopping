@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Rests\AuthRestController;
 use App\Http\Controllers\Rests\BlogRestController;
-use App\Http\Controllers\Rests\CartRestController;
 use App\Http\Controllers\Rests\CategoryRestController;
 use App\Http\Controllers\Rests\CollectionRestController;
 use App\Http\Controllers\Rests\OrderRestController;
@@ -27,12 +26,6 @@ use Illuminate\Support\Facades\Route;
 // Below mention routes are available only for the authenticated users.
 
 Route::group(['middleware' => ['auth:api']], function () {
-    Route::group(['prefix' => 'with-list'], function () {
-        Route::get('/find-all', [WithListRestController::class, 'findAll']);
-        Route::get('/count', [WithListRestController::class, 'count']);
-        Route::post('/save', [WithListRestController::class, 'store']);
-        Route::post('/delete', [WithListRestController::class, 'destroy']);
-    });
     Route::group(['prefix' => 'auth'], function () {
         Route::post('/logout', [AuthRestController::class, 'logout']);
         Route::post('/refresh', [AuthRestController::class, 'refresh']);
@@ -77,14 +70,6 @@ Route::group(['prefix' => 'blog'], function () {
     Route::get('/detail', [BlogRestController::class, 'detail']);
     Route::get('/related', [BlogRestController::class, 'related']);
     Route::get('/recent', [BlogRestController::class, 'recent']);
-});
-
-Route::group(['prefix' => 'cart'], function () {
-    Route::get('/find-all', [CartRestController::class, 'findAll']);
-    Route::get('/count', [CartRestController::class, 'count']);
-    Route::post('/add', [CartRestController::class, 'store']);
-    Route::post('/update', [CartRestController::class, 'update']);
-    Route::post('/remove', [CartRestController::class, 'remove']);
 });
 
 Route::group(['prefix' => 'collection'], function () {

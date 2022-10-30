@@ -324,6 +324,7 @@ export default {
                 localStorage.removeItem('access_token');
                 this.$store.commit("setUserProfile", null);
                 let routerName = this.$router.history.current.name;
+                this.$store.commit("setWithListCount", 0);
                 if (routerName == "userProfile" || routerName == "changePass" || routerName == "withList") {
                     this.$router.push({name: "login"});
                 } else if (routerName == "productDetail") {
@@ -342,6 +343,9 @@ export default {
         this.countCart();
         this.countWithList();
         this.findAllCart();
+        serviceBus.$on('refreshWithListCount', () => {
+            this.countWithList();
+        });
     }
 }
 </script>
