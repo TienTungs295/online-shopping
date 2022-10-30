@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Rests\WithListRestController;
 use App\Http\Controllers\Rests\CartRestController;
+use App\Http\Controllers\Rests\OrderRestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,6 +112,10 @@ Route::group(['prefix' => 'rest'], function () {
         Route::post('/add', [CartRestController::class, 'store']);
         Route::post('/update', [CartRestController::class, 'update']);
         Route::post('/remove', [CartRestController::class, 'remove']);
+    });
+
+    Route::group(['prefix' => 'order'], function () {
+        Route::post('/check-out', [OrderRestController::class, 'checkOut']);
     });
 
     Route::group(['middleware' => ['auth:api']], function () {

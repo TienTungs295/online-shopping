@@ -70,7 +70,7 @@
             <!-- END SECTION CATEGORIES -->
 
             <!-- START SECTION SHOP -->
-            <div class="section pdt-30-i small_pb">
+            <div class="section pdt-30-i pdb-30-i">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -117,37 +117,56 @@
             </div>
             <!-- END SECTION SHOP -->
 
-            <!-- START SECTION BANNER -->
-            <div class="section pb_20 small_pt">
+            <!-- START SECTION SHOP INFO -->
+            <div class="bg_gray">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="single_banner">
-                                <img src="assets/images/shop_banner_img1.jpg" alt="shop_banner_img1">
-                                <div class="single_banner_info">
-                                    <h5 class="single_bn_title1">Super Sale</h5>
-                                    <h3 class="single_bn_title">New Collection</h3>
-                                    <a href="shop-left-sidebar.html" class="single_bn_link">Shop Now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="single_banner">
-                                <img src="assets/images/shop_banner_img2.jpg" alt="shop_banner_img2">
-                                <div class="single_banner_info">
-                                    <h3 class="single_bn_title">New Season</h3>
-                                    <h4 class="single_bn_title1">Sale 40% Off</h4>
-                                    <a href="shop-left-sidebar.html" class="single_bn_link">Shop Now</a>
+                        <div class="col-12">
+                            <div class="shopping_info border-0">
+                                <div class="row justify-content-center pdt-55 pdb-50">
+                                    <div class="col-md-4 icon-box-inner">
+                                        <div class="icon_box icon_box_style2 pdl-20-i">
+                                            <div class="icon">
+                                                <i class="flaticon-shipped"></i>
+                                            </div>
+                                            <div class="icon_box_content">
+                                                <h5>Giao hàng miễn phí</h5>
+                                                <p>Giao hàng miễn phí với những đơn hàng đủ điều kiện.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 icon-box-inner">
+                                        <div class="icon_box icon_box_style2 pdl-5-i">
+                                            <div class="icon">
+                                                <i class="flaticon-money-back"></i>
+                                            </div>
+                                            <div class="icon_box_content">
+                                                <h5>Đổi trả trong vòng 7 ngày</h5>
+                                                <p>Quý khách cần giữ các sản phẩm còn nguyên vẹn.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 icon-box-inner">
+                                        <div class="icon_box icon_box_style2 pdl-5-i">
+                                            <div class="icon">
+                                                <i class="flaticon-support"></i>
+                                            </div>
+                                            <div class="icon_box_content">
+                                                <h5>Hỗ trợ 24/7</h5>
+                                                <p>Đội ngũ nhân viên nhiệt tình, sẵn hàng tư vấn và hỗ trợ.</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- END SECTION BANNER -->
+            <!-- END SECTION SHOP INFO -->
 
             <!-- START TRENDING -->
-            <div class="section small_pb small_pt">
+            <div class="section pdt-30-i pdb-30-i">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -178,39 +197,73 @@
             </div>
             <!-- END TRENDING -->
 
-            <!-- START SECTION BANNER -->
-            <div class="section pb_20 small_pt">
-                <div class="container-fluid px-2">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <div class="sale_banner">
-                                <a class="hover_effect1" href="#">
-                                    <img src="assets/images/shop_banner_img3.jpg" alt="shop_banner_img3">
-                                </a>
+            <!-- START SECTION TESTIMONIAL -->
+            <div class="what-client-say position-relative">
+                <div class="__overlay">
+                </div>
+                <div class="pdt-80 pdb-80">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
+                                <div class="heading_s1 text-center">
+                                    <h4 class="light-color">Ý kiến khách hàng!</h4>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="sale_banner">
-                                <a class="hover_effect1" href="#">
-                                    <img src="assets/images/shop_banner_img4.jpg" alt="shop_banner_img4">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="sale_banner">
-                                <a class="hover_effect1" href="#">
-                                    <img src="assets/images/shop_banner_img5.jpg" alt="shop_banner_img5">
-                                </a>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-9">
+                                <div
+                                    class="testimonial_wrap testimonial_style1 carousel_slider owl-carousel owl-theme nav_style2 light-color"
+                                    v-carousel
+                                    data-nav="true" data-dots="false" data-center="true" data-loop="true"
+                                    data-autoplay="true" data-items='1'>
+                                    <div class="testimonial_box">
+                                        <div class="testimonial_desc">
+                                            <p>"Giá cả rất hợp lý đầy đủ. Tôi nhập hàng thường xuyên qua đây và rất tin
+                                                tưởng
+                                                chất lượng sản phẩm."</p>
+                                        </div>
+                                        <div class="author_wrap">
+                                            <div class="author_name text-center">
+                                                <h6 class="__name">Mr. Thắng</h6>
+                                                <span>Công nhân</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial_box">
+                                        <div class="testimonial_desc">
+                                            <p>"Các sản phẩm của công ty có chất lượng rất tốt, giá cả cạnh tranh. Tôi sẽ
+                                                tiếp tục ủng hộ các bạn."</p>
+                                        </div>
+                                        <div class="author_wrap">
+                                            <div class="author_name text-center">
+                                                <h6 class="__name">Ms. Hà</h6>
+                                                <span>Nhân viên kinh doanh</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial_box">
+                                        <div class="testimonial_desc">
+                                            <p>"Tôi rất hài lòng với phong cách làm việc chuyên nghiệp, thời gian giao hàng
+                                                nhanh, nhân viên hỗ trợ nhiệt tình."</p>
+                                        </div>
+                                        <div class="author_wrap">
+                                            <div class="author_name text-center">
+                                                <h6 class="__name">Mr. Minh</h6>
+                                                <span>Kỹ sư xây dựng</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- END SECTION BANNER -->
-
+            <!-- END SECTION TESTIMONIAL -->
 
             <!-- START SECTION SHOP -->
-            <div class="section small_pt pdb-50-i">
+            <div class="section pdt-30-i pdb-50-i">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-4">
@@ -444,8 +497,6 @@
                             <div class="heading_s1 text-center">
                                 <h5>Tin tức & Sự kiện</h5>
                             </div>
-                            <!--                            <p class="leads text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do-->
-                            <!--                                eiusmod tempor incididunt ut labore.</p>-->
                         </div>
                     </div>
                     <div class="row justify-content-center" v-if="!isLoadingBlog">
@@ -459,117 +510,6 @@
                 </div>
             </div>
             <!-- END SECTION BLOG -->
-
-
-            <!-- START SECTION TESTIMONIAL -->
-            <div class="section bg_redon pdt-50-i pdb-50-i">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-6">
-                            <div class="heading_s1 text-center">
-                                <h5>Ý kiến khách hàng!</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-lg-9">
-                            <div
-                                class="testimonial_wrap testimonial_style1 carousel_slider owl-carousel owl-theme nav_style2"
-                                v-carousel
-                                data-nav="true" data-dots="false" data-center="true" data-loop="true"
-                                data-autoplay="true" data-items='1'>
-                                <div class="testimonial_box">
-                                    <div class="testimonial_desc">
-                                        <p>"Giá cả rất hợp lý đầy đủ. Tôi nhập hàng thường xuyên qua đây và rất tin
-                                            tưởng
-                                            chất lượng sản phẩm."</p>
-                                    </div>
-                                    <div class="author_wrap">
-                                        <div class="author_name">
-                                            <h6>Mr. Thắng</h6>
-                                            <span>Kinh doanh</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="testimonial_box">
-                                    <div class="testimonial_desc">
-                                        <p>"Các sản phẩm của công ty có chất lượng rất tốt, giá cả cạnh tranh. Tối sẽ
-                                            tiếp tục ủng hộ các bạn."</p>
-                                    </div>
-                                    <div class="author_wrap">
-                                        <div class="author_name text-center">
-                                            <h6>Mr. Hà</h6>
-                                            <span>Nhân viên kinh doanh</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="testimonial_box">
-                                    <div class="testimonial_desc">
-                                        <p>"Tôi rất hài lòng với phong cách làm việc chuyên nghiệp, thời gian giao hàng
-                                            nhanh, nhân viên hỗ trợ nhiệt tình."</p>
-                                    </div>
-                                    <div class="author_wrap">
-                                        <div class="author_name text-center">
-                                            <h6>Mr. Minh</h6>
-                                            <span>Khách hàng</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END SECTION TESTIMONIAL -->
-
-            <!-- START SECTION SHOP INFO -->
-            <div class="pdt-50 pdb-50">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="shopping_info border-0">
-                                <div class="row justify-content-center">
-                                    <div class="col-md-4 icon-box-inner">
-                                        <div class="icon_box icon_box_style2">
-                                            <div class="icon bg_gray">
-                                                <i class="flaticon-shipped"></i>
-                                            </div>
-                                            <div class="icon_box_content">
-                                                <h5>Giao hàng miễn phí</h5>
-                                                <p>Giao hàng miễn phí với những đơn hàng đủ điều kiện.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 icon-box-inner">
-                                        <div class="icon_box icon_box_style2 pdl-5-i">
-                                            <div class="icon bg_gray">
-                                                <i class="flaticon-money-back"></i>
-                                            </div>
-                                            <div class="icon_box_content">
-                                                <h5>Đổi trả trong vòng 7 ngày</h5>
-                                                <p>Quý khách cần giữ sản phẩm và tất cả phụ kiện kèm theo còn nguyên
-                                                    vẹn.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 icon-box-inner">
-                                        <div class="icon_box icon_box_style2 pdl-5-i">
-                                            <div class="icon bg_gray">
-                                                <i class="flaticon-support"></i>
-                                            </div>
-                                            <div class="icon_box_content">
-                                                <h5>Hỗ trợ 24/7</h5>
-                                                <p>Đội ngũ nhân viên nhiệt tình, sẵn hàng tư vấn và hỗ trợ.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END SECTION SHOP INFO -->
 
             <!-- START SECTION SUBSCRIBE NEWSLETTER -->
             <div class="section bg_default pdt-50-i pdb-50-i">
@@ -598,7 +538,7 @@
             <!-- START SECTION SUBSCRIBE NEWSLETTER -->
 
         </div>
-        <!-- END MAIN CONTENT -->
+        <!--END MAIN CONTENT-->
     </div>
 </template>
 

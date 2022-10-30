@@ -96,7 +96,7 @@
     background-size: cover;
 }
 
-@for $i from 0 through 10 {
+@for $i from 0 through 20 {
     .mg-#{$i * 5} {
         margin: #{$i * 5}px;
     }
