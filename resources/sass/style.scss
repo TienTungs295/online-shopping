@@ -4425,7 +4425,7 @@ input.text {
 
 .blog_title {
     line-height: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-weight: 600;
 }
 
@@ -4497,6 +4497,7 @@ h6.blog_title {
 
 .blog_style2 .blog_content {
     padding: 15px;
+    padding-bottom: 5px;
 }
 
 .blog_post.blog_style2 {
@@ -6479,6 +6480,8 @@ footer {
     margin-left: 5px;
     vertical-align: middle;
     display: inline-block;
+    position: relative;
+    top: 2px;
 }
 
 .rating_wrap .rating {

@@ -39,11 +39,18 @@
                     <span class="price">{{ item.price | commaFormat}}</span>
                 </div>
             </div>
-            <div class="rating_wrap">
-                <div class="rating">
-                    <div class="product_rate" style="width:80%"></div>
-                </div>
-                <span class="rating_num">(21)</span>
+            <div class="rating_wrap" v-if="item.max_rating">
+                    <star-rating v-model="item.max_rating.star"
+                                 v-bind:show-rating="false"
+                                 v-bind:star-size="10"
+                                 v-bind:border-color="'#F6BC3E'"
+                                 v-bind:inactive-color="'#FFFFFF'"
+                                 v-bind:active-color="'#F6BC3E'"
+                                 v-bind:border-width="1"
+                                 v-bind:padding="1"
+                                 v-bind:read-only="true">
+                    </star-rating>
+                    <span class="rating_num">({{item.max_rating.total}})</span>
             </div>
             <div class="list_product_action_box dis-none">
                 <ul class="list_none pr_action_btn">
@@ -67,7 +74,6 @@
 
 import WithListService from "../../services/WithListService";
 import CartService from "../../services/CartService";
-import {serviceBus} from "../../serviceBus";
 
 export default {
     name: "ProductItem",

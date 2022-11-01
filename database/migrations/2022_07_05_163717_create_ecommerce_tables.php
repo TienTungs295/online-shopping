@@ -160,7 +160,7 @@ class CreateEcommerceTables extends Migration
             $table->id();
             $table->integer('customer_id')->unsigned();
             $table->integer('product_id')->unsigned();
-            $table->float('star');
+            $table->tinyInteger('star');
             $table->text('comment');
             $table->tinyInteger('status')->default(1);
             $table->timestamps();

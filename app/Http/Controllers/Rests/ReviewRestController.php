@@ -16,10 +16,13 @@ class ReviewRestController extends Controller
         $ajax_response = new AjaxResponse();
         $review = new Review();
         $comment = $request->post("comment");
+        $star = $request->post("star");
+        if (is_null($star) || $star == 0)
+            return $ajax_response->setMessage("Vui lòng chọn số sao")->toApiResponse();
+        if ($star < 1 || $star > 5)
+            return $ajax_response->setMessage("Số sao không hợp lệ")->toApiResponse();
         if (!isset($comment))
             return $ajax_response->setMessage("Đánh giá không được phép bỏ trống")->toApiResponse();
-        $star = $request->post("star");
-        if (is_null($star)) $star = 0;
         $review->comment = $comment;
         $review->star = $star;
         $review->status = 1;

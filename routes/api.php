@@ -56,6 +56,7 @@ Route::group(['prefix' => 'product'], function () {
     Route::get('/find-featured', [ProductRestController::class, 'findFeatured']);
     Route::get('/find-on-sale', [ProductRestController::class, 'findOnSale']);
     Route::get('/find-trending', [ProductRestController::class, 'findTrending']);
+    Route::get('/find-top-rate', [ProductRestController::class, 'findTopRate']);
     Route::get('/detail', [ProductRestController::class, 'detail']);
 });
 Route::group(['prefix' => 'category'], function () {

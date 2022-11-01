@@ -94,7 +94,7 @@ Vue.filter('dateTimeFormat', function (value) {
 });
 
 Vue.filter('commaFormat', function (value) {
-    if (value) {
+    if (value != null) {
         value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         value += ' đ';
         return value;

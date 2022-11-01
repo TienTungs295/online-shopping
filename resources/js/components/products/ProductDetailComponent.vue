@@ -198,7 +198,6 @@ export default {
     },
     methods: {
         review() {
-            if ((this.comment != null && this.comment.trim() === "") || this.comment == null) return;
             ReviewService.save({
                 comment: this.comment,
                 star: this.star,
@@ -210,8 +209,6 @@ export default {
                 this.star = 0;
                 this.comment = "";
             }).catch(e => {
-                this.star = 0;
-                this.comment = "";
             });
         },
         paginate() {

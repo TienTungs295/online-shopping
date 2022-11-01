@@ -31,11 +31,18 @@
                             <span class="price">{{ product.price | commaFormat }}</span>
                         </div>
                     </div>
-                    <div class="rating_wrap">
-                        <div class="rating">
-                            <div class="product_rate" style="width:80%"></div>
-                        </div>
-                        <span class="rating_num">(21)</span>
+                    <div class="rating_wrap d-flex align-items-center" v-if="product.max_rating">
+                        <star-rating v-model="product.max_rating.star"
+                                     v-bind:show-rating="false"
+                                     v-bind:star-size="10"
+                                     v-bind:border-color="'#F6BC3E'"
+                                     v-bind:inactive-color="'#FFFFFF'"
+                                     v-bind:active-color="'#F6BC3E'"
+                                     v-bind:border-width="1"
+                                     v-bind:padding="1"
+                                     v-bind:read-only="true">
+                        </star-rating>
+                        <span class="rating_num">({{product.max_rating.total}})</span>
                     </div>
                     <div class="pr_desc">
                         <p>{{ product.description }}</p>

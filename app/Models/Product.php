@@ -7,11 +7,14 @@ use App\Models\Image;
 use App\Models\ProductCategory;
 use App\Models\ProductCollection;
 use App\Models\ProductLabel;
+use App\Models\Review;
 use App\Models\WithList;
 use App\Models\FlashSale;
+use \stdClass;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
 {
@@ -63,7 +66,7 @@ class Product extends Model
         'stock_status',
     ];
 
-    protected $appends = ['real_price', 'on_sale','sale_off'];
+    protected $appends = ['real_price', 'on_sale', 'sale_off', 'max_rating'];
 
 
     public function getRealPriceAttribute()
@@ -92,6 +95,25 @@ class Product extends Model
     {
         if ($this->getOnSaleAttribute()) {
             return ceil(100 - (($this->sale_price / $this->price) * 100));
+        }
+        return null;
+    }
+
+    public function getMaxRatingAttribute()
+    {
+        $query = $this->reviews();
+        if ($query->count() > 0) {
+            $max_rating = new stdClass();
+            $rateMap = array(1 => 0, 2 => 0, 3 => 0, 4 => 0, 5 => 0);
+            $reviews = $query->get();
+            foreach ($reviews as $item) $rateMap[$item->star]++;
+            foreach ($rateMap as $key => $value) {
+                if ($value > 0) {
+                    $max_rating->star = $key;
+                    $max_rating->total = $value;
+                }
+            }
+            return $max_rating;
         }
         return null;
     }
@@ -164,6 +186,14 @@ class Product extends Model
         return $this->hasMany(WithList::class, 'product_id');
     }
 
+    /**
+     * @return HasMany
+     */
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, 'product_id')->where('status', 2);
+    }
+
     public static function boot()
     {
         parent::boot();
@@ -173,6 +203,7 @@ class Product extends Model
             $product->flashSales()->detach();
             $product->productLabels()->detach();
             $product->productCollections()->detach();
+            $product->reviews()->detach();
 //            $product->withList()->detach();
         });
     }

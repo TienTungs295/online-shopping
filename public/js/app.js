@@ -3818,8 +3818,8 @@ vue__WEBPACK_IMPORTED_MODULE_5__["default"].filter('dateTimeFormat', function (v
     return moment__WEBPACK_IMPORTED_MODULE_3___default()(String(value)).format('DD/MM/YYYY hh:mm');
   }
 });
-vue__WEBPACK_IMPORTED_MODULE_5__["default"].filter('commaFormat', function (value) {
-  if (value) {
+vue__WEBPACK_IMPORTED_MODULE_6__["default"].filter('commaFormat', function (value) {
+  if (value != null) {
     value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     value += ' đ';
     return value;

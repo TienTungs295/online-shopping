@@ -41,6 +41,11 @@ class ProductService {
         let url = PREFIX_URL + "detail?id=" + id;
         return http.get(url, {alert: alert});
     }
+
+    findTopRate(alert) {
+        let url = PREFIX_URL + "find-top-rate";
+        return http.get(url, {alert: alert});
+    }
 }
 
 export default new ProductService();

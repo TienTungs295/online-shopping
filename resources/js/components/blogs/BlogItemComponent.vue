@@ -22,7 +22,6 @@
                         }}
                     </li>
                 </ul>
-                <p class="break-word" v-html="item.excerpt_content"></p>
             </div>
         </div>
     </div>

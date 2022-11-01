@@ -307,7 +307,7 @@
                                                         </h6>
                                                         <div class="product_price">
                                                             <div v-if="item.on_sale">
-                                                                <span class="price">{{ item.sale_price }}</span>
+                                                                <span class="price">{{ item.sale_price | commaFormat}}</span>
                                                                 <del>{{ item.price }}</del>
                                                                 <div class="on_sale d-block"
                                                                      v-if="item.sale_off != null">
@@ -315,14 +315,21 @@
                                                                 </div>
                                                             </div>
                                                             <div v-else>
-                                                                <span class="price">{{ item.price }}</span>
+                                                                <span class="price">{{ item.price | commaFormat}}</span>
                                                             </div>
                                                         </div>
-                                                        <div class="rating_wrap">
-                                                            <div class="rating">
-                                                                <div class="product_rate" style="width:80%"></div>
-                                                            </div>
-                                                            <span class="rating_num">(21)</span>
+                                                        <div class="rating_wrap d-flex align-items-center" v-if="item.max_rating">
+                                                            <star-rating v-model="item.max_rating.star"
+                                                                         v-bind:show-rating="false"
+                                                                         v-bind:star-size="10"
+                                                                         v-bind:border-color="'#F6BC3E'"
+                                                                         v-bind:inactive-color="'#FFFFFF'"
+                                                                         v-bind:active-color="'#F6BC3E'"
+                                                                         v-bind:border-width="1"
+                                                                         v-bind:padding="1"
+                                                                         v-bind:read-only="true">
+                                                            </star-rating>
+                                                            <span class="rating_num">({{item.max_rating.total}})</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -347,12 +354,12 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <div v-if="!isLoadingTrending" v-carousel
+                                    <div v-if="!isLoadingTopRate" v-carousel
                                          class="product_slider carousel_slider product_list owl-carousel owl-theme nav_style5"
                                          data-nav="true"
                                          data-dots="false" data-loop="false" data-margin="20"
                                          data-responsive='{"0":{"items": "1"}, "380":{"items": "1"}, "640":{"items": "2"}, "991":{"items": "1"}}'>
-                                        <div class="item" v-for="entry in trendingProductMap">
+                                        <div class="item" v-for="entry in topRateProductMap">
                                             <div v-for="item in entry">
                                                 <div class="product_wrap">
                                                      <span class="pr_flash"
@@ -376,7 +383,7 @@
                                                         </h6>
                                                         <div class="product_price">
                                                             <div v-if="item.on_sale">
-                                                                <span class="price">{{ item.sale_price }}</span>
+                                                                <span class="price">{{ item.sale_price | commaFormat}}</span>
                                                                 <del>{{ item.price }}</del>
                                                                 <div class="on_sale d-block"
                                                                      v-if="item.sale_off != null">
@@ -384,14 +391,21 @@
                                                                 </div>
                                                             </div>
                                                             <div v-else>
-                                                                <span class="price">{{ item.price }}</span>
+                                                                <span class="price">{{ item.price | commaFormat}}</span>
                                                             </div>
                                                         </div>
-                                                        <div class="rating_wrap">
-                                                            <div class="rating">
-                                                                <div class="product_rate" style="width:80%"></div>
-                                                            </div>
-                                                            <span class="rating_num">(21)</span>
+                                                        <div class="rating_wrap d-flex align-items-center" v-if="item.max_rating">
+                                                            <star-rating v-model="item.max_rating.star"
+                                                                         v-bind:show-rating="false"
+                                                                         v-bind:star-size="10"
+                                                                         v-bind:border-color="'#F6BC3E'"
+                                                                         v-bind:inactive-color="'#FFFFFF'"
+                                                                         v-bind:active-color="'#F6BC3E'"
+                                                                         v-bind:border-width="1"
+                                                                         v-bind:padding="1"
+                                                                         v-bind:read-only="true">
+                                                            </star-rating>
+                                                            <span class="rating_num">({{item.max_rating.total}})</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -399,7 +413,7 @@
                                         </div>
                                     </div>
                                     <div v-else>
-                                        <loading-component v-bind:loading="isLoadingTrending"></loading-component>
+                                        <loading-component v-bind:loading="isLoadingTopRate"></loading-component>
                                     </div>
                                 </div>
                             </div>
@@ -445,7 +459,7 @@
                                                         </h6>
                                                         <div class="product_price">
                                                             <div v-if="item.on_sale">
-                                                                <span class="price">{{ item.sale_price }}</span>
+                                                                <span class="price">{{ item.sale_price | commaFormat}}</span>
                                                                 <del>{{ item.price }}</del>
                                                                 <div class="on_sale d-block"
                                                                      v-if="item.sale_off != null">
@@ -453,14 +467,21 @@
                                                                 </div>
                                                             </div>
                                                             <div v-else>
-                                                                <span class="price">{{ item.price }}</span>
+                                                                <span class="price">{{ item.price | commaFormat}}</span>
                                                             </div>
                                                         </div>
-                                                        <div class="rating_wrap">
-                                                            <div class="rating">
-                                                                <div class="product_rate" style="width:80%"></div>
-                                                            </div>
-                                                            <span class="rating_num">(21)</span>
+                                                        <div class="rating_wrap d-flex align-items-center" v-if="item.max_rating">
+                                                            <star-rating v-model="item.max_rating.star"
+                                                                         v-bind:show-rating="false"
+                                                                         v-bind:star-size="10"
+                                                                         v-bind:border-color="'#F6BC3E'"
+                                                                         v-bind:inactive-color="'#FFFFFF'"
+                                                                         v-bind:active-color="'#F6BC3E'"
+                                                                         v-bind:border-width="1"
+                                                                         v-bind:padding="1"
+                                                                         v-bind:read-only="true">
+                                                            </star-rating>
+                                                            <span class="rating_num">({{item.max_rating.total}})</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -564,12 +585,15 @@ export default {
             onSaleProductMap: {},
             featuredProducts: [],
             featuredProductMap: {},
+            topRateProducts: [],
+            topRateProductMap: {},
             blogs: [],
             currentIndex: 0,
             isLoading: true,
             isLoadingTrending: true,
             isLoadingFeatured: true,
             isLoadingOnSale: true,
+            isLoadingTopRate: true,
             isLoadingBlog: true,
             isLoadingTopCategories: true
         };
@@ -667,6 +691,26 @@ export default {
             this.isLoadingFeatured = false;
         }).catch(e => {
             this.isLoadingFeatured = false;
+        });
+
+        ProductService.findTopRate().then(response => {
+            let data = response.data || [];
+            this.topRateProducts = data;
+            let groupProducts = [];
+            let key = 0;
+            for (let i = 0; i < this.topRateProducts.length; i++) {
+                let number = i + 1;
+                let item = this.topRateProducts[i];
+                groupProducts.push(item);
+                if ((number != 1 && number % 3 == 0) || (number == this.topRateProducts.length)) {
+                    this.topRateProductMap[key] = groupProducts;
+                    key++;
+                    groupProducts = [];
+                }
+            }
+            this.isLoadingTopRate = false;
+        }).catch(e => {
+            this.isLoadingTopRate = false;
         });
 
 

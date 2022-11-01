@@ -200,34 +200,17 @@ class ProductRestController extends Controller
     public function findTrending(Request $request)
     {
         $ajax_response = new AjaxResponse();
-        $products = DB::table('ec_products')
-            ->selectRaw('ec_products.*')
-            ->join('ec_order_product', 'ec_products.id', '=', 'ec_order_product.product_id')
+        $products = Product::with(['productLabels'])
+            ->join('ec_order_product', 'ec_order_product.product_id', '=',
+                'ec_products.id')
             ->groupByRaw('ec_products.id')
             ->orderByRaw("SUM(ec_order_product.qty) DESC")
-            ->paginate(12);
-
-        $product_id = $products->pluck('id')->toArray();
-        $productLabels = DB::table('ec_product_labels')
-            ->selectRaw('ec_product_labels.*,ec_product_label_products.product_id')
-            ->join('ec_product_label_products', 'ec_product_labels.id', '=', 'ec_product_label_products.product_label_id')
-            ->whereIn('ec_product_label_products.product_id', $product_id)
-            ->get();
-//        $productLabelMap = array();
-//        foreach ($productLabels as $item) {
-//            $groupByProduct = $productLabelMap[$item['product_id']];
-//            if (is_null($groupByProduct)) {
-//                array_push($productLabelMap, array($item['product_id'] => []));
-//            }
-//            array_push($groupByProduct, $item);
-//        }
-//
-//        foreach ($products as $item) {
-//            $groupByProduct = $productLabelMap[$item['id']];
-//            if (!is_null($groupByProduct)) {
-//                $item['productLabels'] = $groupByProduct;
-//            }
-//        }
+            ->distinct()
+            ->select([
+                'ec_products.*'
+            ])
+            ->paginate(12)
+            ->toArray();
         return $ajax_response->setData($products)->toApiResponse();
     }
 
@@ -278,5 +261,14 @@ class ProductRestController extends Controller
         }
         $product->related_products = $related_products;
         return $ajax_response->setData($product)->toApiResponse();
+    }
+
+    public function findTopRate(Request $request)
+    {
+        $ajax_response = new AjaxResponse();
+        $products = Product::with(['productLabels'])->whereHas('reviews', function ($query) {
+            $query->orderBy('star', 'DESC');
+        })->paginate(12)->toArray();
+        return $ajax_response->setData($products)->toApiResponse();
     }
 }
