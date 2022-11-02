@@ -33,7 +33,11 @@
                                         <label class="form-label">Danh mục</label>
                                         <select class="form-select" name="category_id">
                                             <option value="0">Không danh mục</option>
-                                            @include('backend.product-category.tree_select',['product_categories' => $product_categories,'selected_id' => isset($product->id) ? $product->category_id: '','parent_id' => 0,'prefix'=> ""])
+                                            @if(!$product_categories->isEmpty())
+                                                @foreach($product_categories as $data)
+                                                    <option value="{!! $data->id !!}" {!! isset($product->id) && $product->category_id == $data->id ? 'selected' : ''!!}>{!! $data->name !!}</option>
+                                                @endforeach
+                                            @endif
                                         </select>
                                     </div>
                                     <div class="col-md-2 d-flex-align-end">
