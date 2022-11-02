@@ -30,7 +30,33 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    @include('backend.product-category.tree',['product_categories' => $product_categories,'parent_id' => 0,'prefix'=> ""])
+                                @if(!$product_categories->isEmpty())
+                                    @foreach($product_categories as $data)
+                                        <tr>
+                                            <th scope="row">{!!$data->id!!}</th>
+                                            <td>{!!$data->name!!}</td>
+                                            <td>{!!$data->updated_at->format('H:i:s d-m-Y')!!}</td>
+                                            <td>
+                                                <a href="{!! route('updateProductCategoryView',['id' => $data->id]) !!}"
+                                                   class="btn btn-info btn-sm text-white">
+                                                    <i class="bi bi-pencil-square"></i>
+                                                </a>
+                                                <form action="{!! route('deleteProductCategoryView',['id' => $data->id]) !!}"
+                                                      class="d-inline-block" method="POST">
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-danger btn-sm"
+                                                            onclick="return confirm('Bạn có chắc chắn cho hành động này không?')">
+                                                        <i class="bi bi-trash"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @else
+                                    <tr>
+                                        <td colspan="4">Không có dữ liệu</td>
+                                    </tr>
+                                @endif
                                 </tbody>
                             </table>
 

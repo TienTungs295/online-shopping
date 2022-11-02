@@ -21,16 +21,6 @@ class ProductCategory extends Model
         'image',
         'is_featured'];
 
-    public function childs()
-    {
-        return $this->hasMany(self::class, 'parent_id', 'id');
-    }
-
-    public function allChilds()
-    {
-        return $this->childs()->with('allChilds');
-    }
-
     public function products()
     {
         return $this->hasMany(Product::class, 'category_id');
