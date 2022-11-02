@@ -56,11 +56,11 @@
                 <hr/>
                 <div class="cart_extra">
                     <div v-if="product.is_contact">
-                        <div class="cart_btn mgb-10">
-                            <a href="tel:0979945555" class="btn btn-fill-out btn-addtocart rounded-0 mgr-10 mgb-10">
-                                <i class="icon-earphones"></i> Liên hệ
+                        <div class="cart_btn">
+                            <a href="tel:0979945555" class="btn btn-fill-out btn-addtocart rounded-0 mgr-10">
+                                <i class="linearicons-phone-wave"></i> Liên hệ
                             </a>
-                            <a class="add_wishlist mgb-10" @click="addToWithList(product.id)"><i
+                            <a class="add_wishlist" @click="addToWithList(product.id)"><i
                                 class="icon-heart"></i></a>
                         </div>
                     </div>

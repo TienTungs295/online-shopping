@@ -73,6 +73,7 @@ class CreateEcommerceTables extends Migration
 //            $table->string('height_unit', 20)->nullable();
 //            $table->string('weight_unit', 20)->nullable();
             $table->tinyInteger('stock_status')->nullable();
+            $table->tinyInteger('is_contact')->default(0);
             $table->timestamps();
         });
 

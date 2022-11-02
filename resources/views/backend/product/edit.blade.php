@@ -33,10 +33,10 @@
                                         <label class="form-label">Danh mục</label>
                                         <select class="form-select" name="category_id">
                                             <option value="0">Không danh mục</option>
-                                            @if(!$product_categories->isEmpty())
+                                            @if(!empty($product_categories))
                                                 @foreach($product_categories as $data)
                                                     <option
-                                                        value="{!! $data->id !!}" {!! isset($product->id) && $product->category_id == $data->id ? 'selected' : ''!!}>{!! $data->name !!}</option>
+                                                        value="{!! $data["id"] !!}" {!! isset($product->id) && $product->category_id == $data["id"] ? 'selected' : ''!!}>{!! $data["name"] !!}</option>
                                                 @endforeach
                                             @endif
                                         </select>
@@ -84,7 +84,9 @@
                                     </div>
                                     <div class="col-md-6 d-inline-flex-align-end">
                                         <div class="form-check">
-                                            <input class="form-check-input" id="is-contact" type="checkbox" value=""
+                                            <input class="form-check-input" id="is-contact" type="checkbox"
+                                                   value="{!! old('is_contact', isset($product->is_contact) ? $product->is_contact : 0)!!}"
+                                                   {!! old('is_contact', isset($product->is_contact) && $product->is_contact == 1 ? 'checked' : '')!!}
                                                    name="is_contact">
                                             <label class="form-check-label">
                                                 Giá liên hệ?
@@ -280,6 +282,7 @@
         }
         showHideApplyTime();
         showHideStoreManagement();
+        showHidePriceAndTime();
         $(function () {
             $(".datepicker").datepicker({changeYear: true})
         });

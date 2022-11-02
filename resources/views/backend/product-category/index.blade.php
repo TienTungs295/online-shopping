@@ -30,18 +30,20 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @if(!$product_categories->isEmpty())
+                                @if(!empty($product_categories))
                                     @foreach($product_categories as $data)
                                         <tr>
-                                            <th scope="row">{!!$data->id!!}</th>
-                                            <td>{!!$data->name!!}</td>
-                                            <td>{!!$data->updated_at->format('H:i:s d-m-Y')!!}</td>
-                                            <td>
-                                                <a href="{!! route('updateCategoryView',['id' => $data->id]) !!}"
+                                            <th scope="row">{!!$data["id"]!!}</th>
+                                            <td>{!!$data["name"]!!}</td>
+                                            <td class="text-center">
+                                                {!! date('H:i:s d-m-Y', strtotime($data["updated_at"])) !!}
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="{!! route('updateCategoryView',['id' => $data["id"]]) !!}"
                                                    class="btn btn-info btn-sm text-white">
                                                     <i class="bi bi-pencil-square"></i>
                                                 </a>
-                                                <form action="{!! route('deleteCategoryView',['id' => $data->id]) !!}"
+                                                <form action="{!! route('deleteCategory',['id' => $data["id"]]) !!}"
                                                       class="d-inline-block" method="POST">
                                                     @csrf
                                                     <button type="submit" class="btn btn-danger btn-sm"
@@ -53,7 +55,7 @@
                                         </tr>
                                     @endforeach
                                 @else
-                                    <tr>
+                                    <tr class="text-center">
                                         <td colspan="4">Không có dữ liệu</td>
                                     </tr>
                                 @endif

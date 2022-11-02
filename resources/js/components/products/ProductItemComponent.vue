@@ -8,7 +8,7 @@
             <div class="product_action_box">
                 <ul class="list_none pr_action_btn">
                     <li v-if="item.is_contact">
-                        <a href="tel:0979945555"><i class="icon-earphones"></i>Liên hệ</a>
+                        <a href="tel:0979945555"><i class="linearicons-phone-wave"></i>Liên hệ</a>
                     </li>
                     <li v-else class="add-to-cart"><a @click="addToCart(item.id)"><i
                         class="icon-basket-loaded"></i>Thêm vào giỏ </a>
