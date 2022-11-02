@@ -37,11 +37,11 @@
                                             <td>{!!$data->name!!}</td>
                                             <td>{!!$data->updated_at->format('H:i:s d-m-Y')!!}</td>
                                             <td>
-                                                <a href="{!! route('updateProductCategoryView',['id' => $data->id]) !!}"
+                                                <a href="{!! route('updateCategoryView',['id' => $data->id]) !!}"
                                                    class="btn btn-info btn-sm text-white">
                                                     <i class="bi bi-pencil-square"></i>
                                                 </a>
-                                                <form action="{!! route('deleteProductCategoryView',['id' => $data->id]) !!}"
+                                                <form action="{!! route('deleteCategoryView',['id' => $data->id]) !!}"
                                                       class="d-inline-block" method="POST">
                                                     @csrf
                                                     <button type="submit" class="btn btn-danger btn-sm"
