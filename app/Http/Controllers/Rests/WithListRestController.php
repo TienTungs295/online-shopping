@@ -15,8 +15,36 @@ class WithListRestController extends Controller
     public function findAll(Request $request)
     {
         $ajax_response = new AjaxResponse();
-        $data = Cart::instance($this->getName())->content();
-        return $ajax_response->setData($data)->toApiResponse();
+        $withList = Cart::instance($this->getName())->content();
+        $product_ids = [];
+        $cartMap = array();
+        foreach ($withList as $key => $item) {
+            $product_id = $item["id"];
+            array_push($product_ids, $product_id);
+            $cartMap[$product_id] = $item["rowId"];
+        }
+        $query = Product::whereIn('id', $product_ids)->get();
+        $db_pro_ids = $query->pluck('id');
+        $products = $query->toArray();
+        foreach ($products as $product) {
+            $rowId = $cartMap[$product->id];
+            if ($rowId != null) {
+                Cart::instance($this->getName())->update($rowId,
+                    ['id' => $product->id, 'name' => $product->name, 'price' => $product->real_price,
+                        'options' => [
+                            'image' => $product->image,
+                            'slug' => $product->slug,
+                            'price' => $product->price,
+                            'is_contact' => $product->is_contact,
+                            'on_sale' => $product->on_sale,
+                            'sale_off' => $product->sale_off]
+                    ]
+                );
+            }
+        }
+        foreach ($db_pro_ids as $db_product_id)
+            if (!in_array($db_product_id, $product_ids)) Cart::instance($this->getName())->remove($cartMap[$db_product_id]);
+        return $ajax_response->setData(array("data" => Cart::instance($this->getName())->content(), "total" => Cart::instance($this->getName())->count()))->toApiResponse();
     }
 
     public function count(Request $request)
@@ -39,13 +67,14 @@ class WithListRestController extends Controller
         $existProduct = Cart::instance($this->getName())->search(function ($item, $row_id) use ($product_id) {
             return $item->id == $product_id;
         });
-        if ($existProduct->count() > 0) return $ajax_response->setMessage("Sản phẩm đã tồn tại trong danh sách yêu thích!")->toApiResponse();
+        if ($existProduct->count() > 0) Cart::instance($this->getName())->remove($existProduct["rowId"]);
 
         Cart::instance($this->getName())->add(['id' => $product_id, 'name' => $product->name, 'price' => $product->real_price, 'qty' => 1, 'options' => [
             'image' => $product->image,
             'customer_id' => auth()->user()->id,
             'slug' => $product->slug,
             'price' => $product->price,
+            'is_contact' => $product->is_contact,
             'on_sale' => $product->on_sale,
             'sale_off' => $product->sale_off]]);
         return $ajax_response->setData(Cart::instance($this->getName())->content())

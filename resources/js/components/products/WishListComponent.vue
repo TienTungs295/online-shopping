@@ -61,14 +61,25 @@
                                             </router-link>
                                         </td>
                                         <td class="product-price" data-title="Giá">
-                                            <span class="price">{{ item.price | commaFormat }}</span>
-                                            <del v-if="item.options.on_sale">{{ item.options.price | commaFormat }}
-                                            </del>
+                                            <div v-if="item.options.is_contact">
+                                                <span class="price">Liên hệ</span>
+                                            </div>
+                                            <div>
+                                                <span class="price">{{ item.price | commaFormat }}</span>
+                                                <del v-if="item.options.on_sale">{{
+                                                        item.options.price | commaFormat
+                                                    }}
+                                                </del>
+                                            </div>
                                         </td>
-                                        <td class="product-subtotal" data-title="Thêm vào giỏ"><a
-                                            @click="addToCart(item.id)"
-                                            class="btn btn-fill-out btn-sm add-to-cart-button rounded-0">Thêm vào
-                                            giỏ</a></td>
+                                        <td class="product-subtotal" data-title="Thêm vào giỏ">
+                                            <a href="tel:0979945555" v-if="item.options.is_contact"
+                                               class="btn btn-fill-out btn-sm add-to-cart-button rounded-0">Liên hệ
+                                            </a>
+                                            <a v-else @click="addToCart(item.id)"
+                                               class="btn btn-fill-out btn-sm add-to-cart-button rounded-0">Thêm vào giỏ
+                                            </a>
+                                        </td>
                                         <td class="product-remove" data-title="Xóa"><a
                                             class="btn btn-fill-line view-cart rounded-0 btn-sm rounded-0"
                                             @click="remove(key)">Xóa</a></td>

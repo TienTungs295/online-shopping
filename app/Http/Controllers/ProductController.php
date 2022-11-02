@@ -62,6 +62,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'stock_status' => 'required'
         ]);
 
         $category_id = $request->input('category_id');
@@ -79,30 +80,33 @@ class ProductController extends Controller
         $product->category_id = $request->input('category_id');
         $product->sku = $request->input('sku');
         $product->is_featured = $request->has('is_featured') ? 1 : 0;
-        $product->price = empty($request->input('price')) ? 0 : $request->input('price');
-        if (!empty($request->input('sale_price'))) {
-            $product->sale_price = $request->input('sale_price');
-        }
-
-        if ($request->has('apply_time')) {
-            $start_date = $request->input('start_date');
-            $end_date = $request->input('end_date');
-            if (!empty($start_date)) {
-                $product->start_date = Carbon::createFromFormat('d-m-Y', $start_date)->format("Y-m-d");
+        $is_contact_price = $request->has('is_contact');
+        if (!$is_contact_price) {
+            $product->price = empty($request->input('price')) ? 0 : $request->input('price');
+            if (!empty($request->input('sale_price'))) {
+                $product->sale_price = $request->input('sale_price');
             }
-            if (!empty($end_date)) {
-                $product->end_date = Carbon::createFromFormat('d-m-Y', $end_date)->format("Y-m-d");
+            if ($request->has('apply_time')) {
+                $start_date = $request->input('start_date');
+                $end_date = $request->input('end_date');
+                if (!empty($start_date)) {
+                    $product->start_date = Carbon::createFromFormat('d-m-Y', $start_date)->format("Y-m-d");
+                }
+                if (!empty($end_date)) {
+                    $product->end_date = Carbon::createFromFormat('d-m-Y', $end_date)->format("Y-m-d");
+                }
             }
         }
-
         $with_storehouse_management = $request->has('with_storehouse_management');
-        if ($with_storehouse_management) {
-            $product->with_storehouse_management = $with_storehouse_management ? 1 : 0;
+        if (!$is_contact_price && $with_storehouse_management) {
+            $product->with_storehouse_management = 1;
             $product->quantity = empty($request->input('quantity')) ? 0 : $request->input('quantity');
             $product->allow_checkout_when_out_of_stock = $request->has('allow_checkout_when_out_of_stock') ? 1 : 0;
         } else {
+            $product->with_storehouse_management = 0;
             $product->stock_status = $request->input('stock_status');
         }
+        $product->is_contact = $is_contact_price ? 1 : 0;
 
         //image
         $upload_path = "/uploads/images/";
@@ -236,10 +240,16 @@ class ProductController extends Controller
         $product->category_id = $request->input('category_id');
         $product->sku = $request->input('sku');
         $product->is_featured = $request->has('is_featured') ? 1 : 0;
-        $product->price = empty($request->input('price')) ? 0 : $request->input('price');
-        $product->sale_price = empty($request->input('sale_price')) ? null : $request->input('sale_price');
+        $is_contact_price = $request->has('is_contact');
+        if ($is_contact_price) {
+            $product->price = null;
+            $product->sale_price = null;
+        } else {
+            $product->price = empty($request->input('price')) ? 0 : $request->input('price');
+            $product->sale_price = empty($request->input('sale_price')) ? null : $request->input('sale_price');
+        }
 
-        if ($request->has('apply_time')) {
+        if (!$is_contact_price && $request->has('apply_time')) {
             $start_date = $request->input('start_date');
             $end_date = $request->input('end_date');
             if (!empty($start_date)) {
@@ -254,16 +264,18 @@ class ProductController extends Controller
         }
 
         $with_storehouse_management = $request->has('with_storehouse_management');
-        $product->with_storehouse_management = $with_storehouse_management ? 1 : 0;
-        if ($with_storehouse_management) {
+        if (!$is_contact_price && $with_storehouse_management) {
+            $product->with_storehouse_management = 1;
             $product->quantity = empty($request->input('quantity')) ? 0 : $request->input('quantity');
             $product->allow_checkout_when_out_of_stock = $request->has('allow_checkout_when_out_of_stock') ? 1 : 0;
             $product->stock_status = null;
         } else {
-            $product->stock_status = $request->input('stock_status');
+            $product->with_storehouse_management = 0;
             $product->quantity = null;
             $product->allow_checkout_when_out_of_stock = null;
+            $product->stock_status = $request->input('stock_status');
         }
+        $product->is_contact = $is_contact_price ? 1 : 0;
 
         //image
         $del_image_names = [];

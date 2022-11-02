@@ -20,15 +20,20 @@
                 <div class="product_description">
                     <h4 class="product_title"><a href="#">{{ product.name }}</a></h4>
                     <div class="product_price">
-                        <div v-if="product.on_sale">
-                            <span class="price">{{ product.sale_price | commaFormat }}</span>
-                            <del>{{ product.price | commaFormat }}</del>
-                            <div class="on_sale" v-if="product.sale_off != null">
-                                <span>{{ product.sale_off }}% Off</span>
-                            </div>
+                        <div v-if="product.is_contact">
+                            <span class="price">Liên hệ</span>
                         </div>
                         <div v-else>
-                            <span class="price">{{ product.price | commaFormat }}</span>
+                            <div v-if="product.on_sale">
+                                <span class="price">{{ product.sale_price | commaFormat }}</span>
+                                <del>{{ product.price | commaFormat }}</del>
+                                <div class="on_sale" v-if="product.sale_off != null">
+                                    <span>{{ product.sale_off }}% Off</span>
+                                </div>
+                            </div>
+                            <div v-else>
+                                <span class="price">{{ product.price | commaFormat }}</span>
+                            </div>
                         </div>
                     </div>
                     <div class="rating_wrap d-flex align-items-center" v-if="product.max_rating">
@@ -50,7 +55,16 @@
                 </div>
                 <hr/>
                 <div class="cart_extra">
-                    <div>
+                    <div v-if="product.is_contact">
+                        <div class="cart_btn mgb-10">
+                            <a href="tel:0979945555" class="btn btn-fill-out btn-addtocart rounded-0 mgr-10 mgb-10">
+                                <i class="icon-earphones"></i> Liên hệ
+                            </a>
+                            <a class="add_wishlist mgb-10" @click="addToWithList(product.id)"><i
+                                class="icon-heart"></i></a>
+                        </div>
+                    </div>
+                    <div v-else>
                         <div class="cart-product-quantity">
                             <div class="quantity">
                                 <input type="button" value="-" class="minus" @click="minus(cart)">

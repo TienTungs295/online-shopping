@@ -7,7 +7,10 @@
             </router-link>
             <div class="product_action_box">
                 <ul class="list_none pr_action_btn">
-                    <li class="add-to-cart"><a @click="addToCart(item.id)"><i
+                    <li v-if="item.is_contact">
+                        <a href="tel:0979945555"><i class="icon-earphones"></i>Liên hệ</a>
+                    </li>
+                    <li v-else class="add-to-cart"><a @click="addToCart(item.id)"><i
                         class="icon-basket-loaded"></i>Thêm vào giỏ </a>
                     </li>
                     <li><a @click="showModal()"
@@ -28,15 +31,20 @@
                 </router-link>
             </h6>
             <div class="product_price">
-                <div v-if="item.on_sale">
-                    <span class="price">{{ item.sale_price | commaFormat}}</span>
-                    <del>{{ item.price | commaFormat}}</del>
-                    <div class="on_sale" v-if="item.sale_off != null">
-                        <span>{{ item.sale_off }}% Off</span>
-                    </div>
+                <div v-if="item.is_contact">
+                    <span class="price">Liên hệ</span>
                 </div>
                 <div v-else>
-                    <span class="price">{{ item.price | commaFormat}}</span>
+                    <div v-if="item.on_sale">
+                        <span class="price">{{ item.sale_price | commaFormat}}</span>
+                        <del>{{ item.price | commaFormat}}</del>
+                        <div class="on_sale" v-if="item.sale_off != null">
+                            <span>{{ item.sale_off }}% Off</span>
+                        </div>
+                    </div>
+                    <div v-else>
+                        <span class="price">{{ item.price | commaFormat}}</span>
+                    </div>
                 </div>
             </div>
             <div class="rating_wrap" v-if="item.max_rating">

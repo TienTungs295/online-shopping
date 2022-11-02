@@ -35,7 +35,8 @@
                                             <option value="0">Không danh mục</option>
                                             @if(!$product_categories->isEmpty())
                                                 @foreach($product_categories as $data)
-                                                    <option value="{!! $data->id !!}" {!! isset($product->id) && $product->category_id == $data->id ? 'selected' : ''!!}>{!! $data->name !!}</option>
+                                                    <option
+                                                        value="{!! $data->id !!}" {!! isset($product->id) && $product->category_id == $data->id ? 'selected' : ''!!}>{!! $data->name !!}</option>
                                                 @endforeach
                                             @endif
                                         </select>
@@ -75,25 +76,36 @@
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <div class="col-md-3">
+                                    <div class="col-md-6">
                                         <label class="form-label">Mã sản phẩm</label>
                                         <input type="text"
                                                value="{!! old('sku', isset($product->sku) ? $product->sku : '')!!}"
                                                class="form-control" name="sku" maxlength="255">
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-6 d-inline-flex-align-end">
+                                        <div class="form-check">
+                                            <input class="form-check-input" id="is-contact" type="checkbox" value=""
+                                                   name="is_contact">
+                                            <label class="form-check-label">
+                                                Giá liên hệ?
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3" id="price-block">
+                                    <div class="col-md-4">
                                         <label class="form-label">Giá</label>
                                         <input type="number"
                                                value="{!! old('price', isset($product->price) ? $product->price : '')!!}"
                                                class="form-control" name="price">
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <label class="form-label">Giá sale</label>
                                         <input type="number"
                                                value="{!! old('sale_price', isset($product->sale_price) ? $product->sale_price : '')!!}"
                                                class="form-control" name="sale_price">
                                     </div>
-                                    <div class="col-md-3 d-inline-flex-align-end">
+                                    <div class="col-md-4 d-inline-flex-align-end">
                                         <div class="form-check">
                                             <input class="form-check-input" id="apply-time" type="checkbox" value=""
                                                    name="apply_time">
@@ -127,7 +139,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row mb-3">
+                                <div class="row mb-3" id="wrap-qty-block">
                                     <div class="col-md-4 d-inline-flex-align-end">
                                         <div class="form-check">
                                             <input class="form-check-input" id="with-storehouse-management"
@@ -194,7 +206,6 @@
                                         @endif
                                     </div>
                                 </div>
-
                                 <div class="row mb-3" id="stock-status-block">
                                     <div class="col">
                                         <label class="form-label d-block">Nhãn</label>
@@ -512,6 +523,24 @@
             }
         }
 
+        $("#is-contact").click(function (event) {
+            showHidePriceAndTime();
+        });
+
+        function showHidePriceAndTime() {
+            if ($("#is-contact").prop("checked") == true) {
+                $("#price-block").addClass("dis-none");
+                $("#apply-time-block").removeClass("d-flex");
+                $("#apply-time-block").hide();
+                $("#wrap-qty-block").addClass("dis-none");
+            } else {
+                $("#price-block").removeClass("dis-none");
+                $("#wrap-qty-block").removeClass("dis-none");
+                showHideApplyTime();
+                showHideStoreManagement();
+            }
+        }
+
         tinymce.init({
             selector: 'textarea.3m-editor',
             height: 500,
@@ -540,11 +569,11 @@
                     reader.onload = function () {
 
                         var id = 'blobid' + (new Date()).getTime();
-                        var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
+                        var blobCache = tinymce.activeEditor.editorUpload.blobCache;
                         var base64 = reader.result.split(',')[1];
                         var blobInfo = blobCache.create(id, file, base64);
                         blobCache.add(blobInfo);
-                        cb(blobInfo.blobUri(), { title: file.name });
+                        cb(blobInfo.blobUri(), {title: file.name});
                     };
                     reader.readAsDataURL(file);
                 };

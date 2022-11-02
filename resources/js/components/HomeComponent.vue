@@ -306,16 +306,21 @@
                                                             </router-link>
                                                         </h6>
                                                         <div class="product_price">
-                                                            <div v-if="item.on_sale">
-                                                                <span class="price">{{ item.sale_price | commaFormat}}</span>
-                                                                <del>{{ item.price }}</del>
-                                                                <div class="on_sale d-block"
-                                                                     v-if="item.sale_off != null">
-                                                                    <span>{{ item.sale_off }}% Off</span>
-                                                                </div>
+                                                            <div v-if="item.is_contact">
+                                                                <span class="price">Liên hệ</span>
                                                             </div>
                                                             <div v-else>
-                                                                <span class="price">{{ item.price | commaFormat}}</span>
+                                                                <div v-if="item.on_sale">
+                                                                    <span class="price">{{ item.sale_price | commaFormat}}</span>
+                                                                    <del>{{ item.price }}</del>
+                                                                    <div class="on_sale d-block"
+                                                                         v-if="item.sale_off != null">
+                                                                        <span>{{ item.sale_off }}% Off</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div v-else>
+                                                                    <span class="price">{{ item.price | commaFormat}}</span>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="rating_wrap d-flex align-items-center" v-if="item.max_rating">
@@ -382,16 +387,21 @@
                                                             </router-link>
                                                         </h6>
                                                         <div class="product_price">
-                                                            <div v-if="item.on_sale">
-                                                                <span class="price">{{ item.sale_price | commaFormat}}</span>
-                                                                <del>{{ item.price }}</del>
-                                                                <div class="on_sale d-block"
-                                                                     v-if="item.sale_off != null">
-                                                                    <span>{{ item.sale_off }}% Off</span>
-                                                                </div>
+                                                            <div v-if="item.is_contact">
+                                                                <span class="price">Liên hệ</span>
                                                             </div>
                                                             <div v-else>
-                                                                <span class="price">{{ item.price | commaFormat}}</span>
+                                                                <div v-if="item.on_sale">
+                                                                    <span class="price">{{ item.sale_price | commaFormat}}</span>
+                                                                    <del>{{ item.price }}</del>
+                                                                    <div class="on_sale d-block"
+                                                                         v-if="item.sale_off != null">
+                                                                        <span>{{ item.sale_off }}% Off</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div v-else>
+                                                                    <span class="price">{{ item.price | commaFormat}}</span>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="rating_wrap d-flex align-items-center" v-if="item.max_rating">
@@ -458,16 +468,21 @@
                                                             </router-link>
                                                         </h6>
                                                         <div class="product_price">
-                                                            <div v-if="item.on_sale">
-                                                                <span class="price">{{ item.sale_price | commaFormat}}</span>
-                                                                <del>{{ item.price }}</del>
-                                                                <div class="on_sale d-block"
-                                                                     v-if="item.sale_off != null">
-                                                                    <span>{{ item.sale_off }}% Off</span>
-                                                                </div>
+                                                            <div v-if="item.is_contact">
+                                                                <span class="price">Liên hệ</span>
                                                             </div>
                                                             <div v-else>
-                                                                <span class="price">{{ item.price | commaFormat}}</span>
+                                                                <div v-if="item.on_sale">
+                                                                    <span class="price">{{ item.sale_price | commaFormat}}</span>
+                                                                    <del>{{ item.price }}</del>
+                                                                    <div class="on_sale d-block"
+                                                                         v-if="item.sale_off != null">
+                                                                        <span>{{ item.sale_off }}% Off</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div v-else>
+                                                                    <span class="price">{{ item.price | commaFormat}}</span>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="rating_wrap d-flex align-items-center" v-if="item.max_rating">
