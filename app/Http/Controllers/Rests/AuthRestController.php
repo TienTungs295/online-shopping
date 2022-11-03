@@ -23,10 +23,15 @@ class AuthRestController extends Controller
      */
     public function login(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'email' => 'required',
-            'password' => 'required',
-        ]);
+        $validator = Validator::make($request->all(),
+            [
+                'email' => 'required',
+                'password' => 'required',
+            ],
+            [
+                'email.required' => 'Email không được phép bỏ trống',
+                'password.required' => 'Mật khẩu không được phép bỏ trống'
+            ]);
         $ajax_response = new AjaxResponse();
 
         if ($validator->fails()) {
@@ -47,12 +52,25 @@ class AuthRestController extends Controller
      */
     public function register(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string',
-            'email' => 'required|string|email|max:200|unique:customer_accounts',
-            'password' => 'required|string|min:8',
-            'confirm_password' => 'required|strings|same:password',
-        ]);
+        $validator = Validator::make($request->all(),
+            [
+                'name' => 'required|string',
+                'email' => 'required|string|email|max:200|unique:customer_accounts',
+                'password' => 'required|string|min:8|max:50',
+                'confirm_password' => 'required|string|same:password',
+            ],
+            [
+                'name.required' => 'Tên khách hàng không được phép bỏ trống',
+                'email.required' => 'Email không được phép bỏ trống',
+                'email.max' => 'Email không được phép vượt quá 200 ký tự',
+                'email.unique' => 'Tài khoản đã tồn tại',
+                'password.required' => 'Mật khẩu không được phép bỏ trống',
+                'password.min' => 'Mật khẩu phải có tối thiểu 8 ký tự',
+                'password.max' => 'Mật khẩu không đươc phép vượt quá 50 ký tự',
+                'confirm_password.required' => 'Mật khẩu xác nhận không được phép bỏ trống',
+                'confirm_password.same' => 'Mật khẩu xác nhận không chính xác'
+            ]
+        );
         $ajax_response = new AjaxResponse();
         if ($validator->fails()) {
             return $ajax_response->setErrors($validator->errors())->toApiResponse();
@@ -119,10 +137,19 @@ class AuthRestController extends Controller
 
     public function changePassWord(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'new_password' => 'required|string|min:8',
-            'confirm_new_password' => 'required|string|same:new_password',
-        ]);
+        $validator = Validator::make($request->all(),
+            [
+                'new_password' => 'required|string|min:8|max:50',
+                'confirm_new_password' => 'required|string|same:new_password',
+            ],
+            [
+                'new_password.required' => 'Mật khẩu không được phép bỏ trống',
+                'new_password.min' => 'Mật khẩu phải có tối thiểu 8 ký tự',
+                'new_password.max' => 'Mật khẩu không đươc phép vượt quá 50 ký tự',
+                'confirm_new_password.required' => 'Mật khẩu xác nhận không được phép bỏ trống',
+                'confirm_new_password.same' => 'Mật khẩu xác nhận không chính xác'
+            ]
+        );
         $ajax_response = new AjaxResponse();
         if (!Hash::check($request->post('old_password'), auth()->user()->password))
             return $ajax_response->setErrors(array('old_password' => ['Mật khẩu hiện tại không chính xác']))->toApiResponse();
@@ -142,11 +169,18 @@ class AuthRestController extends Controller
 
     public function update(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string',
-            'phone_number' => 'max:15',
-            'address' => 'max:350',
-        ]);
+        $validator = Validator::make($request->all(),
+            [
+                'name' => 'required|string',
+                'phone_number' => 'max:15',
+                'address' => 'max:350',
+            ],
+            [
+                'name.required' => 'Tên khách hàng không được phép bỏ trống',
+                'phone_number.max' => 'Số điện thoại không được phép vượt quá 15 ký tự',
+                'address.max' => 'Địa chỉ không được phép vượt quá 350 ký tự',
+            ]
+        );
         $ajax_response = new AjaxResponse();
         if ($validator->fails()) {
             return $ajax_response->setErrors($validator->errors())->toApiResponse();
