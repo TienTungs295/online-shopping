@@ -18,11 +18,11 @@ class ReviewRestController extends Controller
         $comment = $request->post("comment");
         $star = $request->post("star");
         if (is_null($star) || $star == 0)
-            return $ajax_response->setMessage("Vui lòng chọn số sao")->toApiResponse();
+            return $ajax_response->setMessage("Vui lòng chọn số sao đánh giá")->toApiResponse();
         if ($star < 1 || $star > 5)
             return $ajax_response->setMessage("Số sao không hợp lệ")->toApiResponse();
         if (!isset($comment))
-            return $ajax_response->setMessage("Đánh giá không được phép bỏ trống")->toApiResponse();
+            return $ajax_response->setMessage("Nội dung đánh giá không được phép bỏ trống")->toApiResponse();
         $review->comment = $comment;
         $review->star = $star;
         $review->status = 1;
@@ -49,7 +49,7 @@ class ReviewRestController extends Controller
 
     public function findByProduct(Request $request)
     {
-        $page_size = 10;
+        $page_size = 12;
         $hasMorePage = false;
         $last_id = $request->input("last_id");
         $ajax_response = new AjaxResponse();
