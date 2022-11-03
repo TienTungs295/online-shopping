@@ -67,19 +67,22 @@ class WithListRestController extends Controller
         $existProduct = Cart::instance($this->getName())->search(function ($item, $row_id) use ($product_id) {
             return $item->id == $product_id;
         });
-        if ($existProduct->count() > 0) Cart::instance($this->getName())->remove($existProduct["rowId"]);
-
-        Cart::instance($this->getName())->add(['id' => $product_id, 'name' => $product->name, 'price' => $product->real_price, 'qty' => 1, 'options' => [
-            'image' => $product->image,
-            'customer_id' => auth()->user()->id,
-            'slug' => $product->slug,
-            'price' => $product->price,
-            'is_contact' => $product->is_contact,
-            'on_sale' => $product->on_sale,
-            'sale_off' => $product->sale_off]]);
-        return $ajax_response->setData(Cart::instance($this->getName())->content())
-            ->setMessage("Thêm sản phẩm " . $product->name . " danh sách yêu thích thành công!")
-            ->toApiResponse();
+        if ($existProduct->count() > 0) {
+            Cart::instance($this->getName())->remove($existProduct["rowId"]);
+            return $ajax_response->setData(Cart::instance($this->getName())->content())->toApiResponse();
+        } else {
+            Cart::instance($this->getName())->add(['id' => $product_id, 'name' => $product->name, 'price' => $product->real_price, 'qty' => 1, 'options' => [
+                'image' => $product->image,
+                'customer_id' => auth()->user()->id,
+                'slug' => $product->slug,
+                'price' => $product->price,
+                'is_contact' => $product->is_contact,
+                'on_sale' => $product->on_sale,
+                'sale_off' => $product->sale_off]]);
+            return $ajax_response->setData(Cart::instance($this->getName())->content())
+                ->setMessage("Thêm sản phẩm " . $product->name . " danh sách yêu thích thành công!")
+                ->toApiResponse();
+        }
     }
 
     public function destroy(Request $request)

@@ -590,7 +590,6 @@ export default {
     name: "Home",
     data() {
         return {
-            categories: [],
             topCategories: [],
             collections: [],
             productCollections: [],
@@ -627,12 +626,6 @@ export default {
         }
     },
     mounted() {
-        CategoryService.findAll().then(response => {
-            let data = response || [];
-            this.categories = data;
-        }).catch(e => {
-        });
-
         CategoryService.findTop().then(response => {
             let data = response || [];
             this.topCategories = data;

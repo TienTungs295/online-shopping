@@ -35,18 +35,20 @@ class ProductRestController extends Controller
     {
         $ajax_response = new AjaxResponse();
         $collection_id = $request->input('collection_id');
+        $products = [];
+        if (is_null($collection_id)) {
+            $firstCollection = ProductCollection::first();
+            if (is_null($firstCollection)) return $ajax_response->setData($products)->toApiResponse();
+            else $collection_id = $firstCollection->id;
+        }
         try {
-            if (!isset($collection_id)) $collection_id = ProductCollection::firstOrFail()->id;
-            else ProductCollection::findOrFail($collection_id);
+            ProductCollection::findOrFail($collection_id);
         } catch (ModelNotFoundException $e) {
             return $ajax_response->setMessage("Đối tượng không tồn tại hoặc đã bị xóa")->toApiResponse();
         }
-        $products = [];
-        if (isset($collection_id)) {
-            $products = Product::with(['productLabels'])->whereHas('productCollections', function ($query) use ($collection_id) {
-                $query->where('product_collection_id', $collection_id);
-            })->orderBy('id', 'DESC')->paginate(12);
-        }
+        $products = Product::with(['productLabels'])->whereHas('productCollections', function ($query) use ($collection_id) {
+            $query->where('product_collection_id', $collection_id);
+        })->orderBy('id', 'DESC')->paginate(12);
         return $ajax_response->setData($products)->toApiResponse();
     }
 
@@ -65,6 +67,7 @@ class ProductRestController extends Controller
             $name = isset($param->name) ? $param->name : null;
             $min_price = null;
             $max_price = null;
+            $is_contact = false;
             if (isset($param->price)) {
                 if ($param->price == "option1") {
                     $max_price = 50000;
@@ -82,6 +85,8 @@ class ProductRestController extends Controller
                     $max_price = 1000000;
                 } elseif ($param->price == "option6") {
                     $min_price = 1000000;
+                } elseif ($param->price == "option7") {
+                    $is_contact = true;
                 }
             }
             $collection_ids = null;
@@ -93,6 +98,7 @@ class ProductRestController extends Controller
                 });
             }
             if (!empty($name)) $query->where('name', 'like', '%' . $name . '%');
+            if ($is_contact) $query->where('is_contact', true);
             if (!is_null($min_price) || !is_null($max_price)) {
                 //find by product on sale
                 $query->where(function ($query) use ($current_time, $min_price, $max_price) {

@@ -267,6 +267,11 @@ export default {
                     key: "option6",
                     id: "radio6",
                     value: "Lớn hơn 1000,000₫"
+                },
+                {
+                    key: "option7",
+                    id: "radio7",
+                    value: "Liên hệ"
                 }
             ],
             isLoadingProduct: true,
