@@ -60,10 +60,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'stock_status' => 'required'
-        ]);
+        $request->validate(
+            [
+                'name' => 'required',
+            ],
+            [
+                'name.required' => 'Tên sản phẩm không được phép bỏ trống',
+            ]
+        );
 
         $category_id = $request->input('category_id');
         try {
@@ -216,9 +220,13 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required',
-        ]);
+        $request->validate(
+            [
+                'name' => 'required',
+            ],
+            [
+                'name.required' => 'Tên sản phẩm không được phép bỏ trống',
+            ]);
 
         try {
             $product = Product::findOrFail($id);

@@ -47,10 +47,18 @@ class DiscountController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'code' => 'required|max:50',
-            'value' => 'required:min:1',
-        ]);
+        $request->validate(
+            [
+                'code' => 'required|max:50',
+                'value' => 'required|numeric|min:1',
+            ],
+            [
+                'code.required' => 'Mã giảm giá không được phép bỏ trống',
+                'name.max' => 'Mã giảm giá không được vượt quá 50 ký tự',
+                'value.required' => 'Giá trị không được phép bỏ trống',
+                'value.numeric' => 'Giá trị phải là số',
+                'value.min' => 'Giá trị phải lớn hơn 1',
+            ]);
 
         $count_exist = Discount::where('code', $request->code)->count();
         if ($count_exist >= 1) {
@@ -58,8 +66,6 @@ class DiscountController extends Controller
         }
 
         $discount = new Discount();
-        $start_date;
-        $discount_on;
 
         if (!$request->input('start_date'))
             $start_date = Carbon::now()->format("Y-m-d");

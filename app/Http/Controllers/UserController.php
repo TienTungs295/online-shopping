@@ -54,12 +54,23 @@ class UserController extends Controller
             return redirect()->back()->with('error', 'Bạn không đủ quyền thực hiện chức năng này');
         }
 
-        $request->validate([
-            'name' => 'required|max:255',
-            'email' => 'required|max:255',
-            'password' => 'required|min:8|max:255',
-            'role' => 'required',
-        ]);
+        $request->validate(
+            [
+                'name' => 'required|max:255',
+                'email' => 'required|max:255',
+                'password' => 'required|min:8|max:255',
+                'role' => 'required',
+            ],
+            [
+                'name.required' => 'Tên nhân viên không được phép bỏ trống',
+                'name.max' => 'Tên nhân viên không được vượt quá 255 ký tự',
+                'email.required' => 'Email không được phép bỏ trống',
+                'email.max' => 'Email không được vượt quá 255 ký tự',
+                'password.required' => 'Mật khẩu không được phép bỏ trống',
+                'password.min' => 'Mật khẩu phải có ít nhất 8 ký tự',
+                'password.max' => 'Mật khẩu không được vượt quá 255 ký tự',
+                'role.required' => 'Vai trò nhân viên không được phép bỏ trống',
+            ]);
 
         $count_name_exist = User::where('name', $request->name)->count();
         if ($count_name_exist >= 1) {
@@ -137,11 +148,22 @@ class UserController extends Controller
             return redirect()->route("userView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }
 
-        $request->validate([
-            'name' => 'required|max:255',
-            'password' => 'required|min:8|max:255',
-            'role' => 'required',
-        ]);
+        $request->validate(
+            [
+                'name' => 'required|max:255',
+                'password' => 'required|min:8|max:255',
+                'role' => 'required',
+            ],
+            [
+                'name.required' => 'Tên nhân viên không được phép bỏ trống',
+                'name.max' => 'Tên nhân viên không được vượt quá 255 ký tự',
+                'email.required' => 'Email không được phép bỏ trống',
+                'email.max' => 'Email không được vượt quá 255 ký tự',
+                'password.required' => 'Mật khẩu không được phép bỏ trống',
+                'password.min' => 'Mật khẩu phải có ít nhất 8 ký tự',
+                'password.max' => 'Mật khẩu không được vượt quá 255 ký tự',
+                'role.required' => 'Vai trò nhân viên không được phép bỏ trống',
+            ]);
 
         $count_name_exist = User::where('name', $request->name)->where('id', '<>', $id)->count();
         if ($count_name_exist >= 1) {

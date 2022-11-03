@@ -54,6 +54,9 @@ class ProductCollectionController extends Controller
         }
         $request->validate([
             'name' => 'required|max:255',
+        ], [
+            'name.required' => 'Tên bộ sưu tập không được phép bỏ trống',
+            'name.max' => 'Tên bộ sưu tập không được vượt quá 255 ký tự'
         ]);
 
         $product_collection = new ProductCollection;
@@ -111,6 +114,9 @@ class ProductCollectionController extends Controller
 
         $request->validate([
             'name' => 'required|max:255',
+        ], [
+            'name.required' => 'Tên bộ sưu tập không được phép bỏ trống',
+            'name.max' => 'Tên bộ sưu tập không được vượt quá 255 ký tự'
         ]);
 
         $count_exist = ProductCollection::where('name', $request->name)->where('id', '<>', $id)->count();

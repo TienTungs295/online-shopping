@@ -50,10 +50,16 @@ class ProductLabelController extends Controller
         if ($count_exist >= 1) {
             return redirect()->back()->with('error', 'Tên nhãn đã tồn tại');
         }
-        $validatedData = $request->validate([
-            'name' => 'required|max:255',
-            'color' => 'required',
-        ]);
+        $validatedData = $request->validate(
+            [
+                'name' => 'required|max:255',
+                'color' => 'required',
+            ],
+            [
+                'name.required' => 'Tên nhãn không được phép bỏ trống',
+                'color.required' => 'Màu nhãn không được phép bỏ trống',
+                'name.max' => 'Tên nhãn không được vượt quá 255 ký tự',
+            ]);
         ProductLabel::create($validatedData);
 
         return redirect()->route("labelView")->with('success', 'Thành công');
@@ -106,10 +112,16 @@ class ProductLabelController extends Controller
         if ($count_exist >= 1) {
             return redirect()->back()->with('error', 'Tên nhãn đã tồn tại');
         }
-        $validated_data = $request->validate([
-            'name' => 'required|max:255',
-            'color' => 'required'
-        ]);
+        $validated_data = $request->validate(
+            [
+                'name' => 'required|max:255',
+                'color' => 'required'
+            ],
+            [
+                'name.required' => 'Tên nhãn không được phép bỏ trống',
+                'color.required' => 'Màu nhãn không được phép bỏ trống',
+                'name.max' => 'Tên nhãn không được vượt quá 255 ký tự',
+            ]);
         ProductLabel::whereId($id)->update($validated_data);
 
 

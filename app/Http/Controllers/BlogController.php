@@ -48,9 +48,15 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|max:255',
-        ]);
+        $request->validate(
+            [
+                'name' => 'required|max:255'
+            ],
+            [
+                'name.required' => 'Tên bài viết không được phép bỏ trống',
+                'name.max' => 'Tên bài viết không được vượt quá 255 ký tự'
+            ]
+        );
 
         $blog = new Blog;
         $blog->name = $request->input('name');
@@ -115,9 +121,14 @@ class BlogController extends Controller
             return redirect()->route("blogView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }
 
-        $request->validate([
-            'name' => 'required|max:255',
-        ]);
+        $request->validate(
+            [
+                'name' => 'required|max:255',
+            ],
+            [
+                'name.required' => 'Tên bài viết không được phép bỏ trống',
+                'name.max' => 'Tên bài viết không được vượt quá 255 ký tự'
+            ]);
 
         $blog->name = $request->input('name');
         $blog->slug = Str::slug($blog->name);

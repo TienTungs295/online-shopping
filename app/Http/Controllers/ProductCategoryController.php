@@ -41,9 +41,14 @@ class ProductCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|max:255'
-        ]);
+        $request->validate(
+            [
+                'name' => 'required|max:255'
+            ],
+            [
+                'name.required' => 'Tên danh mục không được phép bỏ trống',
+                'name.max' => 'Tên danh mục không được vượt quá 255 ký tự'
+            ]);
 
         $count_exist = ProductCategory::where('name', $request->name)->count();
         if ($count_exist >= 1) {
@@ -111,8 +116,12 @@ class ProductCategoryController extends Controller
             return redirect()->route("categoryView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }
 
-        $request->validate([
-            'name' => 'required|max:255'
+        $request->validate(
+            [
+                'name' => 'required|max:255'
+            ], [
+            'name.required' => 'Tên danh mục không được phép bỏ trống',
+            'name.max' => 'Tên danh mục không được vượt quá 255 ký tự'
         ]);
 
         $count_exist = ProductCategory::where('name', $request->name)->where('id', '<>', $id)->count();
