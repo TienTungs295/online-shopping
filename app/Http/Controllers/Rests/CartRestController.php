@@ -4,13 +4,16 @@ namespace App\Http\Controllers\Rests;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\Discount;
 use Cart;
+use Carbon\Carbon;
 use App\Http\Responses\AjaxResponse;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 class CartRestController extends Controller
 {
+    public $shipping_fee = 30000;
 
     public function findAll(Request $request)
     {
@@ -49,14 +52,13 @@ class CartRestController extends Controller
             foreach ($db_pro_ids as $db_product_id)
                 if (!in_array($db_product_id, $product_ids)) Cart::instance("cart")->remove($cartMap[$db_product_id]);
         }
-        $shipping_fee = 30000;
         $sub_total = Cart::instance('cart')->subTotal(0, '', '');
-        $sub_total_with_shipping_fee = (int)$sub_total + $shipping_fee;
+        $sub_total_with_shipping_fee = (int)$sub_total + $this->shipping_fee;
         $data = array(
             'cart' => Cart::instance('cart')->content(),
             'subTotal' => $sub_total,
             'subTotalWithShippingFee' => $sub_total_with_shipping_fee,
-            'shippingFee' => $shipping_fee,
+            'shippingFee' => $this->shipping_fee,
             'total' => Cart::instance('cart')->count()
         );
         return $ajax_response->setData($data)->toApiResponse();
@@ -106,5 +108,63 @@ class CartRestController extends Controller
         $rowId = $request->post('row_id');
         Cart::instance('cart')->remove($rowId);
         return $ajax_response->setData($rowId)->toApiResponse();
+    }
+
+    public function applyCoupon(Request $request)
+    {
+        $ajax_response = new AjaxResponse();
+        $validator = Validator::make($request->all(),
+            [
+                'code' => 'required',
+            ],
+            [
+                'code.required' => 'Mã giảm giá không được phép bỏ trống',
+            ]
+        );
+        if ($validator->fails())
+            return $ajax_response->setErrors($validator->errors())->toApiResponse();
+        $code = $request->post('code');
+        $discount = Discount::where("code", $code)->first();
+        if ($discount == null)
+            return $ajax_response->setErrors(array("code" => "Mã giảm giá không hợp lệ"))->toApiResponse();
+        $now = Carbon::now()->timestamp;
+        if ($discount->start_date != null && $now < strtotime($discount->start_date))
+            return $ajax_response->setErrors(array("code" => "Mã giảm giá không hợp lệ"))->toApiResponse();
+        if ($discount->end_date != null && $now > strtotime($discount->end_date))
+            return $ajax_response->setErrors(array("code" => "Mã giảm giá hết hiệu lực"))->toApiResponse();
+        $sub_total = Cart::instance('cart')->subTotal(0, '', '');
+        $sub_total_with_shipping_fee = (int)$sub_total + $this->shipping_fee;
+        $sub_total_with_code = null;
+
+        if ($discount->discount_on == "specific-product") {
+            if ()
+
+            if ($discount->discount_on == "per-order") {
+                if ($discount->type_option = "amount") {
+                    $sub_total_with_code = $sub_total_with_shipping_fee - $discount->value;
+                    $sub_total_with_code = $sub_total_with_code > 0 ? $sub_total_with_code : 0;
+                } elseif ($discount->type_option = "percentage") {
+
+                }
+            } else if ($discount->discount_on == "per-every-item") {
+
+            }
+        }
+
+        if ($discount->discount_on == "all-orders") {
+            if ($discount->type_option = "amount")
+                $sub_total_with_code = $sub_total_with_shipping_fee - $discount->value;
+            elseif ($discount->type_option = "percentage")
+                $sub_total_with_code = $sub_total_with_shipping_fee - floor($sub_total_with_shipping_fee * $discount->value / 100);
+        }
+        $data = array(
+            'cart' => Cart::instance('cart')->content(),
+            'subTotal' => $sub_total,
+            'subTotalWithShippingFee' => $sub_total_with_shipping_fee,
+            'subTotalWithCode' => $sub_total_with_code > 0 ? $sub_total_with_code : 0,
+            'shippingFee' => $this->shipping_fee,
+            'total' => Cart::instance('cart')->count()
+        );
+        return $ajax_response->setData($data)->toApiResponse();
     }
 }

@@ -72,8 +72,8 @@ class DiscountController extends Controller
         else
             $start_date = Carbon::createFromFormat('d-m-Y', $request->input('start_date'))->format("Y-m-d");
 
-        if ($request->has('un_limited'))
-            $discount->quantity = $request->input("quantity");
+//        if ($request->has('un_limited'))
+//            $discount->quantity = $request->input("quantity");
 
         if (!$request->has('unlimited_time') && $request->input('end_date'))
             $discount->end_date = Carbon::createFromFormat('d-m-Y', $request->input('end_date'))->format("Y-m-d");

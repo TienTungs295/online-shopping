@@ -62,27 +62,27 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row mb-3">
-                                    <div class="col-md-6"
-                                         style="display: inline-flex;align-items: flex-end; height: 64px">
-                                        <div class="form-check">
-                                            <input class="form-check-input" id="un_limited" type="checkbox" value=""
-                                                   name="un_limited">
-                                            <label class="form-check-label">
-                                                Giới hạn
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6" id="quantity-block" style="display: none">
-                                        <div id="quantity-form">
-                                            <label class="form-label">Số lượng<span
-                                                    class="text-danger">*</span></label>
-                                            <input type="number"
-                                                   value="{!! old('quantity', isset($disacount->quantity) ? $disacount->quantity : '')!!}"
-                                                   class="form-control" id="quantity" name="quantity" min="1" required>
-                                        </div>
-                                    </div>
-                                </div>
+{{--                                <div class="row mb-3">--}}
+{{--                                    <div class="col-md-6"--}}
+{{--                                         style="display: inline-flex;align-items: flex-end; height: 64px">--}}
+{{--                                        <div class="form-check">--}}
+{{--                                            <input class="form-check-input" id="un_limited" type="checkbox" value=""--}}
+{{--                                                   name="un_limited">--}}
+{{--                                            <label class="form-check-label">--}}
+{{--                                                Giới hạn--}}
+{{--                                            </label>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-md-6" id="quantity-block" style="display: none">--}}
+{{--                                        <div id="quantity-form">--}}
+{{--                                            <label class="form-label">Số lượng<span--}}
+{{--                                                    class="text-danger">*</span></label>--}}
+{{--                                            <input type="number"--}}
+{{--                                                   value="{!! old('quantity', isset($disacount->quantity) ? $disacount->quantity : '')!!}"--}}
+{{--                                                   class="form-control" id="quantity" name="quantity" min="1" required>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                                 <div class="row mb-3">
                                     <div class="col-md-4">
                                         <label class="form-label">Loại mã giảm giá</label>
@@ -172,7 +172,7 @@
 @section("morescripts")
     <script>
         var APP_URL = {!! json_encode(url('/')) !!};
-        showHideQuantity();
+        // showHideQuantity();
         showHideProduct();
         showHideDiscountOn();
         changeIcon();
@@ -260,9 +260,9 @@
 
         });
 
-        $("#un_limited").click(function (event) {
-            showHideQuantity();
-        });
+        // $("#un_limited").click(function (event) {
+        //     showHideQuantity();
+        // });
 
         $("#unlimited_time").click(function (event) {
             disableEndDate();
