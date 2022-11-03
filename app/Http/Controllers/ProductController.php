@@ -404,6 +404,8 @@ class ProductController extends Controller
 
         DB::beginTransaction();
         try {
+            $product->images()->delete();
+            $product->reviews()->delete();
             $product->delete();
             RelatedProduct::where("from_product_id", $id)->delete();
             DB::commit();

@@ -14,6 +14,12 @@ class ReviewRestController extends Controller
     public function save(Request $request)
     {
         $ajax_response = new AjaxResponse();
+        $product_id = $request->post("product_id");
+        try {
+            Product::findOrFail($product_id);
+        } catch (ModelNotFoundException $e) {
+            return $ajax_response->setMessage("Sản phẩm không tồn tại hoặc đã bị xóa")->toApiResponse();
+        }
         $review = new Review();
         $comment = $request->post("comment");
         $star = $request->post("star");
@@ -26,7 +32,7 @@ class ReviewRestController extends Controller
         $review->comment = $comment;
         $review->star = $star;
         $review->status = 1;
-        $review->product_id = $request->post("product_id");
+        $review->product_id = $product_id;
         $review->customer_id = auth()->user()->id;
         $review->save();
         return $ajax_response->setData($review)->toApiResponse();

@@ -23,19 +23,43 @@ class CartRestController extends Controller
             $product_ids = [];
             $cartMap = array();
             foreach ($cart as $key => $item) {
-                $product_id = $item["id"];
+                $product_id = $item->id;
                 array_push($product_ids, $product_id);
-                $cartMap[$product_id] = $item["rowId"];
+                $cartMap[$product_id] = $item->rowId;
+            }
+            $products = Product::whereIn('id', $product_ids)->get();
+            $db_pro_ids = $products->pluck('id')->toArray();
+
+            //all products are deleted
+            if (sizeof($db_pro_ids) == 0) {
+                foreach ($cartMap as $key => $value) {
+                    try {
+                        Cart::instance("cart")->remove($value);
+                    } catch (InvalidRowIDException $e) {
+                    }
+                }
+                return $ajax_response->setData($this->buildCartResponse())->toApiResponse();
             }
 
-            $query = Product::whereIn('id', $product_ids)->get();
-            $db_pro_ids = $query->pluck('id');
-            $products = $query->toArray();
+            //some products are deleted
+            foreach ($product_ids as $product_id) {
+                if (!in_array($product_id, $db_pro_ids)) {
+                    try {
+                        Cart::instance("cart")->remove($cartMap[$product_id]);
+                    } catch (InvalidRowIDException $e) {
+                    }
+                }
+            }
+
+            //update product in cart
             foreach ($products as $product) {
                 $rowId = $cartMap[$product->id];
                 if ($rowId != null) {
                     if ($product->is_contact) {
-                        Cart::instance("cart")->remove($rowId);
+                        try {
+                            Cart::instance("cart")->remove($rowId);
+                        } catch (InvalidRowIDException $e) {
+                        }
                         continue;
                     }
                     Cart::instance("cart")->update($rowId,
@@ -49,25 +73,9 @@ class CartRestController extends Controller
                     );
                 }
             }
-            foreach ($db_pro_ids as $db_product_id)
-                if (!in_array($db_product_id, $product_ids)) Cart::instance("cart")->remove($cartMap[$db_product_id]);
         }
-        $sub_total = Cart::instance('cart')->subTotal(0, '', '');
-        $sub_total_with_shipping_fee = (int)$sub_total + $this->shipping_fee;
-        $data = array(
-            'cart' => Cart::instance('cart')->content(),
-            'subTotal' => $sub_total,
-            'subTotalWithShippingFee' => $sub_total_with_shipping_fee,
-            'shippingFee' => $this->shipping_fee,
-            'total' => Cart::instance('cart')->count()
-        );
-        return $ajax_response->setData($data)->toApiResponse();
-    }
 
-    public function count(Request $request)
-    {
-        $ajax_response = new AjaxResponse();
-        return $ajax_response->setData(Cart::instance('cart')->count())->toApiResponse();
+        return $ajax_response->setData($this->buildCartResponse())->toApiResponse();
     }
 
     public function store(Request $request)
@@ -137,8 +145,6 @@ class CartRestController extends Controller
         $sub_total_with_code = null;
 
         if ($discount->discount_on == "specific-product") {
-            if ()
-
             if ($discount->discount_on == "per-order") {
                 if ($discount->type_option = "amount") {
                     $sub_total_with_code = $sub_total_with_shipping_fee - $discount->value;
@@ -166,5 +172,18 @@ class CartRestController extends Controller
             'total' => Cart::instance('cart')->count()
         );
         return $ajax_response->setData($data)->toApiResponse();
+    }
+
+    private function buildCartResponse()
+    {
+        $sub_total = Cart::instance('cart')->subTotal(0, '', '');
+        $sub_total_with_shipping_fee = (int)$sub_total + $this->shipping_fee;
+        return array(
+            'cart' => Cart::instance('cart')->content(),
+            'subTotal' => $sub_total,
+            'subTotalWithShippingFee' => $sub_total_with_shipping_fee,
+            'shippingFee' => $this->shipping_fee,
+            'total' => Cart::instance('cart')->count()
+        );
     }
 }

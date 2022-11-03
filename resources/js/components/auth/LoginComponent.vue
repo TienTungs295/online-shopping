@@ -107,7 +107,7 @@ export default {
                 let data = response || {};
                 localStorage.setItem('access_token', data.access_token);
                 this.$store.commit("setUserProfile", data.user);
-                serviceBus.$emit('refreshWithListCount');
+                serviceBus.$emit('refreshWithList');
                 this.$router.push({name: 'home'});
             }).catch(response => {
                 this.errors = response.errors || {};

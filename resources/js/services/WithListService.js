@@ -8,11 +8,6 @@ class WithListService {
         return http.get(url, {alert: alert});
     };
 
-    count(alert) {
-        let url = PREFIX_URL + "count";
-        return http.get(url, {alert: alert});
-    };
-
     save(object, alert) {
         let url = PREFIX_URL + "save";
         return http.post(url, object, {alert: alert, redirectToLoginIfUnAuthen: true});

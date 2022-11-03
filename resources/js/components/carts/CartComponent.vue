@@ -187,7 +187,6 @@ export default {
             CartService.remove({row_id: id}, true).then(response => {
                 let item = response || [];
                 this.findAll();
-                this.countCart();
             }).catch(e => {
             });
         },
@@ -198,10 +197,12 @@ export default {
                 let cart = data.cart;
                 let subTotal = data.subTotal;
                 let subTotalWithShippingFee = data.subTotalWithShippingFee;
+                let total = data.total;
                 this.shippingFee = data.shippingFee;
                 this.$store.commit("setCart", cart);
                 this.$store.commit("setSubTotal", subTotal);
                 this.$store.commit("setSubTotalWithShippingFee", subTotalWithShippingFee);
+                this.$store.commit("setCartCount", total)
                 this.isLoading = false;
             }).catch(e => {
                 this.isLoading = false;
@@ -212,15 +213,6 @@ export default {
             CartService.update({cart: cart}, true).then(response => {
                 let item = response || [];
                 this.findAll();
-                this.countCart();
-            }).catch(e => {
-            });
-        },
-
-        countCart() {
-            CartService.count().then(response => {
-                let data = response || 0;
-                this.$store.commit("setCartCount", data)
             }).catch(e => {
             });
         },

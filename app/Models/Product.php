@@ -181,17 +181,12 @@ class Product extends Model
         return $this->hasMany(Image::class, 'pro_id');
     }
 
-    public function withList()
-    {
-        return $this->hasMany(WithList::class, 'product_id');
-    }
-
     /**
      * @return HasMany
      */
     public function reviews()
     {
-        return $this->hasMany(Review::class, 'product_id')->where('status', 2);
+        return $this->hasMany(Review::class, 'product_id');
     }
 
     public static function boot()
@@ -203,8 +198,6 @@ class Product extends Model
             $product->flashSales()->detach();
             $product->productLabels()->detach();
             $product->productCollections()->detach();
-            $product->reviews()->detach();
-//            $product->withList()->detach();
         });
     }
 }

@@ -58,7 +58,7 @@
                     <div v-if="product.is_contact">
                         <div class="cart_btn">
                             <a href="tel:0979945555" class="btn btn-fill-out btn-addtocart rounded-0 mgr-10">
-                                <i class="linearicons-phone-wave"></i> Liên hệ
+                                <i class="linearicons-phone-wave"></i> Liên hệ ngay
                             </a>
                             <a class="add_wishlist" @click="addToWithList(product.id)"><i
                                 class="icon-heart"></i></a>
@@ -153,22 +153,18 @@ export default {
     methods: {
         addToWithList: function (product_id) {
             WithListService.save({product_id: product_id}, true).then(response => {
-                this.countWithList();
+                this.findAllWithList();
             }).catch(e => {
             });
         },
-        countWithList() {
-            WithListService.count().then(response => {
-                let data = response || 0;
-                this.$store.commit("setWithListCount", data)
+        findAllWithList() {
+            WithListService.findAll().then(response => {
+                let data = response || {};
+                this.$store.commit("setWithList", data.with_list);
+                this.$store.commit("setWithListCount", data.total);
+                this.isLoading = false;
             }).catch(e => {
-            });
-        },
-        countCart() {
-            CartService.count().then(response => {
-                let data = response || 0;
-                this.$store.commit("setCartCount", data)
-            }).catch(e => {
+                this.isLoading = false;
             });
         },
         findAllCart() {
@@ -177,10 +173,12 @@ export default {
                 let cart = data.cart;
                 let subTotal = data.subTotal;
                 let subTotalWithShippingFee = data.subTotalWithShippingFee;
+                let total = data.total;
                 this.shippingFee = data.shippingFee;
                 this.$store.commit("setCart", cart);
                 this.$store.commit("setSubTotal", subTotal);
                 this.$store.commit("setSubTotalWithShippingFee", subTotalWithShippingFee);
+                this.$store.commit("setCartCount", total)
                 this.isLoading = false;
             }).catch(e => {
                 this.isLoading = false;
@@ -188,7 +186,6 @@ export default {
         },
         addToCart(product_id, qty) {
             CartService.add({product_id: product_id, qty: qty}, true).then(response => {
-                this.countCart();
                 this.findAllCart();
             }).catch(e => {
             });
@@ -196,7 +193,6 @@ export default {
 
         buyNow(product_id, qty) {
             CartService.add({product_id: product_id, qty: qty}).then(response => {
-                this.countCart();
                 this.findAllCart();
                 this.$router.push({name: 'order'});
             }).catch(e => {

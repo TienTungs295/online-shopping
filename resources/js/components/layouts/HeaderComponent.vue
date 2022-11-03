@@ -270,18 +270,14 @@ export default {
         ])
     },
     methods: {
-        countWithList() {
-            WithListService.count().then(response => {
-                let data = response || 0;
-                this.$store.commit("setWithListCount", data)
+        findAllWithList() {
+            WithListService.findAll().then(response => {
+                let data = response || {};
+                this.$store.commit("setWithList", data.with_list);
+                this.$store.commit("setWithListCount", data.total);
+                this.isLoading = false;
             }).catch(e => {
-            });
-        },
-        countCart() {
-            CartService.count().then(response => {
-                let data = response || 0;
-                this.$store.commit("setCartCount", data)
-            }).catch(e => {
+                this.isLoading = false;
             });
         },
         findAllCart() {
@@ -290,9 +286,11 @@ export default {
                 let cart = data.cart;
                 let subTotal = data.subTotal;
                 let subTotalWithShippingFee = data.subTotalWithShippingFee;
+                let total = data.total;
                 this.$store.commit("setCart", cart);
                 this.$store.commit("setSubTotal", subTotal);
                 this.$store.commit("setSubTotalWithShippingFee", subTotalWithShippingFee);
+                this.$store.commit("setCartCount", total)
                 this.isLoading = false;
             }).catch(e => {
                 this.isLoading = false;
@@ -303,7 +301,6 @@ export default {
             CartService.remove({row_id: id}, true).then(response => {
                 let item = response || [];
                 this.findAllCart();
-                this.countCart();
             }).catch(e => {
             });
         },
@@ -340,11 +337,10 @@ export default {
             this.categories = data;
         }).catch(e => {
         });
-        this.countCart();
-        this.countWithList();
+        this.findAllWithList();
         this.findAllCart();
-        serviceBus.$on('refreshWithListCount', () => {
-            this.countWithList();
+        serviceBus.$on('refreshWithList', () => {
+            this.findAllWithList();
         });
     }
 }

@@ -181,8 +181,8 @@ export default {
             product: {
                 images: []
             },
-            isLoading: true,
-            isLoadingReview: true,
+            isLoading: false,
+            isLoadingReview: false,
             comment: "",
             star: 0,
             totalReviews: 0,
@@ -260,6 +260,7 @@ export default {
         }
     },
     mounted() {
+        this.isLoading = true;
         ProductService.detail(this.$route.params.id).then(response => {
             this.product = response || {};
             this.isLoading = false;

@@ -6,8 +6,9 @@ export default new Vuex.Store({
     state: {
         object: {
             withListCount: 0,
+            withList: {},
             cartCount: 0,
-            cart: [],
+            cart: {},
             subTotal: 0,
             subTotalWithShippingFee: 0,
             userProfile: null,
@@ -15,6 +16,7 @@ export default new Vuex.Store({
     },
     getters: {
         withListCount: state => state.object.withListCount,
+        withList: state => state.object.withList,
         cartCount: state => state.object.cartCount,
         cart: state => state.object.cart,
         subTotal: state => state.object.subTotal,
@@ -24,6 +26,9 @@ export default new Vuex.Store({
     mutations: {
         setWithListCount(state, newNumber) {
             state.object.withListCount = newNumber;
+        },
+        setWithList(state, payload) {
+            state.object.withList = payload;
         },
         setCartCount(state, newNumber) {
             state.object.cartCount = newNumber;

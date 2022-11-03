@@ -358,17 +358,9 @@ export default {
                 this.isOrderSuccessful = true;
                 let data = response || {};
                 this.order_infomation = data;
-                this.countCart();
                 this.isLoading = false;
             }).catch(e => {
                 this.isLoading = false;
-            });
-        },
-        countCart() {
-            CartService.count().then(response => {
-                let data = response || 0;
-                this.$store.commit("setCartCount", data)
-            }).catch(e => {
             });
         },
         findAllCart() {
@@ -377,10 +369,12 @@ export default {
                 let cart = data.cart;
                 let subTotal = data.subTotal;
                 let subTotalWithShippingFee = data.subTotalWithShippingFee;
+                let total = data.total;
                 this.order.shipping_fee = data.shippingFee;
                 this.$store.commit("setCart", cart);
                 this.$store.commit("setSubTotal", subTotal);
                 this.$store.commit("setSubTotalWithShippingFee", subTotalWithShippingFee);
+                this.$store.commit("setCartCount", total)
                 this.isLoading = false;
             }).catch(e => {
                 this.isLoading = false;

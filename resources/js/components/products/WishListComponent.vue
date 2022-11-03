@@ -64,7 +64,7 @@
                                             <div v-if="item.options.is_contact">
                                                 <span class="price">Liên hệ</span>
                                             </div>
-                                            <div>
+                                            <div v-else>
                                                 <span class="price">{{ item.price | commaFormat }}</span>
                                                 <del v-if="item.options.on_sale">{{
                                                         item.options.price | commaFormat
@@ -74,7 +74,7 @@
                                         </td>
                                         <td class="product-subtotal" data-title="Thêm vào giỏ">
                                             <a href="tel:0979945555" v-if="item.options.is_contact"
-                                               class="btn btn-fill-out btn-sm add-to-cart-button rounded-0">Liên hệ
+                                               class="btn btn-fill-out btn-sm add-to-cart-button rounded-0">Liên hệ ngay
                                             </a>
                                             <a v-else @click="addToCart(item.id)"
                                                class="btn btn-fill-out btn-sm add-to-cart-button rounded-0">Thêm vào giỏ
@@ -104,19 +104,18 @@ import WithListService from "../../services/WithListService";
 import CartService from "../../services/CartService";
 import {mapGetters} from "vuex";
 import AuthService from "../../services/AuthService";
-import store from "../../store";
 
 export default {
     name: "Wishlist",
     data() {
         return {
-            withList: {},
             isLoading: true,
         };
     },
     computed: {
         ...mapGetters([
-            'withListCount'
+            'withListCount',
+            'withList',
         ])
     },
     methods: {
@@ -124,39 +123,22 @@ export default {
             WithListService.delete({row_id: id}, true).then(response => {
                 let item = response || [];
                 this.findAll();
-                this.countWithList();
             }).catch(e => {
             });
         },
         findAll() {
             WithListService.findAll().then(response => {
                 let data = response || {};
-                this.withList = data;
+                this.$store.commit("setWithList", data.with_list);
+                this.$store.commit("setWithListCount", data.total);
                 this.isLoading = false;
             }).catch(e => {
                 this.isLoading = false;
             });
         },
-        countWithList() {
-            WithListService.count().then(response => {
-                let data = response || 0;
-                this.$store.commit("setWithListCount", data)
-            }).catch(e => {
-            });
-        },
-
         addToCart: function (product_id) {
             CartService.add({product_id: product_id, qty: 1}, true).then(response => {
-                this.countCart();
                 this.findAllCart();
-            }).catch(e => {
-            });
-        },
-
-        countCart() {
-            CartService.count().then(response => {
-                let data = response || 0;
-                this.$store.commit("setCartCount", data)
             }).catch(e => {
             });
         },
@@ -166,10 +148,12 @@ export default {
                 let cart = data.cart;
                 let subTotal = data.subTotal;
                 let subTotalWithShippingFee = data.subTotalWithShippingFee;
+                let total = data.total;
                 this.shippingFee = data.shippingFee;
                 this.$store.commit("setCart", cart);
                 this.$store.commit("setSubTotal", subTotal);
                 this.$store.commit("setSubTotalWithShippingFee", subTotalWithShippingFee);
+                this.$store.commit("setCartCount", total)
                 this.isLoading = false;
             }).catch(e => {
                 this.isLoading = false;
