@@ -62,6 +62,7 @@ class AuthRestController extends Controller
             [
                 'name.required' => 'Tên khách hàng không được phép bỏ trống',
                 'email.required' => 'Email không được phép bỏ trống',
+                'email.email' => 'Email không hợp lệ',
                 'email.max' => 'Email không được phép vượt quá 200 ký tự',
                 'email.unique' => 'Tài khoản đã tồn tại',
                 'password.required' => 'Mật khẩu không được phép bỏ trống',
