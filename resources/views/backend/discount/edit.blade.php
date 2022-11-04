@@ -113,20 +113,20 @@
                                     </div>
                                 </div>
                                 <div class="row mb-3" id="product-block" style="display: none">
-                                    <div class="col-md-6">
+                                    <div class="col-12">
                                         <label class="form-label">Sản phẩm</label>
                                         <input class="form-control" id="product-autocomplete">
                                         <input type="hidden" id="product_ids" name="product_ids"
                                                value="{!! old('product_ids', isset($product->product_ids) ? $product->product_ids : '') !!}">
                                     </div>
 
-                                    <div class="col-md-6" id="discount-on-block">
-                                        <label class="form-label">Kiểu áp dụng</label>
-                                        <select class="form-select" id="discount_on" name="discount_on">
-                                            <option value="per-order">Một lần cho mỗi đơn đặt hàng</option>
-                                            <option value="per-every-item">Một lần cho mỗi sản phẩm trong giỏ</option>
-                                        </select>
-                                    </div>
+{{--                                    <div class="col-md-6" id="discount-on-block">--}}
+{{--                                        <label class="form-label">Kiểu áp dụng</label>--}}
+{{--                                        <select class="form-select" id="discount_on" name="discount_on">--}}
+{{--                                            <option value="per-order">Một lần cho mỗi đơn đặt hàng</option>--}}
+{{--                                            <option value="per-every-item">Một lần cho mỗi sản phẩm trong giỏ</option>--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
                                 </div>
                                 <div class="row mb-3" id="products-selected">
                                     {{--                                    @if(isset($product) && !$product->related_products->isEmpty())--}}
@@ -174,7 +174,7 @@
         var APP_URL = {!! json_encode(url('/')) !!};
         // showHideQuantity();
         showHideProduct();
-        showHideDiscountOn();
+        // showHideDiscountOn();
         changeIcon();
         $(".datepicker").datepicker({changeYear: true});
         $("#product-autocomplete").autocomplete({
@@ -270,7 +270,7 @@
 
         $("#target").on("change", function (event) {
             showHideProduct();
-            showHideDiscountOn();
+            // showHideDiscountOn();
         });
 
         $("#type_option").on("change", function (event) {
@@ -306,12 +306,12 @@
             }
         }
 
-        function showHideDiscountOn() {
-            if ($("#target").val() == "specific-product")
-                $("#discount-on-block").show();
-            else
-                $("#discount-on-block").hide();
-        }
+        // function showHideDiscountOn() {
+        //     if ($("#target").val() == "specific-product")
+        //         $("#discount-on-block").show();
+        //     else
+        //         $("#discount-on-block").hide();
+        // }
 
         function changeIcon() {
             if ($("#type_option").val() == "amount") {

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Discount;
 use Cart;
+use Validator;
 use Carbon\Carbon;
 use App\Http\Responses\AjaxResponse;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -126,51 +127,89 @@ class CartRestController extends Controller
                 'code' => 'required',
             ],
             [
-                'code.required' => 'Mã giảm giá không được phép bỏ trống',
+                'code.required' => 'Mã giảm giá không hợp lệ',
             ]
         );
         if ($validator->fails())
             return $ajax_response->setErrors($validator->errors())->toApiResponse();
         $code = $request->post('code');
-        $discount = Discount::where("code", $code)->first();
-        if ($discount == null)
+        $db_discount = Discount::with(["products"])->where("code", $code)->first();
+        if ($db_discount == null)
             return $ajax_response->setErrors(array("code" => "Mã giảm giá không hợp lệ"))->toApiResponse();
         $now = Carbon::now()->timestamp;
-        if ($discount->start_date != null && $now < strtotime($discount->start_date))
+        if ($db_discount->start_date != null && $now < strtotime($db_discount->start_date))
             return $ajax_response->setErrors(array("code" => "Mã giảm giá không hợp lệ"))->toApiResponse();
-        if ($discount->end_date != null && $now > strtotime($discount->end_date))
+        if ($db_discount->end_date != null && $now > strtotime($db_discount->end_date))
             return $ajax_response->setErrors(array("code" => "Mã giảm giá hết hiệu lực"))->toApiResponse();
-        $sub_total = Cart::instance('cart')->subTotal(0, '', '');
+        $cart_instance = Cart::instance('cart');
+        $sub_total = $cart_instance->subTotal(0, '', '');
         $sub_total_with_shipping_fee = (int)$sub_total + $this->shipping_fee;
-        $sub_total_with_code = null;
+        $specific_product_ids = [];
+        $specific_product_map = [];
 
-        if ($discount->discount_on == "specific-product") {
-            if ($discount->discount_on == "per-order") {
-                if ($discount->type_option = "amount") {
-                    $sub_total_with_code = $sub_total_with_shipping_fee - $discount->value;
-                    $sub_total_with_code = $sub_total_with_code > 0 ? $sub_total_with_code : 0;
-                } elseif ($discount->type_option = "percentage") {
-
+        $discount_map = ["amount" => [], "percentage" => []];
+        if ($db_discount->target == "specific-product") {
+            $has_specific_product_in_cart = false;
+            $specific_products = $db_discount->products();
+            if ($specific_products->count() > 0) {
+                foreach ($specific_products->get() as $item) {
+                    array_push($specific_product_ids, $item->id);
+                    $specific_product_map[$item->id] = $item;
                 }
-            } else if ($discount->discount_on == "per-every-item") {
-
             }
-        }
 
-        if ($discount->discount_on == "all-orders") {
-            if ($discount->type_option = "amount")
-                $sub_total_with_code = $sub_total_with_shipping_fee - $discount->value;
-            elseif ($discount->type_option = "percentage")
-                $sub_total_with_code = $sub_total_with_shipping_fee - floor($sub_total_with_shipping_fee * $discount->value / 100);
+            foreach ($cart_instance->content() as $key => $item) {
+                if (in_array($item->id, $specific_product_ids)) {
+                    $has_specific_product_in_cart = true;
+                    $product = $specific_product_map[$item->id];
+                    if ($db_discount->type_option == "amount") {
+                        $discount_value = $db_discount->value;
+                        $discount_item = array(
+                            "title" => "Giảm " . $discount_value . " đ cho sản phẩm " . $product->name,
+                            "value" => $discount_value
+                        );
+                        array_push($discount_map["amount"], $discount_item);
+                    } elseif ($db_discount->type_option == "percentage") {
+                        $discount_value = floor($product->real_price * $db_discount->value / 100);
+                        $discount_item = array(
+                            "title" => "Giảm " . $db_discount->value . "% cho sản phẩm " . $product->name,
+                            "value" => $discount_value
+                        );
+                        array_push($discount_map["percentage"], $discount_item);
+                    }
+                }
+            }
+            if (!$has_specific_product_in_cart) return $ajax_response->setErrors(array("code" => "Mã giảm giá không có hiệu lực cho đơn hàng"))->toApiResponse();
+        } else if ($db_discount->target == "all-orders") {
+            if ($db_discount->type_option == "amount") {
+                $discount_value = "Giảm " . $db_discount->value . "đ";
+                $discount_item = ["title" => $discount_value . "đ", "value" => $discount_value];
+                array_push($discount_map["amount"], $discount_item);
+            } elseif ($db_discount->type_option == "percentage") {
+                $discount_value = floor($sub_total * $db_discount->value / 100);
+                $discount_item = [
+                    "title" => "Giảm " . $db_discount->value . "%",
+                    "value" => $discount_value
+                ];
+                array_push($discount_map["percentage"], $discount_item);
+            }
         }
         $data = array(
             'cart' => Cart::instance('cart')->content(),
             'subTotal' => $sub_total,
             'subTotalWithShippingFee' => $sub_total_with_shipping_fee,
-            'subTotalWithCode' => $sub_total_with_code > 0 ? $sub_total_with_code : 0,
             'shippingFee' => $this->shipping_fee,
             'total' => Cart::instance('cart')->count()
         );
+        if (sizeof($discount_map["percentage"]) > 0 || sizeof($discount_map["amount"]) > 0) {
+            $sub_total_with_shipping_fee_and_code = $sub_total_with_shipping_fee;
+            foreach ($discount_map["amount"] as $discount_item)
+                $sub_total_with_shipping_fee_and_code -= $discount_item["value"];
+            foreach ($discount_map["percentage"] as $discount_item)
+                $sub_total_with_shipping_fee_and_code -= $discount_item["value"];
+            $data['subTotalWithShippingFeeAndCode'] = $sub_total_with_shipping_fee_and_code > 0 ? $sub_total_with_shipping_fee_and_code : 0;
+            $data['discountNote'] = $discount_map;
+        }
         return $ajax_response->setData($data)->toApiResponse();
     }
 

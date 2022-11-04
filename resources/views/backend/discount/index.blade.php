@@ -59,13 +59,13 @@
                                                 cho
                                                 @if($data->target == 'all-orders') toàn bộ đơn hàng
                                                 @else các sản phẩm:
-                                                abc, xzy
+                                                @if(!$data->products->isEmpty())
+                                                    @foreach($data->products as $product)
+                                                        {!!$product->name!!},
+                                                    @endforeach
                                                 @endif
-                                                @if($data->discount_on == 'per-order')
+                                                @endif
                                                     (Một lần cho mỗi đơn đặt hàng)
-                                                @elseif($data->discount_on == 'per-every-item')
-                                                    (Một lần cho mỗi sản phẩm trong giỏ)
-                                                @endif
                                             </td>
                                             <td>{!!$data->total_used!!}</td>
                                             <td>{!!  date('d-m-Y', strtotime($data->start_date))!!}</td>

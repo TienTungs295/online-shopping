@@ -78,14 +78,14 @@ class DiscountController extends Controller
         if (!$request->has('unlimited_time') && $request->input('end_date'))
             $discount->end_date = Carbon::createFromFormat('d-m-Y', $request->input('end_date'))->format("Y-m-d");
 
-        $target = $request->input('target');
-        if ($target) {
-            if ($target == 'all-orders')
-                $discount_on = 'per-order';
-            else
-                $discount_on = $request->input("discount_on");
-            $discount->discount_on = $discount_on;
-        }
+//        $target = $request->input('target');
+//        if ($target) {
+//            if ($target == 'all-orders')
+//                $discount_on = 'per-order';
+//            else
+//                $discount_on = $request->input("discount_on");
+//            $discount->discount_on = $discount_on;
+//        }
 
         $discount->code = $request->input("code");
         $discount->start_date = $start_date;
