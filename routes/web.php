@@ -117,6 +117,7 @@ Route::group(['prefix' => 'rest'], function () {
 
     Route::group(['prefix' => 'order'], function () {
         Route::post('/check-out', [OrderRestController::class, 'checkOut']);
+        Route::post('/send-mail', [OrderRestController::class, 'sendMail']);
     });
 
     Route::group(['middleware' => ['auth:api']], function () {

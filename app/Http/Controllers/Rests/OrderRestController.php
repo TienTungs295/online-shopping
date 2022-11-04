@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\OrderAddress;
 use App\Models\OrderProduct;
 use App\Models\Product;
+use App\Jobs\SendEmail;
 use \stdClass;
 use Cart;
 use Illuminate\Http\Request;
@@ -94,6 +95,13 @@ class OrderRestController extends Controller
             $order->address()->save($order_address);
             $order->orderProducts()->saveMany($order_products);
             DB::commit();
+
+            $message = [
+                'type' => 'Create task',
+                'task' => "tasklet",
+                'content' => 'has been created!',
+            ];
+            SendEmail::dispatch($message, $order_address->email)->delay(now()->addMinute(1));
         } catch (\Exception $e) {
             DB::rollback();
             throw $e;
@@ -114,5 +122,15 @@ class OrderRestController extends Controller
         $order_infomation->payment_method = $order->payment_method;
 
         return $ajax_response->setData($order_infomation)->setMessage("Đặt hàng thành công!")->toApiResponse();
+    }
+
+    public function sendMail(Request $request)
+    {
+        $message = [
+            'type' => 'Create task',
+            'task' => "tasklet",
+            'content' => 'has been created!',
+        ];
+        SendEmail::dispatch($message, "tientungs295@gmail.com");
     }
 }
