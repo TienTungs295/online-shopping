@@ -16,7 +16,7 @@ use App\Http\Controllers\Rests\OrderRestController;
 |
 */
 
-Route::group(['middleware' => ['isMember','auth:web'], 'prefix' => 'quan-tri'], function () {
+Route::group(['middleware' => ['isMember','auth:web','preventBackHistory'], 'prefix' => 'quan-tri'], function () {
     Route::get('/', ['as' => 'homeView', 'uses' => 'HomeController@index']);
     Route::group(['prefix' => 'nhan-san-pham'], function () {
         Route::get('', ['as' => 'labelView', 'uses' => 'ProductLabelController@index']);
