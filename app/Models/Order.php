@@ -48,34 +48,6 @@ class Order extends Model
 //        'token',
     ];
 
-    protected $appends = ['sub_total_final_format', 'sub_total_format', 'discount_value_format', 'shipping_fee_format', 'received_price_format'];
-
-    public function getSubTotalFormatAttribute()
-    {
-        return number_format(($this->sub_total), 0, '', ',') . " đ";
-    }
-
-    public function getSubTotalFinalFormatAttribute()
-    {
-        return number_format(($this->sub_total_final), 0, '', ',') . " đ";
-    }
-
-    public function getDiscountValueFormatAttribute()
-    {
-        if ($this->discount_value != null)
-            return number_format(($this->discount_value), 0, '', ',') . " đ";
-    }
-
-    public function getShippingFeeFormatAttribute()
-    {
-        return number_format($this->shipping_fee, 0, '', ',') . " đ";
-    }
-
-    public function getReceivedPriceFormatAttribute()
-    {
-        return number_format($this->received_price, 0, '', ',') . " đ";
-    }
-
     /**
      * @return HasOne
      */

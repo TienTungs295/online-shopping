@@ -50,7 +50,9 @@
                                                 <td class="pl-5 pr-5">
                                                     <span>{!! $order_product->qty !!}</span>
                                                 </td>
-                                                <td class="pl-5 text-right">{!! $order_product->sub_total_format !!}</td>
+                                                <td class="pl-5 text-right">
+                                                    {!! number_format(($order->sub_total), 0, '', ',') !!} đ
+                                                </td>
                                             </tr>
                                         @endforeach
                                     @endif
@@ -62,7 +64,7 @@
                                         </td>
                                         <td class="text-right">
                                             <span>
-                                                {!! $order->sub_total_format !!}
+                                                {!! number_format(($order->sub_total), 0, '', ',') !!} đ
                                             </span>
                                         </td>
                                     </tr>
@@ -87,7 +89,7 @@
                                         </td>
                                         <td class="text-right">
                                             <span>
-                                                - {!! $order->discount_value_format !!}
+                                                -  {!! number_format(($order->discount_value), 0, '', ',') !!} đ
                                             </span>
                                         </td>
                                     </tr>
@@ -100,7 +102,7 @@
                                         </td>
                                         <td class="text-right">
                                             <span>
-                                                {!! $order->shipping_fee_format !!}
+                                                {!! number_format(($order->shipping_fee), 0, '', ',') !!} đ
                                             </span>
                                         </td>
                                     </tr>
@@ -112,7 +114,7 @@
                                         </td>
                                         <td class="text-right">
                                             <span class="fw-bold" style="font-size: 16px">
-                                                {!! $order->sub_total_final_format !!}
+                                                {!! number_format(($order->sub_total), 0, '', ',') !!} đ
                                             </span>
                                         </td>
                                     </tr>
@@ -180,7 +182,9 @@
                                     <div class="change-status-wrapper">
                                         <i class="__icon bi bi-check-lg"></i>
                                         <span class="__text">Số tiền: <span
-                                                class="text-lowercase">{!! $order->received_price_format !!}</span>   đã được thanh toán</span>
+                                                class="text-lowercase">
+                                                {!! number_format(($order->received_price), 0, '', ',') !!} đ
+                                            </span>   đã được thanh toán</span>
                                     </div>
                                 @endif
 
@@ -277,7 +281,9 @@
                                     <div class="change-status-wrapper">
                                         <i class="__icon bi bi-check-lg"></i>
                                         <span class="__text">Số tiền: <span
-                                                class="text-lowercase">{!! $order->received_price_format !!}</span>   đã được thanh toán</span>
+                                                class="text-lowercase">
+                                                {!! number_format(($order->received_price), 0, '', ',') !!} đ
+                                            </span>   đã được thanh toán</span>
                                     </div>
                                 @endif
                             @endif
