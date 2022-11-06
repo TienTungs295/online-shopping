@@ -29,7 +29,10 @@ http.interceptors.response.use(function (response) {
             Vue.prototype.$toastr.s(data.message);
         return data.data;
     } else {
-        if (data.message != null && data.message != undefined) Vue.prototype.$toastr.e(data.message);
+        if (data.message != null && data.message != undefined) {
+            if (data.alert_type == 2) Vue.prototype.$toastr.w(data.message);
+            else Vue.prototype.$toastr.e(data.message);
+        }
         return Promise.reject(data);
     }
 }, function (error) {

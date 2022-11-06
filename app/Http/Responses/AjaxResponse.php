@@ -25,6 +25,8 @@ class AjaxResponse
     protected $status = 4;
 
     protected $errors;
+    //alert_type: 2:warning
+    protected $alert_type;
 
 
     /**
@@ -53,9 +55,16 @@ class AjaxResponse
      * @param string $message
      * @return BaseHttpResponse
      */
-    public function setMessage($message): self
+    public function setMessage($message, $alert_type = null): self
     {
         $this->message = $message;
+        $this->alert_type = $alert_type;
+        return $this;
+    }
+
+    public function setAlertType($type): self
+    {
+        $this->alert_type = $type;
         return $this;
     }
 
@@ -71,7 +80,8 @@ class AjaxResponse
             'status' => $this->status,
             'message' => $this->message,
             'data' => $this->data,
-            'errors' => $this->errors
+            'errors' => $this->errors,
+            'alert_type' => $this->alert_type
         ), $global_status);
     }
 }

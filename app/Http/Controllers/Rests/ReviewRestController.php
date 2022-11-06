@@ -26,7 +26,7 @@ class ReviewRestController extends Controller
         if (is_null($star) || $star == 0)
             return $ajax_response->setMessage("Vui lòng chọn số sao đánh giá")->toApiResponse();
         if ($star < 1 || $star > 5)
-            return $ajax_response->setMessage("Số sao không hợp lệ")->toApiResponse();
+            return $ajax_response->setMessage("Số sao đánh giá không hợp lệ")->toApiResponse();
         if (!isset($comment))
             return $ajax_response->setMessage("Nội dung đánh giá không được phép bỏ trống")->toApiResponse();
         $review->comment = $comment;

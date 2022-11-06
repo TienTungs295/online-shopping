@@ -66,19 +66,15 @@ class WithListRestController extends Controller
             return $ajax_response->setMessage("Sản phẩm hiện không được bày bán!")->toApiResponse();
         }
 
-        $existProducts = Cart::instance($this->getName())->search(function ($item, $row_id) use ($product_id) {
+        $existProducts = Cart::instance($this->getName())->search(function ($item) use ($product_id) {
             return $item->id == $product_id;
         });
-        if ($existProducts->count() > 0) {
-            foreach ($existProducts as $productInCart)
-                Cart::instance($this->getName())->remove($productInCart->rowId);
-            return $ajax_response->setData(Cart::instance($this->getName())->content())->toApiResponse();
-        } else {
-            Cart::instance($this->getName())->add($this->getCartItem($product));
-            return $ajax_response->setData(Cart::instance($this->getName())->content())
-                ->setMessage("Thêm sản phẩm " . $product->name . " danh sách yêu thích thành công!")
-                ->toApiResponse();
-        }
+        if ($existProducts->count() > 0)
+            return $ajax_response->setMessage("Sản phẩm " . $product->name . " đã tồn tại trong danh sách yêu thích", 2)->toApiResponse();
+        Cart::instance($this->getName())->add($this->getCartItem($product));
+        return $ajax_response->setStatus(2)
+            ->setMessage("Thêm sản phẩm " . $product->name . " danh sách yêu thích thành công!")
+            ->toApiResponse();
     }
 
     public function destroy(Request $request)

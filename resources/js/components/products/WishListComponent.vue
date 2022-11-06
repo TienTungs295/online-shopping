@@ -30,7 +30,7 @@
         <div class="main_content">
 
             <!-- START SECTION SHOP -->
-            <div class="section">
+            <div class="section pdt-30-i pdb-30-i">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
