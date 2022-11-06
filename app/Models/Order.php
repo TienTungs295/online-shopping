@@ -30,7 +30,7 @@ class Order extends Model
     protected $fillable = [
         'status',
         'user_id',
-        'amount',
+//        'amount',
 //        'currency_id',
 //        'tax_amount',
 //        'shipping_method',
@@ -38,8 +38,9 @@ class Order extends Model
         'shipping_fee',
         'description',
         'coupon_code',
-        'discount_amount',
+        'discount_value',
         'sub_total',
+        'sub_total_final',
         'received_price',
 //        'is_confirmed',
 //        'discount_description',
@@ -47,16 +48,22 @@ class Order extends Model
 //        'token',
     ];
 
-    protected $appends = ['sub_total_with_shipping','sub_total_with_shipping_format', 'shipping_fee_format','received_price_format'];
+    protected $appends = ['sub_total_final_format', 'sub_total_format', 'discount_value_format', 'shipping_fee_format', 'received_price_format'];
 
-    public function getSubTotalWithShippingAttribute()
+    public function getSubTotalFormatAttribute()
     {
-        return $this->sub_total + $this->shipping_fee;
+        return number_format(($this->sub_total), 0, '', ',') . " đ";
     }
 
-    public function getSubTotalWithShippingFormatAttribute()
+    public function getSubTotalFinalFormatAttribute()
     {
-        return number_format(($this->sub_total + $this->shipping_fee), 0, '', ',') . " đ";
+        return number_format(($this->sub_total_final), 0, '', ',') . " đ";
+    }
+
+    public function getDiscountValueFormatAttribute()
+    {
+        if ($this->discount_value != null)
+            return number_format(($this->discount_value), 0, '', ',') . " đ";
     }
 
     public function getShippingFeeFormatAttribute()

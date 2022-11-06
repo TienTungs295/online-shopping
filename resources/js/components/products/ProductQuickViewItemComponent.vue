@@ -172,12 +172,12 @@ export default {
                 let data = response || {};
                 let cart = data.cart;
                 let subTotal = data.subTotal;
-                let subTotalWithShippingFee = data.subTotalWithShippingFee;
+                let subTotalFinal = data.subTotalFinal;
                 let total = data.total;
                 this.shippingFee = data.shippingFee;
                 this.$store.commit("setCart", cart);
                 this.$store.commit("setSubTotal", subTotal);
-                this.$store.commit("setSubTotalWithShippingFee", subTotalWithShippingFee);
+                this.$store.commit("setSubTotalFinal", subTotalFinal);
                 this.$store.commit("setCartCount", total)
                 this.isLoading = false;
             }).catch(e => {

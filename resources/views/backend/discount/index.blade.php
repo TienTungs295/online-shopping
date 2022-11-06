@@ -39,7 +39,6 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Mã</th>
                                     <th scope="col">Mô tả</th>
-                                    <th scope="col">Đã sử dụng</th>
                                     <th scope="col">Ngày bắt đầu</th>
                                     <th scope="col">Ngày kết thúc</th>
                                     <th scope="col">Chức năng</th>
@@ -67,7 +66,6 @@
                                                 @endif
                                                     (Một lần cho mỗi đơn đặt hàng)
                                             </td>
-                                            <td>{!!$data->total_used!!}</td>
                                             <td>{!!  date('d-m-Y', strtotime($data->start_date))!!}</td>
                                             <td>{!!  isset($data->end_date) ? date('d-m-Y', strtotime($data->end_date)) : "-"!!}</td>
                                             <td>

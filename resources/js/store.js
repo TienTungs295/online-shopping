@@ -10,7 +10,7 @@ export default new Vuex.Store({
             cartCount: 0,
             cart: {},
             subTotal: 0,
-            subTotalWithShippingFee: 0,
+            subTotalFinal: 0,
             userProfile: null,
         }
     },
@@ -20,7 +20,7 @@ export default new Vuex.Store({
         cartCount: state => state.object.cartCount,
         cart: state => state.object.cart,
         subTotal: state => state.object.subTotal,
-        subTotalWithShippingFee: state => state.object.subTotalWithShippingFee,
+        subTotalFinal: state => state.object.subTotalFinal,
         userProfile: state => state.object.userProfile
     },
     mutations: {
@@ -39,8 +39,8 @@ export default new Vuex.Store({
         setSubTotal(state, newNumber) {
             state.object.subTotal = newNumber;
         },
-        setSubTotalWithShippingFee(state, newNumber) {
-            state.object.subTotalWithShippingFee = newNumber;
+        setSubTotalFinal(state, newNumber) {
+            state.object.subTotalFinal = newNumber;
         },
         setUserProfile(state, userProfile) {
             state.object.userProfile = userProfile;

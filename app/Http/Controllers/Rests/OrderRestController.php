@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Rests;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\BaseCustomController;
 use App\Http\Responses\AjaxResponse;
 use App\Models\Order;
 use App\Models\OrderAddress;
@@ -11,62 +11,70 @@ use App\Models\Product;
 use App\Jobs\SendEmail;
 use \stdClass;
 use Cart;
+use Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use function PHPUnit\Framework\isEmpty;
 
-class OrderRestController extends Controller
+class OrderRestController extends BaseCustomController
 {
     public function checkOut(Request $request)
     {
+        $validator = Validator::make($request->all(),
+            [
+                'name' => 'required|string|max:200',
+                'phone' => 'required|max:15',
+                'province' => 'required',
+                'district' => 'required',
+                'ward' => 'required',
+                'address' => 'required',
+            ],
+            [
+                'name.required' => 'Tên khách hàng không được phép bỏ trống',
+                'name.max' => 'Tên khách hàng không được phép vượt quá 200 ký tự',
+                'phone.required' => 'Số điện thoại không được phép bỏ trống',
+                'phone.max' => 'Số điện thoại không hợp lệ',
+                'province.required' => 'Tỉnh thành không được phép bỏ trống',
+                'district.required' => 'Quận huyện không được phép bỏ trống',
+                'ward.required' => 'Phường xã không được phép bỏ trống',
+                'address.required' => 'Địa chỉ không được phép bỏ trống',
+            ]
+        );
         $ajax_response = new AjaxResponse();
+        if ($validator->fails()) {
+            return $ajax_response->setErrors($validator->errors())->toApiResponse();
+        }
+        $payment_method = $request->post('payment_method');
+        if (is_null($payment_method))
+            return $ajax_response->setMessage("Vui lòng chọn phương thức thanh toán!")->toApiResponse();
+
+        $this->refreshCart();
         $cartCount = Cart::instance('cart')->count();
         if ($cartCount == 0)
             return $ajax_response->setMessage("Hiện không có sản phẩm nào trong giỏ hàng!")->toApiResponse();
 
         $name = trim($request->post('name'));
+        $email = trim($request->post('email'));
         $phone = trim($request->post('phone'));
         $province = $request->post('province');
         $district = $request->post('district');
+        $ward_name = $request->post('ward_name');
+        $province_name = $request->post('province_name');
+        $district_name = $request->post('district_name');
         $ward = $request->post('ward');
-        $provinceName = $request->post('provinceName');
-        $districtName = $request->post('districtName');
-        $wardName = $request->post('wardName');
         $address = trim($request->post('address'));
-        $payment_method = $request->post('payment_method');
-        $shipping_fee = $request->post('shipping_fee');
-        if (empty($name))
-            return $ajax_response->setMessage("Vui lòng nhập Họ và tên!")->toApiResponse();
-
-        if (empty($phone))
-            return $ajax_response->setMessage("Vui lòng nhập Số điện thoại!")->toApiResponse();
-
-        if (empty($province))
-            return $ajax_response->setMessage("Vui lòng chọn Tỉnh thành!")->toApiResponse();
-
-        if (empty($district))
-            return $ajax_response->setMessage("Vui lòng chọn Quận huyện!")->toApiResponse();
-
-        if (empty($ward))
-            return $ajax_response->setMessage("Vui lòng chọn Phường xã!")->toApiResponse();
-
-        if (empty($address))
-            return $ajax_response->setMessage("Vui lòng nhập Địa chỉ chi tiết!")->toApiResponse();
-
-        if (is_null($payment_method))
-            return $ajax_response->setMessage("Vui lòng chọn phương thức thanh toán!")->toApiResponse();
 
         // Order Address
         $order_address = new OrderAddress();
         $order_address->name = $name;
         $order_address->phone = $phone;
-        $order_address->email = $request->post('email');
+        $order_address->email = $email;
         $order_address->province = $province;
-        $order_address->provinceName = $provinceName;
+        $order_address->province_name = $province_name;
         $order_address->district = $district;
-        $order_address->districtName = $districtName;
+        $order_address->district_name = $district_name;
         $order_address->ward = $ward;
-        $order_address->wardName = $wardName;
+        $order_address->ward_name = $ward_name;
         $order_address->address = $address;
 
         $cart = Cart::instance('cart')->content();
@@ -81,13 +89,20 @@ class OrderRestController extends Controller
         }
 
         // Order
-        $order = $request->post('order');
         $order = new Order();
+        if (is_null(session()->get(self::$CODE))) {
+            $data = $this->buildCartResponse();
+        } else {
+            $data = $this->doApplyCoupon(session()->get(self::$CODE));
+            $order->discount_value = $data["discountValue"];
+            $order->coupon_code = $data["activeDiscountCode"];
+        }
+
+        $order->sub_total = $data["subTotal"];
+        $order->sub_total_final = $data["subTotalFinal"];
         $order->description = $request->post('description');
-        $order->sub_total = $request->post('subTotal');
-        $order->amount = $request->post('subTotal');
         $order->payment_method = $payment_method;
-        if (isset($shipping_fee)) $order->shipping_fee = $shipping_fee;
+        $order->shipping_fee = $data["shippingFee"];
 
         DB::beginTransaction();
         try {
@@ -95,33 +110,34 @@ class OrderRestController extends Controller
             $order->address()->save($order_address);
             $order->orderProducts()->saveMany($order_products);
             DB::commit();
-
-            $message = [
-                'type' => 'Create task',
-                'task' => "tasklet",
-                'content' => 'has been created!',
-            ];
-            SendEmail::dispatch($message, $order_address->email)->delay(now()->addMinute(1));
         } catch (\Exception $e) {
             DB::rollback();
             throw $e;
         }
         Cart::instance('cart')->destroy();
+        session()->forget(self::$CODE);
 
-        $order_infomation = new stdClass();
-        $order_infomation->name = $order_address->name;
-        $order_infomation->phone = $order_address->phone;
-        $order_infomation->email = $order_address->email;
-        $order_infomation->province = $order_address->province;
-        $order_infomation->provinceName = $order_address->provinceName;
-        $order_infomation->district = $order_address->district;
-        $order_infomation->districtName = $order_address->districtName;
-        $order_infomation->ward = $order_address->ward;
-        $order_infomation->wardName = $order_address->wardName;
-        $order_infomation->address = $order_address->address;
-        $order_infomation->payment_method = $order->payment_method;
+        $order_information = new stdClass();
+        $order_information->name = $order_address->name;
+        $order_information->phone = $order_address->phone;
+        $order_information->email = $order_address->email;
+        $order_information->province = $order_address->province;
+        $order_information->province_name = $order_address->province_name;
+        $order_information->district = $order_address->district;
+        $order_information->district_name = $order_address->district_name;
+        $order_information->ward = $order_address->ward;
+        $order_information->ward_name = $order_address->ward_name;
+        $order_information->address = $order_address->address;
+        $order_information->payment_method = $order->payment_method;
 
-        return $ajax_response->setData($order_infomation)->setMessage("Đặt hàng thành công!")->toApiResponse();
+        //send mail
+        $message = [
+            'type' => 'Create task',
+            'task' => "tasklet",
+            'content' => 'has been created!',
+        ];
+        SendEmail::dispatch($message, $order_address->email);
+        return $ajax_response->setData($order_information)->setMessage("Đặt hàng thành công!")->toApiResponse();
     }
 
     public function sendMail(Request $request)

@@ -59,8 +59,8 @@ class DiscountController extends Controller
                 'value.numeric' => 'Giá trị phải là số',
                 'value.min' => 'Giá trị phải lớn hơn 1',
             ]);
-
-        $count_exist = Discount::where('code', $request->code)->count();
+        $code_upper = strtoupper($request->code);
+        $count_exist = Discount::where('code',$code_upper)->count();
         if ($count_exist >= 1) {
             return redirect()->back()->with('error', 'Mã giảm giá đã tồn tại');
         }

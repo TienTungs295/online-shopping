@@ -28,12 +28,12 @@
         <div class="main_content">
 
             <!-- START SECTION SHOP -->
-            <div class="section">
+            <div class="section pdt-30-i pdb-30-i">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <div class="table-responsive shop_cart_table">
-                                <table class="table" v-if="cartCount > 0">
+                            <div class="table-responsive shop_cart_table" v-if="cartCount > 0">
+                                <table class="table">
                                     <thead>
                                     <tr>
                                         <th class="product-thumbnail">&nbsp;</th>
@@ -85,17 +85,38 @@
                                     <tr>
                                         <td colspan="6" class="px-0">
                                             <div class="row no-gutters align-items-center">
-
                                                 <div class="col-lg-4 col-md-6 mb-3 mb-md-0">
-                                                    <!--                                                    <div class="coupon field_form input-group">-->
-                                                    <!--                                                        <input type="text" value="" class="form-control form-control-sm"-->
-                                                    <!--                                                               placeholder="Enter Coupon Code..">-->
-                                                    <!--                                                        <div class="input-group-append">-->
-                                                    <!--                                                            <button class="btn btn-fill-out btn-sm" type="submit">Apply-->
-                                                    <!--                                                                Coupon-->
-                                                    <!--                                                            </button>-->
-                                                    <!--                                                        </div>-->
-                                                    <!--                                                    </div>-->
+                                                    <div class="coupon field_form input-group"
+                                                         v-if="activeDiscountCode == null">
+                                                        <input type="text" v-model="code"
+                                                               class="form-control form-control-sm"
+                                                               placeholder="Nhập mã giảm giá">
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-fill-out btn-sm rounded-0"
+                                                                    @click="applyCoupon()"
+                                                                    type="button">Áp dụng
+                                                            </button>
+                                                        </div>
+                                                        <div class="invalid-feedback d-block" v-if="errors.code">
+                                                            <span v-for="error in errors.code"
+                                                                  class="d-block text-left">{{ error }}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="coupon field_form input-group" v-else>
+                                                        <div class="alert alert-success coupon-text mgb-0">
+                                                            Mã giảm giá: {{ activeDiscountCode }}
+                                                        </div>
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-fill-line rounded-0 view-cart"
+                                                                    @click="removeCoupon()"
+                                                                    type="button">Xóa
+                                                            </button>
+                                                        </div>
+                                                        <div class="invalid-feedback d-block" v-if="errors.code">
+                                                            <span v-for="error in errors.code"
+                                                                  class="d-block text-left">{{ error }}</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="col-lg-8 col-md-6 text-left text-md-right">
                                                     <button class="btn btn-line-fill btn-sm" type="button"
@@ -107,8 +128,8 @@
                                     </tr>
                                     </tfoot>
                                 </table>
-                                <div class="text-center" v-else>Không có sản phẩm nào trong giỏ hàng</div>
                             </div>
+                            <div v-else class="text-center">Không có sản phẩm nào trong giỏ hàng</div>
                         </div>
                     </div>
                     <div class="row" v-if="cartCount > 0">
@@ -131,6 +152,10 @@
                                             <td class="cart_total_label">Tạm tính</td>
                                             <td class="cart_total_amount">{{ subTotal | commaFormat }}</td>
                                         </tr>
+                                        <tr v-if="activeDiscountCode != null && errors.code == null">
+                                            <td class="cart_total_label">Mã giảm giá</td>
+                                            <td class="cart_total_amount">-{{ discountValue | commaFormat }}</td>
+                                        </tr>
                                         <tr>
                                             <td class="cart_total_label">Phí vận chuyển</td>
                                             <td class="cart_total_amount">{{ shippingFee | commaFormat }}</td>
@@ -139,7 +164,7 @@
                                             <td class="cart_total_label">Thành tiền</td>
                                             <td class="cart_total_amount">
                                                 <strong>
-                                                    {{ subTotalWithShippingFee | commaFormat }}
+                                                    {{ subTotalFinal | commaFormat }}
                                                 </strong>
                                             </td>
                                         </tr>
@@ -172,6 +197,10 @@ export default {
         return {
             isLoading: true,
             shippingFee: 0,
+            activeDiscountCode: null,
+            code: "",
+            discountValue: 0,
+            errors: {}
         };
     },
     computed: {
@@ -179,14 +208,17 @@ export default {
             'cart',
             'subTotal',
             'cartCount',
-            'subTotalWithShippingFee',
+            'subTotalFinal',
         ])
     },
     methods: {
         remove: function (id) {
-            CartService.remove({row_id: id}, true).then(response => {
-                let item = response || [];
-                this.findAll();
+            let params = {
+                row_id: id
+            }
+            CartService.remove(params, true).then(response => {
+                let data = response || {};
+                this.buildData(data);
             }).catch(e => {
             });
         },
@@ -194,15 +226,7 @@ export default {
         findAll() {
             CartService.findAll().then(response => {
                 let data = response || {};
-                let cart = data.cart;
-                let subTotal = data.subTotal;
-                let subTotalWithShippingFee = data.subTotalWithShippingFee;
-                let total = data.total;
-                this.shippingFee = data.shippingFee;
-                this.$store.commit("setCart", cart);
-                this.$store.commit("setSubTotal", subTotal);
-                this.$store.commit("setSubTotalWithShippingFee", subTotalWithShippingFee);
-                this.$store.commit("setCartCount", total)
+                this.buildData(data);
                 this.isLoading = false;
             }).catch(e => {
                 this.isLoading = false;
@@ -210,9 +234,28 @@ export default {
         },
 
         update: function (cart) {
-            CartService.update({cart: cart}, true).then(response => {
-                let item = response || [];
-                this.findAll();
+            let params = {
+                cart: cart
+            }
+            CartService.update(params, true).then(response => {
+                let data = response || {};
+                this.buildData(data);
+            }).catch(e => {
+            });
+        },
+        applyCoupon: function () {
+            CartService.applyCoupon({code: this.code}, true).then(response => {
+                let data = response || {};
+                this.buildData(data);
+            }).catch(e => {
+            });
+        },
+
+        removeCoupon: function () {
+            CartService.removeCoupon(true).then(response => {
+                let data = response || {};
+                this.buildData(data);
+                this.code = "";
             }).catch(e => {
             });
         },
@@ -225,7 +268,16 @@ export default {
             if (item.qty == 0) return;
             item.qty--
         },
-
+        buildData(data) {
+            this.shippingFee = data.shippingFee;
+            this.activeDiscountCode = data.activeDiscountCode;
+            this.discountValue = data.discountValue;
+            this.errors = data.errors || {};
+            this.$store.commit("setCart", data.cart);
+            this.$store.commit("setSubTotal", data.subTotal);
+            this.$store.commit("setSubTotalFinal", data.subTotalFinal);
+            this.$store.commit("setCartCount", data.total);
+        }
     },
     mounted() {
         this.findAll();

@@ -23,7 +23,7 @@ class OrderController extends Controller
                 ->paginate(25);
             $orders->appends(['q' => $q]);
         } else {
-            $orders = Order::paginate(25);
+            $orders = Order::orderBy('id', 'DESC')->paginate(25);
         }
         return View('backend.order.index', compact("orders", "q"));
     }

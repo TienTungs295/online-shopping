@@ -113,6 +113,7 @@ Route::group(['prefix' => 'rest'], function () {
         Route::post('/update', [CartRestController::class, 'update']);
         Route::post('/remove', [CartRestController::class, 'remove']);
         Route::post('/apply-coupon', [CartRestController::class, 'applyCoupon']);
+        Route::post('/remove-coupon', [CartRestController::class, 'removeCoupon']);
     });
 
     Route::group(['prefix' => 'order'], function () {

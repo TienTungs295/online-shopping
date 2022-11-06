@@ -57,6 +57,44 @@
                                     <tr>
                                         <td colspan="5">
                                             <span class="fw-bold">
+                                                Tạm tính:
+                                            </span>
+                                        </td>
+                                        <td class="text-right">
+                                            <span>
+                                                {!! $order->sub_total_format !!}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    @if($order->coupon_code != null)
+                                    <tr>
+                                        <td colspan="5">
+                                            <span class="fw-bold">
+                                                Mã giảm giá:
+                                            </span>
+                                        </td>
+                                        <td class="text-right">
+                                            <span class="alert alert-success coupon-text pt-10-i pb-10-i">
+                                                {!! $order->coupon_code !!}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5">
+                                            <span class="fw-bold">
+                                                Khấu trừ:
+                                            </span>
+                                        </td>
+                                        <td class="text-right">
+                                            <span>
+                                                - {!! $order->discount_value_format !!}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    @endif
+                                    <tr>
+                                        <td colspan="5">
+                                            <span class="fw-bold">
                                                 Phí vận chuyển:
                                             </span>
                                         </td>
@@ -74,7 +112,7 @@
                                         </td>
                                         <td class="text-right">
                                             <span class="fw-bold" style="font-size: 16px">
-                                                {!! $order->sub_total_with_shipping_format !!}
+                                                {!! $order->sub_total_final_format !!}
                                             </span>
                                         </td>
                                     </tr>
@@ -120,7 +158,7 @@
                                                         <label class="form-label">Thực nhận:</label>
                                                         <div class="input-group">
                                                             <input type="number"
-                                                                   value="{!! $order->sub_total_with_shipping !!}"
+                                                                   value="{!! $order->sub_total_final !!}"
                                                                    name="received_price" class="form-control"
                                                                    aria-describedby="basic-addon2">
                                                             <span class="input-group-text" id="basic-addon2">đ</span>
@@ -217,7 +255,7 @@
                                                         <label class="form-label">Thực nhận:</label>
                                                         <div class="input-group">
                                                             <input type="number"
-                                                                   value="{!! $order->sub_total_with_shipping !!}"
+                                                                   value="{!! $order->sub_total_final !!}"
                                                                    name="received_price" class="form-control"
                                                                    aria-describedby="basic-addon2">
                                                             <span class="input-group-text" id="basic-addon2">đ</span>
@@ -262,9 +300,9 @@
                                 <a href="tel:{!!$order->address->phone!!}">{!! $order->address->phone !!}</a>
                             </p>
                             <p class="mb-10-i">{!! $order->address->address !!}</p>
-                            <p class="mb-10-i">{!! $order->address->wardName !!}</p>
-                            <p class="mb-10-i">{!! $order->address->districtName !!}</p>
-                            <p class="mb-10-i">{!! $order->address->provinceName !!}</p>
+                            <p class="mb-10-i">{!! $order->address->ward_name !!}</p>
+                            <p class="mb-10-i">{!! $order->address->district_name !!}</p>
+                            <p class="mb-10-i">{!! $order->address->province_name !!}</p>
                         </div>
                     </div>
                 </div>

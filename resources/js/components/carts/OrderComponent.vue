@@ -31,61 +31,6 @@
             <!-- START SECTION SHOP -->
             <div class="section pdt-30-i pdb-30-i">
                 <div v-if="cartCount > 0 || isOrderSuccessful" class="container">
-                    <!--                    <div class="row">-->
-                    <!--                        <div class="col-lg-6">-->
-                    <!--                            <div class="toggle_info">-->
-                    <!--                                <span><i class="fas fa-user"></i>Returning customer? <a href="#loginform" data-toggle="collapse" class="collapsed" aria-expanded="false">Click here to login</a></span>-->
-                    <!--                            </div>-->
-                    <!--                            <div class="panel-collapse collapse login_form" id="loginform">-->
-                    <!--                                <div class="panel-body">-->
-                    <!--                                    <p>If you have shopped with us before, please enter your details below. If you are a new customer, please proceed to the Billing &amp; Shipping section.</p>-->
-                    <!--                                    <form method="post">-->
-                    <!--                                        <div class="form-group">-->
-                    <!--                                            <input type="text" required="" class="form-control" name="email" placeholder="Username Or Email">-->
-                    <!--                                        </div>-->
-                    <!--                                        <div class="form-group">-->
-                    <!--                                            <input class="form-control" required="" type="password" name="password" placeholder="Password">-->
-                    <!--                                        </div>-->
-                    <!--                                        <div class="login_footer form-group">-->
-                    <!--                                            <div class="chek-form">-->
-                    <!--                                                <div class="custome-checkbox">-->
-                    <!--                                                    <input class="form-check-input" type="checkbox" name="checkbox" id="remember" value="">-->
-                    <!--                                                    <label class="form-check-label" for="remember"><span>Remember me</span></label>-->
-                    <!--                                                </div>-->
-                    <!--                                            </div>-->
-                    <!--                                            <a href="#">Forgot password?</a>-->
-                    <!--                                        </div>-->
-                    <!--                                        <div class="form-group">-->
-                    <!--                                            <button type="submit" class="btn btn-fill-out btn-block" name="login">Log in</button>-->
-                    <!--                                        </div>-->
-                    <!--                                    </form>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="col-lg-6">-->
-                    <!--                            <div class="toggle_info">-->
-                    <!--                                <span><i class="fas fa-tag"></i>Have a coupon? <a href="#coupon" data-toggle="collapse" class="collapsed" aria-expanded="false">Click here to enter your code</a></span>-->
-                    <!--                            </div>-->
-                    <!--                            <div class="panel-collapse collapse coupon_form" id="coupon">-->
-                    <!--                                <div class="panel-body">-->
-                    <!--                                    <p>If you have a coupon code, please apply it below.</p>-->
-                    <!--                                    <div class="coupon field_form input-group">-->
-                    <!--                                        <input type="text" value="" class="form-control" placeholder="Enter Coupon Code..">-->
-                    <!--                                        <div class="input-group-append">-->
-                    <!--                                            <button class="btn btn-fill-out btn-sm" type="submit">Apply Coupon</button>-->
-                    <!--                                        </div>-->
-                    <!--                                    </div>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-                    <!--                    <div class="row">-->
-                    <!--                        <div class="col-12">-->
-                    <!--                            <div class="medium_divider"></div>-->
-                    <!--                            <div class="divider center_icon"><i class="linearicons-credit-card"></i></div>-->
-                    <!--                            <div class="medium_divider"></div>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
                     <div class="row">
                         <div class="col-lg-6 mgb-50 pdt-30">
                             <div v-if="isOrderSuccessful">
@@ -103,31 +48,31 @@
                                     <h4 class="mgb-20">Thông tin khách hàng</h4>
                                     <p>
                                         <span class="d-inline-block">Họ & tên:</span>
-                                        <span class="order-customer-info-meta">{{ order_infomation.name }}</span>
+                                        <span class="order-customer-info-meta">{{ order_information.name }}</span>
                                     </p>
                                     <p>
                                         <span class="d-inline-block">Số điện thoại:</span>
-                                        <span class="order-customer-info-meta">{{ order_infomation.phone }}</span>
+                                        <span class="order-customer-info-meta">{{ order_information.phone }}</span>
                                     </p>
                                     <p>
                                         <span class="d-inline-block">Email:</span>
-                                        <span class="order-customer-info-meta">{{ order_infomation.email }}</span>
+                                        <span class="order-customer-info-meta">{{ order_information.email }}</span>
                                     </p>
                                     <p>
                                         <span class="d-inline-block">Địa chỉ:</span>
                                         <span
                                             class="order-customer-info-meta">{{
-                                                order_infomation.address
-                                            }}, {{ order_infomation.wardName }}, {{
-                                                order_infomation.districtName
-                                            }}, {{ order_infomation.provinceName }}</span>
+                                                order_information.address
+                                            }}, {{ order_information.ward_name }}, {{
+                                                order_information.district_name
+                                            }}, {{ order_information.province_name }}</span>
                                     </p>
 
                                     <p>
                                         <span class="d-inline-block">Phương thức thanh toán:</span>
                                         <span class="order-customer-info-meta">
-                                            <span v-if="order_infomation.payment_method == 1">Chuyển khoản</span>
-                                            <span v-if="order_infomation.payment_method == 2">Thanh toán khi nhận hàng (COD)</span>
+                                            <span v-if="order_information.payment_method == 1">Chuyển khoản</span>
+                                            <span v-if="order_information.payment_method == 2">Thanh toán khi nhận hàng (COD)</span>
                                         </span>
                                     </p>
 
@@ -145,25 +90,38 @@
                                     <div class="form-group">
                                         <label class="form-label gray-color">Họ và tên <span
                                             class="text-danger">*</span></label>
-                                        <input type="text" v-model="order.name" required class="form-control style-1"
+                                        <input type="text" v-model="order.name" :class="{'is-invalid': errors.name}"
+                                               required class="form-control style-1"
                                                name="name">
+                                        <div class="invalid-feedback">
+                                            <span v-for="error in errors.name" class="d-block">{{ error }}</span>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label gray-color">Số điện thoại <span
                                             class="text-danger">*</span></label>
-                                        <input type="tel" v-model="order.phone" required class="form-control style-1"
+                                        <input type="tel" v-model="order.phone" required
+                                               :class="{'is-invalid': errors.phone}" class="form-control style-1"
                                                name="phone">
+                                        <div class="invalid-feedback">
+                                            <span v-for="error in errors.phone" class="d-block">{{ error }}</span>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label gray-color">Email</label>
-                                        <input type="email" v-model="order.email" required class="form-control style-1"
+                                        <input type="email" v-model="order.email" :class="{'is-invalid': errors.email}"
+                                               required class="form-control style-1"
                                                name="email">
+                                        <div class="invalid-feedback">
+                                            <span v-for="error in errors.email" class="d-block">{{ error }}</span>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label gray-color">Tỉnh thành<span
                                             class="text-danger">*</span></label>
                                         <div class="custom_select style-1">
                                             <select class="form-control" v-model="order.province"
+                                                    :class="{'is-invalid': errors.province}"
                                                     @change="changeProvince($event)"
                                                     name="province">
                                                 <option value="">Chọn tỉnh thành</option>
@@ -171,6 +129,11 @@
                                                     {{ provinces[code].name }}
                                                 </option>
                                             </select>
+                                            <div class="invalid-feedback">
+                                                <span v-for="error in errors.province" class="d-block">{{
+                                                        error
+                                                    }}</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -178,6 +141,7 @@
                                             class="text-danger">*</span></label>
                                         <div class="custom_select style-1">
                                             <select class="form-control" v-model="order.district"
+                                                    :class="{'is-invalid': errors.district}"
                                                     @change="changeDistrict($event)"
                                                     name="district">
                                                 <option value="">Chọn quận huyện</option>
@@ -185,6 +149,11 @@
                                                     {{ districts[code].name }}
                                                 </option>
                                             </select>
+                                            <div class="invalid-feedback">
+                                                <span v-for="error in errors.district" class="d-block">{{
+                                                        error
+                                                    }}</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -192,19 +161,27 @@
                                             class="text-danger">*</span></label>
                                         <div class="custom_select style-1">
                                             <select class="form-control" v-model="order.ward" name="ward"
+                                                    :class="{'is-invalid': errors.ward}"
                                                     @change="changeWard($event)">
                                                 <option value="">Chọn phường xã</option>
                                                 <option v-for="code in wardCodes" v-bind:value="code">
                                                     {{ wards[code].name }}
                                                 </option>
                                             </select>
+                                            <div class="invalid-feedback">
+                                                <span v-for="error in errors.ward" class="d-block">{{ error }}</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label gray-color">Địa chỉ chi tiết <span
                                             class="text-danger">*</span></label>
-                                        <input type="text" required v-model="order.address" class="form-control style-1"
+                                        <input type="text" required v-model="order.address"
+                                               :class="{'is-invalid': errors.address}" class="form-control style-1"
                                                name="detailAddress">
+                                        <div class="invalid-feedback">
+                                            <span v-for="error in errors.address" class="d-block">{{ error }}</span>
+                                        </div>
                                     </div>
                                     <div class="heading_s1">
                                         <h4>Ghi chú</h4>
@@ -248,6 +225,15 @@
                                                     {{ subTotal | commaFormat }}</p>
                                             </div>
                                         </div>
+                                        <div class="row" v-if="order.activeDiscountCode != null && errors.code == null">
+                                            <div class="col-6">
+                                                <p class="gray-color">Mã giảm giá</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p class="price-text shipping-price-text text-right gray-color">
+                                                    -{{ order.discountValue | commaFormat }}</p>
+                                            </div>
+                                        </div>
                                         <div class="row">
                                             <div class="col-6">
                                                 <p class="gray-color">Phí vận chuyển:</p>
@@ -263,9 +249,45 @@
                                             </div>
                                             <div class="col-6">
                                                 <p class="total-text raw-total-text gray-color text-right"
-                                                   :data-price="subTotalWithShippingFee"><strong>
-                                                    {{ subTotalWithShippingFee | commaFormat }}</strong></p>
+                                                   :data-price="subTotalFinal"><strong>
+                                                    {{ subTotalFinal | commaFormat }}</strong></p>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="mgt-25 mgb-25">
+                                    <div class="coupon field_form input-group"
+                                         v-if="order.activeDiscountCode == null">
+                                        <input type="text" v-model="order.code"
+                                               class="form-control form-control-sm"
+                                               placeholder="Nhập mã giảm giá">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-fill-out btn-sm rounded-0"
+                                                    @click="applyCoupon()"
+                                                    type="button">Áp dụng
+                                            </button>
+                                        </div>
+                                        <div class="invalid-feedback d-block" v-if="errors.code">
+                                                            <span v-for="error in errors.code"
+                                                                  class="d-block text-left">{{ error }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="coupon field_form input-group" v-else>
+                                        <div class="alert alert-success coupon-text mgb-0 form-control">
+                                            <div style="margin-top: 3px">
+                                                Mã giảm giá: {{ order.activeDiscountCode }}
+                                            </div>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <button class="btn btn-fill-line rounded-0 view-cart"
+                                                    @click="removeCoupon()"
+                                                    type="button">Xóa
+                                            </button>
+                                        </div>
+                                        <div class="invalid-feedback d-block" v-if="errors.code">
+                                                            <span v-for="error in errors.code"
+                                                                  class="d-block text-left">{{ error }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -325,9 +347,14 @@ export default {
                 district: "",
                 ward: "",
                 payment_method: 1,
-                shipping_fee: 0
+                shipping_fee: 0,
+                activeDiscountCode: null,
+                code: "",
+                discountValue: 0,
+                errors: {}
             },
-            order_infomation: {},
+            errors: {},
+            order_information: {},
             isOrderSuccessful: false,
             provinces: {},
             districts: {},
@@ -339,7 +366,7 @@ export default {
             'cart',
             'subTotal',
             'cartCount',
-            'subTotalWithShippingFee',
+            'subTotalFinal',
         ]),
         provinceCodes: function () {
             return Object.keys(this.provinces).sort();
@@ -356,25 +383,17 @@ export default {
             this.order.subTotal = this.subTotal;
             OrderService.checkOut(this.order, true).then(response => {
                 this.isOrderSuccessful = true;
-                let data = response || {};
-                this.order_infomation = data;
+                this.order_information = response || {};
                 this.isLoading = false;
-            }).catch(e => {
+            }).catch(response => {
+                this.errors = response.errors || {};
                 this.isLoading = false;
             });
         },
         findAllCart() {
             CartService.findAll().then(response => {
                 let data = response || {};
-                let cart = data.cart;
-                let subTotal = data.subTotal;
-                let subTotalWithShippingFee = data.subTotalWithShippingFee;
-                let total = data.total;
-                this.order.shipping_fee = data.shippingFee;
-                this.$store.commit("setCart", cart);
-                this.$store.commit("setSubTotal", subTotal);
-                this.$store.commit("setSubTotalWithShippingFee", subTotalWithShippingFee);
-                this.$store.commit("setCartCount", total)
+                this.buildData(data);
                 this.isLoading = false;
             }).catch(e => {
                 this.isLoading = false;
@@ -400,29 +419,61 @@ export default {
         },
         changeProvince(event) {
             let code = event.target.value;
-            this.order.provinceName = this.provinces[code].name;
+            this.order.province_name = "";
+            if (code != "")
+                this.order.province_name = this.provinces[code].name;
             this.districts = {};
             this.order.district = "";
-            this.order.districtName = "";
+            this.order.district_name = "";
             this.wards = {};
             this.order.ward = "";
-            this.order.wardName = "";
+            this.order.ward_name = "";
             if (code == "") return;
             this.findDistricts(code)
         },
         changeDistrict(event) {
             let code = event.target.value;
-            this.order.districtName = this.districts[code].name;
+            this.order.district_name = "";
+            if (code != "")
+                this.order.district_name = this.districts[code].name;
             this.wards = {};
             this.order.ward = "";
-            this.order.wardName = "";
+            this.order.ward_name = "";
             if (code == "") return;
             this.findWards(code)
         },
         changeWard(event) {
-            let code = event.target.value
-            this.order.wardName = this.wards[code].name;
+            let code = event.target.value;
+            this.order.ward_name = "";
+            if (code != "")
+                this.order.ward_name = this.wards[code].name;
         },
+        applyCoupon: function () {
+            CartService.applyCoupon({code: this.order.code}, true).then(response => {
+                let data = response || {};
+                this.buildData(data);
+            }).catch(e => {
+            });
+        },
+
+        removeCoupon: function () {
+            CartService.removeCoupon(true).then(response => {
+                let data = response || {};
+                this.buildData(data);
+                this.order.code = "";
+            }).catch(e => {
+            });
+        },
+        buildData(data) {
+            this.order.shipping_fee = data.shippingFee;
+            this.order.activeDiscountCode = data.activeDiscountCode;
+            this.order.discountValue = data.discountValue;
+            this.errors = data.errors || {};
+            this.$store.commit("setCart", data.cart);
+            this.$store.commit("setSubTotal", data.subTotal);
+            this.$store.commit("setSubTotalFinal", data.subTotalFinal);
+            this.$store.commit("setCartCount", data.total);
+        }
     },
     mounted() {
         this.findAllCart();

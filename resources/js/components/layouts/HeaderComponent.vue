@@ -283,14 +283,7 @@ export default {
         findAllCart() {
             CartService.findAll().then(response => {
                 let data = response || {};
-                let cart = data.cart;
-                let subTotal = data.subTotal;
-                let subTotalWithShippingFee = data.subTotalWithShippingFee;
-                let total = data.total;
-                this.$store.commit("setCart", cart);
-                this.$store.commit("setSubTotal", subTotal);
-                this.$store.commit("setSubTotalWithShippingFee", subTotalWithShippingFee);
-                this.$store.commit("setCartCount", total)
+                this.buildData(data);
                 this.isLoading = false;
             }).catch(e => {
                 this.isLoading = false;
@@ -299,8 +292,8 @@ export default {
 
         removeFromCart: function (id) {
             CartService.remove({row_id: id}, true).then(response => {
-                let item = response || [];
-                this.findAllCart();
+                let data = response || {};
+                this.buildData(data);
             }).catch(e => {
             });
         },
@@ -329,6 +322,13 @@ export default {
                 }
             }).catch(response => {
             });
+        },
+        buildData(data) {
+            this.$store.commit("setCart", data.cart);
+            this.$store.commit("setSubTotal", data.subTotal);
+            this.$store.commit("setSubTotalFinal", data.subTotalFinal);
+            this.$store.commit("setSubTotalFinal", data.subTotalFinal);
+            this.$store.commit("setCartCount", data.total)
         }
     },
     mounted() {

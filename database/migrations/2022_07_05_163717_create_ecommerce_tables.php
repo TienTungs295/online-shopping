@@ -180,14 +180,15 @@ class CreateEcommerceTables extends Migration
 //            $table->string('shipping_option', 60)->nullable();
 //            $table->string('shipping_method', 60)->default('default');
             $table->tinyInteger('status')->default(1);
-            $table->bigInteger('amount');
+//            $table->bigInteger('amount');
 //            $table->integer('currency_id')->unsigned()->nullable();
 //            $table->decimal('tax_amount', 15)->nullable();
             $table->bigInteger('shipping_fee')->default(0);
             $table->text('description')->nullable();
             $table->string('coupon_code', 120)->nullable();
-            $table->decimal('discount_amount', 15)->nullable();
+            $table->bigInteger('discount_value')->nullable();
             $table->bigInteger('sub_total');
+            $table->bigInteger('sub_total_final');
             $table->bigInteger('received_price');
 //            $table->boolean('is_confirmed')->default(false);
 //            $table->string('discount_description', 255)->nullable();
@@ -217,12 +218,12 @@ class CreateEcommerceTables extends Migration
             $table->string('phone', 20)->nullable();
             $table->string('email')->nullable();
             $table->string('province')->nullable();
-            $table->string('provinceName')->nullable();
+            $table->text('province_name')->nullable();
             $table->string('district')->nullable();
-            $table->string('districtName')->nullable();
+            $table->text('district_name')->nullable();
             $table->string('ward')->nullable();
-            $table->string('wardName')->nullable();
-            $table->string('address', 255)->nullable();
+            $table->text('ward_name')->nullable();
+            $table->text('address')->nullable();
             $table->integer('order_id')->unsigned();
         });
 

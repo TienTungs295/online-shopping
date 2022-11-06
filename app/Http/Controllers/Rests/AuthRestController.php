@@ -54,13 +54,14 @@ class AuthRestController extends Controller
     {
         $validator = Validator::make($request->all(),
             [
-                'name' => 'required|string',
+                'name' => 'required|string|max:200',
                 'email' => 'required|string|email|max:200|unique:customer_accounts',
                 'password' => 'required|string|min:8|max:50',
                 'confirm_password' => 'required|string|same:password',
             ],
             [
-                'name.required' => 'Tên khách hàng không được phép bỏ trống',
+                'name.required' => 'Tên người dùng không được phép bỏ trống',
+                'name.max' => 'Tên người dùng không được phép vượt quá 200 ký tự',
                 'email.required' => 'Email không được phép bỏ trống',
                 'email.email' => 'Email không hợp lệ',
                 'email.max' => 'Email không được phép vượt quá 200 ký tự',
@@ -172,12 +173,13 @@ class AuthRestController extends Controller
     {
         $validator = Validator::make($request->all(),
             [
-                'name' => 'required|string',
+                'name' => 'required|string|max:200',
                 'phone_number' => 'max:15',
                 'address' => 'max:350',
             ],
             [
-                'name.required' => 'Tên khách hàng không được phép bỏ trống',
+                'name.required' => 'Tên người dùng không được phép bỏ trống',
+                'name.max' => 'Tên người dùng không được phép vượt quá 200 ký tự',
                 'phone_number.max' => 'Số điện thoại không được phép vượt quá 15 ký tự',
                 'address.max' => 'Địa chỉ không được phép vượt quá 350 ký tự',
             ]
