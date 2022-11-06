@@ -29,8 +29,8 @@ class MailNotify extends Mailable
      */
     public function build()
     {
-        return $this->from('tientungs295@gmail.com')
+        return $this->from('hotro3mnhapkhau@gmail.com','Hỗ trợ 3M Nhập Khẩu')
             ->view('backend.email.new-order')
-            ->subject('Notification email');
+            ->subject('Hóa đơn mua hàng');
     }
 }

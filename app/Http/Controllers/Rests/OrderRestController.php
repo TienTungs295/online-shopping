@@ -131,12 +131,12 @@ class OrderRestController extends BaseCustomController
         $order_information->payment_method = $order->payment_method;
 
         //send mail
-        $message = [
-            'type' => 'Create task',
-            'task' => "tasklet",
+        $data = [
+            'customer_information' => 'Create task',
+            'order_information' => "tasklet",
             'content' => 'has been created!',
         ];
-        SendEmail::dispatch($message, $order_address->email);
+        SendEmail::dispatch($data, $order_address->email);
         return $ajax_response->setData($order_information)->setMessage("Đặt hàng thành công!")->toApiResponse();
     }
 
