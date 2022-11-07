@@ -132,9 +132,9 @@ class OrderRestController extends BaseCustomController
 
         //send mail
         $data = [
-            'customer_information' => 'Create task',
-            'order_information' => "tasklet",
-            'content' => 'has been created!',
+            'cart' => $order_products,
+            'order_information' => $order_information,
+            'order' => $order,
         ];
         SendEmail::dispatch($data, $order_address->email);
         return $ajax_response->setData($order_information)->setMessage("Đặt hàng thành công!")->toApiResponse();
