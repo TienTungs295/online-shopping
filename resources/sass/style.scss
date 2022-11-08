@@ -1971,6 +1971,9 @@ button:focus {
     float: right;
     margin-left: 5px;
     color: #333 !important;
+    &:hover{
+        color: $primary-color !important;
+    }
 }
 
 .cart_list {

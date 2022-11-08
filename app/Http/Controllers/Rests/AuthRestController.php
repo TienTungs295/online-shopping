@@ -39,7 +39,7 @@ class AuthRestController extends Controller
         }
 
         if (!$token = auth()->attempt($validator->validated())) {
-            return $ajax_response->setErrors(array('login' => ['Tài khoản hoặc mật khẩu không chính xác!']))->toApiResponse(401);
+            return $ajax_response->setErrors(array('login' => ['Tài khoản hoặc mật khẩu không chính xác!']))->toApiResponse();
         }
 
         return $this->createNewToken($token);

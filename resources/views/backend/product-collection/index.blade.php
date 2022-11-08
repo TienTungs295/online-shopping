@@ -48,8 +48,7 @@
                             @foreach($product_collections as $data)
                             <tr>
                                 <th scope="row">{!!$data->id!!}</th>
-                                <td>{!!$data->image!!}</td>
-{{--                                <td>{!!$data->name!!}</td>--}}
+                                <td>{!!$data->name!!}</td>
                                 <td>{!!$data->slug!!}</td>
                                 <td>{!!$data->updated_at->format('H:i:s d-m-Y')!!}</td>
                                 <td>

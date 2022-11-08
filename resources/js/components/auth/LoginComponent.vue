@@ -48,8 +48,8 @@
                                                    v-model="password"
                                                    placeholder="Mật khẩu">
                                         </div>
-                                        <div class="text-danger" v-if="errors.login != null">
-                                            {{ errors.login }}
+                                        <div class="invalid-feedback d-block" v-if="errors.login">
+                                            <span v-for="error in errors.login" class="d-block">{{error}}</span>
                                         </div>
                                         <div class="login_footer form-group">
                                             <a href="#">Bạn quên mật khẩu?</a>

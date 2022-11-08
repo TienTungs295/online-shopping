@@ -132,7 +132,7 @@ export default {
         register: function (name, email, password, confirm_password) {
             let object = {name: name, email: email, password: password, confirm_password: confirm_password}
             AuthService.register(object).then(response => {
-
+                this.$router.push({name: 'login'});
             }).catch(response => {
                 this.errors = response.errors || {};
             });
