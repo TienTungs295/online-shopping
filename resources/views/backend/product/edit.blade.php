@@ -118,26 +118,37 @@
                                     </div>
                                 </div>
                                 <div class="row mb-3 dis-none" id="apply-time-block">
-                                    <div class="col-md-6">
+                                    <div class="col-md-5">
                                         <label class="form-label">Ngày bắt đầu</label>
                                         <div class="input-group">
                                             <input type="text" readonly id="start-date"
                                                    value="{!! old('start_date', isset($product->start_date) ? date('d-m-Y', strtotime($product->start_date)): '')!!}"
-                                                   class="datepicker form-control" style="background: #fff"
+                                                   class="form-control" style="background: #fff"
                                                    name="start_date"/>
                                             <span class="input-group-text"><i
                                                     class="bi bi-calendar2-week"></i></span>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-5">
                                         <label class="form-label">Ngày kết thúc</label>
                                         <div class="input-group">
                                             <input type="text" readonly id="end-date"
                                                    value="{!! old('end_date', isset($product->end_date) ? date('d-m-Y', strtotime($product->end_date)) : '')!!}"
-                                                   class="datepicker form-control" style="background: #fff"
+                                                   class="form-control" style="background: #fff"
                                                    name="end_date"/>
                                             <span class="input-group-text"><i
                                                     class="bi bi-calendar2-week"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 d-inline-flex-align-end dis-none" id="show-flash-sale-block">
+                                        <div class="form-check">
+                                            <input class="form-check-input" id="show-flash-sale" type="checkbox"
+                                                   value="{!! old('show_flash_sale', isset($product->show_flash_sale) ? $product->show_flash_sale : '')!!}"
+                                                   {!! old('show_flash_sale', isset($product->show_flash_sale) && $product->show_flash_sale == 1 ? 'checked' : '')!!}
+                                                   name="show_flash_sale">
+                                            <label class="form-check-label">
+                                                Flash Sale ?
+                                            </label>
                                         </div>
                                     </div>
                                 </div>
@@ -280,11 +291,28 @@
         if ($("#start-date").val() != "" || $("#end-date").val() != "") {
             $("#apply-time").prop('checked', true);
         }
+        if ($("#end-date").val() != "") {
+            $("#show-flash-sale-block").removeClass('dis-none');
+        }
         showHideApplyTime();
         showHideStoreManagement();
         showHidePriceAndTime();
         $(function () {
-            $(".datepicker").datepicker({changeYear: true})
+            $("#start-date").datepicker({
+                changeYear: true,
+            })
+        });
+        $(function () {
+            $("#start-date").datepicker({
+                changeYear: true,
+                onSelect: function (date, datepicker) {
+                    if (date == "") {
+                        $("#show-flash-sale-block").addClass('dis-none');
+                    } else {
+                        $("#show-flash-sale-block").removeClass('dis-none');
+                    }
+                }
+            })
         });
         var APP_URL = {!! json_encode(url('/')) !!};
         var exclude_id = $("#product-id").val();
