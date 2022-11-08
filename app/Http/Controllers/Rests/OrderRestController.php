@@ -23,6 +23,7 @@ class OrderRestController extends BaseCustomController
         $validator = Validator::make($request->all(),
             [
                 'name' => 'required|string|max:200',
+                'email' => 'required',
                 'phone' => 'required|max:15',
                 'province' => 'required',
                 'district' => 'required',
@@ -31,6 +32,7 @@ class OrderRestController extends BaseCustomController
             ],
             [
                 'name.required' => 'Tên khách hàng không được phép bỏ trống',
+                'email.required' => 'Email không được phép bỏ trống',
                 'name.max' => 'Tên khách hàng không được phép vượt quá 200 ký tự',
                 'phone.required' => 'Số điện thoại không được phép bỏ trống',
                 'phone.max' => 'Số điện thoại không hợp lệ',
