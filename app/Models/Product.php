@@ -64,6 +64,8 @@ class Product extends Model
 //        'tax_id',
 //        'views',
         'stock_status',
+        'is_contact',
+        'is_flash_sale',
     ];
 
     protected $appends = ['real_price', 'on_sale', 'sale_off', 'max_rating'];

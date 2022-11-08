@@ -140,12 +140,12 @@
                                                     class="bi bi-calendar2-week"></i></span>
                                         </div>
                                     </div>
-                                    <div class="col-md-2 d-inline-flex-align-end dis-none" id="show-flash-sale-block">
+                                    <div class="col-md-2 d-inline-flex-align-end dis-none" id="is-flash-sale-block">
                                         <div class="form-check">
-                                            <input class="form-check-input" id="show-flash-sale" type="checkbox"
-                                                   value="{!! old('show_flash_sale', isset($product->show_flash_sale) ? $product->show_flash_sale : '')!!}"
-                                                   {!! old('show_flash_sale', isset($product->show_flash_sale) && $product->show_flash_sale == 1 ? 'checked' : '')!!}
-                                                   name="show_flash_sale">
+                                            <input class="form-check-input" id="is-flash-sale" type="checkbox"
+                                                   value="{!! old('is_flash_sale', isset($product->is_flash_sale) ? $product->is_flash_sale : '')!!}"
+                                                   {!! old('is_flash_sale', isset($product->is_flash_sale) && $product->is_flash_sale == 1 ? 'checked' : '')!!}
+                                                   name="is_flash_sale">
                                             <label class="form-check-label">
                                                 Flash Sale ?
                                             </label>
@@ -292,7 +292,7 @@
             $("#apply-time").prop('checked', true);
         }
         if ($("#end-date").val() != "") {
-            $("#show-flash-sale-block").removeClass('dis-none');
+            $("#is-flash-sale-block").removeClass('dis-none');
         }
         showHideApplyTime();
         showHideStoreManagement();
@@ -300,18 +300,39 @@
         $(function () {
             $("#start-date").datepicker({
                 changeYear: true,
+                showOn: 'focus',
+                showButtonPanel: true,
+                closeText: 'Xóa',
+                onClose: function () {
+                    var event = arguments.callee.caller.caller.arguments[0];
+                    if ($(event.delegateTarget).hasClass('ui-datepicker-close')) {
+                        $(this).val('');
+                    }
+                }
             })
         });
         $(function () {
-            $("#start-date").datepicker({
+            $("#end-date").datepicker({
                 changeYear: true,
                 onSelect: function (date, datepicker) {
                     if (date == "") {
-                        $("#show-flash-sale-block").addClass('dis-none');
+                        $("#is-flash-sale-block").addClass('dis-none');
                     } else {
-                        $("#show-flash-sale-block").removeClass('dis-none');
+                        $("#is-flash-sale-block").removeClass('dis-none');
+                        $("#is-flash-sale").prop('checked', false);
                     }
-                }
+                },
+                showOn: 'focus',
+                showButtonPanel: true,
+                closeText: 'Xóa',
+                onClose: function () {
+                    var event = arguments.callee.caller.caller.arguments[0];
+                    if ($(event.delegateTarget).hasClass('ui-datepicker-close')) {
+                        $(this).val('');
+                        $("#is-flash-sale").prop('checked', false);
+                        $("#is-flash-sale-block").addClass('dis-none');
+                    }
+                },
             })
         });
         var APP_URL = {!! json_encode(url('/')) !!};

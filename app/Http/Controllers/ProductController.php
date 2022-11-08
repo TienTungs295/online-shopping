@@ -93,11 +93,13 @@ class ProductController extends Controller
             if ($request->has('apply_time')) {
                 $start_date = $request->input('start_date');
                 $end_date = $request->input('end_date');
+                $is_flash_sale = $request->has('is_flash_sale');
                 if (!empty($start_date)) {
                     $product->start_date = Carbon::createFromFormat('d-m-Y', $start_date)->format("Y-m-d");
                 }
                 if (!empty($end_date)) {
                     $product->end_date = Carbon::createFromFormat('d-m-Y', $end_date)->format("Y-m-d");
+                    $product->is_flash_sale = $is_flash_sale ? 1 : 0;
                 }
             }
         }
@@ -260,15 +262,23 @@ class ProductController extends Controller
         if (!$is_contact_price && $request->has('apply_time')) {
             $start_date = $request->input('start_date');
             $end_date = $request->input('end_date');
+            $is_flash_sale = $request->has('is_flash_sale');
             if (!empty($start_date)) {
                 $product->start_date = Carbon::createFromFormat('d-m-Y', $start_date)->format("Y-m-d");
+            } else {
+                $product->start_date = null;
             }
             if (!empty($end_date)) {
                 $product->end_date = Carbon::createFromFormat('d-m-Y', $end_date)->format("Y-m-d");
+                $product->is_flash_sale = $is_flash_sale ? 1 : 0;
+            } else {
+                $product->is_flash_sale = 0;
+                $product->end_date = null;
             }
         } else {
             $product->start_date = null;
             $product->end_date = null;
+            $product->is_flash_sale = 0;
         }
 
         $with_storehouse_management = $request->has('with_storehouse_management');
