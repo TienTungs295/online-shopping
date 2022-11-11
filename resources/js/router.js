@@ -69,6 +69,16 @@ const routes = [
         path: '/thay-doi-mat-khau',
         name: 'changePass',
         component: () => import("./components/auth/ChangePassComponent"),
+    },
+    {
+        path: '/quen-mat-khau',
+        name: 'forgotPassword',
+        component: () => import("./components/auth/ForgotPasswordComponent"),
+    },
+    {
+        path: '/thay-doi-mat-khau/:token',
+        name: 'changePassWithToken',
+        component: () => import("./components/auth/ChangePassWithTokenComponent"),
     }
 ];
 const router = new VueRouter({

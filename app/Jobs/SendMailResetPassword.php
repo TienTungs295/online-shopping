@@ -1,30 +1,29 @@
 <?php
 
 namespace App\Jobs;
+
+use App\Mail\ResetPassword;
 use Mail;
-use App\Mail\MailNotify;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 
-class SendEmail implements ShouldQueue
+class SendMailResetPassword implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $data;
-    protected $email;
+    protected $customer_account;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($data, $email)
+    public function __construct($customer_account)
     {
-        $this->data = $data;
-        $this->email = $email;
+        $this->customer_account = $customer_account;
     }
 
     /**
@@ -34,6 +33,6 @@ class SendEmail implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to($this->email)->send(new MailNotify($this->data));
+        Mail::to($this->customer_account->email)->send(new ResetPassword($this->customer_account));
     }
 }
