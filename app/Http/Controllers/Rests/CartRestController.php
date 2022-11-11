@@ -36,6 +36,7 @@ class CartRestController extends BaseCustomController
             return $ajax_response->setMessage("Sản phẩm hiện không được bày bán!")->toApiResponse();
         }
         if ($product->is_contact) return $ajax_response->setMessage("Không thể thêm sản phẩm vào giỏ hàng. Liên hệ để biết thêm giá sản phẩm!")->toApiResponse();
+        if ($product->is_out_of_stock) return $ajax_response->setMessage("Sản phẩm hiện đã hết hàng!")->toApiResponse();
         $qty = 1;
         if (!is_null($request->input('qty'))) $qty = $request->input('qty');
         $cart = Cart::instance('cart')->add(['id' => $product->id, 'name' => $product->name, 'qty' => $qty, 'price' => $product->real_price, 'options' => [
@@ -45,6 +46,10 @@ class CartRestController extends BaseCustomController
             'on_sale' => $product->on_sale,
             'sale_off' => $product->sale_off
         ]]);
+        if ($product->with_storehouse_management == 1 && $product->quantity > 0) {
+            $product->quantity = $product->quantity - 1;
+            $product->update();
+        }
         return $ajax_response->setData($cart)->setMessage("Thêm " . ($qty > 1 ? $qty . " " : "") . $product->name . " vào giỏ hàng thành công!")->toApiResponse();
     }
 

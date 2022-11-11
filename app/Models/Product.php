@@ -68,7 +68,7 @@ class Product extends Model
         'is_flash_sale',
     ];
 
-    protected $appends = ['real_price', 'on_sale', 'sale_off', 'max_rating', 'end_date_time_stamp', 'in_progress_range', 'max_range'];
+    protected $appends = ['real_price', 'on_sale', 'sale_off', 'max_rating', 'end_date_time_stamp', 'in_progress_range', 'max_range', 'is_out_of_stock'];
 
 
     public function getRealPriceAttribute()
@@ -144,6 +144,12 @@ class Product extends Model
     {
         if ($this->end_date != null) return $this->start_date->getTimestamp();
         return null;
+    }
+
+    public function getIsOutOfStockAttribute()
+    {
+        if ($this->allow_checkout_when_out_of_stock == 1) return true;
+        return ($this->stock_status != null && $this->stock_status == 1) || ($this->quantity != null && $this->quantity > 0);
     }
 
     /**

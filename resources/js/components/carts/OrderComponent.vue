@@ -208,7 +208,7 @@
                                             </div>
                                         </div>
                                         <div class="col-5 ">
-                                            <p class="mb-0 gray-color">{{ item.name }}</p>
+                                            <p class="mb-0 gray-color">{{ item.name }} <span v-if="item.options.is_out_of_stock" class="text-danger">(Hết hàng)</span></p>
                                         </div>
                                         <div class="col-4 text-right">
                                             <span class="gray-color">{{ item.price | commaFormat }}</span>

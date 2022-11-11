@@ -66,6 +66,23 @@ class OrderRestController extends BaseCustomController
         $ward = $request->post('ward');
         $address = trim($request->post('address'));
 
+        $cart = Cart::instance('cart')->content();
+        $order_products = [];
+        $product_ids = [];
+        foreach ($cart as $item) {
+            $order_product = new OrderProduct();
+            $order_product->qty = $item->qty;
+            $order_product->price = $item->price;
+            $order_product->product_id = $item->id;
+            $order_product->product_name = $item->name;
+            array_push($order_products, $order_product);
+            array_push($product_ids, $item->id);
+        }
+
+//        $products = Product::whereIn('id', $product_ids)->where(function ($query) {
+//            $query
+//        });
+
         // Order Address
         $order_address = new OrderAddress();
         $order_address->name = $name;
@@ -78,17 +95,6 @@ class OrderRestController extends BaseCustomController
         $order_address->ward = $ward;
         $order_address->ward_name = $ward_name;
         $order_address->address = $address;
-
-        $cart = Cart::instance('cart')->content();
-        $order_products = [];
-        foreach ($cart as $item) {
-            $order_product = new OrderProduct();
-            $order_product->qty = $item->qty;
-            $order_product->price = $item->price;
-            $order_product->product_id = $item->id;
-            $order_product->product_name = $item->name;
-            array_push($order_products, $order_product);
-        }
 
         // Order
         $order = new Order();
