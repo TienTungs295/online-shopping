@@ -68,7 +68,7 @@ class Product extends Model
         'is_flash_sale',
     ];
 
-    protected $appends = ['real_price', 'on_sale', 'sale_off', 'max_rating'];
+    protected $appends = ['real_price', 'on_sale', 'sale_off', 'max_rating', 'end_date_time_stamp', 'in_progress_range', 'max_range'];
 
 
     public function getRealPriceAttribute()
@@ -117,6 +117,32 @@ class Product extends Model
             }
             return $max_rating;
         }
+        return null;
+    }
+
+    public function getInProgressRangeAttribute()
+    {
+        $value = null;
+        if ($this->end_date != null) {
+            $value = time() - $this->start_date->getTimestamp();
+            if ($value < 0) return 0;
+        }
+        return $value;
+    }
+
+    public function getMaxRangeAttribute()
+    {
+        $value = null;
+        if ($this->end_date != null) {
+            $value = $this->end_date->getTimestamp() - $this->start_date->getTimestamp();
+            if ($value < 0) return 0;
+        }
+        return $value;
+    }
+
+    public function getEndFlashSaleAttribute()
+    {
+        if ($this->end_date != null) return $this->start_date->getTimestamp();
         return null;
     }
 
