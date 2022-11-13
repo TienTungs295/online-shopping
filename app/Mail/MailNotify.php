@@ -33,8 +33,8 @@ class MailNotify extends Mailable
      */
     public function build()
     {
-        return $this->from('hotro3mnhapkhau@gmail.com', 'Hỗ trợ 3M Nhập Khẩu')
+        return $this->from('hotro3mnhapkhau@gmail.com', 'Bán hàng 3MNK')
             ->view('backend.email.new-order')
-            ->subject('Hóa đơn mua hàng');
+            ->subject('3MNK - Hóa đơn mua hàng');
     }
 }

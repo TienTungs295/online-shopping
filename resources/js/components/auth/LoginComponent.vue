@@ -51,8 +51,11 @@
                                         <div class="invalid-feedback d-block" v-if="errors.login">
                                             <span v-for="error in errors.login" class="d-block">{{error}}</span>
                                         </div>
-                                        <div class="login_footer form-group">
-                                            <a href="#">Bạn quên mật khẩu?</a>
+                                        <div class="form-group">
+                                            <router-link
+                                                :to="{ name: 'forgotPassword'}">
+                                                Bạn quên mật khẩu?
+                                            </router-link>
                                         </div>
                                         <div class="form-group">
                                             <button type="button" class="btn btn-fill-out btn-block rounded-0"

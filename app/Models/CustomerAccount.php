@@ -19,7 +19,7 @@ class CustomerAccount extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role','profile_photo_path','email_verified_at'
+        'name', 'email', 'password', 'role','profile_photo_path','email_verified_at','token','token_gen_at'
     ];
     /**
      * The attributes that should be hidden for arrays.
@@ -37,6 +37,7 @@ class CustomerAccount extends Authenticatable implements JWTSubject
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'token_gen_at' => 'datetime',
     ];
 
     public function getJWTIdentifier()

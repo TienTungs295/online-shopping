@@ -79,9 +79,7 @@
                                             </form>
                                         </div>
                                         <div class="comments">
-                                            <h5 class="product_tab_title">{{ totalReviews }} Đánh giá cho -
-                                                <span>{{ product.name }}</span>
-                                            </h5>
+                                            <h5 class="product_tab_title">{{ totalReviews }} Đánh giá cho sản phẩm</h5>
                                             <ul class="list_none comment_list mt-4">
                                                 <li v-for="review in reviews"
                                                     :class="review.status ==1 ? 'o-05':''">

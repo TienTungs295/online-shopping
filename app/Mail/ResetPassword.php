@@ -25,8 +25,8 @@ class ResetPassword extends Mailable
      */
     public function build()
     {
-        return $this->from("hotro3mnhapkhau@gmail.com", "Hỗ trợ 3M Nhập Khẩu")
-            ->subject('Link đặt lại mật khẩu')
-            ->view('template.reset-password');
+        return $this->from("hotro3mnhapkhau@gmail.com", "Tài khoản 3MNK")
+            ->subject('3MNK - Xác nhận đặt lại mật khẩu')
+            ->view('backend.email.reset-password');
     }
 }

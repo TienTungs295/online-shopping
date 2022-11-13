@@ -66,8 +66,7 @@
                                                     @csrf
                                                     <button type="submit"
                                                             {!! $data->status ==2 ? 'disabled' : '' !!} class="btn btn-info btn-sm text-white"
-                                                            title="Xác nhận"
-                                                            onclick="return confirm('Bạn có chắc chắn cho hành động này không?')">
+                                                            title="Xác nhận">
                                                         <i class="bi bi-check2-circle me-1"></i>
                                                     </button>
                                                 </form>

@@ -37,14 +37,38 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div>
+                                            <div class="mgb-20">
+                                                Bạn quên mật khẩu của mình? Đừng lo lắng! Hãy cung cấp cho chúng tôi
+                                                email bạn sử dụng để đăng ký tài khoản trên website 3M Nhập khẩu. Chúng
+                                                tôi sẽ gửi
+                                                cho bạn một liên kết để đặt lại mật khẩu của bạn qua email đó.
+                                            </div>
+                                            <div class="mgb-20 alert alert-success"
+                                                 style="display: table;font-size: 14px"
+                                                 v-if="emailSended">
+                                                <i class="fa fa-check-circle"
+                                                   style="font-size: 30px;display: table-cell"
+                                                   aria-hidden="true"></i>
+                                                <div style="display:table-cell;" class="pdl-20">
+                                                    Chúng tôi đã gửi một email có lên kết để đặt lại mật khẩu của bạn.
+                                                    Có thể mất từ 1 đến 2 phút để hoàn thành. Hãy kiểm tra hộp thư đến
+                                                    của bạn <span class="fw-bold">{{ emailSended }}</span>.
+                                                </div>
+                                            </div>
                                             <div class="form-group">
                                                 <label for="email">Email:</label>
                                                 <input id="email" type="email" class="form-control"
+                                                       :class="{'is-invalid': errors.email}"
+                                                       placeholder="Email của bạn"
                                                        v-model="email">
+                                                <div class="invalid-feedback">
+                                                    <span v-for="error in errors.email"
+                                                          class="d-block">{{ error }}</span>
+                                                </div>
                                             </div>
                                             <div class="form-group text-center">
                                                 <button type="submit" class="btn btn-fill-out btn-sm rounded-0"
-                                                        @click="resetPass()">Đặt lại mật khẩu
+                                                        @click="resetPass()">Gửi email cho tôi
                                                 </button>
                                             </div>
                                         </div>
@@ -70,16 +94,18 @@ export default {
             errors: {},
             isLoading: false,
             email: "",
-            message: ""
+            emailSended: ""
         };
     },
     methods: {
         resetPass: function () {
             this.isLoading = true;
             AuthService.resetPass(this.email).then(response => {
-                this.message = response.message || "";
+                this.emailSended = response.email;
+                this.email = "";
                 this.isLoading = false;
             }).catch(response => {
+                this.isSuccessful = false;
                 this.errors = response.errors || {};
                 this.isLoading = false;
             });

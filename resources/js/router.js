@@ -76,7 +76,7 @@ const routes = [
         component: () => import("./components/auth/ForgotPasswordComponent"),
     },
     {
-        path: '/thay-doi-mat-khau/:token',
+        path: '/doi-mat-khau/:token',
         name: 'changePassWithToken',
         component: () => import("./components/auth/ChangePassWithTokenComponent"),
     }

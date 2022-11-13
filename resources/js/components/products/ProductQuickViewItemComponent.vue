@@ -36,10 +36,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="rating_wrap d-flex align-items-center" v-if="product.max_rating">
+                    <div class="rating_wrap d-flex align-items-center mgb-15" v-if="product.max_rating">
                         <star-rating v-model="product.max_rating.star"
                                      v-bind:show-rating="false"
-                                     v-bind:star-size="10"
+                                     v-bind:star-size="15"
                                      v-bind:border-color="'#F6BC3E'"
                                      v-bind:inactive-color="'#FFFFFF'"
                                      v-bind:active-color="'#F6BC3E'"

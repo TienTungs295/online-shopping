@@ -80,13 +80,15 @@
     color: #fff !important;
 }
 
-.gray-8-color{
-   color: #888888;
+.gray-8-color {
+    color: #888888;
 }
-.gray-8-color-i{
+
+.gray-8-color-i {
     color: #888888 !important;
 }
-.o-05{
+
+.o-05 {
     opacity: 0.5;
 }
 
@@ -94,6 +96,10 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.fw-bold {
+    font-weight: bold;
 }
 
 @for $i from 0 through 20 {

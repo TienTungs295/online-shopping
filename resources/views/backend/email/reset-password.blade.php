@@ -43,7 +43,7 @@
                    style="width:600px;border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;text-align:left;">
                 <tr style="border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;">
                     <td align="left" style="padding:10px 25px;background:#fff; display: flex; align-items: center;">
-                        <span style="font-weight: bold; padding-top: 10px;"> Programming Fields </span>
+                        <span style="font-weight: bold; padding-top: 10px;"> Xác nhận đặt lại mật khẩu </span>
                     </td>
                 </tr>
                 <tr>
@@ -61,16 +61,19 @@
                                     </p>
                                     <p
                                         style="margin:10px 0 12px 0;font-size:14px;line-height:24px;font-family:Arial,sans-serif;">
-                                        Bạn có thể đặt lại mật khẩu bằng cách click vào link dưới đây.
+                                        Bạn có thể đặt lại mật khẩu bằng cách click vào liên kết dưới đây. Liên kết chỉ có hiệu lực trong vòng 5 phút!
                                     </p>
 
                                     <p style="text-align: center;">
-                                        <a href="{{'127.0.0.1:8000/forgot-password/'.$customer_account->token}}"
+                                        <a style="cursor: pointer"
+                                           href="http://127.0.0.1:8000/doi-mat-khau/123123123213"
                                            class="btn">Đặt lại mật khẩu</a>
                                     </p>
 
                                     <p style="margin:100px 0 12px 0;font-size:14px;font-family:Arial,sans-serif;">
-                                        Xin chân thành cảm ơn </p>
+                                        Nếu không phải bạn. Vui lòng bỏ qua email này
+                                        <br>
+                                        Xin chân thành cảm ơn! </p>
                                 </td>
                             </tr>
                         </table>

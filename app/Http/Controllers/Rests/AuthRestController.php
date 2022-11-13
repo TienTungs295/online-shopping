@@ -10,8 +10,10 @@ use Illuminate\Http\Request;
 
 use App\Models\CustomerAccount;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 use Validator;
 use Illuminate\Support\Facades\Hash;
+use function PHPUnit\Framework\isEmpty;
 
 
 class AuthRestController extends Controller
@@ -171,10 +173,16 @@ class AuthRestController extends Controller
 
     public function changePassWordWithToken(Request $request)
     {
-        $customer_account = CustomerAccount::where('token', $request->post("token"))->first();
         $ajax_response = new AjaxResponse();
-        if ($customer_account == null)
-            return $ajax_response->setErrors(array("token" => "Token không chính xác hoặc đã hết hạn"))->toApiResponse();
+        $customer_account = CustomerAccount::where('email', $request->post("email"))->first();
+        if (is_null($customer_account))
+            return $ajax_response->setErrors(array("email" => "Email không tồn tại"))->toApiResponse();
+
+        if ($customer_account->token != $request->post('token'))
+            return $ajax_response->setErrors(array('token' => ['Token không hợp lệ']))->toApiResponse();
+
+        if (!empty($customer_account->token_gen_at) && (time() - $customer_account->token_gen_at->timestamp > 5 * 60))
+            return $ajax_response->setErrors(array('token' => ['Token đã hết hạn']))->toApiResponse();
 
         $validator = Validator::make($request->all(),
             [
@@ -189,14 +197,11 @@ class AuthRestController extends Controller
                 'confirm_new_password.same' => 'Mật khẩu xác nhận không chính xác'
             ]
         );
-        $ajax_response = new AjaxResponse();
-        if (!Hash::check($request->post('old_password'), auth()->user()->password))
-            return $ajax_response->setErrors(array('old_password' => ['Mật khẩu hiện tại không chính xác']))->toApiResponse();
-
         if ($validator->fails())
             return $ajax_response->setErrors($validator->errors())->toApiResponse();
 
         $customer_account->token = "";
+        $customer_account->token_gen_at = null;
         $customer_account->password = bcrypt($request->post('new_password'));
         $customer_account->update();
         return $ajax_response->setStatus(2)->setMessage("Cập nhật mật khẩu thành công")->toApiResponse();
@@ -236,11 +241,13 @@ class AuthRestController extends Controller
 
     public function validateToken(Request $request)
     {
-        $customer_account = CustomerAccount::where('token', $request->input('token'))->first();
         $ajax_response = new AjaxResponse();
-        if ($customer_account == null)
-            return $ajax_response->setErrors(array("token" => "Link đặt lại mật khẩu hết hạn hoặc token không chính xác"))->toApiResponse();
-        return $ajax_response->setData(array("email" => $customer_account->email))->toApiResponse();
+        $customer_account = CustomerAccount::where('token', $request->input('token'))->first();
+        if (is_null($customer_account))
+            return $ajax_response->setMessage("Token không hợp lệ")->toApiResponse();
+        if (!empty($customer_account->token_gen_at) && (time() - $customer_account->token_gen_at->timestamp > 5 * 60))
+            return $ajax_response->setMessage("Token đã hết hạn")->toApiResponse();
+        return $ajax_response->setData(2)->toApiResponse();
     }
 
     public function resetPassword(Request $request)
@@ -261,17 +268,18 @@ class AuthRestController extends Controller
         }
 
         $customer_account = CustomerAccount::where('email', $request->post('email'))->first();
-        if (!$customer_account) {
+        if (is_null($customer_account)) {
             return $ajax_response->setErrors(array('email' => ['Email không tồn tại']))->toApiResponse();
         }
 
         $token = Str::random(60);
 
         $customer_account->token = $token;
+        $customer_account->token_gen_at = Carbon::now();
         $customer_account->update();
 
         SendMailResetPassword::dispatch($customer_account);
-        return $ajax_response->setData(array("message" => "Link lấy lại mật khẩu đã được gửi đến email của bạn"))->toApiResponse();
+        return $ajax_response->setData(array("email" => $customer_account->email))->toApiResponse();
     }
 
     public function isAuthenticated(Request $request)

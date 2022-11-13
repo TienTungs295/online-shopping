@@ -39,18 +39,12 @@
                                         <div>
                                             <div class="form-group">
                                                 <label for="email">Email:</label>
-                                                <input id="email" type="email" class="form-control" disabled="true"
+                                                <input id="email" type="email" class="form-control"
+                                                       :class="{'is-invalid': errors.email}"
                                                        v-model="user.email">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="old_password">Mật khẩu hiện tại:</label>
-                                                <input id="old_password" type="password" class="form-control"
-                                                       :class="{'is-invalid': errors.old_password}" name="old_password"
-                                                       v-model="user.old_password">
                                                 <div class="invalid-feedback">
-                                                    <span v-for="error in errors.old_password"
-                                                          class="d-block">{{ error }}
-                                                    </span>
+                                                    <span v-for="error in errors.email"
+                                                          class="d-block">{{ error }}</span>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -73,6 +67,10 @@
                                                     <span v-for="error in errors.confirm_new_password"
                                                           class="d-block">{{ error }}</span>
                                                 </div>
+                                            </div>
+                                            <div class="invalid-feedback d-block">
+                                                    <span v-for="error in errors.token"
+                                                          class="d-block">{{ error }}</span>
                                             </div>
 
                                             <div class="form-group text-center">
@@ -108,7 +106,9 @@ export default {
     methods: {
         changePass: function () {
             this.isLoading = true;
+            this.user.token = this.$route.params.token;
             AuthService.changePassWithToken(this.user, true).then(response => {
+                this.$router.push({name: 'login'});
                 this.isLoading = false;
             }).catch(response => {
                 this.errors = response.errors || {};
@@ -119,7 +119,6 @@ export default {
     mounted() {
         this.isLoading = true;
         AuthService.forgotPasswordValidate(this.$route.params.token, true).then(response => {
-            this.user.email = response.email;
             this.isLoading = false;
         }).catch(response => {
             this.errors = response.errors || {};
