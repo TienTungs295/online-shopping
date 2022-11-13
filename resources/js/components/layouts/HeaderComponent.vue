@@ -342,6 +342,10 @@ export default {
         serviceBus.$on('refreshWithList', () => {
             this.findAllWithList();
         });
+
+        serviceBus.$on('refreshCart', () => {
+            this.findAllCart();
+        });
     }
 }
 </script>

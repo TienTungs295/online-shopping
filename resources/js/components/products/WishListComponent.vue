@@ -57,8 +57,9 @@
                                         <td class="product-name" data-title="Sản phẩm">
                                             <router-link
                                                 :to="{ name: 'productDetail', params: { slug: item.options.slug,id:item.id }}">
-                                                {{ item.name }} <span v-if="item.options.is_out_of_stock" class="text-danger">(Hết hàng)</span>
+                                                {{ item.name }}
                                             </router-link>
+                                            <span v-if="item.options.is_out_of_stock" class="text-danger">(Hết hàng)</span>
                                         </td>
                                         <td class="product-price" data-title="Giá">
                                             <div v-if="item.options.is_contact">
@@ -76,9 +77,9 @@
                                             <a href="tel:0979945555" v-if="item.options.is_contact"
                                                class="btn btn-fill-out btn-sm add-to-cart-button rounded-0">Liên hệ ngay
                                             </a>
-                                            <a v-else @click="addToCart(item.id)"
+                                            <button v-else @click="addToCart(item.id)" :disabled="item.options.is_out_of_stock"
                                                class="btn btn-fill-out btn-sm add-to-cart-button rounded-0">Thêm vào giỏ
-                                            </a>
+                                            </button>
                                         </td>
                                         <td class="product-remove" data-title="Xóa"><a
                                             class="btn btn-fill-line view-cart rounded-0 btn-sm rounded-0"

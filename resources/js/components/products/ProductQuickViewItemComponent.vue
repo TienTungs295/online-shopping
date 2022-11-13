@@ -49,9 +49,10 @@
                         </star-rating>
                         <span class="rating_num">({{product.max_rating.total}})</span>
                     </div>
-                    <div class="pr_desc">
+                    <div class="pr_desc" v-if="product.description">
                         <p>{{ product.description }}</p>
                     </div>
+                    <div  class="text-danger fw-bold" v-if="product.is_out_of_stock">Hết hàng</div>
                 </div>
                 <hr/>
                 <div class="cart_extra">
@@ -75,11 +76,11 @@
                         </div>
                         <br>
                         <div class="cart_btn mgb-10">
-                            <button class="btn btn-fill-out btn-addtocart rounded-0 mgr-10 mgb-10" type="button"
+                            <button class="btn btn-fill-out btn-addtocart rounded-0 mgr-10 mgb-10" type="button" :disabled="product.is_out_of_stock"
                                     @click="addToCart(product.id,cart.qty)">
                                 <i class="icon-basket-loaded"></i> Thêm vào giỏ
                             </button>
-                            <button class="btn btn-fill-line view-cart rounded-0 mgl-0-i mgb-10" type="button"
+                            <button class="btn btn-fill-line view-cart rounded-0 mgl-0-i mgb-10" type="button" :disabled="product.is_out_of_stock"
                                     @click="buyNow(product.id,cart.qty)"><i
                                 class="icon-basket-loaded"></i> Mua ngay
                             </button>

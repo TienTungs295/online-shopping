@@ -123,7 +123,7 @@ class Product extends Model
     public function getInProgressRangeAttribute()
     {
         $value = null;
-        if ($this->end_date != null) {
+        if (!is_null($this->end_date)) {
             $value = time() - strtotime($this->start_date);
             if ($value < 0) return 0;
         }
@@ -133,7 +133,7 @@ class Product extends Model
     public function getMaxRangeAttribute()
     {
         $value = null;
-        if ($this->end_date != null) {
+        if (!is_null($this->end_date)) {
             $value = strtotime($this->end_date) - strtotime($this->start_date);
             if ($value < 0) return 0;
         }
@@ -142,14 +142,15 @@ class Product extends Model
 
     public function getStartDateTimeStampAttribute()
     {
-        if ($this->start_date != null) return strtotime($this->start_date);
+        if (!is_null($this->start_date)) return strtotime($this->start_date);
         return null;
     }
 
     public function getIsOutOfStockAttribute()
     {
-        if ($this->allow_checkout_when_out_of_stock == 1) return true;
-        return ($this->stock_status != null && $this->stock_status == 1) || ($this->quantity != null && $this->quantity > 0);
+        if (!is_null($this->allow_checkout_when_out_of_stock) && $this->allow_checkout_when_out_of_stock == 1) return false;
+        $value = (!is_null($this->stock_status) && $this->stock_status == 0) || (!is_null($this->quantity) && $this->quantity <= 0);
+        return $value;
     }
 
     /**

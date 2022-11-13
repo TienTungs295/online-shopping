@@ -296,10 +296,11 @@
                                                 <div class="product_wrap">
                                                         <span class="pr_flash"
                                                               :style="{'background-color': label.color}"
-                                                              v-if="item.product_labels.length"
+                                                              v-if="item.product_labels.length && !item.is_out_of_stock"
                                                               v-for="label in item.product_labels">
                                                             {{ label.name }}
                                                         </span>
+                                                    <span class="pr_flash" v-if="item.is_out_of_stock" style="background-color: #000">Hết hàng</span>
                                                     <div class="product_img style-2">
                                                         <router-link
                                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
@@ -381,10 +382,11 @@
                                                 <div class="product_wrap">
                                                      <span class="pr_flash"
                                                            :style="{'background-color': label.color}"
-                                                           v-if="item.product_labels.length"
+                                                           v-if="item.product_labels.length && !item.is_out_of_stock"
                                                            v-for="label in item.product_labels">
                                                             {{ label.name }}
                                                         </span>
+                                                    <span class="pr_flash" v-if="item.is_out_of_stock" style="background-color: #000">Hết hàng</span>
                                                     <div class="product_img style-2">
                                                         <router-link
                                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
@@ -466,10 +468,11 @@
                                                 <div class="product_wrap">
                                                         <span class="pr_flash"
                                                               :style="{'background-color': label.color}"
-                                                              v-if="item.product_labels.length"
+                                                              v-if="item.product_labels.length && !item.is_out_of_stock"
                                                               v-for="label in item.product_labels">
                                                             {{ label.name }}
                                                         </span>
+                                                    <span class="pr_flash" v-if="item.is_out_of_stock" style="background-color: #000">Hết hàng</span>
                                                     <div class="product_img style-2">
                                                         <router-link
                                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">

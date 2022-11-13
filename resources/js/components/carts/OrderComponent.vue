@@ -208,7 +208,9 @@
                                             </div>
                                         </div>
                                         <div class="col-5 ">
-                                            <p class="mb-0 gray-color">{{ item.name }} <span v-if="item.options.is_out_of_stock" class="text-danger">(Hết hàng)</span></p>
+                                            <p class="mb-0 gray-color">{{ item.name }}
+                                                <span v-if="item.options.is_out_of_stock" class="text-danger">(Hết hàng)</span>
+                                            </p>
                                         </div>
                                         <div class="col-4 text-right">
                                             <span class="gray-color">{{ item.price | commaFormat }}</span>
@@ -337,6 +339,7 @@ import CartService from "../../services/CartService";
 import OrderService from "../../services/OrderService";
 import AddressService from "../../services/AddressService";
 import {mapGetters} from "vuex";
+import {serviceBus} from "../../serviceBus";
 
 export default {
     name: "Order",
@@ -385,6 +388,7 @@ export default {
                 this.isOrderSuccessful = true;
                 this.order_information = response || {};
                 this.isLoading = false;
+                serviceBus.$emit('refreshCart');
             }).catch(response => {
                 this.errors = response.errors || {};
                 this.isLoading = false;

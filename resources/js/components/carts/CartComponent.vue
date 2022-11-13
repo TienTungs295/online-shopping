@@ -56,8 +56,9 @@
                                         <td class="product-name" data-title="Sản phẩm">
                                             <router-link
                                                 :to="{ name: 'productDetail', params: { slug: item.options.slug,id:item.id }}">
-                                                {{ item.name }} <span v-if="item.options.is_out_of_stock" class="text-danger">(Hết hàng)</span>
+                                                {{ item.name }}
                                             </router-link>
+                                            <span v-if="item.options.is_out_of_stock" class="text-danger">(Hết hàng)</span>
                                         </td>
                                         <td class="product-price" data-title="Giá">
                                             <span class="price">{{ item.price | commaFormat }}</span>

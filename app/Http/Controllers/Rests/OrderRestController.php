@@ -88,7 +88,7 @@ class OrderRestController extends BaseCustomController
             });
         })->count();
         if ($exist_out_of_stock_product_count > 0)
-            return $ajax_response->setMessage("Một số sản phẩm đã hết hàng, vui lòng cập nhật lại giỏ hàng!")->toApiResponse();
+            return $ajax_response->setMessage("Một số sản phẩm đã hết hàng. Vui lòng cập nhật lại giỏ hàng!")->toApiResponse();
 
         // Order Address
         $order_address = new OrderAddress();
