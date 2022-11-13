@@ -23,7 +23,7 @@ import Vue from 'vue';
 import router from './router';
 import VueToastr from "vue-toastr";
 import moment from 'moment';
-import {BTabs, BTab, BModal, BCarousel, BCarouselSlide, BDropdown, BDropdownItem} from 'bootstrap-vue';
+import {BTabs, BTab, BModal, BCarousel, BCarouselSlide, BDropdown, BDropdownItem, BProgress} from 'bootstrap-vue';
 import store from './store';
 import VueStarRating  from 'vue-star-rating';
 
@@ -34,6 +34,7 @@ Vue.component('product-quick-view-item-component', require('./components/product
 Vue.component('product-quick-view-modal-component', require('./components/products/ProductQuickViewModalComponent').default);
 Vue.component('blog-item-component', require('./components/blogs/BlogItemComponent').default);
 Vue.component('loading-component', require('./components/common/LoadingComponent').default);
+Vue.component('flash-sale-component', require('./components/products/FlashSaleProductsComponent').default);
 Vue.component('b-tabs', BTabs);
 Vue.component('b-tab', BTab);
 Vue.component('b-modal', BModal);
@@ -42,6 +43,7 @@ Vue.component('b-carousel-slide', BCarouselSlide);
 Vue.component('b-dropdown', BDropdown);
 Vue.component('b-dropdown-item', BDropdownItem);
 Vue.component('star-rating', VueStarRating)
+Vue.component('b-progress', BProgress)
 
 Vue.use(VueToastr, {
     defaultTimeout: 2000,
@@ -76,6 +78,17 @@ Vue.directive('carousel', {
                 autoplayTimeout: $(el).data('autoplay-timeout'),
                 smartSpeed: $(el).data('smart-speed'),
                 responsive: $(el).data('responsive')
+            });
+        }, 10);
+    },
+});
+Vue.directive('countDown', {
+    inserted: function (el) {
+        setTimeout(function () {
+            let countDown = $(el).find('.countdown_time');
+            let endTime = countDown.data('time');
+            countDown.countdown(endTime, function (tm) {
+                countDown.html(tm.strftime('<div class="countdown_box"><div class="countdown-wrap"><span class="countdown days">%D </span><span class="cd_text">' + countDown.data('days-text') + '</span></div></div><div class="countdown_box"><div class="countdown-wrap"><span class="countdown hours">%H</span><span class="cd_text">' + countDown.data('hours-text') + '</span></div></div><div class="countdown_box"><div class="countdown-wrap"><span class="countdown minutes">%M</span><span class="cd_text">' + countDown.data('minutes-text') + '</span></div></div><div class="countdown_box"><div class="countdown-wrap"><span class="countdown seconds">%S</span><span class="cd_text">' + countDown.data('seconds-text') + '</span></div></div>'));
             });
         }, 10);
     },

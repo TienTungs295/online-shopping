@@ -277,4 +277,21 @@ class ProductRestController extends Controller
         })->paginate(12)->toArray();
         return $ajax_response->setData($products)->toApiResponse();
     }
+
+    public function findFlashSale(Request $request)
+    {
+        $ajax_response = new AjaxResponse();
+        $current_time = Carbon::now();
+        $products = Product::where('is_flash_sale', 1)
+            ->where(function ($query) use ($current_time) {
+                $query->orWhere(function ($query) use ($current_time) {
+                    $query->where('start_date', '>=', $current_time);
+                    $query->where('end_date', '<=', $current_time);
+                })->orWhere(function ($query) use ($current_time) {
+                    $query->where('start_date', null);
+                    $query->where('end_date', '<=', $current_time);
+                });
+            })->orderBy('updated_at', 'DESC')->take(12)->get();
+        return $ajax_response->setData($products)->toApiResponse();
+    }
 }

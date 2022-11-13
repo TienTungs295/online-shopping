@@ -30,6 +30,8 @@
     <link href="{{ asset('vendor/jquery-upload/css/jquery.uploader.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/quill/quill.snow.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/quill/quill.bubble.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css">
+
 {{--    <link href="{{ asset('vendor/remixicon/remixicon.css') }}" rel="stylesheet">--}}
 {{--    <link href="{{ asset('vendor/simple-datatables/style.css') }}" rel="stylesheet">--}}
 
@@ -64,6 +66,9 @@
 <script src="{{ asset('vendor/toastr/js/toastr.min.js') }}"></script>
 <script src="{{ asset('vendor/date-picker/js/jquery-ui.js') }}"></script>
 <script src="{{ asset('vendor/date-picker/js/jquery.ui.datepicker-vi.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"></script>
+
+
 
 
 <!-- Template Main JS File -->

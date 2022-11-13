@@ -298,7 +298,7 @@
         showHideStoreManagement();
         showHidePriceAndTime();
         $(function () {
-            $("#start-date").datepicker({
+            $("#start-date").datetimepicker({
                 changeYear: true,
                 showOn: 'focus',
                 showButtonPanel: true,
@@ -312,7 +312,7 @@
             })
         });
         $(function () {
-            $("#end-date").datepicker({
+            $("#end-date").datetimepicker({
                 changeYear: true,
                 onSelect: function (date, datepicker) {
                     if (date == "") {
@@ -327,6 +327,7 @@
                 closeText: 'Xóa',
                 onClose: function () {
                     var event = arguments.callee.caller.caller.arguments[0];
+                    console.log(event);
                     if ($(event.delegateTarget).hasClass('ui-datepicker-close')) {
                         $(this).val('');
                         $("#is-flash-sale").prop('checked', false);

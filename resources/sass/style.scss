@@ -1971,7 +1971,8 @@ button:focus {
     float: right;
     margin-left: 5px;
     color: #333 !important;
-    &:hover{
+
+    &:hover {
         color: $primary-color !important;
     }
 }
@@ -4307,7 +4308,8 @@ input.text {
 .author_name {
     overflow: hidden;
     font-size: 16px;
-    &,.__name{
+
+    &, .__name {
         color: #fff;
     }
 
@@ -4340,6 +4342,7 @@ input.text {
         margin-bottom: 25px;
         font-size: 22px;
         font-family: "Playfair Display";
+
         p {
             color: #fff;
             line-height: 30px;
@@ -6213,15 +6216,25 @@ footer {
     -ms-flex-align: center;
     align-items: center;
 
-    .product_img {
-        max-width: 300px;
+    .img-wrapper {
         width: 100%;
+        padding: 15px;
+
+        .product_img_inner {
+            border: 1px solid #ddd;
+            border-radius: 2px;
+
+            .img-src {
+                width: 100%;
+                height: 220px;
+            }
+        }
     }
 }
 
 .deal_content {
     width: 100%;
-    padding: 30px 30px 30px 0;
+    padding-right: 30px;
 
     .product_info {
         padding: 0;
@@ -8682,7 +8695,7 @@ body .owl-theme .owl-nav [class*="owl-"] {
 
 .nav_style3.owl-theme .owl-nav [class*="owl-"], .nav_style4.owl-theme .owl-nav [class*="owl-"] {
     position: absolute;
-    top: -90px;
+    top: -75px;
     border-radius: 0;
     right: 0;
     height: auto;
@@ -9419,7 +9432,8 @@ a.link-hover {
         color: $primary-color;
     }
 }
-.__overlay{
+
+.__overlay {
     position: absolute;
     background: rgba(0, 0, 0, 0.3);
     width: 100%;
