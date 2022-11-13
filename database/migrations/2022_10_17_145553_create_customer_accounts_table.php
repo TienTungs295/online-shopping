@@ -16,9 +16,11 @@ class CreateCustomerAccountsTable extends Migration
         Schema::create('customer_accounts', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('phone_number',20)->nullable();
-            $table->string('address',400)->nullable();
+            $table->string('email')->unique()->index();
+            $table->string('phone_number', 20)->nullable();
+            $table->string('address', 400)->nullable();
+            $table->string('token')->default("")->index();
+            $table->tinyInteger('is_verified')->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->tinyInteger('role');

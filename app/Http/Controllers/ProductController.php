@@ -94,11 +94,18 @@ class ProductController extends Controller
                 $start_date = $request->input('start_date');
                 $end_date = $request->input('end_date');
                 $is_flash_sale = $request->has('is_flash_sale');
+                if (!empty($start_date) && !empty($end_date)) {
+                    $start_date = Carbon::createFromFormat('d-m-Y H:i', $start_date)->timestamp;
+                    $end_date = Carbon::createFromFormat('d-m-Y H:i', $end_date)->timestamp;
+                    if ($start_date > $end_date) return redirect()->back()->with('error', 'Ngày kết thúc phải lớn hơn ngày bắt đầu');
+                }
                 if (!empty($start_date)) {
-                    $product->start_date = Carbon::createFromFormat('d-m-Y', $start_date)->format("Y-m-d");
+                    $product->start_date = Carbon::createFromFormat('d-m-Y H:i', $start_date)->format("Y-m-d H:i");
                 }
                 if (!empty($end_date)) {
-                    $product->end_date = Carbon::createFromFormat('d-m-Y', $end_date)->format("Y-m-d");
+                    if ($product->start_date == null)
+                        $product->start_date = Carbon::now()->format("Y-m-d H:i");
+                    $product->end_date = Carbon::createFromFormat('d-m-Y H:i', $end_date)->format("Y-m-d H:i");
                     $product->is_flash_sale = $is_flash_sale ? 1 : 0;
                 }
             }
@@ -263,13 +270,20 @@ class ProductController extends Controller
             $start_date = $request->input('start_date');
             $end_date = $request->input('end_date');
             $is_flash_sale = $request->has('is_flash_sale');
+            if (!empty($start_date) && !empty($end_date)) {
+                $start_date = Carbon::createFromFormat('d-m-Y H:i', $start_date)->timestamp;
+                $end_date = Carbon::createFromFormat('d-m-Y H:i', $end_date)->timestamp;
+                if ($start_date > $end_date) return redirect()->back()->with('error', 'Ngày kết thúc phải lớn hơn ngày bắt đầu');
+            }
             if (!empty($start_date)) {
-                $product->start_date = Carbon::createFromFormat('d-m-Y', $start_date)->format("Y-m-d");
+                $product->start_date = Carbon::createFromFormat('d-m-Y H:i', $start_date)->format("Y-m-d H:i");
             } else {
                 $product->start_date = null;
             }
             if (!empty($end_date)) {
-                $product->end_date = Carbon::createFromFormat('d-m-Y', $end_date)->format("Y-m-d");
+                if ($product->start_date == null)
+                    $product->start_date = Carbon::now()->format("Y-m-d H:i");
+                $product->end_date = Carbon::createFromFormat('d-m-Y H:i', $end_date)->format("Y-m-d H:i");
                 $product->is_flash_sale = $is_flash_sale ? 1 : 0;
             } else {
                 $product->is_flash_sale = 0;

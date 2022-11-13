@@ -47,6 +47,9 @@ Route::group(['prefix' => 'review'], function () {
 Route::group(['prefix' => 'auth'], function () {
     Route::post('/register', [AuthRestController::class, 'register']);
     Route::post('/login', [AuthRestController::class, 'login']);
+    Route::post('/reset-password', [AuthRestController::class, 'resetPassword']);
+    Route::get('/validate-token', [AuthRestController::class, 'validateToken']);
+    Route::post('/change-password-with-token', [AuthRestController::class, 'changePassWordWithToken']);
 });
 
 Route::group(['prefix' => 'product'], function () {

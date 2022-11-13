@@ -47,6 +47,21 @@ class AuthService {
         let url = PREFIX_URL + "change-pass";
         return http.post(url, object, {alert: alert, redirectToLoginIfUnAuthen: true});
     };
+
+    changePassWithToken(object, alert) {
+        let url = PREFIX_URL + "change-password-with-token";
+        return http.post(url, object, {alert: alert});
+    };
+
+    forgotPasswordValidate(token, alert) {
+        let url = PREFIX_URL + "validate-token?token=" + token;
+        return http.get(url, {alert: alert});
+    };
+
+    resetPass(email, alert) {
+        let url = PREFIX_URL + "reset-password";
+        return http.post(url, {email: email}, {alert: alert});
+    };
 }
 
 export default new AuthService();

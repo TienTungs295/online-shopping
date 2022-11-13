@@ -67,6 +67,7 @@ class BaseCustomController extends Controller
                             'slug' => $product->slug,
                             'price' => $product->price,
                             'on_sale' => $product->on_sale,
+                            'is_out_of_stock' => $product->is_out_of_stock,
                             'sale_off' => $product->sale_off
                         ]]
                     );

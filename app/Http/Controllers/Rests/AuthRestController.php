@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Rests;
 
 use App\Http\Controllers\Controller;
 use App\Http\Responses\AjaxResponse;
-use App\Models\ProductCategory;
+use App\Jobs\SendMailResetPassword;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
-use Illuminate\Support\Facades\Auth;
 use App\Models\CustomerAccount;
+use Illuminate\Support\Str;
 use Validator;
 use Illuminate\Support\Facades\Hash;
 
@@ -169,6 +169,39 @@ class AuthRestController extends Controller
         return $ajax_response->setStatus(2)->setMessage("Cập nhật tài khoản thành công")->toApiResponse();
     }
 
+    public function changePassWordWithToken(Request $request)
+    {
+        $customer_account = CustomerAccount::where('token', $request->post("token"))->first();
+        $ajax_response = new AjaxResponse();
+        if ($customer_account == null)
+            return $ajax_response->setErrors(array("token" => "Token không chính xác hoặc đã hết hạn"))->toApiResponse();
+
+        $validator = Validator::make($request->all(),
+            [
+                'new_password' => 'required|string|min:8|max:50',
+                'confirm_new_password' => 'required|string|same:new_password',
+            ],
+            [
+                'new_password.required' => 'Mật khẩu không được phép bỏ trống',
+                'new_password.min' => 'Mật khẩu phải có tối thiểu 8 ký tự',
+                'new_password.max' => 'Mật khẩu không đươc phép vượt quá 50 ký tự',
+                'confirm_new_password.required' => 'Mật khẩu xác nhận không được phép bỏ trống',
+                'confirm_new_password.same' => 'Mật khẩu xác nhận không chính xác'
+            ]
+        );
+        $ajax_response = new AjaxResponse();
+        if (!Hash::check($request->post('old_password'), auth()->user()->password))
+            return $ajax_response->setErrors(array('old_password' => ['Mật khẩu hiện tại không chính xác']))->toApiResponse();
+
+        if ($validator->fails())
+            return $ajax_response->setErrors($validator->errors())->toApiResponse();
+
+        $customer_account->token = "";
+        $customer_account->password = bcrypt($request->post('new_password'));
+        $customer_account->update();
+        return $ajax_response->setStatus(2)->setMessage("Cập nhật mật khẩu thành công")->toApiResponse();
+    }
+
     public function update(Request $request)
     {
         $validator = Validator::make($request->all(),
@@ -198,6 +231,47 @@ class AuthRestController extends Controller
         $customer_account->address = $request->post('address');
         $customer_account->update();
         return $ajax_response->setData($customer_account)->setMessage("Cập nhật tài khoản thành công")->toApiResponse();
+    }
+
+
+    public function validateToken(Request $request)
+    {
+        $customer_account = CustomerAccount::where('token', $request->input('token'))->first();
+        $ajax_response = new AjaxResponse();
+        if ($customer_account == null)
+            return $ajax_response->setErrors(array("token" => "Link đặt lại mật khẩu hết hạn hoặc token không chính xác"))->toApiResponse();
+        return $ajax_response->setData(array("email" => $customer_account->email))->toApiResponse();
+    }
+
+    public function resetPassword(Request $request)
+    {
+        $validator = Validator::make($request->all(),
+            [
+                'email' => 'required|email',
+            ],
+            [
+                'email.required' => 'Email không được phép bỏ trống',
+                'email.email' => 'Email không hợp lệ'
+            ]
+        );
+
+        $ajax_response = new AjaxResponse();
+        if ($validator->fails()) {
+            return $ajax_response->setErrors($validator->errors())->toApiResponse();
+        }
+
+        $customer_account = CustomerAccount::where('email', $request->post('email'))->first();
+        if (!$customer_account) {
+            return $ajax_response->setErrors(array('email' => ['Email không tồn tại']))->toApiResponse();
+        }
+
+        $token = Str::random(60);
+
+        $customer_account->token = $token;
+        $customer_account->update();
+
+        SendMailResetPassword::dispatch($customer_account);
+        return $ajax_response->setData(array("message" => "Link lấy lại mật khẩu đã được gửi đến email của bạn"))->toApiResponse();
     }
 
     public function isAuthenticated(Request $request)
