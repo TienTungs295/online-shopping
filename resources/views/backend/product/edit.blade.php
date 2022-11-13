@@ -122,7 +122,7 @@
                                         <label class="form-label">Ngày bắt đầu</label>
                                         <div class="input-group">
                                             <input type="text" readonly id="start-date"
-                                                   value="{!! old('start_date', isset($product->start_date) ? date('d-m-Y', strtotime($product->start_date)): '')!!}"
+                                                   value="{!! old('start_date', isset($product->start_date) ? date('d-m-Y H:i:s', strtotime($product->start_date)): '')!!}"
                                                    class="form-control" style="background: #fff"
                                                    name="start_date"/>
                                             <span class="input-group-text"><i
@@ -133,7 +133,7 @@
                                         <label class="form-label">Ngày kết thúc</label>
                                         <div class="input-group">
                                             <input type="text" readonly id="end-date"
-                                                   value="{!! old('end_date', isset($product->end_date) ? date('d-m-Y', strtotime($product->end_date)) : '')!!}"
+                                                   value="{!! old('end_date', isset($product->end_date) ? date('d-m-Y H:i:s', strtotime($product->end_date)) : '')!!}"
                                                    class="form-control" style="background: #fff"
                                                    name="end_date"/>
                                             <span class="input-group-text"><i
@@ -300,6 +300,7 @@
         $(function () {
             $("#start-date").datetimepicker({
                 changeYear: true,
+                timeFormat: 'H:mm:ss',
                 showOn: 'focus',
                 showButtonPanel: true,
                 closeText: 'Xóa',
@@ -314,12 +315,13 @@
         $(function () {
             $("#end-date").datetimepicker({
                 changeYear: true,
+                timeFormat: 'H:mm:ss',
                 onSelect: function (date, datepicker) {
                     if (date == "") {
                         $("#is-flash-sale-block").addClass('dis-none');
+                        $("#is-flash-sale").prop('checked', false);
                     } else {
                         $("#is-flash-sale-block").removeClass('dis-none');
-                        $("#is-flash-sale").prop('checked', false);
                     }
                 },
                 showOn: 'focus',
@@ -327,7 +329,6 @@
                 closeText: 'Xóa',
                 onClose: function () {
                     var event = arguments.callee.caller.caller.arguments[0];
-                    console.log(event);
                     if ($(event.delegateTarget).hasClass('ui-datepicker-close')) {
                         $(this).val('');
                         $("#is-flash-sale").prop('checked', false);

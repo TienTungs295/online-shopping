@@ -95,17 +95,17 @@ class ProductController extends Controller
                 $end_date = $request->input('end_date');
                 $is_flash_sale = $request->has('is_flash_sale');
                 if (!empty($start_date) && !empty($end_date)) {
-                    $start_date = Carbon::createFromFormat('d-m-Y H:i', $start_date)->timestamp;
-                    $end_date = Carbon::createFromFormat('d-m-Y H:i', $end_date)->timestamp;
-                    if ($start_date > $end_date) return redirect()->back()->with('error', 'Ngày kết thúc phải lớn hơn ngày bắt đầu');
+                    $start_date_to_time_stamp = Carbon::createFromFormat('d-m-Y H:i:s', $start_date)->timestamp;
+                    $end_date_to_time_stamp = Carbon::createFromFormat('d-m-Y H:i:s', $end_date)->timestamp;
+                    if ($start_date_to_time_stamp > $end_date_to_time_stamp) return redirect()->back()->with('error', 'Ngày kết thúc phải lớn hơn ngày bắt đầu');
                 }
                 if (!empty($start_date)) {
-                    $product->start_date = Carbon::createFromFormat('d-m-Y H:i', $start_date)->format("Y-m-d H:i");
+                    $product->start_date = Carbon::createFromFormat('d-m-Y H:i:s', $start_date)->format("Y-m-d H:i:s");
                 }
                 if (!empty($end_date)) {
                     if ($product->start_date == null)
-                        $product->start_date = Carbon::now()->format("Y-m-d H:i");
-                    $product->end_date = Carbon::createFromFormat('d-m-Y H:i', $end_date)->format("Y-m-d H:i");
+                        $product->start_date = Carbon::now()->format("Y-m-d H:i:s");
+                    $product->end_date = Carbon::createFromFormat('d-m-Y H:i:s', $end_date)->format("Y-m-d H:i:s");
                     $product->is_flash_sale = $is_flash_sale ? 1 : 0;
                 }
             }
@@ -271,19 +271,19 @@ class ProductController extends Controller
             $end_date = $request->input('end_date');
             $is_flash_sale = $request->has('is_flash_sale');
             if (!empty($start_date) && !empty($end_date)) {
-                $start_date = Carbon::createFromFormat('d-m-Y H:i', $start_date)->timestamp;
-                $end_date = Carbon::createFromFormat('d-m-Y H:i', $end_date)->timestamp;
-                if ($start_date > $end_date) return redirect()->back()->with('error', 'Ngày kết thúc phải lớn hơn ngày bắt đầu');
+                $start_date_to_time_stamp = Carbon::createFromFormat('d-m-Y H:i:s', $start_date)->timestamp;
+                $end_date_to_time_stamp = Carbon::createFromFormat('d-m-Y H:i:s', $end_date)->timestamp;
+                if ($start_date_to_time_stamp > $end_date_to_time_stamp) return redirect()->back()->with('error', 'Ngày kết thúc phải lớn hơn ngày bắt đầu');
             }
             if (!empty($start_date)) {
-                $product->start_date = Carbon::createFromFormat('d-m-Y H:i', $start_date)->format("Y-m-d H:i");
+                $product->start_date = Carbon::createFromFormat('d-m-Y H:i:s', $start_date)->format("Y-m-d H:i:s");
             } else {
                 $product->start_date = null;
             }
             if (!empty($end_date)) {
                 if ($product->start_date == null)
-                    $product->start_date = Carbon::now()->format("Y-m-d H:i");
-                $product->end_date = Carbon::createFromFormat('d-m-Y H:i', $end_date)->format("Y-m-d H:i");
+                    $product->start_date = Carbon::now()->format("Y-m-d H:i:s");
+                $product->end_date = Carbon::createFromFormat('d-m-Y H:i:s', $end_date)->format("Y-m-d H:i:s");
                 $product->is_flash_sale = $is_flash_sale ? 1 : 0;
             } else {
                 $product->is_flash_sale = 0;

@@ -79,9 +79,16 @@ class OrderRestController extends BaseCustomController
             array_push($product_ids, $item->id);
         }
 
-//        $products = Product::whereIn('id', $product_ids)->where(function ($query) {
-//            $query
-//        });
+        $exist_out_of_stock_product_count = Product::whereIn('id', $product_ids)->where(function ($query) {
+            $query->orWhere('stock_status', 0);
+            $query->orWhere(function ($query) {
+                $query->where('stock_status', null)
+                    ->where('quantity', 0)
+                    ->where('allow_checkout_when_out_of_stock', 0);
+            });
+        })->count();
+        if ($exist_out_of_stock_product_count > 0)
+            return $ajax_response->setMessage("Một số sản phẩm đã hết hàng, vui lòng cập nhật lại giỏ hàng!")->toApiResponse();
 
         // Order Address
         $order_address = new OrderAddress();
@@ -112,6 +119,11 @@ class OrderRestController extends BaseCustomController
         $order->payment_method = $payment_method;
         $order->shipping_fee = $data["shippingFee"];
 
+//        if ($product->with_storehouse_management == 1 && $product->quantity > 0) {
+//            $product->quantity = $product->quantity - 1;
+//            $product->update();
+//        }
+
         DB::beginTransaction();
         try {
             $order->save();
@@ -122,6 +134,19 @@ class OrderRestController extends BaseCustomController
             DB::rollback();
             throw $e;
         }
+
+        try {
+            foreach ($order_products as $order_product) {
+                $product_db = Product::find($order_product->product_id);
+                if ($product_db->with_storehouse_management == 1 && $product_db->quantity > 0) {
+                    $quantity = $product_db->quantity - $order_product->quantity;
+                    $product_db->quantity = $quantity < 0 ? 0 : $quantity;
+                }
+            }
+        } catch (\Exception $e) {
+
+        }
+
         Cart::instance('cart')->destroy();
         session()->forget(self::$CODE);
 

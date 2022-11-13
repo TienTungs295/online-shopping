@@ -68,7 +68,7 @@ class Product extends Model
         'is_flash_sale',
     ];
 
-    protected $appends = ['real_price', 'on_sale', 'sale_off', 'max_rating', 'end_date_time_stamp', 'in_progress_range', 'max_range', 'is_out_of_stock'];
+    protected $appends = ['real_price', 'on_sale', 'sale_off', 'max_rating', 'start_date_time_stamp', 'in_progress_range', 'max_range', 'is_out_of_stock'];
 
 
     public function getRealPriceAttribute()
@@ -124,7 +124,7 @@ class Product extends Model
     {
         $value = null;
         if ($this->end_date != null) {
-            $value = time() - $this->start_date->getTimestamp();
+            $value = time() - strtotime($this->start_date);
             if ($value < 0) return 0;
         }
         return $value;
@@ -134,15 +134,15 @@ class Product extends Model
     {
         $value = null;
         if ($this->end_date != null) {
-            $value = $this->end_date->getTimestamp() - $this->start_date->getTimestamp();
+            $value = strtotime($this->end_date) - strtotime($this->start_date);
             if ($value < 0) return 0;
         }
         return $value;
     }
 
-    public function getEndFlashSaleAttribute()
+    public function getStartDateTimeStampAttribute()
     {
-        if ($this->end_date != null) return $this->start_date->getTimestamp();
+        if ($this->start_date != null) return strtotime($this->start_date);
         return null;
     }
 

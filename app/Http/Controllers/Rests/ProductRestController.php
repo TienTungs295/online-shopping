@@ -283,8 +283,8 @@ class ProductRestController extends Controller
         $ajax_response = new AjaxResponse();
         $current_time = Carbon::now();
         $products = Product::where('is_flash_sale', 1)
-            ->where('start_date', '>=', $current_time)
-            ->where('end_date', '<=', $current_time)
+            ->where('start_date', '<=', $current_time)
+            ->where('end_date', '>=', $current_time)
             ->orderBy('updated_at', 'DESC')->take(12)->get();
         return $ajax_response->setData($products)->toApiResponse();
     }

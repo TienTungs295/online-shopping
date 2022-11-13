@@ -46,10 +46,6 @@ class CartRestController extends BaseCustomController
             'on_sale' => $product->on_sale,
             'sale_off' => $product->sale_off
         ]]);
-        if ($product->with_storehouse_management == 1 && $product->quantity > 0) {
-            $product->quantity = $product->quantity - 1;
-            $product->update();
-        }
         return $ajax_response->setData($cart)->setMessage("Thêm " . ($qty > 1 ? $qty . " " : "") . $product->name . " vào giỏ hàng thành công!")->toApiResponse();
     }
 

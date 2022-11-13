@@ -56,10 +56,8 @@
                                     </div>
                                 </div>
                                 <div class="deal_progress">
-                                    <!--                                    <span class="stock-sold">Already Sold: <strong>4</strong></span>-->
-                                    <!--                                    <span class="stock-available">Available: <strong>22</strong></span>-->
-                                    count_down_value:{{item.count_down_value}}
-                                        <b-progress :value="item.count_down_value" :max="100" show-progress animated></b-progress>
+                                    <b-progress :value="item.in_progress_range" :max="item.max_range" show-progress
+                                                animated></b-progress>
                                 </div>
                                 <div class="countdown_time countdown_style4 mb-4"
                                      data-days-text="Ngày" data-hours-text="Giờ" data-minutes-text="Phút"
@@ -100,10 +98,9 @@ export default {
                 this.products = response || [];
                 this.timer = setInterval(() => {
                     this.products.forEach(item => {
-                        // item["current_time_stamp"] = new Date().getTime() / 100;
-                        console.log(item);
+                        item["in_progress_range"] = Math.floor(Date.now() / 1000) - item["start_date_time_stamp"];
                     });
-                }, 2000);
+                }, 30000);
                 this.isLoading = false;
             }).catch(e => {
                 this.isLoading = false;
