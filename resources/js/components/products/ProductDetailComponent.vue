@@ -84,7 +84,7 @@
                                                 <li v-for="review in reviews"
                                                     :class="review.status ==1 ? 'o-05':''">
                                                     <div class="comment_img">
-                                                        <img src="assets/images/user1.jpg" alt="user1"/>
+                                                        <img src="/assets/images/default/default-user-image.png" alt="user1"/>
                                                     </div>
                                                     <div class="comment_block">
                                                         <div class="rating_wrap">

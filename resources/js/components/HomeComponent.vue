@@ -8,10 +8,10 @@
                 controls
                 fade>
                 <b-carousel-slide
-                    img-src="assets/images/banner/construction.jpg">
+                    img-src="/assets/images/banner/construction.jpg">
                 </b-carousel-slide>
                 <b-carousel-slide
-                    img-src="assets/images/banner/solar_power.jpg">
+                    img-src="/assets/images/banner/solar_power.jpg">
                 </b-carousel-slide>
             </b-carousel>
         </div>
