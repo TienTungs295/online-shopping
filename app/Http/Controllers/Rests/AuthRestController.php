@@ -277,7 +277,7 @@ class AuthRestController extends Controller
         $customer_account->token = $token;
         $customer_account->token_gen_at = Carbon::now();
         $customer_account->update();
-
+        $customer_account->forgot_password_url = url('doi-mat-khau/' . $token);
         SendMailResetPassword::dispatch($customer_account);
         return $ajax_response->setData(array("email" => $customer_account->email))->toApiResponse();
     }

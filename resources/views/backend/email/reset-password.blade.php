@@ -66,11 +66,11 @@
 
                                     <p style="text-align: center;">
                                         <a style="cursor: pointer"
-                                           href="http://127.0.0.1:8000/doi-mat-khau/123123123213"
+                                           href="{!! $customer_account->forgot_password_url !!}"
                                            class="btn">Đặt lại mật khẩu</a>
                                     </p>
 
-                                    <p style="margin:100px 0 12px 0;font-size:14px;font-family:Arial,sans-serif;">
+                                    <p style="margin:35px 0 12px 0;font-size:14px;font-family:Arial,sans-serif;">
                                         Nếu không phải bạn. Vui lòng bỏ qua email này
                                         <br>
                                         Xin chân thành cảm ơn! </p>
