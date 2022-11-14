@@ -2,13 +2,13 @@
     <div class="row">
         <div class="col-lg-6 mb-4 mb-lg-0">
             <div class="detail-slider">
-
                 <swiper class="swiper gallery-top" :options="swiperOptionTop" ref="swiperTop">
                     <swiper-slide v-for="item in product.images" v-bind:key="item.id">
                         <img :src="'/uploads/images/'+item.image" :alt="item.image"/>
                     </swiper-slide>
                 </swiper>
-                <swiper class="swiper gallery-thumbs" :options="swiperOptionThumbs" ref="swiperThumbs">
+                <swiper :class="product.images.length<=1 ? 'dis-none' :''" class="swiper gallery-thumbs"
+                        :options="swiperOptionThumbs" ref="swiperThumbs">
                     <swiper-slide v-for="item in product.images" v-bind:key="item.id">
                         <img :src="'/uploads/images/'+item.image" :alt="item.image"/>
                     </swiper-slide>
@@ -47,12 +47,12 @@
                                      v-bind:padding="1"
                                      v-bind:read-only="true">
                         </star-rating>
-                        <span class="rating_num">({{product.max_rating.total}})</span>
+                        <span class="rating_num">({{ product.max_rating.total }})</span>
                     </div>
                     <div class="pr_desc" v-if="product.description">
                         <p>{{ product.description }}</p>
                     </div>
-                    <div  class="text-danger fw-bold" v-if="product.is_out_of_stock">Hết hàng</div>
+                    <div class="text-danger fw-bold" v-if="product.is_out_of_stock">Hết hàng</div>
                 </div>
                 <hr/>
                 <div class="cart_extra">
@@ -76,11 +76,13 @@
                         </div>
                         <br>
                         <div class="cart_btn mgb-10">
-                            <button class="btn btn-fill-out btn-addtocart rounded-0 mgr-10 mgb-10" type="button" :disabled="product.is_out_of_stock"
+                            <button class="btn btn-fill-out btn-addtocart rounded-0 mgr-10 mgb-10" type="button"
+                                    :disabled="product.is_out_of_stock"
                                     @click="addToCart(product.id,cart.qty)">
                                 <i class="icon-basket-loaded"></i> Thêm vào giỏ
                             </button>
-                            <button class="btn btn-fill-line view-cart rounded-0 mgl-0-i mgb-10" type="button" :disabled="product.is_out_of_stock"
+                            <button class="btn btn-fill-line view-cart rounded-0 mgl-0-i mgb-10" type="button"
+                                    :disabled="product.is_out_of_stock"
                                     @click="buyNow(product.id,cart.qty)"><i
                                 class="icon-basket-loaded"></i> Mua ngay
                             </button>
@@ -125,18 +127,19 @@ export default {
     data() {
         return {
             swiperOptionTop: {
-                loop: true,
+                loop: this.product.images.length > 1,
                 loopedSlides: (this.product.images.length > 3 ? 3 : this.product.images.length), // looped slides should be the same
                 spaceBetween: 8,
                 effect: 'fade',
             },
             swiperOptionThumbs: {
-                loop: true,
+                loop: this.product.images.length > 1,
                 loopedSlides: (this.product.images.length > 3 ? 3 : this.product.images.length), // looped slides should be the same
                 spaceBetween: 8,
                 slidesPerView: (this.product.images.length > 3 ? 3 : this.product.images.length),
                 touchRatio: 0.2,
-                slideToClickedSlide: true
+                slideToClickedSlide: true,
+                centeredSlides: this.product.images.length <= 1
             },
             cart: {
                 qty: 1
@@ -209,9 +212,6 @@ export default {
         },
     },
     mounted() {
-        if (this.product.images.length <= 1) {
-            this.swiperOptionThumbs.centeredSlides = true;
-        }
         this.swiperTop.controller.control = this.swiperThumbs;
         this.swiperThumbs.controller.control = this.swiperTop;
     }

@@ -102,6 +102,10 @@
     font-weight: bold;
 }
 
+.border-ccc{
+    border: 1px solid #ccc;
+}
+
 @for $i from 0 through 20 {
     .mg-#{$i * 5} {
         margin: #{$i * 5}px;

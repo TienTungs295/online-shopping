@@ -52,7 +52,6 @@
                                     <div v-else
                                          style="position: relative; display: inline-flex;vertical-align: middle;">
                                         <router-link :to="{ name: 'login'}" class="light-color-i">
-                                            <i class="ti-user mgr-5" style="font-size: 14px"></i>
                                             <span class="position-relative" style="bottom: 2px">Đăng nhập/Đăng ký</span>
                                         </router-link>
                                     </div>

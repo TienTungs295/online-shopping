@@ -28,8 +28,10 @@
         <div class="main_content">
 
             <!-- START SECTION SHOP -->
-            <div class="section pdt-30-i pdb-30-i">
-                <div class="container">
+            <div class="section pdt-50-i pdb-50-i">
+                <div class="container position-relative">
+                    <loading-component v-bind:loading="isLoading"
+                                       v-bind:center="true"></loading-component>
                     <div class="row">
                         <div class="col-12">
                             <div class="table-responsive shop_cart_table" v-if="cartCount > 0">
@@ -49,7 +51,7 @@
                                         <td class="product-thumbnail">
                                             <router-link
                                                 :to="{ name: 'productDetail', params: { slug: item.options.slug,id:item.id }}">
-                                                <img :src="'/uploads/images/'+item.options.image"
+                                                <img class="border-ccc" :src="'/uploads/images/'+item.options.image"
                                                      :alt="item.options.image">
                                             </router-link>
                                         </td>
@@ -58,7 +60,8 @@
                                                 :to="{ name: 'productDetail', params: { slug: item.options.slug,id:item.id }}">
                                                 {{ item.name }}
                                             </router-link>
-                                            <span v-if="item.options.is_out_of_stock" class="text-danger">(Hết hàng)</span>
+                                            <span v-if="item.options.is_out_of_stock"
+                                                  class="text-danger">(Hết hàng)</span>
                                         </td>
                                         <td class="product-price" data-title="Giá">
                                             <span class="price">{{ item.price | commaFormat }}</span>
@@ -130,7 +133,9 @@
                                     </tfoot>
                                 </table>
                             </div>
-                            <div v-else class="text-center">Không có sản phẩm nào trong giỏ hàng</div>
+                            <div v-if="cartCount == 0 && !isLoading" class="text-center">Không có sản phẩm nào trong giỏ
+                                hàng
+                            </div>
                         </div>
                     </div>
                     <div class="row" v-if="cartCount > 0">
@@ -214,17 +219,21 @@ export default {
     },
     methods: {
         remove: function (id) {
+            this.isLoading = true;
             let params = {
                 row_id: id
             }
             CartService.remove(params, true).then(response => {
                 let data = response || {};
                 this.buildData(data);
+                this.isLoading = false;
             }).catch(e => {
+                this.isLoading = false;
             });
         },
 
         findAll() {
+            this.isLoading = true;
             CartService.findAll().then(response => {
                 let data = response || {};
                 this.buildData(data);
@@ -235,29 +244,38 @@ export default {
         },
 
         update: function (cart) {
+            this.isLoading = true;
             let params = {
                 cart: cart
             }
             CartService.update(params, true).then(response => {
                 let data = response || {};
                 this.buildData(data);
+                this.isLoading = false;
             }).catch(e => {
+                this.isLoading = false;
             });
         },
         applyCoupon: function () {
+            this.isLoading = true;
             CartService.applyCoupon({code: this.code}, true).then(response => {
                 let data = response || {};
                 this.buildData(data);
+                this.isLoading = false;
             }).catch(e => {
+                this.isLoading = false;
             });
         },
 
         removeCoupon: function () {
+            this.isLoading = true;
             CartService.removeCoupon(true).then(response => {
                 let data = response || {};
                 this.buildData(data);
                 this.code = "";
+                this.isLoading = false;
             }).catch(e => {
+                this.isLoading = false;
             });
         },
 

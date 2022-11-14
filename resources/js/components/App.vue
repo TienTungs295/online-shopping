@@ -17,7 +17,7 @@ export default {
                 }).catch(response => {
 
                 });
-            }, 60000);
+            }, 300000);
         }
     },
     mounted() {

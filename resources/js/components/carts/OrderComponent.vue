@@ -26,63 +26,15 @@
         <!-- END SECTION BREADCRUMB -->
 
         <!-- START MAIN CONTENT -->
-        <div class="main_content">
-
+        <div class="main_content position-relative">
+            <loading-component v-bind:loading="isLoading"
+                               v-bind:center="true"></loading-component>
             <!-- START SECTION SHOP -->
-            <div class="section pdt-30-i pdb-30-i">
-                <div v-if="cartCount > 0 || isOrderSuccessful" class="container">
+            <div class="section pdt-50-i pdb-50-i">
+                <div v-if="cartCount > 0 && !isOrderSuccessful" class="container">
                     <div class="row">
                         <div class="col-lg-6 mgb-50 pdt-30">
-                            <div v-if="isOrderSuccessful">
-                                <div class="thank-you mgb-20">
-                                    <i class="fa fa-check-circle" aria-hidden="true"></i>
-                                    <div class="d-inline-block">
-                                        <h4 class="thank-you-sentence">
-                                            Đơn đặt hàng đã thành công
-                                        </h4>
-                                        <p>Cảm ơn quý khách đã mua hàng!</p>
-                                    </div>
-                                </div>
-
-                                <div class="order-customer-info mgb-40">
-                                    <h4 class="mgb-20">Thông tin khách hàng</h4>
-                                    <p>
-                                        <span class="d-inline-block">Họ & tên:</span>
-                                        <span class="order-customer-info-meta">{{ order_information.name }}</span>
-                                    </p>
-                                    <p>
-                                        <span class="d-inline-block">Số điện thoại:</span>
-                                        <span class="order-customer-info-meta">{{ order_information.phone }}</span>
-                                    </p>
-                                    <p>
-                                        <span class="d-inline-block">Email:</span>
-                                        <span class="order-customer-info-meta">{{ order_information.email }}</span>
-                                    </p>
-                                    <p>
-                                        <span class="d-inline-block">Địa chỉ:</span>
-                                        <span
-                                            class="order-customer-info-meta">{{
-                                                order_information.address
-                                            }}, {{ order_information.ward_name }}, {{
-                                                order_information.district_name
-                                            }}, {{ order_information.province_name }}</span>
-                                    </p>
-
-                                    <p>
-                                        <span class="d-inline-block">Phương thức thanh toán:</span>
-                                        <span class="order-customer-info-meta">
-                                            <span v-if="order_information.payment_method == 1">Chuyển khoản</span>
-                                            <span v-if="order_information.payment_method == 2">Thanh toán khi nhận hàng (COD)</span>
-                                        </span>
-                                    </p>
-
-                                </div>
-                                <router-link class="btn btn-fill-out rounded-0 staggered-animation text-uppercase"
-                                             :to="{ name: 'home'}">
-                                    Tiếp tục mua hàng
-                                </router-link>
-                            </div>
-                            <div v-else>
+                            <div>
                                 <div class="heading_s1">
                                     <h4>Thông tin nhận hàng</h4>
                                 </div>
@@ -202,14 +154,15 @@
                                     <div class="row cart-item" v-for="(item, key) in cart">
                                         <div class="col-3">
                                             <div class="checkout-product-img-wrapper">
-                                                <img :src="'/uploads/images/'+item.options.image"
+                                                <img class="border-ccc" :src="'/uploads/images/'+item.options.image"
                                                      :alt="item.options.image">
                                                 <span class="checkout-quantity">{{ item.qty }}</span>
                                             </div>
                                         </div>
                                         <div class="col-5 ">
                                             <p class="mb-0 gray-color">{{ item.name }}
-                                                <span v-if="item.options.is_out_of_stock" class="text-danger">(Hết hàng)</span>
+                                                <span v-if="item.options.is_out_of_stock"
+                                                      class="text-danger">(Hết hàng)</span>
                                             </p>
                                         </div>
                                         <div class="col-4 text-right">
@@ -325,7 +278,65 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center container" v-else>Không có sản phẩm nào trong giỏ hàng</div>
+                <div class="container" v-if="isOrderSuccessful">
+                    <div class="row">
+                        <div class="col-12 mgb-50 pdt-30 text-center">
+                            <div class="d-inline-block">
+                                <div class="thank-you mgb-20 text-left">
+                                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                    <div class="d-inline-block">
+                                        <h4 class="thank-you-sentence">
+                                            Đơn đặt hàng đã thành công
+                                        </h4>
+                                        <p>Cảm ơn quý khách đã mua hàng!</p>
+                                    </div>
+                                </div>
+                                <div class="order-customer-info mgb-40 text-left">
+                                    <h4 class="mgb-20">Thông tin khách hàng</h4>
+                                    <p>
+                                        <span class="d-inline-block">Họ & tên:</span>
+                                        <span class="order-customer-info-meta">{{ order_information.name }}</span>
+                                    </p>
+                                    <p>
+                                        <span class="d-inline-block">Số điện thoại:</span>
+                                        <span class="order-customer-info-meta">{{ order_information.phone }}</span>
+                                    </p>
+                                    <p>
+                                        <span class="d-inline-block">Email:</span>
+                                        <span class="order-customer-info-meta">{{ order_information.email }}</span>
+                                    </p>
+                                    <p>
+                                        <span class="d-inline-block">Địa chỉ:</span>
+                                        <span
+                                            class="order-customer-info-meta">{{
+                                                order_information.address
+                                            }}, {{ order_information.ward_name }}, {{
+                                                order_information.district_name
+                                            }}, {{ order_information.province_name }}</span>
+                                    </p>
+
+                                    <p>
+                                        <span class="d-inline-block">Phương thức thanh toán:</span>
+                                        <span class="order-customer-info-meta">
+                                            <span v-if="order_information.payment_method == 1">Chuyển khoản</span>
+                                            <span v-if="order_information.payment_method == 2">Thanh toán khi nhận hàng (COD)</span>
+                                        </span>
+                                    </p>
+
+                                </div>
+                                <div class="text-left">
+                                    <router-link class="btn btn-fill-out rounded-0 staggered-animation text-uppercase"
+                                                 :to="{ name: 'home'}">
+                                        Tiếp tục mua hàng
+                                    </router-link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center container" v-if="cartCount == 0 && !isLoading && !isOrderSuccessful">Không có
+                    sản phẩm nào trong giỏ hàng
+                </div>
             </div>
             <!-- END SECTION SHOP -->
 
@@ -361,7 +372,8 @@ export default {
             isOrderSuccessful: false,
             provinces: {},
             districts: {},
-            wards: {}
+            wards: {},
+            isLoading: true
         };
     },
     computed: {
@@ -383,6 +395,7 @@ export default {
     },
     methods: {
         checkOut() {
+            this.isLoading = true;
             this.order.subTotal = this.subTotal;
             OrderService.checkOut(this.order, true).then(response => {
                 this.isOrderSuccessful = true;
@@ -395,6 +408,7 @@ export default {
             });
         },
         findAllCart() {
+            this.isLoading = true;
             CartService.findAll().then(response => {
                 let data = response || {};
                 this.buildData(data);

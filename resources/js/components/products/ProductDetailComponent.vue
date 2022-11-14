@@ -41,97 +41,108 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="tab-style3">
-                                <b-tabs content-class="mt-3">
-                                    <b-tab title="Mô tả" active><p v-html="product.description"></p></b-tab>
-                                    <b-tab v-bind:title="'Đánh giá ('+totalReviews+')'">
-                                        <div class="review_form field_form mgb-20">
-                                            <h5>Thêm mới đánh giá</h5>
-                                            <p v-if="userProfile == null" class="text-danger">Vui lòng
-                                                <router-link :to="{ name: 'login'}">
-                                                    Đăng nhập
-                                                </router-link>
-                                                để đánh giá!
-                                            </p>
-                                            <form class="row mt-3">
-                                                <div class="form-group col-12">
-                                                    <star-rating v-model="star"
-                                                                 v-bind:show-rating="false"
-                                                                 v-bind:star-size="18"
-                                                                 v-bind:border-color="'#F6BC3E'"
-                                                                 v-bind:inactive-color="'#FFFFFF'"
-                                                                 v-bind:active-color="'#F6BC3E'"
-                                                                 v-bind:border-width="3"
-                                                                 v-bind:padding="1">
-                                                    </star-rating>
-                                                </div>
-                                                <div class="form-group col-12">
+                                <div>
+                                    <div class="heading_tab_header">
+                                        <div class="heading_s2">
+                                            <h6 class="text-uppercase">Mô tả</h6>
+                                        </div>
+                                    </div>
+                                    <p v-html="product.description"></p>
+                                </div>
+
+                                <div>
+                                    <div class="heading_tab_header">
+                                        <div class="heading_s2">
+                                            <h6 class="text-uppercase">Đánh giá ({{totalReviews}})</h6>
+                                        </div>
+                                    </div>
+                                    <div class="review_form field_form mgb-20">
+                                        <h5>Thêm mới đánh giá</h5>
+                                        <p v-if="userProfile == null" class="text-danger">Vui lòng
+                                            <router-link :to="{ name: 'login'}">
+                                                Đăng nhập
+                                            </router-link>
+                                            để đánh giá!
+                                        </p>
+                                        <form class="row mt-3">
+                                            <div class="form-group col-12">
+                                                <star-rating v-model="star"
+                                                             v-bind:show-rating="false"
+                                                             v-bind:star-size="18"
+                                                             v-bind:border-color="'#F6BC3E'"
+                                                             v-bind:inactive-color="'#FFFFFF'"
+                                                             v-bind:active-color="'#F6BC3E'"
+                                                             v-bind:border-width="3"
+                                                             v-bind:padding="1">
+                                                </star-rating>
+                                            </div>
+                                            <div class="form-group col-12">
                                                     <textarea placeholder="Đánh giá của bạn"
                                                               :disabled="userProfile == null"
                                                               v-model="comment"
                                                               class="form-control" rows="4"></textarea>
+                                            </div>
+                                            <div class="form-group col-12">
+                                                <button type="button" class="btn btn-fill-out rounded-0"
+                                                        @click="review()">
+                                                    Đánh giá
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="comments">
+                                        <h5 class="product_tab_title">{{ totalReviews }} Đánh giá cho sản phẩm</h5>
+                                        <ul class="list_none comment_list mt-4">
+                                            <li v-for="review in reviews"
+                                                :class="review.status ==1 ? 'o-05':''">
+                                                <div class="comment_img">
+                                                    <img src="/assets/images/default/default-user-image.png" alt="user"/>
                                                 </div>
-                                                <div class="form-group col-12">
-                                                    <button type="button" class="btn btn-fill-out rounded-0"
-                                                            @click="review()">
-                                                        Đánh giá
-                                                    </button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="comments">
-                                            <h5 class="product_tab_title">{{ totalReviews }} Đánh giá cho sản phẩm</h5>
-                                            <ul class="list_none comment_list mt-4">
-                                                <li v-for="review in reviews"
-                                                    :class="review.status ==1 ? 'o-05':''">
-                                                    <div class="comment_img">
-                                                        <img src="/assets/images/default/default-user-image.png" alt="user1"/>
-                                                    </div>
-                                                    <div class="comment_block">
-                                                        <div class="rating_wrap">
-                                                            <star-rating v-model="review.star"
-                                                                         v-bind:show-rating="false"
-                                                                         v-bind:star-size="10"
-                                                                         v-bind:border-color="'#F6BC3E'"
-                                                                         v-bind:inactive-color="'#FFFFFF'"
-                                                                         v-bind:active-color="'#F6BC3E'"
-                                                                         v-bind:border-width="1"
-                                                                         v-bind:padding="1"
-                                                                         v-bind:read-only="true">
-                                                            </star-rating>
-                                                            <div class="text-right" v-if="review.owner">
-                                                                <a class="link-hover gray-8-color" title="Xóa"
-                                                                   @click="remove(review.id)"><i
-                                                                    class="fa fa-times" aria-hidden="true"></i></a>
-                                                            </div>
+                                                <div class="comment_block">
+                                                    <div class="rating_wrap">
+                                                        <star-rating v-model="review.star"
+                                                                     v-bind:show-rating="false"
+                                                                     v-bind:star-size="10"
+                                                                     v-bind:border-color="'#F6BC3E'"
+                                                                     v-bind:inactive-color="'#FFFFFF'"
+                                                                     v-bind:active-color="'#F6BC3E'"
+                                                                     v-bind:border-width="1"
+                                                                     v-bind:padding="1"
+                                                                     v-bind:read-only="true">
+                                                        </star-rating>
+                                                        <div class="text-right" v-if="review.owner">
+                                                            <a class="link-hover gray-8-color" title="Xóa"
+                                                               @click="remove(review.id)"><i
+                                                                class="fa fa-times" aria-hidden="true"></i></a>
                                                         </div>
-                                                        <p class="customer_meta">
+                                                    </div>
+                                                    <p class="customer_meta">
                                                             <span
                                                                 class="review_author">{{ review.customer_name }}</span>
-                                                            <span
-                                                                class="comment-date">{{
-                                                                    review.created_at | dateTimeFormat
-                                                                }}</span>
-                                                        </p>
-                                                        <div class="description">
-                                                            <p>{{ review.comment }}</p>
-                                                        </div>
-                                                        <div v-if="review.status == 1" class="text-danger">Đang chờ phê
-                                                            duyệt
-                                                        </div>
+                                                        <span
+                                                            class="comment-date">{{
+                                                                review.created_at | dateTimeFormat
+                                                            }}</span>
+                                                    </p>
+                                                    <div class="description">
+                                                        <p>{{ review.comment }}</p>
                                                     </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="form-group col-12 text-center">
-                                            <button type="button" v-if="hasMorePage && !isLoadingReview"
-                                                    style="padding: 10px 28px"
-                                                    class="btn btn-line-fill btn-sm rounded-0"
-                                                    @click="paginate()"> Xem thêm
-                                            </button>
-                                        </div>
-                                        <loading-component v-bind:loading="isLoadingReview"></loading-component>
-                                    </b-tab>
-                                </b-tabs>
+                                                    <div v-if="review.status == 1" class="text-danger">Đang chờ phê
+                                                        duyệt
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="form-group col-12 text-center">
+                                        <button type="button" v-if="hasMorePage && !isLoadingReview"
+                                                style="padding: 10px 28px"
+                                                class="btn btn-line-fill btn-sm rounded-0"
+                                                @click="paginate()"> Xem thêm
+                                        </button>
+                                    </div>
+                                    <loading-component v-bind:loading="isLoadingReview"></loading-component>
+                                </div>
                             </div>
                         </div>
                     </div>

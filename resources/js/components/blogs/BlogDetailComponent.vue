@@ -6,7 +6,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="page-title">
-                            <h1>Thông tin bài viết</h1>
+                            <h1>Tin tức & sự kiện</h1>
                         </div>
                     </div>
                     <div class="col-md-6">
