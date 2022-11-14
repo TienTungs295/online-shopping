@@ -1,5 +1,5 @@
 <template>
-    <div class="product">
+    <div class="product style-1">
         <div class="product_img style-1">
             <router-link
                 :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
@@ -25,13 +25,13 @@
                 {{label.name}}
             </span>
             <span class="pr_flash" v-if="item.is_out_of_stock" style="background-color: #000">Hết hàng</span>
-            <h6 class="product_title">
+            <h6 class="product_title mgb-5">
                 <router-link
                     :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
                     {{ item.name }}
                 </router-link>
             </h6>
-            <div class="product_price">
+            <div class="product_price mgb-5">
                 <div v-if="item.is_contact">
                     <span class="price">Liên hệ</span>
                 </div>

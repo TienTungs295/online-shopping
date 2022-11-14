@@ -49,7 +49,7 @@
                               </div>
                               <div class="contact_text">
                                   <span>Email</span>
-                                  <a href="mailto:info@sitename.com">info@yourmail.com </a>
+                                  <a href="mailto:dinhduyduy@gmail.com">dinhduyduy@gmail.com</a>
                               </div>
                           </div>
                       </div>

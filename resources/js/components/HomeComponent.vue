@@ -131,7 +131,7 @@
                             <div class="shopping_info border-0">
                                 <div class="row justify-content-center pdt-55 pdb-50">
                                     <div class="col-md-4 icon-box-inner">
-                                        <div class="icon_box icon_box_style2 pdl-20-i">
+                                        <div class="icon_box icon_box_style2">
                                             <div class="icon">
                                                 <i class="flaticon-shipped"></i>
                                             </div>
@@ -212,7 +212,7 @@
                         <div class="row justify-content-center">
                             <div class="col-md-6">
                                 <div class="heading_s1 text-center">
-                                    <h4 class="light-color">Ý kiến khách hàng!</h4>
+                                    <h5 class="light-color">Ý kiến khách hàng!</h5>
                                 </div>
                             </div>
                         </div>
@@ -231,8 +231,8 @@
                                         </div>
                                         <div class="author_wrap">
                                             <div class="author_name text-center">
-                                                <h6 class="__name">Mr. Thắng</h6>
-                                                <span>Công nhân</span>
+                                                <h6 class="__name">Anh Vũ</h6>
+                                                <span>Bác sĩ</span>
                                             </div>
                                         </div>
                                     </div>
@@ -244,7 +244,7 @@
                                         </div>
                                         <div class="author_wrap">
                                             <div class="author_name text-center">
-                                                <h6 class="__name">Ms. Hà</h6>
+                                                <h6 class="__name">Chị Hà</h6>
                                                 <span>Nhân viên kinh doanh</span>
                                             </div>
                                         </div>
@@ -257,7 +257,7 @@
                                         </div>
                                         <div class="author_wrap">
                                             <div class="author_name text-center">
-                                                <h6 class="__name">Mr. Minh</h6>
+                                                <h6 class="__name">Anh Minh</h6>
                                                 <span>Kỹ sư xây dựng</span>
                                             </div>
                                         </div>
@@ -304,7 +304,7 @@
                                                     <div class="product_img style-2">
                                                         <router-link
                                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
-                                                            <img :src="'/uploads/images/'+item.image" :alt="item.image">
+                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image" :alt="item.image">
                                                         </router-link>
                                                     </div>
                                                     <div class="product_info">
@@ -390,7 +390,7 @@
                                                     <div class="product_img style-2">
                                                         <router-link
                                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
-                                                            <img :src="'/uploads/images/'+item.image" :alt="item.image">
+                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image" :alt="item.image">
                                                         </router-link>
                                                     </div>
                                                     <div class="product_info">
@@ -476,7 +476,7 @@
                                                     <div class="product_img style-2">
                                                         <router-link
                                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
-                                                            <img :src="'/uploads/images/'+item.image" :alt="item.image">
+                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image" :alt="item.image">
                                                         </router-link>
                                                     </div>
                                                     <div class="product_info">
@@ -554,7 +554,7 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-6 col-md-8">
                             <div class="heading_s1 text-center">
-                                <h5>Tin tức & Sự kiện</h5>
+                                <h4>Tin tức & Sự kiện</h4>
                             </div>
                         </div>
                     </div>

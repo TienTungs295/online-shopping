@@ -61,7 +61,7 @@
                                     </li>
                                     <li>
                                         <i class="ti-email"></i>
-                                        <a href="mailto:info@sitename.com">info@sitename.com</a>
+                                        <a href="mailto:dinhduyduy@gmail.com">dinhduyduy@gmail.com</a>
                                     </li>
                                     <li>
                                         <i class="ti-mobile"></i>
