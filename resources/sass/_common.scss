@@ -103,7 +103,7 @@
 }
 
 .border-ccc{
-    border: 1px solid #ccc;
+    border: 1px solid #ccc !important;
 }
 
 @for $i from 0 through 20 {

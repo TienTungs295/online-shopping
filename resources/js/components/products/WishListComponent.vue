@@ -33,8 +33,10 @@
             <div class="section pdt-50-i pdb-50-i">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12">
-                            <div class="position-relative">
+                        <div class="col-12 position-relative">
+                            <loading-component v-bind:loading="isLoading"
+                                               v-bind:center="true"></loading-component>
+                            <div>
                                 <div class="table-responsive wishlist_table" v-if="withListCount > 0">
                                     <table class="table">
                                         <thead>
@@ -51,7 +53,8 @@
                                             <td class="product-thumbnail">
                                                 <router-link
                                                     :to="{ name: 'productDetail', params: { slug: item.options.slug,id:item.id }}">
-                                                    <img :src="'/uploads/images/'+item.options.image"
+                                                    <img class="border-ccc"
+                                                         :src="'/uploads/images/'+item.options.image"
                                                          :alt="item.options.image">
                                                 </router-link>
                                             </td>
@@ -77,11 +80,13 @@
                                             </td>
                                             <td class="product-subtotal" data-title="Thêm vào giỏ">
                                                 <a href="tel:0979945555" v-if="item.options.is_contact"
-                                                   class="btn btn-fill-out btn-sm add-to-cart-button rounded-0">Liên hệ ngay
+                                                   class="btn btn-fill-out btn-sm add-to-cart-button rounded-0">Liên
+                                                    hệ ngay
                                                 </a>
                                                 <button v-else @click="addToCart(item.id)"
                                                         :disabled="item.options.is_out_of_stock"
-                                                        class="btn btn-fill-out btn-sm add-to-cart-button rounded-0">Thêm
+                                                        class="btn btn-fill-out btn-sm add-to-cart-button rounded-0">
+                                                    Thêm
                                                     vào giỏ
                                                 </button>
                                             </td>
@@ -92,9 +97,9 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="text-center" v-if="withListCount == 0 && !isLoading">Không có sản phẩm nào trong danh sách</div>
-                                <loading-component v-bind:loading="isLoading"
-                                                   v-bind:center="true"></loading-component>
+                                <div class="text-center" v-if="withListCount == 0 && !isLoading">Không có sản phẩm
+                                    nào trong danh sách
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 <template>
     <div class="container" v-if="!isLoading">
-        <product-quick-view-item-component  v-bind:product="product"></product-quick-view-item-component>
+        <product-quick-view-item-component v-if="product != null" v-bind:product="product"></product-quick-view-item-component>
     </div>
 </template>
 

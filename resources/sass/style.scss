@@ -7256,6 +7256,9 @@ footer {
         .product {
             display: inline-block;
             width: 100%;
+            &.style-1{
+                min-height: inherit;
+            }
         }
 
         .product_img {
@@ -7266,7 +7269,7 @@ footer {
 
         .product .product_title {
             font-size: 20px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .product_info {
@@ -7275,8 +7278,11 @@ footer {
         }
 
         .product .rating_wrap {
-            display: block;
             margin-bottom: 15px;
+        }
+
+        .product.style-1 .product_info .product_price{
+            margin-bottom: 10px;
         }
 
         .pr_desc {

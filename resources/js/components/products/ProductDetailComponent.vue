@@ -17,9 +17,9 @@
                                     Trang chủ
                                 </router-link>
                             </li>
-                            <li v-if="product.category" class="breadcrumb-item"><a
+                            <li v-if="product != null && product.category != null" class="breadcrumb-item"><a
                                 href="#">{{ product.category.name }}</a></li>
-                            <li class="breadcrumb-item active">{{ product.name }}</li>
+                            <li class="breadcrumb-item active" v-if="product != null">{{ product.name }}</li>
                         </ol>
                     </div>
                 </div>
@@ -28,17 +28,19 @@
         <!-- END SECTION BREADCRUMB -->
 
         <!-- START MAIN CONTENT -->
-        <div class="main_content" v-if="!isLoading">
+        <div class="main_content">
             <!-- START SECTION SHOP -->
             <div class="section">
-                <div class="container">
-                    <product-quick-view-item-component v-bind:product="product"></product-quick-view-item-component>
+                <div class="container position-relative">
+                    <loading-component v-bind:loading="isLoading" v-bind:center="true"></loading-component>
+                    <product-quick-view-item-component v-if="product!= null"
+                                                       v-bind:product="product"></product-quick-view-item-component>
                     <div class="row">
                         <div class="col-12">
                             <div class="large_divider clearfix"></div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" v-if="product!= null">
                         <div class="col-12">
                             <div class="tab-style3">
                                 <div>
@@ -53,7 +55,7 @@
                                 <div>
                                     <div class="heading_tab_header">
                                         <div class="heading_s2">
-                                            <h6 class="text-uppercase">Đánh giá ({{totalReviews}})</h6>
+                                            <h6 class="text-uppercase">Đánh giá ({{ totalReviews }})</h6>
                                         </div>
                                     </div>
                                     <div class="review_form field_form mgb-20">
@@ -96,7 +98,8 @@
                                             <li v-for="review in reviews"
                                                 :class="review.status ==1 ? 'o-05':''">
                                                 <div class="comment_img">
-                                                    <img src="/assets/images/default/default-user-image.png" alt="user"/>
+                                                    <img src="/assets/images/default/default-user-image.png"
+                                                         alt="user"/>
                                                 </div>
                                                 <div class="comment_block">
                                                     <div class="rating_wrap">
@@ -146,14 +149,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" v-if="product!= null">
                         <div class="col-12">
                             <div class="small_divider"></div>
                             <div class="divider"></div>
                             <div class="medium_divider"></div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" v-if="product!= null">
                         <div class="col-12">
                             <div class="heading_s1">
                                 <h3>Sản phẩm liên quan</h3>
@@ -187,9 +190,7 @@ export default {
     name: "ProductDetail",
     data() {
         return {
-            product: {
-                images: []
-            },
+            product: null,
             isLoading: false,
             isLoadingReview: false,
             comment: "",

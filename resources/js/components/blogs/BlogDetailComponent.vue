@@ -25,8 +25,9 @@
         <div class="main_content position-relative">
 
             <!-- START SECTION BLOG -->
-            <div class="section" v-if="!isLoading">
-                <div class="container">
+            <div class="section">
+                <div class="container position-relative">
+                    <loading-component v-bind:loading="isLoading" v-bind:center="true"></loading-component>
                     <div class="row">
                         <div class="col-xl-9">
                             <div class="single_post">
@@ -109,9 +110,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="section" v-else>
-                <loading-component v-bind:loading="isLoading" v-bind:center="true"></loading-component>
             </div>
             <!-- END SECTION BLOG -->
         </div>

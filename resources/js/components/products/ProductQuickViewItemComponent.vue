@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="col-lg-6 mb-4 mb-lg-0" v-if="product">
             <div class="detail-slider">
                 <swiper class="swiper gallery-top" :options="swiperOptionTop" ref="swiperTop">
                     <swiper-slide v-for="item in product.images" v-bind:key="item.id">

@@ -24,14 +24,15 @@
         <div class="main_content position-relative">
 
             <!-- START SECTION BLOG -->
-            <div class="section" v-if="!isLoading">
-                <div class="container">
+            <div class="section">
+                <div class="container position-relative">
+                    <loading-component v-bind:loading="isLoading" v-bind:center="true"></loading-component>
                     <div class="row">
                         <div class="col-lg-9">
                             <div class="row blog_thumbs">
                                 <div class="col-12" v-for="item in paginate.data">
                                     <div class="blog_post blog_style2">
-                                        <div class="blog_img">
+                                        <div class="blog_img border-ccc">
                                             <router-link class="link_wrapper"
                                                          :to="{ name: 'blogDetail', params: { slug: item.slug,id:item.id }}">
                                                 <img :src="'/uploads/images/'+item.image" :alt="item.image">
@@ -54,7 +55,7 @@
                                                 <p class="break-word" v-html="item.excerpt_content2"></p>
                                                 <router-link
                                                     :to="{ name: 'blogDetail', params: { slug: item.slug,id:item.id }}">
-                                                    <button class="btn btn-fill-line border-2 btn-xs rounded-0">Xem thêm
+                                                    <button class="btn btn-fill-line border-2 btn-sm rounded-0">Xem thêm
                                                     </button>
                                                 </router-link>
                                             </div>
@@ -101,7 +102,7 @@
                                     <ul class="widget_recent_post">
                                         <li v-for="item in recentBlogs">
                                             <div class="post_footer">
-                                                <div class="post_img">
+                                                <div class="post_img border-ccc">
                                                     <router-link
                                                         :to="{ name: 'blogDetail', params: { slug: item.slug,id:item.id }}">
                                                         <img :src="'/uploads/images/'+item.image" :alt="item.image">
@@ -124,9 +125,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="section" v-else>
-                <loading-component v-bind:loading="isLoading" v-bind:center="true"></loading-component>
             </div>
             <!-- END SECTION BLOG -->
         </div>
