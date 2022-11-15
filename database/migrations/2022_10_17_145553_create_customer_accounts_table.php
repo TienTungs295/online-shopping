@@ -20,6 +20,7 @@ class CreateCustomerAccountsTable extends Migration
             $table->string('phone_number', 20)->nullable();
             $table->string('address', 400)->nullable();
             $table->string('token')->default("")->index();
+            $table->timestamp('token_gen_at')->nullable();
             $table->tinyInteger('is_verified')->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
