@@ -119,11 +119,6 @@ class OrderRestController extends BaseCustomController
         $order->payment_method = $payment_method;
         $order->shipping_fee = $data["shippingFee"];
 
-//        if ($product->with_storehouse_management == 1 && $product->quantity > 0) {
-//            $product->quantity = $product->quantity - 1;
-//            $product->update();
-//        }
-
         DB::beginTransaction();
         try {
             $order->save();
@@ -135,17 +130,17 @@ class OrderRestController extends BaseCustomController
             throw $e;
         }
 
-        try {
-            foreach ($order_products as $order_product) {
-                $product_db = Product::find($order_product->product_id);
-                if ($product_db->with_storehouse_management == 1 && $product_db->quantity > 0) {
-                    $quantity = $product_db->quantity - $order_product->quantity;
-                    $product_db->quantity = $quantity < 0 ? 0 : $quantity;
-                }
-            }
-        } catch (\Exception $e) {
-
-        }
+//        try {
+//            foreach ($order_products as $order_product) {
+//                $product_db = Product::find($order_product->product_id);
+//                if ($product_db->with_storehouse_management == 1 && $product_db->quantity > 0) {
+//                    $quantity = $product_db->quantity - $order_product->quantity;
+//                    $product_db->quantity = $quantity < 0 ? 0 : $quantity;
+//                }
+//            }
+//        } catch (\Exception $e) {
+//
+//        }
 
         Cart::instance('cart')->destroy();
         session()->forget(self::$CODE);

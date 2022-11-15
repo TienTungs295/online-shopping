@@ -87,6 +87,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
+    window.scrollTo(0, 0);
     if (to.matched.some(route => route.meta.requiresAuth) && !localStorage.getItem('access_token')) {
         next({name: 'login'})
         return;

@@ -21,7 +21,7 @@
         <!-- END SECTION BREADCRUMB -->
 
         <!-- START MAIN CONTENT -->
-        <div class="main_content">
+        <div class="main_content position-relative">
 
             <!-- START SECTION BLOG -->
             <div class="section" v-if="!isLoading">
@@ -126,8 +126,7 @@
                 </div>
             </div>
             <div class="section" v-else>
-                <loading-component v-bind:loading="isLoading"
-                                  ></loading-component>
+                <loading-component v-bind:loading="isLoading" v-bind:center="true"></loading-component>
             </div>
             <!-- END SECTION BLOG -->
         </div>

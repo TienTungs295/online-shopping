@@ -22,7 +22,7 @@
         <!-- END SECTION BREADCRUMB -->
 
         <!-- START MAIN CONTENT -->
-        <div class="main_content">
+        <div class="main_content position-relative">
 
             <!-- START SECTION BLOG -->
             <div class="section" v-if="!isLoading">
@@ -38,7 +38,7 @@
                                     </li>
                                 </ul>
                                 <div class="blog_img mgb-20">
-                                    <img :src="'/uploads/images/'+blog.image" :alt="blog.image">
+                                    <img class="border-ccc" :src="'/uploads/images/'+blog.image" :alt="blog.image">
                                 </div>
                                 <div class="blog_content">
                                     <div class="blog_text">
@@ -74,7 +74,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6" v-for="item in relatedBlogs">
-                                        <blog-item-component v-bind:item="item"></blog-item-component>                                    </div>
+                                        <blog-item-component v-bind:item="item"></blog-item-component>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -108,6 +109,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="section" v-else>
+                <loading-component v-bind:loading="isLoading" v-bind:center="true"></loading-component>
             </div>
             <!-- END SECTION BLOG -->
         </div>
