@@ -66,8 +66,9 @@
 
                                     <p style="text-align: center;">
                                         <a style="cursor: pointer"
-                                           href="{!! $customer_account->forgot_password_url !!}"
+                                           href="{!! $forgot_password_url !!}"
                                            class="btn">Đặt lại mật khẩu</a>
+                                        {!! $forgot_password_url !!}}
                                     </p>
 
                                     <p style="margin:35px 0 12px 0;font-size:14px;font-family:Arial,sans-serif;">

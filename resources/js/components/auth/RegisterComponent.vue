@@ -40,31 +40,37 @@
                                     </div>
                                     <form method="post">
                                         <div class="form-group">
-                                            <input type="text" required class="form-control " :class="{'is-invalid': errors.name}" name="name"
+                                            <input type="text" required class="form-control "
+                                                   :class="{'is-invalid': errors.name}" name="name"
                                                    placeholder="Họ & tên của bạn" v-model="name">
                                             <div class="invalid-feedback">
-                                                <span v-for="error in errors.name" class="d-block">{{error}}</span>
+                                                <span v-for="error in errors.name" class="d-block">{{ error }}</span>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" required class="form-control" :class="{'is-invalid': errors.email}" name="email"
+                                            <input type="text" required class="form-control"
+                                                   :class="{'is-invalid': errors.email}" name="email"
                                                    placeholder="Địa chỉ email của bạn" v-model="email">
                                             <div class="invalid-feedback">
-                                                <span v-for="error in errors.email" class="d-block">{{error}}</span>
+                                                <span v-for="error in errors.email" class="d-block">{{ error }}</span>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" :class="{'is-invalid': errors.password}" required type="password" name="password"
+                                            <input class="form-control" :class="{'is-invalid': errors.password}"
+                                                   required type="password" name="password"
                                                    placeholder="Mật khẩu" v-model="password">
                                             <div class="invalid-feedback">
-                                                <span v-for="error in errors.password" class="d-block">{{error}}</span>
+                                                <span v-for="error in errors.password"
+                                                      class="d-block">{{ error }}</span>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" :class="{'is-invalid': errors.confirm_password}" required type="password" name="password"
+                                            <input class="form-control" :class="{'is-invalid': errors.confirm_password}"
+                                                   required type="password" name="password"
                                                    placeholder="Xác nhận mật khẩu của bạn" v-model="confirm_password">
                                             <div class="invalid-feedback">
-                                                <span v-for="error in errors.confirm_password" class="d-block">{{error}}</span>
+                                                <span v-for="error in errors.confirm_password"
+                                                      class="d-block">{{ error }}</span>
                                             </div>
                                         </div>
                                         <!--                                        <div class="login_footer form-group">-->
@@ -131,7 +137,7 @@ export default {
     methods: {
         register: function (name, email, password, confirm_password) {
             let object = {name: name, email: email, password: password, confirm_password: confirm_password}
-            AuthService.register(object).then(response => {
+            AuthService.register(object, true).then(response => {
                 this.$router.push({name: 'login'});
             }).catch(response => {
                 this.errors = response.errors || {};

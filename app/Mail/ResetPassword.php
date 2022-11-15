@@ -12,10 +12,12 @@ class ResetPassword extends Mailable
     use Queueable, SerializesModels;
 
     public $customer_account;
+    public $forgot_password_url;
 
-    public function __construct($customer_account)
+    public function __construct($customer_account, $forgot_password_url)
     {
         $this->customer_account = $customer_account;
+        $this->forgot_password_url = $forgot_password_url;
     }
 
     /**
