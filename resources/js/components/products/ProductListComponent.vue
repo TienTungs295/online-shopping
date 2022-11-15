@@ -173,14 +173,13 @@
 import ProductService from "../../services/ProductService";
 import CollectionService from "../../services/CollectionService";
 import CategoryService from "../../services/CategoryService";
+import {mapGetters} from "vuex";
 
 export default {
     name: "ProductList",
     data() {
         return {
             paginate: {},
-            categories: [],
-            collections: [],
             param: {},
             collection_ids: [],
             price: "",
@@ -281,6 +280,12 @@ export default {
             checkedNames: []
         };
     },
+    computed: {
+        ...mapGetters([
+            'categories',
+            'collections',
+        ])
+    },
     methods: {
         changeRouter: function () {
             let param = {};
@@ -340,24 +345,23 @@ export default {
             this.param.page = this.$route.query.page;
         }
         CategoryService.findAll().then(response => {
-            let data = response || [];
-            this.categories = data;
+            let categories = response || [];
+            this.$store.commit("setCategories", categories);
             this.isLoadingCategory = false;
         }).catch(e => {
             this.isLoadingCategory = false;
         });
 
         CollectionService.findAll().then(response => {
-            let data = response || [];
-            this.collections = data;
+            let collections = response || [];
+            this.$store.commit("setCollections", collections);
             this.isLoadingCollection = false;
         }).catch(e => {
             this.isLoadingCollection = false;
         });
 
         ProductService.findAll(this.param, this.param.page).then(response => {
-            let data = response || {};
-            this.paginate = data;
+            this.paginate = response || {};
             this.isLoadingProduct = false;
         }).catch(e => {
             this.isLoadingProduct = false;

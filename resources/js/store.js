@@ -12,6 +12,8 @@ export default new Vuex.Store({
             subTotal: 0,
             subTotalFinal: 0,
             userProfile: null,
+            categories: [],
+            collections: [],
         }
     },
     getters: {
@@ -21,7 +23,9 @@ export default new Vuex.Store({
         cart: state => state.object.cart,
         subTotal: state => state.object.subTotal,
         subTotalFinal: state => state.object.subTotalFinal,
-        userProfile: state => state.object.userProfile
+        userProfile: state => state.object.userProfile,
+        categories: state => state.object.categories,
+        collections: state => state.object.collections,
     },
     mutations: {
         setWithListCount(state, newNumber) {
@@ -44,6 +48,12 @@ export default new Vuex.Store({
         },
         setUserProfile(state, userProfile) {
             state.object.userProfile = userProfile;
+        },
+        setCategories(state, categories) {
+            state.object.categories = categories;
+        },
+        setCollections(state, collections) {
+            state.object.collections = collections;
         }
     }
 })
