@@ -77,8 +77,11 @@
 
                             <div class="row shop_container"
                                  :class="isGridView ? 'grid-view' :'list-view'">
-                                <div class="col-md-4 col-6" v-if="!isLoadingProduct" v-for="item in paginate.data">
+                                <div class="col-md-4 col-6" v-for="item in paginate.data">
                                     <product-item-component v-bind:item="item"></product-item-component>
+                                </div>
+                                <div class="col text-center" v-if="!isLoadingProduct && (paginate.data == null || paginate.data.length == 0)">
+                                    Không tìm thấy kết quả phù hợp.
                                 </div>
                                 <loading-component v-bind:loading="isLoadingProduct"
                                                    v-bind:center="true"></loading-component>

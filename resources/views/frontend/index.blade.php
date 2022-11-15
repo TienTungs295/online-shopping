@@ -76,6 +76,7 @@
 <div id="fb-customer-chat" class="fb-customerchat">
 </div>
 
+
 <script>
     var chatbox = document.getElementById('fb-customer-chat');
     chatbox.setAttribute("page_id", "107122515537988");
@@ -99,5 +100,6 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 </script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v15.0&appId=464740230892842&autoLogAppEvents=1" nonce="1TtW9Zuw"></script>
 </body>
 </html>

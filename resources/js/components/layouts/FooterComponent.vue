@@ -21,19 +21,6 @@
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="widget">
-                                <h6 class="widget_title">Danh mục sản phẩm</h6>
-                                <ul class="widget_links">
-                                    <li v-for="(item,index) in topCategories" v-if="index < 4">
-                                        <router-link
-                                            :to="{ name: 'productList', query: { category_id: item.id}}">
-                                            {{ item.name }}
-                                        </router-link>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="widget">
                                 <h6 class="widget_title">Đặt hàng</h6>
                                 <ul class="widget_links">
                                     <li>
@@ -68,6 +55,20 @@
                                         <p>0979945555</p>
                                     </li>
                                 </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="widget">
+                                <h6 class="widget_title">Fanpage</h6>
+                                <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100087173058248"
+                                     data-tabs="timeline" data-width="250" data-height="90" data-small-header="false"
+                                     data-adapt-container-width="true" data-hide-cover="false"
+                                     data-show-facepile="true">
+                                    <blockquote cite="https://www.facebook.com/profile.php?id=100087173058248"
+                                                class="fb-xfbml-parse-ignore"><a
+                                        href="https://www.facebook.com/profile.php?id=100087173058248">Công ty TNHH
+                                        Thương Mại và Sản Xuất NK</a></blockquote>
+                                </div>
                             </div>
                         </div>
                     </div>

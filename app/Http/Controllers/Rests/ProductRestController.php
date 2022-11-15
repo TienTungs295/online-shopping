@@ -48,7 +48,7 @@ class ProductRestController extends Controller
         }
         $products = Product::with(['productLabels'])->whereHas('productCollections', function ($query) use ($collection_id) {
             $query->where('product_collection_id', $collection_id);
-        })->orderBy('id', 'DESC')->paginate(12);
+        })->orderBy('id', 'DESC')->paginate(8);
         return $ajax_response->setData($products)->toApiResponse();
     }
 

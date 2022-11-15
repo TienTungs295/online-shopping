@@ -106,10 +106,8 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="tab-pane fade show active" v-if="!isLoading">
-                                <div class="product_slider carousel_slider owl-carousel owl-theme dot_style1" v-carousel
-                                     data-loop="false" data-margin="20"
-                                     data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "991":{"items": "4"}}'>
-                                    <div class="item" v-for="item in productCollections">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-12" v-for="item in productCollections">
                                         <product-item-component v-bind:item="item"></product-item-component>
                                     </div>
                                 </div>
