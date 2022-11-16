@@ -3997,9 +3997,17 @@ input.text {
         height: 160px;
         padding: 4px;
         border: 1px solid #ddd;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all .3s ease-in-out;
 
         img {
             height: 100%;
+        }
+    }
+
+    &:hover {
+        .category-image {
+            border: 1px solid $primary-color;
         }
     }
 }
@@ -4507,9 +4515,10 @@ h6.blog_title {
 }
 
 .blog_post.blog_style2 {
-    .blog_title{
+    .blog_title {
         font-size: 18px;
     }
+
     .blog_img {
         height: 230px;
 
@@ -7256,7 +7265,8 @@ footer {
         .product {
             display: inline-block;
             width: 100%;
-            &.style-1{
+
+            &.style-1 {
                 min-height: inherit;
             }
         }
@@ -7281,7 +7291,7 @@ footer {
             margin-bottom: 15px;
         }
 
-        .product.style-1 .product_info .product_price{
+        .product.style-1 .product_info .product_price {
             margin-bottom: 10px;
         }
 
@@ -7400,6 +7410,7 @@ footer {
     float: left;
     width: 70px;
     height: 70px;
+
     img {
         border: 1px solid #ccc;
         border-radius: 50%;

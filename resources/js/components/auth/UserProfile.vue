@@ -120,6 +120,7 @@ export default {
             AuthService.update(this.userProfile, true).then(response => {
                 let data = response || {};
                 this.$store.commit("setUserProfile", data);
+                this.errors = {};
                 this.isLoading = false;
             }).catch(response => {
                 this.errors = response.errors || {};

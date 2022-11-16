@@ -120,6 +120,7 @@ export default {
         this.isLoading = true;
         AuthService.forgotPasswordValidate(this.$route.params.token, true).then(response => {
             this.isLoading = false;
+            this.errors = {};
         }).catch(response => {
             this.errors = response.errors || {};
             this.isLoading = false;

@@ -103,6 +103,7 @@ export default {
             AuthService.resetPass(this.email).then(response => {
                 this.emailSended = response.email;
                 this.email = "";
+                this.errors = {};
                 this.isLoading = false;
             }).catch(response => {
                 this.isSuccessful = false;

@@ -104,6 +104,7 @@ export default {
         changePass: function () {
             this.isLoading = true;
             AuthService.changePass(this.user, true).then(response => {
+                this.errors = {};
                 this.isLoading = false;
             }).catch(response => {
                 this.errors = response.errors || {};
