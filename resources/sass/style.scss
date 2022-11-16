@@ -1802,7 +1802,7 @@ button:focus {
     }
 }
 
-.pr_search_icon {
+.pr_search_icon,.pr_user_icon {
     float: right;
 }
 
@@ -1811,6 +1811,10 @@ button:focus {
         content: "\ec2a";
     }
 
+    padding: 17px 5px;
+    font-size: 20px;
+}
+.pr_user_trigger{
     padding: 17px 10px;
     font-size: 20px;
 }
@@ -9450,18 +9454,16 @@ a {
     .dropdown-item {
         &:hover, &:focus {
             background: #e9ecef;
+
+            a {
+                color: inherit;
+            }
         }
     }
 
     .dropdown-menu {
         top: 10px;
         border-radius: 0;
-    }
-
-    a {
-        &:hover, &:focus {
-            color: inherit;
-        }
     }
 }
 
@@ -9476,4 +9478,12 @@ a.link-hover {
     background: rgba(0, 0, 0, 0.3);
     width: 100%;
     height: 100%;
+}
+
+.no-border-link {
+    .btn-link {
+        &::before {
+            height: 0;
+        }
+    }
 }

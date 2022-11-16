@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="overflow-hidden">
         <header-component></header-component>
         <router-view :key="$route.fullPath"></router-view>
         <footer-component></footer-component>

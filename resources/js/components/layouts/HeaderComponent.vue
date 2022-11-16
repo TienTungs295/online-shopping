@@ -2,95 +2,97 @@
     <div>
         <!-- START HEADER -->
         <header class="header_wrap">
-            <div class="top-header light_skin bg_primary d-none d-md-block">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 col-md-8">
-                            <div class="header_topbar_info">
-                                <div class="header_offer border-0">
-                                    <span>Free ship đơn hàng trên 1,000,000 đ</span>
+            <div class="header-inner">
+                <div class="top-header light_skin bg_primary d-none d-md-block">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-md-8">
+                                <div class="header_topbar_info">
+                                    <div class="header_offer border-0">
+                                        <span>Free ship đơn hàng trên 1,000,000 đ</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-6 col-md-4">
-                            <div class="d-flex align-items-center justify-content-center justify-content-md-end">
-                                <div class="download_wrap">
-                                    <ul class="icon_list text-center text-lg-left">
-                                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                        <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="light-color mgl-5">
-                                    <!--                                    <router-link :to="{ name: 'contact-us'}" class="light-color-i">-->
-                                    <!--                                        <i class="ion-map mgr-5"></i>-->
-                                    <!--                                        <span>Liên hệ</span>-->
-                                    <!--                                    </router-link>-->
+                            <div class="col-lg-6 col-md-4">
+                                <div class="d-flex align-items-center justify-content-center justify-content-md-end">
+                                    <div class="download_wrap">
+                                        <ul class="icon_list text-center text-lg-left">
+                                            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                            <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="light-color mgl-5">
+                                        <!--                                    <router-link :to="{ name: 'contact-us'}" class="light-color-i">-->
+                                        <!--                                        <i class="ion-map mgr-5"></i>-->
+                                        <!--                                        <span>Liên hệ</span>-->
+                                        <!--                                    </router-link>-->
 
 
-                                    <b-dropdown v-if="userProfile != null" variant="link" no-caret
-                                                class="custom-dropdown" toggle-class="text-decoration-none">
-                                        <template #button-content>
-                                            <div
-                                                class="light-color-i">
-                                                <i class="ti-user mgr-5" style="font-size: 14px"></i>
-                                                <span class="mgr-5">{{ userProfile.name }}</span> <i
-                                                class="ti-angle-down" style="font-size: 14px"></i>
-                                            </div>
-                                        </template>
-                                        <b-dropdown-item>
-                                            <router-link :to="{ name: 'userProfile'}">
-                                                Thông tin tài khoản
+                                        <b-dropdown v-if="userProfile != null" variant="link" no-caret
+                                                    class="custom-dropdown" toggle-class="text-decoration-none">
+                                            <template #button-content>
+                                                <div
+                                                    class="light-color-i">
+                                                    <i class="ti-user mgr-5" style="font-size: 14px"></i>
+                                                    <span class="mgr-5">{{ userProfile.name }}</span> <i
+                                                    class="ti-angle-down" style="font-size: 14px"></i>
+                                                </div>
+                                            </template>
+                                            <b-dropdown-item>
+                                                <router-link :to="{ name: 'userProfile'}">
+                                                    Thông tin tài khoản
+                                                </router-link>
+                                            </b-dropdown-item>
+                                            <b-dropdown-item>
+                                                <router-link :to="{ name: 'changePass'}">
+                                                    Thay đổi mật khẩu
+                                                </router-link>
+                                            </b-dropdown-item>
+                                            <b-dropdown-item @click="logout()">Đăng xuất</b-dropdown-item>
+                                        </b-dropdown>
+                                        <div v-else
+                                             style="position: relative; display: inline-flex;vertical-align: middle;">
+                                            <router-link :to="{ name: 'login'}" class="light-color-i">
+                                                <span class="position-relative" style="bottom: 2px">Đăng nhập/Đăng ký</span>
                                             </router-link>
-                                        </b-dropdown-item>
-                                        <b-dropdown-item>
-                                            <router-link :to="{ name: 'changePass'}">
-                                                Thay đổi mật khẩu
-                                            </router-link>
-                                        </b-dropdown-item>
-                                        <b-dropdown-item @click="logout()">Đăng xuất</b-dropdown-item>
-                                    </b-dropdown>
-                                    <div v-else
-                                         style="position: relative; display: inline-flex;vertical-align: middle;">
-                                        <router-link :to="{ name: 'login'}" class="light-color-i">
-                                            <span class="position-relative" style="bottom: 2px">Đăng nhập/Đăng ký</span>
-                                        </router-link>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="middle-header dark_skin">
-                <div class="container">
-                    <div class="nav_block">
-                        <router-link class="navbar-brand"
-                                     :to="{ name: 'home'}">
-                            <img class="logo_light" src="/assets/images/logo/logo.png" alt="logo">
-                            <img class="logo_dark" src="/assets/images/logo/logo.png" alt="logo">
-                        </router-link>
-                        <div class="product_search_form search_form_btn">
-                            <form>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="custom_select">
-                                            <select class="first_null not_chosen" v-model="query.category_id">
-                                                <option value="">Danh mục</option>
-                                                <option v-for="item in categories" v-bind:value="item.id">
-                                                    {{ item.name }}
-                                                </option>
-                                            </select>
+                <div class="middle-header dark_skin">
+                    <div class="container">
+                        <div class="nav_block">
+                            <router-link class="navbar-brand"
+                                         :to="{ name: 'home'}">
+                                <img class="logo_light" src="/assets/images/logo/logo.png" alt="logo">
+                                <img class="logo_dark" src="/assets/images/logo/logo.png" alt="logo">
+                            </router-link>
+                            <div class="product_search_form search_form_btn">
+                                <form>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="custom_select">
+                                                <select class="first_null not_chosen" v-model="query.category_id">
+                                                    <option value="">Danh mục</option>
+                                                    <option v-for="item in categories" v-bind:value="item.id">
+                                                        {{ item.name }}
+                                                    </option>
+                                                </select>
+                                            </div>
                                         </div>
+                                        <input class="form-control" v-model="query.name" placeholder="Tên sản phẩm..."
+                                               required="" type="text">
+                                        <button type="button" class="search_btn3" @click="findProduct()">Tìm kiếm</button>
                                     </div>
-                                    <input class="form-control" v-model="query.name" placeholder="Tên sản phẩm..."
-                                           required="" type="text">
-                                    <button type="button" class="search_btn3" @click="findProduct()">Tìm kiếm</button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="contact_phone contact_support">
-                            <i class="linearicons-phone-wave"></i>
-                            <span>0979945555</span>
+                                </form>
+                            </div>
+                            <div class="contact_phone contact_support">
+                                <i class="linearicons-phone-wave"></i>
+                                <span>0979945555</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -102,7 +104,7 @@
                             <div class="categories_wrap">
                                 <button type="button" data-toggle="collapse" data-target="#navCatContent"
                                         aria-expanded="false" class="categories_btn categories_menu">
-                                    <span>Danh mục sản phẩm</span><i class="linearicons-menu"></i>
+                                    <span>Danh mục <span class="hidden-lg">sản phẩm</span></span><i class="linearicons-menu"></i>
                                 </button>
                                 <div id="navCatContent" class="navbar collapse">
                                     <ul>
@@ -136,8 +138,33 @@
                                     <span class="ion-android-menu"></span>
                                 </button>
                                 <div class="pr_search_icon">
-                                    <a href="javascript:void(0);" class="nav-link pr_search_trigger"><i
+                                    <a href="javascript:void(0);" class="nav-link pr_search_trigger pdl-5"><i
                                         class="linearicons-magnifier"></i></a>
+                                </div>
+                                <div class="pr_user_icon">
+                                    <b-dropdown v-if="userProfile != null" variant="link" no-caret split-class="test"
+                                                class="custom-dropdown no-border-link" toggle-class="text-decoration-none">
+                                        <template #button-content>
+                                            <a href="javascript:void(0);" class="nav-link position-relative" style="padding: 17px 5px; top:2px"><i
+                                                class="linearicons-user" style="font-size: 20px"></i></a>
+                                        </template>
+                                        <b-dropdown-item>
+                                            <router-link :to="{ name: 'userProfile'}">
+                                                Thông tin tài khoản
+                                            </router-link>
+                                        </b-dropdown-item>
+                                        <b-dropdown-item>
+                                            <router-link :to="{ name: 'changePass'}">
+                                                Thay đổi mật khẩu
+                                            </router-link>
+                                        </b-dropdown-item>
+                                        <b-dropdown-item @click="logout()">Đăng xuất</b-dropdown-item>
+                                    </b-dropdown>
+                                    <div v-else>
+                                        <router-link :to="{ name: 'login'}" class="nav-link pr_user_trigger pdl-5-i pdr-5-i">
+                                            <i class="linearicons-key"></i>
+                                        </router-link>
+                                    </div>
                                 </div>
                                 <div class="collapse navbar-collapse mobile_side_menu" id="navbarSidetoggle">
                                     <ul class="navbar-nav">
@@ -174,7 +201,7 @@
                                         <li class="dropdown cart_dropdown">
                                             <a class="nav-link cart_trigger" data-toggle="dropdown">
                                                 <i class="linearicons-bag2"></i>
-                                                <span class="cart_count">
+                                                <span class="cart_count" style="left: -4px">
                                                     {{ cartCount }}
                                                 </span>
                                             </a>

@@ -266,6 +266,9 @@
 	width: 100%;
 	padding: 30px 20px;
 }
+.hidden-lg{
+    display: none;
+}
 }
 
 /* -------------------------------------------------
@@ -502,8 +505,12 @@
 .navbar .navbar-nav.attr-nav li .nav-link.cart_trigger {
 	padding: 16px 8px;
 }
-.cart_count, .wishlist_count {
+ .wishlist_count {
 	top: 0;
+}
+
+.cart_count {
+    top: 4px;
 }
 .navbar .navbar-collapse .navbar-nav:not([class*="bg_"]):not([class*="bg-"]) {
 	background-color: #fff;
@@ -883,6 +890,9 @@ div.banner_large_pad {
 .blog_thumbs .blog_content {
 	padding: 0 0 0 20px;
 	overflow: hidden;
+}
+.pr_user_icon {
+    display: none;
 }
 }
 
