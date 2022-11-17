@@ -323,12 +323,14 @@
                                         </span>
                                     </p>
                                     <p>
-                                        Quý khách hàng vui lòng kiểm tra lại đơn hàng trong hòm thư điện tử.
+                                        <span class="order-customer-info-meta">
+                                             Quý khách hàng vui lòng kiểm tra lại đơn hàng trong hòm thư điện tử.
                                         <br>
-                                        Bộ phận kinh doanh công ty 3M Nhập khẩu sẽ liên lạc với bạn trong thời gian sớm
+                                        Bộ phận kinh doanh công ty 3M Nhập khẩu sẽ liên lạc với khách hàng trong thời gian sớm
                                         nhất.
                                         <br>
-                                        Cảm ơn quý khách đã tin tưởng và lự chọn. Xin cảm ơn!
+                                        Cảm ơn quý khách hàng đã tin tưởng và lựa chọn. Xin cảm ơn!
+                                        </span>
                                     </p>
 
                                 </div>
