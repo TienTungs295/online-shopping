@@ -322,6 +322,14 @@
                                             <span v-if="order_information.payment_method == 2">Thanh toán khi nhận hàng (COD)</span>
                                         </span>
                                     </p>
+                                    <p>
+                                        Quý khách hàng vui lòng kiểm tra lại đơn hàng trong hòm thư điện tử.
+                                        <br>
+                                        Bộ phận kinh doanh công ty 3M Nhập khẩu sẽ liên lạc với bạn trong thời gian sớm
+                                        nhất.
+                                        <br>
+                                        Cảm ơn quý khách đã tin tưởng và lự chọn. Xin cảm ơn!
+                                    </p>
 
                                 </div>
                                 <div class="text-left">
