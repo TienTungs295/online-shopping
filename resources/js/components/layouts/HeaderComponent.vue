@@ -91,7 +91,7 @@
                             </div>
                             <div class="contact_phone contact_support">
                                 <i class="linearicons-phone-wave"></i>
-                                <span>0979945555</span>
+                                <span>0123456789</span>
                             </div>
                         </div>
                     </div>

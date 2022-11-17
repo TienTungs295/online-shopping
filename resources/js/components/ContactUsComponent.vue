@@ -49,7 +49,7 @@
                               </div>
                               <div class="contact_text">
                                   <span>Email</span>
-                                  <a href="mailto:dinhduyduy@gmail.com">dinhduyduy@gmail.com</a>
+                                  <a href="mailto:hotro3mnhapkhau@gmail.com">hotro3mnhapkhau@gmail.com</a>
                               </div>
                           </div>
                       </div>
@@ -60,7 +60,7 @@
                               </div>
                               <div class="contact_text">
                                   <span>Điện thoại</span>
-                                  <p>0979945555</p>
+                                  <p>0123456789</p>
                               </div>
                           </div>
                       </div>

@@ -48,11 +48,11 @@
                                     </li>
                                     <li>
                                         <i class="ti-email"></i>
-                                        <a href="mailto:dinhduyduy@gmail.com">dinhduyduy@gmail.com</a>
+                                        <a href="mailto:hotro3mnhapkhau@gmail.com">hotro3mnhapkhau@gmail.com</a>
                                     </li>
                                     <li>
                                         <i class="ti-mobile"></i>
-                                        <p>0979945555</p>
+                                        <p>0123456789</p>
                                     </li>
                                 </ul>
                             </div>

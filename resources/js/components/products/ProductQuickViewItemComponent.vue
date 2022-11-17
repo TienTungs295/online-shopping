@@ -58,7 +58,7 @@
                 <div class="cart_extra">
                     <div v-if="product.is_contact">
                         <div class="cart_btn">
-                            <a href="tel:0979945555" class="btn btn-fill-out btn-addtocart rounded-0 mgr-10">
+                            <a href="tel:0123456789" class="btn btn-fill-out btn-addtocart rounded-0 mgr-10">
                                 <i class="linearicons-phone-wave"></i> Liên hệ ngay
                             </a>
                             <a class="add_wishlist" @click="addToWithList(product.id)"><i
