@@ -84,7 +84,7 @@ class AuthRestController extends Controller
             $validator->validated(),
             ['password' => bcrypt($request->password)]
         ));
-        return $ajax_response->setData($user)->toApiResponse();
+        return $ajax_response->setData($user)->setMessage("Đăng ký tài khoản thành công")->toApiResponse();
     }
 
 
