@@ -41,12 +41,20 @@
                                         <div class="form-group">
                                             <input type="text" required="" class="form-control" name="email"
                                                    v-model="email"
+                                                   :class="{'is-invalid': errors.email}"
                                                    placeholder="Email">
+                                        </div>
+                                        <div class="invalid-feedback" v-if="errors.email">
+                                            <span v-for="error in errors.email" class="d-block">{{error}}</span>
                                         </div>
                                         <div class="form-group">
                                             <input class="form-control" required="" type="password" name="password"
                                                    v-model="password"
+                                                   :class="{'is-invalid': errors.password}"
                                                    placeholder="Mật khẩu">
+                                        </div>
+                                        <div class="invalid-feedback" v-if="errors.password">
+                                            <span v-for="error in errors.password" class="d-block">{{error}}</span>
                                         </div>
                                         <div class="invalid-feedback d-block" v-if="errors.login">
                                             <span v-for="error in errors.login" class="d-block">{{error}}</span>
