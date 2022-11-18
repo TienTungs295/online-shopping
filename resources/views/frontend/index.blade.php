@@ -5,8 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:image" content="https://3mnk.vn/uploads/images/products/2022-11-16/kinh-han-dien-tu-r100_1668611566_117336.jpg" />
     <!-- SITE TITLE -->
-    <title>3M Nhập khẩu</title>
+    <title>3M Nhập khẩu | Nhà nhập khẩu và phân phối trang thiết bị 3M</title>
     <!-- Favicon Icon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/favicon/3m_favicon.png')}}">
     <!-- Animation CSS -->
