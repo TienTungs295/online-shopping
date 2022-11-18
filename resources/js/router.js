@@ -86,12 +86,6 @@ const router = new VueRouter({
     routes
 });
 
-router.onError(error => {
-    if (/loading chunk \d* failed./i.test(error.message)) {
-        window.location.reload()
-    }
-})
-
 router.beforeEach((to, from, next) => {
     if (from.name != to.name)
         window.scrollTo(0, 0);
@@ -105,5 +99,11 @@ router.beforeEach((to, from, next) => {
     }
     next();
 });
+
+router.onError(error => {
+    if (/loading chunk \d* failed./i.test(error.message)) {
+        window.location.reload()
+    }
+})
 
 export default router;
