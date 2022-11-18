@@ -7,7 +7,7 @@ const routes = [
     {
         path: '/',
         name: "home",
-        component: () => import("./components/HomeComponent"),
+        component: () => import(/* webpackChunkName: "Home" */ "./components/HomeComponent"),
     },
     {
         path: '/chi-tiet-san-pham/:slug/:id',
@@ -85,6 +85,12 @@ const router = new VueRouter({
     mode: 'history',
     routes
 });
+
+router.onError(error => {
+    if (/loading chunk \d* failed./i.test(error.message)) {
+        window.location.reload()
+    }
+})
 
 router.beforeEach((to, from, next) => {
     if (from.name != to.name)
