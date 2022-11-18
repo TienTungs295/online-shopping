@@ -7,7 +7,7 @@ const routes = [
     {
         path: '/',
         name: "home",
-        component: () => import(/* webpackChunkName: "Home" */ "./components/HomeComponent"),
+        component: () => import("./components/HomeComponent"),
     },
     {
         path: '/chi-tiet-san-pham/:slug/:id',
