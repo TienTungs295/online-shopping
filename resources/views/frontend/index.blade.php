@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}">
     <!-- Style CSS -->
-    <link rel="stylesheet" href="{{ mix('css/app.css?version=5') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css?version=5') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 </head>
 <body>
