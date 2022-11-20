@@ -79,7 +79,7 @@
                                                 </div>
                                             </td>
                                             <td class="product-subtotal" data-title="Thêm vào giỏ">
-                                                <a href="tel:0123456789" v-if="item.options.is_contact"
+                                                <a href="tel:0979945555" v-if="item.options.is_contact"
                                                    class="btn btn-fill-out btn-sm add-to-cart-button rounded-0">Liên
                                                     hệ ngay
                                                 </a>

@@ -89,7 +89,7 @@
                                     <tr>
                                         <td colspan="6" class="px-0">
                                             <div class="row no-gutters align-items-center">
-                                                <div class="col-lg-4 col-md-6 mb-3 mb-md-0">
+                                                <div class="col-md-6 mb-3 mb-md-0">
                                                     <div class="coupon field_form input-group"
                                                          v-if="activeDiscountCode == null">
                                                         <input type="text" v-model="code"
@@ -122,7 +122,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-8 col-md-6 text-left text-md-right">
+                                                <div class="col-md-6 text-left text-md-right">
                                                     <button class="btn btn-line-fill btn-sm" type="button"
                                                             @click="update(cart)">Cập nhật
                                                     </button>

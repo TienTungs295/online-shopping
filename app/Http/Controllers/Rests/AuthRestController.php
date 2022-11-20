@@ -176,7 +176,7 @@ class AuthRestController extends Controller
         $ajax_response = new AjaxResponse();
         $customer_account = CustomerAccount::where('email', $request->post("email"))->first();
         if (is_null($customer_account))
-            return $ajax_response->setErrors(array("email" => "Email không tồn tại"))->toApiResponse();
+            return $ajax_response->setErrors(array("email" => ["Email không tồn tại"]))->toApiResponse();
 
         if ($customer_account->token != $request->post('token'))
             return $ajax_response->setErrors(array('token' => ['Token không hợp lệ']))->toApiResponse();

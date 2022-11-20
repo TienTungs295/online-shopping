@@ -68,7 +68,7 @@
             </table>
         </div>
         <div style="margin-bottom: 10px">Mọi thắc mắc xin liên hệ bộ phận hỗ trợ công ty 3M Nhập khẩu với số điện thoại: <a
-                href="tel:0123456789">0123456789</a></div>
+                href="tel:0979945555">0979945555</a></div>
         <div>Xin chân thành cảm ơn!</div>
     </div>
 </div>

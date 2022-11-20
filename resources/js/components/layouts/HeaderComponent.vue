@@ -89,10 +89,10 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="contact_phone contact_support">
+                            <a href="tel:0979945555" class="contact_phone contact_support">
                                 <i class="linearicons-phone-wave"></i>
-                                <span>0123456789</span>
-                            </div>
+                                <span>0979945555</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -137,35 +137,6 @@
                                         data-target="#navbarSidetoggle" aria-expanded="false">
                                     <span class="ion-android-menu"></span>
                                 </button>
-                                <div class="pr_search_icon">
-                                    <a href="javascript:void(0);" class="nav-link pr_search_trigger pdl-5"><i
-                                        class="linearicons-magnifier"></i></a>
-                                </div>
-                                <div class="pr_user_icon">
-                                    <b-dropdown v-if="userProfile != null" variant="link" no-caret split-class="test"
-                                                class="custom-dropdown no-border-link" toggle-class="text-decoration-none">
-                                        <template #button-content>
-                                            <a href="javascript:void(0);" class="nav-link position-relative" style="padding: 17px 5px; top:2px"><i
-                                                class="linearicons-user" style="font-size: 20px"></i></a>
-                                        </template>
-                                        <b-dropdown-item>
-                                            <router-link :to="{ name: 'userProfile'}">
-                                                Thông tin tài khoản
-                                            </router-link>
-                                        </b-dropdown-item>
-                                        <b-dropdown-item>
-                                            <router-link :to="{ name: 'changePass'}">
-                                                Thay đổi mật khẩu
-                                            </router-link>
-                                        </b-dropdown-item>
-                                        <b-dropdown-item @click="logout()">Đăng xuất</b-dropdown-item>
-                                    </b-dropdown>
-                                    <div v-else>
-                                        <router-link :to="{ name: 'login'}" class="nav-link pr_user_trigger pdl-5-i pdr-5-i">
-                                            <i class="linearicons-key"></i>
-                                        </router-link>
-                                    </div>
-                                </div>
                                 <div class="collapse navbar-collapse mobile_side_menu" id="navbarSidetoggle">
                                     <ul class="navbar-nav">
                                         <li class="dropdown">
@@ -253,6 +224,35 @@
                                             </div>
                                         </li>
                                     </ul>
+                                </div>
+                                <div class="pr_user_icon">
+                                    <b-dropdown v-if="userProfile != null" variant="link" no-caret split-class="test"
+                                                class="custom-dropdown no-border-link" toggle-class="text-decoration-none">
+                                        <template #button-content>
+                                            <a href="javascript:void(0);" class="nav-link position-relative" style="padding: 17px 5px; top:2px"><i
+                                                class="linearicons-user" style="font-size: 20px"></i></a>
+                                        </template>
+                                        <b-dropdown-item>
+                                            <router-link :to="{ name: 'userProfile'}">
+                                                Thông tin tài khoản
+                                            </router-link>
+                                        </b-dropdown-item>
+                                        <b-dropdown-item>
+                                            <router-link :to="{ name: 'changePass'}">
+                                                Thay đổi mật khẩu
+                                            </router-link>
+                                        </b-dropdown-item>
+                                        <b-dropdown-item @click="logout()">Đăng xuất</b-dropdown-item>
+                                    </b-dropdown>
+                                    <div v-else>
+                                        <router-link :to="{ name: 'login'}" class="nav-link pr_user_trigger pdl-5-i pdr-5-i">
+                                            <i class="linearicons-key"></i>
+                                        </router-link>
+                                    </div>
+                                </div>
+                                <div class="pr_search_icon">
+                                    <a href="javascript:void(0);" class="nav-link pr_search_trigger pdl-5"><i
+                                        class="linearicons-magnifier"></i></a>
                                 </div>
                             </nav>
                         </div>
