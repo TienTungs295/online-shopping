@@ -124,7 +124,7 @@ class ProductController extends Controller
         //image
         $upload_path = "/uploads/images/";
         $image_url = $request->input('image');
-        if ($image_url != null && $image_url != "") {
+        if ($image_url != null && $image_url != "" && str_contains($image_url, "/uploads/images/")) {
             $start_position = strpos($image_url, "/uploads/images/") + strlen($upload_path);
             $image_name = substr($image_url, $start_position, strlen($image_url) - $start_position);
             $product->image = $image_name;
@@ -136,6 +136,7 @@ class ProductController extends Controller
         if ($image_string != null && $image_string != "") {
             $image_urls = explode(",", $image_string);
             foreach ($image_urls as $item) {
+                if (!str_contains($item, "/uploads/images/")) continue;
                 $start_position = strpos($item, "/uploads/images/") + strlen($upload_path);
                 $image = new Image;
                 $image->image = substr($item, $start_position, strlen($item) - $start_position);
@@ -315,7 +316,7 @@ class ProductController extends Controller
         $image_name = "";
         $delete_url = null;
         $upload_path = "/uploads/images/";
-        if ($image_url != null && $image_url != "") {
+        if ($image_url != null && $image_url != "" && str_contains($image_url, "/uploads/images/")) {
             $start_position = strpos($image_url, "/uploads/images/") + strlen($upload_path);
             $image_name = substr($image_url, $start_position, strlen($image_url) - $start_position);
         }
@@ -337,6 +338,7 @@ class ProductController extends Controller
         if ($image_string != null && $image_string != "") {
             $image_urls = explode(",", $image_string);
             foreach ($image_urls as $item) {
+                if (!str_contains($item, "/uploads/images/")) continue;
                 $start_position = strpos($item, "/uploads/images/") + strlen($upload_path);
                 $image_name = substr($item, $start_position, strlen($item) - $start_position);
                 array_push($param_images, $image_name);

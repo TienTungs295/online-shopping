@@ -359,6 +359,8 @@
                         method: config.method,
                         data: config.paramsBuilder(uploaderFile),
                         success: function (response) {
+                            let resData = response.data || {};
+                            if (resData.status === "error") toastr.error(resData.message);
                             successCallback(response)
                         },
                         error: function (response) {
@@ -425,6 +427,8 @@
                         method: config.method,
                         data: config.paramsBuilder(uploaderFile),
                         success: function (response) {
+                            let resData = response.data || {};
+                            if (resData.status === "error") toastr.error(resData.message);
                             successCallback(response)
                         },
                         error: function (response) {

@@ -59,7 +59,7 @@ class ProductCategoryController extends Controller
         //image
         $upload_path = "/uploads/images/";
         $image_url = $request->input('image');
-        if ($image_url != null && $image_url != "") {
+        if ($image_url != null && $image_url != "" && str_contains($image_url, "/uploads/images/")) {
             $start_position = strpos($image_url, "/uploads/images/") + strlen($upload_path);
             $image_name = substr($image_url, $start_position, strlen($image_url) - $start_position);
             $product_category->image = $image_name;
@@ -136,7 +136,7 @@ class ProductCategoryController extends Controller
         $delete_url = null;
         $del_image_name = null;
         $upload_path = "/uploads/images/";
-        if ($image_url != null && $image_url != "") {
+        if ($image_url != null && $image_url != "" && str_contains($image_url, "/uploads/images/")) {
             $start_position = strpos($image_url, "/uploads/images/") + strlen($upload_path);
             $image_name = substr($image_url, $start_position, strlen($image_url) - $start_position);
         }

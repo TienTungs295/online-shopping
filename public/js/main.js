@@ -326,16 +326,16 @@
 })();
 
 toastr.options = {
-    "closeButton": false,
+    "closeButton": true,
     "debug": false,
     "newestOnTop": false,
     "progressBar": false,
-    "positionClass": "toast-bottom-right",
+    "positionClass": "toast-top-right",
     "preventDuplicates": false,
     "onclick": null,
-    "showDuration": "0",
-    "hideDuration": "1000",
-    "timeOut": "2000",
+    "showDuration": true,
+    "hideDuration": "3000",
+    "timeOut": "3000",
     "extendedTimeOut": "1000",
     "showEasing": "swing",
     "hideEasing": "linear",
