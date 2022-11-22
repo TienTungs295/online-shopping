@@ -136,7 +136,7 @@ class ProductController extends Controller
         if ($image_string != null && $image_string != "") {
             $image_urls = explode(",", $image_string);
             foreach ($image_urls as $item) {
-                $start_position = strpos($image_url, "/uploads/images/") + strlen($upload_path);
+                $start_position = strpos($item, "/uploads/images/") + strlen($upload_path);
                 $image = new Image;
                 $image->image = substr($item, $start_position, strlen($item) - $start_position);
                 array_push($images, $image);
@@ -337,7 +337,7 @@ class ProductController extends Controller
         if ($image_string != null && $image_string != "") {
             $image_urls = explode(",", $image_string);
             foreach ($image_urls as $item) {
-                $start_position = strpos($image_url, "/uploads/images/") + strlen($upload_path);
+                $start_position = strpos($item, "/uploads/images/") + strlen($upload_path);
                 $image_name = substr($item, $start_position, strlen($item) - $start_position);
                 array_push($param_images, $image_name);
             }

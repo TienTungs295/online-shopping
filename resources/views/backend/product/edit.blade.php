@@ -305,7 +305,7 @@
                 showButtonPanel: true,
                 closeText: 'Xóa',
                 onClose: function () {
-                    var event = arguments.callee.caller.caller.arguments[0];
+                    var event = arguments.callee.caller.caller.caller.arguments[0];
                     if ($(event.delegateTarget).hasClass('ui-datepicker-close')) {
                         $(this).val('');
                     }
@@ -328,7 +328,7 @@
                 showButtonPanel: true,
                 closeText: 'Xóa',
                 onClose: function () {
-                    var event = arguments.callee.caller.caller.arguments[0];
+                    var event = arguments.callee.caller.caller.caller.arguments[0];
                     if ($(event.delegateTarget).hasClass('ui-datepicker-close')) {
                         $(this).val('');
                         $("#is-flash-sale").prop('checked', false);

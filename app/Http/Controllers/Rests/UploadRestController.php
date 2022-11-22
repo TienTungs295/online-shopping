@@ -12,7 +12,7 @@ class UploadRestController extends Controller
     public function storeImage(Request $request)
     {
         $request->validate([
-            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'file' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
         ]);
         $file_path = "uploads/images/";
         $sub_folder = $request->input("sub-folder");

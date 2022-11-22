@@ -24,6 +24,7 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">#</th>
+                                    <th scope="col">Ảnh</th>
                                     <th scope="col">Tên danh mục</th>
                                     <th scope="col" class="text-center">Ngày cập nhật</th>
                                     <th scope="col" class="text-center">Chức năng</th>
@@ -34,6 +35,9 @@
                                     @foreach($product_categories as $data)
                                         <tr>
                                             <th scope="row">{!!$data["id"]!!}</th>
+                                            <td>
+                                                <img src="{!! url('uploads/images/'.$data["image"]) !!}" alt="{!! $data["image"] !!}" width="70" height="70">
+                                            </td>
                                             <td>{!!$data["name"]!!}</td>
                                             <td class="text-center">
                                                 {!! date('H:i:s d-m-Y', strtotime($data["updated_at"])) !!}
