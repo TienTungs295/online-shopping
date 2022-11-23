@@ -168,4 +168,11 @@ class OrderRestController extends BaseCustomController
         return $ajax_response->setData($order_information)->setMessage("Đặt hàng thành công!")->toApiResponse();
     }
 
+    public function countPendingOrder()
+    {
+        $ajax_response = new AjaxResponse();
+        $count = Order::where('status', 1)->count();
+        return $ajax_response->setData($count)->toApiResponse();
+    }
+
 }

@@ -10,7 +10,7 @@
         </li>
         <li class="nav-item {{ (request()->is('quan-tri/don-hang*')) ? 'active' : '' }}">
             <a class="nav-link collapsed" href="{!! route("orderView") !!}">
-                <i class="bi bi-cart-check-fill"></i>
+                <i class="bi bi-cart"></i>
                 <span>Đơn hàng</span>
             </a>
         </li>

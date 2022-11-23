@@ -79,6 +79,7 @@ class ReviewRestController extends Controller
                 }
             });
         });
+        $query->orderBy("created_at","DESC");
         $reviews = $query->take($page_size + 1)->get()->toArray();
         if (sizeof($reviews) > $page_size) {
             $hasMorePage = true;
@@ -97,5 +98,12 @@ class ReviewRestController extends Controller
                 }
             })->count();
         return $ajax_response->setData(array('data' => $reviews, 'hasMorePage' => $hasMorePage, 'totalReviews' => $totalReviews))->toApiResponse();
+    }
+
+    public function countPendingReview()
+    {
+        $ajax_response = new AjaxResponse();
+        $count = Review::where('status', 1)->count();
+        return $ajax_response->setData($count)->toApiResponse();
     }
 }

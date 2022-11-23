@@ -123,7 +123,7 @@ Route::group(['prefix' => 'rest'], function () {
 
     Route::group(['prefix' => 'order'], function () {
         Route::post('/check-out', [OrderRestController::class, 'checkOut']);
-        Route::post('/send-mail', [OrderRestController::class, 'sendMail']);
+        Route::get('/count-pending-order', [OrderRestController::class, 'countPendingOrder']);
     });
 
     Route::group(['middleware' => ['auth:api']], function () {

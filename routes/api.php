@@ -41,6 +41,7 @@ Route::group(['middleware' => ['auth:api']], function () {
 
 Route::group(['prefix' => 'review'], function () {
     Route::get('/find-by-product', [ReviewRestController::class, 'findByProduct']);
+    Route::get('/count-pending-review', [ReviewRestController::class, 'countPendingReview']);
 });
 
 

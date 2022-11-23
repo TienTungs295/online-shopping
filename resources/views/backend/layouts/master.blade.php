@@ -91,6 +91,31 @@
         msg = '{{Session::get('error')}}';
         toastr.error(msg);
     }
+
+    let APP_URL = {!! json_encode(url('/')) !!};
+    $.ajax({
+        url: APP_URL + "/rest/order/count-pending-order",
+        contentType: "json",
+        method: "GET",
+        success: function (res) {
+            let totalPendingOrder = res.data || 0;
+            $("#total-order").text(totalPendingOrder);
+        },
+        error: function (response) {
+        }
+    });
+
+    $.ajax({
+        url: APP_URL + "/rest/review/count-pending-review",
+        contentType: "json",
+        method: "GET",
+        success: function (res) {
+            let totalPendingReview = res.data || 0;
+            $("#total-review").text(totalPendingReview);
+        },
+        error: function (response) {
+        }
+    });
 </script>
 @yield('morescripts')
 </body>
