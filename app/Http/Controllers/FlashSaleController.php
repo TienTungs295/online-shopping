@@ -62,7 +62,7 @@ class FlashSaleController extends Controller
         $flash_sale->end_date = Carbon::createFromFormat('d-m-Y', $request->input('end_date'))->format("Y-m-d");
         $flash_sale->save();
         $this->storeProducts($request, $flash_sale);
-        return redirect()->route("flashSaleView")->with('success', 'Success');
+        return redirect()->route("flashSaleView")->with('success', 'Thành công');
     }
 
     /**
@@ -131,7 +131,7 @@ class FlashSaleController extends Controller
             $flash_sale->products()->detach($del_pro_ids);
         }
 
-        return redirect()->route("flashSaleView")->with('success', 'Success');
+        return redirect()->route("flashSaleView")->with('success', 'Thành công');
     }
 
     /**
@@ -150,7 +150,7 @@ class FlashSaleController extends Controller
 
         $flash_sale->delete();
 
-        return redirect()->back()->with('success', 'Success');
+        return redirect()->back()->with('success', 'Thành công');
     }
 
     private function storeProducts($request, $flash_sale)

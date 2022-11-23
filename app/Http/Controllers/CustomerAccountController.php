@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Review;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use App\Models\CustomerAccount;
 
-class ReviewController extends Controller
+
+class CustomerAccountController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,17 @@ class ReviewController extends Controller
      */
     public function index(Request $request)
     {
-        $reviews = Review::orderBy('id', 'DESC')->paginate(25);
-        return View('backend.review.index', compact("reviews"));
+        $q = $request->input('q');
+        if ($q != "") {
+            $customer_accounts = CustomerAccount::where(function ($query) use ($q) {
+                $query->where('name', 'like', '%' . $q . '%');
+            })->orderBy('id', 'DESC')
+                ->paginate(25);
+            $customer_accounts->appends(['q' => $q]);
+        } else {
+            $customer_accounts = CustomerAccount::paginate(25);
+        }
+        return View('backend.customer-account.index', compact("customer_accounts", "q"));
     }
 
     /**
@@ -26,6 +36,7 @@ class ReviewController extends Controller
      */
     public function create()
     {
+        return view('backend.customer-account.edit');
     }
 
     /**
@@ -38,15 +49,14 @@ class ReviewController extends Controller
     {
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        try {
+            $customer_account = CustomerAccount::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
+        }
+        return view('backend.customer-account.edit', compact('customer_account'));
     }
 
     /**
@@ -57,18 +67,18 @@ class ReviewController extends Controller
      */
     public function edit($id)
     {
+
     }
 
-    public function changeStatus(Request $request, $id)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
     {
-        try {
-            $review = Review::findOrFail($id);
-        } catch (ModelNotFoundException $e) {
-            return redirect()->route("reviewView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
-        }
-        $review->status = 2;
-        $review->update();
-        return redirect()->route("reviewView")->with('success', 'Thành công');
     }
 
     /**
@@ -80,12 +90,12 @@ class ReviewController extends Controller
     public function destroy($id)
     {
         try {
-            $review = Review::findOrFail($id);
+            $customer_account = CustomerAccount::findOrFail($id);
         } catch (ModelNotFoundException $e) {
             return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }
 
-        $review->delete();
+        $customer_account->delete();
 
         return redirect()->back()->with('success', 'Thành công');
     }

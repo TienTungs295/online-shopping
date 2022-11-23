@@ -67,7 +67,7 @@ class ProductCollectionController extends Controller
         $product_collection->is_featured = $featured;
         $product_collection->save();
 
-        return redirect()->route("collectionView")->with('success', 'Success');
+        return redirect()->route("collectionView")->with('success', 'Thành công');
     }
 
     /**
@@ -129,7 +129,7 @@ class ProductCollectionController extends Controller
         $featured = $request->has("is_featured") ? 1 : 0;
         $product_collection->is_featured = $featured;
         $product_collection->update();
-        return redirect()->route("collectionView")->with('success', 'Success');
+        return redirect()->route("collectionView")->with('success', 'Thành công');
     }
 
     /**
@@ -148,6 +148,6 @@ class ProductCollectionController extends Controller
 
         $product_collection->delete();
 
-        return redirect()->back()->with('success', 'Success');
+        return redirect()->back()->with('success', 'Thành công');
     }
 }

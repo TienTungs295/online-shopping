@@ -54,14 +54,14 @@ Route::group(['middleware' => ['isMember','auth:web','preventBackHistory'], 'pre
         Route::post('/xoa/{id}', ['as' => 'deleteBlog', 'uses' => 'BlogController@destroy']);
     });
 
-    Route::group(['prefix' => 'flash-sale'], function () {
-        Route::get('', ['as' => 'flashSaleView', 'uses' => 'FlashSaleController@index']);
-        Route::get('/them-moi', ['as' => 'createFlashSaleView', 'uses' => 'FlashSaleController@create']);
-        Route::get('/chinh-sua/{id}', ['as' => 'updateFlashSaleView', 'uses' => 'FlashSaleController@edit']);
-        Route::post('/luu-tru', ['as' => 'createFlashSale', 'uses' => 'FlashSaleController@store']);
-        Route::post('/cap-nhat/{id}', ['as' => 'updateFlashSale', 'uses' => 'FlashSaleController@update']);
-        Route::post('/xoa/{id}', ['as' => 'deleteFlashSale', 'uses' => 'FlashSaleController@destroy']);
-    });
+//    Route::group(['prefix' => 'flash-sale'], function () {
+//        Route::get('', ['as' => 'flashSaleView', 'uses' => 'FlashSaleController@index']);
+//        Route::get('/them-moi', ['as' => 'createFlashSaleView', 'uses' => 'FlashSaleController@create']);
+//        Route::get('/chinh-sua/{id}', ['as' => 'updateFlashSaleView', 'uses' => 'FlashSaleController@edit']);
+//        Route::post('/luu-tru', ['as' => 'createFlashSale', 'uses' => 'FlashSaleController@store']);
+//        Route::post('/cap-nhat/{id}', ['as' => 'updateFlashSale', 'uses' => 'FlashSaleController@update']);
+//        Route::post('/xoa/{id}', ['as' => 'deleteFlashSale', 'uses' => 'FlashSaleController@destroy']);
+//    });
 
     Route::group(['prefix' => 'ma-giam-gia'], function () {
         Route::get('', ['as' => 'discountView', 'uses' => 'DiscountController@index']);
@@ -93,6 +93,11 @@ Route::group(['middleware' => ['isMember','auth:web','preventBackHistory'], 'pre
         Route::get('', ['as' => 'reviewView', 'uses' => 'ReviewController@index']);
         Route::post('/xoa/{id}', ['as' => 'deleteReview', 'uses' => 'ReviewController@destroy']);
         Route::post('/cap-nhat-trang-thai/{id}', ['as' => 'changeReviewStatus', 'uses' => 'ReviewController@changeStatus']);
+    });
+
+    Route::group(['prefix' => 'khach-hang'], function () {
+        Route::get('', ['as' => 'customerAccountView', 'uses' => 'CustomerAccountController@index']);
+        Route::post('/xoa/{id}', ['as' => 'deleteCustomerAccount', 'uses' => 'CustomerAccountController@destroy']);
     });
 
     Route::group(['middleware' => 'isAdmin', 'prefix' => 'nhan-vien'], function () {

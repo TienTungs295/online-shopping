@@ -1291,3 +1291,9 @@ button.ui-datepicker-current {
 .toast-top-right {
     top: 60px
 }
+
+.sidebar-nav .nav-item.active{
+    .nav-link{
+        background: #f6f9ff;
+    }
+}
