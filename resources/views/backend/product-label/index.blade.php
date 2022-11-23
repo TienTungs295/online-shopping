@@ -48,7 +48,7 @@
                                 <tr>
                                     <th scope="row">{!!$data->id!!}</th>
                                     <td>{!!$data->name!!}</td>
-                                    <td>{!!$data->color!!}</td>
+                                    <td><span style="background-color: {!!$data->color != null ? $data->color : "transparent"!!}">{!!$data->color!!}</span></td>
                                     <td>{!!  $data->updated_at->format('H:i:s d-m-Y')!!}</td>
                                     <td>
                                         <a href="{!! route('updateLabelView',['id' => $data->id]) !!}"
