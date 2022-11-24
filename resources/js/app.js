@@ -26,6 +26,8 @@ import moment from 'moment';
 import {BTabs, BTab, BModal, BCarousel, BCarouselSlide, BDropdown, BDropdownItem, BProgress} from 'bootstrap-vue';
 import store from './store';
 import VueStarRating  from 'vue-star-rating';
+import VueCookies from 'vue-cookies'
+
 
 Vue.component('header-component', require('./components/layouts/HeaderComponent').default);
 Vue.component('footer-component', require('./components/layouts/FooterComponent').default);
@@ -53,6 +55,8 @@ Vue.use(VueToastr, {
     clickClose: true,
     defaultStyle: {"top": "50px"},
 });
+
+Vue.use(VueCookies, { expires: '60d'})
 
 Vue.prototype.moment = moment;
 

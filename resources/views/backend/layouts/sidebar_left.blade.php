@@ -47,7 +47,7 @@
         <li class="nav-item {{ (request()->is('quan-tri/lien-he*')) ? 'active' : '' }}">
             <a class="nav-link collapsed" href="{!! route("customerInfoView") !!}">
                 <i class="bi bi-journal-check"></i>
-                <span>Liên hệ</span>
+                <span>Email liên hệ</span>
             </a>
         </li>
         @if((auth()->user()->role & 2) > 0)

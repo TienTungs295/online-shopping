@@ -2,7 +2,7 @@
 @section('content')
 <div class="main-inner">
     <div class="pagetitle">
-        <h4>Liên hệ</h4>
+        <h4>Email liên hệ</h4>
     </div><!-- End Page Title -->
     <section class="section">
         <div class="row">
@@ -14,7 +14,7 @@
                         <form method="GET" action="{!! route('customerInfoView') !!}" class="row g-3">
                             <div class="col-md-4">
                                 <div class="input-group mb-3">
-                                    <input type="text" name="q" class="form-control" placeholder="Tên hoặc email" aria-label="Tên"
+                                    <input type="text" name="q" class="form-control" placeholder="Email" aria-label="Tên"
                                            aria-describedby="basic-addon2" value="{!! isset($q) ? $q : '' !!}">
                                     <div class="input-group-append">
                                         <button class="btn btn-outline-primary" type="submit">Tìm kiếm</button>

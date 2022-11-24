@@ -19,7 +19,7 @@ class CustomerInfoController extends Controller
         $q = $request->input('q');
         if ($q != "") {
             $customer_infos = CustomerInfo::where(function ($query) use ($q) {
-                $query->where('name', 'like', '%' . $q . '%')->orWhere('email', 'like', '%' . $q . '%');
+                $query->where('email', 'like', '%' . $q . '%');
             })->orderBy('id', 'DESC')
                 ->paginate(25);
             $customer_infos->appends(['q' => $q]);
