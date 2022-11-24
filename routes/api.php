@@ -7,6 +7,7 @@ use App\Http\Controllers\Rests\CollectionRestController;
 use App\Http\Controllers\Rests\ProductRestController;
 use App\Http\Controllers\Rests\UploadRestController;
 use App\Http\Controllers\Rests\ReviewRestController;
+use App\Http\Controllers\Rests\CustomerInfoRestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -78,6 +79,10 @@ Route::group(['prefix' => 'blog'], function () {
 
 Route::group(['prefix' => 'collection'], function () {
     Route::get('/find-all', [CollectionRestController::class, 'findAll']);
+});
+
+Route::group(['prefix' => 'contact'], function () {
+    Route::post('/save', [CustomerInfoRestController::class, 'store']);
 });
 
 Route::post('/tai-anh', ['as' => 'uploadImage', UploadRestController::class, 'storeImage']);

@@ -100,6 +100,11 @@ Route::group(['middleware' => ['isMember','auth:web','preventBackHistory'], 'pre
         Route::post('/xoa/{id}', ['as' => 'deleteCustomerAccount', 'uses' => 'CustomerAccountController@destroy']);
     });
 
+    Route::group(['prefix' => 'lien-he'], function () {
+        Route::get('', ['as' => 'customerInfoView', 'uses' => 'CustomerInfoController@index']);
+        Route::post('/xoa/{id}', ['as' => 'deleteCustomerInfo', 'uses' => 'CustomerInfoController@destroy']);
+    });
+
     Route::group(['middleware' => 'isAdmin', 'prefix' => 'nhan-vien'], function () {
         Route::get('', ['as' => 'userView', 'uses' => 'UserController@index']);
         Route::get('/them-moi', ['as' => 'createUserView', 'uses' => 'UserController@create']);

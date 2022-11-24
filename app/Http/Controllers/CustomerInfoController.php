@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
-use App\Models\CustomerAccount;
+use App\Models\CustomerInfo;
 
 
-class CustomerAccountController extends Controller
+class CustomerInfoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,15 +18,15 @@ class CustomerAccountController extends Controller
     {
         $q = $request->input('q');
         if ($q != "") {
-            $customer_accounts = CustomerAccount::where(function ($query) use ($q) {
-                $query->where('name', 'like', '%' . $q . '%');
+            $customer_infos = CustomerInfo::where(function ($query) use ($q) {
+                $query->where('name', 'like', '%' . $q . '%')->orWhere('email', 'like', '%' . $q . '%');
             })->orderBy('id', 'DESC')
                 ->paginate(25);
-            $customer_accounts->appends(['q' => $q]);
+            $customer_infos->appends(['q' => $q]);
         } else {
-            $customer_accounts = CustomerAccount::paginate(25);
+            $customer_infos = CustomerInfo::paginate(25);
         }
-        return View('backend.customer-account.index', compact("customer_accounts", "q"));
+        return View('backend.customer-info.index', compact("customer_infos", "q"));
     }
 
     /**
@@ -48,14 +48,15 @@ class CustomerAccountController extends Controller
     {
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
     public function show($id)
     {
-        try {
-            $customer_account = CustomerAccount::findOrFail($id);
-        } catch (ModelNotFoundException $e) {
-            return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
-        }
-        return view('backend.customer-account.edit', compact('customer_account'));
+        //
     }
 
     /**
@@ -66,7 +67,6 @@ class CustomerAccountController extends Controller
      */
     public function edit($id)
     {
-
     }
 
     /**
@@ -89,12 +89,12 @@ class CustomerAccountController extends Controller
     public function destroy($id)
     {
         try {
-            $customer_account = CustomerAccount::findOrFail($id);
+            $customer_info = CustomerInfo::findOrFail($id);
         } catch (ModelNotFoundException $e) {
             return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }
 
-        $customer_account->delete();
+        $customer_info->delete();
 
         return redirect()->back()->with('success', 'Thành công');
     }
