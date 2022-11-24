@@ -82,7 +82,6 @@
 @endsection
 @section('morescripts')
     <script>
-        var APP_URL = {!! json_encode(url('/')) !!};
 
         // IMAGE
         var image_url = $("#image").val();

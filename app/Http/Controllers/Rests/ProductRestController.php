@@ -48,7 +48,7 @@ class ProductRestController extends Controller
         }
         $products = Product::with(['productLabels'])->whereHas('productCollections', function ($query) use ($collection_id) {
             $query->where('product_collection_id', $collection_id);
-        })->orderBy('id', 'DESC')->paginate(8);
+        })->orderBy('updated_at', 'DESC')->paginate(8);
         return $ajax_response->setData($products)->toApiResponse();
     }
 
@@ -199,7 +199,7 @@ class ProductRestController extends Controller
                     $query->where('end_date', '>=', $current_time);
                 });
             });
-        })->paginate(12);
+        })->orderBy('updated_at', 'DESC')->paginate(12);
         return $ajax_response->setData($products)->toApiResponse();
     }
 
@@ -207,22 +207,22 @@ class ProductRestController extends Controller
     {
         $ajax_response = new AjaxResponse();
         $page_size = 12;
-        $query = Product::where("is_trending", 1)->limit($page_size)->get();
+        $query = Product::where("is_trending", 1)->orderBy('updated_at','DESC')->take($page_size)->get();
         $total_products = $query->count();
         $products = $query->toArray();
         if ($total_products >= 12) return $ajax_response->setData($products)->toApiResponse();
         $miss_products = $page_size - $total_products;
-        $bonus_products = Product::with(['productLabels'])
+        $query2 = Product::with(['productLabels'])
             ->join('ec_order_product', 'ec_order_product.product_id', '=',
-                'ec_products.id')
-            ->groupByRaw('ec_products.id')
-            ->orderByRaw("SUM(ec_order_product.qty) DESC")
+                'ec_products.id');
+        if ($total_products > 0) $query2->whereNotIn("ec_products.id", $query->pluck("id")->toArray());
+        $bonus_products = $query2->groupByRaw('ec_products.id')
+            ->orderByRaw("SUM(ec_order_product.qty) DESC,ec_order_product.updated_at DESC")
             ->distinct()
             ->select([
                 'ec_products.*'
             ])
-            ->paginate($miss_products)
-            ->toArray();
+            ->take($miss_products)->get()->toArray();
         $products = array_merge($products, $bonus_products);
         return $ajax_response->setData($products)->toApiResponse();
     }
@@ -280,7 +280,7 @@ class ProductRestController extends Controller
     {
         $ajax_response = new AjaxResponse();
         $products = Product::with(['productLabels'])->whereHas('reviews', function ($query) {
-            $query->orderBy('star', 'DESC');
+            $query->orderBy('star', 'DESC')->orderBy('updated_at', 'DESC');
         })->paginate(12)->toArray();
         return $ajax_response->setData($products)->toApiResponse();
     }

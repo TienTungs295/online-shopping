@@ -298,11 +298,13 @@
                                                               v-for="label in item.product_labels">
                                                             {{ label.name }}
                                                         </span>
-                                                    <span class="pr_flash" v-if="item.is_out_of_stock" style="background-color: #000">Hết hàng</span>
+                                                    <span class="pr_flash" v-if="item.is_out_of_stock"
+                                                          style="background-color: #000">Hết hàng</span>
                                                     <div class="product_img style-2">
                                                         <router-link
                                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
-                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image" :alt="item.image">
+                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image"
+                                                                 :alt="item.image">
                                                         </router-link>
                                                     </div>
                                                     <div class="product_info">
@@ -319,7 +321,9 @@
                                                             <div v-else>
                                                                 <div v-if="item.on_sale">
                                                                     <span
-                                                                        class="price">{{ item.sale_price | commaFormat }}</span>
+                                                                        class="price">{{
+                                                                            item.sale_price | commaFormat
+                                                                        }}</span>
                                                                     <del>{{ item.price | commaFormat }}</del>
                                                                     <div class="on_sale d-block"
                                                                          v-if="item.sale_off != null">
@@ -328,7 +332,9 @@
                                                                 </div>
                                                                 <div v-else>
                                                                     <span
-                                                                        class="price">{{ item.price | commaFormat }}</span>
+                                                                        class="price">{{
+                                                                            item.price | commaFormat
+                                                                        }}</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -384,11 +390,13 @@
                                                            v-for="label in item.product_labels">
                                                             {{ label.name }}
                                                         </span>
-                                                    <span class="pr_flash" v-if="item.is_out_of_stock" style="background-color: #000">Hết hàng</span>
+                                                    <span class="pr_flash" v-if="item.is_out_of_stock"
+                                                          style="background-color: #000">Hết hàng</span>
                                                     <div class="product_img style-2">
                                                         <router-link
                                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
-                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image" :alt="item.image">
+                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image"
+                                                                 :alt="item.image">
                                                         </router-link>
                                                     </div>
                                                     <div class="product_info">
@@ -405,7 +413,9 @@
                                                             <div v-else>
                                                                 <div v-if="item.on_sale">
                                                                     <span
-                                                                        class="price">{{ item.sale_price | commaFormat }}</span>
+                                                                        class="price">{{
+                                                                            item.sale_price | commaFormat
+                                                                        }}</span>
                                                                     <del>{{ item.price | commaFormat }}</del>
                                                                     <div class="on_sale d-block"
                                                                          v-if="item.sale_off != null">
@@ -414,7 +424,9 @@
                                                                 </div>
                                                                 <div v-else>
                                                                     <span
-                                                                        class="price">{{ item.price | commaFormat }}</span>
+                                                                        class="price">{{
+                                                                            item.price | commaFormat
+                                                                        }}</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -470,11 +482,13 @@
                                                               v-for="label in item.product_labels">
                                                             {{ label.name }}
                                                         </span>
-                                                    <span class="pr_flash" v-if="item.is_out_of_stock" style="background-color: #000">Hết hàng</span>
+                                                    <span class="pr_flash" v-if="item.is_out_of_stock"
+                                                          style="background-color: #000">Hết hàng</span>
                                                     <div class="product_img style-2">
                                                         <router-link
                                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
-                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image" :alt="item.image">
+                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image"
+                                                                 :alt="item.image">
                                                         </router-link>
                                                     </div>
                                                     <div class="product_info">
@@ -491,7 +505,9 @@
                                                             <div v-else>
                                                                 <div v-if="item.on_sale">
                                                                     <span
-                                                                        class="price">{{ item.sale_price | commaFormat }}</span>
+                                                                        class="price">{{
+                                                                            item.sale_price | commaFormat
+                                                                        }}</span>
                                                                     <del>{{ item.price | commaFormat }}</del>
                                                                     <div class="on_sale d-block"
                                                                          v-if="item.sale_off != null">
@@ -500,7 +516,9 @@
                                                                 </div>
                                                                 <div v-else>
                                                                     <span
-                                                                        class="price">{{ item.price | commaFormat }}</span>
+                                                                        class="price">{{
+                                                                            item.price | commaFormat
+                                                                        }}</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -663,8 +681,7 @@ export default {
         this.changeCollection(null, 0);
 
         ProductService.findTrending().then(response => {
-            let data = response.data || [];
-            this.trendingProducts = data;
+            this.trendingProducts = response || [];
             let groupProducts = [];
             let key = 0;
             for (let i = 0; i < this.trendingProducts.length; i++) {

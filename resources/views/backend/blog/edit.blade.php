@@ -80,7 +80,6 @@
 @endsection
 @section('morescripts')
     <script type="application/javascript">
-        var APP_URL = {!! json_encode(url('/')) !!};
         var image_url = $("#image").val();
         var config = {
             ajaxConfig: {

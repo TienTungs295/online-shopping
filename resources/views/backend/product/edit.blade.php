@@ -43,26 +43,6 @@
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <div class="col-md-6 d-flex-align-end">
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input"
-                                                   value="{!! old('is_featured', isset($product->is_featured) ? $product->is_featured : '')!!}"
-                                                   name="is_featured"
-                                                   {!! old('is_featured', isset($product->is_featured) && $product->is_featured == 1 ? 'checked' : '')!!} type="checkbox">
-                                            <label class="form-label ml-10">Đặc trưng</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 d-flex-align-end">
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input"
-                                                   value="{!! old('is_trending', isset($product->is_trending) ? $product->is_trending : '')!!}"
-                                                   name="is_trending"
-                                                   {!! old('is_trending', isset($product->is_trending) && $product->is_trending == 1 ? 'checked' : '')!!} type="checkbox">
-                                            <label class="form-label ml-10">Thịnh hàng</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
                                     <div class="col">
                                         <label class="form-label">Nội dung</label>
                                         <textarea class="3m-editor" name="content">
@@ -87,13 +67,31 @@
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <label class="form-label">Mã sản phẩm</label>
                                         <input type="text"
                                                value="{!! old('sku', isset($product->sku) ? $product->sku : '')!!}"
                                                class="form-control" name="sku" maxlength="255">
                                     </div>
-                                    <div class="col-md-6 d-inline-flex-align-end">
+                                    <div class="col-md-3 d-flex-align-end">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input"
+                                                   value="{!! old('is_featured', isset($product->is_featured) ? $product->is_featured : '')!!}"
+                                                   name="is_featured"
+                                                   {!! old('is_featured', isset($product->is_featured) && $product->is_featured == 1 ? 'checked' : '')!!} type="checkbox">
+                                            <label class="form-label ml-10">Đặc trưng</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 d-flex-align-end">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input"
+                                                   value="{!! old('is_trending', isset($product->is_trending) ? $product->is_trending : '')!!}"
+                                                   name="is_trending"
+                                                   {!! old('is_trending', isset($product->is_trending) && $product->is_trending == 1 ? 'checked' : '')!!} type="checkbox">
+                                            <label class="form-label ml-10">Thịnh hành</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 d-inline-flex-align-end">
                                         <div class="form-check">
                                             <input class="form-check-input" id="is-contact" type="checkbox"
                                                    value="{!! old('is_contact', isset($product->is_contact) ? $product->is_contact : 0)!!}"
@@ -348,7 +346,6 @@
                 },
             })
         });
-        var APP_URL = {!! json_encode(url('/')) !!};
         var exclude_id = $("#product-id").val();
 
         // IMAGES
