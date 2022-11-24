@@ -24,7 +24,7 @@ class DiscountController extends Controller
                 ->paginate(25);
             $discounts->appends(['q' => $q]);
         } else {
-            $discounts = Discount::paginate(25);
+            $discounts = Discount::orderBy('id', 'DESC')->paginate(25);
         }
         return View('backend.discount.index', compact("discounts", "q"));
     }

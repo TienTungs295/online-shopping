@@ -24,7 +24,7 @@ class CustomerInfoController extends Controller
                 ->paginate(25);
             $customer_infos->appends(['q' => $q]);
         } else {
-            $customer_infos = CustomerInfo::paginate(25);
+            $customer_infos = CustomerInfo::orderBy('id', 'DESC')->paginate(25);
         }
         return View('backend.customer-info.index', compact("customer_infos", "q"));
     }

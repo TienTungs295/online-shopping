@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
-use Illuminate\Support\Str;
 use File;
 
 class ProductCategoryController extends Controller
@@ -17,7 +16,16 @@ class ProductCategoryController extends Controller
      */
     public function index(Request $request)
     {
-        $product_categories = ProductCategory::all()->toArray();
+        $q = $request->input('q');
+        if ($q != "") {
+            $product_categories = ProductCategory::where(function ($query) use ($q) {
+                $query->where('name', 'like', '%' . $q . '%');
+            })->orderBy('id', 'DESC')
+                ->paginate(25);
+            $product_categories->appends(['q' => $q]);
+        } else {
+            $product_categories = ProductCategory::orderBy('id', 'DESC')->paginate(25);
+        }
         return View('backend.product-category.index')->with(['product_categories' => $product_categories]);
     }
 

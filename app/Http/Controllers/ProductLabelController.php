@@ -23,7 +23,7 @@ class ProductLabelController extends Controller
                 ->paginate(25);
             $product_labels->appends(['q' => $q]);
         } else {
-            $product_labels = ProductLabel::paginate(25);
+            $product_labels = ProductLabel::orderBy('id', 'DESC')->paginate(25);
         }
         return View('backend.product-label.index', compact("product_labels", "q"));
     }

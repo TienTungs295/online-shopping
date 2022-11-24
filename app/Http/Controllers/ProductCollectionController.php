@@ -25,7 +25,7 @@ class ProductCollectionController extends Controller
                 ->paginate(25);
             $product_collections->appends(['q' => $q]);
         } else {
-            $product_collections = ProductCollection::paginate(25);
+            $product_collections = ProductCollection::orderBy('id', 'DESC')->paginate(25);
         }
         return View('backend.product-collection.index', compact("product_collections", "q"));
     }

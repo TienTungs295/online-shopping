@@ -25,7 +25,7 @@ class BlogController extends Controller
                 ->paginate(25);
             $blogs->appends(['q' => $q]);
         } else {
-            $blogs = Blog::paginate(25);
+            $blogs = Blog::orderBy('id', 'DESC')->paginate(25);
         }
         return View('backend.blog.index', compact("blogs", "q"));
     }

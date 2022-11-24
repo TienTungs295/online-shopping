@@ -24,7 +24,7 @@ class UserController extends Controller
                 ->paginate(25);
             $users->appends(['q' => $q]);
         } else {
-            $users = User::paginate(25);
+            $users = User::orderBy('id', 'DESC')->paginate(25);
         }
         return View('backend.user.index', compact("users", "q"));
     }

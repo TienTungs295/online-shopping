@@ -65,7 +65,10 @@
                                 @endif
                                 </tbody>
                             </table>
-
+                            <!-- End Table with stripped rows -->
+                            <div class="d-flex justify-content-end">
+                                {!! $product_categories->links() !!}
+                            </div>
                         </div>
                     </div>
 

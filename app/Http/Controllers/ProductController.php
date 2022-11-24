@@ -33,7 +33,7 @@ class ProductController extends Controller
                 ->paginate(25);
             $products->appends(['q' => $q]);
         } else {
-            $products = Product::paginate(25);
+            $products = Product::orderBy('id', 'DESC')->paginate(25);
         }
 
         return View('backend.product.index', compact("products", "q"));

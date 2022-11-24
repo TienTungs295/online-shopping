@@ -24,7 +24,7 @@ class CustomerAccountController extends Controller
                 ->paginate(25);
             $customer_accounts->appends(['q' => $q]);
         } else {
-            $customer_accounts = CustomerAccount::paginate(25);
+            $customer_accounts = CustomerAccount::orderBy('id', 'DESC')->paginate(25);
         }
         return View('backend.customer-account.index', compact("customer_accounts", "q"));
     }
