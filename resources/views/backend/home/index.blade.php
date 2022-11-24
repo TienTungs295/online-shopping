@@ -77,28 +77,6 @@
 
                             </div><!-- End Product -->
 
-                            <!-- Category -->
-                            <div class="col-xxl-4 col-xl-12">
-
-                                <div class="card info-card customers-card">
-
-                                    <div class="card-body">
-                                        <h5 class="card-title">Danh mục</h5>
-
-                                        <div class="d-flex align-items-center">
-                                            <div
-                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                                <i class="bi bi-list-ul"></i>
-                                            </div>
-                                            <div class="ps-3">
-                                                <h6>{!! $total_category!!}</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div><!-- End Category -->
-
                             <!-- Post -->
                             <div class="col-xxl-4 col-xl-12">
 
@@ -142,6 +120,27 @@
                                 </div>
 
                             </div><!-- End Customer -->
+
+                            <!-- Contact -->
+                            <div class="col-xxl-4 col-xl-12">
+
+                                <div class="card info-card customers-card">
+
+                                    <div class="card-body">
+                                        <h5 class="card-title">Liên hệ</h5>
+
+                                        <div class="d-flex align-items-center">
+                                            <div
+                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-journal-check"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>{!! $total_customer_info!!}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- End Contact -->
                         </div>
                     </div><!-- End Left side columns -->
                 </div>
