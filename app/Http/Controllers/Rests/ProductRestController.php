@@ -206,7 +206,13 @@ class ProductRestController extends Controller
     public function findTrending(Request $request)
     {
         $ajax_response = new AjaxResponse();
-        $products = Product::with(['productLabels'])
+        $page_size = 12;
+        $query = Product::where("is_trending", 1)->limit($page_size)->get();
+        $total_products = $query->count();
+        $products = $query->toArray();
+        if ($total_products >= 12) return $ajax_response->setData($products)->toApiResponse();
+        $miss_products = $page_size - $total_products;
+        $bonus_products = Product::with(['productLabels'])
             ->join('ec_order_product', 'ec_order_product.product_id', '=',
                 'ec_products.id')
             ->groupByRaw('ec_products.id')
@@ -215,8 +221,9 @@ class ProductRestController extends Controller
             ->select([
                 'ec_products.*'
             ])
-            ->paginate(12)
+            ->paginate($miss_products)
             ->toArray();
+        $products = array_merge($products, $bonus_products);
         return $ajax_response->setData($products)->toApiResponse();
     }
 

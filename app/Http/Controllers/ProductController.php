@@ -120,6 +120,7 @@ class ProductController extends Controller
             $product->stock_status = $request->input('stock_status');
         }
         $product->is_contact = $is_contact_price ? 1 : 0;
+        $product->is_trending =  $request->has('is_trending') ? 1 : 0;
 
         //image
         $upload_path = "/uploads/images/";
@@ -309,6 +310,7 @@ class ProductController extends Controller
             $product->stock_status = $request->input('stock_status');
         }
         $product->is_contact = $is_contact_price ? 1 : 0;
+        $product->is_trending =  $request->has('is_trending') ? 1 : 0;
 
         //image
         $del_image_names = [];

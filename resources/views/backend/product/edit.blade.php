@@ -22,14 +22,14 @@
                                 <input type="hidden" id="product-id" name="product_id"
                                        value="{!! isset($product->id) ? $product->id :"" !!}">
                                 <div class="row mb-3">
-                                    <div class="col-md-5">
+                                    <div class="col-md-6">
                                         <label class="form-label">Tên<span
                                                 class="text-danger">*</span></label>
                                         <input type="text"
                                                value="{!! old('name', isset($product->name) ? $product->name : '')!!}"
                                                class="form-control" name="name" maxlength="255" required>
                                     </div>
-                                    <div class="col-md-5">
+                                    <div class="col-md-6">
                                         <label class="form-label">Danh mục</label>
                                         <select class="form-select" name="category_id">
                                             <option value="0">Không danh mục</option>
@@ -41,13 +41,24 @@
                                             @endif
                                         </select>
                                     </div>
-                                    <div class="col-md-2 d-flex-align-end">
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6 d-flex-align-end">
                                         <div class="form-check form-switch">
                                             <input class="form-check-input"
                                                    value="{!! old('is_featured', isset($product->is_featured) ? $product->is_featured : '')!!}"
                                                    name="is_featured"
                                                    {!! old('is_featured', isset($product->is_featured) && $product->is_featured == 1 ? 'checked' : '')!!} type="checkbox">
                                             <label class="form-label ml-10">Đặc trưng</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex-align-end">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input"
+                                                   value="{!! old('is_trending', isset($product->is_trending) ? $product->is_trending : '')!!}"
+                                                   name="is_trending"
+                                                   {!! old('is_trending', isset($product->is_trending) && $product->is_trending == 1 ? 'checked' : '')!!} type="checkbox">
+                                            <label class="form-label ml-10">Thịnh hàng</label>
                                         </div>
                                     </div>
                                 </div>
