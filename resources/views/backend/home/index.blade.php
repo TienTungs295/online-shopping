@@ -127,7 +127,7 @@
                                 <div class="card info-card customers-card">
 
                                     <div class="card-body">
-                                        <h5 class="card-title">Liên hệ</h5>
+                                        <h5 class="card-title">Email liên hệ</h5>
 
                                         <div class="d-flex align-items-center">
                                             <div
