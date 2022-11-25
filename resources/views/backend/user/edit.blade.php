@@ -33,7 +33,9 @@
                                             class="text-danger">*</span></label>
                                     <div class="col-sm-10">
                                         @if(isset($user->id))
-                                            <span>{!! $user->email !!}</span>
+                                            <input type="email"
+                                                   value="{!!$user->email!!}" disabled
+                                                   class="form-control" name="email" readonly>
                                         @else
                                             <input type="email"
                                                    value="{!! old('email', isset($user->email) ? $user->email : '')!!}"
@@ -46,8 +48,8 @@
                                             class="text-danger">*</span></label>
                                     <div class="col-sm-10">
                                         <input type="password"
-                                               value="{!!  isset($user->password) ? $user->password : ''!!}"
-                                               class="form-control" name="password" maxlength="255" required>
+                                               value=""
+                                               class="form-control" name="password" maxlength="255">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -55,8 +57,8 @@
                                             class="text-danger">*</span></label>
                                     <div class="col-sm-10">
                                         <input type="password"
-                                               value="{!! isset($user->password_confirm) ? $user->password_confirm : ''!!}"
-                                               class="form-control" name="password_confirm" maxlength="255" required>
+                                               value=""
+                                               class="form-control" name="password_confirm" maxlength="255">
                                     </div>
                                 </div>
                                 <div class="row mb-3">

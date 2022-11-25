@@ -57,18 +57,24 @@ class UserController extends Controller
         $request->validate(
             [
                 'name' => 'required|max:255',
-                'email' => 'required|max:255',
+                'email' => 'required|email|max:255',
                 'password' => 'required|min:8|max:255',
+                'password_confirm' => 'required|min:8|max:255|same:password',
                 'role' => 'required',
             ],
             [
                 'name.required' => 'Tên nhân viên không được phép bỏ trống',
                 'name.max' => 'Tên nhân viên không được vượt quá 255 ký tự',
                 'email.required' => 'Email không được phép bỏ trống',
+                'email.email' => 'Email không hợp lệ',
                 'email.max' => 'Email không được vượt quá 255 ký tự',
                 'password.required' => 'Mật khẩu không được phép bỏ trống',
                 'password.min' => 'Mật khẩu phải có ít nhất 8 ký tự',
                 'password.max' => 'Mật khẩu không được vượt quá 255 ký tự',
+                'password_confirm.required' => 'Mật khẩu xác nhận không được phép bỏ trống',
+                'password_confirm.min' => 'Mật khẩu xác nhận phải có ít nhất 8 ký tự',
+                'password_confirm.max' => 'Mật khẩu xác nhận không được vượt quá 255 ký tự',
+                'password_confirm.same' => 'Mật khẩu xác nhận không chính xác',
                 'role.required' => 'Vai trò nhân viên không được phép bỏ trống',
             ]);
 
@@ -151,17 +157,11 @@ class UserController extends Controller
         $request->validate(
             [
                 'name' => 'required|max:255',
-                'password' => 'required|min:8|max:255',
                 'role' => 'required',
             ],
             [
                 'name.required' => 'Tên nhân viên không được phép bỏ trống',
                 'name.max' => 'Tên nhân viên không được vượt quá 255 ký tự',
-                'email.required' => 'Email không được phép bỏ trống',
-                'email.max' => 'Email không được vượt quá 255 ký tự',
-                'password.required' => 'Mật khẩu không được phép bỏ trống',
-                'password.min' => 'Mật khẩu phải có ít nhất 8 ký tự',
-                'password.max' => 'Mật khẩu không được vượt quá 255 ký tự',
                 'role.required' => 'Vai trò nhân viên không được phép bỏ trống',
             ]);
 
@@ -169,12 +169,23 @@ class UserController extends Controller
         if ($count_name_exist >= 1) {
             return redirect()->back()->with('error', 'Tên nhân viên đã tồn tại');
         }
+        $password = $request->input("password");
+        $password_confirm = $request->input("password_confirm");
+        if (!is_null($password)) {
+            if (strlen($password) < 8)
+                return redirect()->back()->with('error', 'Mật khẩu phải có ít nhất 8 ký tự');
+            if (strlen($password) > 255)
+                return redirect()->back()->with('error', 'Mật khẩu không được vượt quá 255 ký tự');
+            if (is_null($password_confirm)) {
+                return redirect()->back()->with('error', 'Mật khẩu xác nhận không được phép bỏ trống');
+            }
+            if ($password != $password_confirm) {
+                return redirect()->back()->with('error', 'Mật khẩu xác nhận không chính xác');
+            }
 
-        if ($request->input('password') != $request->input('password_confirm')) {
-            return redirect()->back()->with('error', 'Mật khẩu xác nhận không chính xác');
+            $user->password = bcrypt($request->input('password'));
         }
 
-        $user->password = bcrypt($request->input('password'));
         $user->name = $request->input('name');
         if ($user->role != 7 && auth()->user()->id != $user->id) {
             $user->role = $request->input('role');

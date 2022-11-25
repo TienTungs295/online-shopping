@@ -68,6 +68,24 @@ class OrderController extends Controller
         }
         $order->status = $expect_status;
         $order->update();
+        if ($expect_status == 2) {
+            try {
+                $order = Order::findOrFail($id);
+                $order_products = $order->orderProducts()->get();
+                foreach ($order_products as $order_product) {
+                    $products = $order_product->product()->get();
+                    foreach ($products as $product) {
+                        if ($product != null && $product->with_storehouse_management == 1 && $product->quantity > 0) {
+                            $remain_qty = $product->quantity - $order_product->qty;
+                            $product->quantity = $remain_qty > 0 ? $remain_qty : 0;
+                            $product->update();
+                        }
+                    }
+                }
+            } catch (ModelNotFoundException $e) {
+                return redirect()->route("updateOrderView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
+            }
+        }
         return redirect()->back()->with('success', 'Thành công');
     }
 

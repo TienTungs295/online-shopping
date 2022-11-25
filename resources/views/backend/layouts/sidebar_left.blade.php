@@ -14,6 +14,12 @@
                 <span>Đơn hàng</span>
             </a>
         </li>
+        <li class="nav-item {{ (request()->is('quan-tri/danh-gia*')) ? 'active' : '' }}">
+            <a class="nav-link collapsed" href="{!! route("reviewView") !!}">
+                <i class="bi bi-chat-left-text"></i>
+                <span>Đánh giá</span>
+            </a>
+        </li>
         <li class="nav-item {{ (request()->is('quan-tri/danh-muc*')) ? 'active' : '' }}">
             <a class="nav-link collapsed" href="{!! route("categoryView") !!}">
                 <i class="bi bi-list-ul"></i>

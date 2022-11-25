@@ -114,7 +114,7 @@
                                         </td>
                                         <td class="text-right">
                                             <span class="fw-bold" style="font-size: 16px">
-                                                {!! number_format(($order->sub_total), 0, '', ',') !!} đ
+                                                {!! number_format(($order->sub_total_final), 0, '', ',') !!} đ
                                             </span>
                                         </td>
                                     </tr>
