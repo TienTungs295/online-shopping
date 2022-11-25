@@ -49,7 +49,7 @@
                                             <h6 class="text-uppercase">Mô tả</h6>
                                         </div>
                                     </div>
-                                    <p v-html="product.description"></p>
+                                    <div v-html="product.content"></div>
                                 </div>
 
                                 <div>
