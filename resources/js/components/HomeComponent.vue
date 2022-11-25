@@ -599,10 +599,10 @@
                         <div class="col-md-6">
                             <div class="newsletter_form2">
                                 <form>
-                                    <input type="text" required="" class="form-control rounded-0"
+                                    <input type="text" v-model="contact.email" class="form-control rounded-0"
                                            placeholder="Nhập email đăng ký">
-                                    <button type="submit" class="btn btn-dark rounded-0 bg-dark" name="submit"
-                                            value="Submit">Gửi
+                                    <button type="button" class="btn btn-dark rounded-0 bg-dark" name="submit"
+                                            @click="saveContact()">Gửi
                                     </button>
                                 </form>
                             </div>
@@ -623,6 +623,7 @@ import CategoryService from "../services/CategoryService";
 import CollectionService from "../services/CollectionService";
 import BlogService from "../services/BlogService";
 import CartService from "../services/CartService";
+import ContactService from "../services/ContactService";
 
 
 export default {
@@ -648,7 +649,8 @@ export default {
             isLoadingOnSale: true,
             isLoadingTopRate: true,
             isLoadingBlog: true,
-            isLoadingTopCategories: true
+            isLoadingTopCategories: true,
+            contact: {}
         };
     },
     methods: {
@@ -662,7 +664,16 @@ export default {
             }).catch(e => {
                 this.isLoading = false;
             });
-        }
+        },
+        saveContact() {
+            if (this.contact.email == null || this.contact.email == undefined || this.contact.email.trim() == "") return;
+            this.contact.showMessage = true;
+            ContactService.save(this.contact, true).then(response => {
+                this.contact = {};
+                this.$cookies.set("do_not_show_popup_again", true);
+            }).catch(response => {
+            });
+        },
     },
     mounted() {
         CategoryService.findTop().then(response => {

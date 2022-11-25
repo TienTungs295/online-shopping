@@ -1,15 +1,15 @@
 <template>
     <div class="overflow-hidden">
-        <b-modal :ref="'contact'" centered content-class="rounded-0" hide-footer hide-header>
+        <b-modal :ref="'contact'" centered content-class="rounded-0" hide-footer>
             <div class="d-block">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="popup_content">
+                        <div class="popup_content pdl-20-i pdr-20-i pdb-15-i pdt-5-i">
                             <div class="popup-text">
                                 <div class="heading_s3 text-center">
                                     <h4>Đăng ký nhận thông tin!</h4>
                                 </div>
-                                <p>Đăng ký nhận bản tin để nhận thông tin cập nhật về sản phẩm mới.</p>
+                                <p>Đăng ký ngay để nhận được các thông tin khuyến mại và các sản phẩm mới.</p>
                             </div>
                             <div class="form-group text-left">
                                 <input name="email" type="email" class="form-control"
@@ -79,6 +79,7 @@ export default {
             ContactService.save(this.contact, true).then(response => {
                 this.errors = {};
                 this.contact = {};
+                this.$cookies.set("do_not_show_popup_again", true);
                 this.hideContactModal();
             }).catch(response => {
                 this.errors = response.errors || {};
@@ -86,7 +87,8 @@ export default {
         },
         doNotShowAgain() {
             this.notShow = !this.notShow;
-            this.$cookies.set("do_not_show_popup_again", this.notShow);
+            if (this.notShow) this.$cookies.set("do_not_show_popup_again", true);
+            else this.$cookies.remove("do_not_show_popup_again");
         }
     },
     mounted() {
@@ -96,9 +98,10 @@ export default {
         }).catch(response => {
         });
         this.checkTokenExpire();
-        console.log(this.$cookies.get("do_not_show_popup_again"));
         if (!this.$cookies.get("do_not_show_popup_again")) {
-            this.showContactModal();
+            setTimeout(() => {
+                this.showContactModal();
+            }, 5000);
         }
     }
 }
