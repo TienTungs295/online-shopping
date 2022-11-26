@@ -43,7 +43,7 @@
                                                 </td>
                                                 <td class="pl-5 pr-5 text-right">
                                                     <div class="inline_block">
-                                                        <span>{!! $order_product->format_price !!}</span>
+                                                        <span> {!! number_format(($order_product->price), 0, '', ',') !!} đ</span>
                                                     </div>
                                                 </td>
                                                 <td class="pl-5 pr-5 text-center">x</td>
@@ -51,7 +51,7 @@
                                                     <span>{!! $order_product->qty !!}</span>
                                                 </td>
                                                 <td class="pl-5 text-right">
-                                                    {!! number_format(($order->sub_total), 0, '', ',') !!} đ
+                                                    {!! number_format(($order_product->price * $order_product->qty), 0, '', ',') !!} đ
                                                 </td>
                                             </tr>
                                         @endforeach
