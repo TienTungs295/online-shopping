@@ -46,6 +46,11 @@ const routes = [
         component: () => import("./components/carts/OrderComponent"),
     },
     {
+        path: '/ve-chung-toi',
+        name: "about-us",
+        component: () => import("./components/AboutUsComponent"),
+    },
+    {
         path: '/lien-he',
         name: "contact-us",
         component: () => import("./components/ContactUsComponent"),

@@ -9,7 +9,12 @@
                             <div class="col-lg-6 col-md-8">
                                 <div class="header_topbar_info">
                                     <div class="header_offer border-0">
-                                        <span>Free ship đơn hàng trên 1,000,000 đ</span>
+                                        <div class="light-color-i">
+                                            <span style="padding-top: 2px; position: relative" class="pdr-5">
+                                                 <i class="ti-email" ></i>
+                                            </span>
+                                            <a class="light-color-i" href="mailto:kinhdoanh.nk3m@gmail.com">kinhdoanh.nk3m@gmail.com</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +58,8 @@
                                         <div v-else
                                              style="position: relative; display: inline-flex;vertical-align: middle;">
                                             <router-link :to="{ name: 'login'}" class="light-color-i">
-                                                <span class="position-relative" style="bottom: 2px">Đăng nhập/Đăng ký</span>
+                                                <span class="position-relative"
+                                                      style="bottom: 2px">Đăng nhập/Đăng ký</span>
                                             </router-link>
                                         </div>
                                     </div>
@@ -85,7 +91,8 @@
                                         </div>
                                         <input class="form-control" v-model="query.name" placeholder="Tên sản phẩm..."
                                                required="" type="text">
-                                        <button type="button" class="search_btn3" @click="findProduct()">Tìm kiếm</button>
+                                        <button type="button" class="search_btn3" @click="findProduct()">Tìm kiếm
+                                        </button>
                                     </div>
                                 </form>
                             </div>
@@ -104,7 +111,8 @@
                             <div class="categories_wrap">
                                 <button type="button" data-toggle="collapse" data-target="#navCatContent"
                                         aria-expanded="false" class="categories_btn categories_menu">
-                                    <span>Danh mục <span class="hidden-lg">sản phẩm</span></span><i class="linearicons-menu"></i>
+                                    <span>Danh mục <span class="hidden-lg">sản phẩm</span></span><i
+                                    class="linearicons-menu"></i>
                                 </button>
                                 <div id="navCatContent" class="navbar collapse">
                                     <ul>
@@ -151,6 +159,11 @@
                                         <li class="dropdown">
                                             <router-link class="nav-link nav-link" :to="{ name: 'blogList'}">Tin tức &
                                                 sự kiện
+                                            </router-link>
+                                        </li>
+                                        <li>
+                                            <router-link class="nav-link nav_item" :to="{ name: 'about-us'}">Về chúng
+                                                tôi
                                             </router-link>
                                         </li>
                                         <li>
@@ -227,9 +240,11 @@
                                 </div>
                                 <div class="pr_user_icon">
                                     <b-dropdown v-if="userProfile != null" variant="link" no-caret split-class="test"
-                                                class="custom-dropdown no-border-link" toggle-class="text-decoration-none">
+                                                class="custom-dropdown no-border-link"
+                                                toggle-class="text-decoration-none">
                                         <template #button-content>
-                                            <a href="javascript:void(0);" class="nav-link position-relative" style="padding: 17px 5px; top:2px"><i
+                                            <a href="javascript:void(0);" class="nav-link position-relative"
+                                               style="padding: 17px 5px; top:2px"><i
                                                 class="linearicons-user" style="font-size: 20px"></i></a>
                                         </template>
                                         <b-dropdown-item>
@@ -245,7 +260,8 @@
                                         <b-dropdown-item @click="logout()">Đăng xuất</b-dropdown-item>
                                     </b-dropdown>
                                     <div v-else>
-                                        <router-link :to="{ name: 'login'}" class="nav-link pr_user_trigger pdl-5-i pdr-5-i">
+                                        <router-link :to="{ name: 'login'}"
+                                                     class="nav-link pr_user_trigger pdl-5-i pdr-5-i">
                                             <i class="linearicons-key"></i>
                                         </router-link>
                                     </div>

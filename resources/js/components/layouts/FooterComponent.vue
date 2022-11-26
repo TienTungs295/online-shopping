@@ -55,8 +55,11 @@
                                         <a href="tel:0979945555">0979945555</a>
                                     </li>
                                     <li>
+                                        <label class="light-color-i">Phòng kinh doanh</label>
+                                    </li>
+                                    <li>
                                         <i class="ti-mobile"></i>
-                                        <label class="light-color-i">Phòng kinh doanh: </label>
+                                        <label class="light-color-i">Mrs.Ngọc: </label>
                                         <a href="tel:0918155579">0918155579</a>
                                     </li>
                                     <li>

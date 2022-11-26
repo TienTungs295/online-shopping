@@ -3044,7 +3044,7 @@ var render = function render() {
         return _vm.findProduct();
       }
     }
-  }, [_vm._v("Tìm kiếm")])])])]), _vm._v(" "), _vm._m(2)], 1)])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Tìm kiếm\n                                    ")])])])]), _vm._v(" "), _vm._m(2)], 1)])])]), _vm._v(" "), _c("div", {
     staticClass: "bottom_header dark_skin main_menu_uppercase border-top"
   }, [_c("div", {
     staticClass: "container"
@@ -3093,7 +3093,7 @@ var render = function render() {
     staticClass: "col-lg-9 col-md-8 col-sm-6 col-9"
   }, [_c("nav", {
     staticClass: "navbar navbar-expand-lg"
-  }, [_vm._m(4), _vm._v(" "), _vm._m(5), _vm._v(" "), _c("div", {
+  }, [_vm._m(4), _vm._v(" "), _c("div", {
     staticClass: "collapse navbar-collapse mobile_side_menu",
     attrs: {
       id: "navbarSidetoggle"
@@ -3131,6 +3131,13 @@ var render = function render() {
     staticClass: "nav-link nav_item",
     attrs: {
       to: {
+        name: "about-us"
+      }
+    }
+  }, [_vm._v("Về chúng\n                                            tôi\n                                        ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+    staticClass: "nav-link nav_item",
+    attrs: {
+      to: {
         name: "contact-us"
       }
     }
@@ -3157,7 +3164,10 @@ var render = function render() {
   }, [_c("i", {
     staticClass: "linearicons-bag2"
   }), _vm._v(" "), _c("span", {
-    staticClass: "cart_count"
+    staticClass: "cart_count",
+    staticStyle: {
+      left: "-4px"
+    }
   }, [_vm._v("\n                                                " + _vm._s(_vm.cartCount) + "\n                                            ")])]), _vm._v(" "), _c("div", {
     staticClass: "cart_box cart_right dropdown-menu dropdown-menu-right"
   }, [_vm.cartCount > 0 ? _c("div", [_c("ul", {
@@ -3213,7 +3223,65 @@ var render = function render() {
     }
   }, [_vm._v("\n                                                            Thanh toán\n                                                        ")])], 1)])]) : _c("div", {
     staticClass: "text-center pd-15"
-  }, [_vm._v("\n                                                Không có sản phẩm nào trong giỏ hàng\n                                            ")])])])])])])])])])])])]);
+  }, [_vm._v("\n                                                Không có sản phẩm nào trong giỏ hàng\n                                            ")])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "pr_user_icon"
+  }, [_vm.userProfile != null ? _c("b-dropdown", {
+    staticClass: "custom-dropdown no-border-link",
+    attrs: {
+      variant: "link",
+      "no-caret": "",
+      "split-class": "test",
+      "toggle-class": "text-decoration-none"
+    },
+    scopedSlots: _vm._u([{
+      key: "button-content",
+      fn: function fn() {
+        return [_c("a", {
+          staticClass: "nav-link position-relative",
+          staticStyle: {
+            padding: "17px 5px",
+            top: "2px"
+          },
+          attrs: {
+            href: "javascript:void(0);"
+          }
+        }, [_c("i", {
+          staticClass: "linearicons-user",
+          staticStyle: {
+            "font-size": "20px"
+          }
+        })])];
+      },
+      proxy: true
+    }], null, false, 4278851608)
+  }, [_vm._v(" "), _c("b-dropdown-item", [_c("router-link", {
+    attrs: {
+      to: {
+        name: "userProfile"
+      }
+    }
+  }, [_vm._v("\n                                            Thông tin tài khoản\n                                        ")])], 1), _vm._v(" "), _c("b-dropdown-item", [_c("router-link", {
+    attrs: {
+      to: {
+        name: "changePass"
+      }
+    }
+  }, [_vm._v("\n                                            Thay đổi mật khẩu\n                                        ")])], 1), _vm._v(" "), _c("b-dropdown-item", {
+    on: {
+      click: function click($event) {
+        return _vm.logout();
+      }
+    }
+  }, [_vm._v("Đăng xuất")])], 1) : _c("div", [_c("router-link", {
+    staticClass: "nav-link pr_user_trigger pdl-5-i pdr-5-i",
+    attrs: {
+      to: {
+        name: "login"
+      }
+    }
+  }, [_c("i", {
+    staticClass: "linearicons-key"
+  })])], 1)], 1), _vm._v(" "), _vm._m(5)])])])])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -3226,7 +3294,22 @@ var staticRenderFns = [function () {
     staticClass: "header_topbar_info"
   }, [_c("div", {
     staticClass: "header_offer border-0"
-  }, [_c("span", [_vm._v("Free ship đơn hàng trên 1,000,000 đ")])])])]);
+  }, [_c("div", {
+    staticClass: "light-color-i"
+  }, [_c("span", {
+    staticClass: "pdr-5",
+    staticStyle: {
+      "padding-top": "2px",
+      position: "relative"
+    }
+  }, [_c("i", {
+    staticClass: "ti-email"
+  })]), _vm._v(" "), _c("a", {
+    staticClass: "light-color-i",
+    attrs: {
+      href: "mailto:kinhdoanh.nk3m@gmail.com"
+    }
+  }, [_vm._v("kinhdoanh.nk3m@gmail.com")])])])])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
