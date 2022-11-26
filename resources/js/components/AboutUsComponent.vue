@@ -30,8 +30,8 @@
           <!-- START SECTION CONTACT -->
           <div class="section pb_70">
               <div class="container">
-                  <div class="row justify-content-center">
-                      <div class="col-md-10">
+                  <div class="row">
+                      <div class="col">
                         <div>
                             <p>
                                 Trước tiên, Công ty TNHH Thương mại và Sản xuất NK xin gửi tới Quý khách hàng lời chào trân trọng nhất!
@@ -51,6 +51,14 @@
                         </div>
                       </div>
                   </div>
+                  <div class="row">
+                      <div class="col-md-4 pdb-30" v-for="(image, i) in images">
+                          <img class="image"  :src="image" :key="i" @click="index = i">
+                      </div>
+                      <div class="preview-image-wrapper">
+                          <vue-gallery-slideshow :images="images" :index="index" @close="index = null"></vue-gallery-slideshow>
+                      </div>
+                  </div>
               </div>
           </div>
           <!-- END SECTION CONTACT -->
@@ -64,6 +72,18 @@
 export default {
     name: "AboutUs",
     mounted() {
-    }
+    },
+    data() {
+        return {
+            images: [
+                window.location.protocol + "//" + window.location.host+'/assets/images/cert/cert_2016.jpg',
+                window.location.protocol + "//" + window.location.host+'/assets/images/cert/cert_2017.jpg',
+                window.location.protocol + "//" + window.location.host+'/assets/images/cert/cert_2018.jpg',
+                window.location.protocol + "//" + window.location.host+'/assets/images/cert/cert_2019.jpg',
+                window.location.protocol + "//" + window.location.host+'/assets/images/cert/cert_2022.jpg'
+            ],
+            index: null
+        }
+    },
 }
 </script>

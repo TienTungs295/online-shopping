@@ -9488,3 +9488,10 @@ a.link-hover {
         }
     }
 }
+.preview-image-wrapper{
+    .vgs__container{
+        width: 100%;
+        max-width: inherit;
+        background-color: transparent;
+    }
+}
