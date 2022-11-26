@@ -959,7 +959,7 @@ button:focus {
 }
 
 .border-top-tran {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .border_bottom_tran {
@@ -4962,7 +4962,8 @@ footer {
 }
 
 .footer_dark {
-    background-color: #202325;
+    background: url('../images/Nhat-Tan-Bridge-Hanoi-Vietnam-Asia.jpg') center no-repeat;
+    background-size: 100% 100%;
     position: relative;
 }
 

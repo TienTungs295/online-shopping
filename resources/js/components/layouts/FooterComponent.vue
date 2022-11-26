@@ -13,39 +13,28 @@
                                 <p>Công ty TNHH thương mại và sản xuất NK</p>
                             </div>
                             <div class="widget">
-                                <ul class="social_icons social_white">
-                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6 col-sm-6">
-                            <div class="widget">
-                                <h6 class="widget_title">Đặt hàng</h6>
-                                <ul class="widget_links">
-                                    <li>
-                                        <router-link :to="{name:'withList'}">Yêu thích</router-link>
-                                    </li>
-                                    <li>
-                                        <router-link :to="{name:'cart'}">Giỏ hàng</router-link>
-                                    </li>
-                                    <li>
-                                        <router-link :to="{name:'order'}">Thanh toán</router-link>
-                                    </li>
-                                    <li>
-                                        <router-link :to="{name:'contact-us'}">Liên hệ</router-link>
-                                    </li>
-                                </ul>
+                                <div class="fb-page" data-href="https://www.facebook.com/DauCapVaHopNoiTrungHaThe3M/" data-tabs="timeline" data-width="250" data-height="90" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/DauCapVaHopNoiTrungHaThe3M/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/DauCapVaHopNoiTrungHaThe3M/">Công Ty TNHH Thương Mại và Sản Xuất Nk</a></blockquote></div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="widget">
+                                <h6 class="widget_title">Địa chỉ</h6>
+                            </div>
+                            <ul class="contact_info contact_info_light">
+                                <li>
+                                    <i class="ti-location-pin"></i>
+                                    <p>Địa chỉ: Số 77, tổ 17 thị trấn Đông Anh, Huyện Đông Anh, TP. Hà Nội</p>
+                                </li>
+                                <li>
+                                    <i class="ti-location-pin"></i>
+                                    <p>VPGD: Số 78, Ngõ 166, Đường Trần Duy Hưng, Phường Trung Hoà, Quận Cầu Giấy, TP Hà Nội;</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="widget">
                                 <h6 class="widget_title">Liên hệ</h6>
                                 <ul class="contact_info contact_info_light">
-                                    <li>
-                                        <i class="ti-location-pin"></i>
-                                        <p>VPGD: Số 78, Ngõ 166, Đường Trần Duy Hưng, Phường Trung Hoà, Quận Cầu Giấy, TP Hà Nội;</p>
-                                    </li>
                                     <li>
                                         <i class="ti-email"></i>
                                         <a href="mailto:kinhdoanh.nk3m@gmail.com">kinhdoanh.nk3m@gmail.com</a>
@@ -75,17 +64,24 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="col-lg-2 col-md-6 col-sm-6">
                             <div class="widget">
-                                <h6 class="widget_title">Fanpage</h6>
-                                <div class="fb-page" data-href="https://www.facebook.com/DauCapVaHopNoiTrungHaThe3M/" data-tabs="timeline" data-width="250" data-height="90" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/DauCapVaHopNoiTrungHaThe3M/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/DauCapVaHopNoiTrungHaThe3M/">Công Ty TNHH Thương Mại và Sản Xuất Nk</a></blockquote></div>
+                                <h6 class="widget_title">Đặt hàng</h6>
+                                <ul class="widget_links">
+                                    <li>
+                                        <router-link :to="{name:'withList'}">Yêu thích</router-link>
+                                    </li>
+                                    <li>
+                                        <router-link :to="{name:'cart'}">Giỏ hàng</router-link>
+                                    </li>
+                                    <li>
+                                        <router-link :to="{name:'order'}">Thanh toán</router-link>
+                                    </li>
+                                    <li>
+                                        <router-link :to="{name:'contact-us'}">Liên hệ</router-link>
+                                    </li>
+                                </ul>
                             </div>
-                            <ul class="contact_info contact_info_light">
-                                <li>
-                                    <i class="ti-location-pin"></i>
-                                    <p>Địa chỉ: Số 77, tổ 17 thị trấn Đông Anh, Huyện Đông Anh, TP. Hà Nội</p>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
