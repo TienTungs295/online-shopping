@@ -19,7 +19,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="col-lg-2 col-md-6 col-sm-6">
                             <div class="widget">
                                 <h6 class="widget_title">Đặt hàng</h6>
                                 <ul class="widget_links">
@@ -38,21 +38,36 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="widget">
                                 <h6 class="widget_title">Liên hệ</h6>
                                 <ul class="contact_info contact_info_light">
                                     <li>
                                         <i class="ti-location-pin"></i>
-                                        <p>Số 77, tổ 17 thị trấn Đông Anh, Huyện Đông Anh, TP. Hà Nội</p>
+                                        <p>VPGD: Số 78, Ngõ 166, Đường Trần Duy Hưng, Phường Trung Hoà, Quận Cầu Giấy, TP Hà Nội;</p>
                                     </li>
                                     <li>
                                         <i class="ti-email"></i>
-                                        <a href="mailto:dinhduyduy@gmail.com">dinhduyduy@gmail.com</a>
+                                        <a href="mailto:kinhdoanh.nk3m@gmail.com">kinhdoanh.nk3m@gmail.com</a>
                                     </li>
                                     <li>
                                         <i class="ti-mobile"></i>
-                                        <p>0979945555</p>
+                                        <a href="tel:0979945555">0979945555</a>
+                                    </li>
+                                    <li>
+                                        <i class="ti-mobile"></i>
+                                        <label class="light-color-i">Phòng kinh doanh: </label>
+                                        <a href="tel:0918155579">0918155579</a>
+                                    </li>
+                                    <li>
+                                        <i class="ti-mobile"></i>
+                                        <label class="light-color-i">Ms.Loan: </label>
+                                        <a href="tel:0916155579">0916155579</a>
+                                    </li>
+                                    <li>
+                                        <i class="ti-mobile"></i>
+                                        <label class="light-color-i">Ms.Linh: </label>
+                                        <a href="tel:0886155579">0886155579</a>
                                     </li>
                                 </ul>
                             </div>
@@ -60,16 +75,14 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="widget">
                                 <h6 class="widget_title">Fanpage</h6>
-                                <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100087173058248"
-                                     data-tabs="timeline" data-width="250" data-height="90" data-small-header="false"
-                                     data-adapt-container-width="true" data-hide-cover="false"
-                                     data-show-facepile="true">
-                                    <blockquote cite="https://www.facebook.com/profile.php?id=100087173058248"
-                                                class="fb-xfbml-parse-ignore"><a
-                                        href="https://www.facebook.com/profile.php?id=100087173058248">Công ty TNHH
-                                        Thương Mại và Sản Xuất NK</a></blockquote>
-                                </div>
+                                <div class="fb-page" data-href="https://www.facebook.com/DauCapVaHopNoiTrungHaThe3M/" data-tabs="timeline" data-width="250" data-height="90" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/DauCapVaHopNoiTrungHaThe3M/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/DauCapVaHopNoiTrungHaThe3M/">Công Ty TNHH Thương Mại và Sản Xuất Nk</a></blockquote></div>
                             </div>
+                            <ul class="contact_info contact_info_light">
+                                <li>
+                                    <i class="ti-location-pin"></i>
+                                    <p>Địa chỉ: Số 77, tổ 17 thị trấn Đông Anh, Huyện Đông Anh, TP. Hà Nội</p>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

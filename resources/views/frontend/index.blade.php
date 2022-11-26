@@ -71,16 +71,16 @@
 <!-- scripts js -->
 <script src="{{asset('assets/js/scripts.js')}}"></script>
 <!-- Messenger Plugin chat Code -->
+<!-- Messenger Plugin chat Code -->
 <div id="fb-root"></div>
 
 <!-- Your Plugin chat code -->
 <div id="fb-customer-chat" class="fb-customerchat">
 </div>
 
-
 <script>
     var chatbox = document.getElementById('fb-customer-chat');
-    chatbox.setAttribute("page_id", "107122515537988");
+    chatbox.setAttribute("page_id", "101381248712505");
     chatbox.setAttribute("attribution", "biz_inbox");
 </script>
 
@@ -101,6 +101,5 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 </script>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v15.0&appId=464740230892842&autoLogAppEvents=1" nonce="1TtW9Zuw"></script>
-</body>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v15.0&appId=464740230892842&autoLogAppEvents=1" nonce="XosqHr5Y"></script></body>
 </html>
