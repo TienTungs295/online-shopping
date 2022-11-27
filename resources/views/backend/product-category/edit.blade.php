@@ -20,25 +20,31 @@
                                   action="{!! isset($product_category)? route('updateCategory',['id' => $product_category->id]) : route('createCategory') !!}">
                                 @csrf
                                 <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label">Tên danh mục<span
-                                            class="text-danger">*</span></label>
-                                    <div class="col-sm-10">
+                                    <div class="col-md-8">
+                                        <label class="form-label">Tên danh mục</label>
                                         <input type="text"
                                                value="{!! old('name', isset($product_category->name) ? $product_category->name : '')!!}"
                                                class="form-control" name="name" maxlength="255" required
                                                placeholder="Tên danh mục">
                                     </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label">Mô tả</label>
-                                    <div class="col-sm-10">
-                                        <div class="form-group">
-                                        <textarea class="form-control" placeholder="Mô tả" name="description"
-                                                  id="description"
-                                                  rows="2">{{ old('description', isset($product_category->description) ? $product_category->description : '')}}</textarea>
-                                        </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label">Độ ưu tiên</label>
+                                        <input type="number"
+                                               value="{!! old('priority', isset($product_category->priority) ? $product_category->priority : '')!!}"
+                                               class="form-control" name="priority"  min="0"
+                                               placeholder="Độ ưu tiên">
                                     </div>
                                 </div>
+{{--                                <div class="row mb-3">--}}
+{{--                                    <label class="col-sm-2 col-form-label">Mô tả</label>--}}
+{{--                                    <div class="col-sm-10">--}}
+{{--                                        <div class="form-group">--}}
+{{--                                        <textarea class="form-control" placeholder="Mô tả" name="description"--}}
+{{--                                                  id="description"--}}
+{{--                                                  rows="2">{{ old('description', isset($product_category->description) ? $product_category->description : '')}}</textarea>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                                 <div class="row mb-3">
                                     <div class="col-md-12">
                                         <label class="form-label">Ảnh</label>

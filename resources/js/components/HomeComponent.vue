@@ -309,7 +309,7 @@
                                                     </div>
                                                     <div class="product_info">
                                                         <h6 class="product_title">
-                                                            <router-link
+                                                            <router-link :title="item.name"
                                                                 :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
                                                                 {{ item.name }}
                                                             </router-link>
@@ -401,7 +401,7 @@
                                                     </div>
                                                     <div class="product_info">
                                                         <h6 class="product_title">
-                                                            <router-link
+                                                            <router-link :title="item.name"
                                                                 :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
                                                                 {{ item.name }}
                                                             </router-link>
@@ -493,7 +493,7 @@
                                                     </div>
                                                     <div class="product_info">
                                                         <h6 class="product_title">
-                                                            <router-link
+                                                            <router-link :title="item.name"
                                                                 :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
                                                                 {{ item.name }}
                                                             </router-link>

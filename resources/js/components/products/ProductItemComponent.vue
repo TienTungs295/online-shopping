@@ -26,7 +26,7 @@
             </span>
             <span class="pr_flash" v-if="item.is_out_of_stock" style="background-color: #000">Hết hàng</span>
             <h6 class="product_title mgb-5">
-                <router-link
+                <router-link :title="item.name"
                     :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
                     {{ item.name }}
                 </router-link>

@@ -31,7 +31,7 @@
                             <div class="deal_content">
                                 <div class="product_info">
                                     <h5 class="product_title">
-                                        <router-link
+                                        <router-link :title="item.name"
                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
                                             {{ item.name }}
                                         </router-link>

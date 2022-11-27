@@ -18,7 +18,7 @@ class UploadRestController extends Controller
         }
         $max_size = 2 * 1024 * 1024;
         if ($file->getSize() > $max_size){
-            return response()->json(["data" => ["status" => "error", "message" => "File upload không được quá 4MB"]]);
+            return response()->json(["data" => ["status" => "error", "message" => "File upload không được quá 2MB"]]);
         }
         $valid_extensions = ["png", "jpg", "jpeg"];
         $original_name = $file->getClientOriginalName();

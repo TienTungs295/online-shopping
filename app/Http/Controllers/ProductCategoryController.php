@@ -77,6 +77,8 @@ class ProductCategoryController extends Controller
         $product_category->description = $request->input('description');
         $featured = $request->has("is_featured") ? 1 : 0;
         $product_category->is_featured = $featured;
+        $priority = $request->input('priority');
+        $product_category->priority = is_null($priority) ? 0 : $priority;
         $product_category->save();
 
         return redirect()->route("categoryView")->with('success', 'Thành công');
@@ -156,6 +158,8 @@ class ProductCategoryController extends Controller
         $product_category->description = $request->input('description');
         $featured = $request->has("is_featured") ? 1 : 0;
         $product_category->is_featured = $featured;
+        $priority = $request->input('priority');
+        $product_category->priority = is_null($priority) ? 0 : $priority;
         $product_category->update();
 
         if (!empty($del_image_name)) {

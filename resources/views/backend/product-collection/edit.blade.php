@@ -37,15 +37,15 @@
                                            placeholder="Tên bộ sưu tập">
                                 </div>
                             </div>
-                            <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label">Mô tả</label>
-                                <div class="col-sm-10">
-                                    <div class="form-group">
-                                        <textarea class="form-control" placeholder="Mô tả" name="description" id="description"
-                                                  rows="2">{{ old('description', isset($product_collection->description) ? $product_collection->description : '')}}</textarea>
-                                    </div>
-                                </div>
-                            </div>
+{{--                            <div class="row mb-3">--}}
+{{--                                <label class="col-sm-2 col-form-label">Mô tả</label>--}}
+{{--                                <div class="col-sm-10">--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <textarea class="form-control" placeholder="Mô tả" name="description" id="description"--}}
+{{--                                                  rows="2">{{ old('description', isset($product_collection->description) ? $product_collection->description : '')}}</textarea>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="bi bi-save2 me-1"></i>

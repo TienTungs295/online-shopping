@@ -52,8 +52,8 @@
                       </div>
                   </div>
                   <div class="row">
-                      <div class="col-md-4 pdb-30" v-for="(image, i) in images">
-                          <img class="image"  :src="image" :key="i" @click="index = i">
+                      <div class="col-md-4 pdb-60" v-for="(image, i) in images">
+                          <img class="image cursor-pointer"  :src="image" :key="i" @click="index = i">
                       </div>
                       <div class="preview-image-wrapper">
                           <vue-gallery-slideshow :images="images" :index="index" @close="index = null"></vue-gallery-slideshow>

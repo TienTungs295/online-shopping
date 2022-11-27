@@ -30,17 +30,6 @@
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label">Đặc trưng</label>
-                                    <div class="col-sm-10">
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input"
-                                                   value="{!! old('is_featured', isset($blog->is_featured) ? $blog->is_featured : '')!!}"
-                                                   name="is_featured"
-                                                   {!! old('is_featured', isset($blog->is_featured) && $blog->is_featured == 1 ? 'checked' : '')!!} type="checkbox">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
                                     <label class="col-sm-2 col-form-label">Ảnh</label>
                                     <div class="col-md-10">
                                         <input type="text" id="image"
