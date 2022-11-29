@@ -80,7 +80,8 @@
                                 <div class="col-md-4 col-6" v-for="item in paginate.data">
                                     <product-item-component v-bind:item="item"></product-item-component>
                                 </div>
-                                <div class="col text-center" v-if="!isLoadingProduct && (paginate.data == null || paginate.data.length == 0)">
+                                <div class="col text-center"
+                                     v-if="!isLoadingProduct && (paginate.data == null || paginate.data.length == 0)">
                                     Không tìm thấy kết quả phù hợp.
                                 </div>
                                 <loading-component v-bind:loading="isLoadingProduct"
@@ -129,9 +130,12 @@
                                         </li>
                                         <li v-for="item in categories"
                                             :class="param.category_id == item.id ? 'active' :''"
-                                            @click="changeCategory(item.id)"><a><span
-                                            class="categories_name">{{ item.name }}</span><span
-                                            class="categories_num">({{ item.products_count }})</span></a></li>
+                                            @click="changeCategory(item.id)">
+                                            <a class="d-flex justify-content-between align-baseline">
+                                                <span class="categories_name pdr-10">{{ item.name }}</span>
+                                                <span class="categories_num">({{ item.products_count }})</span>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="widget">
