@@ -44,6 +44,12 @@
                 <span>Bài viết</span>
             </a>
         </li>
+        <li class="nav-item {{ (request()->is('quan-tri/ma-giam-gia*')) ? 'active' : '' }}">
+            <a class="nav-link collapsed" href="{!! route("discountView") !!}">
+                <i class="bi bi bi-gift"></i>
+                <span>Mã giảm giá</span>
+            </a>
+        </li>
         <li class="nav-item {{ (request()->is('quan-tri/nhan-san-pham*')) ? 'active' : '' }}">
             <a class="nav-link collapsed" href="{!! route("labelView") !!}">
                 <i class="bi bi-tags"></i>
