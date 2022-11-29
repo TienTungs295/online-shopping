@@ -39,7 +39,7 @@
                                     </li>
                                 </ul>
                                 <div class="blog_img mgb-20">
-                                    <img class="border-ccc" :src="'/uploads/images/'+blog.image" :alt="blog.image">
+                                    <img class="border-ccc" :src="'/uploads/images/'+blog.image" :alt="blog.image" @error="setDefaultImg">
                                 </div>
                                 <div class="blog_content">
                                     <div class="blog_text">
@@ -90,7 +90,7 @@
                                                 <div class="post_img">
                                                     <router-link
                                                         :to="{ name: 'blogDetail', params: { slug: item.slug,id:item.id }}">
-                                                        <img :src="'/uploads/images/'+item.image" :alt="item.image">
+                                                        <img :src="'/uploads/images/'+item.image" :alt="item.image" @error="setDefaultImg">
                                                     </router-link>
                                                 </div>
                                                 <div class="post_content">
@@ -134,7 +134,11 @@ export default {
             isRecentLoading: true,
         };
     },
-    methods: {},
+    methods: {
+        setDefaultImg(event){
+            event.target.src = window.location.protocol + "//" + window.location.host+'/assets/images/default/placeholder.png'
+        }
+    },
     mounted() {
         BlogService.detail(this.$route.params.id).then(response => {
             let data = response || {};

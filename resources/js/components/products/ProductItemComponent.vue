@@ -3,7 +3,7 @@
         <div class="product_img style-1">
             <router-link
                 :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
-                <img :src="'/uploads/images/'+item.image" :alt="item.image">
+                <img :src="'/uploads/images/'+item.image" :alt="item.image" @error="setDefaultImg">
             </router-link>
             <div class="product_action_box">
                 <ul class="list_none pr_action_btn">
@@ -131,6 +131,9 @@ export default {
                 this.isLoading = false;
             });
         },
+        setDefaultImg(event){
+            event.target.src = window.location.protocol + "//" + window.location.host+'/assets/images/default/placeholder.png'
+        }
     },
     mounted() {
 

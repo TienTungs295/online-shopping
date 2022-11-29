@@ -23,7 +23,7 @@
                                     <div>
                                         <router-link
                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
-                                            <img class="img-src" :src="'/uploads/images/'+item.image" :alt="item.image">
+                                            <img class="img-src" :src="'/uploads/images/'+item.image" :alt="item.image" @error="setDefaultImg">
                                         </router-link>
                                     </div>
                                 </div>
@@ -121,6 +121,9 @@ export default {
                 this.isLoading = false;
             });
         },
+        setDefaultImg(event){
+            event.target.src = window.location.protocol + "//" + window.location.host+'/assets/images/default/placeholder.png'
+        }
     },
     beforeDestroy() {
         clearInterval(this.timer)

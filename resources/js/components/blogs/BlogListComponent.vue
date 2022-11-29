@@ -35,7 +35,7 @@
                                         <div class="blog_img border-ccc">
                                             <router-link class="link_wrapper"
                                                          :to="{ name: 'blogDetail', params: { slug: item.slug,id:item.id }}">
-                                                <img :src="'/uploads/images/'+item.image" :alt="item.image">
+                                                <img :src="'/uploads/images/'+item.image" :alt="item.image" @error="setDefaultImg">
                                             </router-link>
                                         </div>
                                         <div class="blog_content bg-white">
@@ -105,7 +105,7 @@
                                                 <div class="post_img border-ccc">
                                                     <router-link
                                                         :to="{ name: 'blogDetail', params: { slug: item.slug,id:item.id }}">
-                                                        <img :src="'/uploads/images/'+item.image" :alt="item.image">
+                                                        <img :src="'/uploads/images/'+item.image" :alt="item.image" @error="setDefaultImg">
                                                     </router-link>
                                                 </div>
                                                 <div class="post_content">
@@ -148,6 +148,9 @@ export default {
     methods: {
         changePage: function (page) {
             this.$router.push({name: 'blogList', query: {page_size: page}})
+        },
+        setDefaultImg(event){
+            event.target.src = window.location.protocol + "//" + window.location.host+'/assets/images/default/placeholder.png'
         }
     },
     mounted() {

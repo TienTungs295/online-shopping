@@ -54,7 +54,7 @@
                                                 <router-link
                                                     :to="{ name: 'productDetail', params: { slug: item.options.slug,id:item.id }}">
                                                     <img class="border-ccc"
-                                                         :src="'/uploads/images/'+item.options.image"
+                                                         :src="'/uploads/images/'+item.options.image" @error="setDefaultImg"
                                                          :alt="item.options.image">
                                                 </router-link>
                                             </td>
@@ -173,6 +173,9 @@ export default {
                 this.isLoading = false;
             });
         },
+        setDefaultImg(event){
+            event.target.src = window.location.protocol + "//" + window.location.host+'/assets/images/default/placeholder.png'
+        }
     },
     created() {
         AuthService.isAuthenticated(true).then(response => {

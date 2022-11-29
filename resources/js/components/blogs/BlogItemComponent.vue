@@ -3,7 +3,7 @@
         <div class="blog_img">
             <router-link class="link_wrapper"
                          :to="{ name: 'blogDetail', params: { slug: item.slug,id:item.id }}">
-                <img :src="'/uploads/images/'+item.image" :alt="item.image">
+                <img :src="'/uploads/images/'+item.image" :alt="item.image" @error="setDefaultImg">
             </router-link>
         </div>
         <div class="blog_content bg-white">
@@ -33,6 +33,9 @@ export default {
     name: "BlogItem",
     props: ['item'],
     methods: {
+        setDefaultImg(event){
+            event.target.src = window.location.protocol + "//" + window.location.host+'/assets/images/default/placeholder.png'
+        }
     },
     mounted() {
     }

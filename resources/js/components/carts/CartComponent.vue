@@ -51,7 +51,7 @@
                                         <td class="product-thumbnail">
                                             <router-link
                                                 :to="{ name: 'productDetail', params: { slug: item.options.slug,id:item.id }}">
-                                                <img class="border-ccc" :src="'/uploads/images/'+item.options.image"
+                                                <img class="border-ccc" :src="'/uploads/images/'+item.options.image" @error="setDefaultImg"
                                                      :alt="item.options.image">
                                             </router-link>
                                         </td>
@@ -296,6 +296,9 @@ export default {
             this.$store.commit("setSubTotal", data.subTotal);
             this.$store.commit("setSubTotalFinal", data.subTotalFinal);
             this.$store.commit("setCartCount", data.total);
+        },
+        setDefaultImg(event){
+            event.target.src = window.location.protocol + "//" + window.location.host+'/assets/images/default/placeholder.png'
         }
     },
     mounted() {

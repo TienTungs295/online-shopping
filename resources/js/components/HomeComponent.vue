@@ -48,7 +48,7 @@
                                                     <router-link
                                                         :to="{ name: 'productList', query: { category_id: item.id}}">
                                                         <div class="category-image">
-                                                            <img :src="'/uploads/images/'+item.image"
+                                                            <img :src="'/uploads/images/'+item.image" @error="setDefaultImg"
                                                                  :alt="item.image">
                                                         </div>
                                                         <span>{{ item.name }}</span>
@@ -303,7 +303,7 @@
                                                     <div class="product_img style-2">
                                                         <router-link
                                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
-                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image"
+                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image" @error="setDefaultImg"
                                                                  :alt="item.image">
                                                         </router-link>
                                                     </div>
@@ -395,7 +395,7 @@
                                                     <div class="product_img style-2">
                                                         <router-link
                                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
-                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image"
+                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image" @error="setDefaultImg"
                                                                  :alt="item.image">
                                                         </router-link>
                                                     </div>
@@ -487,7 +487,7 @@
                                                     <div class="product_img style-2">
                                                         <router-link
                                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
-                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image"
+                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image" @error="setDefaultImg"
                                                                  :alt="item.image">
                                                         </router-link>
                                                     </div>
@@ -674,6 +674,9 @@ export default {
             }).catch(response => {
             });
         },
+        setDefaultImg(event){
+            event.target.src = window.location.protocol + "//" + window.location.host+'/assets/images/default/placeholder.png'
+        }
     },
     mounted() {
         CategoryService.findTop().then(response => {

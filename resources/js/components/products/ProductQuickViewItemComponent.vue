@@ -4,13 +4,13 @@
             <div class="detail-slider">
                 <swiper class="swiper gallery-top" :options="swiperOptionTop" ref="swiperTop">
                     <swiper-slide v-for="item in product.images" v-bind:key="item.id">
-                        <img :src="'/uploads/images/'+item.image" :alt="item.image"/>
+                        <img :src="'/uploads/images/'+item.image" :alt="item.image" @error="setDefaultImg"/>
                     </swiper-slide>
                 </swiper>
                 <swiper :class="product.images.length<=1 ? 'dis-none' :''" class="swiper gallery-thumbs"
                         :options="swiperOptionThumbs" ref="swiperThumbs">
                     <swiper-slide v-for="item in product.images" v-bind:key="item.id">
-                        <img :src="'/uploads/images/'+item.image" :alt="item.image"/>
+                        <img :src="'/uploads/images/'+item.image" :alt="item.image" @error="setDefaultImg"/>
                     </swiper-slide>
                 </swiper>
             </div>
@@ -210,6 +210,9 @@ export default {
             if (item.qty == 0) return;
             item.qty--
         },
+        setDefaultImg(event){
+            event.target.src = window.location.protocol + "//" + window.location.host+'/assets/images/default/placeholder.png'
+        }
     },
     mounted() {
         this.swiperTop.controller.control = this.swiperThumbs;
