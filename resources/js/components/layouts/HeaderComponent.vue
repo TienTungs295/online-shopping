@@ -71,7 +71,7 @@
                 <div class="middle-header dark_skin">
                     <div class="container">
                         <div class="nav_block">
-                            <router-link class="navbar-brand"
+                            <router-link class="navbar-brand pdt-0-i pdb-0-i"
                                          :to="{ name: 'home'}">
                                 <img class="logo_light" src="/assets/images/logo/logo.png?version=11" alt="logo">
                                 <img class="logo_dark" src="/assets/images/logo/logo.png?version=11" alt="logo">
