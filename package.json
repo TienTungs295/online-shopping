@@ -41,6 +41,7 @@
         "vue-gallery-slideshow": "^1.5.2",
         "vue-moment": "^4.1.0",
         "vue-router": "^3.5.4",
+        "vue-slick-carousel": "^1.0.6",
         "vue-star-rating": "^1.7.0",
         "vue-toastr": "^2.1.2",
         "vuex": "^3.6.2"
