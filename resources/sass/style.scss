@@ -9352,6 +9352,7 @@ a {
                 padding: 8px;
                 border: 1px solid #ddd;
                 margin-bottom: 10px;
+
                 img {
                     width: 100%;
                     aspect-ratio: 1 / 1;
@@ -9491,3 +9492,28 @@ a.link-hover {
         }
     }
 }
+
+.slick-slider {
+    .main-slide {
+        padding: 8px;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+    }
+    .nav-slide{
+        padding: 5px;
+        .nav-slide-item{
+            padding: 5px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+        }
+    }
+
+    img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+    .slick-slide.slick-active.slick-current .nav-slide-item{
+        border-color: $primary-color;
+    }
+}
+

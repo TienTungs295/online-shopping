@@ -1,18 +1,21 @@
 <template>
     <div class="row">
         <div class="col-lg-6 mb-4 mb-lg-0" v-if="product">
-            <div class="detail-slider">
-                <swiper class="swiper gallery-top" :options="swiperOptionTop" ref="swiperTop">
-                    <swiper-slide v-for="item in product.images" v-bind:key="item.id">
-                        <img :src="'/uploads/images/'+item.image" :alt="item.image" @error="setDefaultImg"/>
-                    </swiper-slide>
-                </swiper>
-                <swiper :class="product.images.length<=1 ? 'dis-none' :''" class="swiper gallery-thumbs"
-                        :options="swiperOptionThumbs" ref="swiperThumbs">
-                    <swiper-slide v-for="item in product.images" v-bind:key="item.id">
-                        <img :src="'/uploads/images/'+item.image" :alt="item.image" @error="setDefaultImg"/>
-                    </swiper-slide>
-                </swiper>
+            <div>
+                <VueSlickCarousel ref="c1" :asNavFor="c2" :focusOnSelect="true" :touchMove="false" :fade="true">
+                    <div class="main-slide" v-for="(item, index) in product.images" :key="index">
+                        <img :src="'/uploads/images/'+item.image"/>
+                    </div>
+                </VueSlickCarousel>
+            </div>
+            <div>
+                <VueSlickCarousel v-show="product.images.length >1" ref="c2" :asNavFor="c1" :slidesToShow="4" :focusOnSelect="true" :touchMove="false">
+                    <div class="nav-slide" v-for="(item, index) in product.images" :key="index">
+                        <div class="nav-slide-item">
+                            <img :src="'/uploads/images/'+item.image"/>
+                        </div>
+                    </div>
+                </VueSlickCarousel>
             </div>
         </div>
         <div class="col-lg-6">
@@ -113,46 +116,60 @@
 <script>
 
 import WithListService from "../../services/WithListService";
-import {Swiper, SwiperSlide} from 'vue-awesome-swiper'
-import 'swiper/css/swiper.css'
+// import {Swiper, SwiperSlide} from 'vue-awesome-swiper'
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// optional style for arrows & dots
+// import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+// import 'swiper/css/swiper.css'
 import CartService from "../../services/CartService";
 
 export default {
     name: "ProductQuickViewItem",
     props: ['product'],
     components: {
-        Swiper,
-        SwiperSlide
+        VueSlickCarousel
     },
     data() {
         return {
-            swiperOptionTop: {
-                loop: this.product.images.length > 1,
-                loopedSlides: (this.product.images.length > 3 ? 3 : this.product.images.length), // looped slides should be the same
-                spaceBetween: 8,
-                effect: 'fade',
+            // swiperOptionTop: {
+            //     loop: this.product.images.length > 1,
+            //     loopedSlides: (this.product.images.length > 3 ? 3 : this.product.images.length), // looped slides should be the same
+            //     spaceBetween: 8,
+            //     effect: 'fade',
+            // },
+            // swiperOptionThumbs: {
+            //     loop: this.product.images.length > 1,
+            //     loopedSlides: (this.product.images.length > 3 ? 3 : this.product.images.length), // looped slides should be the same
+            //     spaceBetween: 8,
+            //     slidesPerView: (this.product.images.length > 3 ? 3 : this.product.images.length),
+            //     touchRatio: 0.2,
+            //     slideToClickedSlide: true,
+            //     centeredSlides: this.product.images.length <= 1
+            // },
+            settings:{
+                "dots": true,
+                "fade": true,
+                "infinite": true,
+                "speed": 500,
+                "slidesToShow": 1,
+                "slidesToScroll": 1
             },
-            swiperOptionThumbs: {
-                loop: this.product.images.length > 1,
-                loopedSlides: (this.product.images.length > 3 ? 3 : this.product.images.length), // looped slides should be the same
-                spaceBetween: 8,
-                slidesPerView: (this.product.images.length > 3 ? 3 : this.product.images.length),
-                touchRatio: 0.2,
-                slideToClickedSlide: true,
-                centeredSlides: this.product.images.length <= 1
-            },
+            items: [1, 2, 3, 4, 5],
+            c1: undefined,
+            c2: undefined,
             cart: {
                 qty: 1
             }
         }
     },
     computed: {
-        swiperTop() {
-            return this.$refs.swiperTop.$swiper
-        },
-        swiperThumbs() {
-            return this.$refs.swiperThumbs.$swiper
-        }
+        // swiperTop() {
+        //     return this.$refs.swiperTop.$swiper
+        // },
+        // swiperThumbs() {
+        //     return this.$refs.swiperThumbs.$swiper
+        // }
     },
     methods: {
         addToWithList: function (product_id) {
@@ -215,8 +232,10 @@ export default {
         }
     },
     mounted() {
-        this.swiperTop.controller.control = this.swiperThumbs;
-        this.swiperThumbs.controller.control = this.swiperTop;
+        // this.swiperTop.controller.control = this.swiperThumbs;
+        // this.swiperThumbs.controller.control = this.swiperTop;
+        this.c1 = this.$refs.c1;
+        this.c2 = this.$refs.c2;
     }
 }
 </script>
