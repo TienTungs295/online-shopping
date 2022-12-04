@@ -35,11 +35,12 @@ class ProductRestController extends Controller
     {
         $ajax_response = new AjaxResponse();
         $collection_id = $request->input('collection_id');
+        $collections = ProductCollection::orderBy('updated_at', 'DESC')->take(4)->get()->toArray();
         $products = [];
         if (is_null($collection_id)) {
-            $firstCollection = ProductCollection::first();
-            if (is_null($firstCollection)) return $ajax_response->setData($products)->toApiResponse();
-            else $collection_id = $firstCollection->id;
+            if (sizeof($collections) == 0) return $ajax_response->setData($products)->toApiResponse();
+            $firstCollection = $collections[0];
+            $collection_id = $firstCollection["id"];
         }
         try {
             ProductCollection::findOrFail($collection_id);
@@ -49,7 +50,7 @@ class ProductRestController extends Controller
         $products = Product::with(['productLabels'])->whereHas('productCollections', function ($query) use ($collection_id) {
             $query->where('product_collection_id', $collection_id);
         })->orderBy('updated_at', 'DESC')->paginate(8);
-        return $ajax_response->setData($products)->toApiResponse();
+        return $ajax_response->setData(array("products" => $products, "collections" => $collections))->toApiResponse();
     }
 
     public function findAll(Request $request)
@@ -207,7 +208,7 @@ class ProductRestController extends Controller
     {
         $ajax_response = new AjaxResponse();
         $page_size = 12;
-        $query = Product::where("is_trending", 1)->orderBy('updated_at','DESC')->take($page_size)->get();
+        $query = Product::where("is_trending", 1)->orderBy('updated_at', 'DESC')->take($page_size)->get();
         $total_products = $query->count();
         $products = $query->toArray();
         if ($total_products >= 12) return $ajax_response->setData($products)->toApiResponse();

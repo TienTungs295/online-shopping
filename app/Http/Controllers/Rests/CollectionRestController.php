@@ -12,7 +12,7 @@ class CollectionRestController extends Controller
     public function findAll(Request $request)
     {
         $ajax_response = new AjaxResponse();
-        $collections = ProductCollection::all();
+        $collections = ProductCollection::orderBy('updated_at','DESC')->all();
         return $ajax_response->setData($collections)->toApiResponse();
     }
 }

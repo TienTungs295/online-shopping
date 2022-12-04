@@ -48,7 +48,8 @@
                                                     <router-link
                                                         :to="{ name: 'productList', query: { category_id: item.id}}">
                                                         <div class="category-image">
-                                                            <img :src="'/uploads/images/'+item.image" @error="setDefaultImg"
+                                                            <img :src="'/uploads/images/'+item.image"
+                                                                 @error="setDefaultImg"
                                                                  :alt="item.image">
                                                         </div>
                                                         <span>{{ item.name }}</span>
@@ -303,14 +304,15 @@
                                                     <div class="product_img style-2">
                                                         <router-link
                                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
-                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image" @error="setDefaultImg"
+                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image"
+                                                                 @error="setDefaultImg"
                                                                  :alt="item.image">
                                                         </router-link>
                                                     </div>
                                                     <div class="product_info">
                                                         <h6 class="product_title">
                                                             <router-link :title="item.name"
-                                                                :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
+                                                                         :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
                                                                 {{ item.name }}
                                                             </router-link>
                                                         </h6>
@@ -395,14 +397,15 @@
                                                     <div class="product_img style-2">
                                                         <router-link
                                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
-                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image" @error="setDefaultImg"
+                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image"
+                                                                 @error="setDefaultImg"
                                                                  :alt="item.image">
                                                         </router-link>
                                                     </div>
                                                     <div class="product_info">
                                                         <h6 class="product_title">
                                                             <router-link :title="item.name"
-                                                                :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
+                                                                         :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
                                                                 {{ item.name }}
                                                             </router-link>
                                                         </h6>
@@ -487,14 +490,15 @@
                                                     <div class="product_img style-2">
                                                         <router-link
                                                             :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
-                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image" @error="setDefaultImg"
+                                                            <img class="border-ccc" :src="'/uploads/images/'+item.image"
+                                                                 @error="setDefaultImg"
                                                                  :alt="item.image">
                                                         </router-link>
                                                     </div>
                                                     <div class="product_info">
                                                         <h6 class="product_title">
                                                             <router-link :title="item.name"
-                                                                :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
+                                                                         :to="{ name: 'productDetail', params: { slug: item.slug,id:item.id }}">
                                                                 {{ item.name }}
                                                             </router-link>
                                                         </h6>
@@ -658,8 +662,10 @@ export default {
             this.currentIndex = index;
             this.isLoading = true;
             ProductService.findByCollection(collection_id).then(response => {
-                let data = response.data || [];
-                this.productCollections = data;
+                let res = response || {};
+                let productPage = res.products || {};
+                this.productCollections = productPage.data || [];
+                this.collections = res.collections || [];
                 this.isLoading = false;
             }).catch(e => {
                 this.isLoading = false;
@@ -674,8 +680,8 @@ export default {
             }).catch(response => {
             });
         },
-        setDefaultImg(event){
-            event.target.src = window.location.protocol + "//" + window.location.host+'/assets/images/default/placeholder.png'
+        setDefaultImg(event) {
+            event.target.src = window.location.protocol + "//" + window.location.host + '/assets/images/default/placeholder.png'
         }
     },
     mounted() {
@@ -687,11 +693,6 @@ export default {
             this.isLoadingTopCategories = false;
         });
 
-        CollectionService.findAll().then(response => {
-            let data = response || [];
-            this.collections = data;
-        }).catch(e => {
-        });
         this.changeCollection(null, 0);
 
         ProductService.findTrending().then(response => {
