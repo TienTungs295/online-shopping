@@ -16,16 +16,7 @@ class ProductCategoryController extends Controller
      */
     public function index(Request $request)
     {
-        $q = $request->input('q');
-        if ($q != "") {
-            $product_categories = ProductCategory::where(function ($query) use ($q) {
-                $query->where('name', 'like', '%' . $q . '%');
-            })->orderBy('id', 'DESC')
-                ->paginate(25);
-            $product_categories->appends(['q' => $q]);
-        } else {
-            $product_categories = ProductCategory::orderBy('id', 'DESC')->paginate(25);
-        }
+        $product_categories = ProductCategory::all()->toArray();
         return View('backend.product-category.index')->with(['product_categories' => $product_categories]);
     }
 
@@ -51,16 +42,26 @@ class ProductCategoryController extends Controller
     {
         $request->validate(
             [
-                'name' => 'required|max:255'
+                'name' => 'required|max:255',
+                'parent_id' => 'required',
+
             ],
             [
                 'name.required' => 'Tên danh mục không được phép bỏ trống',
-                'name.max' => 'Tên danh mục không được vượt quá 255 ký tự'
+                'name.max' => 'Tên danh mục không được vượt quá 255 ký tự',
+                'parent_id.required' => 'Danh mục cha không được phép bỏ trống'
             ]);
 
         $count_exist = ProductCategory::where('name', $request->name)->count();
         if ($count_exist >= 1) {
             return redirect()->back()->with('error', 'Tên danh mục đã tồn tại');
+        }
+
+        $parent_id = $request->input('parent_id');
+        try {
+            if ($parent_id != 0) $product_category = ProductCategory::findOrFail($parent_id);
+        } catch (ModelNotFoundException $e) {
+            return redirect()->back()->with('error', 'Danh mục cha không tồn tại hoặc đã bị xóa');
         }
 
         $product_category = new ProductCategory;
@@ -74,6 +75,7 @@ class ProductCategoryController extends Controller
         }
 
         $product_category->name = $request->input('name');
+        $product_category->parent_id = $request->input('parent_id');
         $product_category->description = $request->input('description');
         $featured = $request->has("is_featured") ? 1 : 0;
         $product_category->is_featured = $featured;
@@ -108,7 +110,11 @@ class ProductCategoryController extends Controller
         } catch (ModelNotFoundException $e) {
             return redirect()->route("categoryView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }
-        return view('backend.product-category.edit', compact('product_category'));
+        $allChilds = ProductCategory::with('allChilds')->where('id', '=', $id)->get()->toArray();
+        $childIds = $this->getAllChildIds($allChilds);
+        array_push($childIds, (int)$id);
+        $product_categories = ProductCategory::whereNotIn('id', $childIds)->get()->toArray();
+        return view('backend.product-category.edit', compact('product_category', 'product_categories'));
     }
 
     /**
@@ -128,17 +134,32 @@ class ProductCategoryController extends Controller
 
         $request->validate(
             [
-                'name' => 'required|max:255'
-            ], [
+                'name' => 'required|max:255',
+                'parent_id' => 'required'
+            ],
+            [
             'name.required' => 'Tên danh mục không được phép bỏ trống',
-            'name.max' => 'Tên danh mục không được vượt quá 255 ký tự'
-        ]);
+            'name.max' => 'Tên danh mục không được vượt quá 255 ký tự',
+            'parent_id.required' => 'Danh mục cha không được phép bỏ trống'
+            ]);
 
         $count_exist = ProductCategory::where('name', $request->name)->where('id', '<>', $id)->count();
         if ($count_exist >= 1) {
             return redirect()->back()->with('error', 'Tên danh mục đã tồn tại');
         }
 
+        $parent_id = $request->input('parent_id');
+        try {
+            if ($parent_id != 0) $parent_category = ProductCategory::findOrFail($parent_id);
+        } catch (ModelNotFoundException $e) {
+            return redirect()->back()->with('error', 'Danh mục cha không tồn tại hoặc đã bị xóa');
+        }
+
+        $allChilds = ProductCategory::with('allChilds')->where('id', '=', $id)->get()->toArray();
+        $childIds = $this->getAllChildIds($allChilds);
+        if (in_array($parent_id, $childIds) || $parent_id == $id) {
+            return redirect()->back()->with('error', 'Danh mục cha không hợp lệ');
+        }
         $product_category->name = $request->input('name');
         //image
         $image_url = $request->input('image');
@@ -155,6 +176,7 @@ class ProductCategoryController extends Controller
             $del_image_name = $product_category->image;
 
         $product_category->image = $image_name;
+        $product_category->parent_id = $parent_id;
         $product_category->description = $request->input('description');
         $featured = $request->has("is_featured") ? 1 : 0;
         $product_category->is_featured = $featured;
@@ -179,11 +201,16 @@ class ProductCategoryController extends Controller
      */
     public function destroy($id)
     {
-        try {
-            $product_category = ProductCategory::findOrFail($id);
-            $product_category->delete();
-        } catch (ModelNotFoundException $e) {
-            return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
+        $count = ProductCategory::where('parent_id', $id)->count();
+        if ($count == 0) {
+            try {
+                $product_category = ProductCategory::findOrFail($id);
+                $product_category->delete();
+            } catch (ModelNotFoundException $e) {
+                return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
+            }
+        } else {
+            return redirect()->back()->with('error', 'Bạn không thể xóa danh mục này');
         }
         return redirect()->back()->with('success', 'Thành công');
     }

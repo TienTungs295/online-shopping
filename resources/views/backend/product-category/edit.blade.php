@@ -35,16 +35,16 @@
                                                placeholder="Độ ưu tiên">
                                     </div>
                                 </div>
-{{--                                <div class="row mb-3">--}}
-{{--                                    <label class="col-sm-2 col-form-label">Mô tả</label>--}}
-{{--                                    <div class="col-sm-10">--}}
-{{--                                        <div class="form-group">--}}
-{{--                                        <textarea class="form-control" placeholder="Mô tả" name="description"--}}
-{{--                                                  id="description"--}}
-{{--                                                  rows="2">{{ old('description', isset($product_category->description) ? $product_category->description : '')}}</textarea>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
+                                <div class="row mb-3">
+                                    <label class="col-sm-2 col-form-label">Danh mục cha<span
+                                            class="text-danger">*</span></label>
+                                    <div class="col-sm-10">
+                                        <select class="form-select" name="parent_id" required>
+                                            <option value="0">Không danh mục</option>
+                                            @include('backend.product-category.tree_select',['product_categories' => $product_categories,'selected_id' => isset($product_category) ? $product_category["parent_id"] : '','parent_id' => 0,'prefix'=> ""])
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="row mb-3">
                                     <div class="col-md-12">
                                         <label class="form-label">Ảnh</label>
