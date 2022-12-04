@@ -35,13 +35,13 @@
     <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}">
     <!-- Style CSS -->
-    <link rel="stylesheet" href="{{ asset('css/app.css?version=18') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css?version=19') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 </head>
 <body>
 <div id="app">
 </div>
-<script src="{{ asset('js/app.js?version=18') }}"></script>
+<script src="{{ asset('js/app.js?version=19') }}"></script>
 <!-- Latest jQuery -->
 <script src="{{asset('assets/js/jquery-3.6.0.min.js')}}"></script>
 <!-- popper min js -->
