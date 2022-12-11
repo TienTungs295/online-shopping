@@ -273,7 +273,7 @@
             <div class="section pdt-30-i pdb-50-i">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-4">
+                        <div :class="onSaleProducts.length == 0 ? 'col-lg-6' : 'col-lg-4'">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="heading_tab_header">
@@ -366,7 +366,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div :class="onSaleProducts.length == 0 ? 'col-lg-6' : 'col-lg-4'">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="heading_tab_header">
@@ -459,7 +459,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-4" v-if="onSaleProducts.length > 0">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="heading_tab_header">
