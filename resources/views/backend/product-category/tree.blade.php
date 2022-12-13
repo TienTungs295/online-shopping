@@ -7,11 +7,12 @@
             </th>
             <td>
                 @if($prefix == "")
-                    <span class="text-primary">{!!$prefix!!}  {!! $item["name"] !!}</span>
+                    <span class="text-primary">{!!$prefix!!} {!! $item["name"] !!}</span>
                 @else
-                    <span class="text-success">{!!$prefix!!} --| {!!$item["name"]!!}</span>
+                    <span><span class="text-success">{!!$prefix!!} --|</span>  {!!$item["name"]!!}</span>
                 @endif
             </td>
+            <td class="text-center">{!! $item["priority"] !!}</td>
             <td class="text-center">
                 {!! date('H:i:s d-m-Y', strtotime($item["updated_at"]))  !!}
             </td>

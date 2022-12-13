@@ -26,6 +26,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Ảnh</th>
                                     <th scope="col">Tên danh mục</th>
+                                    <th scope="col">Độ ưu tiên</th>
                                     <th scope="col" class="text-center">Ngày cập nhật</th>
                                     <th scope="col" class="text-center">Chức năng</th>
                                 </tr>

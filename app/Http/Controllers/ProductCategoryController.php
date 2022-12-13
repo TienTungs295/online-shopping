@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
 use File;
 
-class ProductCategoryController extends Controller
+class ProductCategoryController extends BaseCustomController
 {
     /**
      * Display a listing of the resource.
@@ -59,7 +60,7 @@ class ProductCategoryController extends Controller
 
         $parent_id = $request->input('parent_id');
         try {
-            if ($parent_id != 0) $product_category = ProductCategory::findOrFail($parent_id);
+            if ($parent_id != 0) ProductCategory::findOrFail($parent_id);
         } catch (ModelNotFoundException $e) {
             return redirect()->back()->with('error', 'Danh mục cha không tồn tại hoặc đã bị xóa');
         }
@@ -79,10 +80,8 @@ class ProductCategoryController extends Controller
         $product_category->description = $request->input('description');
         $featured = $request->has("is_featured") ? 1 : 0;
         $product_category->is_featured = $featured;
-        $priority = $request->input('priority');
-        $product_category->priority = is_null($priority) ? 0 : $priority;
+        $product_category->priority = $request->input('priority');
         $product_category->save();
-
         return redirect()->route("categoryView")->with('success', 'Thành công');
     }
 
@@ -138,9 +137,9 @@ class ProductCategoryController extends Controller
                 'parent_id' => 'required'
             ],
             [
-            'name.required' => 'Tên danh mục không được phép bỏ trống',
-            'name.max' => 'Tên danh mục không được vượt quá 255 ký tự',
-            'parent_id.required' => 'Danh mục cha không được phép bỏ trống'
+                'name.required' => 'Tên danh mục không được phép bỏ trống',
+                'name.max' => 'Tên danh mục không được vượt quá 255 ký tự',
+                'parent_id.required' => 'Danh mục cha không được phép bỏ trống'
             ]);
 
         $count_exist = ProductCategory::where('name', $request->name)->where('id', '<>', $id)->count();
@@ -150,7 +149,7 @@ class ProductCategoryController extends Controller
 
         $parent_id = $request->input('parent_id');
         try {
-            if ($parent_id != 0) $parent_category = ProductCategory::findOrFail($parent_id);
+            if ($parent_id != 0) ProductCategory::findOrFail($parent_id);
         } catch (ModelNotFoundException $e) {
             return redirect()->back()->with('error', 'Danh mục cha không tồn tại hoặc đã bị xóa');
         }
@@ -176,13 +175,20 @@ class ProductCategoryController extends Controller
             $del_image_name = $product_category->image;
 
         $product_category->image = $image_name;
+        $old_parent_id = $product_category->parent_id;
+        if ($old_parent_id != $parent_id) {
+            $this->updateTotalProductsFromCatPage($product_category->id);
+        }
         $product_category->parent_id = $parent_id;
         $product_category->description = $request->input('description');
         $featured = $request->has("is_featured") ? 1 : 0;
         $product_category->is_featured = $featured;
-        $priority = $request->input('priority');
-        $product_category->priority = is_null($priority) ? 0 : $priority;
+        $product_category->priority = $request->input('priority');
+
         $product_category->update();
+        if ($old_parent_id != $parent_id) {
+            $this->updateTotalProductsFromCatPage($product_category->id, true);
+        }
 
         if (!empty($del_image_name)) {
             $delete_url = 'uploads\images\\' . $del_image_name;
@@ -205,6 +211,7 @@ class ProductCategoryController extends Controller
         if ($count == 0) {
             try {
                 $product_category = ProductCategory::findOrFail($id);
+                $this->updateTotalProductsFromCatPage($product_category->id);
                 $product_category->delete();
             } catch (ModelNotFoundException $e) {
                 return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
@@ -246,4 +253,5 @@ class ProductCategoryController extends Controller
         }
         return $ids;
     }
+
 }

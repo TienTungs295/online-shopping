@@ -15,7 +15,8 @@ class ProductCollection extends Model
     protected $fillable = [
         'name',
         'description',
-        'is_featured'
+        'is_featured',
+        'priority'
     ];
 
     public function products()

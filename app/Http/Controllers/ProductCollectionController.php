@@ -65,6 +65,7 @@ class ProductCollectionController extends Controller
         $product_collection->description = $request->input('description');
         $featured = $request->has("is_featured") ? 1 : 0;
         $product_collection->is_featured = $featured;
+        $product_collection->priority = $request->input('priority');
         $product_collection->save();
 
         return redirect()->route("collectionView")->with('success', 'Thành công');
@@ -128,6 +129,7 @@ class ProductCollectionController extends Controller
         $product_collection->description = $request->input('description');
         $featured = $request->has("is_featured") ? 1 : 0;
         $product_collection->is_featured = $featured;
+        $product_collection->priority = $request->input('priority');
         $product_collection->update();
         return redirect()->route("collectionView")->with('success', 'Thành công');
     }

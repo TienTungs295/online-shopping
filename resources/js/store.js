@@ -14,6 +14,10 @@ export default new Vuex.Store({
             userProfile: null,
             categories: [],
             collections: [],
+            refreshCategory: false,
+            pageSizeOptions: [],
+            sortOptions: [],
+            priceOptions: [],
         }
     },
     getters: {
@@ -26,6 +30,10 @@ export default new Vuex.Store({
         userProfile: state => state.object.userProfile,
         categories: state => state.object.categories,
         collections: state => state.object.collections,
+        refreshCategory: state => state.object.refreshCategory,
+        pageSizeOptions: state => state.object.pageSizeOptions,
+        sortOptions: state => state.object.sortOptions,
+        priceOptions: state => state.object.priceOptions,
     },
     mutations: {
         setWithListCount(state, newNumber) {
@@ -54,6 +62,18 @@ export default new Vuex.Store({
         },
         setCollections(state, collections) {
             state.object.collections = collections;
+        },
+        setRefreshCategory(state, value) {
+            state.object.refreshCategory = value;
+        },
+        setPageSizeOptions(state, value) {
+            state.object.pageSizeOptions = value;
+        },
+        setSortOptions(state, value) {
+            state.object.sortOptions = value;
+        },
+        setPriceOptions(state, value) {
+            state.object.priceOptions = value;
         }
     }
 })

@@ -7,6 +7,10 @@ class CategoryService {
         return http.get(PREFIX_URL + "find-all", {alert: alert});
     }
 
+    findAllWithoutChild(alert) {
+        return http.get(PREFIX_URL + "find-all-without-child", {alert: alert});
+    }
+
     findTop(alert) {
         return http.get(PREFIX_URL + "find-top", {alert: alert});
     }

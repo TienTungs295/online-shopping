@@ -38,6 +38,8 @@ Vue.component('product-quick-view-modal-component', require('./components/produc
 Vue.component('blog-item-component', require('./components/blogs/BlogItemComponent').default);
 Vue.component('loading-component', require('./components/common/LoadingComponent').default);
 Vue.component('flash-sale-component', require('./components/products/FlashSaleProductsComponent').default);
+Vue.component('tree-menu-component', require('./components/common/TreeMenuComponent').default);
+Vue.component('tree-category-component', require('./components/common/TreeCategoryComponent').default);
 Vue.component('b-tabs', BTabs);
 Vue.component('b-tab', BTab);
 Vue.component('b-modal', BModal);

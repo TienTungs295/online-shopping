@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Http\Responses\AjaxResponse;
 use App\Models\Discount;
 use App\Models\Product;
+use App\Models\ProductCategory;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Cart;
@@ -155,7 +156,70 @@ class BaseCustomController extends Controller
         return $data;
     }
 
-   protected function valid_email($str) {
+    protected function valid_email($str)
+    {
         return (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $str)) ? FALSE : TRUE;
+    }
+
+    protected function updateTotalProductsFromProductPage($category_id, $isPlus = false, $isDeleteProd = false)
+    {
+        if (is_null($category_id)) return;
+        $category = ProductCategory::with(["allChilds"])->where('id', $category_id)->first();
+        if (is_null($category)) return;
+        $childIds = $this->getAllChildWithRecursive($category->allChilds()->get());
+        array_push($childIds, $category->id);
+        $total_product_by_cat = Product::whereIn('category_id', $childIds)->count();
+        $category->total_products = $total_product_by_cat;
+        if ($isDeleteProd) $category->total_products = $category->total_products - 1;
+        $category->update();
+
+        $all_parent_ids = $category->parentIds()->toArray();
+        if (sizeof($all_parent_ids) > 0) {
+            $all_parents = ProductCategory::whereIn('id', $all_parent_ids)->get();
+            foreach ($all_parents as $parent) {
+                if ($isPlus)
+                    $parent->total_products = $parent->total_products + 1;
+                else
+                    $parent->total_products = $parent->total_products - 1;
+                if ($parent->total_products < 0) $parent->total_products = 0;
+                $parent->update();
+            }
+        }
+    }
+
+    protected function updateTotalProductsFromCatPage($category_id, $isPlus = false)
+    {
+        if (is_null($category_id) || $category_id == 0) return;
+        $category = ProductCategory::with(["allChilds"])->where('id', $category_id)->first();
+        if (is_null($category)) return;
+        $childIds = $this->getAllChildWithRecursive($category->allChilds()->get());
+        array_push($childIds, $category->id);
+        $total_product_by_cat = Product::whereIn('category_id', $childIds)->count();
+        $category->total_products = $total_product_by_cat;
+
+        $all_parent_ids = $category->parentIds()->toArray();
+        if (sizeof($all_parent_ids) > 0) {
+            $all_parents = ProductCategory::whereIn('id', $all_parent_ids)->get();
+            foreach ($all_parents as $parent) {
+                if ($isPlus)
+                    $parent->total_products = $parent->total_products + $total_product_by_cat;
+                else
+                    $parent->total_products = $parent->total_products - $total_product_by_cat;
+                if ($parent->total_products < 0) $parent->total_products = 0;
+                $parent->update();
+            }
+        }
+    }
+
+
+    protected function getAllChildWithRecursive($array)
+    {
+        $ids = [];
+        foreach ($array as $value) {
+            array_push($ids, $value->id);
+            if ($value->allChilds()->count() == 0) continue;
+            $ids = array_merge($ids, $this->getAllChildWithRecursive($value->allChilds()->get()));
+        }
+        return $ids;
     }
 }

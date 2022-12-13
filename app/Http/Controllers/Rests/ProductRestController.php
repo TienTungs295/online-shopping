@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Rests;
 
+use App\Http\Controllers\BaseCustomController;
 use App\Http\Controllers\Controller;
 use App\Http\Responses\AjaxResponse;
 use App\Models\Image;
@@ -17,7 +18,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use function PHPUnit\Framework\isEmpty;
 
-class ProductRestController extends Controller
+class ProductRestController extends BaseCustomController
 {
     public function findByName(Request $request)
     {
@@ -35,7 +36,7 @@ class ProductRestController extends Controller
     {
         $ajax_response = new AjaxResponse();
         $collection_id = $request->input('collection_id');
-        $collections = ProductCollection::orderBy('updated_at', 'DESC')->take(4)->get()->toArray();
+        $collections = ProductCollection::orderByRaw('ISNULL(priority), priority ASC')->orderBy('updated_at', 'DESC')->take(4)->get()->toArray();
         $products = [];
         if (is_null($collection_id)) {
             if (sizeof($collections) == 0) return $ajax_response->setData($products)->toApiResponse();
@@ -57,14 +58,14 @@ class ProductRestController extends Controller
     {
         $ajax_response = new AjaxResponse();
         $param = json_decode($request->input("param"));
-        $page_size = 9;
+        $page_size = 12;
         $sort = "";
         $collection_ids = null;
         if (isset($param->page_size) && !empty($param->page_size)) $page_size = $param->page_size;
         if (isset($param->sort) && !empty($param->sort)) $sort = $param->sort;
         $current_time = Carbon::now();
-        $query = Product::with(['productLabels'])->where(function ($query) use ($param, $current_time) {
-            $category_id = isset($param->category_id) ? $param->category_id : null;
+        $category_id = isset($param->category_id) ? $param->category_id : null;
+        $query = Product::with(['productLabels'])->where(function ($query) use ($param, $current_time, $category_id, $ajax_response) {
             $name = isset($param->name) ? $param->name : null;
             $min_price = null;
             $max_price = null;
@@ -92,7 +93,13 @@ class ProductRestController extends Controller
             }
             $collection_ids = null;
             if (isset($param->collection_ids) && count($param->collection_ids) > 0) $collection_ids = array_map('intval', $param->collection_ids);
-            if (!is_null($category_id)) $query->where('category_id', $category_id);
+            if (!is_null($category_id)) {
+                $cat = ProductCategory::with(["allChilds"])->where('id', $category_id)->first();
+                if (is_null($cat)) return $ajax_response->setMessage("Danh mục không tồn tại hoặc đã bị xóa")->toApiResponse();
+                $childIds = $this->getAllChildWithRecursive($cat->allChilds()->get());
+                array_push($childIds, (int)$category_id);
+                $query->whereIn('category_id', $childIds);
+            }
             if ($collection_ids != null) {
                 $query->whereHas('productCollections', function ($query) use ($collection_ids) {
                     $query->whereIn('product_collection_id', $collection_ids);
@@ -166,7 +173,16 @@ class ProductRestController extends Controller
         if ($sort == "name_asc") $query->orderBy("name", "ASC");
         if ($sort == "name_desc") $query->orderBy("name", "DESC");
         $products = $query->paginate($page_size);
-        return $ajax_response->setData($products)->toApiResponse();
+        $category_parent_ids = [];
+        if (!is_null($category_id)) {
+            try {
+                $category = ProductCategory::findOrFail($category_id);
+                $category_parent_ids = $category->parentIds()->toArray();
+            } catch (ModelNotFoundException $e) {
+                $ajax_response->setMessage("Danh mục không tồn tại hoặc đã bị xóa")->toApiResponse();
+            }
+        }
+        return $ajax_response->setData(array("products" => $products, "category_parent_ids" => $category_parent_ids))->toApiResponse();
     }
 
     public function findFeatured(Request $request)

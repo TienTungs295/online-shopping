@@ -90,7 +90,7 @@
                                                 <div class="post_img">
                                                     <router-link
                                                         :to="{ name: 'blogDetail', params: { slug: item.slug,id:item.id }}">
-                                                        <img :src="'/uploads/images/'+item.image" :alt="item.image" @error="setDefaultImg">
+                                                        <img class="border-ccc" :src="'/uploads/images/'+item.image" :alt="item.image" @error="setDefaultImg">
                                                     </router-link>
                                                 </div>
                                                 <div class="post_content">

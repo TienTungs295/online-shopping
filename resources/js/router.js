@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import store from "./store";
+import store from './store'
 
 Vue.use(VueRouter);
 const routes = [
@@ -94,6 +94,11 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     if (from.name != to.name)
         window.scrollTo(0, 0);
+    if (from.name == "productList" && from.name == to.name) {
+        store.commit("setRefreshCategory", false);
+    } else {
+        store.commit("setRefreshCategory", true);
+    }
     if (to.matched.some(route => route.meta.requiresAuth) && !localStorage.getItem('access_token')) {
         next({name: 'login'})
         return;

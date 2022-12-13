@@ -40,6 +40,10 @@
     display: none;
 }
 
+.dis-list-item {
+    display: list-item;
+}
+
 .text-left {
     text-align: left;
 }
@@ -102,7 +106,7 @@
     font-weight: bold;
 }
 
-.border-ccc{
+.border-ccc {
     border: 1px solid #ccc !important;
 }
 

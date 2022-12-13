@@ -128,15 +128,9 @@
                                             <a><span class="categories_name"
                                                      @click="changeCategory(null)">Tất cả</span></a>
                                         </li>
-                                        <li v-for="item in categories"
-                                            :class="param.category_id == item.id ? 'active' :''"
-                                            @click="changeCategory(item.id)">
-                                            <a class="d-flex justify-content-between align-baseline">
-                                                <span class="categories_name pdr-10">{{ item.name }}</span>
-                                                <span class="categories_num">({{ item.products_count }})</span>
-                                            </a>
-                                        </li>
                                     </ul>
+                                    <tree-category-component v-if="categories.length > 0" v-bind:categories="categories"
+                                                             v-bind:category_id="category_id"></tree-category-component>
                                 </div>
                                 <div class="widget">
                                     <h5 class="widget_title">Giá</h5>
@@ -181,6 +175,7 @@ import ProductService from "../../services/ProductService";
 import CollectionService from "../../services/CollectionService";
 import CategoryService from "../../services/CategoryService";
 import {mapGetters} from "vuex";
+import {serviceBus} from "../../serviceBus";
 
 export default {
     name: "ProductList",
@@ -190,107 +185,23 @@ export default {
             param: {},
             collection_ids: [],
             price: "",
-            pageSizeOptions: [
-                {
-                    key: "",
-                    value: "Đang hiểm thị"
-                },
-                {
-                    key: 3,
-                    value: 3
-                },
-                {
-                    key: 6,
-                    value: 6
-                },
-                {
-                    key: 9,
-                    value: 9
-                },
-            ],
-            sortOptions: [
-                {
-                    key: "",
-                    value: "Mặc định"
-                },
-                {
-                    key: "date_asc",
-                    value: "Cũ nhất"
-                },
-                {
-                    key: "date_desc",
-                    value: "Mới nhất"
-                },
-                {
-                    key: "price_asc",
-                    value: "Giá: Thấp đến cao"
-                },
-                {
-                    key: "price_desc",
-                    value: "Giá: Cao đến thấp"
-                },
-                {
-                    key: "name_asc",
-                    value: "Tên: A - Z"
-                },
-                {
-                    key: "name_desc",
-                    value: "Tên: Z - A"
-                },
-            ],
-            priceOptions: [
-                {
-                    key: "",
-                    id: "radio0",
-                    value: "Tất cả"
-                },
-                {
-                    key: "option1",
-                    id: "radio1",
-                    value: "Nhỏ hơn 50,000₫"
-                },
-                {
-                    key: "option2",
-                    id: "radio2",
-                    value: "Từ 50,000₫ - 100,000₫"
-                },
-                {
-                    key: "option3",
-                    id: "radio3",
-                    value: "Từ 100,000₫ - 200,000₫"
-                },
-                {
-                    key: "option4",
-                    id: "radio4",
-                    value: "Từ 200,000₫ - 500,000₫"
-                },
-                {
-                    key: "option5",
-                    id: "radio5",
-                    value: "Từ 500,000₫ - 1000,000₫"
-                },
-                {
-                    key: "option6",
-                    id: "radio6",
-                    value: "Lớn hơn 1000,000₫"
-                },
-                {
-                    key: "option7",
-                    id: "radio7",
-                    value: "Liên hệ"
-                }
-            ],
             isLoadingProduct: true,
             isLoadingCategory: true,
             isLoadingCollection: true,
             isGridView: true,
-            checkedNames: []
+            checkedNames: [],
+            category_parent_ids: [],
+            category_id: null
         };
     },
     computed: {
         ...mapGetters([
             'categories',
             'collections',
+            'refreshCategory',
+            'pageSizeOptions',
+            'sortOptions',
+            'priceOptions',
         ])
     },
     methods: {
@@ -302,7 +213,8 @@ export default {
             if (this.param.sort != null && this.param.sort != "") param.sort = this.param.sort;
             if (this.param.page != null && this.param.page != "") param.page = this.param.page;
             if (this.param.page_size != null && this.param.page_size != "") param.page_size = this.param.page_size;
-            this.$router.push({name: 'productList', query: param})
+            this.$router.push({name: 'productList', query: param}).catch(() => {
+            });
 
         },
         changePrice: function (value) {
@@ -318,6 +230,7 @@ export default {
         changeCategory: function (value) {
             if (this.param.category_id == value) return;
             this.param.category_id = value;
+            this.category_id = value;
             this.changeRouter();
         },
         changePageSize: function () {
@@ -334,6 +247,23 @@ export default {
         },
         changeView: function (value) {
             this.isGridView = value == 'grid-view';
+        },
+        initCategories(categories) {
+            if (categories.length > 0) {
+                for (const category of categories) {
+                    if (this.category_parent_ids.indexOf(category.id) == -1) {
+                        category.is_expand = false;
+                        category.is_show = false;
+                    } else {
+                        category.is_expand = true;
+                        category.is_show = true;
+                    }
+                    if (this.param.category_id == category.id) category.is_show = true;
+                    if (category.childs.length > 0) {
+                        this.initCategories(category.childs);
+                    }
+                }
+            }
         }
     },
     mounted() {
@@ -345,19 +275,107 @@ export default {
         }
         this.param.name = this.$route.query.name || "";
         this.param.category_id = this.$route.query.category_id || null;
+        this.category_id = this.$route.query.category_id || null;
         this.param.price = this.$route.query.price || "";
         this.param.sort = this.$route.query.sort || "";
         this.param.page_size = this.$route.query.page_size || "";
         if (this.$route.query.page != null && this.$route.query.page != "" && this.$route.query.page != undefined) {
             this.param.page = this.$route.query.page;
         }
-        CategoryService.findAll().then(response => {
-            let categories = response || [];
-            this.$store.commit("setCategories", categories);
-            this.isLoadingCategory = false;
-        }).catch(e => {
-            this.isLoadingCategory = false;
-        });
+
+        let pageSizeOptions = [
+            {
+                key: "",
+                value: "Đang hiển thị"
+            },
+            {
+                key: 9,
+                value: 9
+            },
+            {
+                key: 12,
+                value: 12
+            },
+            {
+                key: 15,
+                value: 15
+            },
+        ];
+        let sortOptions = [
+            {
+                key: "",
+                value: "Mặc định"
+            },
+            {
+                key: "date_asc",
+                value: "Cũ nhất"
+            },
+            {
+                key: "date_desc",
+                value: "Mới nhất"
+            },
+            {
+                key: "price_asc",
+                value: "Giá: Thấp đến cao"
+            },
+            {
+                key: "price_desc",
+                value: "Giá: Cao đến thấp"
+            },
+            {
+                key: "name_asc",
+                value: "Tên: A - Z"
+            },
+            {
+                key: "name_desc",
+                value: "Tên: Z - A"
+            },
+        ];
+        let priceOptions = [
+            {
+                key: "",
+                id: "radio0",
+                value: "Tất cả"
+            },
+            {
+                key: "option1",
+                id: "radio1",
+                value: "Nhỏ hơn 50,000₫"
+            },
+            {
+                key: "option2",
+                id: "radio2",
+                value: "Từ 50,000₫ - 100,000₫"
+            },
+            {
+                key: "option3",
+                id: "radio3",
+                value: "Từ 100,000₫ - 200,000₫"
+            },
+            {
+                key: "option4",
+                id: "radio4",
+                value: "Từ 200,000₫ - 500,000₫"
+            },
+            {
+                key: "option5",
+                id: "radio5",
+                value: "Từ 500,000₫ - 1000,000₫"
+            },
+            {
+                key: "option6",
+                id: "radio6",
+                value: "Lớn hơn 1000,000₫"
+            },
+            {
+                key: "option7",
+                id: "radio7",
+                value: "Liên hệ"
+            }
+        ];
+        this.$store.commit("setPageSizeOptions", pageSizeOptions);
+        this.$store.commit("setSortOptions", sortOptions);
+        this.$store.commit("setPriceOptions", priceOptions);
 
         CollectionService.findAll().then(response => {
             let collections = response || [];
@@ -368,11 +386,26 @@ export default {
         });
 
         ProductService.findAll(this.param, this.param.page).then(response => {
-            this.paginate = response || {};
+            let restData = response || {};
+            this.paginate = restData.products || {};
+            this.category_parent_ids = restData.category_parent_ids || [];
             this.isLoadingProduct = false;
+            CategoryService.findAll().then(response => {
+                let categories = response || [];
+                if (this.refreshCategory) {
+                    this.$store.commit("setCategories", categories);
+                    this.initCategories(this.categories);
+                }
+                this.isLoadingCategory = false;
+            }).catch(e => {
+                this.isLoadingCategory = false;
+            });
         }).catch(e => {
             this.isLoadingProduct = false;
         });
+        serviceBus.$on('changeCategory', (category_id) => {
+            this.changeCategory(category_id);
+        })
     }
 }
 </script>

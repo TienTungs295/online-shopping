@@ -39,6 +39,7 @@
 {{--                                <th scope="col">Ảnh</th>--}}
                                 <th scope="col">Tên</th>
                                 <th scope="col">Slug</th>
+                                <th scope="col">Độ ưu tiên</th>
                                 <th scope="col">Ngày cập nhật</th>
                                 <th scope="col">Chức năng</th>
                             </tr>
@@ -50,6 +51,7 @@
                                 <th scope="row">{!!$data->id!!}</th>
                                 <td>{!!$data->name!!}</td>
                                 <td>{!!$data->slug!!}</td>
+                                <td>{!!$data->priority!!}</td>
                                 <td>{!!$data->updated_at->format('H:i:s d-m-Y')!!}</td>
                                 <td>
                                     <a href="{!! route('updateCollectionView',['id' => $data->id]) !!}"

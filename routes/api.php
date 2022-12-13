@@ -67,6 +67,7 @@ Route::group(['prefix' => 'product'], function () {
 });
 Route::group(['prefix' => 'category'], function () {
     Route::get('/find-all', [CategoryRestController::class, 'findAll']);
+    Route::get('/find-all-without-child', [CategoryRestController::class, 'findAllWithoutChild']);
 //    Route::get('/find-featured', [CategoryRestController::class, 'findFeatured']);
     Route::get('/find-top', [CategoryRestController::class, 'findTop']);
 });

@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use League\CommonMark\Parser\Block\ParagraphParser;
 use function Sodium\add;
 use File;
 
-class ProductController extends Controller
+class ProductController extends BaseCustomController
 {
     /**
      * Display a listing of the resource.
@@ -120,7 +121,7 @@ class ProductController extends Controller
             $product->stock_status = $request->input('stock_status');
         }
         $product->is_contact = $is_contact_price ? 1 : 0;
-        $product->is_trending =  $request->has('is_trending') ? 1 : 0;
+        $product->is_trending = $request->has('is_trending') ? 1 : 0;
 
         //image
         $upload_path = "/uploads/images/";
@@ -165,7 +166,7 @@ class ProductController extends Controller
                 }
             }
             RelatedProduct::insert($related_products);
-
+            $this->updateTotalProductsFromProductPage($product->category_id, true);
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
@@ -241,6 +242,7 @@ class ProductController extends Controller
 
         try {
             $product = Product::findOrFail($id);
+            $old_category_id = $product->category_id;
         } catch (ModelNotFoundException $e) {
             return redirect()->route("productView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }
@@ -310,7 +312,7 @@ class ProductController extends Controller
             $product->stock_status = $request->input('stock_status');
         }
         $product->is_contact = $is_contact_price ? 1 : 0;
-        $product->is_trending =  $request->has('is_trending') ? 1 : 0;
+        $product->is_trending = $request->has('is_trending') ? 1 : 0;
 
         //image
         $del_image_names = [];
@@ -395,6 +397,12 @@ class ProductController extends Controller
             $product->productCollections()->sync($collections);
             RelatedProduct::whereIn('to_product_id', $del_related_product_ids)->delete();
             RelatedProduct::insert($new_related_products);
+            if ($old_category_id != $product->category_id) {
+                //minus 1
+                $this->updateTotalProductsFromProductPage($old_category_id);
+                //plus 1
+                $this->updateTotalProductsFromProductPage($product->category_id, true);
+            }
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
@@ -432,6 +440,7 @@ class ProductController extends Controller
 
         DB::beginTransaction();
         try {
+            $this->updateTotalProductsFromProductPage($product->category_id, false, true);
             $product->images()->delete();
             $product->reviews()->delete();
             $product->delete();

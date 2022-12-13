@@ -11,7 +11,7 @@
                                     <div class="header_offer border-0">
                                         <div class="light-color-i">
                                             <span style="padding-top: 2px; position: relative" class="pdr-5">
-                                                 <i class="ti-email" ></i>
+                                                 <i class="ti-email"></i>
                                             </span>
                                             <a class="light-color-i" href="mailto:kinhdoanh.nk3m@gmail.com">kinhdoanh.nk3m@gmail.com</a>
                                         </div>
@@ -83,7 +83,7 @@
                                             <div class="custom_select">
                                                 <select class="first_null not_chosen" v-model="query.category_id">
                                                     <option value="">Danh mục</option>
-                                                    <option v-for="item in categories" v-bind:value="item.id">
+                                                    <option v-for="item in categoryWithoutChild" v-bind:value="item.id">
                                                         {{ item.name }}
                                                     </option>
                                                 </select>
@@ -116,26 +116,31 @@
                                 </button>
                                 <div id="navCatContent" class="navbar collapse">
                                     <ul>
-                                        <li class="dropdown" v-for="(item,index) in categories" v-if="index < 10">
+                                        <li :class="item.childs.length > 0 ? 'dropdown dropdown-mega-menu' :''" v-for="(item,index) in categories" v-if="index < 10">
                                             <router-link
                                                 :to="{ name: 'productList', query: { category_id: item.id}}"
-                                                class="dropdown-item nav-link">
-                                                <span>{{ item.name }}</span>
+                                                class="dropdown-item nav-link" :class="[(item.childs.length > 0 ? 'dropdown-toggler' :''),(index > 0 ? 'pdt-0-i' :'')]">
+                                                {{ item.name }}
                                             </router-link>
+                                            <tree-menu-component v-if="item.childs.length > 0"
+                                                                 v-bind:categories="item.childs"></tree-menu-component>
                                         </li>
                                         <li>
                                             <ul class="more_slide_open">
-                                                <li v-for="(item,index) in categories" v-if="index>=10">
+                                                <li :class="item.childs.length > 0 ? 'dropdown dropdown-mega-menu' :''"
+                                                    v-for="(item,index) in categories" v-if="index>=10">
                                                     <router-link
                                                         :to="{ name: 'productList', query: { category_id: item.id}}"
-                                                        class="dropdown-item nav-link nav_item">
+                                                        class="dropdown-item nav-link" :class="[(item.childs.length > 0 ? 'dropdown-toggler' :''),(index > 0 ? 'pdt-0-i' :'')]">
                                                         <span>{{ item.name }}</span>
                                                     </router-link>
+                                                    <tree-menu-component v-if="item.childs.length > 0"
+                                                                         v-bind:categories="item.childs"></tree-menu-component>
                                                 </li>
                                             </ul>
                                         </li>
                                     </ul>
-                                    <div class="more_categories">Xêm Thêm</div>
+                                    <div class="more_categories" v-if="categories.length >= 10">Xêm Thêm</div>
                                 </div>
                             </div>
                         </div>
@@ -295,6 +300,7 @@ export default {
     data() {
         return {
             categories: [],
+            categoryWithoutChild: [],
             query: {
                 category_id: "",
                 name: ""
@@ -375,8 +381,11 @@ export default {
     },
     mounted() {
         CategoryService.findAll().then(response => {
-            let data = response || [];
-            this.categories = data;
+            this.categories = response || [];
+        }).catch(e => {
+        });
+        CategoryService.findAllWithoutChild().then(response => {
+            this.categoryWithoutChild = response || [];
         }).catch(e => {
         });
         this.findAllWithList();
