@@ -187,27 +187,20 @@ class BaseCustomController extends Controller
         }
     }
 
-    protected function updateTotalProductsFromCatPage($category_id, $isPlus = false)
+    protected function updateTotalProductsFromCatPage($category_id)
     {
-        if (is_null($category_id) || $category_id == 0) return;
-        $category = ProductCategory::with(["allChilds"])->where('id', $category_id)->first();
+        if (is_null($category_id)) return;
+        $category = ProductCategory::find($category_id);
         if (is_null($category)) return;
-        $childIds = $this->getAllChildWithRecursive($category->allChilds()->get());
-        array_push($childIds, $category->id);
-        $total_product_by_cat = Product::whereIn('category_id', $childIds)->count();
-        $category->total_products = $total_product_by_cat;
-
         $all_parent_ids = $category->parentIds()->toArray();
-        if (sizeof($all_parent_ids) > 0) {
-            $all_parents = ProductCategory::whereIn('id', $all_parent_ids)->get();
-            foreach ($all_parents as $parent) {
-                if ($isPlus)
-                    $parent->total_products = $parent->total_products + $total_product_by_cat;
-                else
-                    $parent->total_products = $parent->total_products - $total_product_by_cat;
-                if ($parent->total_products < 0) $parent->total_products = 0;
-                $parent->update();
-            }
+        array_push($all_parent_ids, $category->id);
+        $all_parents = ProductCategory::with(["allChilds"])->whereIn('id', $all_parent_ids)->get();
+        foreach ($all_parents as $parent) {
+            $childIds = $this->getAllChildWithRecursive($parent->allChilds()->get());
+            array_push($childIds, $parent->id);
+            $total_product_by_cat = Product::whereIn('category_id', $childIds)->count();
+            $parent->total_products = $total_product_by_cat;
+            $parent->update();
         }
     }
 

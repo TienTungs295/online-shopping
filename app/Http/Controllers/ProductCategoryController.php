@@ -176,9 +176,7 @@ class ProductCategoryController extends BaseCustomController
 
         $product_category->image = $image_name;
         $old_parent_id = $product_category->parent_id;
-        if ($old_parent_id != $parent_id) {
-            $this->updateTotalProductsFromCatPage($product_category->id);
-        }
+        $this->updateTotalProductsFromCatPage($product_category->id);
         $product_category->parent_id = $parent_id;
         $product_category->description = $request->input('description');
         $featured = $request->has("is_featured") ? 1 : 0;
@@ -187,7 +185,7 @@ class ProductCategoryController extends BaseCustomController
 
         $product_category->update();
         if ($old_parent_id != $parent_id) {
-            $this->updateTotalProductsFromCatPage($product_category->id, true);
+            $this->updateTotalProductsFromCatPage($product_category->id);
         }
 
         if (!empty($del_image_name)) {
@@ -217,7 +215,7 @@ class ProductCategoryController extends BaseCustomController
                 return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
             }
         } else {
-            return redirect()->back()->with('error', 'Bạn không thể xóa danh mục này');
+            return redirect()->back()->with('error', 'Bạn không thể xóa danh mục này, cần xóa hết toàn bộ thư mục con trước');
         }
         return redirect()->back()->with('success', 'Thành công');
     }
