@@ -154,7 +154,7 @@
                                             </ul>
                                         </li>
                                     </ul>
-                                    <div class="more_categories" v-show="categories.length >= 10">Xêm Thêm</div>
+                                    <div class="more_categories" v-show="categories.length > 10">Xêm Thêm</div>
                                 </div>
                             </div>
                         </div>
