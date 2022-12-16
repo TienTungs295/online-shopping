@@ -124,7 +124,7 @@
                                 <div class="widget">
                                     <h5 class="widget_title">Danh mục</h5>
                                     <ul class="widget_categories">
-                                        <li :class="param.category_id == null ? 'active' :''">
+                                        <li :class="param.category_id == null ? 'active' :''" class="pdb-0-i">
                                             <a><span class="categories_name"
                                                      @click="changeCategory(null)">Tất cả</span></a>
                                         </li>
