@@ -2,7 +2,7 @@
     <div>
         <div v-for="item in categories" v-bind:key="item.id">
             <b-dropdown-item @click="chooseCategory(item)">
-                <a :class="level == 0 ? 'fw-bold' :''" :style="{ 'padding-left': level * 5 + 'px' }">
+                <a :class="level == 0 ? 'fw-500' :''" :style="{ 'padding-left': level * 5 + 'px' }">
                     {{ item.name }}
                 </a>
             </b-dropdown-item>
