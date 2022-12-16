@@ -40,6 +40,7 @@ Vue.component('loading-component', require('./components/common/LoadingComponent
 Vue.component('flash-sale-component', require('./components/products/FlashSaleProductsComponent').default);
 Vue.component('tree-menu-component', require('./components/common/TreeMenuComponent').default);
 Vue.component('tree-category-component', require('./components/common/TreeCategoryComponent').default);
+Vue.component('tree-select-component', require('./components/common/TreeSelectComponent').default);
 Vue.component('b-tabs', BTabs);
 Vue.component('b-tab', BTab);
 Vue.component('b-modal', BModal);

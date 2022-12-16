@@ -7866,15 +7866,38 @@ select {
 
 .custom_select {
     position: relative;
+    width: 154px;
 
-    select {
+    select, .custom-dropdown.__style-2 {
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
         border: 1px solid #ced4da;
-        padding: 8px 35px 8px 15px;
         width: 100%;
         height: 50px;
+    }
+    .custom-dropdown.__style-2{
+        .btn-link{
+            color: #687188;
+            padding: 8px;
+            text-transform: inherit;
+            &:before{
+                background-color: inherit;
+            }
+        }
+        .dropdown-item{
+            padding: 3px 15px;
+            text-transform: capitalize;
+        }
+        .__cat-name{
+            display: inline-block;
+            white-space: nowrap;
+            width: 95px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: left;
+            text-transform: capitalize;
+        }
     }
 
     &.style-1 select {

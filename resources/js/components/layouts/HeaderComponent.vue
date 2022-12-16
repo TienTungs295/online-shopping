@@ -81,12 +81,23 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <div class="custom_select">
-                                                <select class="first_null not_chosen" v-model="query.category_id">
-                                                    <option value="">Danh mục</option>
-                                                    <option v-for="item in categoryWithoutChild" v-bind:value="item.id">
-                                                        {{ item.name }}
-                                                    </option>
-                                                </select>
+                                                <b-dropdown variant="link" no-caret
+                                                            class="custom-dropdown __style-2"
+                                                            toggle-class="text-decoration-none">
+                                                    <template #button-content>
+                                                        <div>
+                                                            <span class="mgr-5 __cat-name"
+                                                                  v-if="query.cate_name == null">Danh mục</span>
+                                                            <span class="mgr-5 __cat-name"
+                                                                  v-else>{{ query.cate_name }}</span>
+                                                            <i class="ti-angle-down" style="font-size: 14px"></i>
+                                                        </div>
+                                                    </template>
+                                                    <tree-select-component v-if="categories.length > 0"
+                                                                           v-bind:categories="categories"
+                                                                           v-bind:query="query"
+                                                                           v-bind:level="0"></tree-select-component>
+                                                </b-dropdown>
                                             </div>
                                         </div>
                                         <input class="form-control" v-model="query.name" placeholder="Tên sản phẩm..."
@@ -116,10 +127,12 @@
                                 </button>
                                 <div id="navCatContent" class="navbar collapse">
                                     <ul>
-                                        <li :class="item.childs.length > 0 ? 'dropdown dropdown-mega-menu' :''" v-for="(item,index) in categories" v-if="index < 10">
+                                        <li :class="item.childs.length > 0 ? 'dropdown dropdown-mega-menu' :''"
+                                            v-for="(item,index) in categories" v-if="index < 10">
                                             <router-link
                                                 :to="{ name: 'productList', query: { category_id: item.id}}"
-                                                class="dropdown-item nav-link" :class="[(item.childs.length > 0 ? 'dropdown-toggler' :''),(index > 0 ? 'pdt-0-i' :'')]">
+                                                class="dropdown-item nav-link"
+                                                :class="[(item.childs.length > 0 ? 'dropdown-toggler' :''),(index > 0 ? 'pdt-0-i' :'')]">
                                                 {{ item.name }}
                                             </router-link>
                                             <tree-menu-component v-if="item.childs.length > 0"
@@ -131,7 +144,8 @@
                                                     v-for="(item,index) in categories" v-if="index>=10">
                                                     <router-link
                                                         :to="{ name: 'productList', query: { category_id: item.id}}"
-                                                        class="dropdown-item nav-link" :class="[(item.childs.length > 0 ? 'dropdown-toggler' :''),(index > 0 ? 'pdt-0-i' :'')]">
+                                                        class="dropdown-item nav-link"
+                                                        :class="[(item.childs.length > 0 ? 'dropdown-toggler' :''),(index > 0 ? 'pdt-0-i' :'')]">
                                                         <span>{{ item.name }}</span>
                                                     </router-link>
                                                     <tree-menu-component v-if="item.childs.length > 0"
@@ -303,7 +317,8 @@ export default {
             categoryWithoutChild: [],
             query: {
                 category_id: "",
-                name: ""
+                name: "",
+                cat_name: ""
             }
         };
     },
@@ -354,7 +369,8 @@ export default {
                 this.$router.push({name: 'productList', query: param});
             this.query = {
                 category_id: "",
-                name: ""
+                name: "",
+                cat_name: ""
             };
         },
         logout() {
