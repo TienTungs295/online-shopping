@@ -230,6 +230,7 @@ export default {
         changeCategory: function (value) {
             if (this.param.category_id == value) return;
             this.param.category_id = value;
+            this.param.page = 1;
             this.category_id = value;
             this.changeRouter();
         },
