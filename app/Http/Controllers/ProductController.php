@@ -436,7 +436,7 @@ class ProductController extends BaseCustomController
         $images = $product->images()->get()->pluck("image")->toArray();
         $image = $product->image;
         $del_images = array_merge($del_images, $images);
-        array($del_images, $image);
+        array_push($del_images, $image);
 
         DB::beginTransaction();
         try {
