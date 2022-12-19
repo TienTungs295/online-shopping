@@ -84,7 +84,37 @@ const routes = [
         path: '/doi-mat-khau/:token',
         name: 'changePassWithToken',
         component: () => import("./components/auth/ChangePassWithTokenComponent"),
-    }
+    },
+    {
+        path: '/chinh-sach-doi-tra',
+        name: 'returnPolicy',
+        component: () => import("./components/policy/ReturnPolicyComponent"),
+    },
+    {
+        path: '/chinh-sach-bao-mat',
+        name: 'privacyPolicy',
+        component: () => import("./components/policy/PrivacyPolicyComponent"),
+    },
+    {
+        path: '/dieu-khoan-dich-vu',
+        name: 'termsOfService',
+        component: () => import("./components/policy/TermsOfServiceComponent"),
+    },
+    {
+        path: '/chinh-sach-van-chuyen',
+        name: 'shippingPolicy',
+        component: () => import("./components/policy/ShippingPolicyComponent"),
+    },
+    {
+        path: '/chinh-sach-thanh-toan',
+        name: 'paymentPolicy',
+        component: () => import("./components/policy/PaymentPolicyComponent"),
+    },
+    {
+        path: '/chinh-sach-bao-hanh',
+        name: 'warrantyPolicy',
+        component: () => import("./components/policy/WarrantyPolicyComponent"),
+    },
 ];
 const router = new VueRouter({
     mode: 'history',

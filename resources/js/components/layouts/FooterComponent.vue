@@ -27,7 +27,7 @@
                                 </li>
                                 <li>
                                     <i class="ti-location-pin"></i>
-                                    <p>VPGD: Số 78, Ngõ 166, Đường Trần Duy Hưng, Phường Trung Hoà, Quận Cầu Giấy, TP Hà Nội;</p>
+                                    <p>VPGD: Số 78, Ngõ 166, Đường Trần Duy Hưng, Phường Trung Hoà, Quận Cầu Giấy, TP Hà Nội</p>
                                 </li>
                             </ul>
                         </div>
@@ -66,19 +66,25 @@
                         </div>
                         <div class="col-lg-2 col-md-6 col-sm-6">
                             <div class="widget">
-                                <h6 class="widget_title">Đặt hàng</h6>
+                                <h6 class="widget_title">Chính sách</h6>
                                 <ul class="widget_links">
                                     <li>
-                                        <router-link :to="{name:'withList'}">Yêu thích</router-link>
+                                        <router-link :to="{name:'returnPolicy'}">Chính sách đổi trả</router-link>
                                     </li>
                                     <li>
-                                        <router-link :to="{name:'cart'}">Giỏ hàng</router-link>
+                                        <router-link :to="{name:'privacyPolicy'}">Chính sách bảo mật</router-link>
                                     </li>
                                     <li>
-                                        <router-link :to="{name:'order'}">Thanh toán</router-link>
+                                        <router-link :to="{name:'termsOfService'}">Điều khoản dịch vụ</router-link>
                                     </li>
                                     <li>
-                                        <router-link :to="{name:'contact-us'}">Liên hệ</router-link>
+                                        <router-link :to="{name:'shippingPolicy'}">Chính sách vận chuyển</router-link>
+                                    </li>
+                                    <li>
+                                        <router-link :to="{name:'paymentPolicy'}">Chính sách thanh toán</router-link>
+                                    </li>
+                                    <li>
+                                        <router-link :to="{name:'warrantyPolicy'}">Chính sách bảo hành</router-link>
                                     </li>
                                 </ul>
                             </div>
