@@ -125,10 +125,10 @@
                             Tên đơn vị: Công ty TNHH thương mại và sản xuất NK
                             <br>
 
-                            Giấy chứng nhận đăng ký kinh doanh số: xxx
+                            Giấy chứng nhận đăng ký kinh doanh số: 0103713002
                             <br>
 
-                            Ngày cấp: xxx
+                            Ngày cấp: 14/04/2009
                             <br>
 
                             Địa chỉ trụ sở: Số 77, tổ 17 thị trấn Đông Anh, Huyện Đông Anh, TP. Hà Nội
